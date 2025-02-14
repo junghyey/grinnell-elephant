@@ -1,12 +1,12 @@
 ### Milestone 2 Written Report
+
+### What each team member completed
 Hyeyun: Set up git and set up Trello Board for the team
 Mae   : Design layout & create design ideas and ask opinions from the group
 Gabby : Note taking & writing for the github repo descriotion & project explanation
 Candice: Finding resources for Swift and extension called WidgetKit. 
 
 Other Task (outside class): Write proposal & budget planning for Catalyst funding program
-
-### What each team member completed
 
 ### Summary of important Decisions
 
