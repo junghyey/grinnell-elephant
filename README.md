@@ -7,7 +7,7 @@ Elephant: A Wellness Trunk is an extension/widget for macOS designed to help use
 ## Goals 
 - Encourage wellness habits by combining work + break for stretch/hydrate/medicaitons</br>
 - Reduce burnout & improve digital wellness</br>
-### Technical Goals
+#### Technical Goals
 - Gamify self-care by having token-based systems/collectibles </br>
 - Ensure accesibility & customization</br>
 - Natural MacOS integration that does not disrupt work</br>
@@ -32,9 +32,9 @@ Root
 ```
 ## Desription
 This repository (currently) includes README.md file and written reports folder. 
-### README.MD
+#### README.MD
 Front face of the repo. Contains project idea, goals, repository layout and a link to Trello currently.
-### Written Reports
+#### Written Reports
 The written reports folder will contain all the reports for milestone submission. Currently it has only milestone-2-report.md.
 
 # Issue Tracking Tool
