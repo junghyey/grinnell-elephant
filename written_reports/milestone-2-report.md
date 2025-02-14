@@ -9,8 +9,8 @@ Other Task (outside class): Write proposal & budget planning for Catalyst fundin
 
 ### Summary of Important Decisions
 1. We were debating whether we should use lab Mac or pursue other options such as Kotlin or other programming languages. </br> However, we decided to go with the Mac option so that we can use Xcode and Swfit which is native to the Mac.
-2. We decided to puruse doing the Catalyst program and discussed with the Professor and Catalyst people.
-3. We finalized the Budget for requesting funding for Catalyst program.
+2. We decided to pursue funding from Catalyst program and discussed with the Professor and Catalyst mentors.
+3. We finalized the budget for the funding requesting for Catalyst program.
 
 ### Programming Language & Tool
 We will be using Swift for programming language along with the extension of Swift called WidgetKit. </br>
