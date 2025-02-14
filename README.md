@@ -5,20 +5,20 @@
 Elephant: A Wellness Trunk is an extension/widget for macOS designed to help users integraet wellness breaks into their work. These breaks will remind the user to perform wellness tasks such as stretching, drinking water, meditation, walking breaks, etc. Our ***target audience*** is people whose working needs are not met by existing products (e.g. pomodoro, to-do list), are encouraged by an aesthetic or gamified system, and want to incorporate more wellness into their working routine.   
 
 ## Goals 
-- Encourage wellness habits by combining work + break for stretch/hydrate/medicaitons
-- Reduce burnout & improve digital wellness
+- Encourage wellness habits by combining work + break for stretch/hydrate/medicaitons</br>
+- Reduce burnout & improve digital wellness</br>
 ### Technical Goals
-- Gamify self-care by having token-based systems/collectibles
-- Ensure accesibility & customization
-- Natural MacOS integration that does not disrupt work
-- Data security and privacy: Secure data storage and management
-- Lightweight, intuitive interface
+- Gamify self-care by having token-based systems/collectibles </br>
+- Ensure accesibility & customization</br>
+- Natural MacOS integration that does not disrupt work</br>
+- Data security and privacy: Secure data storage and management</br>
+- Lightweight, intuitive interface</br>
 
 # Repository Layout
-
 ## Overview
-This section includes the overview/outline of the repository structure.
-Root
+This section includes the overview/outline of the repository structure.</br>
+
+Root</br>
   |-- README.md </br>
   |</br>
   |-- written_reports/</br>
@@ -26,7 +26,7 @@ Root
   |    </br>
   |</br>
   |</br>
-  |-- app_files       </br>          [//]: # To be added </br>
+  |-- app_files (to be added)      </br>          
   |</br>
   |</br>
 
