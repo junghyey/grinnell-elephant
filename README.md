@@ -21,12 +21,12 @@ This section includes the overview/outline of the repository structure.</br>
 Root
   |-- README.md 
   |
-  |-- written_reports/</br>
+  |-- written_reports/
   |   |-- milestone-2-report.md 
   |   
   |
   |
-  |--app_files (to be added)              
+  |--app_files                       # To be added         
   |
   |
 ```
