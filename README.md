@@ -17,18 +17,19 @@ Elephant: A Wellness Trunk is an extension/widget for macOS designed to help use
 # Repository Layout
 ## Overview
 This section includes the overview/outline of the repository structure.</br>
-
-Root</br>
-  |-- README.md </br>
-  |</br>
+'''
+Root
+  |-- README.md 
+  |
   |-- written_reports/</br>
-  |   |-- milestone-2-report.md </br>
+  |   |-- milestone-2-report.md 
   |    </br>
   |</br>
   |</br>
   |--app_files (to be added)      </br>          
   |</br>
   |</br>
+'''
 
 ## Desription
 This repository (currently) includes README.md file and written reports folder. 
