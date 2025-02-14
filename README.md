@@ -1,10 +1,41 @@
 # grinnell-elephant
 
 # Project Idea and Goals
-Elephant: A Wellness Trunk is an extension/widget for laptops that acts as a reminder for users to take wellness breaks amidst tasks. These breaks will remind the user to perform wellness tasks such as stretching, drinking water, meditation, walking breaks, etc. Our target audience is people whose working needs are not met by existing products (e.g. pomodoro, to-do list), are encouraged by an aesthetic or gamified system, and want to incorporate more wellness into their working routine.   
+## Description
+Elephant: A Wellness Trunk is an extension/widget for macOS designed to help users integraet wellness breaks into their work. These breaks will remind the user to perform wellness tasks such as stretching, drinking water, meditation, walking breaks, etc. Our *** target audience *** is people whose working needs are not met by existing products (e.g. pomodoro, to-do list), are encouraged by an aesthetic or gamified system, and want to incorporate more wellness into their working routine.   
+
+## Goals 
+- Encourage wellness habits by combining work + break for stretch/hydrate/medicaitons
+- Reduce burnout & improve digital wellness
+### Technical Goals
+- Gamify self-care by having token-based systems/collectibles
+- Ensure accesibility & customization
+- Natural MacOS integration that does not disrupt work
+- Data security and privacy: Secure data storage and management
+- Lightweight, intuitive interface
 
 # Repository Layout
-Milestone 2 report for Elephant: A Wellness Trunk. This repository includes the written report in Markdown format (`written_reports/milestone-2-report.md`) and a README file with project details.
+
+## Overview
+This section includes the overview/outline of the repository structure.
+Root
+  |-- README.md
+  |
+  |-- written_reports/
+  |    |-- milestone-2-report.md 
+  |    
+  |
+  |
+  |-- app_files                 [//]: # To be added
+  |
+  |
+
+## Desription
+This repository (currently) includes README.md file and written reports folder. 
+### README.MD
+Front face of the repo. Contains project idea, goals, repository layout and a link to Trello currently.
+### Written Reports
+The written reports folder will contain all the reports for milestone submission. Currently it has only milestone-2-report.md.
 
 # Issue Tracking Tool
 Include a link to your issue tracking tool: [Elephant Dev Board🐘💻](https://trello.com/b/4KAD6ca1/elephant-dev-board-%F0%9F%90%98%F0%9F%92%BB)
