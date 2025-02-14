@@ -1,20 +1,22 @@
 ### Milestone 2 Written Report
 
-### What each team member completed
-Hyeyun: Set up git and set up Trello Board for the team
-Mae   : Design layout & create design ideas and ask opinions from the group
-Gabby : Note taking & writing for the github repo descriotion & project explanation
-Candice: Finding resources for Swift and extension called WidgetKit. 
+### What Each Team Member Completed
+Hyeyun: Set up git and set up Trello Board for the team </br>
+Mae   : Design layout & create design ideas and ask opinions from the group </br>
+Gabby : Note taking & writing for the github repo descriotion & project explanation </br>
+Candice: Finding resources for Swift and extension called WidgetKit. </br>
+Other Task (outside class): Write proposal & budget planning for Catalyst funding program</br>
 
-Other Task (outside class): Write proposal & budget planning for Catalyst funding program
+### Summary of Important Decisions
+1. We were debating whether we should use lab Mac or pursue other options such as Kotlin or other programming languages. </br> However, we decided to go with the Mac option so that we can use Xcode and Swfit which is native to the Mac.
+2. We decided to puruse doing the Catalyst program and discussed with the Professor and Catalyst people.
+3. We finalized the Budget for requesting funding for Catalyst program.
 
-### Summary of important Decisions
+### Programming Language & Tool
+We will be using Swift for programming language along with the extension of Swift called WidgetKit. </br>
+We are using Trello for issue tracking and Xcode for codig. </br>
 
-
-
-### Programming language & tool
-We will be using Swift for programming language along with the extension of Swift called WidgetKit. We are using Trello for issue tracking and Xcode for codig. 
-
-### How did you choose to settle on those technologies?
-We wanted to use that is native to the mac since we are planning to launch our product in the Apple AppStore. 
+### How Did You Choose to Settle on those Technologies?
+We wanted to use that is native to the mac since we are planning to launch our product in the Apple AppStore. </br>
+We reached out the ITS and Professor and learned different options. We decided to pursue the Mac option. </br>
 
