@@ -22,11 +22,11 @@ Root</br>
   |-- README.md </br>
   |</br>
   |-- written_reports/</br>
-  |    |-- milestone-2-report.md </br>
+  |   |-- milestone-2-report.md </br>
   |    </br>
   |</br>
   |</br>
-  |-- app_files (to be added)      </br>          
+  |--app_files (to be added)      </br>          
   |</br>
   |</br>
 
