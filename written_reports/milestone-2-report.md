@@ -9,7 +9,7 @@
 
 ### Summary of Important Decisions
 1. ***Technology Selection Discussion*** </br>
-- We were debating whether we should use lab Mac or pursue other options such as Kotlin or other programming languages. </br>
+- We were debating whether we should use lab Mac or pursue other options such as Kotlin (cross platform) or other programming languages. </br>
 - However, we decided to go with the Mac option so that we can use Xcode and Swfit which is native to the Mac after discussing with Professor and ITS officers.
 2. ***Catalyst Program Decision***</br> 
 - We decided to pursue funding from Catalyst program and discussed with the Professor and Catalyst mentors.</br> 
@@ -20,7 +20,17 @@
 - Decided tasks for Sprint 1.
 ### Programming Language & Tool
 We will be using Swift for programming language along with the extension of Swift called WidgetKit. </br>
-We are using Trello for issue tracking and Xcode for codig. </br>
+We are using Trello for issue tracking and Xcode for IDE. </br>
+
+In summary:</br>
+| Category               | Technology/Tool |
+|------------------------|-----------------|
+| Programming Language   | Swift           |
+| IDE                    | Xcode           |
+| UI & Widget            | WidgetKit       |
+| Issue Tracking         | Trello          |
+| Version Control        | GitHub/Git      |
+
 
 ### How Did You Choose to Settle on those Technologies?
 We wanted to use that is native to the mac since we are planning to launch our product in the Apple AppStore. </br>
