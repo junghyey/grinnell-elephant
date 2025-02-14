@@ -2,7 +2,7 @@
 
 # Project Idea and Goals
 ## Description
-Elephant: A Wellness Trunk is an extension/widget for macOS designed to help users integraet wellness breaks into their work. These breaks will remind the user to perform wellness tasks such as stretching, drinking water, meditation, walking breaks, etc. Our *** target audience *** is people whose working needs are not met by existing products (e.g. pomodoro, to-do list), are encouraged by an aesthetic or gamified system, and want to incorporate more wellness into their working routine.   
+Elephant: A Wellness Trunk is an extension/widget for macOS designed to help users integraet wellness breaks into their work. These breaks will remind the user to perform wellness tasks such as stretching, drinking water, meditation, walking breaks, etc. Our ***target audience*** is people whose working needs are not met by existing products (e.g. pomodoro, to-do list), are encouraged by an aesthetic or gamified system, and want to incorporate more wellness into their working routine.   
 
 ## Goals 
 - Encourage wellness habits by combining work + break for stretch/hydrate/medicaitons
@@ -19,16 +19,16 @@ Elephant: A Wellness Trunk is an extension/widget for macOS designed to help use
 ## Overview
 This section includes the overview/outline of the repository structure.
 Root
-  |-- README.md
-  |
-  |-- written_reports/
-  |    |-- milestone-2-report.md 
-  |    
-  |
-  |
-  |-- app_files                 [//]: # To be added
-  |
-  |
+  |-- README.md </br>
+  |</br>
+  |-- written_reports/</br>
+  |    |-- milestone-2-report.md </br>
+  |    </br>
+  |</br>
+  |</br>
+  |-- app_files       </br>          [//]: # To be added </br>
+  |</br>
+  |</br>
 
 ## Desription
 This repository (currently) includes README.md file and written reports folder. 
