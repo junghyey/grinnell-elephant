@@ -32,7 +32,7 @@ Root
 ```
 ## Desription
 This repository (currently) includes README.md file and written_reports folder. 
-#### README.MD
+#### README.md
 Front face of the repo. Contains project idea, goals, repository layout and a link to Trello currently.
 #### Written Reports
 The written_reports folder will contain all the reports for milestone submission. Currently it has only milestone-2-report.md.
