@@ -26,7 +26,7 @@ Root
   |   
   |
   |
-  |--app_files                       # To be added         
+  |-- app_files                       # To be added         
   |
   |
 ```
