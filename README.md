@@ -31,11 +31,11 @@ Root
   |
 ```
 ## Desription
-This repository (currently) includes README.md file and written reports folder. 
+This repository (currently) includes README.md file and written_reports folder. 
 #### README.MD
 Front face of the repo. Contains project idea, goals, repository layout and a link to Trello currently.
 #### Written Reports
-The written reports folder will contain all the reports for milestone submission. Currently it has only milestone-2-report.md.
+The written_reports folder will contain all the reports for milestone submission. Currently it has only milestone-2-report.md.
 
 # Issue Tracking Tool
 Include a link to your issue tracking tool: [Elephant Dev Board🐘💻](https://trello.com/b/4KAD6ca1/elephant-dev-board-%F0%9F%90%98%F0%9F%92%BB)
