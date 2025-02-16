@@ -23,11 +23,12 @@ Root
   |
   |-- written_reports/
   |   |-- milestone-2-report.md 
-  |   
   |
-  |
-  |-- app_files                       # To be added         
-  |
+  |-- Elephant
+  |-- ElephantWidget 
+  |-- ElephantUITests
+  |-- ElephantTests
+  |-- Elephant.xcodeproj        
   |
 ```
 ## Desription
