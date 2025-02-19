@@ -22,7 +22,9 @@ Root
   |-- README.md 
   |
   |-- written_reports/
-  |   |-- milestone-2-report.md 
+  |   |-- milestone-2-report.md
+  |   |-- sprint1_reports/
+  |       |--sprint1_plan_report.md         # this is the page we have sprint1 planning report
   |
   |-- Elephant
   |-- ElephantWidget 
