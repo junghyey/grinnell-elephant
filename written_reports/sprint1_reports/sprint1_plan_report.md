@@ -54,6 +54,6 @@ These are not exhaustive list, please: ***Refer to the Issue board (Trello)***
 
 ## Issue Tracker
 1. We have shared our Trello Elephant Development Board with our instructor and mentor, assigning tasks to each team member with clear deadlines. 
-2. We also have labels to categorize the tasks and label for sprint for extra clarification.
+2. We also have labels to categorize the tasks and label for sprint for extra clarification. (ex: which task should be recorded in sprint journal vs. user requirement document)
 3. The results of our sprint planning are tracked by our ‘Sprint1’ goals and transferred to ‘in progress’ once the task is picked up and moved over to ‘done’ once completed.
 4. For the tasks that cannot be proceeded by the dependencies such as ITS tech issues, those tasks are moved to On Hold list.
