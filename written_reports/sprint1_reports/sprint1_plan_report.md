@@ -35,12 +35,12 @@ Since it is our first time using Swift and Xcode, our primary focus is learning 
 3. Design Initial App & Collectible System  (Assigned to All)
    - Brainstorm Collectible system ideas (How users will earn collectibles?)
    - Brainstorm design ideas for collectibles (ex:savana theme..or etc) and widget features
-4. Build & Refine Paper Prototype 
-  - Finish initial version of paper prototype (details refer to Trello description)  (Assigned to All)
-  - Ask 3 stakeholders outside the class  (Assigned to Hyeyun and Gabby)
-  - Get feedbacks from 3 stakeholders outside the class  (Assigned to All)
+4. Build & Refine Paper Prototype
+   - Finish initial version of paper prototype (details refer to Trello description)  (Assigned to All)
+   - Ask 3 stakeholders outside the class  (Assigned to Hyeyun and Gabby)
+   - Get feedbacks from 3 stakeholders outside the class  (Assigned to All)
 5. Improve Team Environment  (Assigned to All)
-  - Get Dinner together
+   - Get Dinner together
 
 ## Issue Tracker
 1. We have shared our Trello Elephant Development Board with our instructor and mentor, assigning tasks to each team member with clear deadlines. 
