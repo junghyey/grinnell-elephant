@@ -24,7 +24,7 @@ Since it is our first time using Swift and Xcode, our primary focus is learning 
 3. Design Initial App & Collectible System
 4. Build & Refine Paper Prototype
 5. Refine User Requirements
-6. Improve Team Environment
+7. Improve Team Environment
 
 ## Task Breakdown
 ***Refer to the Issue board (Trello)***
@@ -37,7 +37,8 @@ Since it is our first time using Swift and Xcode, our primary focus is learning 
    - Set up blank project in the github  (Assigned to Candice)
 3. Design Initial App & Collectible System  (Assigned to All)
    - Brainstorm Collectible system ideas (How users will earn collectibles?)
-   - Brainstorm design ideas for collectibles (ex:savana theme..or etc) and widget features
+   - Brainstorm design ideas for collectibles (ex:savana theme..or etc) and widget features.
+   - Create storyboards to visualize human-human interaction (Assigned to all)
 4. Build & Refine Paper Prototype
    - Finish initial version of paper prototype (details refer to Trello description)  (Assigned to All)
    - Ask 3 stakeholders outside the class  (Assigned to Hyeyun and Gabby)
