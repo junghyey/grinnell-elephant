@@ -15,22 +15,32 @@ Since it is our first time using Swift and Xcode, our primary focus is learning 
 6. Fix paper prototyping based on the feedbacks: 3 hours
 
 
-## Goals
-
-1. Read documentation for Swift and WidgetKit (Try out couple examples in the Xcode)
-2. Set up Xcode
-3. Set up blank project in the github
-4. Collect ideas for possible collectible system
-5. Collect possible designs for the widget features
-6. Team bonding activity and team feedback session
-7. Fix prototype based on the reviews from at least 3 stakeholders for review of paper prototype
+## Goals 
+**Outcomes (highlevel) we want to Achieve**
+1. Learn Swift and WidgetKit Basics
+2. Set Up Developer Environment
+3. Design Initial App & Collectible System
+4. Build & Refine Paper Prototype
+5. Improve Team Environment
 
 ## Task Breakdown
-Refer to the Issue board (Trello)
-
-## Assginment
-
-
+***Refer to the Issue board (Trello)***
+1. Learn Swift and WidgetKit Basics (Assigned to All)
+   - Read Swift Documentation
+   - Read Widgetkit Documentation
+   - Try out Swift & Widgekeit Examples in Xcode
+2. Set Up Developer Environment
+   - Install Xcode   (Assigned to All)
+   - Set up blank project in the github  (Assigned to Candice)
+3. Design Initial App & Collectible System  (Assigned to All)
+   - Brainstorm Collectible system ideas (How users will earn collectibles?)
+   - Brainstorm design ideas for collectibles (ex:savana theme..or etc) and widget features
+4. Build & Refine Paper Prototype 
+  - Finish initial version of paper prototype (details refer to Trello description)  (Assigned to All)
+  - Ask 3 stakeholders outside the class  (Assigned to Hyeyun and Gabby)
+  - Get feedbacks from 3 stakeholders outside the class  (Assigned to All)
+5. Improve Team Environment  (Assigned to All)
+  - Get Dinner together
 
 ## Issue Tracker
 We have shared our Trello Elephant Development Board with our instructor and mentor, assigning tasks to each team member with clear deadlines. 
