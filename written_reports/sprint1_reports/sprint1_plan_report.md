@@ -27,7 +27,8 @@ Since it is our first time using Swift and Xcode, our primary focus is learning 
 7. Improve Team Environment
 
 ## Task Breakdown
-***Refer to the Issue board (Trello)***
+These are not exhaustive list, please: ***Refer to the Issue board (Trello)***
+
 1. Learn Swift and WidgetKit Basics (Assigned to All)
    - Read Swift Documentation
    - Read Widgetkit Documentation
