@@ -13,6 +13,8 @@ Since it is our first time using Swift and Xcode, our primary focus is learning 
 4. Create paper prototyping: 4 hours
 5. Demoing and getting feedback from stakeholders: 1 hour per one stakeholder
 6. Fix paper prototyping based on the feedbacks: 3 hours
+7. Revise the user requirements: 3 hours
+8. Write up for the Sprint1: 3 hours
 
 
 ## Goals 
@@ -21,7 +23,8 @@ Since it is our first time using Swift and Xcode, our primary focus is learning 
 2. Set Up Developer Environment
 3. Design Initial App & Collectible System
 4. Build & Refine Paper Prototype
-5. Improve Team Environment
+5. Refine User Requirements
+6. Improve Team Environment
 
 ## Task Breakdown
 ***Refer to the Issue board (Trello)***
@@ -39,8 +42,12 @@ Since it is our first time using Swift and Xcode, our primary focus is learning 
    - Finish initial version of paper prototype (details refer to Trello description)  (Assigned to All)
    - Ask 3 stakeholders outside the class  (Assigned to Hyeyun and Gabby)
    - Get feedbacks from 3 stakeholders outside the class  (Assigned to All)
-5. Improve Team Environment  (Assigned to All)
+5. Refine User Requirements
+   - Move previous user requirements as markdown to keep track of changes (Assigned to Hyeyun & Mae)
+   - Refine the user reqruiements based on the feedbacks from the peers in the proposal (Assigned to all)
+7. Improve Team Environment  (Assigned to All)
    - Get Dinner together
+   - Group feedback session
 
 ## Issue Tracker
 1. We have shared our Trello Elephant Development Board with our instructor and mentor, assigning tasks to each team member with clear deadlines. 
