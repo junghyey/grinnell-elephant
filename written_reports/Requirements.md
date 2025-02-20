@@ -33,7 +33,7 @@ Elephant supports several different user roles to include different usage:
 ## Future User Role: 
 - Team: For sharing wellness challenges with others.
 
-
+---
 
 # 2. User Personas and User stories (functional requirements) 
 
@@ -74,13 +74,15 @@ She knows how to use basic functions in laptop. She lives alone in a suburban ar
 - As Plankton, I need gentle activity or movement reminders so that I can incorporate physical activity or easy movement in my busy lifestyle.
 - As Plankton, I need a way to track small goals for a study session so I can stay motivated and avoid not completing my work.
 
---
+---
+
 # 3. Nonfunctional Requirements
 1. **Security & Privacy**: Since we are using people’s data, security and privacy are concerning. There must be some ways to protect users’ information. We need to encrypt the user data and personal health information (such as medications) must be stored with HIPAA regulation [1].  
 2. **Accessibility**: We need to make sure our app is free, available and accessible to all (MacOS user) people regardless of their background including people with disabilities. For example, screen readers high-contrast mode for photosensitivity, or black/white versions. We also aim to support languages other than English to make it accessible to non-English speakers. 
 3. **Compatibility**: Since we are developing an app for MacBooks, we need to make it compatible with all MacOS versions not only the specific ones. 
 
---
+---
+
 # 4. External Requirements
 1. The product must be robust against errors that can reasonably be expected to occur, such as invalid user input
    - We need to implement structured/standardized error handling for errors such as invalid input, crashes or connectivity problems.
@@ -96,7 +98,7 @@ She knows how to use basic functions in laptop. She lives alone in a suburban ar
    - MVP should not take up more than 500 MB as comparable product. Finch is around 477.6MB in the app store [3].
    - This MVP should have a structured interface that meets the needs of different clients with differences considered. The interface should be simple to understand with the necessary features in an organized and aesthetic manner.  Adding extra features such as compatibility with Apple accessories and token exchange with friends will be implemented as the product evolves and if time is available.
 
---
+---
 
 # 5. Scope and Feature List 
 1. Major features:
@@ -126,7 +128,7 @@ She knows how to use basic functions in laptop. She lives alone in a suburban ar
 - Complex algorithms to suggest ideal wellness routine
 - Mobile version 
 
---
+---
 
 # 6. References (ACM Format)
 [1] Apple. 2024. Health App & Privacy. Apple Inc. Retrieved February 4, 2025, from https://www.apple.com/legal/privacy/data/en/health-app/#:~:text=Apple%20will%20maintain%20the%20Health,data%20you%20share%20with%20them. 
