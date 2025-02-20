@@ -33,7 +33,7 @@ Elephant supports several different user roles to include different usage:
 ## Future User Role: 
 - Team: For sharing wellness challenges with others.
 
---
+
 
 # 2. User Personas and User stories (functional requirements) 
 
