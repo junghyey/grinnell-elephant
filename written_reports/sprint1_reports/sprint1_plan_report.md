@@ -54,15 +54,16 @@ These are not exhaustive list, please: ***Refer to the Issue board (Trello)***
 
 ## Assignments & Roles
 This assignment shows a person's major responsiblity throughout the project (role).
+
 | Role                         | Responsibilities |
 |------------------------------|-----------------|
 | **Project Manager (Hyeyun)**    | Oversees sprint progress, manages deadlines/Trello board, organizes meetings, and ensures team coordination. |
-| **Lead Developer (Candice)** | Handles technical setup, coding standards, and supports development in Swift and Xcode. |
+| **Lead Developer (Candice)** | Oversees overall implementation, handles technical setup, coding standards, and supports development in Swift and Xcode. |
 | **Lead Designer (Mae)** | Responsible for design-related tasks (e.g., character design, coloring, paper prototyping) and brainstorming app ideas. |
-| **Documentation & Reporting Lead (Gabby)** | Checks sprint reports, updates documentation, and maintains other reports. |
+| **Documentation & Reporting Lead (Gabby)** | Reviews and updates sprint reports, maintains documentation, and ensures clear communication of progress. |
 
 **This table does not mean each person is entitled to their role nor they should be the only one doing the task.**
-This is a guide to who will lead each task when we work together. The role might be subject to change.
+We should all collaborate to every task but this table shows who should lead each task since there are lots of tasks and assignments can be confusing.
 
 ## Issue Tracker
 1. We have shared our Trello Elephant Development Board with our instructor and mentor, assigning tasks to each team member with clear deadlines. 
