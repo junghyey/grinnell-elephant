@@ -13,14 +13,10 @@ Students may use this app to avoid just going on their phones during study break
 Overall, the purpose of this widget is to promote wellness in the lives of busy people working long hours in front of their computer screens. 
 
 ## Related Products: 
-
-Finch: Self-care pet – mobile app that gamifies self-care through raising pets [3] 
-
+- Finch: Self-care pet – mobile app that gamifies self-care through raising pets [3] 
  1. Features: provides instructions for self-care routines, users collect tokens from completing routines to raise a pet or customize it 
  2. Limitations: routines are general (e.g. breathing, reflections, acts of kindness), the mobile format might lead to distractions. Elephant can be integrated into the user’s work environment as a MacOS widget. 
-
-Time Out: a minimalist customizable timer webapp [2] 
-
+- Time Out: a minimalist customizable timer webapp [2] 
 1. Features: allows customization of working and break intervals, detailed summaries on laptop use
 
 ## Minimal User Role:   
@@ -121,12 +117,12 @@ She knows how to use basic functions in laptop. She lives alone in a suburban ar
     - Connect Friends
     - Share results (achievements, activities, etc.)
   - Additional collectibles: accessories to customize collectible characters 
-3. Out of scope: 
-- Sensing biometrics using Apple Watch and using that data.
-- Third party app synchronization such as calendar
-- Support Windows version
-- Complex algorithms to suggest ideal wellness routine
-- Mobile version 
+3. Out of scope:
+ - Sensing biometrics using Apple Watch and using that data.
+ - Third party app synchronization such as calendar
+ - Support Windows version
+ - Complex algorithms to suggest ideal wellness routine
+ -  Mobile version 
 
 ---
 
