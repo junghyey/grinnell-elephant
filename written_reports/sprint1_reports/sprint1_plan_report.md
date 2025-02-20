@@ -57,7 +57,7 @@ This assignment shows a person's major responsiblity throughout the project (rol
 
 | Role                         | Responsibilities |
 |------------------------------|-----------------|
-| **Project Manager (Hyeyun)**    | Oversees sprint progress, manages deadlines/Trello board, organizes meetings, and ensures team coordination. |
+| **Project Manager (Hyeyun)**    | Oversees sprint progress and reports, manages deadlines/Trello board, organizes meetings, and ensures team coordination. |
 | **Lead Developer (Candice)** | Oversees overall implementation, handles technical setup, coding standards, and supports development in Swift and Xcode. |
 | **Lead Designer (Mae)** | Responsible for design-related tasks (e.g., character design, coloring, paper prototyping) and brainstorming app ideas. |
 | **Documentation & Reporting Lead (Gabby)** | Reviews and updates sprint reports, maintains documentation, and ensures clear communication of progress (grammar, wording..etc..).  |
