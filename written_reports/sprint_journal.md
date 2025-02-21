@@ -55,10 +55,24 @@ Add a section to your Sprint Journal with:
 1. Are there any features that could be important to some people (for accessibility ex)
 
 
-
-
-
 ### Review 1
+#### Prototype
+- draw some of the collectibles (assuming user already have some)
+- not having enough collectible to buy
+- add price for pack/collectible
+- notifications for pomodoro, wellness reminders
+- keyboard to type to customize reminders
+- light mode
+- check mark for selected feature/setting
+- be able to add task in the widget
+- how pomodoro/stopwatch notifications work (user manual in the beginning, which continues to exist in a link)
+
+#### Questions
+- Confusing: difference between modes
+- Should be able to add items in the widget and in the settings
+- Collectible pages should have number of tokens and the price, draw things on
+- What makes you want to use: different modes to choose from, the widget part (easily accessible), todolist stays
+- Barriers: only on MAC, notifications may become an issue (but if it's customizable it should be fine, and how intrusive it is)
 
 #### Revisions
 
