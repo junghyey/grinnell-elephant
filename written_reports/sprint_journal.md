@@ -33,12 +33,29 @@ Add a section to your Sprint Journal with:
 
 ### Questions for testers
 
-1. Are there any designs that are non-intuitive or confusing? If yes, what are them, and how do you think we can improve?
-2. Are there any additional functions you would like to see in the app?
+### Usability
+1. Is it clear how you would set a wellness reminder? If not, what confused you?
+2. Are there any designs that are non-intuitive or confusing? If yes, what are them, and how do you think we can improve?
+
+### Emotional Engagment:
+1. Did any particular feature or aspect of the interface stand out as especially enjoyable or frustrating?
+
+### Potential Usage
+1. What would motivate you to continue using this app over time?
+2. Are there any barriers that might stop you from adopting this app?
 3. As a potential user, what functions of the app would make you interested in using it?
-4. Is it clear how you would set a wellness reminder? If not, what confused you? (Usability)
-5. What would motivate you to continue using this app over time? (potential usage)
-6. Would you prefer a simpler or more feature-rich experience? Why? (comparing with other products)
+
+### Suggestions
+1. Are there any additional functions you would like to see in the app?
+   
+### Comparison
+1. Would you prefer a simpler or more feature-rich experience? Why?
+
+### Accesibility
+1. Are there any features that could be important to some people (for accessibility ex)
+
+
+
 
 
 ### Review 1
@@ -46,6 +63,8 @@ Add a section to your Sprint Journal with:
 #### Revisions
 
 ### Review 2 
+
+
 
 
 #### Revisions
