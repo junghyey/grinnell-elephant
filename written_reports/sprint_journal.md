@@ -56,12 +56,24 @@ Add a section to your Sprint Journal with:
 
 
 ### Review 1
+Peer: Ellie Seehorn
+
+A narrative describing the test.
+What roles did each team member play during the test?
+Which user stories were activated?
+Additional notes describing the session, e.g. observations of the test user's behavior.
+The feedback you got from the tester
+Notes on how to revise your testing procedure for the next user
+Not only will your prototype change, but also, you might choose to change the way you present it to your user.
+other changes your team decided to make from your own thoughts and ideas from the testing session
+other things you added to your prototype, not necessarily based on the testing session
+
+Include one or more photos of your revised prototype where the difference between the original and revised version can be plainly seen
 #### Prototype
 - draw some of the collectibles (assuming user already have some)
 - not having enough collectible to buy
 - add price for pack/collectible
 - notifications for pomodoro, wellness reminders
-- keyboard to type to customize reminders
 - light mode
 - check mark for selected feature/setting
 - be able to add task in the widget
@@ -83,6 +95,7 @@ Add a section to your Sprint Journal with:
    - Added different characters to unlock on the page
 - Widget
    - Made the widget character updatable (leave blank)
+   - Added interface in light mode
 - Wellness checklist
    - Added the option to customize wellness reminders on the widget
    - Changed title from token checklist -> wellness checklist
