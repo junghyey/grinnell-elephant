@@ -31,6 +31,12 @@ Add a section to your Sprint Journal with:
 
 (Refer to part 4 and part 5)
 
+### Questions for testers
+
+1. Are there any designs that are non-intuitive or confusing? If yes, what are them, and how do you think we can improve?
+2. Are there any additional functions you would like to see in the app?
+3. As a potential user, what functions of the app would make you interested in using it?
+
 
 ### Review 1
 
