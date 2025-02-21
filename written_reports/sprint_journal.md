@@ -36,6 +36,9 @@ Add a section to your Sprint Journal with:
 1. Are there any designs that are non-intuitive or confusing? If yes, what are them, and how do you think we can improve?
 2. Are there any additional functions you would like to see in the app?
 3. As a potential user, what functions of the app would make you interested in using it?
+4. Is it clear how you would set a wellness reminder? If not, what confused you? (Usability)
+5. What would motivate you to continue using this app over time? (potential usage)
+6. Would you prefer a simpler or more feature-rich experience? Why? (comparing with other products)
 
 
 ### Review 1
