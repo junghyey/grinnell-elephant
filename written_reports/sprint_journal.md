@@ -75,6 +75,20 @@ Add a section to your Sprint Journal with:
 - Barriers: only on MAC, notifications may become an issue (but if it's customizable it should be fine, and how intrusive it is)
 
 #### Revisions
+- Collectible pages
+   - Added collectible characters on the collectibles page
+   - Added locks to distinguish whether collectibles are unlocked
+- Unlocking collectible
+   - Added price
+   - Added different characters to unlock on the page
+- Widget
+   - Made the widget character updatable (leave blank)
+- Wellness checklist
+   - Added the option to customize wellness reminders on the widget
+   - Changed title from token checklist -> wellness checklist
+- Keyboard added
+- User manual added
+   - Can be accessed first time opening the app or through homepage
 
 ### Review 2 
 
