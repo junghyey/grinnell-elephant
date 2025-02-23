@@ -1,16 +1,16 @@
-Initial Version (02/19)
+Initial Version (02/23)
 
 # 1. Product Description 
 These days people spend a lot of time on digital services such as Netflix, VSCode, Google Doc, etc. 
-Most of the tasks are completed in front of computers. Sitting for a long-time using computers can lead to various health concerns such as eye dryness and back pain (bad posture). Elephant can help address these modern workplace wellness challenges with a motivating environment.   
+Most of the tasks are completed in front of computers. Sitting for a long-time using computers can lead to various health concerns such as eye dryness and back pain (bad posture). Elephant can help address these modern workplace wellness challenges with a motivating environment.
 
 ***Elephant: A Wellness Trunk*** is an extension/widget for laptops that acts as a reminder for users to take wellness breaks amidst tasks. 
 These breaks will remind the user to perform wellness tasks such as stretching, drinking water, meditation, walking breaks, etc. 
-Our target audience is people whose working needs are not met by existing products (e.g. pomodoro, to-do list), are encouraged by an aesthetic or gamified system, and want to incorporate more wellness into their working routine.   
+Our target audience is people whose working needs are not met by existing products (e.g. pomodoro, to-do list websites), are encouraged by an aesthetic or gamified system, and want to incorporate more wellness into their working routine.   
 By performing wellness activities listed on the widget, users will gain tokens to draw new accessories and characters for their widget.
 This widget is versatile and can cater to different needs related to time and health. 
 Students may use this app to avoid just going on their phones during study breaks and office workers may use it to get some light exercise in. 
-Overall, the purpose of this widget is to promote wellness in the lives of busy people working long hours in front of their computer screens. 
+Overall, the purpose of this widget is to promote wellness in the lives of busy people working long hours in front of their computer screens and/or simply want to gamify wellness habits into their daily routines. 
 
 ## Related Products: 
 - Finch: Self-care pet – mobile app that gamifies self-care through raising pets [3] 
@@ -58,7 +58,7 @@ She knows how to use basic functions in laptop. She lives alone in a suburban ar
 ### Karen’s User Stories:
 - As Karen, I need a tool that gives me clear and loud reminders so that I can maintain my medication schedule.
 - As Karen, I need a tool with a clear tutorial so that I can use and adapt to the application without being overwhelmed.
-- As Karen, I need a simple option to check my medication adherence & condition each day so that I can report my health routines to doctor.
+- As Karen, I need a simple option to check my medication adherence & condition each day so that I can report my health routines to my doctor.
 - As Karen (who does not trust technology), I need to know fully what information the app is collecting so that I feel secure about my private information. 
 
 ## (4) **Mae’s Persona**
@@ -73,8 +73,8 @@ She knows how to use basic functions in laptop. She lives alone in a suburban ar
 ---
 
 # 3. Nonfunctional Requirements
-1. **Security & Privacy**: Since we are using people’s data, security and privacy are concerning. There must be some ways to protect users’ information. We need to encrypt the user data and personal health information (such as medications) must be stored with HIPAA regulation [1].  
-2. **Accessibility**: We need to make sure our app is free, available and accessible to all (MacOS user) people regardless of their background including people with disabilities. For example, screen readers high-contrast mode for photosensitivity, or black/white versions. We also aim to support languages other than English to make it accessible to non-English speakers. 
+1. **Security & Privacy**: Since we are using people’s data, maintaining users' security and privacy is one of our top priorities. Our implementation assures our commitment to protect users’ information. We need to encrypt the user data and personal health information (such as medications) must be stored with HIPAA regulation [1].  
+2. **Accessibility**: We need to make sure our app is free, available, and accessible to all (MacOS users) people, especially catering specific features for people with disabilities. For example, screen readers high-contrast mode for photosensitivity, or black/white versions. We also aim to support languages other than English to make it accessible to non-English speakers.
 3. **Compatibility**: Since we are developing an app for MacBooks, we need to make it compatible with all MacOS versions not only the specific ones. 
 
 ---
@@ -82,16 +82,16 @@ She knows how to use basic functions in laptop. She lives alone in a suburban ar
 # 4. External Requirements
 1. The product must be robust against errors that can reasonably be expected to occur, such as invalid user input
    - We need to implement structured/standardized error handling for errors such as invalid input, crashes or connectivity problems.
-   - The app should detect when the device is connected to or not connected to the Wi-Fi. If it is, the app should function as is. If not, we want the app to inform the user (“Connection not found. Can't sent notifications”) and only allow a timer mode. We need to queue for the missed notifications upon reconnection.
+   - The app should detect when the device is connected to or not connected to the Wi-Fi. If it is, the app should function as is. If not, we want the app to inform the user (“Connection not found. Can't send notifications”) and only allow for a standard timer mode. We need to queue for the missed notifications upon reconnection.
    - The app should limit user input to a reasonable number of characters (i.e. 150+ is too many characters for a reminder).
    - A feature without bug-checking would not be included even if it seems fine.
 2. The product is a stand-alone application (AppStore), we need to provide a reasonable means for others to easily download, install, and run it.
    - The app will be on the AppStore available for download for free.
-   - However, our team is comprised of both people who own a MacBook and people who don’t. With this in mind, we are considering developing with universal users in mind
+   - However, our team is comprised of both people who own a MacBook and people who don’t. With this in mind, we are considering developing with universal users in mind.
 3. The code should be well-documented to streamline the process of enhancements/updates without hassle.
 4. The scope of the project must match the resources you have, the number of team members assigned, and the time available.
    - There are 4 people in our team, and we have one semester to develop this product. Given these constraints, our product should get to the stage of MVP (minimal viable product). In the case of our product, an MVP would be an App/Widget that pushes notifications to the user reminding and suggesting wellness breaks.
-   - MVP should not take up more than 500 MB as comparable product. Finch is around 477.6MB in the app store [3].
+   - MVP should not take up more than 500 MB as a comparable product. Finch is around 477.6MB in the app store [3].
    - This MVP should have a structured interface that meets the needs of different clients with differences considered. The interface should be simple to understand with the necessary features in an organized and aesthetic manner.  Adding extra features such as compatibility with Apple accessories and token exchange with friends will be implemented as the product evolves and if time is available.
 
 ---
@@ -100,10 +100,12 @@ She knows how to use basic functions in laptop. She lives alone in a suburban ar
 1. Major features:
    - MacOS widget UI
       - Customizable size
+      - Customizable color theme 
       - Dark/light mode support with high contrast options
-      -  Black/white mode for those with color blindness
+      - Black/white mode for those with color blindness
    - Push notifications to remind users to take wellness breaks
       - If “Do-not-disturb scheduling”, hold the reminders
+      - Pomodoro timer notifications
       - Offline notification queueing
     - Customization of reminder notifications and wellness breaks
     - Tokens that can be exchanged for collectibles
