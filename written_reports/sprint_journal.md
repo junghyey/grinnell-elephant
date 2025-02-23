@@ -183,7 +183,8 @@ Hannah Kim (
 
 
 ## Storyboard
-[be reminded.pdf](https://github.com/user-attachments/files/18933143/be.reminded.pdf)
+[CSC324_elephant_storyboard.pdf](https://github.com/user-attachments/files/18933149/CSC324_elephant_storyboard.pdf)
+
 
 ## Cider Technique
 
