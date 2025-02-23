@@ -124,13 +124,24 @@ other things you added to your prototype, not necessarily based on the testing s
    - Can be accessed first time opening the app or through homepage
 #### Pictures
 
-(Initial Version)
-<img src="https://github.com/user-attachments/assets/fd607f3b-41af-49e4-ad4a-81e1227f787d" width="100" height="100">
-<img src="https://github.com/user-attachments/assets/5790e653-e824-45b8-a9a1-6fe2f9349825" width="100" height="100">
-<img src="https://github.com/user-attachments/assets/4e79bfb5-67d6-4ba7-9910-e75aff4ea039" width="100" height="100">
-<img src="https://github.com/user-attachments/assets/d9db31b7-a20a-4fdf-91a9-7a969c3057da" width="100" height="100">
-<img src="https://github.com/user-attachments/assets/5544fca4-66c9-46e6-a193-07b08c840dc2" width="100" height="100">
-<img src="https://github.com/user-attachments/assets/62e3fa8f-3df5-4a85-b491-e2f98d69694f" width="100" height="100">
+##### Initial Version 
+
+<img src="https://github.com/user-attachments/assets/fd607f3b-41af-49e4-ad4a-81e1227f787d" width="150" height="150">
+<img src="https://github.com/user-attachments/assets/5790e653-e824-45b8-a9a1-6fe2f9349825" width="150" height="150">
+<img src="https://github.com/user-attachments/assets/4e79bfb5-67d6-4ba7-9910-e75aff4ea039" width="150" height="150">
+<img src="https://github.com/user-attachments/assets/d9db31b7-a20a-4fdf-91a9-7a969c3057da" width="150" height="150">
+<img src="https://github.com/user-attachments/assets/5544fca4-66c9-46e6-a193-07b08c840dc2" width="150" height="150">
+<img src="https://github.com/user-attachments/assets/62e3fa8f-3df5-4a85-b491-e2f98d69694f" width="150" height="150">
+
+<img src="https://github.com/user-attachments/assets/145557ca-6dd1-4fe8-9a5c-3c598fdd65aa" width="150" height="150">
+<img src="https://github.com/user-attachments/assets/62041e92-c0cf-4587-9a13-3acb06deee47" width="150" height="150">
+<img src="https://github.com/user-attachments/assets/e4f0a4d4-136f-41b2-955f-a22e549d461a" width="150" height="150">
+<img src="https://github.com/user-attachments/assets/e25cffe7-ab9d-4f90-b4cd-b2a80a0e51df" width="150" height="150">
+<img src="https://github.com/user-attachments/assets/01c3c1cd-ca23-498b-bf73-0cc016d0b13e" width="150" height="150">
+<img src="https://github.com/user-attachments/assets/bc8d8c65-5c9b-441a-a4aa-793c4810788c" width="150" height="150">
+<img src="https://github.com/user-attachments/assets/5d550ca7-41a4-423e-975a-62724c03a419" width="150" height="150">
+<img src="https://github.com/user-attachments/assets/f47a56de-d861-4c43-8cb2-fe29794232a7" width="150" height="150">
+
 
 
 
