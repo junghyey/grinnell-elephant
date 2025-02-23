@@ -83,15 +83,13 @@ She knows how to use basic functions in laptop. She lives alone in a suburban ar
 - Alternative flow: (Remember to include alternative flow for recoverable situations where the use case can succeed, and for non-recoverable situations where the use case fails, Alternative flow should be a step-by-step for each alternative case, not simply a list of different cases where things could go wrong)
 
 ### Use case 2
-- Actor: a user with visual accessibility needs
-- Goal: Who is this particular user, and what do they want to do? Which user role(s) can trigger this use case? All the user personas in the same role will be able to trigger use cases associated with that role, so you can drop the details of the user persona when you write use cases. Goal should be connected to one or more user stories from your requirements document. Make a note of which user story or stories are connected to this use case.
-- Trigger: What causes the use case to begin?
-- Preconditions: What must be true before the use case can begin?
-- Postconditions: What will be true once the use case is complete?
-- Flow: List the steps through the user interface to accomplish the goal
-- Alternative flow: Remember to include alternative flow for recoverable situations where the use case can succeed, and for non-recoverable situations where the use case fails.
-- Alternative: flow should be a step-by-step for each alternative case, not simply a list of different cases where things could go wrong.
-Note that alternative flow does NOT describe bugs in your product.
+- Actor: User(s) who want to change themes/mode settings due to visual accessibility needs or just preference. Users Plankton and Hughie would utilize these settings to accommodate their accessibility or visual preferences.
+- Goal: Plankton would utilize this feature to ensure the visual aspect of the app is not harmful to their photosensitivity. Hughie would utilize these settings to adjust for their aesthetic preferences.
+- Trigger: The user finds the app aesthetic/color choices to be negatively impacting their experience using the app.
+- Preconditions: The settings page and app must support dark and light modes, along with various (at least a few) color schemes with contrast.
+- Postconditions: Users can support their needs and wants regarding the theme and mode and have less to no more negative experiences using the app.
+- Flow: The User opens the app (manually or through the widget), and then navigates to the settings page. Once in the settings pages, the User can choose between light or dark mode, and right below that should be theme choices. Once the user has made these choices, changes on the app and widget should be applied immediately.
+- Alternative flow: The interface may not update immediately after the User saves the theme/mode settings. If it does not update, the User could have an option to report it or the app should detect and ask the User to restart the app.
 
 ---
 
