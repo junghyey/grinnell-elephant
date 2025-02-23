@@ -15,7 +15,7 @@ Add a section to your Sprint Journal with:
 - You might also want to include photos of your team working on the prototype! (optional)
 - Enumerate three use cases that the prototype models
 
-## Use cases
+## Use cases (this should go to user requirements)
 
 ### Use case 1
 - Actor: a regular user who wants to customize their wellness message and notifications
@@ -55,38 +55,64 @@ Add a section to your Sprint Journal with:
 1. Are there any features that could be important to some people (for accessibility ex)
 
 
-### Review 1
+### Review 1 (Practice)
 Peer: Ellie Seehorn
 
-A narrative describing the test.
-What roles did each team member play during the test?
-Which user stories were activated?
-Additional notes describing the session, e.g. observations of the test user's behavior.
-The feedback you got from the tester
-Notes on how to revise your testing procedure for the next user
-Not only will your prototype change, but also, you might choose to change the way you present it to your user.
+1. A narrative describing the test.
+2. What roles did each team member play during the test?
+| Name    | Role |
+| -------- | ------- |
+| Candice  | Writer    |
+| Gabby | Demoing the prototype |
+| Mae    | Demoing the prototype    |
+|Hyeyun | Ask questions & explanation|
+
+3. Which user stories were activated?
+- Karen's user story who is not good at technology was activated (partially)
+- The tester suggested having a quick manual or tutorial to know about this app, which was part of Karen's user stories
+
+4. Additional notes describing the session, e.g. observations of the test user's behavior.
+- The tester was confused about what was going on, which suggest we need more clear and intuitive prototype session.
+  
+5. The feedback you got from the tester
+
+#### Direct Feedback
+- Draw some of the collectibles (assuming user already have some)
+- Unclear and insuffcient pages for unlocking the collectibles using tokens.
+- Add a feature that shows how much tokens are necessary for each collectible.
+- If pomodore ends, give a notification of pomodore ended
+- Set intervals when you want to get reminder
+- Check mark for selected feature/setting
+- Be able to add task in the widget
+- How pomodoro/stopwatch notifications work (user manual in the beginning, which continues to exist in a link)
+- Wanted to ensure her todolist stays even she turn off the mac (i.e. does not reset) 
+
+#### Based on Questions we asked:
+- Are there any designs that are non-intuitive or confusing? If yes, what are them, and how do you think we can improve?
+   -  difference between modes (confused about the difference between pomodore and stopwatch mode)
+   -  Should be able to add items in the widget and in the settings
+   -  Collectible pages should have number of tokens and the price, draw things on
+- As a potential user, what functions of the app would make you interested in using it?
+   - Different modes to choose from in one app
+   - the widget part (easily accessible)
+- Are there any barriers that might stop you from adopting this app?
+   - only on MAC, notifications may become an issue (but if it's customizable it should be fine, and how intrusive it is)
+
+6. Notes on how to revise your testing procedure for the next user
+- We need to add manual to alleviate the confusion
+- We need to revise the collectible pages so that it shows what collectibles user has and what are locked.
+- We need to revise the collecible unlocking page so that we have more collecibltes to unlock and how many tokens are necessary and how many tokens we have
+- We need to make two versions for widget: light and dark
+- Being able to add new task in the widget.
+
+7. Not only will your prototype change, but also, you might choose to change the way you present it to your user.
 other changes your team decided to make from your own thoughts and ideas from the testing session
 other things you added to your prototype, not necessarily based on the testing session
+- We decided to give more background information and how the testing sessions will go to the outside stakeholder.
+- We need to be more prepared for which questions we should ask. 
 
-Include one or more photos of your revised prototype where the difference between the original and revised version can be plainly seen
-#### Prototype
-- draw some of the collectibles (assuming user already have some)
-- not having enough collectible to buy
-- add price for pack/collectible
-- notifications for pomodoro, wellness reminders
-- light mode
-- check mark for selected feature/setting
-- be able to add task in the widget
-- how pomodoro/stopwatch notifications work (user manual in the beginning, which continues to exist in a link)
-
-#### Questions
-- Confusing: difference between modes
-- Should be able to add items in the widget and in the settings
-- Collectible pages should have number of tokens and the price, draw things on
-- What makes you want to use: different modes to choose from, the widget part (easily accessible), todolist stays
-- Barriers: only on MAC, notifications may become an issue (but if it's customizable it should be fine, and how intrusive it is)
-
-#### Revisions
+8. Include one or more photos of your revised prototype where the difference between the original and revised version can be plainly seen
+#### Outline of what revisions we made:
 - Collectible pages
    - Added collectible characters on the collectibles page
    - Added locks to distinguish whether collectibles are unlocked
@@ -103,7 +129,9 @@ Include one or more photos of your revised prototype where the difference betwee
 - User manual added
    - Can be accessed first time opening the app or through homepage
 
+
 ### Review 2 
+Hannah Kim (
 
 
 
