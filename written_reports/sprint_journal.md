@@ -45,14 +45,15 @@ Add a section to your Sprint Journal with:
 
 ### Review 1 (Practice)
 1. About the tester
-Peer: Ellie Seehorn
-Occuptation: Student (CS major, 324 classmate)
-The reason we chose: Ellie is a classmate of 324 and part of not our team.
-Date : 02-21-2025
-Time : During class lab time (11:00pm) and lasted about 20-30 minutes
+Peer: Ellie Seehorn </br>
+Occuptation: Student (CS major, 324 classmate)</br>
+The reason we chose: Ellie is a classmate of 324 and part of not our team.</br>
+Date : 02-21-2025</br>
+Time : During class lab time (11:00pm) and lasted about 20-30 minutes</br>
 Type of the test user: 
 
 2. What roles did each team member play during the test?
+   
 | Name    | Role |
 | -------- | ------- |
 | Candice  | Writer    |
