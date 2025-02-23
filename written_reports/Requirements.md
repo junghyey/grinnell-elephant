@@ -84,6 +84,13 @@ She knows how to use basic functions in laptop. She lives alone in a suburban ar
   
 ---
 
+## Proposal Review Feedback
+- One of our reach goals is making the widget accessible to all laptop devices (not just macOS widget).
+- We will include pomodoro and stopwatch reminder intervals, wellness break activities, and customization for widget features and accessibility.
+- Our widget also must be more focused on wellness habits as achievements for the incentive with the collectible system to avoid use of our app simply for the tokenized system.
+
+---
+
 # 3. Nonfunctional Requirements
 1. **Security & Privacy**: Since we are using people’s data, maintaining users' security and privacy is one of our top priorities. Our implementation assures our commitment to protect users’ information. We need to encrypt the user data and personal health information (such as medications) must be stored with HIPAA regulation [1].  
 2. **Accessibility**: We need to make sure our app is free, available, and accessible to all (MacOS users) people, especially catering specific features for people with disabilities. For example, screen readers high-contrast mode for photosensitivity, or black/white versions. We also aim to support languages other than English to make it accessible to non-English speakers.
