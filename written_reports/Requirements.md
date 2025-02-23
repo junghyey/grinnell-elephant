@@ -31,8 +31,6 @@ Elephant supports several different user roles to include different usage:
 
 ---
 
----
-
 # 2. User Personas and User stories (functional requirements) 
 
 ## (1) **Gabby’s Persona**
