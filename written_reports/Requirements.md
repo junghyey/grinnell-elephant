@@ -81,7 +81,18 @@ She knows how to use basic functions in laptop. She lives alone in a suburban ar
 - Postcondition: User successfully creates customized wellness message and the app pushes the notification at the desired time
 - Flow: (List the steps through the user interface to accomplish the goal)
 - Alternative flow: (Remember to include alternative flow for recoverable situations where the use case can succeed, and for non-recoverable situations where the use case fails, Alternative flow should be a step-by-step for each alternative case, not simply a list of different cases where things could go wrong)
-  
+
+### Use case 2
+- Actor: a user with visual accessibility needs
+- Goal: Who is this particular user, and what do they want to do? Which user role(s) can trigger this use case? All the user personas in the same role will be able to trigger use cases associated with that role, so you can drop the details of the user persona when you write use cases. Goal should be connected to one or more user stories from your requirements document. Make a note of which user story or stories are connected to this use case.
+- Trigger: What causes the use case to begin?
+- Preconditions: What must be true before the use case can begin?
+- Postconditions: What will be true once the use case is complete?
+- Flow: List the steps through the user interface to accomplish the goal
+- Alternative flow: Remember to include alternative flow for recoverable situations where the use case can succeed, and for non-recoverable situations where the use case fails.
+- Alternative: flow should be a step-by-step for each alternative case, not simply a list of different cases where things could go wrong.
+Note that alternative flow does NOT describe bugs in your product.
+
 ---
 
 ## Proposal Review Feedback
