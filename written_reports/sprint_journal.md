@@ -122,6 +122,7 @@ other things you added to your prototype, not necessarily based on the testing s
 - Keyboard added
 - User manual added
    - Can be accessed first time opening the app or through homepage
+#### Pictures
 
 
 ### Review 2 
