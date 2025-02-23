@@ -190,3 +190,11 @@ Hannah Kim (
 ## Any Revisions to User Requirements
 
 1. Record date & what change you made.
+
+Add a section to your Sprint Journal with the following:
+
+Summarize the feedback from your reviews.
+
+Describe the changes, if any, that you are making to your requirements, user personas, user stories, use cases, and prototype based on these reviews.
+
+Describe your rationale in deciding what changes to make (or not make) based on the reviews
