@@ -72,8 +72,32 @@ She knows how to use basic functions in laptop. She lives alone in a suburban ar
 
 ---
 ## Use cases
- 
+
 ### Use case 1
+- Actor: A new user unfamiliar with the app, tokenized collectible systems, and technology in general, primarily interested in the stopwatch and Pomodoro timers.
+- Goal: any new user can trigger this case to successfully access and use the stopwatch and Pomodoro timer features.
+- Trigger: The user launches the app for the first time and wants to use a time management feature.
+- Precondition: The user has successfully installed the app on their device. Then, the user has navigated to the user manual upon first use and adds the Elephant widget to their sidebar. The app is functioning correctly with no critical errors preventing access.
+- Postcondition: The user can locate and use the stopwatch and Pomodoro timer and has a good understanding on how to start, pause, reset, and adjust settings for both features.
+- Flow: The user first launches the app and the homepage appears with the an inquiry $i$ that guides the user to the manual.
+Once familiarized with the manual, they are introduced to the main features, including the stopwatch and Pomodoro timer on the homepage. The user would select either two options: Stopwatch and Pomodoro Timer.
+Taps on Stopwatch.
+* A large "Start" button appears, along with "Lap" and "Reset" buttons.
+* The user taps "Start," and the stopwatch begins counting.
+* The user taps "Lap" to mark intervals or "Stop" to pause.
+* Tapping "Reset" clears the stopwatch.
+However, if the user decides on using the Pomodoro Timer, they navigate back to the Timers screen and taps on Pomodoro Timer.
+* A default 25-minute session with a 5-minute break is displayed.
+* The user taps "Start", and the timer begins.
+* A notification appears when the session ends, prompting the user to complete a wellness break.
+* The user can adjust session and break durations in settings as described in the user manual.
+The user has now successfully interacted with either the stopwatch or Pomodoro timer and can return to the home screen or exit the app.
+- Alternative flow:
+   - Recoverable situation(s): At any point, if the user is unsure where to go, a Help $i$ button is visible on the home screen. Tapping $i$ brings up a quick tutorial or FAQ explaining timers, token collectible system, task and wellness checklist, etc. In the case a user is unsure What Pomodoro is, the small info button on the homepage directs us to: "Pomodoro Timer" and provides a short description: "Work in focused 25-minute sessions with 5-minute breaks. Customize work and break intervals with the toggle bars below: "
+
+   - Non-recoverable situation: If the app crashes while using a timer, the system attempts to save the session state and reload it when reopened. If it fails to reload, a message appears: "We couldn’t recover your session. Please try again."
+ 
+### Use case 2
 - Actor: a regular user who wants to customize their wellness message and notifications
 - Goal: any regular users can trigger this use case, and this use case is connected to stories of Hughie and Emilio
 - Trigger:
@@ -82,7 +106,7 @@ She knows how to use basic functions in laptop. She lives alone in a suburban ar
 - Flow: (List the steps through the user interface to accomplish the goal)
 - Alternative flow: (Remember to include alternative flow for recoverable situations where the use case can succeed, and for non-recoverable situations where the use case fails, Alternative flow should be a step-by-step for each alternative case, not simply a list of different cases where things could go wrong)
 
-### Use case 2
+### Use case 3
 - Actor: User(s) who want to change themes/mode settings due to visual accessibility needs or just preference. Users Plankton and Hughie would utilize these settings to accommodate their accessibility or visual preferences.
 - Goal: Plankton would utilize this feature to ensure the visual aspect of the app is not harmful to their photosensitivity. Hughie would utilize these settings to adjust for their aesthetic preferences.
 - Trigger: The user finds the app aesthetic/color choices to be negatively impacting their experience using the app.
@@ -91,7 +115,7 @@ She knows how to use basic functions in laptop. She lives alone in a suburban ar
 - Flow: The User opens the app (manually or through the widget), and then navigates to the settings page. Once in the settings pages, the User can choose between light or dark mode, and right below that should be theme choices. Once the user has made these choices, changes on the app and widget should be applied immediately.
 - Alternative flow: The interface may not update immediately after the User saves the theme/mode settings. If it does not update, the User could have an option to report it or the app should detect and ask the User to restart the app.
 
-### Use case 3
+### Use case 4
 - Actor: User(s) who want to utilize the app for the tokenized collectible system and practice improving their wellness habits in the process.
 - Goal: we anticipate many users could fit in this case since the tokenized earning systems comes from doing wellness tasks so we do run the risk of users strictly trying to earn all the collectibles instead of focusing on completing wellness tasks.
 - Trigger this use case? When a user engages with wellness tasks within the app, either out of intrinsic motivation to improve wellness habits or extrinsically to collect rewards.
