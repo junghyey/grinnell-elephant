@@ -205,11 +205,18 @@ Type of the test user: New test user
 Requirements document
 - Added use case for first time users
 
+
+
 6. Notes on how to revise your testing procedure for the next user
-- [placeholder]
+-Added Close button to every feature
+Added next page button in the tutorial
+More directions inthe tutorial
+Notifications
+Being able to add new new list (users can write down) in the widget.
+Token system revise (start with 0 for first time users)
 
 7. Not only will your prototype change, but also, you might choose to change the way you present it to your user.
-- [placeholder]
+- We should give more instruction and explain use case to the tester. (ex: first time user..etc..)
 
 #### Revisions
 
