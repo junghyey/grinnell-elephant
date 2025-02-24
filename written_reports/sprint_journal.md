@@ -169,7 +169,7 @@ Peer: Leah Perlmutter </br>
 Occuptation: Professor of 324</br>
 Date : 02-24-2025</br>
 Time : During class lab time (11:00pm) and lasted about 25-30 minutes</br>
-Type of the test user: 
+Type of the test user: New test user
 
 2. What roles did each team member play during the test?
    
@@ -181,7 +181,7 @@ Type of the test user:
 |Hyeyun | Demoing the prototype |
 
 3. Which user stories were activated?
-- [placeholder]
+- User case 1
 
 4. Additional notes describing the session, e.g. observations of the test user's behavior.
 - The tester was confused about what to do next, which suggest we need more clear and intuitive prototype sessions.
