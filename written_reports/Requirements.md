@@ -82,15 +82,19 @@ She knows how to use basic functions in laptop. She lives alone in a suburban ar
 - Flow: The user first launches the app and the homepage appears with the an inquiry $i$ that guides the user to the manual.
 Once familiarized with the manual, they are introduced to the main features, including the stopwatch and Pomodoro timer on the homepage. The user would select either two options: Stopwatch and Pomodoro Timer.
 Taps on Stopwatch.
-* A large "Start" button appears, along with "Lap" and "Reset" buttons.
-* The user taps "Start," and the stopwatch begins counting.
-* The user taps "Lap" to mark intervals or "Stop" to pause.
-* Tapping "Reset" clears the stopwatch.
+
+A large "Start" button appears, along with "Lap" and "Reset" buttons.
+The user taps "Start," and the stopwatch begins counting.
+The user taps "Lap" to mark intervals or "Stop" to pause.
+Tapping "Reset" clears the stopwatch.
+
 However, if the user decides on using the Pomodoro Timer, they navigate back to the Timers screen and taps on Pomodoro Timer.
-* A default 25-minute session with a 5-minute break is displayed.
-* The user taps "Start", and the timer begins.
-* A notification appears when the session ends, prompting the user to complete a wellness break.
-* The user can adjust session and break durations in settings as described in the user manual.
+
+A default 25-minute session with a 5-minute break is displayed.
+The user taps "Start", and the timer begins.
+A notification appears when the session ends, prompting the user to complete a wellness break.
+The user can adjust session and break durations in settings as described in the user manual.
+
 The user has now successfully interacted with either the stopwatch or Pomodoro timer and can return to the home screen or exit the app.
 - Alternative flow:
    - Recoverable situation(s): At any point, if the user is unsure where to go, a Help $i$ button is visible on the home screen. Tapping $i$ brings up a quick tutorial or FAQ explaining timers, token collectible system, task and wellness checklist, etc. In the case a user is unsure What Pomodoro is, the small info button on the homepage directs us to: "Pomodoro Timer" and provides a short description: "Work in focused 25-minute sessions with 5-minute breaks. Customize work and break intervals with the toggle bars below: "
