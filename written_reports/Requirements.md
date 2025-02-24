@@ -23,7 +23,7 @@ Overall, the purpose of this widget is to promote wellness in the lives of busy 
 
 Elephant supports several different user roles to include different usage: 
 
-- Standard User: For personal wellness routines with full access to notification, customization, token collectable system, two modes (default/timer modes)
+- Standard User: For personal wellness routines with full access to notification, customization, token collectible system, two modes (default/timer modes)
 - Light (Guest) User: For accessing the basic timer and reminder function without login.  
 
 ## Future User Role: 
@@ -90,6 +90,19 @@ She knows how to use basic functions in laptop. She lives alone in a suburban ar
 - Postconditions: Users can support their needs and wants regarding the theme and mode and have less to no more negative experiences using the app.
 - Flow: The User opens the app (manually or through the widget), and then navigates to the settings page. Once in the settings pages, the User can choose between light or dark mode, and right below that should be theme choices. Once the user has made these choices, changes on the app and widget should be applied immediately.
 - Alternative flow: The interface may not update immediately after the User saves the theme/mode settings. If it does not update, the User could have an option to report it or the app should detect and ask the User to restart the app.
+
+### Use case 3
+- Actor: User(s) who want to utilize the app for the tokenized collectible system and practice improving their wellness habits in the process.
+- Goal: we anticipate many users could fit in this case since the tokenized earning systems comes from doing wellness tasks so we do run the risk of users strictly trying to earn all the collectibles instead of focusing on completing wellness tasks.
+- Trigger this use case? When a user engages with wellness tasks within the app, either out of intrinsic motivation to improve wellness habits or extrinsically to collect rewards.
+- Preconditions: The tokenized collectible system must be active and accessible with a stable connection to Wifi. Wellness tasks must be available and properly logged upon completion. The app will have a way to track task completion and prevent excessive gamification that undermines actual wellness.
+- Postconditions: Users successfully complete wellness tasks and receive tokenized collectibles based on genuine participation.
+- Flow: The user opens the app and navigates to the wellness tasks section and selects a wellness task to complete (e.g., meditation, journaling, hydration tracking). Once done, the app logs the action and verifies completion criteria.
+If criteria are met, the user receives a token and can view collected tokens in their profile to track progress.
+- Alternative flow:
+   - Recoverable situation: If a task is completed but not logged due to a minor system issue, the user can refresh the app or manually write the task in for a token again.
+   - Non-recoverable situation: If a user tries to rapidly complete tasks without meaningful engagement, the app detects this activity and either issues a warning or limits token within a certain time frame beginning from initial behavior detected.
+   - User disengagement: If a user loses interest due to low reward frequency or difficulty, the app provides encouragement, alternative wellness challenges, or reminders to promote sustained engagement.
 
 ---
 
