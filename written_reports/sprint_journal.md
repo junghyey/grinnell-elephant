@@ -106,7 +106,7 @@ other things you added to your prototype, not necessarily based on the testing s
 - We need to be more prepared for which questions we should ask. 
 
 8. Include one or more photos of your revised prototype where the difference between the original and revised version can be plainly seen
-#### Outline of what revisions we made:
+#### Outline of revisions made:
 - Collectible pages
    - Added collectible characters on the collectibles page
    - Added locks to distinguish whether collectibles are unlocked
@@ -164,25 +164,52 @@ Hannah Kim (
 
 -
 ### Review 3
-Leah Perlmutter
+1. About the tester
+Peer: Leah Perlmutter </br>
+Occuptation: Professor of 324</br>
+Date : 02-24-2025</br>
+Time : During class lab time (11:00pm) and lasted about 25-30 minutes</br>
+Type of the test user: 
 
-Flow: instructions (affordance) -> click on pomodoro -> starts a timer -> opened and changed settings -> tried to cancel timer -> closed -> collectibles -> unlocked mystery -> tried to unlock a collectible -> custom checklist -> added and switched to checklist -> changed widget character -> change color mode 
+2. What roles did each team member play during the test?
+   
+| Name    | Role |
+| -------- | ------- |
+| Candice  | Writer    |
+| Gabby | Demoing the prototype |
+| Mae    | Demoing the prototype    |
+|Hyeyun | Demoing the prototype |
 
- 
+3. Which user stories were activated?
+- [placeholder]
 
-Affordance missing (next button for manuals) 
-Write pomodoro on mode for manual (“how to pomodoro”) 
-User does not know what a pomodoro/widget bar is 
-Didn’t say that you need to add to widget to work, no page to actually add widget 
-Whether new user or return user 
-First time user use case 
-Notification, restart of timer 
-New items is not added, also no update of tokens 
-Lay prototype flat for testing 
-No cancel of pomodoro timer 
-More detailed info screen on how to earn token/collectible and pomodoro 
-Option to pick what checklist to use 
+4. Additional notes describing the session, e.g. observations of the test user's behavior.
+- The tester was confused about what to do next, which suggest we need more clear and intuitive prototype sessions.
+- Flow: instructions (affordance) -> click on pomodoro -> starts a timer -> opened and changed settings -> tried to cancel timer -> closed -> collectibles -> unlocked mystery -> tried to unlock a collectible -> custom checklist -> added and switched to checklist -> changed widget character -> change color mode 
+  
+5. The feedback you got from the tester
 
+#### Direct Feedback
+- Affordance missing (next/back button for manuals, scrollbar) 
+- Add introductions in user manual for pomodoro, widget bar, adding the widget to the widgetbar, how the token-collectible system works
+- Should be more clear on the role of user (first time/returning), can refer back to use case
+- No notifications
+- No pause/restart/cancel options for timer
+- No update of tokens
+- No update of customizable items to the widget checklist
+- Lay prototype flat for stakeholder testing
+- Add option in settings to pick what checklist to use 
+
+#### Outline of revisions made:
+
+Requirements document
+- Added use case for first time users
+
+6. Notes on how to revise your testing procedure for the next user
+- [placeholder]
+
+7. Not only will your prototype change, but also, you might choose to change the way you present it to your user.
+- [placeholder]
 
 #### Revisions
 
