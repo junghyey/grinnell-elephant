@@ -164,6 +164,24 @@ Hannah Kim (
 
 -
 ### Review 3
+Leah Perlmutter
+
+Flow: instructions (affordance) -> click on pomodoro -> starts a timer -> opened and changed settings -> tried to cancel timer -> closed -> collectibles -> unlocked mystery -> tried to unlock a collectible -> custom checklist -> added and switched to checklist -> changed widget character -> change color mode 
+
+ 
+
+Affordance missing (next button for manuals) 
+Write pomodoro on mode for manual (“how to pomodoro”) 
+User does not know what a pomodoro/widget bar is 
+Didn’t say that you need to add to widget to work, no page to actually add widget 
+Whether new user or return user 
+First time user use case 
+Notification, restart of timer 
+New items is not added, also no update of tokens 
+Lay prototype flat for testing 
+No cancel of pomodoro timer 
+More detailed info screen on how to earn token/collectible and pomodoro 
+Option to pick what checklist to use 
 
 
 #### Revisions
