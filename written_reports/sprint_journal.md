@@ -208,21 +208,50 @@ Requirements document
 
 
 6. Notes on how to revise your testing procedure for the next user
--Added Close button to every feature
+
+
+7. Not only will your prototype change, but also, you might choose to change the way you present it to your user.
+- We should give more instruction and explain use case to the tester. (ex: first time user..etc..)
+
+#### Revisions
+Added Close button to every feature
 Added next page button in the tutorial
 More directions inthe tutorial
 Notifications
 Being able to add new new list (users can write down) in the widget.
 Token system revise (start with 0 for first time users)
 
-7. Not only will your prototype change, but also, you might choose to change the way you present it to your user.
-- We should give more instruction and explain use case to the tester. (ex: first time user..etc..)
-
-#### Revisions
-
-
 
 ### Review 4
+1. About the tester
+Professor Jonathan Wells </br>
+Occuptation: Professor of Statistics Department</br>
+Date : 02-25-2025</br>
+Time : 10:30 ~ 11:00 am </br>
+Type of the test user: naive/real stakeholder
+
+2. What roles did each team member play during the test?
+   
+| Name    | Role |
+| -------- | ------- |
+| Candice  | Writer    |
+| Gabby | Demoing the prototype |
+| Mae    | Demoing the prototype    |
+|Hyeyun | Demoing the prototype |
+
+3. Which user stories were activated?
+
+4. Additional notes describing the session, e.g. observations of the test user's behavior.
+
+  
+5. The feedback you got from the tester
+
+#### Based on Questions we asked:
+
+1. Was there any moment where you felt unsure of what to do next? (usability)
+2. How do you usually keep track of your wellness habits? Does this app provide any advantages over your current method? (potential usage)
+3. What would make this app more appealing for professionals in academia? (tailored question)
+4. Is there a feature that feels unnecessary or overwhelming? (improvement)
 
 
 #### Reivision
