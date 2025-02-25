@@ -234,13 +234,11 @@ Type of the test user: naive/real stakeholder
    
 | Name    | Role |
 | -------- | ------- |
-| Candice  | Writer    |
-| Gabby | Demoing the prototype |
 | Mae    | Demoing the prototype    |
-|Hyeyun | Demoing the prototype |
+|Hyeyun | Writer |
 
 3. Which user stories were activated?
-
+first time user, returning user
 4. Additional notes describing the session, e.g. observations of the test user's behavior.
 
   
@@ -262,9 +260,45 @@ Wanted to new feature: other color themes.
 
 
 ### Review 5
+1. About the tester
+Autumn Kwon </br>
+Occuptation: CS Major Student with Linguistics Concentration (Grinnell College)</br>
+Date : 02-25-2025</br>
+Time : 6:00pm ~ 6:30 pm </br>
+Type of the test user: naive/real stakeholder
+
+2. What roles did each team member play during the test?
+   
+| Name    | Role |
+| -------- | ------- |
+| Candice  | Writer    |
+| Gabby | Demoing the prototype |
+|Hyeyun | Demoing the prototype |
+
+3. Which user stories were activated?
+
+4. Additional notes describing the session, e.g. observations of the test user's behavior.
+
+  
+5. The feedback you got from the tester
+
+#### Based on Questions we asked:
+
+1. Was there any moment where you felt unsure of what to do next? (usability)
+2. Do you think this app fits well with your study schedule, deadlines, and extracurricular activities?
+3. Are there any features that feel unnecessary or confusing for a student?
+4. What would make this app more appealing for students (in grinnell)?
+5. Would you feel encouraged to build healthy habits using this app, or would you need additional incentives?
+6. What accessibility improvements would make this app more student-friendly?
+7. Is there a feature that feels unnecessary or overwhelming? (improvement)
+
+
 
 
 #### Revision
+
+
+### Review 6
 
 
 ## Storyboard
