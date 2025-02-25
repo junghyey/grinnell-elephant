@@ -249,9 +249,13 @@ Type of the test user: naive/real stakeholder
 #### Based on Questions we asked:
 
 1. Was there any moment where you felt unsure of what to do next? (usability)
-2. How do you usually keep track of your wellness habits? Does this app provide any advantages over your current method? (potential usage)
-3. What would make this app more appealing for professionals in academia? (tailored question)
-4. Is there a feature that feels unnecessary or overwhelming? (improvement)
+   How to navigate to previuos page or home menu. NSomtimes x button or back button
+3. How do you usually keep track of your wellness habits? Does this app provide any advantages over your current method? (potential usage)
+  He does not
+5. What would make this app more appealing for professionals in academia? (tailored question)
+   If there was a way to sync to list with items in outlook calendar
+7. Is there a feature that feels unnecessary or overwhelming? (improvement)
+Wanted to new feature: other color themes.
 
 
 #### Reivision
