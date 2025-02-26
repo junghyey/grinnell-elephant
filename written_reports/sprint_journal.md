@@ -278,6 +278,17 @@ Type of the test user: naive/real stakeholder
 3. Which user stories were activated?
 
 4. Additional notes describing the session, e.g. observations of the test user's behavior.
+- User wants a button that straight up opens the setting
+- Set it up when you obtain a new avatar
+- Multiple lists (wellness and todo)
+- Warning seems distrusting/maybe set daily max
+- What if someone forgets to turn off the stopwatch
+- User don’t read manuals (and is confused)
+- Button + type in for time settings
+- Instead of sidebar let widget sit on the homepage
+
+- Unnecessary/useless features - all good
+- What will make this more appealing - attractive avatars
 
   
 5. The feedback you got from the tester
