@@ -285,12 +285,17 @@ Type of the test user: naive/real stakeholder
 #### Based on Questions we asked:
 
 1. Was there any moment where you felt unsure of what to do next? (usability)
-2. Do you think this app fits well with your study schedule, deadlines, and extracurricular activities?
-3. Are there any features that feel unnecessary or confusing for a student?
-4. What would make this app more appealing for students (in grinnell)?
-5. Would you feel encouraged to build healthy habits using this app, or would you need additional incentives?
-6. What accessibility improvements would make this app more student-friendly?
-7. Is there a feature that feels unnecessary or overwhelming? (improvement)
+   Every moment (she did not read the manual manual is not attractive neought)
+3. Do you think this app fits well with your study schedule, deadlines, and extracurricular activities?
+4. Are there any features that feel unnecessary or confusing for a student?
+   ALl good
+6. What would make this app more appealing for students or for you(in grinnell)?
+   Attractive avators COllaboration.
+8. Would you feel encouraged to build healthy habits using this app, or would you need additional incentives?
+9. What accessibility improvements would make this app more student-friendly?
+    attractive manual, pop up window zoom meeting top elepjatn logo app on top
+
+Instead of Scrolling have button (or sticky point) and typing.
 
 
 
