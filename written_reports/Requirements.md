@@ -102,13 +102,23 @@ The user has now successfully interacted with either the stopwatch or Pomodoro t
    - Non-recoverable situation: If the app crashes while using a timer, the system attempts to save the session state and reload it when reopened. If it fails to reload, a message appears: "We couldn’t recover your session. Please try again."
  
 ### Use case 2
-- Actor: a regular user who wants to customize their wellness message and notifications
-- Goal: any regular users can trigger this use case, and this use case is connected to stories of Hughie and Emilio
-- Trigger:
-- Precondition: The customized message needs to be characters supported by the system, and notification settings need to conform to the capacity of the user's device
-- Postcondition: User successfully creates customized wellness message and the app pushes the notification at the desired time
-- Flow: (List the steps through the user interface to accomplish the goal)
-- Alternative flow: (Remember to include alternative flow for recoverable situations where the use case can succeed, and for non-recoverable situations where the use case fails, Alternative flow should be a step-by-step for each alternative case, not simply a list of different cases where things could go wrong)
+- Actor: Users who want to customize their wellness checklist
+- Goal: any users can trigger this use case, and this use case is connected to stories of Hughie and Emilio
+- Trigger: The user is unsatisfied with the default wellness tasks in the checklist, or would like to use the app for alternative purposes
+- Precondition: The customized message needs to be characters supported by the system, and should not contain more than 10 tasks
+- Postcondition: User successfully creates customized wellness message
+- Flow 1: adding task on the widget interface
+  1. User click on the sidebar, the widget appears on the top of the sidebar
+  2. The user clicks on the bottom button that says "add new task"
+  3. The user types in the customized task, or press on the speech-to-text button and create new task verbally
+- Flow 2: adding task from the in-app settings
+  1. User opens the app from the top right corner of the widget, or from the applications list
+  2. User clicks on the settings button and scrolls down to the section for customizing tasks
+  3. User clicks on the "add new task" button
+  4. The user types in the customized task, or press on the speech-to-text button and create new task verbally
+- Alternative flows:
+  -   If the app crashes while before the updated task can be saved, user will need to re-add the task
+  -   If the user fails to save the updated messages, the user will need to re-add the task
 
 ### Use case 3
 - Actor: User(s) who want to change themes/mode settings due to visual accessibility needs or just preference. Users Plankton and Hughie would utilize these settings to accommodate their accessibility or visual preferences.
