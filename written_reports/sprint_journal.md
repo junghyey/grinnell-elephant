@@ -17,14 +17,14 @@ Add a section to your Sprint Journal with:
 
 ### Review 1 (Practice)
 1. About the tester
-Peer: Ellie Seehorn </br>
+Ellie Seehorn </br>
 Occuptation: Student (CS major, 324 classmate)</br>
 The reason we chose: Ellie is a classmate of 324 and part of not our team.</br>
 Date : 02-21-2025</br>
 Time : During class lab time (11:00pm) and lasted about 20-30 minutes</br>
 Type of the test user: Real Stakeholder
 
-2. What roles did each team member play during the test?
+3. What roles did each team member play during the test?
    
 | Name    | Role |
 | -------- | ------- |
@@ -135,13 +135,13 @@ other things you added to your prototype, not necessarily based on the testing s
 
 ### Review 2
 1. About the tester
-Peer: Leah Perlmutter </br>
+Professor Leah Perlmutter </br>
 Occuptation: Professor of 324</br>
 Date : 02-24-2025</br>
 Time : During class lab time (11:00pm) and lasted about 25-30 minutes</br>
 Type of the test user: Real Stakeholder
 
-2. What roles did each team member play during the test?
+3. What roles did each team member play during the test?
    
 | Name    | Role |
 | -------- | ------- |
@@ -233,7 +233,7 @@ Type of the test user: naive user (does not know about the product) + real stake
 
 #### Based on Questions we asked:
 1. Was there any moment where you felt unsure of what to do next? (usability)
-   - How to navigate to previuos page or home menu. NSomtimes x button or back button
+   - How to navigate to previous page or home menu. Sometimes x button or back button
 2. How do you usually keep track of your wellness habits? Does this app provide any advantages over your current method? (potential usage)
   - He does not
 3. What would make this app more appealing for professionals in academia? (tailored question)
@@ -244,9 +244,9 @@ Type of the test user: naive user (does not know about the product) + real stake
 
 #### Revision
 -  Added page number and close button in the app description page
--  added work mode& break mode( if work mode, work checkist shows up),
--  added reset,resume,stop skip button for pomodte and stopwatch mode, 4
--  added timer for when its break( how long break remains). 
+-  Added work mode& break mode( if work mode, work checkist shows up),
+-  Added reset,resume,stop skip button for pomodte and stopwatch mode, 4
+-  Added timer for when its break( how long break remains). 
 
 ### Review 5
 1. About the tester
@@ -316,8 +316,8 @@ first time user, returning user
 - Since the person has used this type of app (pomodore, stopwatch), the user seemed to be less confusing.
   
 6. The feedback you got from the tester
-- She wished more intitutive UI.
-- She suggested adding a sound for alarm for stopwatch and pomodore.
+- She wished to have a more intitutive UI.
+- She suggested adding a sound for alarm for stopwatch and pomodoro mode.
 - She asked what if she really wanted to focus while working, and it would be also irritating to have notification. --> suggested adding a turn on/off function
 
 #### Based on Questions we asked:
@@ -325,16 +325,16 @@ first time user, returning user
 1. Was there any moment where you felt unsure of what to do next? (usability)
    - She was unsure about what happens if she leaves the computer for a long time and how it differentiates break or detect.
 2. How do you usually keep track of your work and break? (potential usage)
-   - She uses pomodore.
+   - She uses pomodoro.
 3. What would be the benefit of using this app? (appealing point) (potential usage)
-   - Having both pomodore and timer are appealing.
+   - Having both pomodoro and timer are appealing.
 
 #### Revision
 - The manual is too long, so revised into the shorter version
 - Button + typing option instead of scrolling in for time settings
 -  Multiple lists for wellness and todo mode
   (Picture)
-- Warning seems distructive so we set set daily max
+- Set daily max for how many tokens a user can get
   (picture)
 - Instead of sidebar let widget sit on the homescreen (option for both sticky notes & widget)
 
