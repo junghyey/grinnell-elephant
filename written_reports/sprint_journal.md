@@ -330,7 +330,7 @@ Now, users start with 0 token and everytime they complete task, the sticker will
 1. Was there any moment where you felt unsure of what to do next? (usability)
    - How to navigate to previous page or home menu. Sometimes x button or back button
 2. How do you usually keep track of your wellness habits? Does this app provide any advantages over your current method? (potential usage)
-  - He does not
+   - He does not
 3. What would make this app more appealing for professionals in academia? (tailored question)
    - If there was a way to sync to list with items in outlook calendar.
    - He wants the syncing through web since he wants to use at home too.
