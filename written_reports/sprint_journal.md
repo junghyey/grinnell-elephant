@@ -208,7 +208,7 @@ Token system revise (start with 0 for first time users)
    - **Occupation:** Professor of the Statistics Department  
    - **Date:** 02-25-2025  
    - **Time:** 10:30 - 11:00 AM  
-   - **Type of test user:** Naïve user (does not know about the product) + Real Stakeholder  
+   - **Type of test user:** Naive user (does not know about the product) and  Real Stakeholder  
 
 2. **What roles did each team member play during the test?**  
 
@@ -276,7 +276,7 @@ We decided to make these changes to reduce the confusion on navigation. Moreover
    - **Occupation:** CS Major Student with a Linguistics Concentration (Grinnell College)  
    - **Date:** 02-25-2025  
    - **Time:** 6:00 PM - 6:30 PM  
-   - **Type of test user:** Naïve user / Real Stakeholde
+   - **Type of test user:** Naive user and Real Stakeholder
 
 2. **What roles did each team member play during the test?**  
    
@@ -320,10 +320,10 @@ We decided to make these changes to reduce the confusion on navigation. Moreover
 ### Review 5
 1. **About the tester**
    - **Name:** Hannah Kim  
-   - **Occupation:** [Not provided]  
+   - **Occupation:** Student (Biology Major, Stats concentration) 
    - **Date:** 02-26-2025  
    - **Time:** 12:00 PM - 1:00 PM  
-   - **Type of test user:** Naïve user / Real Stakeholder  
+   - **Type of test user:** Naive user and Real Stakeholder 
 
 2. **What roles did each team member play during the test?**  
    
