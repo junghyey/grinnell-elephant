@@ -205,6 +205,7 @@ Time : 10:30 ~ 11:00 am </br>
 Type of the test user: naive user (does not know about the product) + real stakeholder
 
 2. What roles did each team member play during the test?
+
 | Name    | Role |
 | -------- | ------- |
 | Mae    | Demoing the prototype    |
