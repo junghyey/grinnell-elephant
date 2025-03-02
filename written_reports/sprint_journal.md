@@ -282,7 +282,9 @@ Now, users start with 0 token and everytime they complete task, the sticker will
 
 - We decided to make these changes because our app did not have basic functionalities such as closing the app page. Moreover, these revisions would help users to remove confusions such as not having next page button, close button and inconsistent token system. For example, since we had 18 for default and for the first time user, the user won't have the tokens, so we revised to 0 tokens and made it to go up every time user completes the task. Moreover, we did not have notification option before, and that would lead to ineffective app since our goal is the user to take a rest, so we decided to add notification. Overall, these revisions were made to improve navigation, clarity, and usability, making the app more structured.
 
-<hr style="height:4px; background-color:black; border:none;">
+***
+End of Review 2
+***
 
 ### Review 3
 1. **About the tester**
@@ -405,7 +407,9 @@ There was no timer previosuly for break
 
 We decided to make these changes to reduce the confusion on navigation. Moreover, we did not have the reset,resume,stop, skip button and the user was confused about after the user comes back. Therefore, without these features, the pomodore and stop watch would not make sense, since these have those functionality. Moreover, timer for when its break is required since our goal is balance between work and break, if the use does not know how many break the user has left, it would be hard to balance. Moreover, since it would be space-taking if we only have wellness mode and its tasks, and some users might want both work and wellness at the same time. THis would also help balancing work and break. Therefore, we decided to add these features to remove confusion and these help to achieve work-break balance.
 
-<hr style="height:4px; background-color:black; border:none;">
+***
+End of Review 3
+***
 
 ### Review 4
 1. **About the tester**
@@ -453,6 +457,10 @@ We decided to make these changes to reduce the confusion on navigation. Moreover
    - Attractive avators COllaboration.
 5. What accessibility improvements would make this app more student-friendly?
    - Attractive  manual, pop up window zoom meeting top elepjatn logo app on top
+
+***
+End of Review 4
+***
 
 ### Review 5
 1. **About the tester**
@@ -520,7 +528,10 @@ Based on the Review 4 and Review 5 we made following changes:
 
 We made these changes to make the app easier to navigate and blends well with the users' every day expereience. A simpler manual helps new users, so we edited the manual wording. We decided not to shorten it because that would not allow in-depth description. Typing and button options instead of scrolling options would make users to easily set timers instead of scrolling which some users could find it burdensome. Moreover, we added multiple lists so that users can add work list (to-do-list) and wellness checklist. THe notificaiton toggle and alram sounds allow more accessibility because some people might find the notification irritating and some people need sound to zone out from the work. Instead of warning for the too many tokens collected we decided to add daily max which is less intrusive to people.
 
-<hr style="height:4px; background-color:black; border:none;">
+***
+End of Reviews & Revise
+***
+
 
 ## Storyboard
 [CSC324_elephant_storyboard.pdf](https://github.com/user-attachments/files/18933149/CSC324_elephant_storyboard.pdf)
