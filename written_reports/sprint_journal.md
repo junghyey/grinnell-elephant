@@ -184,18 +184,81 @@ These changes were made to improve user engagementm accessibilty, and clarity (r
 
 **Prototype Update**
 
-Added Close button to every feature
- (picture)
-Added next page button in the tutorial
- (picture)
-More directions in the tutorial
- (picture)
-Notifications when its time for break
- (picture)
-Being able to add new new list (users can write down) in the widget.
- (picture)
-Token system revise (start with 0 for first time users)
- (picture)
+- **Added next page button in the tutorial** & **More directions in the tutorial**
+
+***Before***
+
+<img src="https://github.com/user-attachments/assets/013ca0a2-7bb8-4e50-8cde-3eace7eab2cd" width="150" height="150">
+
+
+***After***
+
+<img src="https://github.com/user-attachments/assets/097bfdce-ea0f-46d9-a3e5-37c3dedc67d7" width="150" height="150">
+<img src="https://github.com/user-attachments/assets/d8ecfbdd-7f36-4c2c-87c0-4db8e84a4288" width="150" height="150">
+
+---
+
+- **Notifications when its time for break**
+
+***Before***
+
+No Notification Previously
+
+***After***
+
+<img src="https://github.com/user-attachments/assets/fbf39a85-39f9-4380-a732-4be0255c3b0e" width="150" height="150">
+
+---
+
+- **Being able to add new new list (users can write down) in the widget.**
+
+  ***Before***
+  
+<img src="https://github.com/user-attachments/assets/009b80f2-fbdc-4118-acbc-4460b20332b7" width="150" height="150">
+
+Only the wellnes checklist with "Add new" on the third row.
+
+
+***After***
+
+<img src="https://github.com/user-attachments/assets/d1a9ad5d-a15b-47d0-983a-70f9c43944bf" width="150" height="150">
+
+Users can make their own by adding to sticky notes.
+
+---
+
+- **Token system revise (start with 0 for first time users)**
+  ***Before***
+  
+<img src="https://github.com/user-attachments/assets/009b80f2-fbdc-4118-acbc-4460b20332b7" width="150" height="150">
+
+It was automatically 18 tokens.
+
+
+***After***
+
+<img src="https://github.com/user-attachments/assets/d1a9ad5d-a15b-47d0-983a-70f9c43944bf" width="150" height="150">
+
+Now, users start with 0 token and everytime they complete task, the sticker will ripp and increment token
+
+---
+
+- **Added Close button to every feature**
+
+***Before***
+
+
+***After***
+
+<img src="https://github.com/user-attachments/assets/db54c36b-402e-4039-b7e2-76ee18c46bae" width="150" height="150">
+<img src="https://github.com/user-attachments/assets/9627d069-e2e0-45e2-b3d6-2f3a28df57dc" width="150" height="150">
+<img src="https://github.com/user-attachments/assets/c88dfc5d-240c-4700-a83d-46e23becdc60" width="150" height="150">
+<img src="https://github.com/user-attachments/assets/5ecdea90-fc57-47a3-8aaa-01154184e4cb" width="150" height="150">
+<img src="https://github.com/user-attachments/assets/a28f7049-89c5-4e98-8ad3-a1c4d8218b2a" width="150" height="150">
+
+
+---
+
 
 **Reason for change**
 
