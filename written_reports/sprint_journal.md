@@ -188,7 +188,7 @@ Token system revise (start with 0 for first time users)
  (picture)
 
 
-#### Reivision
+#### Revision
 
 ### Review 3
 1. About the tester
@@ -242,7 +242,7 @@ Type of the test user: naive user (does not know about the product) + real stake
 4. Is there a feature that feels unnecessary or overwhelming? (improvement)
    None, he wants to new feature: other color themes.
 
-#### Reivision
+#### Revision
 -  Added page number and close button in the app description page
 -  added work mode& break mode( if work mode, work checkist shows up),
 -  added reset,resume,stop skip button for pomodte and stopwatch mode, 4
@@ -344,6 +344,23 @@ first time user, returning user
 
 ## Cider Technique
 
+#### Critique
+What assumptions about users were identified during the critique stage?
+- Assumes that users are mostly motivated by visual features
+- Assumes that users use both trackpad/mouse and keyboard to navigate
+- Assumes that users have no visual disabilities
+- Assumes that users have a MacBook
+  
+#### Imagine
+Which assumption(s) did you choose to expand on for this phase?
+- Only visual features: users who are more hearing-oriented or with vision disabilities might be less motivated
+- Modality are both trackpad/mouse and keyboard: users won't be able to use different functionalities of the app if they only have keyboard or trackpad/mouse
+  
+#### Design
+What are your ideas for redesigning your product based on critique?
+- We plan to add in sound cues when users complete tasks or unlock new avatars, which users can choose to turn off in settings
+- We plan to add in features that allow navigation without keyboard, such as voice to text function for adding tasks
+- A stretch goal of the project can be to add keyboard shortcuts for easier navigation
 
 ## Any Revisions to User Requirements
 
