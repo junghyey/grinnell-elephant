@@ -559,8 +559,19 @@ What are your ideas for redesigning your product based on critique?
 
 ## Any Revisions to User Requirements
 
-(3/2)
-- Completed four use cases
+1. 
+***Summary of Feedbacks***
+
+Based on our peer review and the initial app reviews from the beginning of the semester, we received feedback focused on accessibility, user experience, and ensuring that the wellness-focused incentives remained meaningful rather than just gamified engagement. One of the most significant points raised was the need for increased accessibility features, particularly in visual and interaction design.
+
+***Changes***
+- One of the most significant areas for improvement was accessibility, particularly in visual and interaction design. So, to address this, we introduced high-contrast mode, screen reader compatibility, and additional customization options to allow diverse users to use the app.
+- Another key improvmenet was the expansion of stopwatch and pomodore notifications. We added Pomodore timer notification.
+- In terms of compatibility, the feedback highlighted the importance of making the widget available across different laptop operating systems beyond MacOS. This will still remain as a stretch goal.
+
+
+2.
+***Completed four use cases***
 - Added features requested by users:
    - Rotating list option in the pomodoro mode
    - User manual and explanation of alternative use of the app (using it for task management instead of wellness tasks), which pops up when user first opens the app and remains accessible through a question mark button in the app interface
@@ -573,9 +584,3 @@ What are your ideas for redesigning your product based on critique?
 - Updated list of stretch goals to include the following:
    - Keyboard shortcuts to allow navigation without trackpad/mouse
    - Option for widget to exist as an independent window on the desktop instead of in the sidebar 
-
-(02/24) 
-- Based on our peer review and the initial app reviews from the beginning of the semester, we received feedback focused on accessibility, user experience, and ensuring that the wellness-focused incentives remained meaningful rather than just gamified engagement. One of the most significant points raised was the need for increased accessibility features, particularly in visual and interaction design. This led us to incorporate additional customization options, such as high-contrast mode and screen reader compatibility. 
-- Another area of improvement for the widget's features was the expansion of stopwatch and pomodoro notifications. We integrated Pomodoro and stopwatch reminder intervals, giving users more flexibility in how they structure their breaks. The wellness break activities themselves were diversified, allowing for greater personalization so that users with different needs could customize the experience to their specific wellness goals. This ensures that the app accommodates a wide range of users, from students needing study breaks to professionals managing long work hours.
-- In terms of compatibility, the feedback highlighted the importance of making the widget available across different laptop operating systems beyond MacOS. While this remains a reach goal, we documented our intent to expand accessibility beyond MacOS in future iterations. Similarly, error handling and offline functionality were strengthened—if a user loses Wi-Fi connectivity, the app will notify them and switch to a standard timer mode while queuing missed notifications for when they reconnect.
-By making these changes based on reviews, we ensured that the app is not just another productivity tool but a meaningful tool that aims to integrate wellness habits into our daily routines. The feedback process played an important role in shaping a more intuitive, accessible, and effective application, reinforcing our commitment to designing a product that genuinely benefits all its users.
