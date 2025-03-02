@@ -145,16 +145,17 @@ If criteria are met, the user receives a token and can view collected tokens in 
 ---
 
 ## Proposal Review Feedback
-- One of our reach goals is making the widget accessible to all laptop devices (not just macOS widget).
-- We will include pomodoro and stopwatch reminder intervals, wellness break activities, and customization for widget features and accessibility.
+- After receiving feedback, we decided not to incorporate the suggestion of integrating the widget on all laptop devices due to time constraints, maintaining one of our reach goals: making the widget accessible to all laptop devices (not just macOS widget).
 - Our widget also must be more focused on wellness habits as achievements for the incentive with the collectible system to avoid use of our app simply for the tokenized system.
+- We will include pomodoro and stopwatch reminder intervals, wellness break activities, and customization for widget features and accessibility.
+- We will also include sound cues when users complete actions on the widget, such as completing wellness tasks or unlock new avatars.
   
 ___
 
 # 3. Nonfunctional Requirements
 1. **Security & Privacy**: Since we are using people’s data, maintaining users' security and privacy is one of our top priorities. Our implementation assures our commitment to protect users’ information. We need to encrypt the user data and personal health information (such as medications) must be stored with HIPAA regulation [1].  
-2. **Accessibility**: We need to make sure our app is free, available, and accessible to all (MacOS users) people, especially catering specific features for people with disabilities. For example, screen readers high-contrast mode for photosensitivity, or black/white versions. We also aim to support languages other than English to make it accessible to non-English speakers.
-3. **Compatibility**: Since we are developing an app for MacBooks, we need to make it compatible with all MacOS versions not only the specific ones. 
+2. **Accessibility**: We need to make sure our app is free, available, and accessible to all (MacOS users) people, especially catering specific features for people with disabilities. For example, we include screen readers, high-contrast mode for photosensitivity, or black/white versions. We also aim to support languages other than English to make it accessible to non-English speakers.
+3. **Compatibility**: Since we are developing an app for MacBooks, we need to make it compatible with all MacOS versions not only the specific ones.
 
 ---
 
@@ -178,26 +179,44 @@ ___
 # 5. Scope and Feature List 
 1. Major features:
    - MacOS widget UI
+      - Contain two main sections: avatar section that displays the timer, and list section that displays the wellness task list and number of tokens users have
+      - Avatars can be changed through shop interface
+      - Widget interface also includes setting button that will open the setting page in the app
+   - App interface
+      - Buttons: exit, manual, settings, modes, shop
+      - Shop: users can unlock and set new avatars through the shop interface
+   - Settings
       - Customizable size
       - Customizable color theme 
       - Dark/light mode support with high contrast options
-      - Black/white mode for those with color blindness
-   - Push notifications to remind users to take wellness breaks
+      - Black/white mode
+      - Turn on/off sound cues
+      - Customize task lists
+   - Notifications
+      - Push notifications to remind users to take wellness breaks
       - If “Do-not-disturb scheduling”, hold the reminders
-      - Pomodoro timer notifications
+      - Customizable notification content and intervals (stopwatch mode only)
       - Offline notification queueing
-    - Customization of reminder notifications and wellness breaks
-    - Tokens that can be exchanged for collectibles
-    - Two modes:
-     - Default mode: interface that includes the wellness task bulletin board, reminders, and a character on display
-     - Timer mode: incorporates an additional pomodoro timer in the interface in which user can customize work and break intervals 
-2. Stretch goals:
+    - Modes
+      - Stopwatch mode: interface that includes the wellness task bulletin board, reminders, and a character on display
+      - Pomodoro mode: incorporates an additional pomodoro timer in the interface in which user can customize work and break intervals
+         - List rotating option: Users can construct two lists, one for work tasks and one for wellness breaks, for which the former will show up during the timer and the latter will show up during break time  
+    - Token system
+      - Users can obtain tokens if they complete wellness tasks
+      - Users can obtain up to 10 tokens per day
+      - Tokens can be exchanged for collectibles, which can be used as avatars in the widget
+    - User manual
+      - Pops up when the user first opens the app
+      - Remains accessible through the app interface 
+
+3. Stretch goals:
    - Compatibility with Apple Watch
     - Notification, Logging
   - Networking features such as friends and exchanging systems
     - Connect Friends
     - Share results (achievements, activities, etc.)
-  - Additional collectibles: accessories to customize collectible characters 
+  - Additional collectibles: accessories to customize collectible characters
+  - Keyboard shortcuts to allow navigation without trackpad/mouse 
 3. Out of scope:
  - Sensing biometrics using Apple Watch and using that data.
  - Third party app synchronization such as calendar
