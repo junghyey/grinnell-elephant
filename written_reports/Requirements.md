@@ -216,7 +216,9 @@ ___
     - Connect Friends
     - Share results (achievements, activities, etc.)
   - Additional collectibles: accessories to customize collectible characters
-  - Keyboard shortcuts to allow navigation without trackpad/mouse 
+  - Keyboard shortcuts to allow navigation without trackpad/mouse
+  - Option for widget to exist as an independent window on the desktop instead of in the sidebar
+    
 3. Out of scope:
  - Sensing biometrics using Apple Watch and using that data.
  - Third party app synchronization such as calendar
