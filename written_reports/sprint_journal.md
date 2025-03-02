@@ -83,27 +83,63 @@ Add a section to your Sprint Journal with:
 #### Revisions
 **Prototype Updates**
 
-- Collectible pages
+
+
+- **Collectible pages**
    - Added collectible characters on the collectibles page
    - Added locks to distinguish whether collectibles are unlocked
-     (picture)
-- Unlocking collectible
-   - Added price
-   - Added different characters to unlock on the page
-      (picture)
-- Widget
+   - Added different characters to unlock
+
+***Before***
+
+<img src="https://github.com/user-attachments/assets/145557ca-6dd1-4fe8-9a5c-3c598fdd65aa" width="150" height="150">
+
+***After***
+
+<img src="https://github.com/user-attachments/assets/1001c984-1103-4c87-a769-9f6fc301a4a9" width="150" height="150">
+<img src="https://github.com/user-attachments/assets/a07af173-6d62-4783-9849-c685d0a775a7" width="150" height="150">
+
+---
+ 
+- **Widget**
    - Made the widget character updatable (leave blank)
    - Added interface in light mode
-      (picture)
-- Wellness checklist
-   - Added the option to customize wellness reminders on the widget
+   - Added the option to customize wellness reminders on the widget (added the settings icon on top)
    - Changed title from token checklist -> wellness checklist
-      (picture)
-- Keyboard added
-      (picture)
-- User manual added
-   - Can be accessed first time opening the app or through homepage
-      (picture)
+
+***Before***
+
+<img src="https://github.com/user-attachments/assets/62041e92-c0cf-4587-9a13-3acb06deee47" width="150" height="150">
+
+***After***
+
+<img src="https://github.com/user-attachments/assets/3dca8d20-794a-4b9b-ac80-054523f05b0e" width="150" height="150">
+
+---      
+
+- Keyboard & touch pad added
+
+***Before***
+
+There was no keyboard
+
+***After***
+
+<img src="https://github.com/user-attachments/assets/3431eea5-10fe-450b-a563-0b66f848cb5e" width="150" height="150">
+
+- **User manual added**
+   - Can be accessed in ? mark
+
+***Before***
+
+There was no manual & no ? (help mark in the home page)
+
+<img src="https://github.com/user-attachments/assets/e4f0a4d4-136f-41b2-955f-a22e549d461a" width="150" height="150">
+
+***After***
+
+<img src="https://github.com/user-attachments/assets/0ec1020b-d37d-4bb2-b743-82a982f97482" width="150" height="150">
+    
      
 **Reason for change**
 
