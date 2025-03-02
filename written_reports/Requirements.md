@@ -143,12 +143,6 @@ If criteria are met, the user receives a token and can view collected tokens in 
    - User disengagement: If a user loses interest due to low reward frequency or difficulty, the app provides encouragement, alternative wellness challenges, or reminders to promote sustained engagement.
 
 ---
-
-## Proposal Review Feedback
-- After receiving feedback, we decided not to incorporate the suggestion of integrating the widget on all laptop devices due to time constraints, maintaining one of our reach goals: making the widget accessible to all laptop devices (not just macOS widget).
-- Our widget also must be more focused on wellness habits as achievements for the incentive with the collectible system to avoid use of our app simply for the tokenized system.
-- We will include pomodoro and stopwatch reminder intervals, wellness break activities, and customization for widget features and accessibility.
-- We will also include sound cues when users complete actions on the widget, such as completing wellness tasks or unlock new avatars.
   
 ___
 
