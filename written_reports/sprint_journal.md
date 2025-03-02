@@ -2,6 +2,7 @@
 A document written specifically about this sprint, with answers to the prompts and questions in these instructions.
 Purpose: to record written work that you produce in this sprint (outside of agile reports and requirements).
 
+
 # Sprint 1
 
 ## Revise requirements based on feedback
@@ -16,15 +17,15 @@ Add a section to your Sprint Journal with:
 - Enumerate three use cases that the prototype models
 
 ### Review 1 (Practice)
-1. About the tester
-Ellie Seehorn </br>
-Occuptation: Student (CS major, 324 classmate)</br>
-The reason we chose: Ellie is a classmate of 324 and part of not our team.</br>
-Date : 02-21-2025</br>
-Time : During class lab time (11:00pm) and lasted about 20-30 minutes</br>
-Type of the test user: Real Stakeholder
-
-3. What roles did each team member play during the test?
+1. **About the tester**
+   - **Name:** Ellie Seehorn
+   - **Occupation:** Student (CS major, 324 classmate)
+   - **Reason for selection:** Ellie is a classmate in CSC 324 but not part of our team.  
+   - **Date:** 02-21-2025  
+   - **Time:** During class lab time (11:00 PM) and lasted about 20-30 minutes  
+   - **Type of test user:** Real Stakeholder
+     
+2. **What roles did each team member play during the test?**  
    
 | Name    | Role |
 | -------- | ------- |
@@ -33,16 +34,16 @@ Type of the test user: Real Stakeholder
 | Mae    | Demoing the prototype    |
 |Hyeyun | Ask questions & explanation|
 
-3. Which user stories were activated?
+3. **Which user stories were activated?**  
 - Karen's user story who is not good at technology was activated (partially)
-- The tester suggested having a quick manual or tutorial to know about this app, which was part of Karen's user stories
+- The first time user use case was activated. : The tester suggested having a quick manual or tutorial to know about this app, which was part of Karen's user stories
 
-4. Additional notes describing the session, e.g. observations of the test user's behavior.
-- The tester was confused about what was going on, which suggest we need more clear and intuitive prototype session.
+4. **Additional notes describing the session (e.g., observations of the test user's behavior)**  
+- The tester was confused about what was going on and overall the flow of the app, which suggest we need more clear and intuitive prototype session.
   
-5. The feedback you got from the tester
-
-#### Direct Feedback
+5.  **Feedback received from the tester**
+   
+**Direct Feedback**
 - Draw some of the collectibles (assuming user already have some)
 - Unclear and insuffcient pages for unlocking the collectibles using tokens.
 - Add a feature that shows how much tokens are necessary for each collectible.
@@ -53,7 +54,7 @@ Type of the test user: Real Stakeholder
 - How pomodoro/stopwatch notifications work (user manual in the beginning, which continues to exist in a link)
 - Wanted to ensure her todolist stays even she turn off the mac (i.e. does not reset) 
 
-#### Based on Questions we asked:
+**Based on Questions we asked**:
 - Are there any designs that are non-intuitive or confusing? If yes, what are them, and how do you think we can improve?
    -  difference between modes (confused about the difference between pomodore and stopwatch mode)
    -  Should be able to add items in the widget and in the settings
@@ -64,22 +65,20 @@ Type of the test user: Real Stakeholder
 - Are there any barriers that might stop you from adopting this app?
    - only on MAC, notifications may become an issue (but if it's customizable it should be fine, and how intrusive it is)
 
-6. Notes on how to revise your testing procedure for the next user
+6. **Notes on how to revise our testing procedure for the next user**
 - We need to add manual to alleviate the confusion
 - We need to revise the collectible pages so that it shows what collectibles user has and what are locked.
 - We need to revise the collecible unlocking page so that we have more collecibltes to unlock and how many tokens are necessary and how many tokens we have
 - We need to make two versions for widget: light and dark
 - Being able to add new task in the widget.
 
-7. Not only will your prototype change, but also, you might choose to change the way you present it to your user.
+7. **Not only will our prototype change, but also, we might change how we present it to users.**  
 - We decided to give more background information and how the testing sessions will go to the outside stakeholder.
 - We need to be more prepared for which questions we should ask. 
 
-8. Include one or more photos of your revised prototype where the difference between the original and revised version can be plainly seen
-   
-#### Revisions :
-
-##### Prototype
+8. **Include one or more photos of the revised prototype where the differences from the original version can be clearly seen.**
+#### Revisions
+**Prototype Updates**
 - Collectible pages
    - Added collectible characters on the collectibles page
    - Added locks to distinguish whether collectibles are unlocked
@@ -101,8 +100,8 @@ Type of the test user: Real Stakeholder
 - User manual added
    - Can be accessed first time opening the app or through homepage
       (picture)
-
-###### Reason
+     
+**Reason for change**
 These changes were made to improve user engagementm accessibilty, and clarity (remove confusion) in the app. Added features in the collectiblie system create a more structured reward system and allow users to have more meaningful interaction. Widget improvements including light mode and character updates are for customization and accesibilty. The wellness checklist has personal reminders and has been renamed for clarity to focus on wellness rather than token collecting. Adding keyboard would allow more engagement during testing and new user manual is added to streamline the onboarding proccess for the app. Overall, these updates were maded to make app more intuitive, engaging, and user-friendly.
 
 #### Pictures
@@ -136,16 +135,15 @@ These changes were made to improve user engagementm accessibilty, and clarity (r
 <img src="https://github.com/user-attachments/assets/a07af173-6d62-4783-9849-c685d0a775a7" width="150" height="150">
 
 
-
 ### Review 2
-1. About the tester
-Professor Leah Perlmutter </br>
-Occuptation: Professor of 324</br>
-Date : 02-24-2025</br>
-Time : During class lab time (11:00pm) and lasted about 25-30 minutes</br>
-Type of the test user: Real Stakeholder
+1. **About the tester**
+   - **Name:** Professor Leah Perlmutter  
+   - **Occupation:** Professor of CSC 324  
+   - **Date:** 02-24-2025  
+   - **Time:** During class lab time (11:00 PM), lasting about 25-30 minutes  
+   - **Type of test user:** Real Stakeholder  
 
-3. What roles did each team member play during the test?
+2. **What roles did each team member play during the test?**  
    
 | Name    | Role |
 | -------- | ------- |
@@ -154,31 +152,32 @@ Type of the test user: Real Stakeholder
 | Mae    | Demoing the prototype    |
 |Hyeyun | Demoing the prototype |
 
-3. Which user stories were activated?
-- User case 1
+3.  **Which user stories were activated?** 
+- User case 1: New user
 
-4. Additional notes describing the session, e.g. observations of the test user's behavior.
+4. **Additional notes describing the session (e.g., observations of the test user's behavior)**  
 - The tester was confused about what to do next, which suggest we need more clear and intuitive prototype sessions.
 - Flow: instructions (affordance) -> click on pomodoro -> starts a timer -> opened and changed settings -> tried to cancel timer -> closed -> collectibles -> unlocked mystery -> tried to unlock a collectible -> custom checklist -> added and switched to checklist -> changed widget character -> change color mode 
   
-5. The feedback you got from the tester
+5. **Feedback received from the tester**  
 
-#### Direct Feedback
+**Direct Feedback**
 - Affordance missing (next/back button for manuals, scrollbar) 
 - Add introductions in user manual for pomodoro, widget bar, adding the widget to the widgetbar, how the token-collectible system works
 - Should be more clear on the role of user (first time/returning), can refer back to use case
-- No notifications
-- No pause/restart/cancel options for timer
-- No update of tokens
-- No update of customizable items to the widget checklist
+- Need to add notifications
+- Need to add pause/restart/cancel options for timer
+- Need to add feature about update of tokens
+- Need to update of customizable items to the widget checklist
 - Lay prototype flat for stakeholder testing
 - Add option in settings to pick what checklist to use 
 
-6. Not only will your prototype change, but also, you might choose to change the way you present it to your user.
+6.**Not only will our prototype change, but also, we might change how we present it to users.**  
 - We should give more instruction and explain use case to the tester. (ex: first time user..etc..)
 
 #### Revisions
-##### Prototype
+
+**Prototype Update**
 Added Close button to every feature
  (picture)
 Added next page button in the tutorial
@@ -192,45 +191,45 @@ Being able to add new new list (users can write down) in the widget.
 Token system revise (start with 0 for first time users)
  (picture)
 
-##### Reason
-- We decided to make these changes because our app did not have basic functionalities such as closing the app page. Moreover, these revisions would help users to remove confusions such as not having next page button, close button and inconsistent token system. For example, since we had 18 for default and for the first time user, the user won't have the tokens, so we revised to 0 tokens and made it to go up every time user completes the task. Moreover, we did not have notification option before, and that would lead to ineffective app since our goal is the user to take a rest, so we decided to add notification.
+**Reason for change**
+- We decided to make these changes because our app did not have basic functionalities such as closing the app page. Moreover, these revisions would help users to remove confusions such as not having next page button, close button and inconsistent token system. For example, since we had 18 for default and for the first time user, the user won't have the tokens, so we revised to 0 tokens and made it to go up every time user completes the task. Moreover, we did not have notification option before, and that would lead to ineffective app since our goal is the user to take a rest, so we decided to add notification. Overall, these revisions were made to improve navigation, clarity, and usability, making the app more structured.
 
 
 ### Review 3
-1. About the tester
-Professor Jonathan Wells </br>
-Occuptation: Professor of Statistics Department</br>
-Date : 02-25-2025</br>
-Time : 10:30 ~ 11:00 am </br>
-Type of the test user: naive user (does not know about the product) + real stakeholder
+1. **About the tester**
+   - **Name:** Professor Jonathan Wells  
+   - **Occupation:** Professor of the Statistics Department  
+   - **Date:** 02-25-2025  
+   - **Time:** 10:30 - 11:00 AM  
+   - **Type of test user:** Naïve user (does not know about the product) + Real Stakeholder  
 
-2. What roles did each team member play during the test?
+2. **What roles did each team member play during the test?**  
 
 | Name    | Role |
 | -------- | ------- |
 | Mae    | Demoing the prototype    |
 |Hyeyun | Writer |
 
-3. Which user stories were activated?
+3. **Which user stories were activated?**  
 - First time user: reading manual and setting the widget
   
-4. Additional notes describing the session, e.g. observations of the test user's behavior.
+4. **Additional notes describing the session (e.g., observations of the test user's behavior)**  
 - The user seems to be excited and looking forward to use the app.
-- The user likes to try out different features.
+- The user enjoyed exploring features and trying them out different features.
 
-5. The feedback you got from the tester
+5. **The feedback you got from the tester**
 
-#### Direct Feedbacks
-- Exit button on the second page of info 
-- Black &white theme doesn’t do anything (info)
-- How to exit from time setting (settings)
-- How to exit from first-time user (settings)
-- Break tasks vs. work tasks
+**Direct Feedback**
+- Add Exit button on the second page of info 
+- Black &white theme doesn’t do anything in the setting
+- How to exit from time setting is unclear.
+- How to exit from first-time user is unclear.
+- Need to have modes for Break tasks vs. work tasks
 - How to get back to the first-time user manual?
 - Better to not have both Stopwatch and Pomodoro concurrently
-- Page number for info(?)
+- Need to add page number in the instruction page
 - Click tokens more than usual in certain time —> warning
-- Checking break task during working time —> warning: please come back during the break
+- Allow checking work tasks during break time.  —> warning: please come back during the break
 - Checking work task during break time —> can do
 - Make it more obvious if we’re in the break mode or work mode
 - Does the pomodoro automatically stop when you switch to stopwatch?
@@ -238,7 +237,7 @@ Type of the test user: naive user (does not know about the product) + real stake
 - ‘Start’ button in the pomodoro: starting break or work?
 - Cross platform (available online)—> webpage 
 
-#### Based on Questions we asked:
+**Based on Questions we asked:**
 1. Was there any moment where you felt unsure of what to do next? (usability)
    - How to navigate to previous page or home menu. Sometimes x button or back button
 2. How do you usually keep track of your wellness habits? Does this app provide any advantages over your current method? (potential usage)
@@ -247,26 +246,28 @@ Type of the test user: naive user (does not know about the product) + real stake
    - If there was a way to sync to list with items in outlook calendar.
    - He wants the syncing through web since he wants to use at home too.
 4. Is there a feature that feels unnecessary or overwhelming? (improvement)
-   None, he wants to new feature: other color themes.
+   - None, he wants to new feature: other color themes.
 
 #### Revision
-##### Prototype
+
+**Prototype Updates**
 -  Added page number and close button in the app description page
 -  Added work mode& break mode( if work mode, work checkist shows up)
 -  Added reset,resume,stop skip button for pomodore and stopwatch mode
 -  Added timer for when its break( how long break remains).
-##### Reason
+  
+**Reason for Changes**
 - We decided to make these changes to reduce the confusion on navigation. Moreover, we did not have the reset,resume,stop, skip button and the user was confused about after the user comes back. Therefore, without these features, the pomodore and stop watch would not make sense, since these have those functionality. Moreover, timer for when its break is required since our goal is balance between work and break, if the use does not know how many break the user has left, it would be hard to balance. Moreover, since it would be space-taking if we only have wellness mode and its tasks, and some users might want both work and wellness at the same time. THis would also help balancing work and break. Therefore, we decided to add these features to remove confusion and these help to achieve work-break balance.
 
-### Review 5
-1. About the tester
-Autumn Kwon </br>
-Occuptation: CS Major Student with Linguistics Concentration (Grinnell College)</br>
-Date : 02-25-2025</br>
-Time : 6:00pm ~ 6:30 pm </br>
-Type of the test user: naive/real stakeholder
+### Review 4
+1. **About the tester**
+   - **Name:** Autumn Kwon  
+   - **Occupation:** CS Major Student with a Linguistics Concentration (Grinnell College)  
+   - **Date:** 02-25-2025  
+   - **Time:** 6:00 PM - 6:30 PM  
+   - **Type of test user:** Naïve user / Real Stakeholde
 
-2. What roles did each team member play during the test?
+2. **What roles did each team member play during the test?**  
    
 | Name    | Role |
 | -------- | ------- |
@@ -274,23 +275,25 @@ Type of the test user: naive/real stakeholder
 | Gabby | Demoing the prototype |
 |Hyeyun | Demoing the prototype |
 
-3. Which user stories were activated?
--Returning User
+3. **Which user stories were activated?**
+- Returning User
 
-4. Additional notes describing the session, e.g. observations of the test user's behavior.
-- User don’t read manuals (and is confused)
+4. **Additional notes describing the session (e.g., observations of the test user's behavior)**  
+- The user did not read the manual so confused about how app works.
 
-5. The feedback you got from the tester
+5. **Feedback received from the tester**
+
+**Direct Feedback**
 - The manual is too long to read.
 - Button + typing option instead of scrolling in for time settings
-- User wants a button that straight up opens the setting (this is a mac feature)
+- The user wants a button that straight up opens the setting (this is a Mac feature)
 - Set it up when you obtain a new avatar
 - Multiple lists for wellness and todo mode 
-- Warning seems distrusting/maybe set daily max
+- Warning seems distrusting --> maybe set daily max
 - What if someone forgets to turn off the stopwatch?
-- Instead of sidebar let widget sit on the homepage (option for both sticky notes & widget)
+- Instead of a sidebar let the widget sit on the homepage (option for both sticky notes & widget)
 
-#### Based on Questions we asked:
+**Based on Questions we asked:**
 1. Was there any moment where you felt unsure of what to do next? (usability)
    - Every moment (she did not read the manual manual is not attractive neought)
 2. Do you think this app fits well with your study schedule, deadlines, and extracurricular activities?
@@ -299,17 +302,17 @@ Type of the test user: naive/real stakeholder
 4. What would make this app more appealing for students or for you(in grinnell)?
    - Attractive avators COllaboration.
 5. What accessibility improvements would make this app more student-friendly?
-    - Attractive  manual, pop up window zoom meeting top elepjatn logo app on top
+   - Attractive  manual, pop up window zoom meeting top elepjatn logo app on top
 
-### Review 6
-1. About the tester
-Hannah Kim </br>
-Occuptation: </br>
-Date : 02-26-2025</br>
-Time : 12:00pm - 1:00pm </br>
-Type of the test user: naive/real stakeholder
+### Review 5
+1. **About the tester**
+   - **Name:** Hannah Kim  
+   - **Occupation:** [Not provided]  
+   - **Date:** 02-26-2025  
+   - **Time:** 12:00 PM - 1:00 PM  
+   - **Type of test user:** Naïve user / Real Stakeholder  
 
-2. What roles did each team member play during the test?
+2. **What roles did each team member play during the test?**  
    
 | Name    | Role |
 | -------- | ------- |
@@ -318,20 +321,21 @@ Type of the test user: naive/real stakeholder
 | Candice    | Demoing the prototype    |
 |Hyeyun | Demoing the prototype/Asking questions |
 
-3. Which user stories were activated?
+3. **Which user stories were activated?**  
 first time user, returning user
 
-5. Additional notes describing the session, e.g. observations of the test user's behavior.
+5. **Additional notes describing the session (e.g., observations of the test user's behavior)**  
 - The test user seemed interested with the prototype (and fun) the time about the paper prototype.
 - Since the person has used this type of app (pomodore, stopwatch), the user seemed to be less confusing.
   
-6. The feedback you got from the tester
+6. **Feedback received from the tester**  
+
+**Direct Feedbakcs**
 - She wished to have a more intitutive UI.
 - She suggested adding a sound for alarm for stopwatch and pomodoro mode.
 - She asked what if she really wanted to focus while working, and it would be also irritating to have notification. --> suggested adding a turn on/off function
 
-#### Based on Questions we asked:
-
+**Based on Questions we asked:**
 1. Was there any moment where you felt unsure of what to do next? (usability)
    - She was unsure about what happens if she leaves the computer for a long time and how it differentiates break or detect.
 2. How do you usually keep track of your work and break? (potential usage)
@@ -341,7 +345,8 @@ first time user, returning user
 
 #### Revision
 
-##### Prototype
+Based on the Review 4 and Review 5 we made following changes:
+**Prototype Updates**
 - Edited the manual wording and add description about the new features we added.
 - Button + typing option instead of scrolling in for time settings
 -  Multiple lists for wellness and todo mode
@@ -349,8 +354,8 @@ first time user, returning user
 - Set daily max for how many tokens a user can get
   (picture)
 
-##### Revisions
-Instead of shortening the manual, we changed wording. Since manual would provide the in-depth description, shortening would not allow user to understand the app.
+**Reason for Revisions**
+We made these changes to make the app easier to navigate and blends well with the users' every day expereience. A simpler manual helps new users, so we edited the manual wording. We decided not to shorten it because that would not allow in-depth description. Typing and button options instead of scrolling options would make users to easily set timers instead of scrolling which some users could find it burdensome. Moreover, we added multiple lists so that users can add work list (to-do-list) and wellness checklist. THe notificaiton toggle and alram sounds allow more accessibility because some people might find the notification irritating and some people need sound to zone out from the work. Instead of warning for the too many tokens collected we decided to add daily max which is less intrusive to people.
 
 ## Storyboard
 [CSC324_elephant_storyboard.pdf](https://github.com/user-attachments/files/18933149/CSC324_elephant_storyboard.pdf)
