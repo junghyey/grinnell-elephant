@@ -148,8 +148,8 @@ If criteria are met, the user receives a token and can view collected tokens in 
 - One of our reach goals is making the widget accessible to all laptop devices (not just macOS widget).
 - We will include pomodoro and stopwatch reminder intervals, wellness break activities, and customization for widget features and accessibility.
 - Our widget also must be more focused on wellness habits as achievements for the incentive with the collectible system to avoid use of our app simply for the tokenized system.
-
----
+  
+___
 
 # 3. Nonfunctional Requirements
 1. **Security & Privacy**: Since we are using people’s data, maintaining users' security and privacy is one of our top priorities. Our implementation assures our commitment to protect users’ information. We need to encrypt the user data and personal health information (such as medications) must be stored with HIPAA regulation [1].  
