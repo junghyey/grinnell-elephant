@@ -262,10 +262,51 @@ Token system revise (start with 0 for first time users)
 **Prototype Updates**
 
 -  Added page number and close button in the app description page
+***Before***
+
+<img src="https://github.com/user-attachments/assets/da673f9b-2bfe-4f09-82e3-6911befa0408" width="150" height="150">
+<img src="https://github.com/user-attachments/assets/fccfa6aa-ce5a-49be-a6d4-4faf0a3b7075" width="150" height="150">
+<img src="https://github.com/user-attachments/assets/7e7d538b-1a98-44cd-87d2-74997eff8578" width="150" height="150">
+
+***After***
+
+<img src="https://github.com/user-attachments/assets/79f5a3e2-16b5-401a-a475-306b6bc15b17" width="150" height="150">
+<img src="https://github.com/user-attachments/assets/804330af-cbd2-429d-9e3f-04d78f618829" width="150" height="150">
+<img src="https://github.com/user-attachments/assets/ff4c19f9-3b1b-4f76-8e2b-8339f17e55df" width="150" height="150">
+<img src="https://github.com/user-attachments/assets/8503ae32-676d-4255-9c00-42a788354c4e" width="150" height="150">
+
 -  Added work mode& break mode( if work mode, work checkist shows up)
--  Added reset,resume,stop skip button for pomodore and stopwatch mode
+
+***Before***
+
+(Only Wellness Mode)
+<img src="https://github.com/user-attachments/assets/73d13074-dbc6-4322-8d97-9163c890379d" width="150" height="150">
+
+***After***
+
+(Sticky Note to show change in workmode with workchecklist)
+<img src="https://github.com/user-attachments/assets/1485f333-3054-4e82-87e8-ade1b435bc91" width="150" height="150">
+
+-  Added reset,resume,stop skip button for pomodore and stopwatch mode. In stopwatch mode, changed the wording from you have started to elapsed.
+***Before***
+
+<img src="https://github.com/user-attachments/assets/e0154cc1-59ef-4d7c-8c4e-85f703d1758f" width="150" height="150">
+
+***After***
+
+<img src="https://github.com/user-attachments/assets/edf86f69-46b2-4e44-9240-5538b138e387" width="150" height="150">
+<img src="https://github.com/user-attachments/assets/70fe8065-470a-4289-a3ff-e61b123b2358" width="150" height="150">
+
 -  Added timer for when its break( how long break remains).
-  
+
+***Before***
+
+There was no timer previosuly for break
+
+***After***
+<img src="https://github.com/user-attachments/assets/12747acd-2b51-42f1-892f-00d4eaf00611" width="150" height="150">
+<img src="https://github.com/user-attachments/assets/4190fc63-4444-4fe2-babe-da16ba9b68e6" width="150" height="150">
+
 **Reason for Changes**
 
 We decided to make these changes to reduce the confusion on navigation. Moreover, we did not have the reset,resume,stop, skip button and the user was confused about after the user comes back. Therefore, without these features, the pomodore and stop watch would not make sense, since these have those functionality. Moreover, timer for when its break is required since our goal is balance between work and break, if the use does not know how many break the user has left, it would be hard to balance. Moreover, since it would be space-taking if we only have wellness mode and its tasks, and some users might want both work and wellness at the same time. THis would also help balancing work and break. Therefore, we decided to add these features to remove confusion and these help to achieve work-break balance.
