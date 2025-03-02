@@ -510,7 +510,6 @@ Based on the Review 4 and Review 5 we made following changes:
 
 **Prototype Updates**
 
-- Edited the manual wording and add description about the new features we added.
 - **Button + typing option instead of scrolling in for time settings**
   
 <img src="https://github.com/user-attachments/assets/5625ce78-6fbd-42b8-9255-82565b12bdab" width="150" height="150">
