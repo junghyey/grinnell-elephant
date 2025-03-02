@@ -98,9 +98,6 @@ Add a section to your Sprint Journal with:
 <img src="https://github.com/user-attachments/assets/1001c984-1103-4c87-a769-9f6fc301a4a9" width="150" height="150">
 <img src="https://github.com/user-attachments/assets/a07af173-6d62-4783-9849-c685d0a775a7" width="150" height="150">
 
-***
-
-***
  
 - **Widget**
    - Made the widget character updatable (leave blank)
@@ -149,7 +146,9 @@ There was no manual & no ? (help mark in the home page)
 
 These changes were made to improve user engagementm accessibilty, and clarity (remove confusion) in the app. Added features in the collectiblie system create a more structured reward system and allow users to have more meaningful interaction. Widget improvements including light mode and character updates are for customization and accesibilty. The wellness checklist has personal reminders and has been renamed for clarity to focus on wellness rather than token collecting. Adding keyboard would allow more engagement during testing and new user manual is added to streamline the onboarding proccess for the app. Overall, these updates were maded to make app more intuitive, engaging, and user-friendly.
 
-<hr style="height:4px; background-color:black; border:none;">
+***
+End of Review 1
+***
 
 ### Review 2
 1. **About the tester**
