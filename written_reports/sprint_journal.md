@@ -378,6 +378,21 @@ What are your ideas for redesigning your product based on critique?
 
 ## Any Revisions to User Requirements
 
+(3/2)
+- Completed four use cases
+- Added features requested by users:
+   - Rotating list option in the pomodoro mode
+   - User manual and explanation of alternative use of the app (using it for task management instead of wellness tasks), which pops up when user first opens the app and remains accessible through a question mark button in the app interface
+   - Accessibility features such as color modes and higher readability mode
+   - Sound cues and option to turn it off in settings
+- Updated and re-organized the main features section of the requirements document to include the following:
+  - Description of components for both app and widget interface
+  - Description of setting options allowed for the widget
+  - Description of different components of the app, including the shop, the user manual, and the token-collectible system
+- Updated list of stretch goals to include the following:
+   - Keyboard shortcuts to allow navigation without trackpad/mouse
+   - Option for widget to exist as an independent window on the desktop instead of in the sidebar 
+
 (02/24) 
 - Based on our peer review and the initial app reviews from the beginning of the semester, we received feedback focused on accessibility, user experience, and ensuring that the wellness-focused incentives remained meaningful rather than just gamified engagement. One of the most significant points raised was the need for increased accessibility features, particularly in visual and interaction design. This led us to incorporate additional customization options, such as high-contrast mode and screen reader compatibility. 
 - Another area of improvement for the widget's features was the expansion of stopwatch and pomodoro notifications. We integrated Pomodoro and stopwatch reminder intervals, giving users more flexibility in how they structure their breaks. The wellness break activities themselves were diversified, allowing for greater personalization so that users with different needs could customize the experience to their specific wellness goals. This ensures that the app accommodates a wide range of users, from students needing study breaks to professionals managing long work hours.
