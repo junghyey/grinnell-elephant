@@ -1,5 +1,3 @@
-Initial Version (02/23)
-
 # 1. Product Description 
 These days people spend a lot of time on digital services such as Netflix, VSCode, Google Doc, etc. 
 Most of the tasks are completed in front of computers. Sitting for a long-time using computers can lead to various health concerns such as eye dryness and back pain (bad posture). Elephant can help address these modern workplace wellness challenges with a motivating environment.
