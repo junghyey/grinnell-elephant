@@ -25,9 +25,9 @@ Root
   |   |-- Requirements.md
   |   |-- sprint_journal.md
   |   |-- milestone-2-report.md
+  |   |-- sprint_review_report.md
   |   |-- sprint1_reports/
   |       |--sprint1_plan_report.md         # this is where we have sprint1 planning report
-  |
   |-- Elephant
   |-- ElephantWidget 
   |-- ElephantUITests
