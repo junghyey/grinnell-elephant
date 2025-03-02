@@ -16,7 +16,6 @@ Add a section to your Sprint Journal with:
 - You might also want to include photos of your team working on the prototype! (optional)
 - Enumerate three use cases that the prototype models
 
-<hr style="height:4px; background-color:black; border:none;">
 
 ### Review 1 (Practice)
 1. **About the tester**
@@ -99,7 +98,9 @@ Add a section to your Sprint Journal with:
 <img src="https://github.com/user-attachments/assets/1001c984-1103-4c87-a769-9f6fc301a4a9" width="150" height="150">
 <img src="https://github.com/user-attachments/assets/a07af173-6d62-4783-9849-c685d0a775a7" width="150" height="150">
 
----
+***
+
+***
  
 - **Widget**
    - Made the widget character updatable (leave blank)
