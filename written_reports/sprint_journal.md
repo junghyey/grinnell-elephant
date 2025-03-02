@@ -496,11 +496,21 @@ Based on the Review 4 and Review 5 we made following changes:
 **Prototype Updates**
 
 - Edited the manual wording and add description about the new features we added.
-- Button + typing option instead of scrolling in for time settings
--  Multiple lists for wellness and todo mode
-  (Picture)
-- Set daily max for how many tokens a user can get
-  (picture)
+- **Button + typing option instead of scrolling in for time settings**
+  
+<img src="https://github.com/user-attachments/assets/5625ce78-6fbd-42b8-9255-82565b12bdab" width="150" height="150">
+
+***Before on the right and After on the left***
+
+---
+
+- **Multiple lists for wellness and to-do mode**  
+
+<img src="https://github.com/user-attachments/assets/dc82277c-39fa-4fd8-8978-3476eec92aab" width="150" height="150">
+
+***Before on the left and After on the right***
+
+---
 
 **Reason for Revisions**
 
