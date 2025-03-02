@@ -127,6 +127,8 @@ There was no keyboard
 
 <img src="https://github.com/user-attachments/assets/3431eea5-10fe-450b-a563-0b66f848cb5e" width="150" height="150">
 
+---
+
 - **User manual added**
    - Can be accessed in ? mark
 
@@ -140,40 +142,11 @@ There was no manual & no ? (help mark in the home page)
 
 <img src="https://github.com/user-attachments/assets/0ec1020b-d37d-4bb2-b743-82a982f97482" width="150" height="150">
     
-     
+---
+
 **Reason for change**
 
 These changes were made to improve user engagementm accessibilty, and clarity (remove confusion) in the app. Added features in the collectiblie system create a more structured reward system and allow users to have more meaningful interaction. Widget improvements including light mode and character updates are for customization and accesibilty. The wellness checklist has personal reminders and has been renamed for clarity to focus on wellness rather than token collecting. Adding keyboard would allow more engagement during testing and new user manual is added to streamline the onboarding proccess for the app. Overall, these updates were maded to make app more intuitive, engaging, and user-friendly.
-
-#### Pictures
-
-##### Initial Version 
-
-<img src="https://github.com/user-attachments/assets/fd607f3b-41af-49e4-ad4a-81e1227f787d" width="150" height="150">
-<img src="https://github.com/user-attachments/assets/5790e653-e824-45b8-a9a1-6fe2f9349825" width="150" height="150">
-<img src="https://github.com/user-attachments/assets/4e79bfb5-67d6-4ba7-9910-e75aff4ea039" width="150" height="150">
-<img src="https://github.com/user-attachments/assets/d9db31b7-a20a-4fdf-91a9-7a969c3057da" width="150" height="150">
-<img src="https://github.com/user-attachments/assets/5544fca4-66c9-46e6-a193-07b08c840dc2" width="150" height="150">
-<img src="https://github.com/user-attachments/assets/62e3fa8f-3df5-4a85-b491-e2f98d69694f" width="150" height="150">
-
-<img src="https://github.com/user-attachments/assets/145557ca-6dd1-4fe8-9a5c-3c598fdd65aa" width="150" height="150">
-<img src="https://github.com/user-attachments/assets/62041e92-c0cf-4587-9a13-3acb06deee47" width="150" height="150">
-<img src="https://github.com/user-attachments/assets/e4f0a4d4-136f-41b2-955f-a22e549d461a" width="150" height="150">
-<img src="https://github.com/user-attachments/assets/e25cffe7-ab9d-4f90-b4cd-b2a80a0e51df" width="150" height="150">
-<img src="https://github.com/user-attachments/assets/01c3c1cd-ca23-498b-bf73-0cc016d0b13e" width="150" height="150">
-<img src="https://github.com/user-attachments/assets/bc8d8c65-5c9b-441a-a4aa-793c4810788c" width="150" height="150">
-<img src="https://github.com/user-attachments/assets/5d550ca7-41a4-423e-975a-62724c03a419" width="150" height="150">
-<img src="https://github.com/user-attachments/assets/f47a56de-d861-4c43-8cb2-fe29794232a7" width="150" height="150">
-
-
-##### Revision
-<img src="https://github.com/user-attachments/assets/0ec1020b-d37d-4bb2-b743-82a982f97482" width="150" height="150">
-<img src="https://github.com/user-attachments/assets/3dca8d20-794a-4b9b-ac80-054523f05b0e" width="150" height="150">
-<img src="https://github.com/user-attachments/assets/1001c984-1103-4c87-a769-9f6fc301a4a9" width="150" height="150">
-<img src="https://github.com/user-attachments/assets/83b4b288-7879-4bde-abb5-a1fb5db3b41f" width="150" height="150">
-<img src="https://github.com/user-attachments/assets/47d3e52b-83d4-426d-b289-f8042fc95db7" width="150" height="150">
-<img src="https://github.com/user-attachments/assets/d6652c18-0b3f-4e7c-b726-cdfda68ab618" width="150" height="150">
-<img src="https://github.com/user-attachments/assets/a07af173-6d62-4783-9849-c685d0a775a7" width="150" height="150">
 
 
 ### Review 2
