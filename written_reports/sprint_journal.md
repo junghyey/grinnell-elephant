@@ -279,15 +279,20 @@ Token system revise (start with 0 for first time users)
 
 ***Before***
 
-(Only Wellness Mode)
 <img src="https://github.com/user-attachments/assets/73d13074-dbc6-4322-8d97-9163c890379d" width="150" height="150">
+
+(Only Wellness Mode)
 
 ***After***
 
-(Sticky Note to show change in workmode with workchecklist)
+
 <img src="https://github.com/user-attachments/assets/1485f333-3054-4e82-87e8-ade1b435bc91" width="150" height="150">
 
+(Sticky Note to show change in workmode with workchecklist)
+
+
 -  Added reset,resume,stop skip button for pomodore and stopwatch mode. In stopwatch mode, changed the wording from you have started to elapsed.
+    
 ***Before***
 
 <img src="https://github.com/user-attachments/assets/e0154cc1-59ef-4d7c-8c4e-85f703d1758f" width="150" height="150">
@@ -304,6 +309,7 @@ Token system revise (start with 0 for first time users)
 There was no timer previosuly for break
 
 ***After***
+
 <img src="https://github.com/user-attachments/assets/12747acd-2b51-42f1-892f-00d4eaf00611" width="150" height="150">
 <img src="https://github.com/user-attachments/assets/4190fc63-4444-4fe2-babe-da16ba9b68e6" width="150" height="150">
 
