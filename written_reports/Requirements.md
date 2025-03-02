@@ -124,8 +124,8 @@ The user has now successfully interacted with either the stopwatch or Pomodoro t
 - Trigger: The user finds the app aesthetic/color choices to be negatively impacting their experience using the app.
 - Preconditions: The settings page and app must support dark and light modes, along with various (at least a few) color schemes with contrast.
 - Postconditions: Users can support their needs and wants regarding the theme and mode and have less to no more negative experiences using the app.
-- Flow: The User opens the app (manually or through the widget), and then navigates to the settings page. Once in the settings pages, the User can choose between light or dark mode, and right below that should be theme choices. Once the user has made these choices, changes on the app and widget should be applied immediately.
-- Alternative flow: The interface may not update immediately after the User saves the theme/mode settings. If it does not update, the User could have an option to report it or the app should detect and ask the User to restart the app.
+- Flow: The User opens the app (manually or through the widget), and then navigates to the settings page using the icon in the top right corner. Once in the settings pages, the User can choose between light or dark mode, and the theme choices should be right below. Once the user has made these choices, changes on the app and widget should be applied immediately. To navigate back to the home page, the user will use the home icon in the top left.
+- Alternative flow: The interface may not update immediately or after the User saves the settings. If it does not update, the User will have an option to report it, or the app will detect and ask the User to restart the app.
 
 ### Use case 4
 - Actor: User(s) who want to utilize the app for the tokenized collectible system and practice improving their wellness habits in the process.
