@@ -268,7 +268,7 @@ Token system revise (start with 0 for first time users)
   
 **Reason for Changes**
 
-- We decided to make these changes to reduce the confusion on navigation. Moreover, we did not have the reset,resume,stop, skip button and the user was confused about after the user comes back. Therefore, without these features, the pomodore and stop watch would not make sense, since these have those functionality. Moreover, timer for when its break is required since our goal is balance between work and break, if the use does not know how many break the user has left, it would be hard to balance. Moreover, since it would be space-taking if we only have wellness mode and its tasks, and some users might want both work and wellness at the same time. THis would also help balancing work and break. Therefore, we decided to add these features to remove confusion and these help to achieve work-break balance.
+We decided to make these changes to reduce the confusion on navigation. Moreover, we did not have the reset,resume,stop, skip button and the user was confused about after the user comes back. Therefore, without these features, the pomodore and stop watch would not make sense, since these have those functionality. Moreover, timer for when its break is required since our goal is balance between work and break, if the use does not know how many break the user has left, it would be hard to balance. Moreover, since it would be space-taking if we only have wellness mode and its tasks, and some users might want both work and wellness at the same time. THis would also help balancing work and break. Therefore, we decided to add these features to remove confusion and these help to achieve work-break balance.
 
 ### Review 4
 1. **About the tester**
