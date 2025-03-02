@@ -342,13 +342,15 @@ first time user, returning user
 #### Revision
 
 ##### Prototype
-- The manual is too long, so revised into the shorter version
+- Edited the manual wording and add description about the new features we added.
 - Button + typing option instead of scrolling in for time settings
 -  Multiple lists for wellness and todo mode
   (Picture)
 - Set daily max for how many tokens a user can get
   (picture)
-- Instead of sidebar let widget sit on the homescreen (option for both sticky notes & widget)
+
+##### Revisions
+Instead of shortening the manual, we changed wording. Since manual would provide the in-depth description, shortening would not allow user to understand the app.
 
 ## Storyboard
 [CSC324_elephant_storyboard.pdf](https://github.com/user-attachments/files/18933149/CSC324_elephant_storyboard.pdf)
