@@ -276,6 +276,8 @@ Token system revise (start with 0 for first time users)
 <img src="https://github.com/user-attachments/assets/ff4c19f9-3b1b-4f76-8e2b-8339f17e55df" width="150" height="150">
 <img src="https://github.com/user-attachments/assets/8503ae32-676d-4255-9c00-42a788354c4e" width="150" height="150">
 
+---
+
 -  **Added work mode& break mode( if work mode, work checkist shows up)**
 
 ***Before***
@@ -291,6 +293,7 @@ Token system revise (start with 0 for first time users)
 
 (Sticky Note to show change in workmode with workchecklist)
 
+---
 
 -  **Added reset,resume,stop skip button for pomodore and stopwatch mode. In stopwatch mode, changed the wording from you have started to elapsed.**
     
@@ -302,6 +305,8 @@ Token system revise (start with 0 for first time users)
 
 <img src="https://github.com/user-attachments/assets/edf86f69-46b2-4e44-9240-5538b138e387" width="150" height="150">
 <img src="https://github.com/user-attachments/assets/70fe8065-470a-4289-a3ff-e61b123b2358" width="150" height="150">
+
+---
 
 -  **Added timer for when its break( how long break remains).**
 
