@@ -154,16 +154,11 @@ other things you added to your prototype, not necessarily based on the testing s
 
 
 
-### Review 2 
-Hannah Kim (
-
-
-
 
 #### Revisions
 
 -
-### Review 3
+### Review 2
 1. About the tester
 Peer: Leah Perlmutter </br>
 Occuptation: Professor of 324</br>
@@ -222,7 +217,9 @@ Being able to add new new list (users can write down) in the widget.
 Token system revise (start with 0 for first time users)
 
 
-### Review 4
+#### Reivision
+
+### Review 3
 1. About the tester
 Professor Jonathan Wells </br>
 Occuptation: Professor of Statistics Department</br>
@@ -247,13 +244,14 @@ first time user, returning user
 #### Based on Questions we asked:
 
 1. Was there any moment where you felt unsure of what to do next? (usability)
-   How to navigate to previuos page or home menu. NSomtimes x button or back button
-3. How do you usually keep track of your wellness habits? Does this app provide any advantages over your current method? (potential usage)
-  He does not
-5. What would make this app more appealing for professionals in academia? (tailored question)
-   If there was a way to sync to list with items in outlook calendar
-7. Is there a feature that feels unnecessary or overwhelming? (improvement)
-Wanted to new feature: other color themes.
+   - How to navigate to previuos page or home menu. NSomtimes x button or back button
+2. How do you usually keep track of your wellness habits? Does this app provide any advantages over your current method? (potential usage)
+  - He does not
+3. What would make this app more appealing for professionals in academia? (tailored question)
+   - If there was a way to sync to list with items in outlook calendar.
+   - He wants the syncing through web since he wants to use at home too.
+4. Is there a feature that feels unnecessary or overwhelming? (improvement)
+   None, he wants to new feature: other color themes.
 
 
 #### Reivision
@@ -276,8 +274,9 @@ Type of the test user: naive/real stakeholder
 |Hyeyun | Demoing the prototype |
 
 3. Which user stories were activated?
+-Returning User
 
-4. Additional notes describing the session, e.g. observations of the test user's behavior.
+5. Additional notes describing the session, e.g. observations of the test user's behavior.
 - User wants a button that straight up opens the setting
 - Set it up when you obtain a new avatar
 - Multiple lists (wellness and todo)
@@ -296,25 +295,59 @@ Type of the test user: naive/real stakeholder
 #### Based on Questions we asked:
 
 1. Was there any moment where you felt unsure of what to do next? (usability)
-   Every moment (she did not read the manual manual is not attractive neought)
-3. Do you think this app fits well with your study schedule, deadlines, and extracurricular activities?
-4. Are there any features that feel unnecessary or confusing for a student?
-   ALl good
-6. What would make this app more appealing for students or for you(in grinnell)?
-   Attractive avators COllaboration.
-8. Would you feel encouraged to build healthy habits using this app, or would you need additional incentives?
-9. What accessibility improvements would make this app more student-friendly?
-    attractive manual, pop up window zoom meeting top elepjatn logo app on top
+   - Every moment (she did not read the manual manual is not attractive neought)
+2. Do you think this app fits well with your study schedule, deadlines, and extracurricular activities?
+3. Are there any features that feel unnecessary or confusing for a student?
+   - All good
+4. What would make this app more appealing for students or for you(in grinnell)?
+   - Attractive avators COllaboration.
+5. What accessibility improvements would make this app more student-friendly?
+    - attractive manual, pop up window zoom meeting top elepjatn logo app on top
 
 Instead of Scrolling have button (or sticky point) and typing.
 
 
-
-
 #### Revision
 
-
 ### Review 6
+1. About the tester
+Hannah Kim </br>
+Occuptation: </br>
+Date : 02-26-2025</br>
+Time : 12:00pm - 1:00pm </br>
+Type of the test user: naive/real stakeholder
+
+2. What roles did each team member play during the test?
+   
+| Name    | Role |
+| -------- | ------- |
+| Mae    | Demoing the prototype    |
+| Candice    | Writer  |
+| Candice    | Demoing the prototype    |
+|Hyeyun | Demoing the prototype/Asking questions |
+
+3. Which user stories were activated?
+first time user, returning user
+
+5. Additional notes describing the session, e.g. observations of the test user's behavior.
+- The test user seemed interested with the prototype (and fun) the time about the paper prototype.
+- Since the person has used this type of app (pomodore, stopwatch), the user seemed to be less confusing.
+  
+6. The feedback you got from the tester
+- She wished more intitutive UI.
+- She suggested adding a sound for alarm for stopwatch and pomodore.
+- She asked what if she really wanted to focus while working, and it would be also irritating to have notification. --> suggested adding a turn on/off function
+
+#### Based on Questions we asked:
+
+1. Was there any moment where you felt unsure of what to do next? (usability)
+   - She was unsure about what happens if she leaves the computer for a long time and how it differentiates break or detect.
+2. How do you usually keep track of your work and break? (potential usage)
+   - She uses pomodore.
+3. What would be the benefit of using this app? (appealing point) (potential usage)
+   - Having both pomodore and timer are appealing.
+
+
 
 
 ## Storyboard
