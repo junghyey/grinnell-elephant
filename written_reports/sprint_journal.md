@@ -72,14 +72,14 @@ Type of the test user: Real Stakeholder
 - Being able to add new task in the widget.
 
 7. Not only will your prototype change, but also, you might choose to change the way you present it to your user.
-other changes your team decided to make from your own thoughts and ideas from the testing session
-other things you added to your prototype, not necessarily based on the testing session
 - We decided to give more background information and how the testing sessions will go to the outside stakeholder.
 - We need to be more prepared for which questions we should ask. 
 
 8. Include one or more photos of your revised prototype where the difference between the original and revised version can be plainly seen
-#### Outline of revisions made:
+   
+#### Revisions :
 
+##### Prototype
 - Collectible pages
    - Added collectible characters on the collectibles page
    - Added locks to distinguish whether collectibles are unlocked
@@ -101,6 +101,10 @@ other things you added to your prototype, not necessarily based on the testing s
 - User manual added
    - Can be accessed first time opening the app or through homepage
       (picture)
+
+###### Reason
+These changes were made to improve user engagementm accessibilty, and clarity (remove confusion) in the app. Added features in the collectiblie system create a more structured reward system and allow users to have more meaningful interaction. Widget improvements including light mode and character updates are for customization and accesibilty. The wellness checklist has personal reminders and has been renamed for clarity to focus on wellness rather than token collecting. Adding keyboard would allow more engagement during testing and new user manual is added to streamline the onboarding proccess for the app. Overall, these updates were maded to make app more intuitive, engaging, and user-friendly.
+
 #### Pictures
 
 ##### Initial Version 
@@ -174,21 +178,23 @@ Type of the test user: Real Stakeholder
 - We should give more instruction and explain use case to the tester. (ex: first time user..etc..)
 
 #### Revisions
+##### Prototype
 Added Close button to every feature
  (picture)
 Added next page button in the tutorial
  (picture)
-More directions inthe tutorial
+More directions in the tutorial
  (picture)
-Notifications
+Notifications when its time for break
  (picture)
 Being able to add new new list (users can write down) in the widget.
  (picture)
 Token system revise (start with 0 for first time users)
  (picture)
 
+##### Reason
+- We decided to make these changes because our app did not have basic functionalities such as closing the app page. Moreover, these revisions would help users to remove confusions such as not having next page button, close button and inconsistent token system. For example, since we had 18 for default and for the first time user, the user won't have the tokens, so we revised to 0 tokens and made it to go up every time user completes the task. Moreover, we did not have notification option before, and that would lead to ineffective app since our goal is the user to take a rest, so we decided to add notification.
 
-#### Revision
 
 ### Review 3
 1. About the tester
@@ -243,10 +249,13 @@ Type of the test user: naive user (does not know about the product) + real stake
    None, he wants to new feature: other color themes.
 
 #### Revision
+##### Prototype
 -  Added page number and close button in the app description page
--  Added work mode& break mode( if work mode, work checkist shows up),
--  Added reset,resume,stop skip button for pomodte and stopwatch mode, 4
--  Added timer for when its break( how long break remains). 
+-  Added work mode& break mode( if work mode, work checkist shows up)
+-  Added reset,resume,stop skip button for pomodore and stopwatch mode
+-  Added timer for when its break( how long break remains).
+##### Reason
+- We decided to make these changes to reduce the confusion on navigation. Moreover, we did not have the reset,resume,stop, skip button and the user was confused about after the user comes back. Therefore, without these features, the pomodore and stop watch would not make sense, since these have those functionality. Moreover, timer for when its break is required since our goal is balance between work and break, if the use does not know how many break the user has left, it would be hard to balance. Moreover, since it would be space-taking if we only have wellness mode and its tasks, and some users might want both work and wellness at the same time. THis would also help balancing work and break. Therefore, we decided to add these features to remove confusion and these help to achieve work-break balance.
 
 ### Review 5
 1. About the tester
@@ -330,6 +339,8 @@ first time user, returning user
    - Having both pomodoro and timer are appealing.
 
 #### Revision
+
+##### Prototype
 - The manual is too long, so revised into the shorter version
 - Button + typing option instead of scrolling in for time settings
 -  Multiple lists for wellness and todo mode
