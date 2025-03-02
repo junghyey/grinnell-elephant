@@ -36,8 +36,8 @@ Add a section to your Sprint Journal with:
 |Hyeyun | Ask questions & explanation|
 
 3. **Which user stories were activated?**  
-- Karen's user story who is not good at technology was activated (partially)
-- The first time user use case was activated. : The tester suggested having a quick manual or tutorial to know about this app, which was part of Karen's user stories
+- Use Case 1: First-Time User Onboarding (Stopwatch & Pomodoro Timers)
+
 
 4. **Additional notes describing the session (e.g., observations of the test user's behavior)**  
 - The tester was confused about what was going on and overall the flow of the app, which suggest we need more clear and intuitive prototype session.
@@ -168,7 +168,8 @@ End of Review 1
 |Hyeyun | Demoing the prototype |
 
 3.  **Which user stories were activated?** 
-- User case 1: New user
+- Use Case 1: First-Time User Onboarding
+- Use Case 2: Customizing the Wellness Checklist
 
 4. **Additional notes describing the session (e.g., observations of the test user's behavior)**  
 - The tester was confused about what to do next, which suggest we need more clear and intuitive prototype sessions.
@@ -302,7 +303,8 @@ End of Review 2
 |Hyeyun | Writer |
 
 3. **Which user stories were activated?**  
-- First time user: reading manual and setting the widget
+- Use Case 1: First-Time User Onboarding
+- Use Case 2: Customizing the Wellness Checklist
   
 4. **Additional notes describing the session (e.g., observations of the test user's behavior)**  
 - The user seems to be excited and looking forward to use the app.
@@ -428,7 +430,7 @@ End of Review 3
 |Hyeyun | Demoing the prototype |
 
 3. **Which user stories were activated?**
-- Returning User
+- Use Case 1: First-Time User Onboarding
 
 4. **Additional notes describing the session (e.g., observations of the test user's behavior)**  
 - The user did not read the manual so confused about how app works.
@@ -480,7 +482,8 @@ End of Review 4
 |Hyeyun | Demoing the prototype/Asking questions |
 
 3. **Which user stories were activated?**  
-first time user, returning user
+Use Case 1: First-Time User Onboarding
+Use Case 3: Adjusting Theme & Mode Settings (wanted sound)
 
 5. **Additional notes describing the session (e.g., observations of the test user's behavior)**  
 - The test user seemed interested with the prototype (and fun) the time about the paper prototype.
@@ -565,7 +568,7 @@ What are your ideas for redesigning your product based on critique?
 Based on our peer review and the initial app reviews from the beginning of the semester, we received feedback focused on accessibility, user experience, and ensuring that the wellness-focused incentives remained meaningful rather than just gamified engagement. One of the most significant points raised was the need for increased accessibility features, particularly in visual and interaction design.
 
 2. Added the user case 
-   
+
 3. Edited the use case #2
    - Added two different flows: adding task on the widget interface & adding task from the in-app settings
    - Added alternative flow when app crashes
