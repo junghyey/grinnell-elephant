@@ -107,16 +107,17 @@ The user has now successfully interacted with either the stopwatch or Pomodoro t
 - Postcondition: User successfully creates customized wellness message
 - Flow 1: adding task on the widget interface
   1. User click on the sidebar, the widget appears on the top of the sidebar
-  2. The user clicks on the bottom button that says "add new task"
+  2. The user clicks on the bottom button in the list section of the widget that says "add new task"
   3. The user types in the customized task, or press on the speech-to-text button and create new task verbally
 - Flow 2: adding task from the in-app settings
   1. User opens the app from the top right corner of the widget, or from the applications list
-  2. User clicks on the settings button and scrolls down to the section for customizing tasks
-  3. User clicks on the "add new task" button
+  2. User clicks on the settings button on the upper-right corner and scrolls down to the section for customizing tasks
+  3. User clicks on the "add new task" button in the list section
   4. The user types in the customized task, or press on the speech-to-text button and create new task verbally
 - Alternative flows:
   -   If the app crashes while before the updated task can be saved, user will need to re-add the task
   -   If the user fails to save the updated messages, the user will need to re-add the task
+  -   Non-recoverable situation: If the app crashes, the system attempts to save the session state and reload it when reopened. If the system fails to do so, it will display the state of widget that was last saved in the system.
 
 ### Use case 3
 - Actor: User(s) who want to change themes/mode settings due to visual accessibility needs or just preference. Users Plankton and Hughie would utilize these settings to accommodate their accessibility or visual preferences.
