@@ -5,6 +5,8 @@ Purpose: to record written work that you produce in this sprint (outside of agil
 
 # Sprint 1
 
+Compare link for Requirements: https://github.com/junghyey/grinnell-elephant/blob/main/written_reports/Requirements.md/compare/a514b33..2b5a25b
+
 ## Revise requirements based on feedback
 Summarize the feedback from your reviews.
 Describe the changes, if any, that you are making to your requirements, user personas, user stories, use cases, and prototype based on these reviews.
