@@ -578,9 +578,9 @@ Based on our peer review and the initial app reviews from the beginning of the s
    - Accessibility features such as color modes and higher readability mode
    - Sound cues and option to turn it off in settings
 5. Updated and re-organized the main features section of the requirements document to include the following:
-  - Description of components for both app and widget interface
-  - Description of setting options allowed for the widget
-  - Description of different components of the app, including the shop, the user manual, and the token-collectible system
+   - Description of components for both app and widget interface
+   - Description of setting options allowed for the widget
+   - Description of different components of the app, including the shop, the user manual, and the token-collectible system
 6. Updated list of stretch goals to include the following:
    - Keyboard shortcuts to allow navigation without trackpad/mouse
    - Option for widget to exist as an independent window on the desktop instead of in the sidebar 
