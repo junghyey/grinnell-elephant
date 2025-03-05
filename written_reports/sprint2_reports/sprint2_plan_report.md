@@ -18,7 +18,7 @@ Our goal for this sprint is to focus more on the software implementation for Ele
 - Create database of images for collectibles
 - Implement setting changes for color and text font
 - Implement setting page for customizable checklist(s)
-- Wilson Catalyst Presentation (
+- Wilson Catalyst Presentation and Pitch
 - Team Bonding!! <3 (assigned to all)
 
 These goals contribute directly to our milestone of transitioning from prototype to initial implementation of key features. By focusing on coding tasks and integrating team feedback, we aim to establish a strong foundation for subsequent sprints.
