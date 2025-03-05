@@ -13,13 +13,17 @@ Goals: Our goals this sprint is to focus more on the software implementation for
 - Team Bonding!! <3
 
 Assignment: 
-This sprint our teams tasks will be divided up the following and our also subject to change given team member's access and variation in work for that week.
-...
+During this sprint, our team decided that tasks would be divided up into the following roles but we want to emphasize that this is subject to change given team member's access and variation in work for that week. **This table does not mean each person is entitled to their role nor they should be the only one doing the task.** We should all collaborate to work on every task but this table shows who should lead each task since there are lots of tasks and assignments can be confusing.
 
-Issue Tracker: How can your instructor view the results of your sprint planning using your issue tracker?
-Make sure that issues within your issue tracker are well formed. A well formed issue is:
-Well defined: includes a meaningful title and a description outlining the details of the issue
-Scoped: has an estimate of the time or effort needed to complete
-Verifiable: has a clear, unambiguous description of how to know when it is done
-Indecomposable: can't be broken down into smaller parts that could stand on their own
-Make sure that issues for this sprint can easily be seen in your issue tracker even after the end of the sprint.
+| Role                         | Responsibilities |
+|------------------------------|-----------------|
+| **Project Manager (Hyeyun)**    | Oversees sprint progress and reports, manages deadlines/Trello board, organizes meetings, and ensures team coordination. |
+| **Lead Developer (Candice)** | Oversees overall implementation, handles technical setup, coding standards, and supports development in Swift and Xcode. |
+| **Lead Designer (Mae)** | Responsible for design-related tasks (e.g., character design, coloring, paper prototyping) and brainstorming app ideas. |
+| **Documentation & Reporting Lead (Gabby)** | Reviews and updates sprint reports, maintains documentation, and ensures clear communication of progress (grammar, wording..etc..).  |
+
+## Issue Tracker
+1. We have shared our Trello Elephant Development Board with our instructor and mentor, assigning tasks to each team member with clear deadlines. 
+2. We also have labels to categorize the tasks and label for the sprint for extra clarification. (ex: which task should be recorded in the sprint journal vs. the user requirement document)
+3. The results of our sprint planning are tracked by our ‘Sprint2’ goals and transferred to ‘In progress’ once the task is picked up and moved over to ‘Done’ once completed.
+4. For the tasks that cannot be proceeded by the dependencies such as tech access issues, those tasks are moved to the 'On Hold' list.
