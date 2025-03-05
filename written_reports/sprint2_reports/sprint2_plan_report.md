@@ -1,4 +1,4 @@
-# Sprint 2 Planning report
+# Sprint 2 Planning Report
 
 ## Capacity
 
