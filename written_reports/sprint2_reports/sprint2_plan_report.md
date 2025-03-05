@@ -26,8 +26,8 @@ These goals contribute directly to our milestone of transitioning from prototype
 The following tasks are specific to the **Sprint 2 Report** and assignment can be reference in Trello Elephant Dev Board.
 - Part 1: Coding Guidelines (link can be found in README file)
 - Part 2: Software Architecture: first draft of app architecture
-*     Initial goals: make widget appear in the widget bar, and setting up app homepage
-*     Target/reach goals: Pomodoro and stopwatch implementation, building settings page
+     Initial goals: make widget appear in the widget bar, and setting up app homepage
+     Target/reach goals: Pomodoro and stopwatch implementation, building settings page
 - Part 3: Data Modeling
 - Part 4: Software Design
 - Part 5: 5.1, 5.2 Risk Assessment, Epics)
