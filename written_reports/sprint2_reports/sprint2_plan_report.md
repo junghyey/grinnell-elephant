@@ -1,7 +1,9 @@
 # Sprint 2 Planning report
 
+**Capacity**
+---
 In this sprint, our team wants to begin more of the coding implementation of the project, transferring ideas from our paper prototype to the digital version of Elephant: A Wellness Trunk. We have discussed our previous task commitment and to meet our sprint retrospective goals, we aim to vary what each team member does this sprint and assign different tasks including documentation and sprint report writing, as well as coding specific features. For at least one of our team members, she'll be taking more responsibility with the sprint report and updating our requirements and repository since she doesn't have at-home access to a MacOS device at home to contribute to the initial coding assignments that we want to get started on. These will be equally divided upon return from break once everyone has the same access again. We estimate the time taken for each member to complete their tasks will be reported within our Trello tasks and checking on each other's progress, constantly asking for team feedback, through our Teams group chat. Compared to the previous sprint, we estimate our capacity at approximately 30 hours per team member for this sprint, distributed across coding, documentation, and collaboration activities. These time estimates will be tracked and updated in Trello as tasks progress.
-
+---
 **Goals:** Our goal for this sprint is to focus more on the software implementation for Elephant, as described by our task breakdown below,
 - Continue researching collectible systems examples/ideas (assigned to all)
 - Assign page/feature for each team member
