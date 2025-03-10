@@ -220,10 +220,37 @@ ___
  -  Mobile version 
 
 ---
+# 6. Data Modeling
 
-# 6. References (ACM Format)
+The ***Elephant*** App stores following data: user information (Apple ID), user checklist(s), tokens, collectibles.
+
+Since the app has to store sensititve data including but not limited to user information, user checklist(which can contain user's personal information and the health data (ex: eat medicine)), and token lists (including purchased tokens) we need to have secure database to store these. So, we decided to use PostgreSQL. First we can describe users, checklists (medication checklists) and token information with relationships. Moreover, it supports HIPAA compilance and AES-256 encryption [4]. PostgreSQL ensures data reliability and integrity by being  ACID-compliant [5].
+
+## Database Scheme
+
+Since Elephant needs real-time updates for checklist and secure storage for user information, we use:
+- PostgreSQL for storing data
+- Firebase for real time update/storage [6] (This might be change based on the funding situation of the Catalyst program; however, the free plan looks viable)
+- Alternative to Firebase is **Supabase**, which has both PostgreSQL (Firebase is NoSQL) and real-time ability (real time server) . [7]
+
+### Diagram
+
+<img src="https://github.com/user-attachments/assets/b0d57f2a-594b-4f6e-95b7-90d2afb77ab3" style="width:50%;">
+
+
+
+---
+# 7. References (ACM Format)
 [1] Apple. 2024. Health App & Privacy. Apple Inc. Retrieved February 4, 2025, from https://www.apple.com/legal/privacy/data/en/health-app/#:~:text=Apple%20will%20maintain%20the%20Health,data%20you%20share%20with%20them. 
 
 [2] Dejal Systems, LLC. 2024. Time Out (Version 2.9.7) [Mobile app]. App Store. Retrieved from https://apps.apple.com/us/app/time-out-break-reminders/id402592703?mt=12. 
 
 [3] Finch Care Public Benefit Corporation. 2021. Finch: Self-Care Pet (Version 3.72.63) [Mobile app]. App Store. Retrieved from https://apps.apple.com/us/app/finch-self-care-pet/id1528595748. 
+
+[4] TheCloudFleet. 2025. Your guide to HIPAA-compliant PostgreSQL databases. LinkedIn Pulse. Retrieved from https://www.linkedin.com/pulse/your-guide-hipaa-compliant-postgresql-databases-thecloudfleet-evb9c/.
+
+[5] Eseme, S. 2025. ACID compliance in relational databases. Mastering Backend. Retrieved from https://publication.masteringbackend.com/acid-compliance-in-relational-databases-97091c6aae98.
+
+[6] Google. 2025. Firebase pricing. Firebase. Retrieved from https://firebase.google.com/pricing.
+
+[7] Supabase. 2025. Supabase database. Supabase. Retrieved from https://supabase.com/database.
