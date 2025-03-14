@@ -14,6 +14,7 @@ struct ElephantApp: App {
             ContentView()
             SettingsView()
             ShopMainPageView()
+            ItemView()
         }
         .windowResizability(.contentSize)
         .defaultSize(width: 400, height: 600)
