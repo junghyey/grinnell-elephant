@@ -256,13 +256,9 @@ Since Elephant needs real-time updates for checklist and secure storage for user
   - Dynamic test enabling based on runtime conditions, enhancing flexibility.
   - In-process parallelization of tests for faster execution.
   - Test categorization using customizable tags for better traceability.
-  - Direct association of bugs with the tests that verify their fixes or reproduce problems.
+  - Direct association of bugs with the tests that verify their fixes or reproduce problems. [8]
 
-~ [Testing Documentation Source](https://developer.apple.com/documentation/testing/)
-
-- **XCTest**: An abstract base class for creating, managing, and executing tests.
-
-~ [XCTest Documentation Source](https://developer.apple.com/documentation/xctest)
+- **XCTest**: An abstract base class for creating, managing, and executing tests. [9]
 
 ### Interfaces Between Components
 Data transfer within the program is structured to reduce coupling:
@@ -288,3 +284,8 @@ Data transfer within the program is structured to reduce coupling:
 [6] Google. 2025. Firebase pricing. Firebase. Retrieved from https://firebase.google.com/pricing.
 
 [7] Supabase. 2025. Supabase database. Supabase. Retrieved from https://supabase.com/database.
+
+[8] Swift Testing. Apple Inc. 2025. Retrieved from https://developer.apple.com/documentation/testing/.
+
+[9] XCTest package. Apple Inc. 2025. Retrieved from https://developer.apple.com/documentation/xctest/
+
