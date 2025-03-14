@@ -14,6 +14,9 @@ Elephant: A Wellness Trunk is an extension/widget for macOS designed to help use
 - Data security and privacy: Secure data storage and management</br>
 - Lightweight, intuitive interface</br>
 
+####
+[Link to coding guidelines](https://google.github.io/swift/)
+
 # Repository Layout
 ## Overview
 This section includes the overview/outline of the repository structure.</br>
@@ -22,12 +25,21 @@ Root
   |-- README.md 
   |
   |-- written_reports/
-  |   |-- milestone-2-report.md 
-  |   
-  |
-  |
-  |-- app_files                       # To be added         
-  |
+  |   |-- Requirements.md
+  |   |-- milestone-2-report.md
+  |   |-- sprint1_reports/
+  |       |-- sprint1_plan_report.md         # this is where we have sprint1 planning report
+  |       |-- sprint1_journal.md
+  |       |-- sprint1_review_report.md
+  |   |-- sprint2_reports/
+  |       |-- sprint2_plan_report.md         # this is where we have sprint2 planning report
+  |       |-- sprint2_journal.md
+  |       |-- sprint2_review_report.md
+  |-- Elephant
+  |-- ElephantWidget 
+  |-- ElephantUITests
+  |-- ElephantTests
+  |-- Elephant.xcodeproj      
   |
 ```
 ## Desription
@@ -35,7 +47,7 @@ This repository (currently) includes README.md file and written_reports folder.
 #### README.md
 Front face of the repo. Contains project idea, goals, repository layout and a link to Trello currently.
 #### Written Reports
-The written_reports folder will contain all the reports for milestone submission. Currently it has only milestone-2-report.md.
+The written_reports folder will contain all the reports for milestone submission. Currently, it has milestone-2-report.md, Requirements.md, sprint_journal.md, and sprint1_plan_report.md.
 
 # Issue Tracking Tool
 Include a link to your issue tracking tool: [Elephant Dev Board🐘💻](https://trello.com/b/4KAD6ca1/elephant-dev-board-%F0%9F%90%98%F0%9F%92%BB)
