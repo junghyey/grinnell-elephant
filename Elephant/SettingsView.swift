@@ -11,6 +11,10 @@ struct SettingsView: View {
     var body: some View {
         ScrollView{
             VStack {
+                // Todo:
+                    // figure out what are the settings and the buttons and things
+                    // figure out where to store the info being changed, maybe a json with all the configurations
+                    // figure out how to update settings when user clicks a configuration buttons
                 Text("Settings")
                     .font(.title)
                     .fontWeight(.bold)

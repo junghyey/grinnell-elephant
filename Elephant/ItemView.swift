@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ItemView: View {
     var body: some View {
+        // get rid of navstack
         NavigationStack{
             ScrollView{
                 VStack {
@@ -27,6 +28,7 @@ struct ItemView: View {
                     }
                     Text("Price: 10 tokens")
                         .font(.headline)
+                    // make this a button that displays a window for buy when on click, instead of a navlink
                     NavigationLink(destination: ShopMainPageView()){
                         RoundedRectangle(cornerRadius: 15)
                             .foregroundStyle(Color.green)
@@ -34,6 +36,10 @@ struct ItemView: View {
                             .overlay{
                                 Text("Buy")
                             }
+                        // to add: once user click on buy, show number of tokens they have and ask if they want to buy (options: buy or return)
+                        // if return: return to this page
+                        // if buy, ask them if they want to change avatar in widget
+                            // if change, do a little animation with ribbons and change the buy button to a return to store page button
                     }
                 }
             }

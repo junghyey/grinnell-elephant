@@ -25,6 +25,8 @@ struct ShopMainPageView: View {
                     ScrollView(.horizontal){
                         ZStack{
                             
+                            // Todo:
+                                // add pictures to each green square!
                             RoundedRectangle(cornerRadius: 20)
                                 .foregroundStyle(Color.white)
                                 .frame(width: 500, height: 140)
@@ -93,7 +95,7 @@ struct ShopMainPageView: View {
             }
         }
         .background(Color.yellow)
-        .frame(width: 400, height: 600, alignment: .leading)
+        .frame(width: 400, height: 800, alignment: .leading)
     }
 }
 #Preview {
