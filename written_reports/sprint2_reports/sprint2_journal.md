@@ -20,10 +20,12 @@
   - In-process parallelization of tests for faster execution.
   - Test categorization using customizable tags for better traceability.
   - Direct association of bugs with the tests that verify their fixes or reproduce problems.
-[Testing Documentation Source](https://developer.apple.com/documentation/testing/)
+
+~ [Testing Documentation Source](https://developer.apple.com/documentation/testing/)
 
 - **XCTest**: An abstract base class for creating, managing, and executing tests.
-[XCTest Documentation Source](https://developer.apple.com/documentation/xctest)
+
+~ [XCTest Documentation Source](https://developer.apple.com/documentation/xctest)
 
 ### Interfaces Between Components
 Data transfer within the program is structured to reduce coupling:
