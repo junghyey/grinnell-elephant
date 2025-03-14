@@ -130,3 +130,7 @@ Planned Documentation Deliverables:
    - Ensure the product's functionality is well-documented for both end-users.
 
 ---
+
+### Part 8 Additional Work
+
+We plan to do market research for our Wilson Catalyst presentation to differentiate our app from others. We work on other components of the pitch to effectively communicate the purpose and mission for Elephant: A Wellness Trunk
