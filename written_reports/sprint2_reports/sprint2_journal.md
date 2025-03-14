@@ -65,6 +65,15 @@
   - Implement light/dark modes.
   - Introduce dynamic text resizing.
   - Test and refine features with feedback.
+    
+#### Epic 5: Storing User Data
+- **Description**: Set up a database to collect and store user data.
+- **Dependencies**: UI Development
+- **Effort Estimate**: 2 weeks to create a secure database with updates throughout app development.
+- **Subtasks**:
+  - Create database collecting structure on PostgreSQL.
+  - Integrate Firebase or Supabase for real-time updates.
+  - Encryption for sensitive information such as medication.
 
 ---
 
