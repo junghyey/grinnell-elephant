@@ -106,10 +106,10 @@ Data transfer within the program is structured to reduce coupling:
 
 | **Epic**                 | **Start Date** | **Completion Date** |
 |--------------------------|----------------|----------------------|
-| Core UI Development      | 02-24-2025     | 03-19-2025          |
-| WidgetKit Integration    | 03-13-2025     | 03-19-2025          |
+| Core UI Development      | 02-16-2025     | 03-21-2025          |
+| WidgetKit Integration    | 03-13-2025     | 03-21-2025          |
 | Collectible Database     | 03-13-2025     | 03-23-2025          |
-| Accessibility Features   | 2025-04-18     | 05-02-2025          |
+| Accessibility Features   | 03-13-2025     | 05-02-2025          |
 
 ---
 
