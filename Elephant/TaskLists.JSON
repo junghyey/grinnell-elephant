@@ -1,0 +1,30 @@
+//
+//  TaskLists.JSON
+//  Elephant
+//
+//  Created by 陸卉媫 on 3/14/25.
+//
+
+{
+    "Lists": [
+        "DefaultList": {
+            "ListName": "Default List",
+            "Size": 3,
+            "Items": [
+                "Eat an apple",
+                "Nap for 10 mins",
+                "Walk around for 5 mins",
+            ]
+        },
+        
+        "TaskList": {
+            "ListName": "Task List",
+            "Size": 3,
+            "Items": [
+                "Respond to Prof. Perlmutter's email",
+                "Finalize essay",
+                "Meet with teammates",
+            ]
+        }
+    ]
+}
