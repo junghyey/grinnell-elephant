@@ -29,19 +29,20 @@
 
 ### 5.2 Epics and Subtasks
 
-#### Epic 1: Core UI Development
+#### Epic 1: Initial Structure
 - **Description**: Create the primary app interface and design themes.
 - **Dependencies**: None.
-- **Effort Estimate**: 6 person-weeks.
+- **Effort Estimate**: 2 weeks (before the end of spring break)
 - **Subtasks**:
   - Implement UI navigation.
-  - Develop app theme manager within settings
+  - Develop app theme, text, and customizable lists manager within settings
+  - Develop user manual within settings
   - Unit testing for UI elements.
 
 #### Epic 2: WidgetKit Integration
 - **Description**: Build and integrate macOS widget extension.
-- **Dependencies**: Core UI Development.
-- **Effort Estimate**: 4 person-weeks.
+- **Dependencies**: Initial structure of UI
+- **Effort Estimate**: 4 weeks including the timeline of the initial UI development
 - **Subtasks**:
   - Design the widget layout with collectible integration
   - Implement data syncing for widget updates and offline contingency planning
@@ -50,16 +51,16 @@
 #### Epic 3: Collectible Database
 - **Description**: Set up a database to manage collectible art graphics.
 - **Dependencies**: Core UI Development.
-- **Effort Estimate**: 5 person-weeks.
+- **Effort Estimate**: 5 weeks including the timeline of the initial UI development
 - **Subtasks**:
-  - Create database schema.
-  - Populate initial collectible art based on biomes.
+  - Create database schema on SQL
+  - Populate initial collectible art, biome categorizing will progress throughout the collection
   - Integrate with app and widget appearance.
 
 #### Epic 4: Accessibility Features
-- **Description**: Add essential accessibility options like various light themes and customizable text size and font type.
-- **Dependencies**: Core UI Development.
-- **Effort Estimate**: 3 person-weeks.
+- **Description**: Add accessibility options like various light themes and customizable text size and font type.
+- **Dependencies**: Initial structure of UI
+- **Effort Estimate**: 3 weeks including the timeline of the initial UI development
 - **Subtasks**:
   - Implement light/dark modes.
   - Introduce dynamic text resizing.
@@ -83,16 +84,16 @@
 Planned Documentation Deliverables:
 1. **User Manual**: To assist end-users in navigating the app and widgets. Appears to first time users upon download and can be accessed later in Setting
 2. **Developer Guide**: Covers system architecture, setup, and contributions for developers.
-3. **Help Menu/Settings**: Embedded help within the app, including FAQs and troubleshooting.
+3. **Help Menu/Settings**: Embedded help within the app, including user guide examples, FAQs, and troubleshooting.
 4. **Repo**: Centralized knowledge base for the project, hosted on the repository.
 
 **Action Plan**:
 1. **Task Assignment**
-   - Assign a specific page or feature from the product backlog to each team member based on their expertise and current workload.
-   - Divide documentation tasks (e.g., user guides, developer guides, admin guides) among team members to ensure coverage and accountability.
+   - Assign each team member a specific page or feature from the product backlog based on their expertise and current workload.
+   - Divide documentation tasks (sprint journal, user guides, developer guides) among team members to ensure coverage and accountability.
 
 2. **Database Implementation**
-   - Create a database for wellness tasks and ensure it is documented thoroughly in the developer guide. Include schema designs and data flow diagrams.
+   - Create a database for wellness tasks and ensure it is documented thoroughly in the repo. Include designs and data flow diagrams.
    - Develop a database for collectible images, detailing the organization and tagging system for seamless integration into the app.
 
 3. **Feature Integration**
@@ -109,14 +110,14 @@ Planned Documentation Deliverables:
 
 6. **Milestone Establishment**
    - Break down each feature or page into milestones, ensuring a clear progression from initial design to final implementation.
-   - Define documentation milestones to ensure that drafts are reviewed and iterated upon throughout the sprint.
+   - Define documentation milestones to make sure our drafts are reviewed and worked on throughout the sprint.
 
 7. **Iterative Reviews**
-   - Perform iterative reviews with the team during sprint retrospectives to evaluate progress on features and documentation.
+   - Do iterative reviews with the team during sprint retrospectives to evaluate progress on features and documentation.
    - Gather feedback and update the documentation accordingly to reflect the most current implementation details.
 
 8. **Final Documentation Integration**
-   - Finalize user guides, developer guides, and help menus into a cohesive documentation package.
+   - Finalize user manual, developer documentation in repo, and settings layout into a cohesive documentation package.
    - Ensure the product's functionality is well-documented for both end-users.
 
 ---
