@@ -70,7 +70,7 @@ Data transfer within the program is structured to reduce coupling:
 - **Effort Estimate**: 6 person-weeks.
 - **Subtasks**:
   - Implement UI navigation.
-  - Develop app theme manager.
+  - Develop app theme manager within settings
   - Unit testing for UI elements.
 
 #### Epic 2: WidgetKit Integration
@@ -78,21 +78,21 @@ Data transfer within the program is structured to reduce coupling:
 - **Dependencies**: Core UI Development.
 - **Effort Estimate**: 4 person-weeks.
 - **Subtasks**:
-  - Design the widget layout.
-  - Implement data syncing for widget updates.
+  - Design the widget layout with collectible integration
+  - Implement data syncing for widget updates and offline contingency planning
   - Test widget functionality on macOS.
 
 #### Epic 3: Collectible Database
-- **Description**: Set up a database to manage collectible art data.
+- **Description**: Set up a database to manage collectible art graphics.
 - **Dependencies**: Core UI Development.
 - **Effort Estimate**: 5 person-weeks.
 - **Subtasks**:
   - Create database schema.
   - Populate initial collectible art based on biomes.
-  - Integrate with app logic.
+  - Integrate with app and widget appearance.
 
 #### Epic 4: Accessibility Features
-- **Description**: Add essential accessibility options like themes and dynamic text.
+- **Description**: Add essential accessibility options like various light themes and customizable text size and font type.
 - **Dependencies**: Core UI Development.
 - **Effort Estimate**: 3 person-weeks.
 - **Subtasks**:
@@ -106,10 +106,10 @@ Data transfer within the program is structured to reduce coupling:
 
 | **Epic**                 | **Start Date** | **Completion Date** |
 |--------------------------|----------------|----------------------|
-| Core UI Development      | 2025-03-15     | 2025-03-18          |
-| WidgetKit Integration    | 2025-03-19     | 2025-04-02          |
-| Collectible Database     | 2025-04-03     | 2025-04-17          |
-| Accessibility Features   | 2025-04-18     | 2025-05-02          |
+| Core UI Development      | 02-24-2025     | 03-19-2025          |
+| WidgetKit Integration    | 03-13-2025     | 03-19-2025          |
+| Collectible Database     | 03-13-2025     | 03-23-2025          |
+| Accessibility Features   | 2025-04-18     | 05-02-2025          |
 
 ---
 
