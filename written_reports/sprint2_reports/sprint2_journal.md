@@ -1,40 +1,5 @@
 # Sprint Journal 2
 
-## Part 4: Software Design
-
-### Definitions:
-- **iOS App Development Environment**: Developed with SwiftUI/Xcode utilizing graphics and WidgetKit.
-  - **Packages Utilized**: 
-    - `WidgetKit` and `SwiftUI` for the app's widget components.
-    - `Testing` and `XCTest` for the testing suite.
-
-### Component Responsibilities
-- **WidgetKit**: package we utilize for the widget implementation of Elephant; enables data updates and interactivity for the widget displayed in the macOS laptop widget bar.
-- **SwiftUI**: syntax that builds the app’s UI for both the app and widget component. Responsible for custom designs and rendering interfaces.
-- **Testing**: Swift testing integrates with the Swift Package Manager testing workflow and supports:
-  - Flexible test organization, allowing test functions to be defined almost anywhere with a single attribute.
-  - Hierarchical grouping of related tests using Swift’s type system for clear organization.
-  - Swift concurrency integration for robust and efficient asynchronous testing.
-  - Parameterized test functions to cover a wide range of inputs efficiently.
-  - Dynamic test enabling based on runtime conditions, enhancing flexibility.
-  - In-process parallelization of tests for faster execution.
-  - Test categorization using customizable tags for better traceability.
-  - Direct association of bugs with the tests that verify their fixes or reproduce problems.
-
-~ [Testing Documentation Source](https://developer.apple.com/documentation/testing/)
-
-- **XCTest**: An abstract base class for creating, managing, and executing tests.
-
-~ [XCTest Documentation Source](https://developer.apple.com/documentation/xctest)
-
-### Interfaces Between Components
-Data transfer within the program is structured to reduce coupling:
-- **Interfaces**: The app uses `SwiftUI` as a bridge for interacting with both the app interface and `WidgetKit`. 
-- **Data Flow**: Components exchange minimal data to ensure modularity, focusing on user preferences like widget appearance settings (coloring, text size, themes) and widget updates.
-- **Efficiency**: Testing components (`Testing` and `XCTest`) interface exclusively with app logic and ensure consistent behavior without directly interacting with the UI components.
-
----
-
 ## Part 5: Project Risks and Management
 
 ### 5.1 Risk Assessment
