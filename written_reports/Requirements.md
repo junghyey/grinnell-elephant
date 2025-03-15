@@ -254,7 +254,9 @@ Since Elephant needs real-time updates for checklist and secure storage for user
 
 #### 2.1 Frontend (SwiftUI)
 - Purpose: Managing the user interface (what users see) for the app main page, display, authentication.
-- Packages Used:
+- Responsibilities:
+ - Get historical checklist data from PostgreSQL when the app is launched.
+ - Manage any changes in the app (settings, purchase, storing data)
 - Primary Classes & Responsibilities (.swfit):
  -  MainView: Root view 
  -  SettingsView: User preferences
@@ -288,10 +290,11 @@ Since Elephant needs real-time updates for checklist and secure storage for user
 - Responsibilities:
  - Storage for data that needs real time update (checklist) 
  - Instnatly sync checklist completion form the widget.
- - Send the update to main app so that main app updates PostgreSQL (the storage that has encoded data Firebase only has reference to it).
+ - Trigger update in PostgreSQL
  - Sync token rewards/changes (subtraction if used)
 - Interfaces:
  -    real-time checklist and token updates to the app
+ -    tell PostgreSQL when updates occur.
 #### 2.4 PostgreSQL (Storage)
 - Store all the data (user,purchase checklist securely)
 - Responsibilites:
@@ -314,7 +317,7 @@ Since Elephant needs real-time updates for checklist and secure storage for user
 
 - **XCTest**: An abstract base class for creating, managing, and executing tests. [9]
 
-### Summary of Interfaces
+### 3. Data Flow
 Data transfer within the program is structured to reduce coupling:
 - **Interfaces**: The app uses `SwiftUI` as a bridge for interacting with both the app interface and the widget `WidgetKit`. 
 - **Data Flow**: Components exchange minimal data to ensure modularity, focusing on user preferences like widget appearance settings (coloring, text size, themes) and widget updates.
@@ -322,8 +325,9 @@ Data transfer within the program is structured to reduce coupling:
   - All the data in Main app is stored in PostgreSQL
   - The real time update is reflected in the checklist through Firebase and Firebase triggers update in PostgreSQL
   - The updated data in PostgreSQL is reflected in Main APP.
- - WidgetKKit<-->Firebase
+ - WidgetKKit<-->Firebase<-->PostgreSQL
   - Widget  updates Firebase when user checks off item.
+  - Widget gets updated checklist from firebase (like a cache)
   - Fire base syncs the checklist update to PostgreSQL
 
 ---
