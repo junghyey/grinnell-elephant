@@ -239,15 +239,69 @@ Since Elephant needs real-time updates for checklist and secure storage for user
 
 ## Software Design
 
-### Definitions:
+### 1. Definitions:
 - **iOS App Development Environment**: Developed with SwiftUI/Xcode utilizing graphics and WidgetKit.
-  - **Packages Utilized**: 
-    - `WidgetKit` and `SwiftUI` for the app's widget components.
+  - **Packages Utilized**:
+    - 'SwiftUI' for the UI components for the app main page: settings (timer setting, app setting) and checklist storage
+    - 'WidgetKit' for the widget, which is the place for all the major interactive jobs (like checking off the item)
+    - 'Combine' for data handling, states updates, all the reactive works and asynchronous data handling.
+    - 'Foundation' for networking
+    - 'Firebase SDK' real-time updates for checklists
+    - 'PostgreSQL' (Backend API)- store checklist & user data
     - `Testing` and `XCTest` for the testing suite.
 
-### Component Responsibilities
-- **WidgetKit**: package we utilize for the widget implementation of Elephant; enables data updates and interactivity for the widget displayed in the macOS laptop widget bar.
-- **SwiftUI**: syntax that builds the app’s UI for both the app and widget component. Responsible for custom designs and rendering interfaces.
+### 2. Component Responsibilities
+
+#### 2.1 Frontend (SwiftUI)
+- Purpose: Managing the user interface (what users see) for the app main page, display, authentication.
+- Packages Used:
+- Primary Classes & Responsibilities (.swfit):
+ -  MainView: Root view 
+ -  SettingsView: User preferences
+ -  TimerSettings: Controls Pomodoro/Stopwatch
+ -  ChecklistControl: store checklist that user has added through the app screen via PostgreSQL and Firebase
+ -  PurchaseControl: Apple pay transaction.
+ -  TokenControl: Controls all the token that user have earned & used
+ -  Collectibles: Update collectibes
+- Interfaces:
+ - Read writes checklists to PostgreSQL
+ - Fetch real-time updates from Firebase
+ - Reflect any changes in settings to the app
+ - Provide checklist data to widget  
+
+#### 2.2 Interactive Widget (WidgetKit)
+- Purpose: Creating the interactive widget in the macOs widget bar (ex: check off item, pause, trigger real-time update).
+- Responsibilities:
+  - Display checklists (including interaction like checking off)
+  - Allows users to check off completed item
+  - Allows user to pause, resume, start pomodore or stopwatch
+  - Allows see how many tokens user have
+  - Allows to users to add a new item on the checklist
+  - Send updated checklist data to Firebase (real-time update), sync with PostgreSQL.
+ - Primary Classes:
+  - ChecklistWidget : Display checklist and allow check off and add a new task (and sync the newly added one to the checklist in ChecklistControl)
+  - ChecklistDataProvider: Provide checklist data to the widget
+- Interfaces:
+  - Sends completed updates to Firebase, which updates PostgreSQL. 
+#### 2.3 Firebase(Real-Time Update)
+- Purpose: Real-time updates for checklist and token (i.e. any tasks that need to be done real time)
+- Responsibilities:
+ - Storage for data that needs real time update (checklist) 
+ - Instnatly sync checklist completion form the widget.
+ - Send the update to main app so that main app updates PostgreSQL (the storage that has encoded data Firebase only has reference to it).
+ - Sync token rewards/changes (subtraction if used)
+- Interfaces:
+ -    real-time checklist and token updates to the app
+#### 2.4 PostgreSQL (Storage)
+- Store all the data (user,purchase checklist securely)
+- Responsibilites:
+ - Store checklist history
+ - Sync  Firebase to keep checklist updated
+ - Save all the user information for the app
+- Interfaces:
+ - Read/write user data using API
+ - Sync with Firebase (for real-time update)
+#### 2.5  Testing
 - **Testing**: Swift testing integrates with the Swift Package Manager testing workflow and supports:
   - Flexible test organization, allowing test functions to be defined almost anywhere with a single attribute.
   - Hierarchical grouping of related tests using Swift’s type system for clear organization.
@@ -260,11 +314,17 @@ Since Elephant needs real-time updates for checklist and secure storage for user
 
 - **XCTest**: An abstract base class for creating, managing, and executing tests. [9]
 
-### Interfaces Between Components
+### Summary of Interfaces
 Data transfer within the program is structured to reduce coupling:
-- **Interfaces**: The app uses `SwiftUI` as a bridge for interacting with both the app interface and `WidgetKit`. 
+- **Interfaces**: The app uses `SwiftUI` as a bridge for interacting with both the app interface and the widget `WidgetKit`. 
 - **Data Flow**: Components exchange minimal data to ensure modularity, focusing on user preferences like widget appearance settings (coloring, text size, themes) and widget updates.
-- **Efficiency**: Testing components (`Testing` and `XCTest`) interface exclusively with app logic and ensure consistent behavior without directly interacting with the UI components.
+ - Main App <--> PostgreSQL <--> Firebase
+  - All the data in Main app is stored in PostgreSQL
+  - The real time update is reflected in the checklist through Firebase and Firebase triggers update in PostgreSQL
+  - The updated data in PostgreSQL is reflected in Main APP.
+ - WidgetKKit<-->Firebase
+  - Widget  updates Firebase when user checks off item.
+  - Fire base syncs the checklist update to PostgreSQL
 
 ---
 
