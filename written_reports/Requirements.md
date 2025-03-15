@@ -220,7 +220,21 @@ ___
  -  Mobile version 
 
 ---
-# 6. Data Modeling
+# 6. Software Architecture
+
+### Todo: add diagram
+
+- Widget interface: interface that users mainly interact with, allows users to track work time, add tasks and receive wellness reminders
+- App interface: interface that allows users to modify settings, view and purchase new collectibles, and access user manual
+- Persistent storage: stores user settings, downloaded components such as collectibles, avatars, or themes
+- External storage: stores client data and purchase records
+
+- System architecture: client-server model
+  - Most data needed for the widget client end will be stored locally
+  - Client will need to connect to server to unlock new avatars or collectibles
+  - In this way, server tracks client's data, including ID, downloads, and purchases
+
+# 7. Data Modeling
 
 The ***Elephant*** App stores following data: user information (Apple ID), user checklist(s), tokens, collectibles.
 
@@ -334,7 +348,7 @@ Data transfer within the program is structured to reduce coupling:
 
 
 ---
-# 7. References (ACM Format)
+# 8. References (ACM Format)
 [1] Apple. 2024. Health App & Privacy. Apple Inc. Retrieved February 4, 2025, from https://www.apple.com/legal/privacy/data/en/health-app/#:~:text=Apple%20will%20maintain%20the%20Health,data%20you%20share%20with%20them. 
 
 [2] Dejal Systems, LLC. 2024. Time Out (Version 2.9.7) [Mobile app]. App Store. Retrieved from https://apps.apple.com/us/app/time-out-break-reminders/id402592703?mt=12. 
