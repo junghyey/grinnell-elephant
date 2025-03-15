@@ -222,14 +222,15 @@ ___
 ---
 # 6. Software Architecture
 
-### Todo: add diagram
+**Todo: add diagram**
 
+### System components
 - Widget interface: interface that users mainly interact with, allows users to track work time, add tasks and receive wellness reminders
 - App interface: interface that allows users to modify settings, view and purchase new collectibles, and access user manual
 - Persistent storage: stores user settings, downloaded components such as collectibles, avatars, or themes
 - External storage: stores client data and purchase records
 
-- System architecture: client-server model
+### System architecture: client-server model
   - Most data needed for the widget client end will be stored locally
   - Client will need to connect to server to unlock new avatars or collectibles
   - In this way, server tracks client's data, including ID, downloads, and purchases
