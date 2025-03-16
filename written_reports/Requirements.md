@@ -268,57 +268,57 @@ Since Elephant needs real-time updates for checklist and secure storage for user
 ### 2. Component Responsibilities
 
 #### 2.1 Frontend (SwiftUI)
-- Purpose: Managing the user interface (what users see) for the app main page, display, authentication.
+- Purpose: Managing the user interface (what users see) for the app's main page, display, and authentication.
 - Responsibilities:
- - Get historical checklist data from PostgreSQL when the app is launched.
- - Manage any changes in the app (settings, purchase, storing data)
+  - Get historical checklist data from PostgreSQL when the app is launched.
+  - Manage any changes in the app (settings, purchase, storing data)
 - Primary Classes & Responsibilities (.swfit):
- -  MainView: Root view 
- -  SettingsView: User preferences
- -  TimerSettings: Controls Pomodoro/Stopwatch
- -  ChecklistControl: store checklist that user has added through the app screen via PostgreSQL and Firebase
- -  PurchaseControl: Apple pay transaction.
- -  TokenControl: Controls all the token that user have earned & used
- -  Collectibles: Update collectibes
+  -  MainView: Root view 
+  -  SettingsView: User preferences
+  -  TimerSettings: Controls Pomodoro/Stopwatch
+  -  ChecklistControl: store checklist that user has added through the app screen via PostgreSQL and Firebase
+  -  PurchaseControl: Apple pay transaction.
+  -  TokenControl: Controls all the tokens that user has earned & used
+  -  Collectibles: Update collectibes
 - Interfaces:
- - Read writes checklists to PostgreSQL
- - Fetch real-time updates from Firebase
- - Reflect any changes in settings to the app
- - Provide checklist data to widget  
+  - Reads and writes checklists to PostgreSQL
+  - Fetch real-time updates from Firebase
+  - Reflect any changes in settings to the app
+  - Provide checklist data to widget
 
 #### 2.2 Interactive Widget (WidgetKit)
-- Purpose: Creating the interactive widget in the macOs widget bar (ex: check off item, pause, trigger real-time update).
+- Purpose: Creating the interactive widget in the macOS widget bar (ex: check off items, pause, trigger real-time update).
 - Responsibilities:
   - Display checklists (including interaction like checking off)
-  - Allows users to check off completed item
-  - Allows user to pause, resume, start pomodore or stopwatch
-  - Allows see how many tokens user have
-  - Allows to users to add a new item on the checklist
-  - Send updated checklist data to Firebase (real-time update), sync with PostgreSQL.
+  - Allows users to check off completed items
+  - Allows users to pause, resume, start Pomodoro or stopwatch
+  - Allows users to add a new item to the checklist
+  - Indicates how many tokens users have
+  - Send updated checklist data to Firebase (real-time update), and sync with PostgreSQL.
  - Primary Classes:
-  - ChecklistWidget : Display checklist and allow check off and add a new task (and sync the newly added one to the checklist in ChecklistControl)
+  - ChecklistWidget: Display checklist and allow check off and add a new task (and sync the newly added one to the checklist in ChecklistControl)
   - ChecklistDataProvider: Provide checklist data to the widget
 - Interfaces:
   - Sends completed updates to Firebase, which updates PostgreSQL. 
-#### 2.3 Firebase(Real-Time Update)
-- Purpose: Real-time updates for checklist and token (i.e. any tasks that need to be done real time)
+#### 2.3 Firebase (Real-Time Update)
+- Purpose: Real-time updates for checklist and token (i.e. any tasks that need to be done real-time)
 - Responsibilities:
- - Storage for data that needs real time update (checklist) 
- - Instnatly sync checklist completion form the widget.
- - Trigger update in PostgreSQL
- - Sync token rewards/changes (subtraction if used)
+  - Storage for data that needs real-time updates (checklist) 
+  - Instantly sync checklist completion from the widget
+  - Trigger update in PostgreSQL
+  - Sync token rewards/changes (subtraction if used)
 - Interfaces:
- -    real-time checklist and token updates to the app
- -    tell PostgreSQL when updates occur.
+  - real-time checklist and token updates to the app
+  - tell PostgreSQL when updates occur.
 #### 2.4 PostgreSQL (Storage)
-- Store all the data (user,purchase checklist securely)
-- Responsibilites:
- - Store checklist history
- - Sync  Firebase to keep checklist updated
- - Save all the user information for the app
+- Store all the data (user, purchase checklist securely)
+- Responsibilities:
+  - Store checklist history
+  - Sync  Firebase to keep checklist updated
+  - Save all the user information for the app
 - Interfaces:
- - Read/write user data using API
- - Sync with Firebase (for real-time update)
+  - Read/write user data using API
+  - Sync with Firebase (for real-time update)
 #### 2.5  Testing
 - **Testing**: Swift testing integrates with the Swift Package Manager testing workflow and supports:
   - Flexible test organization, allowing test functions to be defined almost anywhere with a single attribute.
@@ -336,14 +336,14 @@ Since Elephant needs real-time updates for checklist and secure storage for user
 Data transfer within the program is structured to reduce coupling:
 - **Interfaces**: The app uses `SwiftUI` as a bridge for interacting with both the app interface and the widget `WidgetKit`. 
 - **Data Flow**: Components exchange minimal data to ensure modularity, focusing on user preferences like widget appearance settings (coloring, text size, themes) and widget updates.
- - Main App <--> PostgreSQL <--> Firebase
-  - All the data in Main app is stored in PostgreSQL
-  - The real time update is reflected in the checklist through Firebase and Firebase triggers update in PostgreSQL
-  - The updated data in PostgreSQL is reflected in Main APP.
- - WidgetKKit<-->Firebase<-->PostgreSQL
-  - Widget  updates Firebase when user checks off item.
-  - Widget gets updated checklist from firebase (like a cache)
-  - Fire base syncs the checklist update to PostgreSQL
+  - Main App <--> PostgreSQL <--> Firebase
+    - All the data in the Main app is stored in PostgreSQL
+    - The real-time update is reflected in the checklist through Firebase and Firebase triggers updates in PostgreSQL
+    - The updated data in PostgreSQL is reflected in the Main app.
+  - WidgetKKit<-->Firebase<-->PostgreSQL
+    - Widget updates Firebase when user checks off an item.
+    - Widget gets updated checklist from Firebase (like a cache)
+    - Firebase syncs the checklist update to PostgreSQL
 
 ---
 
