@@ -30,14 +30,14 @@
 ### 5.2 Epics and Subtasks
 
 #### Epic 1: Initial Structure
-- **Description**: Create the primary app interface and design themes.
+- **Description**: Establish core UI structure & themes so that we have smooth navigation and better user experience.
 - **Dependencies**: None.
-- **Effort Estimate**: 2 weeks (before the end of spring break)
+- **Effort Estimate**: 3 person-weeks(1.5 weeks with 2 members).
 - **Subtasks**:
-  - Implement UI navigation.
+  - Implement main navigation for home, settings, and checklist views.
   - Develop app theme, text, and customizable lists manager within settings
   - Develop user manual within settings
-  - Unit testing for UI elements.
+  - Conduct unit testing for UI elements.
 
 #### Epic 2: WidgetKit Integration
 - **Description**: Build and integrate macOS widget extension.
