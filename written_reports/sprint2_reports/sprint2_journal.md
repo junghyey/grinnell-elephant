@@ -32,7 +32,7 @@
 #### Epic 1: Initial Structure
 - **Description**: Establish core UI structure & themes so that we have smooth navigation and better user experience.
 - **Dependencies**: None.
-- **Effort Estimate**: 3 person-weeks(1.5 weeks with 2 members).
+- **Effort Estimate**: 3 weeks
 - **Subtasks**:
   - Implement main navigation for home, settings, and checklist views.
   - Develop app theme, text, and customizable lists manager within settings
@@ -41,25 +41,28 @@
 
 #### Epic 2: WidgetKit Integration
 - **Description**: Build and integrate macOS widget extension.
-- **Dependencies**: Initial structure of UI
-- **Effort Estimate**: 4 weeks including the timeline of the initial UI development
+- **Dependencies**: Epic 1 & Epic 5
+- **Effort Estimate**: 4 weeks 
 - **Subtasks**:
   - Design the widget layout with collectible integration
-  - Implement data syncing for widget updates and offline contingency planning
+  - Implement real-time checklist updates using Firebase/PostgreSQL.
+  - Develop offline contingency planning
   - Test widget functionality on macOS.
 
 #### Epic 3: Collectible Database
 - **Description**: Set up a database to manage collectible art graphics.
-- **Dependencies**: Core UI Development.
+- **Dependencies**: Epic1 & Epic5
 - **Effort Estimate**: 5 weeks including the timeline of the initial UI development
 - **Subtasks**:
   - Create database schema on SQL
   - Populate initial collectible art, biome categorizing will progress throughout the collection
   - Integrate with app and widget appearance.
+  - Ensure collectibles sync socrreclty with widget and the main app.
+  - Develop backend  for displaying collectibles in the app.
 
 #### Epic 4: Accessibility Features
 - **Description**: Add accessibility options like various light themes and customizable text size and font type.
-- **Dependencies**: Initial structure of UI
+- **Dependencies**: Epic 1
 - **Effort Estimate**: 3 weeks including the timeline of the initial UI development
 - **Subtasks**:
   - Implement light/dark modes.
@@ -67,13 +70,22 @@
   - Test and refine features with feedback.
     
 #### Epic 5: Storing User Data
-- **Description**: Set up a database to collect and store user data.
-- **Dependencies**: UI Development
+- **Description**: Set up a database to collect and store user data and pipeline for storing data
+- **Dependencies**:  Epic 1 
 - **Effort Estimate**: 2 weeks to create a secure database with updates throughout app development.
 - **Subtasks**:
   - Create database collecting structure on PostgreSQL.
   - Integrate Firebase or Supabase for real-time updates.
   - Encryption for sensitive information such as medication.
+  - Perform security testing and check compliance with data protection policies.
+
+#### Epic 6: Token System
+- **Description**: Implement the token collection system to incentivi
+- **Dependencies**:  Epic 3 
+- **Effort Estimate**: 3 weeks
+- **Subtasks**:
+   - Define logic for earning & spending tokens (ex: daily limit)
+   - Implement UI for displaying token count
 
 ---
 
