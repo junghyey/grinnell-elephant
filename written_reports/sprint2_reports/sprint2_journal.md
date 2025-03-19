@@ -143,9 +143,21 @@ Planned Documentation Deliverables:
 
 ---
 
-### Part 6: Continuous Integration Plan
+### Part 6: Test Plan
 
-For this program, we'll be utilizing XCTest. Our program is developed using Swift on XCode thus we would need a compatible test library. In our case, XCTest will efficiently complete tests due to its direct integration with XCode. Our team will utilize GitHub Actions as the CI service that is linked to our project repository. GitHub Actions is a developer-friendly and efficient service that would allow seamless merge of team updates. To learn more about the developer's relationship with testing and CI, please navigate to the Developer Guidelines located in README.md.
+#### Test Library
+For this app, we'll be utilizing XCTest
+
+#### Justification
+Our program is developed using Swift on XCode thus we would need a compatible test library. In our case, XCTest will efficiently complete tests due to its direct integration with XCode.  
+
+#### Continuous Integration (CI) Service
+Our team will utilize GitHub Actions as the CI service that is linked to our project repository
+
+#### Justification
+GitHub Actions is a developer-friendly and efficient service that would allow seamless merge of team updates. To learn more about the developer's relationship with testing and CI, please navigate to the Developer Guidelines located in README.md.
+
+
 
 ---
 
