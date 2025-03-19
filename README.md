@@ -52,11 +52,22 @@ The written_reports folder will contain all the reports for milestone submission
 ## Developer Guidelines
 ### Testing and CI
 - Adding a new test to the code base:
-  - in progress...
+  1. Navigate to ElephantTests directory
+  2. Create a new test file (Navigate to File > New> Target select either  “UI Testing Bundle” or “Unit Testing Bundle”)
+  3. Implement test sub cases using XCTestCase:
+     - File > New > File from the macOS menu bar and select either “UI Test Case Class” or “Unit Test Case Class”
+  4. Follow the guideline in here: https://medium.com/tauk-blog/using-xctest-and-xctestcase-for-ios-tests-28828c829b3
+  * This write up is referenced from: https://medium.com/tauk-blog/using-xctest-and-xctestcase-for-ios-tests-28828c829b3
+     
 - Determining which tests will be executed in a CI build:
-  - in progress...
+  - Widget Testing: All the funcionality works in the widget
+  - UI testing: Validate UI flows for user experience
+  - Unit Tests: Verify individual components
+    
 - Determining which development actions trigger a CI build:
-  - in progress...
+  - Pull Request
+  - Pushing to the main branch
+  - (Possibly) scheduled run
 
 
 # Issue Tracking Tool
