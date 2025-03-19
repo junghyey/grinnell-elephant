@@ -52,11 +52,11 @@ The written_reports folder will contain all the reports for milestone submission
 ## Developer Guidelines
 ### Testing and CI
 - Adding a new test to the code base:
-  - 
+  - in progress...
 - Determining which tests will be executed in a CI build:
-  - 
+  - in progress...
 - Determining which development actions trigger a CI build:
-  - 
+  - in progress...
 
 
 # Issue Tracking Tool
