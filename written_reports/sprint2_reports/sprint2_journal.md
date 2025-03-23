@@ -1,5 +1,14 @@
 # Sprint Journal 2
 
+## Part 2: Software Architecture
+
+**Use of External Storage**
+- We decided to have an external storage to reduce the size of the client end, which will be used to (1) track records that are only important to developers such as purchase records, and (2) store images that clients can download through connecting to the internet.
+   - Alternatively, we can store everything locally, which will minimize need for external storage. However, as the developers, we might still need to track user data in some way, such as purchase records, which means external storage may still be needed.
+
+**Use of Two Different Interfaces**
+- We decided to have two interfaces, the app and the widget interface as we believe it is redundant and unecessary to have the widget hold all functionalities. Having an app component separated from the widget component also allows us to separate the main function (widget tool) from other functions (adjust settings, view achievements and purchases, etc).
+
 ## Part 5: Project Risks and Management
 
 ### 5.1 Risk Assessment
