@@ -222,18 +222,17 @@ ___
 ---
 # 6. Software Architecture
 
-**Todo: add diagram**
-
 ### System components
 - Widget interface: interface that users mainly interact with, allows users to track work time, add tasks and receive wellness reminders
 - App interface: interface that allows users to modify settings, view and purchase new collectibles, and access user manual
 - Persistent storage: stores user settings, downloaded components such as collectibles, avatars, or themes
 - External storage: stores client data and purchase records
 
-### System architecture: client-server model
-  - Most data needed for the widget client end will be stored locally
-  - Client will need to connect to server to unlock new avatars or collectibles
-  - In this way, server tracks client's data, including ID, downloads, and purchases
+### System architecture: MVC and Client-server model
+  - In most use cases, internet is not needed as data for the widget client end will be stored locally, including images, customized task lists, and settings, which can be visualized by the MVC model
+<img width="963" alt="Elephant MVC model" src="https://github.com/user-attachments/assets/03494f1a-adaf-424a-ab9b-b5849f6ce997" />
+  - Client will need to connect to server to unlock new avatars or collectibles, in this way, server tracks client's data, including ID, downloads, and purchases, which can be visualized by the client-server model
+<img width="831" alt="Elephant client-server model" src="https://github.com/user-attachments/assets/635d96b2-a5c3-4a13-82a2-5a07fa568f5f" />
 
 # 7. Data Modeling
 
