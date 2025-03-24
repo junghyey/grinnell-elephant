@@ -10,7 +10,6 @@ import SwiftUI
 struct ContentView: View {
     @State private var isPressed = false
     var body: some View {
-        ScrollView{
             // todo:
                 // figure out background color
                 // figure out how to put other buttons (manual, etc)
@@ -42,6 +41,7 @@ struct ContentView: View {
                         .frame(maxWidth: .infinity, alignment: .center)
                         .background(Color.yellow)
                         .padding(.bottom)
+                        .accessibilityIdentifier("shopButton")
                         
                         NavigationLink(destination: SettingsView()) {
                             Text("Settings")
@@ -81,7 +81,6 @@ struct ContentView: View {
             }
             .frame(width: 400, height: 600)
             .background(Color.yellow)
-        }
     }
 }
 
