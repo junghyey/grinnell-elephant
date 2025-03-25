@@ -20,6 +20,14 @@ struct ContentView: View {
                         .font(.title)
                         .fontWeight(.bold)
                         .padding(20)
+                    Text("A Wellness Trunk")
+                        .font(.headline)
+                        .fontWeight(.bold)
+                        .padding(5)
+                    Text("♡🐘♡")
+                        .font(.headline)
+                        .fontWeight(.bold)
+                        .padding(5)
                     Image("realistic_elephant")
                         .resizable()
                         .scaledToFit()
@@ -41,7 +49,7 @@ struct ContentView: View {
                         .frame(maxWidth: .infinity, alignment: .center)
                         .background(Color.yellow)
                         .padding(.bottom)
-                        .accessibilityIdentifier("shopButton")
+                        .accessibilityIdentifier("shopPage")
                         
                         NavigationLink(destination: SettingsView()) {
                             Text("Settings")
@@ -59,6 +67,7 @@ struct ContentView: View {
                         .frame(maxWidth: .infinity, alignment: .center)
                         .background(Color.yellow)
                         .padding(.bottom)
+                        .accessibilityIdentifier("settingsPage")
                         
                         NavigationLink(destination: SettingsView()) {
                             Text("Manual")
@@ -75,7 +84,9 @@ struct ContentView: View {
                         .buttonStyle(PlainButtonStyle())
                         .frame(maxWidth: .infinity, alignment: .center)
                         .background(Color.yellow)
-                        .padding(.bottom)                    }
+                        .padding(.bottom)
+                        .accessibilityIdentifier("manualPage")
+                    }
                 }
                 .background(Color.yellow)
             }
