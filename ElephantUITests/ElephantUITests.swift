@@ -23,11 +23,25 @@ final class ElephantUITests: XCTestCase {
     }
     
     // Homepage buttons navigation test
-    func homePageButtonTest() throws {
+    func contentViewTest() throws {
         XCTAssertTrue(shopButton.isHittable)
         XCTAssertTrue(settingsButton.isHittable)
         XCTAssertTrue(manualButton.isHittable)
     }
     
+    // ShopMainPageView tests
+    func shopMainPageViewTest() throws {
+        // TODO: add tests
+    }
     
+    // settingsView tests
+    func settingsViewTest() throws {
+        // TODO: add tests
+    }
+    
+    // settingsView tests
+    func settingsViewTest() throws {
+        // TODO: add tests
+    }
+
 }
