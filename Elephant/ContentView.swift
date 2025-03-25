@@ -69,7 +69,7 @@ struct ContentView: View {
                         .padding(.bottom)
                         .accessibilityIdentifier("settingsPage")
                         
-                        NavigationLink(destination: SettingsView()) {
+                        NavigationLink(destination: ManualView()) {
                             Text("Manual")
                                 .font(.title2)
                                 .fontWeight(.bold)
