@@ -39,9 +39,5 @@ final class ElephantUITests: XCTestCase {
         // TODO: add tests
     }
     
-    // settingsView tests
-    func settingsViewTest() throws {
-        // TODO: add tests
-    }
 
 }
