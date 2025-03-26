@@ -1,5 +1,7 @@
 # This workflow will build a Elephant project
-# For more information see: https://qualitycoding.org/github-actions-ci-xcode/
+# References: 
+# (for testing code) https://vmois.dev/xcode-github-actions/
+# (for checking & setting xcode version)  https://qualitycoding.org/github-actions-ci-xcode/     
 
 name: Elephant CI
 
@@ -12,13 +14,16 @@ on:
       - main
 
 jobs:
-  test:
-    name: Run Tests on iOS
+ build:
     runs-on: macos-latest
-
     steps:
-    - uses: actions/checkout@v4
-    - name: Build
-      run: xcodebuild  -v
-    - name: Run tests
-      run: xcodebuild  -v
+    - name: Checkout action on code
+      uses: actions/checkout@v4
+    # Add setting xcode version?
+    - name: Show current version of Xcode
+      run: xcodebuild -version
+    - name: Resolve Swift Package Dependencies
+      run: swift package resolve
+    - name: Build and Test 
+      run: xcodebuild test -scheme Elephant -project Elephant.xcodeproj -destination 'platform=macOS' 
+      
