@@ -19,7 +19,6 @@ jobs:
     steps:
     - name: Checkout action on code
       uses: actions/checkout@v4
-    # Add setting xcode version?
     - name: Show current version of Xcode
       run: xcodebuild -version
     - name: Build and Test 
