@@ -1,5 +1,14 @@
 # Sprint Journal 2
 
+## Part 2: Software Architecture
+
+**Use of External Storage**
+- We decided to have an external storage to reduce the size of the client end, which will be used to (1) track records that are only important to developers such as purchase records, and (2) store images that clients can download through connecting to the internet.
+   - Alternatively, we can store everything locally, which will minimize need for external storage. However, as the developers, we might still need to track user data in some way, such as purchase records, which means external storage may still be needed.
+
+**Use of Two Different Interfaces**
+- We decided to have two interfaces, the app and the widget interface as we believe it is redundant and unecessary to have the widget hold all functionalities. Having an app component separated from the widget component also allows us to separate the main function (widget tool) from other functions (adjust settings, view achievements and purchases, etc).
+
 ## Part 5: Project Risks and Management
 
 ### 5.1 Risk Assessment
@@ -30,36 +39,39 @@
 ### 5.2 Epics and Subtasks
 
 #### Epic 1: Initial Structure
-- **Description**: Create the primary app interface and design themes.
+- **Description**: Establish core UI structure & themes so that we have smooth navigation and better user experience.
 - **Dependencies**: None.
-- **Effort Estimate**: 2 weeks (before the end of spring break)
+- **Effort Estimate**: 3 weeks
 - **Subtasks**:
-  - Implement UI navigation.
+  - Implement main navigation for home, settings, and checklist views.
   - Develop app theme, text, and customizable lists manager within settings
   - Develop user manual within settings
-  - Unit testing for UI elements.
+  - Conduct unit testing for UI elements.
 
 #### Epic 2: WidgetKit Integration
 - **Description**: Build and integrate macOS widget extension.
-- **Dependencies**: Initial structure of UI
-- **Effort Estimate**: 4 weeks including the timeline of the initial UI development
+- **Dependencies**: Epic 1 & Epic 5
+- **Effort Estimate**: 4 weeks 
 - **Subtasks**:
   - Design the widget layout with collectible integration
-  - Implement data syncing for widget updates and offline contingency planning
+  - Implement real-time checklist updates using Firebase/PostgreSQL (Firebase not be used since we will try to store data locally).
+  - Develop offline contingency planning
   - Test widget functionality on macOS.
 
 #### Epic 3: Collectible Database
 - **Description**: Set up a database to manage collectible art graphics.
-- **Dependencies**: Core UI Development.
+- **Dependencies**: Epic1 & Epic5
 - **Effort Estimate**: 5 weeks including the timeline of the initial UI development
 - **Subtasks**:
   - Create database schema on SQL
   - Populate initial collectible art, biome categorizing will progress throughout the collection
   - Integrate with app and widget appearance.
+  - Ensure collectibles sync socrreclty with widget and the main app.
+  - Develop backend  for displaying collectibles in the app.
 
 #### Epic 4: Accessibility Features
 - **Description**: Add accessibility options like various light themes and customizable text size and font type.
-- **Dependencies**: Initial structure of UI
+- **Dependencies**: Epic 1
 - **Effort Estimate**: 3 weeks including the timeline of the initial UI development
 - **Subtasks**:
   - Implement light/dark modes.
@@ -67,13 +79,22 @@
   - Test and refine features with feedback.
     
 #### Epic 5: Storing User Data
-- **Description**: Set up a database to collect and store user data.
-- **Dependencies**: UI Development
+- **Description**: Set up a database to collect and store user data and pipeline for storing data
+- **Dependencies**:  Epic 1 
 - **Effort Estimate**: 2 weeks to create a secure database with updates throughout app development.
 - **Subtasks**:
   - Create database collecting structure on PostgreSQL.
   - Integrate Firebase or Supabase for real-time updates.
   - Encryption for sensitive information such as medication.
+  - Perform security testing and check compliance with data protection policies.
+
+#### Epic 6: Token System
+- **Description**: Implement the token collection system to incentivi
+- **Dependencies**:  Epic 3 
+- **Effort Estimate**: 3 weeks
+- **Subtasks**:
+   - Define logic for earning & spending tokens (ex: daily limit)
+   - Implement UI for displaying token count
 
 ---
 
@@ -128,6 +149,24 @@ Planned Documentation Deliverables:
 8. **Final Documentation Integration**
    - Finalize user manual, developer documentation in repo, and settings layout into a cohesive documentation package.
    - Ensure the product's functionality is well-documented for both end-users.
+
+---
+
+### Part 6: Test Plan
+
+#### Test Library
+For this app, we'll be utilizing XCTest
+
+#### Justification
+Our program is developed using Swift on XCode thus we would need a compatible test library. In our case, XCTest will efficiently complete tests due to its direct integration with XCode.  
+
+#### Continuous Integration (CI) Service
+Our team will utilize GitHub Actions as the CI service that is linked to our project repository
+
+#### Justification
+GitHub Actions is a developer-friendly and efficient service that would allow seamless merge of team updates. To learn more about the developer's relationship with testing and CI, please navigate to the Developer Guidelines located in README.md.
+
+
 
 ---
 

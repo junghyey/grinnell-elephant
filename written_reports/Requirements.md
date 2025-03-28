@@ -220,7 +220,21 @@ ___
  -  Mobile version 
 
 ---
-# 6. Data Modeling
+# 6. Software Architecture
+
+### System components
+- Widget interface: interface that users mainly interact with, allows users to track work time, add tasks and receive wellness reminders
+- App interface: interface that allows users to modify settings, view and purchase new collectibles, and access user manual
+- Persistent storage: stores user settings, downloaded components such as collectibles, avatars, or themes
+- External storage: stores client data and purchase records
+
+### System architecture: MVC and Client-server model
+  - In most use cases, internet is not needed as data for the widget client end will be stored locally, including images, customized task lists, and settings, which can be visualized by the MVC model
+<img width="963" alt="Elephant MVC model" src="https://github.com/user-attachments/assets/03494f1a-adaf-424a-ab9b-b5849f6ce997" />
+  - Client will need to connect to server to unlock new avatars or collectibles, in this way, server tracks client's data, including ID, downloads, and purchases, which can be visualized by the client-server model
+<img width="831" alt="Elephant client-server model" src="https://github.com/user-attachments/assets/635d96b2-a5c3-4a13-82a2-5a07fa568f5f" />
+
+# 7. Data Modeling
 
 The ***Elephant*** App stores following data: user information (Apple ID), user checklist(s), tokens, collectibles.
 
@@ -239,15 +253,72 @@ Since Elephant needs real-time updates for checklist and secure storage for user
 
 ## Software Design
 
-### Definitions:
+### 1. Definitions:
 - **iOS App Development Environment**: Developed with SwiftUI/Xcode utilizing graphics and WidgetKit.
-  - **Packages Utilized**: 
-    - `WidgetKit` and `SwiftUI` for the app's widget components.
+  - **Packages Utilized**:
+    - 'SwiftUI' for the UI components for the app main page: settings (timer setting, app setting) and checklist storage
+    - 'WidgetKit' for the widget, which is the place for all the major interactive jobs (like checking off the item)
+    - 'Combine' for data handling, states updates, all the reactive works and asynchronous data handling.
+    - 'Foundation' for networking
+    - 'Firebase SDK' real-time updates for checklists
+    - 'PostgreSQL' (Backend API)- store checklist & user data
     - `Testing` and `XCTest` for the testing suite.
 
-### Component Responsibilities
-- **WidgetKit**: package we utilize for the widget implementation of Elephant; enables data updates and interactivity for the widget displayed in the macOS laptop widget bar.
-- **SwiftUI**: syntax that builds the app’s UI for both the app and widget component. Responsible for custom designs and rendering interfaces.
+### 2. Component Responsibilities
+
+#### 2.1 Frontend (SwiftUI)
+- Purpose: Managing the user interface (what users see) for the app's main page, display, and authentication.
+- Responsibilities:
+  - Get historical checklist data from PostgreSQL when the app is launched.
+  - Manage any changes in the app (settings, purchase, storing data)
+- Primary Classes & Responsibilities (.swfit):
+  -  MainView: Root view 
+  -  SettingsView: User preferences
+  -  TimerSettings: Controls Pomodoro/Stopwatch
+  -  ChecklistControl: store checklist that user has added through the app screen via PostgreSQL and Firebase
+  -  PurchaseControl: Apple pay transaction.
+  -  TokenControl: Controls all the tokens that user has earned & used
+  -  Collectibles: Update collectibes
+- Interfaces:
+  - Reads and writes checklists to PostgreSQL
+  - Fetch real-time updates from Firebase
+  - Reflect any changes in settings to the app
+  - Provide checklist data to widget
+
+#### 2.2 Interactive Widget (WidgetKit)
+- Purpose: Creating the interactive widget in the macOS widget bar (ex: check off items, pause, trigger real-time update).
+- Responsibilities:
+  - Display checklists (including interaction like checking off)
+  - Allows users to check off completed items
+  - Allows users to pause, resume, start Pomodoro or stopwatch
+  - Allows users to add a new item to the checklist
+  - Indicates how many tokens users have
+  - Send updated checklist data to Firebase (real-time update), and sync with PostgreSQL.
+ - Primary Classes:
+  - ChecklistWidget: Display checklist and allow check off and add a new task (and sync the newly added one to the checklist in ChecklistControl)
+  - ChecklistDataProvider: Provide checklist data to the widget
+- Interfaces:
+  - Sends completed updates to Firebase, which updates PostgreSQL. 
+#### 2.3 Firebase (Real-Time Update)
+- Purpose: Real-time updates for checklist and token (i.e. any tasks that need to be done real-time)
+- Responsibilities:
+  - Storage for data that needs real-time updates (checklist) 
+  - Instantly sync checklist completion from the widget
+  - Trigger update in PostgreSQL
+  - Sync token rewards/changes (subtraction if used)
+- Interfaces:
+  - real-time checklist and token updates to the app
+  - tell PostgreSQL when updates occur.
+#### 2.4 PostgreSQL (Storage)
+- Store all the data (user, purchase checklist securely)
+- Responsibilities:
+  - Store checklist history
+  - Sync  Firebase to keep checklist updated
+  - Save all the user information for the app
+- Interfaces:
+  - Read/write user data using API
+  - Sync with Firebase (for real-time update)
+#### 2.5  Testing
 - **Testing**: Swift testing integrates with the Swift Package Manager testing workflow and supports:
   - Flexible test organization, allowing test functions to be defined almost anywhere with a single attribute.
   - Hierarchical grouping of related tests using Swift’s type system for clear organization.
@@ -260,17 +331,24 @@ Since Elephant needs real-time updates for checklist and secure storage for user
 
 - **XCTest**: An abstract base class for creating, managing, and executing tests. [9]
 
-### Interfaces Between Components
+### 3. Data Flow
 Data transfer within the program is structured to reduce coupling:
-- **Interfaces**: The app uses `SwiftUI` as a bridge for interacting with both the app interface and `WidgetKit`. 
+- **Interfaces**: The app uses `SwiftUI` as a bridge for interacting with both the app interface and the widget `WidgetKit`. 
 - **Data Flow**: Components exchange minimal data to ensure modularity, focusing on user preferences like widget appearance settings (coloring, text size, themes) and widget updates.
-- **Efficiency**: Testing components (`Testing` and `XCTest`) interface exclusively with app logic and ensure consistent behavior without directly interacting with the UI components.
+  - Main App <--> PostgreSQL <--> Firebase
+    - All the data in the Main app is stored in PostgreSQL
+    - The real-time update is reflected in the checklist through Firebase and Firebase triggers updates in PostgreSQL
+    - The updated data in PostgreSQL is reflected in the Main app.
+  - WidgetKKit<-->Firebase<-->PostgreSQL
+    - Widget updates Firebase when user checks off an item.
+    - Widget gets updated checklist from Firebase (like a cache)
+    - Firebase syncs the checklist update to PostgreSQL
 
 ---
 
 
 ---
-# 7. References (ACM Format)
+# 8. References (ACM Format)
 [1] Apple. 2024. Health App & Privacy. Apple Inc. Retrieved February 4, 2025, from https://www.apple.com/legal/privacy/data/en/health-app/#:~:text=Apple%20will%20maintain%20the%20Health,data%20you%20share%20with%20them. 
 
 [2] Dejal Systems, LLC. 2024. Time Out (Version 2.9.7) [Mobile app]. App Store. Retrieved from https://apps.apple.com/us/app/time-out-break-reminders/id402592703?mt=12. 

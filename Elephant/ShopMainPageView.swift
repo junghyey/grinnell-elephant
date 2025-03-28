@@ -61,6 +61,7 @@ struct ShopMainPageView: View {
                         }
                     }
                     .padding(10)
+                    .accessibilityIdentifier("mammalScrollView")
                     
                     Text("Marine Pack")
                         .font(.headline)
@@ -90,6 +91,7 @@ struct ShopMainPageView: View {
                         }
                     }
                     .padding(10)
+                    .accessibilityIdentifier("marineScrollView")
                     
                 }
             }
@@ -98,6 +100,7 @@ struct ShopMainPageView: View {
         .frame(width: 400, height: 600, alignment: .leading)
     }
 }
+
 #Preview {
     ShopMainPageView()
 }

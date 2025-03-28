@@ -10,7 +10,6 @@ import SwiftUI
 struct ContentView: View {
     @State private var isPressed = false
     var body: some View {
-        ScrollView{
             // todo:
                 // figure out background color
                 // figure out how to put other buttons (manual, etc)
@@ -21,6 +20,14 @@ struct ContentView: View {
                         .font(.title)
                         .fontWeight(.bold)
                         .padding(20)
+                    Text("A Wellness Trunk")
+                        .font(.headline)
+                        .fontWeight(.bold)
+                        .padding(5)
+                    Text("♡🐘♡")
+                        .font(.headline)
+                        .fontWeight(.bold)
+                        .padding(5)
                     Image("realistic_elephant")
                         .resizable()
                         .scaledToFit()
@@ -42,6 +49,7 @@ struct ContentView: View {
                         .frame(maxWidth: .infinity, alignment: .center)
                         .background(Color.yellow)
                         .padding(.bottom)
+                        .accessibilityIdentifier("shopPage")
                         
                         NavigationLink(destination: SettingsView()) {
                             Text("Settings")
@@ -59,8 +67,9 @@ struct ContentView: View {
                         .frame(maxWidth: .infinity, alignment: .center)
                         .background(Color.yellow)
                         .padding(.bottom)
+                        .accessibilityIdentifier("settingsPage")
                         
-                        NavigationLink(destination: SettingsView()) {
+                        NavigationLink(destination: ManualView()) {
                             Text("Manual")
                                 .font(.title2)
                                 .fontWeight(.bold)
@@ -75,13 +84,14 @@ struct ContentView: View {
                         .buttonStyle(PlainButtonStyle())
                         .frame(maxWidth: .infinity, alignment: .center)
                         .background(Color.yellow)
-                        .padding(.bottom)                    }
+                        .padding(.bottom)
+                        .accessibilityIdentifier("manualPage")
+                    }
                 }
                 .background(Color.yellow)
             }
             .frame(width: 400, height: 800)
             .background(Color.yellow)
-        }
     }
 }
 

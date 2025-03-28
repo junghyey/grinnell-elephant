@@ -1,0 +1,28 @@
+# This workflow will build a Elephant project
+# References: 
+# (for testing code) https://vmois.dev/xcode-github-actions/
+# (for checking & setting xcode version)  https://qualitycoding.org/github-actions-ci-xcode/     
+
+name: Elephant CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+ build:
+    runs-on: macos-latest
+    steps:
+    - name: Checkout action on code
+      uses: actions/checkout@v4
+    - name: Set Xcode version
+      run: sudo xcode-select --switch /Applications/Xcode_16.2.app
+    - name: Show current version of Xcode
+      run: xcodebuild -version
+    - name: Build and Test 
+      run: xcodebuild test -scheme Elephant -project Elephant.xcodeproj -destination 'platform=macOS' 
+      
