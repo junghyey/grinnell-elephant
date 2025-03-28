@@ -54,7 +54,7 @@
 - **Effort Estimate**: 4 weeks 
 - **Subtasks**:
   - Design the widget layout with collectible integration
-  - Implement real-time checklist updates using Firebase/PostgreSQL.
+  - Implement real-time checklist updates using Firebase/PostgreSQL (Firebase not be used since we will try to store data locally).
   - Develop offline contingency planning
   - Test widget functionality on macOS.
 
