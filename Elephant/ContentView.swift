@@ -79,7 +79,7 @@ struct ContentView: View {
                 }
                 .background(Color.yellow)
             }
-            .frame(width: 400, height: 600)
+            .frame(width: 400, height: 800)
             .background(Color.yellow)
         }
     }

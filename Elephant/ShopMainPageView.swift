@@ -95,7 +95,7 @@ struct ShopMainPageView: View {
             }
         }
         .background(Color.yellow)
-        .frame(width: 400, height: 800, alignment: .leading)
+        .frame(width: 400, height: 600, alignment: .leading)
     }
 }
 #Preview {
