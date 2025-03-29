@@ -7,6 +7,9 @@
 import SwiftUI
 
 struct ShopMainPageView: View {
+    
+    @AppStorage("displayItem") var displayItem: String = "realistic_elephant" // default elephant on display
+    
     var body: some View {
         ScrollView{
             NavigationStack{
@@ -75,9 +78,12 @@ struct ShopMainPageView: View {
                                 .frame(width: 500, height: 140)
                             
                             HStack{
-                                RoundedRectangle(cornerRadius: 10)
-                                    .foregroundStyle(Color.green)
-                                    .frame(width: 100, height: 100)
+                                Button(action: {
+                                    UserDefaults.standard.set("mammal-cow",forKey: "displayItem" )}) {
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .foregroundStyle(Color.green)
+                                        .frame(width: 100, height: 100)
+                                }
                                 RoundedRectangle(cornerRadius: 10)
                                     .foregroundStyle(Color.green)
                                     .frame(width: 100, height: 100)

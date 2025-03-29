@@ -11,6 +11,10 @@ import SwiftUI
 struct ItemView: View {
     var body: some View {
         // get rid of navstack
+        
+        let displayImage = UserDefaults.standard
+            .string(forKey: "displayItem")
+        
         NavigationStack{
             ScrollView{
                 VStack {
@@ -22,7 +26,7 @@ struct ItemView: View {
                         Circle()
                             .foregroundStyle(Color.white)
                             .frame(width: 350)
-                        Image("realistic_elephant")
+                        Image("\(displayImage ?? "realistic-elephant")")
                             .resizable()
                             .scaledToFit()
                     }
