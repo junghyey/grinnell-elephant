@@ -55,7 +55,7 @@
 - **Subtasks**:
   - Design the widget layout with collectible integration
   - Implement real-time checklist updates using Firebase/PostgreSQL (Firebase not be used since we will try to store data locally).
-  - Develop offline contingency planning
+  - Develop when the app is offline
   - Test widget functionality on macOS.
 
 #### Epic 3: Collectible Database
@@ -63,7 +63,7 @@
 - **Dependencies**: Epic1 & Epic5
 - **Effort Estimate**: 5 weeks including the timeline of the initial UI development
 - **Subtasks**:
-  - Create database schema on SQL
+  - Create database schema on SQL (probably store this into the Firebase, since it is bing)
   - Populate initial collectible art, biome categorizing will progress throughout the collection
   - Integrate with app and widget appearance.
   - Ensure collectibles sync socrreclty with widget and the main app.
@@ -83,8 +83,9 @@
 - **Dependencies**:  Epic 1 
 - **Effort Estimate**: 2 weeks to create a secure database with updates throughout app development.
 - **Subtasks**:
-  - Create database collecting structure on PostgreSQL.
-  - Integrate Firebase or Supabase for real-time updates.
+  - Learn PostgreSQL 
+  - Create database & pipeline using PostgreSQL.
+  - Integrate Firebase or Supabase for real-time updates or server.
   - Encryption for sensitive information such as medication.
   - Perform security testing and check compliance with data protection policies.
 
