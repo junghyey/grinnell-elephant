@@ -1,0 +1,14 @@
+AppStorage variable names
+
+Store
+- storeDisplayItem: picture that is displayed when you click on store icon
+    - picture/asset name
+
+Widget
+- displayItem
+
+Setting
+- colorTheme
+    - "default", "monotone"
+- mode:
+    - "stopwatch", "pomodoro"
