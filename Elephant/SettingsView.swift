@@ -8,23 +8,34 @@
 import SwiftUI
 
 struct SettingsView: View {
+    
+    @AppStorage("colorTheme") var colorTheme: String = "classic" // classic as the default value
+    @AppStorage("mode") var mode: String = "pomodoro"
+    
     var body: some View {
         ScrollView{
             VStack {
-                // Todo:
-                    // figure out what are the settings and the buttons and things
-                    // figure out where to store the info being changed, maybe a json with all the configurations
-                    // figure out how to update settings when user clicks a configuration buttons
+               
                 Text("Settings")
                     .font(.title)
                     .fontWeight(.bold)
                     .padding()
+                
                 
                 Text("Colors")
                     .font(.title2)
                     .fontWeight(.bold)
                     .padding()
                     .frame(maxWidth: .infinity, alignment: .leading)
+                // print the saved value
+                Text("Current theme: \(colorTheme)")
+                    .font(.title3)
+                Button("set color to monotone") {
+                    UserDefaults.standard.set("monotone", forKey: "colorTheme")
+                }
+                Button("set color to classic") {
+                    UserDefaults.standard.set("classic", forKey: "colorTheme")
+                }
                 
                 Text("Pomodoro settings")
                     .font(.title2)
