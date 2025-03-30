@@ -14,9 +14,6 @@ Elephant: A Wellness Trunk is an extension/widget for macOS designed to help use
 - Data security and privacy: Secure data storage and management</br>
 - Lightweight, intuitive interface</br>
 
-####
-[Link to coding guidelines](https://google.github.io/swift/)
-
 # Repository Layout
 ## Overview
 This section includes the overview/outline of the repository structure.</br>
@@ -68,6 +65,8 @@ The written_reports folder will contain all the reports for milestone submission
   - Pull Request
   - Pushing to the main branch
   - (Possibly) scheduled run
+    
+- [Link to coding guidelines](https://google.github.io/swift/)
 
 
 # Issue Tracking Tool
