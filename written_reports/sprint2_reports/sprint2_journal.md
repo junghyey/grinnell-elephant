@@ -177,7 +177,7 @@ Successful results (can be viewed in Actions). Following are (some) screen shots
 
 Recent Test worked:
 
-<img src="https://github.com/user-attachments/assets/3e815de0-785a-4f2a-8bf0-d6bee00d2648" width="500" height="500" />
+<img src="https://github.com/user-attachments/assets/3e815de0-785a-4f2a-8bf0-d6bee00d2648"  height="500" />
 
 ---
 
