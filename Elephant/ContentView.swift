@@ -9,12 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var isPressed = false
+    @AppStorage("mode") private var Mode: Bool = false //global mode setting
+    
     var body: some View {
             // todo:
                 // figure out background color
                 // figure out how to put other buttons (manual, etc)
                 // I don't think we need a button for pomodoro/stopwatch mode since that would just sit in the widgetbar, so i remade the buttons
             NavigationStack{
+            ZStack{
+                (Mode ? Color.black : Color.white)//Background color
+                    .edgesIgnoringSafeArea(.all)
+                
                 VStack{
                     Text("Elephant")
                         .font(.title)
@@ -90,8 +96,9 @@ struct ContentView: View {
                 }
                 .background(Color.yellow)
             }
-            .frame(width: 400, height: 800)
-            .background(Color.yellow)
+        }
+        .frame(width: 400, height: 600)
+        .preferredColorScheme(Mode ? .dark : .light)
     }
 }
 
