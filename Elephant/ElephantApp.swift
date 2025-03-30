@@ -14,6 +14,6 @@ struct ElephantApp: App {
             ContentView()
         }
         .windowResizability(.contentSize)
-        .defaultSize(width: 400, height: 600)
+        .defaultSize(width: 500, height: 500)
     }
 }

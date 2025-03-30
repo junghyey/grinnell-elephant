@@ -9,16 +9,16 @@
 import SwiftUI
 
 struct ItemView: View {
+    
+    let item: ShopItem
+    
     var body: some View {
-        // get rid of navstack
         
-        let displayImage = UserDefaults.standard
-            .string(forKey: "displayItem")
+        @State var showConfirmation = false
         
-        NavigationStack{
             ScrollView{
                 VStack {
-                    Text("Elephant")
+                    Text("\(item.name)")
                         .font(.title)
                         .fontWeight(.bold)
                         .padding()
@@ -26,14 +26,17 @@ struct ItemView: View {
                         Circle()
                             .foregroundStyle(Color.white)
                             .frame(width: 350)
-                        Image("\(displayImage ?? "realistic-elephant")")
+                        Image(item.imageName)
                             .resizable()
                             .scaledToFit()
+                            .frame(width: 300, height: 300)
                     }
-                    Text("Price: 10 tokens")
+                    Text("Price: \(item.price) tokens")
                         .font(.headline)
                     // make this a button that displays a window for buy when on click, instead of a navlink
-                    NavigationLink(destination: ShopMainPageView()){
+                    Button(action: {
+                        showConfirmation = true
+                    }){
                         RoundedRectangle(cornerRadius: 15)
                             .foregroundStyle(Color.green)
                             .frame(width: 150, height: 50)
@@ -45,13 +48,22 @@ struct ItemView: View {
                         // if buy, ask them if they want to change avatar in widget
                             // if change, do a little animation with ribbons and change the buy button to a return to store page button
                     }
+                    .buttonStyle(PlainButtonStyle())
+                    .shadow(color: .black.opacity(0.2), radius: 4, x: 0, y: 2)
+                }
+                .confirmationDialog("Do you want to purchase this item?", isPresented: $showConfirmation, titleVisibility: .visible) {
+                    Button("Purchase", role: .none) {
+                        print("\(item.name) purchased!")
+                    }
+                    Button("Cancel", role: .cancel) {
+                        print("Cancelled")
+                    }
                 }
             }
             .background(Color.yellow)
-            .frame(width: 400, height: 600)
-        }
+            .frame(width: 500, height: 500)
     }
 }
 #Preview {
-    ItemView()
+    ItemView(item: ShopItem(id: "mammal-lion", name: "Lion", imageName: "mammal-lion", price: 10))
 }

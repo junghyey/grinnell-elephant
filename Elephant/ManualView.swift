@@ -30,7 +30,7 @@ struct ManualView: View {
             .padding(10)
         }
         .preferredColorScheme(Mode ? .dark : .light)
-        .frame(width: 400, height: 600)
+        .frame(width: 500, height: 500)
     }
 }
 
