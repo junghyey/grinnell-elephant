@@ -9,6 +9,7 @@ import SwiftUI
 struct ShopMainPageView: View {
     
     @AppStorage("displayItem") var displayItem: String = "realistic_elephant" // default elephant on display
+    @AppStorage("mode") private var Mode: Bool = false //global mode setting
     
     var body: some View {
         ScrollView{
@@ -102,7 +103,7 @@ struct ShopMainPageView: View {
                 }
             }
         }
-        .background(Color.yellow)
+        .preferredColorScheme(Mode ? .dark : .light)
         .frame(width: 400, height: 600, alignment: .leading)
     }
 }
