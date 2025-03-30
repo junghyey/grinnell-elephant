@@ -111,5 +111,5 @@ struct DefaultColors {
     static let main_color_3 = Color(red: 76/255, green: 149/255, blue: 108/255)
     static let background = Color(red: 0.996, green: 0.996, blue: 0.89)
     static let shadow_1 = Color(red: 116/255, green: 79/255, blue: 42/255)
-    static let shadow_2 = Color(red: 44/255, green: 110/255, blue: 73/255) // #2C6E49
+    static let shadow_2 = Color(red: 44/255, green: 110/255, blue: 73/255)
 }
