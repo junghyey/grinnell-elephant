@@ -167,6 +167,14 @@ Our team will utilize GitHub Actions as the CI service that is linked to our pro
 #### Justification
 GitHub Actions is a developer-friendly and efficient service that would allow seamless merge of team updates. To learn more about the developer's relationship with testing and CI, please navigate to the Developer Guidelines located in README.md.
 
+---
+
+### Part 7: CI
+
+Successful results (can be viewed in Actions). Following are (some) screen shots of showing our test worked.
+
+<img src="https://github.com/user-attachments/assets/422e11a7-114e-4568-b37e-622f07527919" width="500" height= "500%" />
+
 
 
 ---
