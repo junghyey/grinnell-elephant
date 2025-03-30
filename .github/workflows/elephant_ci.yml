@@ -1,7 +1,7 @@
 # This workflow will build a Elephant project
 # References: 
 # (for testing code) https://vmois.dev/xcode-github-actions/
-# (for checking & setting xcode version)  https://qualitycoding.org/github-actions-ci-xcode/     
+# (for checking & setting xcode version)  https://qualitycoding.org/github-actions-ci-xcode/
 
 name: Elephant CI
 
@@ -25,4 +25,6 @@ jobs:
       run: xcodebuild -version
     - name: Build and Test 
       run: xcodebuild test -scheme Elephant -project Elephant.xcodeproj -destination 'platform=macOS' 
+      # Currently, we do have much of development done (for Sprint 2). Therefore, current version of CI will include running all the tests
+      # we have rather than separating to pieces
       
