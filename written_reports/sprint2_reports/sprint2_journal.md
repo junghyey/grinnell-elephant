@@ -173,9 +173,11 @@ GitHub Actions is a developer-friendly and efficient service that would allow se
 
 Successful results (can be viewed in Actions). Following are (some) screen shots of showing our test worked.
 
-<img src="https://github.com/user-attachments/assets/422e11a7-114e-4568-b37e-622f07527919" width="500" height= "500%" />
+<img src="https://github.com/user-attachments/assets/422e11a7-114e-4568-b37e-622f07527919" width="500" height= "500" />
 
+Recent Test worked:
 
+<img src="https://github.com/user-attachments/assets/3e815de0-785a-4f2a-8bf0-d6bee00d2648" width="500" height="500" />
 
 ---
 
