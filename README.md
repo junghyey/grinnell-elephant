@@ -56,7 +56,7 @@ The written_reports folder will contain all the reports for milestone submission
   4. Follow the guideline in here: https://medium.com/tauk-blog/using-xctest-and-xctestcase-for-ios-tests-28828c829b3
   * This write up is referenced from: https://medium.com/tauk-blog/using-xctest-and-xctestcase-for-ios-tests-28828c829b3
      
-- Determining which tests will be executed in a CI build:
+- Determining which tests will be executed in a CI build: 
   - Widget Testing: All the funcionality works in the widget
   - UI testing: Validate UI flows for user experience
   - Unit Tests: Verify individual components
