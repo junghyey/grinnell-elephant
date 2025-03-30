@@ -1,9 +1,0 @@
-{
-    "Mode": "Pomodoro",
-    "Pomodoro": {
-        "LengthWorkTime": 50,
-        "LengthShortBreak": 10,
-        "LengthLongBreak": 30,
-    }
-    
-}
