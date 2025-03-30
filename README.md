@@ -57,8 +57,9 @@ The written_reports folder will contain all the reports for milestone submission
   * This write up is referenced from: https://medium.com/tauk-blog/using-xctest-and-xctestcase-for-ios-tests-28828c829b3
      
 - Determining which tests will be executed in a CI build: 
-  - Widget Testing: All the funcionality works in the widget
-  - UI testing: Validate UI flows for user experience
+  - Widget Testing: All the funcionality works in the widget (checklist, timer, pomodore..etc..)
+  - UI testing: Validate UI flows for user experience (ex: basic interactions)
+  - Collectible Testing: Check Collectible system works (purchasing, setting images..etc..)
   - Unit Tests: Verify individual components
     
 - Determining which development actions trigger a CI build:
