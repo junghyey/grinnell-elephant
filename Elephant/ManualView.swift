@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ManualView: View {
+    @AppStorage("mode") private var Mode: Bool = false //global mode setting
+    
     var body: some View {
         ScrollView{
             VStack{
@@ -27,7 +29,7 @@ struct ManualView: View {
             .background(Color.white)
             .padding(10)
         }
-        .background(Color.yellow)
+        .preferredColorScheme(Mode ? .dark : .light)
         .frame(width: 400, height: 600)
     }
 }
