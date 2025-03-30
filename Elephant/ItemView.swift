@@ -24,21 +24,22 @@ struct ItemView: View {
                         .padding()
                     ZStack{
                         Circle()
-                            .foregroundStyle(Color.white)
-                            .frame(width: 350)
+                            .foregroundStyle(DefaultColors.background)
+                            .frame(width: 300)
                         Image(item.imageName)
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 300, height: 300)
+                            .frame(width: 280, height: 280)
                     }
                     Text("Price: \(item.price) tokens")
                         .font(.headline)
+                        .padding(10)
                     // make this a button that displays a window for buy when on click, instead of a navlink
                     Button(action: {
                         showConfirmation = true
                     }){
                         RoundedRectangle(cornerRadius: 15)
-                            .foregroundStyle(Color.green)
+                            .foregroundStyle(DefaultColors.main_color_2)
                             .frame(width: 150, height: 50)
                             .overlay{
                                 Text("Buy")
@@ -60,8 +61,9 @@ struct ItemView: View {
                     }
                 }
             }
-            .background(Color.yellow)
             .frame(width: 500, height: 500)
+            .padding(10)
+            .background(DefaultColors.main_color_1)
     }
 }
 #Preview {
