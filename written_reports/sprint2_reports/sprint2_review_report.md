@@ -12,7 +12,7 @@ This sprint, we made a lot more progress on our sprint 2 goals and advanced in i
 
 ### Additional Work
 
-  We've met with Wilson Catalyst mentors to go through a demo of our app various times, receiving important feedback for further implementation goals. We have made changes to our Epics and implementation goals within the Sprint Journal and our issue tracker. This is the figma demonstration that we introduced at our catalyst pitch and have been modeling the MVP after in Swift UI: [Demo](https://tinyurl.com/elephant-app25)
+  We've met with and presented to Wilson Catalyst mentors to go through a demo of our app various times, receiving important feedback for further implementation goals. We have made changes to our Epics and implementation goals within our issue tracker. This is the Figma demonstration that we introduced at our catalyst pitch and have been modeling the MVP after in Swift UI: [Demo](https://tinyurl.com/elephant-app25).
 
 
 
