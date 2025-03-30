@@ -244,7 +244,7 @@ Since the app has to store sensititve data including but not limited to user inf
 
 Since Elephant needs real-time updates for checklist and secure storage for user information, we use:
 - PostgreSQL for storing data
-- Firebase for real time update/storage [6] (This might be change based on the funding situation of the Catalyst program; however, the free plan looks viable)
+- Firebase for real time update/storage or storing images for the collectible shop [6] (This might be change based on the funding situation of the Catalyst program; however, the free plan looks viable)
 - Alternative to Firebase is **Supabase**, which has both PostgreSQL (Firebase is NoSQL) and real-time ability (real time server) . [7]
 
 ### Diagram
