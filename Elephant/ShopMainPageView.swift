@@ -106,12 +106,3 @@ struct PackBlock : View {
         .accessibilityIdentifier("\(packName)ScrollView")
     }
 }
-
-struct DefaultColors {
-    static let main_color_1 = Color(red: 255/255, green: 201/255, blue: 185/255)
-    static let main_color_2 = Color(red: 193/255, green: 150/255, blue: 109/255)
-    static let main_color_3 = Color(red: 76/255, green: 149/255, blue: 108/255)
-    static let background = Color(red: 254/255, green: 254/255, blue: 227/255)
-    static let shadow_1 = Color(red: 116/255, green: 79/255, blue: 42/255)
-    static let shadow_2 = Color(red: 44/255, green: 110/255, blue: 73/255)
-}
