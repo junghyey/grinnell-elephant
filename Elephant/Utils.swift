@@ -37,17 +37,15 @@ struct ElephantConfirmationDialogue: View {
                 .font(.title3)
             HStack{
                 ElephantButton(
-                    buttonText: "Confirm",
-                    action: onConfirm
+                    buttonText: "Cancel",
+                    action: onConfirm,
+                    color: DefaultColors.background
                 )
-//                Button("\(confirmButtonText)", action: onConfirm)
-//                    .padding()
-//                    .foregroundStyle(DefaultColors.main_color_2)
-//                    .cornerRadius(10)
-//                Button("Cancel)", action: onCancel)
-//                    .padding()
-//                    .foregroundStyle(DefaultColors.main_color_2)
-//                    .cornerRadius(10)
+                ElephantButton(
+                    buttonText: "Confirm",
+                    action: onConfirm,
+                    color: DefaultColors.main_color_1
+                )
             }
         }
         .padding()
@@ -68,6 +66,7 @@ struct ElephantButton: View {
     let buttonText: String
     let buttonImage: String = "mammal-elephant"
     let action: () -> Void
+    let color: Color
     
     var body: some View{
         Button (action: action) {
@@ -76,7 +75,7 @@ struct ElephantButton: View {
                 .padding()
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
-                        .stroke(DefaultColors.shadow_1, lineWidth: 2)
+                        .stroke(color, lineWidth: 2)
                 )
 //                .background(
 //                    RoundedRectangle(cornerRadius: 10)
