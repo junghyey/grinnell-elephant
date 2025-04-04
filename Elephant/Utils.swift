@@ -3,7 +3,7 @@
 //  Elephant
 //
 //  Created by 陸卉媫 on 3/31/25.
-//
+//      Contains reuseable components for the app, including text, confirmation dialogue, buttons, etc
 
 import SwiftUI
 
@@ -16,8 +16,13 @@ struct DefaultColors {
     static let shadow_1 = Color(red: 116/255, green: 79/255, blue: 42/255)
     static let shadow_2 = Color(red: 44/255, green: 110/255, blue: 73/255)
 }
+// Elephant confirmation dialogue
+// Parameters:
+//      title: string, text displayed on button
+//      buttonImage: string, name of image displayed on button
+//      action: function, what happens once you click on button
+//      color: color of button background
 
-// customized confirmation dialogue
 struct ElephantConfirmationDialogue: View {
     let title: String
     let message: String
@@ -61,7 +66,13 @@ struct ElephantConfirmationDialogue: View {
     }
 }
 
-// struct for custom elephant buttons
+// Elephant buttons
+// Parameters:
+//      buttonText: string, text displayed on button
+//      buttonImage: string, name of image displayed on button
+//      action: function, what happens once you click on button
+//      color: color of button background
+
 struct ElephantButton: View {
     let buttonText: String
     let buttonImage: String = "mammal-elephant"
@@ -84,5 +95,35 @@ struct ElephantButton: View {
         }
         .buttonStyle(PlainButtonStyle())
         .background(DefaultColors.main_color_1)
+    }
+}
+
+// Elephant title
+// Parameters:
+//      displayText: string, title text displayed
+
+struct ElephantTitle: View {
+    let displayText: String
+    
+    var body: some View {
+        Text("\(displayText)")
+            .font(.title)
+            .fontWeight(.bold)
+            .padding()
+            .frame(alignment: .center)
+    }
+}
+
+// Elephant text
+// Parameters:
+//      displayText: string, default text displayed
+
+struct ElephantText: View {
+    let displayText: String
+    
+    var body: some View {
+        Text("\(displayText)")
+            .font(.headline)
+            .padding(10)
     }
 }
