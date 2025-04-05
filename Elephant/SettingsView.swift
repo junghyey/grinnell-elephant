@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct SettingsView: View {
+
+    @Environment(\.presentationMode) var presentationMode
     
+    @AppStorage("ThemeSelection") private var selectedTheme: ThemeSelection = .def
     @AppStorage("colorTheme") var colorTheme: String = "classic" // classic as the default value
     @AppStorage("mode") var mode: String = "pomodoro"
     @AppStorage("mode")  private var Mode: Bool = false //default light mode, toggle for dark mode
@@ -19,13 +22,17 @@ struct SettingsView: View {
     
     var body: some View {
         ScrollView{
-            VStack {
+            VStack(alignment: .leading, spacing: 20){
                 // Todo:
                     // figure out what are the settings and the buttons and things
                     // figure out where to store the info being changed, maybe a json with all the configurations
                     // figure out how to update settings when user clicks a configuration buttons
                 Spacer()
-                
+                ElephantButton(buttonText: "Back", action: {
+                    presentationMode.wrappedValue.dismiss()
+                }, color: DefaultColors.background)
+                    .cornerRadius(10)
+                    .frame(maxWidth: .infinity, alignment: .leadingFirstTextBaseline)
                 /*
                  Button{
                     
@@ -59,6 +66,21 @@ struct SettingsView: View {
                     .fontWeight(.bold)
                     .padding()
                     .frame(maxWidth: .infinity, alignment: .leading)
+                HStack(spacing: 15){
+                    ForEach(ThemeSelection.allCases){
+                        theme in Button(action:{
+                            selectedTheme = theme //updates Theme
+                        }){
+                            Text(theme.rawValue.capitalized)
+                                .font(.headline)
+                                .foregroundColor(selectedTheme == theme ? . white: .black)
+                                .padding()
+                                .frame(minWidth:100)
+                                .background(selectedTheme == theme ? DefaultColors.background: Color.gray.opacity(0.2))
+                                .cornerRadius(10)
+                        }
+                    }
+                }
                 
                     //Include Black & White theme along with colorful palettes
                 
@@ -103,9 +125,34 @@ struct SettingsView: View {
                 customSlider(selectedTime: $selectedReminderTime, minTime:20, maxTime: 120, interval: 10)
             }
         }
+        .padding()
         .preferredColorScheme(Mode ? .dark : .light)
+        .background(selectedTheme.colors.first ?? DefaultColors.background)
         .frame(width: 400, height: 600)
     }
+}//bottom of SettingsView
+
+//enum for ThemeSelection
+enum ThemeSelection: String, CaseIterable, Identifiable{
+    case def
+    case bw
+    case benny
+    
+    var id: String{self.rawValue}
+    
+    //different color themes and access DefaultColors in Utils
+    var colors:[Color]{
+        switch self{
+        case .def:
+            return [DefaultColors.main_color_1, DefaultColors.main_color_2, DefaultColors.main_color_3, DefaultColors.background, DefaultColors.shadow_1, DefaultColors.shadow_2]
+        case .bw:
+            return[Color(hex: "343434"), Color(hex: "FFFFFF"), Color(hex: "000000"), Color(hex: "C0C0C0")]
+        case .benny:
+            return [Color(hex: "094F98"), Color(hex: "4B90CD"), Color(hex: "B8D2F0"), Color(hex: "F3A3B5"), Color(hex: "19171A"), Color(hex: "F0CC34")]
+            
+        }
+    }
+    
 }
 
 struct ModeSelection: View{
@@ -123,7 +170,6 @@ struct ModeSelection: View{
                     .fontWeight(.medium)
             }
             .padding()
-            .buttonStyle(.borderedProminent)
             .background(RoundedRectangle(cornerRadius: 10).fill(Mode ? Color.gray.opacity(0.3) : Color.gray.opacity(0.1)))
             
         }
