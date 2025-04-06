@@ -30,7 +30,21 @@ import AppIntents
 //    var favoriteEmoji: FavoriteEmoji
 //}
 
-struct StartStopwatchIntent: AppIntent {
+// resources:
+// https://developer.apple.com/documentation/appintents/app-intents
+// https://developer.apple.com/documentation/appintents/widgetconfigurationintent
+// https://www.swiftjectivec.com/snip-create-a-basic-interactive-widget-using-app-intent-button/
+
+
+struct WidgetConfigurationIntent: AppIntent {
+    typealias PerformResult = <#type#>
+    typealias SummaryContent = <#type#>
+    
+    static var title: LocalizedStringResource
+    
+    
+}
+struct StartStopwatch: AppIntent {
     static var title: LocalizedStringResource = "Start Stopwatch"
     
     func perform() async throws -> some IntentResult {

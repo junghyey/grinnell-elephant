@@ -6,6 +6,15 @@
 //
 import SwiftUI
 
+// source:
+// https://medium.com/@pwilko/how-not-to-create-stopwatch-in-swift-e0b7ff98880f
+// https://stackoverflow.com/questions/71910830/create-a-stopwatch-in-swift-using-timeintervalsince
+// https://medium.com/@iOSchandra0/how-to-create-a-stopwatch-in-swift-5-viewcontroller-viewmodel-swiftui-cefa5c5e3d0
+// https://developer.apple.com/documentation/widgetkit/appintenttimelineprovider
+// https://developer.apple.com/documentation/widgetkit/appintenttimelineprovider/placeholder(in:)
+// https://developer.apple.com/documentation/widgetkit/appintenttimelineprovider/snapshot(for:in:)
+// https://developer.apple.com/documentation/widgetkit/appintenttimelineprovider/timeline(for:in:)
+
 @available(macOS 15.0, *)
 struct StopwatchView: View {
     @AppStorage("isRunning", store: UserDefaults(suiteName: "group.elephant.widget"))
