@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
 
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.presentationMode) var presentationMode //sets 
     
     @AppStorage("ThemeSelection") private var selectedTheme: ThemeSelection = .def
     @AppStorage("colorTheme") var colorTheme: String = "classic" // classic as the default value
@@ -125,11 +125,11 @@ struct SettingsView: View {
 
 //enum for ThemeSelection
 enum ThemeSelection: String, CaseIterable, Identifiable{
-    case def
-    case bw
-    case benny
+    case def //default theme setting
+    case bw //Black and White theme setting
+    case benny //Benny character theme setting
     
-    var id: String{self.rawValue}
+    var id: String{self.rawValue} //initializes var id for theme selection
     
     //different color themes and access DefaultColors in Utils
     var colors:[Color]{
@@ -146,6 +146,7 @@ enum ThemeSelection: String, CaseIterable, Identifiable{
     
 }
 
+//Mode Selection button between light and dark mode
 struct ModeSelection: View{
     @AppStorage("mode") private var Mode: Bool = false //sets default mode
     
@@ -167,9 +168,10 @@ struct ModeSelection: View{
     }
 }
 
+//Checklist struct that utilizes pathway to TaskLists.json
 struct CheckListView: View{
-    @State private var newTaskTitle: String = ""
-    @State private var taskList: [TaskItem] = []
+    @State private var newTaskTitle: String = "" //initial string Task 
+    @State private var taskList: [TaskItem] = [] //create a list of TaskItems
     
     //initialize path for task list to TasksList.json
     let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("TaskLists.json")
@@ -236,7 +238,7 @@ struct CheckListView: View{
     }
 }
 
-
+//Slider customizable between minimum, maximum and break time intervals between work breaks
 struct customSlider: View{ //Custom slider struct
     @Binding var selectedTime: Double
     let minTime: Double
@@ -260,6 +262,7 @@ struct customSlider: View{ //Custom slider struct
     }
 }
 
+//SettingsView preview
 #Preview {
     SettingsView()
 }
