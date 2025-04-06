@@ -64,8 +64,16 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
+				StopwatchLogic.swift,
 			);
 			target = 39957E6D2D62A78100A2D89D /* ElephantWidgetExtension */;
+		};
+		39E213D82DA2FB80002B85BD /* Exceptions for "ElephantWidget" folder in "Elephant" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				StopwatchLogic.swift,
+			);
+			target = 39957E0B2D62A32D00A2D89D /* Elephant */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -88,6 +96,7 @@
 		39957E742D62A78100A2D89D /* ElephantWidget */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				39E213D82DA2FB80002B85BD /* Exceptions for "ElephantWidget" folder in "Elephant" target */,
 				39957E852D62A78300A2D89D /* Exceptions for "ElephantWidget" folder in "ElephantWidgetExtension" target */,
 			);
 			path = ElephantWidget;
@@ -508,6 +517,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Elephant/Preview Content\"";
+				DEVELOPMENT_TEAM = TT4P7FU29T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -545,6 +555,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Elephant/Preview Content\"";
+				DEVELOPMENT_TEAM = TT4P7FU29T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -667,6 +678,7 @@
 				CODE_SIGN_ENTITLEMENTS = ElephantWidget/ElephantWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TT4P7FU29T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ElephantWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ElephantWidget;
@@ -704,6 +716,7 @@
 				CODE_SIGN_ENTITLEMENTS = ElephantWidget/ElephantWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TT4P7FU29T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ElephantWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ElephantWidget;

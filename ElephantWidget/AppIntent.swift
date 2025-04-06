@@ -8,11 +8,39 @@
 import WidgetKit
 import AppIntents
 
-struct ConfigurationAppIntent: WidgetConfigurationIntent {
-    static var title: LocalizedStringResource { "Configuration" }
-    static var description: IntentDescription { "This is an example widget." }
+//enum FavoriteEmoji: String, AppEnum {
+//    case smile = "😃"
+//    case heart = "❤️"
+//    case thumbsUp = "👍"
+//    
+//    static var typeDisplayRepresentation: TypeDisplayRepresentation = "Emoji"
+//
+//    static var caseDisplayRepresentations: [FavoriteEmoji: DisplayRepresentation] = [
+//        .smile: "Smile",
+//        .heart: "Heart",
+//        .thumbsUp: "Thumbs Up"
+//    ]
+//}
 
-    // An example configurable parameter.
-    @Parameter(title: "Favorite Emoji", default: "😃")
-    var favoriteEmoji: String
+//struct ConfigurationAppIntent: WidgetConfigurationIntent {
+//    static var title: LocalizedStringResource { "Configuration" }
+//    static var description: IntentDescription { "This is an example widget." }
+//
+//    @Parameter(title: "Favorite Emoji")
+//    var favoriteEmoji: FavoriteEmoji
+//}
+
+struct StartStopwatchIntent: AppIntent {
+    static var title: LocalizedStringResource = "Start Stopwatch"
+    
+    func perform() async throws -> some IntentResult {
+        guard let data = UserDefaults(suiteName: "group.elephant.widget") else {
+            print("Failed to access stopwatch data from UserDefaults")
+            return .result()
+        }
+        data.set(Date(), forKey: "startTime")
+        data.set(true, forKey: "isRunning")
+        WidgetCenter.shared.reloadAllTimelines()
+        return .result()
+    }
 }

@@ -7,49 +7,97 @@
 
 import WidgetKit
 import SwiftUI
+import AppIntents
+
+struct DummyIntent: AppIntent {
+    static var title: LocalizedStringResource = "Dumb"
+    func perform() async throws -> some IntentResult {
+        .result()
+    }
+}
 
 struct Provider: AppIntentTimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationAppIntent())
-    }
-
-    func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: configuration)
+    typealias Intent = DummyIntent
+    typealias Entry = SimpleEntry
+    
+    static var recommendedWidgets: [IntentRecommendation<DummyIntent>] {
+        [
+            IntentRecommendation(intent: DummyIntent(), description: "Default Stopwatch")
+        ]
     }
     
-    func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<SimpleEntry> {
-        var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration)
-            entries.append(entry)
-        }
-
-        return Timeline(entries: entries, policy: .atEnd)
+    // when widget is in static state
+    func placeholder(in context: Context) -> SimpleEntry {
+        SimpleEntry(date: Date(), isRunning: false, startTime: Date(), elapsedTime: 0.0)
     }
 
-//    func relevances() async -> WidgetRelevances<ConfigurationAppIntent> {
-//        // Generate a list containing the contexts this widget is relevant in.
-//    }
+    // displays data at any given time
+    func snapshot(for configuration: DummyIntent, in context: Context) async -> SimpleEntry {
+        return readCurrentState()
+    }
+    
+    // return entry
+    func timeline(for configuration: DummyIntent, in context: Context) async -> Timeline<SimpleEntry> {
+        let entry = readCurrentState()
+        return Timeline(entries: [entry], policy: .never)
+    }
+    
+    // reads data from UserDefaults
+    func readCurrentState() -> SimpleEntry {
+            let defaults = UserDefaults(suiteName: "group.com.yourname.stopwatch")!
+            let isRunning = defaults.bool(forKey: "isRunning")
+            let startTime = defaults.object(forKey: "startTime") as? Date ?? Date()
+            let elapsedTime = defaults.double(forKey: "elapsedTime")
+        return SimpleEntry(date: Date(), isRunning: isRunning, startTime: startTime, elapsedTime: elapsedTime)
+        }
 }
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
-    let configuration: ConfigurationAppIntent
+    let isRunning: Bool
+    let startTime: Date
+    let elapsedTime: Double
 }
 
 struct ElephantWidgetEntryView : View {
     var entry: Provider.Entry
 
-    var body: some View {
-        Text("Time:")
-        Text(entry.date, style: .time)
-
-        Text("Favorite Emoji:")
-        Text(entry.configuration.favoriteEmoji)
+    var body: some View{
+        VStack {
+            if(isRunning) {
+                let now = Date()
+                let runningTime = now.timeIntervalSince(startTime) + elapsedTime
+                ElephantText(displayText: formatTime(runningTime))
+            } else {
+                ElephantText(displayText: formatTime(elapsedTime))
+            }
+            
+            HStack{
+                ElephantButton(
+                    buttonText: "Start",
+                    action: {
+                        startTime = Date()
+                        isRunning = true
+                    },
+                    color: DefaultColors.main_color_2)
+                ElephantButton(
+                    buttonText: "Reset",
+                    action: {
+                        startTime = Date()
+                        isRunning = false
+                        elapsedTime = 0.0
+                    },
+                    color: DefaultColors.main_color_2)
+                ElephantButton(
+                    buttonText: "Pause",
+                    action: {
+                        let now = Date()
+                        elapsedTime += now.timeIntervalSince(startTime)
+                        isRunning = false
+                    },
+                    color: DefaultColors.main_color_2)
+            }
+        }
     }
 }
 
@@ -57,30 +105,30 @@ struct ElephantWidget: Widget {
     let kind: String = "ElephantWidget"
 
     var body: some WidgetConfiguration {
-        AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) { entry in
+        AppConfiguration(kind: kind, provider: Provider()) { entry in
             ElephantWidgetEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
         }
     }
 }
 
-extension ConfigurationAppIntent {
-    fileprivate static var smiley: ConfigurationAppIntent {
-        let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "😀"
-        return intent
-    }
-    
-    fileprivate static var starEyes: ConfigurationAppIntent {
-        let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "🤩"
-        return intent
-    }
-}
+//extension ConfigurationAppIntent {
+//    fileprivate static var smiley: ConfigurationAppIntent {
+//        let intent = ConfigurationAppIntent()
+//        intent.favoriteEmoji = "😀"
+//        return intent
+//    }
+//    
+//    fileprivate static var starEyes: ConfigurationAppIntent {
+//        let intent = ConfigurationAppIntent()
+//        intent.favoriteEmoji = "🤩"
+//        return intent
+//    }
+//}
 
 #Preview(as: .systemSmall) {
     ElephantWidget()
 } timeline: {
-    SimpleEntry(date: .now, configuration: .smiley)
-    SimpleEntry(date: .now, configuration: .starEyes)
+    // SimpleEntry(date: .now, configuration: .smiley)
+    // SimpleEntry(date: .now, configuration: .starEyes)
 }
