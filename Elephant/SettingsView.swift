@@ -27,28 +27,15 @@ struct SettingsView: View {
                     // figure out what are the settings and the buttons and things
                     // figure out where to store the info being changed, maybe a json with all the configurations
                     // figure out how to update settings when user clicks a configuration buttons
-                Spacer()
+                Spacer()      
+                //Back button Navigation back to initial app view page
                 ElephantButton(buttonText: "Back", action: {
                     presentationMode.wrappedValue.dismiss()
-                }, color: DefaultColors.background)
+                }, color: selectedTheme.colors.first ?? DefaultColors.main_color_1)
                     .cornerRadius(10)
                     .frame(maxWidth: .infinity, alignment: .leadingFirstTextBaseline)
-                /*
-                 Button{
-                    
-                } label: {
-                    Image(systemName: "xmark")
-                        .foregroundColor(Color(.label))
-                        .imageScale(.large)
-                        .frame(width: 44, height: 44)
-                }
-                 */
                 
-                
-               
-                (Mode ? Color.black : Color.white)
-                    .edgesIgnoringSafeArea(.all)
-                    
+               //Mode Selection between light and dark mode is displayed    
                 VStack(alignment: .leading, spacing: 20){
                     Text("Modes")
                         .font(.title2)
@@ -91,6 +78,8 @@ struct SettingsView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     
                     //add customizable list addition
+                CheckListView()//displays ChecklistView to the user
+                    .padding()
                 
                 Text("Time Settings")
                     .font(.title)
@@ -123,6 +112,8 @@ struct SettingsView: View {
                         .font(.title3)
                         .frame(maxWidth: .infinity, alignment: .leadingFirstTextBaseline)
                 customSlider(selectedTime: $selectedReminderTime, minTime:20, maxTime: 120, interval: 10)
+
+                Spacer()
             }
         }
         .padding()
@@ -175,6 +166,76 @@ struct ModeSelection: View{
         }
     }
 }
+
+struct CheckListView: View{
+    @State private var newTaskTitle: String = ""
+    @State private var taskList: [TaskItem] = []
+    
+    //initialize path for task list to TasksList.json
+    let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("TaskLists.json")
+    
+    var body: some View{
+        /* Create individual checklist titles*/
+        VStack(alignment: .leading){
+            ForEach(taskList.indices, id: \.self){
+                index in HStack{
+                    Button(action:{taskList[index].isCompleted.toggle()
+                        saveTasks()
+                    }){
+                        Image(systemName: taskList[index].isCompleted ? "checkmark.circle.fill":"circle")
+                            .foregroundStyle(taskList[index].isCompleted ? .green: .gray)
+                        }
+                    Text(taskList[index].title)
+                        .strikethrough(taskList[index].isCompleted)
+                        .foregroundColor(taskList[index].isCompleted ? .gray: .primary)
+                        .padding(.leading, 5)
+                }
+                .padding(.vertical, 4)
+            }//appears once tasks have been added
+            HStack{
+                TextField("new task", text: $newTaskTitle)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                
+                Button(action:{
+                    guard !newTaskTitle.trimmingCharacters(in: .whitespaces).isEmpty else {return}
+                    let newTask = TaskItem(title: newTaskTitle)
+                    taskList.append(newTask)
+                    newTaskTitle = ""
+                    saveTasks()
+                }){
+                    Image(systemName: "plus.circle.fill")
+                        .font(.title2)
+                        .foregroundColor(DefaultColors.background)
+                    
+                }
+            }//type in customizable tasks, appended to taskList in .json file and visible to the user
+            .padding(.top)
+        }
+        .onAppear(perform: loadTasks)
+    }
+    //displays the current task list, otherwise displays default in TasksLists.json
+    func loadTasks(){
+        do{
+            let data = try Data(contentsOf: path)
+            let decoded = try JSONDecoder().decode(TaskList.self, from: data)
+            self.taskList = decoded.tasks
+        }catch{
+            print("Unable to load tasks, default list shown")
+            self.taskList = []
+        }
+    }
+    
+    //saves new tasks to the taskList encoding through the defined path
+    func saveTasks(){
+        do{
+            let encoded = try JSONEncoder().encode(TaskList(tasks: taskList))
+            try encoded.write(to: path)
+        }catch{
+            print("Failed to save tasks")
+        }
+    }
+}
+
 
 struct customSlider: View{ //Custom slider struct
     @Binding var selectedTime: Double
