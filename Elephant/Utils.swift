@@ -16,6 +16,22 @@ struct DefaultColors {
     static let shadow_1 = Color(red: 116/255, green: 79/255, blue: 42/255)
     static let shadow_2 = Color(red: 44/255, green: 110/255, blue: 73/255)
 }
+
+//converts Color to hexcode colors
+extension Color{
+    init(hex: String){
+        let scanner = Scanner(string: hex)
+        var rgb: UInt64 = 0
+        scanner.scanHexInt64(&rgb)
+        
+        let red = Double((rgb >> 16) & 0xFF)/255.0
+        let green = Double((rgb >> 8) & 0xFF)/255.0
+        let blue = Double(rgb & 0xFF)/255.0
+        
+        self.init(red: red, green: green, blue: blue)
+    }
+}
+
 // Elephant confirmation dialogue
 // Parameters:
 //      title: string, text displayed on button
