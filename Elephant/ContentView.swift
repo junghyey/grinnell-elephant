@@ -114,7 +114,7 @@ struct ContentView: View {
                         .cornerRadius(15)
                         .scaleEffect(isPressed ? 0.9 : 1.0)
                         .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
-
+                        .accessibilityIdentifier("stopwatchButton")
                     
                     // POMODORO
                     Button(action: {
@@ -132,6 +132,7 @@ struct ContentView: View {
                         .cornerRadius(15)
                         .scaleEffect(isPressed ? 0.9 : 1.0)
                         .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
+                        .accessibilityIdentifier("pomodoroButton")
                     
                     NavigationLink(destination: ShopMainPageView()) {
                             Text("Collectibles Shop")
