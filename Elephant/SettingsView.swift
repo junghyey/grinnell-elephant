@@ -9,9 +9,11 @@ import SwiftUI
 
 struct SettingsView: View {
 
-    @Environment(\.presentationMode) var presentationMode //sets 
+    @Environment(\.presentationMode) var presentationMode //navigating to different presentation based on command
+    @EnvironmentObject var storage: TaskListStorage
+    @State private var showingChecklist = false
     
-    @AppStorage("ThemeSelection") private var selectedTheme: ThemeSelection = .def
+    @AppStorage("ThemeSelection") private var selectedTheme: ThemeSelection = .Default
     @AppStorage("colorTheme") var colorTheme: String = "classic" // classic as the default value
     @AppStorage("mode") var mode: String = "pomodoro"
     @AppStorage("mode")  private var Mode: Bool = false //default light mode, toggle for dark mode
@@ -20,13 +22,13 @@ struct SettingsView: View {
     @State private var selectedBreakTime: Double = 5 //default for pomodoro
     @State private var selectedReminderTime: Double = 30 //default for stopwatch
     
+        // Todo:
+            // figure out what are the settings and the buttons and things
+            // figure out where to store the info being changed, maybe a json with all the configurations
+            // figure out how to update settings when user clicks a configuration buttons
     var body: some View {
         ScrollView{
             VStack(alignment: .leading, spacing: 20){
-                // Todo:
-                    // figure out what are the settings and the buttons and things
-                    // figure out where to store the info being changed, maybe a json with all the configurations
-                    // figure out how to update settings when user clicks a configuration buttons
                 Spacer()      
                 //Back button Navigation back to initial app view page
                 ElephantButton(buttonText: "Back", action: {
@@ -35,111 +37,91 @@ struct SettingsView: View {
                     .cornerRadius(10)
                     .frame(maxWidth: .infinity, alignment: .leadingFirstTextBaseline)
                 
-               //Mode Selection between light and dark mode is displayed    
-                VStack(alignment: .leading, spacing: 20){
-                    Text("Modes")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .padding(.leading)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        
-                    ModeSelection()
-                }
-                .padding()
-                .frame(maxWidth: .infinity, alignment: .leading)
-                
-                Text("Theme")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .padding()
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                //Utilized ElephantButton struct from Utils
+                sectionTitle(text: "Modes")
+                ElephantButton(buttonText: Mode ? "Dark Mode" : "Light Mode", action:{ Mode.toggle()}, color: Mode ? .gray.opacity(0.6) : .gray.opacity(0.3))
+
+                sectionTitle(text: "Themes")
                 HStack(spacing: 15){
                     ForEach(ThemeSelection.allCases){
-                        theme in Button(action:{
-                            selectedTheme = theme //updates Theme
-                        }){
-                            Text(theme.rawValue.capitalized)
-                                .font(.headline)
-                                .foregroundColor(selectedTheme == theme ? . white: .black)
-                                .padding()
-                                .frame(minWidth:100)
-                                .background(selectedTheme == theme ? DefaultColors.background: Color.gray.opacity(0.2))
-                                .cornerRadius(10)
-                        }
+                        theme in ElephantButton(buttonText: theme.rawValue.capitalized, action: {selectedTheme = theme}, color: selectedTheme == theme ? DefaultColors.background : Color.gray.opacity(0.2))
                     }
                 }
                 
                     //Include Black & White theme along with colorful palettes
                 
-                Text("Checklist")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .padding()
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                sectionTitle(text: "Checklist")
                     
                     //add customizable list addition
                 CheckListView()//displays ChecklistView to the user
                     .padding()
                 
-                Text("Time Settings")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .padding()
+               sectionTitle(text: "Time Settings", centered: true)
                 
-                Text("Pomodoro")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .padding()
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                timeSection(title: "Pomodoro" , sliders: [
+                    ("Work Duration", $selectedWorkTime, 20, 60, 5),
+                    ("Short Break Duration", $selectedBreakTime, 5, 30, 5)
+                ])
                 
-                Text("Work Duration")
-                        .font(.title3)
-                        .frame(maxWidth: .infinity, alignment: .leadingFirstTextBaseline)
-                customSlider(selectedTime: $selectedWorkTime, minTime:20, maxTime:60, interval: 5)
+                timeSection(title: "Stopwatch", sliders: [
+                    ("Reminder Intervals", $selectedReminderTime, 20, 120, 10)
+                ])
                 
-                Text("Short Break Duration")
-                        .font(.title3)
-                        .frame(maxWidth: .infinity, alignment: .leadingFirstTextBaseline)
-                customSlider(selectedTime: $selectedBreakTime, minTime:5, maxTime:30, interval: 5)
-                
-                Text("Stopwatch")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .padding()
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    
-                Text("Reminder Intervals")
-                        .font(.title3)
-                        .frame(maxWidth: .infinity, alignment: .leadingFirstTextBaseline)
-                customSlider(selectedTime: $selectedReminderTime, minTime:20, maxTime: 120, interval: 10)
-
                 Spacer()
             }
         }
         .padding()
         .preferredColorScheme(Mode ? .dark : .light)
         .background(selectedTheme.colors.first ?? DefaultColors.background)
-        .frame(width: 400, height: 600)
+        .frame(width: 500, height: 500)
     }
+    
+    //seperate sectionTitle function for setting headliners
+    func sectionTitle(text: String, centered: Bool = false) -> some View{
+        Text(text)
+            .font(.title2)
+            .fontWeight(.bold)
+            .fontDesign(.rounded)
+            .padding()
+            .frame(maxWidth: .infinity, alignment: centered ? .center : .leading)
+    }
+    
+    //seperate timeSection frame to condense lines of code
+    func timeSection(title: String, sliders: [(String, Binding<Double>, Double, Double, Double)]) -> some View{
+        VStack(alignment: .leading, spacing: 10){
+            sectionTitle(text: title)// Pomodoro or Stopwatch
+            ForEach(0..<sliders.count, id: \.self){ index in
+                let time_set = sliders[index] //time settings array
+                Text(time_set.0) //Work Duration, Short break duration, and reminder intervals
+                    .font(.title3)
+                    .fontWeight(.thin)
+                    .fontDesign(.rounded)
+                    .frame(maxWidth: .infinity, alignment: .leadingFirstTextBaseline)
+                customSlider(selectedTime: time_set.1, minTime: time_set.2, maxTime: time_set.3, interval: time_set.4)
+                //creates custom slider given the selected time section
+            }
+        }
+    }
+    @State private var newTask = ""
 }//bottom of SettingsView
 
 //enum for ThemeSelection
 enum ThemeSelection: String, CaseIterable, Identifiable{
-    case def //default theme setting
-    case bw //Black and White theme setting
-    case benny //Benny character theme setting
+    case Default //default theme setting
+    case BW //Black and White theme setting
+    case Benny //Benny character theme setting
     
     var id: String{self.rawValue} //initializes var id for theme selection
     
     //different color themes and access DefaultColors in Utils
     var colors:[Color]{
         switch self{
-        case .def:
+        case .Default:
             return [DefaultColors.main_color_1, DefaultColors.main_color_2, DefaultColors.main_color_3, DefaultColors.background, DefaultColors.shadow_1, DefaultColors.shadow_2]
-        case .bw:
+        case .BW:
             return[Color(hex: "343434"), Color(hex: "FFFFFF"), Color(hex: "000000"), Color(hex: "C0C0C0")]
-        case .benny:
-            return [Color(hex: "094F98"), Color(hex: "4B90CD"), Color(hex: "B8D2F0"), Color(hex: "F3A3B5"), Color(hex: "19171A"), Color(hex: "F0CC34")]
+        case .Benny:
+            return [Color(hex: "4B90CD"),Color(hex: "094F98"), Color(hex: "B8D2F0"), Color(hex: "F3A3B5"), Color(hex: "19171A"), Color(hex: "F0CC34")]
             
         }
     }
@@ -253,8 +235,12 @@ struct customSlider: View{ //Custom slider struct
             
             HStack{
                 Text("\(Int(minTime)) min")
+                    .fontWeight(.semibold)
+                    .fontDesign(.rounded)
                 Spacer()
                 Text("\(Int(maxTime)) min")
+                    .fontWeight(.semibold)
+                    .fontDesign(.rounded)
             }
             .padding(.horizontal)
         }
