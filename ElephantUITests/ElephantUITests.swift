@@ -5,6 +5,11 @@
 //  Created by 陸卉媫 on 2/16/25.
 //
 
+// testing:
+//      product -> scheme
+//                  --> if some form of UI test is there, run test
+//                  --> if not, new scheme -> target: ElephantUItest
+
 import XCTest
 
 final class ElephantUITests: XCTestCase {
@@ -12,8 +17,10 @@ final class ElephantUITests: XCTestCase {
     var app: XCUIApplication!
     
     var shopButton: XCUIElement { app.buttons["shopPage"] }
-    var settingsButton: XCUIElement { app.buttons["settingsPage"]}
-    var manualButton: XCUIElement { app.buttons["manualPage"]}
+    var settingsButton: XCUIElement { app.buttons["settingsPage"] }
+    var manualButton: XCUIElement { app.buttons["manualPage"] }
+    var pomodoroButton: XCUIElement { app.staticTexts["pomodoroButton"] }
+    var stopwatchButton: XCUIElement { app.staticTexts["stopwatchButton"] }
     
     // reset state prior to tests
     override func setUpWithError() throws {
@@ -27,6 +34,8 @@ final class ElephantUITests: XCTestCase {
         XCTAssertTrue(shopButton.isHittable)
         XCTAssertTrue(settingsButton.isHittable)
         XCTAssertTrue(manualButton.isHittable)
+        XCTAssertTrue(pomodoroButton.isHittable)
+        XCTAssertTrue(stopwatchButton.isHittable)
     }
     
     // ShopMainPageView tests
@@ -39,5 +48,9 @@ final class ElephantUITests: XCTestCase {
         // TODO: add tests
     }
     
+    // manualView tests
+    func manualViewTest() throws {
+        // TODO: add tests
+    }
 
 }
