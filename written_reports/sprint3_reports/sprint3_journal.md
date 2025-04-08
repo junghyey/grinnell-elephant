@@ -4,7 +4,7 @@
 For this milestone, the main non-user-facing progress involved setting up structure for storing task checklist using JSON files. Most of our work focused on UI development and feature implmentation, which are very noticeable to users,so backend improvements were minimal. In the next sprint, we plan to incorporate more functionality of the app.
 
 ## Requirements Document
-- In this sprint, we changed our requirements by adding user stories that were missing from Milestone 1, with a user story for a light user (guest) and a team user. For the team user, we made edits to Candice's persona to extend it as that team user. To view the changes, please navigate to this [commit comparison page](https://github.com/junghyey/grinnell-elephant/compare/1351792..45bff51?diff=unified&w=).
+- In this sprint, we changed our requirements by adding user stories that were missing from Milestone 1, with a user story for a light user (guest) and a team user. For the team user, we made edits to Candice's persona to extend it as that team user. To view the changes, please navigate to this [commit comparison page](https://github.com/grinnell-elephant/written_reports/compare/1351792...45bff51#diff-c11ebaa4aa93bb6cbff1791037f85a7b89f3a6cf993159e5e91ad928e0fd3153).
 
 
 ## Manual testing in place of automated testing for part
