@@ -1,7 +1,7 @@
 # Sprint 3 Journal
 
 ## Requirements Document
-- In this sprint, we changed our requirements by adding user stories that were missing from Milestone 1, with a user story for a light user (guest) and a team user. For the team user, we made edits to Candice's persona to extend it as that team user.
+- In this sprint, we changed our requirements by adding user stories that were missing from Milestone 1, with a user story for a light user (guest) and a team user. For the team user, we made edits to Candice's persona to extend it as that team user. To view the changes, please navigate to this [commit comparison page](https://github.com/junghyey/grinnell-elephant/compare/1351792..45bff51?diff=unified&w=).
 
 ## Manual testing in place of automated testing for part or all of your product if:
 *(a) your product belongs to a category (such as gaming) where manual testing is a widely accepted industry standard OR*
