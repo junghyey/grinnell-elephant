@@ -1,0 +1,23 @@
+{
+  "configurations" : [
+    {
+      "id" : "C74C9F1B-89E9-493E-9900-75770F10F4F7",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Elephant.xcodeproj",
+      "identifier" : "39957E0B2D62A32D00A2D89D",
+      "name" : "Elephant"
+    }
+  },
+  "testTargets" : [
+
+  ],
+  "version" : 1
+}
