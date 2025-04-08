@@ -6,7 +6,7 @@
 This document shows the procedures for manually testing the Elephant app. The tests are performed by humans and verified the UI work as expected. This protocol may reokace the automated tesing 
 by testing UI transitions and functions that are not easily and readily testable via XCUI Test and limited support for SwiftUI navigation behavior.
 
---
+---
 
 ## "ManualView" manual testing
 
