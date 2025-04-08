@@ -28,7 +28,9 @@ by testing UI transitions and functions that are not easily and readily testable
 
 - We have identifier for the homepage.
 
-1. manualButton
+1. Manual Button (manualPage)
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/da194b81-3efc-40f5-b87c-625b7118ac55" />
+
 
 - We have identifiers for each page in the manual.
 
