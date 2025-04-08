@@ -3,7 +3,7 @@
 //  Elephant
 //
 //  Created by 陸卉媫 on 3/14/25.
-//
+//  Authored by Gabriela Pruneda Turcios
 
 import SwiftUI
 
@@ -29,13 +29,16 @@ struct SettingsView: View {
     var body: some View {
         ScrollView{
             VStack(alignment: .leading, spacing: 20){
-                Spacer()      
-                //Back button Navigation back to initial app view page
-                ElephantButton(buttonText: "Back", action: {
-                    presentationMode.wrappedValue.dismiss()
-                }, color: selectedTheme.colors.first ?? DefaultColors.main_color_1)
-                    .cornerRadius(10)
-                    .frame(maxWidth: .infinity, alignment: .leadingFirstTextBaseline)
+                //Back button Navigation back to initial ContentView Page
+                //Credits to Candice for the Back button
+                NavigationLink(destination: ContentView()) {
+                    RoundedRectangle(cornerRadius: 10)
+                        .foregroundStyle(DefaultColors.main_color_2)
+                        .frame(width: 50, height: 30)
+                        .overlay(
+                            Text("Back").foregroundColor(DefaultColors.background))
+                }
+                .buttonStyle(PlainButtonStyle())
                 
                 //Utilized ElephantButton struct from Utils
                 sectionTitle(text: "Modes")
@@ -48,13 +51,11 @@ struct SettingsView: View {
                     }
                 }
                 
-                    //Include Black & White theme along with colorful palettes
-                
+                /*Button navigation to sheet that shows larger custom checklist*/
                 sectionTitle(text: "Checklist")
-                    
-                    //add customizable list addition
-                CheckListView()//displays ChecklistView to the user
-                    .padding()
+                ElephantButton(buttonText: "Add new custom list", action: { showingChecklist = true
+                }, color: selectedTheme.colors.first ?? DefaultColors.main_color_2)
+                
                 
                sectionTitle(text: "Time Settings", centered: true)
                 
@@ -70,6 +71,13 @@ struct SettingsView: View {
                 Spacer()
             }
         }
+        .sheet(isPresented: $showingChecklist){
+            NavigationView{
+                CheckListView()
+                    .environmentObject(storage)
+            }
+        }
+        
         .padding()
         .preferredColorScheme(Mode ? .dark : .light)
         .background(selectedTheme.colors.first ?? DefaultColors.background)
@@ -152,73 +160,102 @@ struct ModeSelection: View{
 
 //Checklist struct that utilizes pathway to TaskLists.json
 struct CheckListView: View{
-    @State private var newTaskTitle: String = "" //initial string Task 
+    @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject var storage: TaskListStorage
+    @State private var newTask: String = "" //initial string Task
     @State private var taskList: [TaskItem] = [] //create a list of TaskItems
     
-    //initialize path for task list to TasksList.json
-    let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("TaskLists.json")
-    
-    var body: some View{
-        /* Create individual checklist titles*/
-        VStack(alignment: .leading){
-            ForEach(taskList.indices, id: \.self){
-                index in HStack{
-                    Button(action:{taskList[index].isCompleted.toggle()
-                        saveTasks()
-                    }){
-                        Image(systemName: taskList[index].isCompleted ? "checkmark.circle.fill":"circle")
-                            .foregroundStyle(taskList[index].isCompleted ? .green: .gray)
+    var body: some View {
+            VStack(spacing: 16) {
+                //First Checklist
+                Text("Checklist #1")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .fontDesign(.rounded)
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+
+                //Displays current task list
+                if storage.taskList.tasks.isEmpty {
+                    Spacer()
+                    Text("No tasks yet!")//Default message for empty task list
+                        .foregroundColor(DefaultColors.main_color_2)
+                        .padding(10)
+                } else { //Once tasks have been added by the user
+                    List {
+                        ForEach(storage.taskList.tasks) { task in
+                            HStack {//Allows user to check off their tasks within settings
+                                Image(systemName: task.isCompleted ? "checkmark.square.fill" : "square")
+                                    .foregroundColor(task.isCompleted ? .green : .gray)
+                                    .onTapGesture { //calls on function to complete task
+                                        storage.markTastCompleted(task: task)
+                                    }
+
+                                //Writes our user task
+                                Text(task.title)
+                                    .strikethrough(task.isCompleted)
+                                    .foregroundColor(task.isCompleted ? .green : .primary)
+                            }
+                        }//once the user checks off a task as complete, that task will be removed
+                        .onDelete { indexSet in
+                            indexSet.forEach { index in
+                                let task = storage.taskList.tasks[index]
+                                storage.removeTask(task: task)
+                            }
                         }
-                    Text(taskList[index].title)
-                        .strikethrough(taskList[index].isCompleted)
-                        .foregroundColor(taskList[index].isCompleted ? .gray: .primary)
-                        .padding(.leading, 5)
+
+
+                        // Add new task row at the end
+                        HStack {
+                            Image(systemName: "plus")
+                                .foregroundColor(.secondary)
+
+
+                            TextField("Add new task...", text: $newTask, onCommit: addNewTask)
+                                .textFieldStyle(PlainTextFieldStyle())
+                        }
+                    }
+                    .listStyle(PlainListStyle())
                 }
-                .padding(.vertical, 4)
-            }//appears once tasks have been added
-            HStack{
-                TextField("new task", text: $newTaskTitle)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                
-                Button(action:{
-                    guard !newTaskTitle.trimmingCharacters(in: .whitespaces).isEmpty else {return}
-                    let newTask = TaskItem(title: newTaskTitle)
-                    taskList.append(newTask)
-                    newTaskTitle = ""
-                    saveTasks()
-                }){
-                    Image(systemName: "plus.circle.fill")
-                        .font(.title2)
-                        .foregroundColor(DefaultColors.background)
-                    
+
+                Spacer()
+
+                //Cancel & Save button at the bottom of the checklist sheet
+                HStack(spacing: 20) {
+                    ElephantButton(
+                        buttonText: "Cancel",
+                        action: { dismiss() },
+                        color: .gray.opacity(0.3)
+                    )
+
+
+                    ElephantButton(
+                        buttonText: "Save",
+                        action: {
+                            storage.saveTasks()
+                            dismiss()
+                        },
+                        color: DefaultColors.main_color_2
+                    )
                 }
-            }//type in customizable tasks, appended to taskList in .json file and visible to the user
-            .padding(.top)
+                .padding(.bottom)
+            }
+            .padding()
+            .cornerRadius(12)
+            .padding()
         }
-        .onAppear(perform: loadTasks)
-    }
-    //displays the current task list, otherwise displays default in TasksLists.json
-    func loadTasks(){
-        do{
-            let data = try Data(contentsOf: path)
-            let decoded = try JSONDecoder().decode(TaskList.self, from: data)
-            self.taskList = decoded.tasks
-        }catch{
-            print("Unable to load tasks, default list shown")
-            self.taskList = []
-        }
+
+    //adds new task made from the user to TaskListsStorage and stores in
+    //TaskLists.json
+    private func addNewTask() {
+        let trim = newTask.trimmingCharacters(in: .whitespaces)
+        guard !trim.isEmpty else { return }
+        storage.addTask(title: trim)
+        newTask = ""
     }
     
-    //saves new tasks to the taskList encoding through the defined path
-    func saveTasks(){
-        do{
-            let encoded = try JSONEncoder().encode(TaskList(tasks: taskList))
-            try encoded.write(to: path)
-        }catch{
-            print("Failed to save tasks")
-        }
-    }
 }
+
 
 //Slider customizable between minimum, maximum and break time intervals between work breaks
 struct customSlider: View{ //Custom slider struct
@@ -251,4 +288,5 @@ struct customSlider: View{ //Custom slider struct
 //SettingsView preview
 #Preview {
     SettingsView()
+        .environmentObject(TaskListStorage())
 }
