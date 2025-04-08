@@ -25,8 +25,9 @@ jobs:
       run: xcodebuild -version
     - name: List all test targets
       run: xcodebuild -list -project Elephant.xcodeproj
-    - name: Build and Test 
-      run: xcodebuild test -scheme ElephantUITests -project Elephant.xcodeproj -destination  'platform=macOS'
-      # Currently, we do have much of development done (for Sprint 2). Therefore, current version of CI will include running all the tests
-      # we have rather than separating to pieces
+    - name: Build app  
+      run: xcodebuild build -scheme Elephant -project Elephant.xcodeproj -destination 'platform=macOS'
+    - name: Run UI Tests
+      run: xcodebuild test -scheme ElephantUITests -project Elephant.xcodeproj -destination 'platform=macOS'
+     
       
