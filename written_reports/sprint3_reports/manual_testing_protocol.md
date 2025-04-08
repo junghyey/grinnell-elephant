@@ -20,7 +20,15 @@ by testing UI transitions and functions that are not easily and readily testable
 
 
 
+
 ### Page Identifiers
+We have identifier for the homepage.
+
+1. homePage
+
+   <img width="300" alt="image" src="https://github.com/user-attachments/assets/3bfe739d-9293-456c-97ee-cea21a656048" />
+
+
 We have identifiers for each page in the manual.
 
 1. manualFirstPage
@@ -43,18 +51,14 @@ We have identifiers for each page in the manual.
 
 #### Steps:
 
-1. Launch the Elephant app
-   
-   <img width="300" alt="image" src="https://github.com/user-attachments/assets/3bfe739d-9293-456c-97ee-cea21a656048" />
-
-   
-3. Tap the Manual Button (identifier: manualPage), which is a ? button on the right corner of the top page
-4. Verify you are on manualFirstPage (showing Welcome!)
-5. Tap the Next button (->) (identified by nextButton)
-6. Verify you land on the second page (manualSecondPage)
-7. Tap Next again
-8. Verify you are on the third page (manualThirdPage)
-9. Tap Next again
-10. Verify you are on the fourth page, which is the last page (manualFourthPage)
+1. Launch the Elephant app (we see homePage)
+2. Tap the Manual Button (identifier: manualPage), which is a ? button on the right corner of the top page
+3. Verify you are on manualFirstPage (showing Welcome!)
+4. Tap the Next button (->) (identified by nextButton)
+5. Verify you land on the second page (manualSecondPage)
+6. Tap Next again
+7. Verify you are on the third page (manualThirdPage)
+8. Tap Next again
+9. Verify you are on the fourth page, which is the last page (manualFourthPage)
 
 
