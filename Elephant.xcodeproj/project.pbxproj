@@ -508,6 +508,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Elephant/Preview Content\"";
+				DEVELOPMENT_TEAM = TT4P7FU29T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -545,6 +546,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Elephant/Preview Content\"";
+				DEVELOPMENT_TEAM = TT4P7FU29T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -667,6 +669,7 @@
 				CODE_SIGN_ENTITLEMENTS = ElephantWidget/ElephantWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TT4P7FU29T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ElephantWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ElephantWidget;
@@ -704,6 +707,7 @@
 				CODE_SIGN_ENTITLEMENTS = ElephantWidget/ElephantWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TT4P7FU29T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ElephantWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ElephantWidget;

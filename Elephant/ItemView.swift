@@ -17,10 +17,22 @@ struct ItemView: View {
         ZStack{
             ScrollView{
                 VStack {
-                    Text("\(item.name)")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .padding()
+                    HStack {
+                        NavigationLink(destination: ShopMainPageView()) {
+                            RoundedRectangle(cornerRadius: 10)
+                                .foregroundStyle(DefaultColors.main_color_2)
+                                .frame(width: 50, height: 30)
+                                .overlay(
+                                    Text("Back").foregroundColor(DefaultColors.background))
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        .padding(10)
+                        .accessibilityIdentifier("itemButton_back_\(item.imageName)")
+                        Text("\(item.name)")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .padding()
+                    }
                     ZStack{
                         Circle()
                             .foregroundStyle(DefaultColors.background)
@@ -50,6 +62,7 @@ struct ItemView: View {
                     }
                     .buttonStyle(PlainButtonStyle())
                     .shadow(color: .black.opacity(0.2), radius: 4, x: 0, y: 2)
+                    .accessibilityIdentifier("itemButton_price_\(item.imageName)")
                 }
             }
             .frame(width: 500, height: 500)
