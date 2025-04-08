@@ -30,7 +30,7 @@ final class ElephantUITests: XCTestCase {
     }
     
     // Homepage buttons navigation test
-    func contentViewTest() throws {
+    func testContentView() throws {
         XCTAssertTrue(shopButton.isHittable)
         XCTAssertTrue(settingsButton.isHittable)
         XCTAssertTrue(manualButton.isHittable)
@@ -39,14 +39,20 @@ final class ElephantUITests: XCTestCase {
     }
     
     // ShopMainPageView tests
-    func shopMainPageViewTest() throws {
+    func testShopMainPageView() throws {
         // TODO: add tests
     }
     
     // settingsView tests
-    func settingsViewTest() throws {
+    func testSettingsView() throws {
         // TODO: add tests
     }
+    
+    
+    
+    
+    
+    
     
     
     // for manual testing
@@ -67,8 +73,7 @@ final class ElephantUITests: XCTestCase {
 
     // manualView tests
     
-    
-    func manualViewTest() throws {
+    func testManualView() throws {
         
         
         
@@ -76,6 +81,9 @@ final class ElephantUITests: XCTestCase {
                                "manualSecondPage",
                                "manualThirdPage",
                                "manualFourthPage"]
+        
+        XCTAssertTrue(app.buttons["manualButton"].waitForExistence(timeout: 2))
+        app.buttons["manualButton"].tap()
         
         // Test next button exists and work and each page exists
         
@@ -93,6 +101,8 @@ final class ElephantUITests: XCTestCase {
             }// if
         }//for next
         // Test back button exists and work and each page exists
+        
+        app.buttons["manualButton"].tap()
         
         for (idx, pageId) in pageIdentifiers.reversed().enumerated() {
             // does the page exist?
