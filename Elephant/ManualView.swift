@@ -30,8 +30,9 @@ import SwiftUI
  */
 struct ManualTemplateView<Content: View>:  View {
     @AppStorage("mode") private var Mode: Bool = false
-    
+    @Environment(\.dismiss) private var dismiss
     //Variables
+    var currentPageIdentifier: String
     var content: Content
     var backPage: AnyView?
     var nextPage: AnyView?
@@ -39,12 +40,14 @@ struct ManualTemplateView<Content: View>:  View {
     
     //Initializer (similar to this in java)
     init(
+        currentPageIdentifier: String,
         content: () -> Content,
         backPage: AnyView? = nil,
         nextPage: AnyView? = nil,
         homePage: AnyView? = nil
     )
     {
+        self.currentPageIdentifier = currentPageIdentifier
         self.content = content()
         self.backPage = backPage
         self.nextPage = nextPage
@@ -52,7 +55,7 @@ struct ManualTemplateView<Content: View>:  View {
     }//init
     
     var body: some View {
-        NavigationStack {
+       
             VStack(spacing: 0) {
                 HStack {
                     Spacer()//expands leftward
@@ -62,6 +65,7 @@ struct ManualTemplateView<Content: View>:  View {
                                 .font(.title2)
                                 .foregroundColor(.blue)
                                 .accessibilityIdentifier("homeButton")
+                                .allowsHitTesting(true)
                                 //nopadding
                         }//NavigationLink
                     }//homepage
@@ -73,6 +77,12 @@ struct ManualTemplateView<Content: View>:  View {
                         Spacer(minLength: 80) // space above the nav buttons
                     }//VStack
                     .padding()
+                    .background(
+                        Color.clear
+                            .accessibilityElement(children: .combine)
+                            .accessibilityIdentifier(currentPageIdentifier)
+                    )
+                    .id(currentPageIdentifier) 
                 }//ScrollView
                 
                 HStack {
@@ -82,8 +92,9 @@ struct ManualTemplateView<Content: View>:  View {
                                 .font(.title)
                                 .foregroundColor(.blue)
                                 .accessibilityIdentifier("backButton")
-                        }//NavigationLink
-                    }//backPage
+                                .allowsHitTesting(true)
+                        }
+                    }
                     
                     Spacer()//expands leftward
                     
@@ -93,6 +104,7 @@ struct ManualTemplateView<Content: View>:  View {
                                 .font(.title)
                                 .foregroundColor(.blue)
                                 .accessibilityIdentifier("nextButton")
+                                .allowsHitTesting(true)
                         }//NavigationLink
                     }//nextPage
                 }//HStack
@@ -103,67 +115,69 @@ struct ManualTemplateView<Content: View>:  View {
             .frame(width: 500, height: 500)
             .background(Mode ? Color.black : Color.white)
         }//VStack
-    }//var body
+  
 }//ManualTemplateView
 
 // FirstPage
 struct ManualView:View{
     var body: some View {
-        ManualTemplateView(
-            content: {
-                VStack(alignment: .leading, spacing: 20) {
-                    Text("Welcome to Elephant: A Wellness Trunk!")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .lineSpacing(4)
-                    
-                    Text(
-                        "Are you ready to incorporate wellness tasks into your work routine with us? Let’s get started!"
-                    )
-                    .font(.title3)
-                    .fontWeight(.medium)
-                    .lineSpacing(6)
-                    
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text("Stopwatch Mode")
-                            .font(.title3)
-                            .fontWeight(.semibold)
+        NavigationStack {
+            ManualTemplateView(
+                currentPageIdentifier: "manualFirstPage",
+                content: {
+                    VStack(alignment: .leading, spacing: 20) {
+                        Text("Welcome to Elephant: A Wellness Trunk!")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .lineSpacing(4)
+                        
                         Text(
-                            " * Receive wellness reminders at customized time intervals.\n * Turn on when you start working and off when you’re done."
+                            "Are you ready to incorporate wellness tasks into your work routine with us? Let’s get started!"
                         )
-                        .font(.body)
-                        .lineSpacing(4)
+                        .font(.title3)
+                        .fontWeight(.medium)
+                        .lineSpacing(6)
+                        
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text("Stopwatch Mode")
+                                .font(.title3)
+                                .fontWeight(.semibold)
+                            Text(
+                                " * Receive wellness reminders at customized time intervals.\n * Turn on when you start working and off when you’re done."
+                            )
+                            .font(.body)
+                            .lineSpacing(4)
+                        }//Vstack
+                        
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text("Pomodoro Mode")
+                                .font(.title3)
+                                .fontWeight(.semibold)
+                            Text(
+                                "* Integrate Pomodoro method with wellness tasks \n * Customize the time intervals"
+                            )
+                            .font(.body)
+                            .lineSpacing(4)
+                        }//Vstack
+                        
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text("Earn Tokens")
+                                .font(.title3)
+                                .fontWeight(.semibold)
+                            Text(
+                                "* Earn tokens by completing tasks on checklist that you can exchange for collectibles to customize your widget!"
+                            )
+                            .font(.body)
+                            .lineSpacing(4)
+                        }//Vstack
                     }//Vstack
-                    
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text("Pomodoro Mode")
-                            .font(.title3)
-                            .fontWeight(.semibold)
-                        Text(
-                            "* Integrate Pomodoro method with wellness tasks \n * Customize the time intervals"
-                        )
-                        .font(.body)
-                        .lineSpacing(4)
-                    }//Vstack
-                    
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text("Earn Tokens")
-                            .font(.title3)
-                            .fontWeight(.semibold)
-                        Text(
-                            "* Earn tokens by completing tasks on checklist that you can exchange for collectibles to customize your widget!"
-                        )
-                        .font(.body)
-                        .lineSpacing(4)
-                    }//Vstack
-                }//Vstack
-                .accessibilityIdentifier("manualFirstPage")
-            }//content
-            ,
-            nextPage: AnyView(SecondPageView()),
-            homePage: AnyView(ContentView())
-            
-        )//ManualTemplateView
+                }//content
+                ,
+                nextPage: AnyView(SecondPageView()),
+                homePage: AnyView(ContentView())
+                
+            )//ManualTemplateView
+        }
     }//body
 }//ManualView
 
@@ -171,6 +185,7 @@ struct ManualView:View{
 struct SecondPageView:View{
     var body: some View {
         ManualTemplateView(
+            currentPageIdentifier: "manualSecondPage",
             content: {
                 VStack(alignment: .leading, spacing: 24) {
                     Text("How To ")
@@ -222,7 +237,7 @@ struct SecondPageView:View{
                         
                     }//Vstack
                 }//Vstack
-                .accessibilityIdentifier("manualSecondPage")
+        
             }//content
             ,
             backPage: AnyView(ManualView()),
@@ -285,6 +300,7 @@ struct ChecklistView: View {
 struct ThirdPageView:View{
     var body: some View {
         ManualTemplateView(
+            currentPageIdentifier: "manualThirdPage",
             content: {
                 VStack(alignment: .leading, spacing: 24) {
                     Text("Customize Elephant to your need!")
@@ -339,7 +355,7 @@ struct ThirdPageView:View{
                         
                     }//Vstack
                 }//VStack
-                .accessibilityIdentifier("manualThirdPage")
+                .padding(.bottom, 40) 
             }//content
             ,
             backPage: AnyView(SecondPageView()),
@@ -354,6 +370,7 @@ struct ThirdPageView:View{
 struct FourthPageView:View{
     var body: some View {
         ManualTemplateView(
+            currentPageIdentifier: "manualFourthPage",
             content: {
                 VStack(alignment: .leading, spacing: 20) {
                     Text("Add Widget to Widget Bar")
@@ -366,7 +383,6 @@ struct FourthPageView:View{
                     
                     //insert video for tutorial?
                 }//Vstack
-                .accessibilityIdentifier("manualFourthPage")
             }//content
                
             ,

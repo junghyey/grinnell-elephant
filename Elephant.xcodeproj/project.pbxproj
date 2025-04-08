@@ -58,6 +58,7 @@
 		39957E702D62A78100A2D89D /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = /System/Library/Frameworks/WidgetKit.framework; sourceTree = "<absolute>"; };
 		39957E722D62A78100A2D89D /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = /System/Library/Frameworks/SwiftUI.framework; sourceTree = "<absolute>"; };
 		6C776BCF2DA59F9C00D3DCEB /* Elephant.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Elephant.xctestplan; sourceTree = "<group>"; };
+		6C776BD02DA5A2DB00D3DCEB /* ElephantUITests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = ElephantUITests.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -133,6 +134,7 @@
 		39957E032D62A32D00A2D89D = {
 			isa = PBXGroup;
 			children = (
+				6C776BD02DA5A2DB00D3DCEB /* ElephantUITests.xctestplan */,
 				6C776BCF2DA59F9C00D3DCEB /* Elephant.xctestplan */,
 				39957E0E2D62A32D00A2D89D /* Elephant */,
 				39957E202D62A32E00A2D89D /* ElephantTests */,
