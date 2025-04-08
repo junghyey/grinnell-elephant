@@ -61,6 +61,7 @@ struct ManualTemplateView<Content: View>:  View {
                             Image(systemName: "house.fill")
                                 .font(.title2)
                                 .foregroundColor(.blue)
+                                .accessibilityIdentifier("homeButton")
                                 //nopadding
                         }//NavigationLink
                     }//homepage
@@ -80,7 +81,7 @@ struct ManualTemplateView<Content: View>:  View {
                             Image(systemName: "arrow.left.circle.fill")
                                 .font(.title)
                                 .foregroundColor(.blue)
-                                
+                                .accessibilityIdentifier("backButton")
                         }//NavigationLink
                     }//backPage
                     
@@ -91,7 +92,7 @@ struct ManualTemplateView<Content: View>:  View {
                             Image(systemName: "arrow.right.circle.fill")
                                 .font(.title)
                                 .foregroundColor(.blue)
-                                
+                                .accessibilityIdentifier("nextButton")
                         }//NavigationLink
                     }//nextPage
                 }//HStack
@@ -156,7 +157,7 @@ struct ManualView:View{
                         .lineSpacing(4)
                     }//Vstack
                 }//Vstack
-                
+                .accessibilityIdentifier("manualFirstPage")
             }//content
             ,
             nextPage: AnyView(SecondPageView()),
@@ -221,7 +222,7 @@ struct SecondPageView:View{
                         
                     }//Vstack
                 }//Vstack
-                
+                .accessibilityIdentifier("manualSecondPage")
             }//content
             ,
             backPage: AnyView(ManualView()),
@@ -338,7 +339,7 @@ struct ThirdPageView:View{
                         
                     }//Vstack
                 }//VStack
-                
+                .accessibilityIdentifier("manualThirdPage")
             }//content
             ,
             backPage: AnyView(SecondPageView()),
@@ -365,8 +366,9 @@ struct FourthPageView:View{
                     
                     //insert video for tutorial?
                 }//Vstack
+                .accessibilityIdentifier("manualFourthPage")
             }//content
-            
+               
             ,
             backPage: AnyView(ThirdPageView()),
             homePage: AnyView(ContentView())
@@ -374,197 +376,6 @@ struct FourthPageView:View{
         )//ManualTemplateView
     }//var body
 }//FourthPageView
-
-
-//struct ManualView: View {
-//  @AppStorage("mode") private var Mode: Bool = false  //global mode setting
-//
-//  var body: some View {
-//    NavigationStack {
-//      ScrollView {
-//
-//        VStack(alignment: .leading, spacing: 20) {
-//          Text("Welcome to Elephant: A Wellness Trunk!")
-//            .font(.largeTitle)
-//            .fontWeight(.bold)
-//            .lineSpacing(4)
-//
-//          Text(
-//            "Are you ready to incorporate wellness tasks into your work routine with us? Let’s get started!"
-//          )
-//          .font(.title3)
-//          .fontWeight(.medium)
-//          .lineSpacing(6)
-//
-//          VStack(alignment: .leading, spacing: 10) {
-//            Text("Stopwatch Mode")
-//              .font(.title3)
-//              .fontWeight(.semibold)
-//            Text(
-//              " * Receive wellness reminders at customized time intervals.\n *Turn on when you start working and off when you’re done."
-//            )
-//            .font(.body)
-//            .lineSpacing(4)
-//          }
-//
-//          VStack(alignment: .leading, spacing: 10) {
-//            Text("Pomodoro Mode")
-//              .font(.title3)
-//              .fontWeight(.semibold)
-//            Text(
-//              "* Integrate Pomodoro method with wellness tasks \n * Customize the time intervals"
-//            )
-//            .font(.body)
-//            .lineSpacing(4)
-//          }
-//
-//          VStack(alignment: .leading, spacing: 10) {
-//            Text("Earn Tokens")
-//              .font(.title3)
-//              .fontWeight(.semibold)
-//            Text(
-//              "*Earn tokens by completing tasks on checklist that you can exchange for collectibles to customize your widget!"
-//            )
-//            .font(.body)
-//            .lineSpacing(4)
-//          }
-//
-//          Spacer(minLength: 50)
-//
-//          HStack {
-//            Spacer()
-//            NavigationLink(destination: NextPageView()) {
-//              Image(systemName: "arrow.right.circle.fill")
-//                .font(.title)  // Small button size
-//                .foregroundColor(.blue)
-//                .padding()
-//            }
-//
-//          }
-//        }
-//        .background(Color.white)
-//        .padding(10)
-//      }
-//      .preferredColorScheme(Mode ? .dark : .light)
-//      .frame(width: 500, height: 500)
-//    }
-//  }
-//}
-
-//struct SecondPageView: View {
-//  @AppStorage("mode") private var Mode: Bool = false  //global mode setting
-//
-//  var body: some View {
-//    NavigationStack {
-//      ScrollView {
-//
-//        VStack(alignment: .leading, spacing: 24) {
-//          Text("How To ")
-//            .font(.largeTitle)
-//            .fontWeight(.bold)
-//
-//          // Stopwatch Section
-//          VStack(alignment: .leading, spacing: 8) {
-//            Text("StopWatch")
-//              .font(.title3)
-//              .fontWeight(.semibold)
-//            Text(
-//              """
-//              Start the stopwatch to begin & be notified at custom intervals.
-//              """
-//            )
-//            .font(.body)
-//            .lineSpacing(4)
-//
-//          }
-//
-//          // Pomodro Section
-//          VStack(alignment: .leading, spacing: 8) {
-//            Text("Pomdoro")
-//              .font(.title3)
-//              .fontWeight(.semibold)
-//            Text(
-//              """
-//              You get 4 instances of work time with a short break following the first 3 instances and a long break break after the 4th round
-//              """
-//            )
-//            .font(.body)
-//            .lineSpacing(4)
-//
-//          }
-//
-//          // Tokens & Collectibles Section
-//          VStack(alignment: .leading, spacing: 8) {
-//            Text("Tokens & Collectibles")
-//              .font(.title3)
-//              .fontWeight(.semibold)
-//            Text(
-//              """
-//              After each wellness task or checklist item is completed, you will earn a token.\n Once you have tokens, you can start collecting acatars for the collectible reward!\n (but be warned... you need to have enough tokens to get a collectible).
-//              """
-//            )
-//            .font(.body)
-//            .lineSpacing(5)
-//
-//          }
-//
-//          Spacer(minLength: 50)
-//
-//          HStack(spacing: 4) {
-//
-//            NavigationLink(destination: ManualView()) {
-//              HStack(spacing: 4) {
-//                Image(systemName: "arrow.left.circle.fill")
-//                  .font(.title)  // Small button size
-//                  .foregroundColor(.blue)
-//                  .padding()
-//              }
-//            }
-//            .font(.body)
-//            .foregroundColor(.blue)
-//
-//            Spacer()
-//
-//            // Next Button
-//            NavigationLink(destination: NextPageView2()) {
-//              HStack(spacing: 4) {
-//                Image(systemName: "arrow.right.circle.fill")
-//                  .font(.title)  // Small button size
-//                  .foregroundColor(.blue)
-//                  .padding()
-//              }
-//            }
-//            .font(.body)
-//            .foregroundColor(.blue)
-//          }
-//          .padding(.top, 16)
-//        }
-//        .background(Color.white)
-//        .padding(10)
-//
-//      }
-//      .preferredColorScheme(Mode ? .dark : .light)
-//      .frame(width: 500, height: 500)
-//    }
-//  }
-//}
-
-//struct ThirdPageView: View {
-//  @AppStorage("mode") private var Mode: Bool = false  //global mode setting
-//
-//  var body: some View {
-//    NavigationStack {
-//      ScrollView {
-//
-//      }
-//      .background(Color.white)
-//      .padding(10)
-//
-//    }
-//    .preferredColorScheme(Mode ? .dark : .light)
-//    .frame(width: 500, height: 500)
-//  }
-//}
 
 #Preview {
     ManualView()
