@@ -29,7 +29,8 @@ by testing UI transitions and functions that are not easily and readily testable
 - We have identifier for the homepage.
 
 1. Manual Button (manualPage)
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/da194b81-3efc-40f5-b87c-625b7118ac55" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/5cefb47e-c9d3-42fe-a134-7668f57374f6" />
+
 
 
 - We have identifiers for each page in the manual.
@@ -50,6 +51,11 @@ by testing UI transitions and functions that are not easily and readily testable
    
   <img width="500" alt="image" src="https://github.com/user-attachments/assets/daec1fbf-4056-46af-9040-cc7f01f49762" />
 
+6. Button in each page:
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/e9738837-5d1f-4c66-9c64-64944d4adda3" />
+
+
 ### "Next" Button Testing (Forward)
 
 #### Steps:
@@ -57,11 +63,11 @@ by testing UI transitions and functions that are not easily and readily testable
 1. Launch the Elephant app (we see homePage)
 2. Tap the Manual Button (identifier: manualPage), which is a ? button on the right corner of the top page
 3. Make sure you are on manualFirstPage (showing Welcome!)
-4. Tap the Next button (->) (identified by nextButton)
+4. Tap the nextButton (->) (identified by nextButton)
 5. Make sure you land on the second page (manualSecondPage)
-6. Tap Next again
+6. Tap nextButton again
 7. Make sure you are on the third page (manualThirdPage)
-8. Tap Next again
+8. Tap nextButton again
 9. Make sure you are on the fourth page, which is the last page (manualFourthPage)
 
 #### Expected:
@@ -71,11 +77,11 @@ by testing UI transitions and functions that are not easily and readily testable
 
 #### Steps:
 
-1. While you are on manualFourthPage, tap the Back button (<-)
+1. While you are on manualFourthPage, tap the backButton (identifier: back button)
 2. Make sure you are on manualThirdPage.
-3. Tap Back again.
+3. Tap backButton again.
 4. Make sure you are on manualSecondPage.
-5. Tap Back again.
+5. Tap backButton again.
 6. Make sure you are on manualFirstPage.
 
 
@@ -87,10 +93,10 @@ by testing UI transitions and functions that are not easily and readily testable
 
 Repeat for each of the 4 pages:
 
-1. From homePage, tap manualPage button (?)
-2. Use the Next button to go to the desired page.
-3. Tap the Home button (homeButton)
-4. Make sure the app goes to the home screen (homePage).
+1. From homePage, tap manualPage button. 
+2. Use the nextButton button to go to the desired page.
+3. Tap the homeButton
+4. Make sure the app goes to the homePage.
    
 #### Expected:
 - The home button exists and each home button's manual page correctly guides to home page.
