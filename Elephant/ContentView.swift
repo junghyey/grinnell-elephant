@@ -19,7 +19,7 @@ struct ContentView: View {
             ZStack{
                 (Mode ? Color.black : Color.white)//Background color
                     .edgesIgnoringSafeArea(.all)
-                
+                    .accessibilityIdentifier("homePage") // identifier for homepage
                 // homepage structure
                 VStack{
                     // structure the settings and manual page buttons
