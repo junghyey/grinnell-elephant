@@ -64,7 +64,7 @@ by testing UI transitions and functions that are not easily and readily testable
 2. Tap the Manual Button (identifier: manualPage), which is a ? button on the right corner of the top page
 3. Make sure you are on manualFirstPage (showing Welcome!)
 4. Tap the nextButton (->) (identified by nextButton)
-5. Make sure you land on the second page (manualSecondPage)
+5. Make sure you are on the second page (manualSecondPage)
 6. Tap nextButton again
 7. Make sure you are on the third page (manualThirdPage)
 8. Tap nextButton again
