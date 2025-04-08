@@ -1,5 +1,8 @@
 # Sprint 3 Journal
 
+## A summary of non-user-facing progress for this milestone.
+For this milestone, the main non-user-facing progress involved setting up structure for storing task checklist using JSON files. Most of our work focused on UI development and feature implmentation, which are very noticeable to users,so backend improvements were minimal. In the next sprint, we plan to incorporate more functionality of the app.
+
 ## Requirements Document
 - In this sprint, we changed our requirements by adding user stories that were missing from Milestone 1, with a user story for a light user (guest) and a team user. For the team user, we made edits to Candice's persona to extend it as that team user.
 
