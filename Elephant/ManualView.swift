@@ -121,7 +121,7 @@ struct ManualTemplateView<Content: View>:  View {
 // FirstPage
 struct ManualView:View{
     var body: some View {
-        NavigationStack {
+  
             ManualTemplateView(
                 currentPageIdentifier: "manualFirstPage",
                 content: {
@@ -177,7 +177,7 @@ struct ManualView:View{
                 homePage: AnyView(ContentView())
                 
             )//ManualTemplateView
-        }
+        
     }//body
 }//ManualView
 
@@ -355,7 +355,7 @@ struct ThirdPageView:View{
                         
                     }//Vstack
                 }//VStack
-                .padding(.bottom, 40) 
+                .padding(.bottom, 40)
             }//content
             ,
             backPage: AnyView(SecondPageView()),
