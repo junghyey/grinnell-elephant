@@ -80,35 +80,60 @@ final class ElephantUITests: XCTestCase {
         // Test next button exists and work and each page exists
         
         for (idx, pageId) in pageIdentifiers.enumerated() {
-                    // does the page exist?
-                    assertPage(pageId)
-                    if idx < pageIdentifiers.count - 1 {
-                        let nextPageID = pageIdentifiers[idx + 1]
-                        // check it is clicable
-                        assertClickable("nextButton")
-                        //click and go to nextpage
-                        app.buttons["nextButton"].tap()
-                        // did we land in the correct next page?
-                        assertPage(nextPageID)
-                    }// if
-                }//for next
+            // does the page exist?
+            assertPage(pageId)
+            if idx < pageIdentifiers.count - 1 {
+                let nextPageID = pageIdentifiers[idx + 1]
+                // check it is clicable
+                assertClickable("nextButton")
+                //click and go to nextpage
+                app.buttons["nextButton"].tap()
+                // did we land in the correct next page?
+                assertPage(nextPageID)
+            }// if
+        }//for next
         // Test back button exists and work and each page exists
         
         for (idx, pageId) in pageIdentifiers.reversed().enumerated() {
-                    // does the page exist?
-                    assertPage(pageId)
-                    if idx < pageIdentifiers.count - 1 {
-                        let backPageID = pageIdentifiers[idx + 1]
-                        // check it is clicable
-                        assertClickable("backButton")
-                        //click and go to nextpage
-                        app.buttons["backButton"].tap()
-                        // did we land in the correct next page?
-                        assertPage(backPageID)
-                    }//if idx
-                }// for reversed
+            // does the page exist?
+            assertPage(pageId)
+            if idx < pageIdentifiers.count - 1 {
+                let backPageID = pageIdentifiers[idx + 1]
+                // check it is clicable
+                assertClickable("backButton")
+                //click and go to nextpage
+                app.buttons["backButton"].tap()
+                // did we land in the correct next page?
+                assertPage(backPageID)
+            }//if idx
+        }// for reversed
         
-
-    }
+        
+        
+        // check home button
+        
+        for (idx, pageID) in pageIdentifiers.enumerated() {
+            
+            // click the manualPage since we are in the home
+            assertClickable("manualPage")
+            app.buttons["manualPage"].tap()
+            
+            for _ in 0..<idx {
+                assertClickable("nextbutton")
+                app.buttons["NextButton"].tap()
+            }
+            
+            // Assert current page for testing is shown
+            assertPage(pageID)
+            
+            // Check HomeButton is visible and tappable
+            assertClickable("homeButton")
+            app.buttons["homeButton"].tap()
+            assertPage("homePage")
+            
+            
+            
+        }
+    }//end of manual page testing
 
 }
