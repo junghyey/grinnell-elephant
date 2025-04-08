@@ -24,15 +24,19 @@ by testing UI transitions and functions that are not easily and readily testable
 We have identifiers for each page in the manual.
 
 1. manualFirstPage
+   
    <img width="500" alt="image" src="https://github.com/user-attachments/assets/30480a2d-9841-410f-bbcb-5cdfc0af299f" />
 
-2. manualSecondPage
+3. manualSecondPage
+   
    <img width="500" alt="image" src="https://github.com/user-attachments/assets/cb1260ca-2ca7-4ffd-844a-a0699c6b1e1f" />
 
-3. manualThirdPage
+4. manualThirdPage
+   
    <img width="500" alt="image" src="https://github.com/user-attachments/assets/0e880dde-9b09-455b-b9ad-9842785abe98" />
 
-4. manualFourthPage
+5. manualFourthPage
+   
   <img width="500" alt="image" src="https://github.com/user-attachments/assets/daec1fbf-4056-46af-9040-cc7f01f49762" />
 
 ### "Next" Button Testing (Forward)
@@ -40,7 +44,10 @@ We have identifiers for each page in the manual.
 #### Steps:
 
 1. Launch the Elephant app
+   
    <img width="300" alt="image" src="https://github.com/user-attachments/assets/3bfe739d-9293-456c-97ee-cea21a656048" />
+
+   
 3. Tap the Manual Button (identifier: manualPage), which is a ? button on the right corner of the top page
 4. Verify you are on manualFirstPage (showing Welcome!)
 5. Tap the Next button (->) (identified by nextButton)
