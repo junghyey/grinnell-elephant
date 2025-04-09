@@ -56,20 +56,22 @@ by testing UI transitions and functions that are not easily and readily testable
 - Application is installed in macOS
 - Includes the most recent version of the Elephant app
 
-
 ### Steps
 
 ### Back Button Testing
-- While you are in the homePage.
-- Click button named "CollectiblesShop"
-- Verify you are on the collectiblePage.
-- Click the backButton. Verify you are on the homePage.
+- Open the main app, which defaults to the home page view
+- Click button named "Collectibles Shop"
+- Verify you are on the collectiblePage
+- Click the back button and verify you are on the homePage
 
-### CollectiblesShop (inside)
-- While you are in the homePage.
-- Click button named "CollectiblesShop"
+### Collectibles Shop (inside)
+- While you are in the homePage:
+- Click the "Collectibles Shop" button at the bottom of home page
 - From the first listing on the first row, we click on each shop listing and check if they bring us to a new page with the corresponding item listing, from left to right, top to bottom
-- For instance, for the button "shopButton_mammal-squirrel", we expect to arrive at a page with a squirrel
+   - For instance, for the button "shopButton_mammal-elephant", we expect to arrive at a page with an elephant
+     
+<img width="555" alt="Screenshot 2025-04-09 at 10 43 39 AM" src="https://github.com/user-attachments/assets/d1f2061a-ab6a-4c50-a79f-35956386ef99" />
+<img width="551" alt="Screenshot 2025-04-09 at 11 18 02 AM" src="https://github.com/user-attachments/assets/0e58dfb3-e6d4-42de-8038-8b10ce8a831f" />
  
 ## "ItemView" Manual Testing
 
@@ -80,20 +82,27 @@ by testing UI transitions and functions that are not easily and readily testable
 - Application is installed in macOS
 - Includes the most recent version of the Elephant app
 
-### Page identifiers
+### Identifiers
 <img width="584" alt="Screenshot 2025-04-08 at 9 33 26 PM" src="https://github.com/user-attachments/assets/04bca896-c64b-49b6-b248-3eca71698405" />
 <img width="566" alt="Screenshot 2025-04-08 at 9 34 54 PM" src="https://github.com/user-attachments/assets/83e7fa92-07bf-4b05-8779-0dbea1874dd0" />
 
-- The page is accessible through corresponding listing button in MainShopView, with identifiers "shopButton_item.imageName"
+- The page is accessible through corresponding listing button in MainShopView, with identifiers "shopButton_item.imageName" and an image with the corresponding animal
 - All buttons on this page has an identifier "itemButton_item.imageName_function"
      - Back button: identifier "itemButton_item.imageName_back"
-     - Purchase button: identifier "itemButton_item.imageName_price"
+     - Purchase button: identifier "itemButton_item.imageName_purchase"
 
-### Steps
-- To test this page, we first make sure the back button is clickable and brings us back to the shop page
-- Next, we click on the same button on the shop page to bring us back to the item page
-- Next, we click on the purchase button and see if a confirmation dialogue pops up
-  
+### Back Button Testing
+- Open the main app, which defaults to the home page view
+- Click the "Collectibles Shop" button at the bottom of home page
+- Click on the item listing that you want to test the item page for on the main shop page
+- Verify you are on the correct listing item view
+- Click the back button and verify you are on the main shop page
+
+### Other button testing
+<img width="547" alt="Screenshot 2025-04-09 at 10 43 47 AM" src="https://github.com/user-attachments/assets/2d25193c-0b14-4258-8790-6d05c4619a20" />
+<img width="553" alt="Screenshot 2025-04-09 at 10 43 55 AM" src="https://github.com/user-attachments/assets/c82c3441-8632-491a-a18a-8222e68847cf" />
+- Next, we click on the buy button and see if a confirmation dialogue pops up
+- Check that both `Cancel` and `Confirm` buttons on the confirmation dialogue is clickable
 
 ## "ManualView" Manual Testing
 
