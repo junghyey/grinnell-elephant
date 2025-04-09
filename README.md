@@ -36,13 +36,12 @@ Root
   |       |-- sprint3_journal.md
   |       |-- sprint3_plan_report.md         # this is where we have sprint2 planning report
   |       |-- sprint3_review_report.md
-  |       |-- manual_testing_protocol.md    
   |-- Elephant
   |-- ElephantWidget 
   |-- ElephantUITests
   |-- ElephantTests
   |-- Elephant.xcodeproj      
-  |
+  |-- manual_testing_protocol.md    # manual testing
 ```
 ## Description
 This repository (currently) includes README.md file and written_reports folder. 
