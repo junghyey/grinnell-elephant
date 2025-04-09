@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "947C7810-2014-48EB-AC50-4E02FBB4334B",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Elephant.xcodeproj",
+        "identifier" : "39957E262D62A32E00A2D89D",
+        "name" : "ElephantUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

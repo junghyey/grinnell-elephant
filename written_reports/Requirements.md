@@ -31,7 +31,9 @@ Elephant supports several different user roles to include different usage:
 
 # 2. User Personas and User stories (functional requirements) 
 
-## (1) **Gabby’s Persona**
+## Standard User
+
+## (1) **Gabby’s Persona** 
 **Hughie (he/they):** 46 years old, very dependent on technology for daily routine, has difficulty sleeping if they didn’t feel productive that day 
 
 ### Hughie’s User Stories:
@@ -40,16 +42,7 @@ Elephant supports several different user roles to include different usage:
 - As Hughie, I need to reach a new milestone so that I feel ready to end the day and fall asleep.
 - As Hughie, I have trouble staying asleep and would appreciate a time out period where I don’t receive notifications. 
 
-## (2) **Candice’s Persona**
-**Emilio (he/him):** common user 30 years old, Art gallery manager who is involved in a lot of gallery planning, communications, and personal art projects. Easily distracted, prefers flexible work style, gets bored quickly 
-
-### Emilio’s User Stories:
-- As Emilio, I need a tool to help me focus as I am easily distracted when I need to work.
-- As Emilio, I need reminders to take some time to take care of myself amidst my hectic schedules.
-- As Emilio, I need a time management tool that can be customized based on my schedule with high variability.
-- As Emilio, I need the interface to be fun but concise so that I would feel motivated but not too distracted. 
-
-## (3) **Hyeyun’s Persona**
+## () **Hyeyun’s Persona**
 **Karen (she/her):** Karen is a 65-year-old retired middle school teacher, who is not comfortable with using technology.  
 She knows how to use basic functions in laptop. She lives alone in a suburban area and is skeptical about technology. She needs to take medication twice a day for her disease and she has doctor’s appointments regularly once a month. 
 
@@ -59,7 +52,7 @@ She knows how to use basic functions in laptop. She lives alone in a suburban ar
 - As Karen, I need a simple option to check my medication adherence & condition each day so that I can report my health routines to my doctor.
 - As Karen (who does not trust technology), I need to know fully what information the app is collecting so that I feel secure about my private information. 
 
-## (4) **Mae’s Persona**
+## (3) **Mae’s Persona**
 **Plankton (they/them)**: Plankton is a busy 19-year-old college student in their second semester of first year. They have not found a study method that works for them, a way to stay active throughout the day, or a way to avoid procrastination. They are photosensitive so lights and contrasts influence the technology they use.  
 
 ### Plankton’s User Stories:
@@ -68,6 +61,30 @@ She knows how to use basic functions in laptop. She lives alone in a suburban ar
 - As Plankton, I need gentle activity or movement reminders so that I can incorporate physical activity or easy movement in my busy lifestyle.
 - As Plankton, I need a way to track small goals for a study session so I can stay motivated and avoid not completing my work.
 
+## Light User
+
+## (4) **Light User Persona** 
+
+**Protos (he/him)**: Protos is a 20 year old chef who just wants a timer to do short breaks or quick tasks at work. He does not want to sign up for another app.
+
+### Protos’s User Stories:
+- As Protos, I need a basic timer and mindful alert so I can relax and focus on my break for quick breaks
+- As Protos, I don't want to sign up for app and not interested in the entirity of the app.
+- As Protos, I need an easy way to pump the app instantly.
+
+
+## Team User
+
+## (5) **Candice’s Persona** 
+**Emilio (he/him):** common user 30 years old, Art gallery manager who is involved in a lot of gallery planning, communications, and personal art projects. Easily distracted, prefers flexible work style, gets bored quickly. Emilion starts a wellness challenge with his coworkes in the gallery to stay healthy and avoid burnout.
+
+### Emilio’s User Stories:
+- As Emilio, I need a tool to help me focus as I am easily distracted when I need to work.
+- As Emilio, I need reminders to take some time to take care of myself amidst my hectic schedules.
+- As Emilio, I need a time management tool that can be customized based on my schedule with high variability.
+- As Emilio, I need the interface to be fun but concise so that I would feel motivated but not too distracted.
+- As Emilio, I want to share my wellness goals and my progress with coworkers so that we motiviate each other.
+- As Emilio, I want a shared board (like Duolingo) to connected with my team.
 ---
 ## Use cases
 

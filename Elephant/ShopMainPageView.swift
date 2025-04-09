@@ -11,23 +11,6 @@ struct ShopMainPageView: View {
     @AppStorage("mode") private var Mode: Bool = false //global mode setting
     @AppStorage("user_tokens") var userTokens: Int = 15
     
-    // TODO: make a data structure to store items that user has already purchased
-    
-    // hard code for now, eventually move this somewhere else
-    let mammals = [
-        ShopItem(id: "mammal-lion", name: "Lion", imageName: "mammal-lion", price: 5),
-        ShopItem(id: "mammal-sheep", name: "Sheep", imageName: "mammal-sheep", price: 5),
-        ShopItem(id: "mammal-elephant", name: "Elephant", imageName: "mammal-elephant", price: 5),
-        ShopItem(id: "mammal-squirrel", name: "Squirrel", imageName: "mammal-squirrel", price: 5),
-        ShopItem(id: "mammal-giraffe", name: "Giraffe", imageName: "mammal-giraffe", price: 5),
-        ShopItem(id: "mammal-monkey", name: "Monkey", imageName: "mammal-monkey", price: 5)
-    ]
-    
-    let marines = [
-        ShopItem(id: "marine-dolphin", name: "Dolphin", imageName: "marine-dolphin", price: 5),
-        ShopItem(id: "marine-whale", name: "Whale", imageName: "marine-whale", price: 5),
-    ]
-    
     var body: some View {
         ScrollView{
             NavigationStack{
@@ -42,6 +25,8 @@ struct ShopMainPageView: View {
                         }
                         .buttonStyle(PlainButtonStyle())
                         .padding(10)
+                        .accessibilityIdentifier("shopButton_back")
+                        
                         Text("Shop")
                             .font(.title)
                             .fontWeight(.bold)
@@ -57,6 +42,7 @@ struct ShopMainPageView: View {
         .frame(width: 500, height: 500)
         .padding(10)
         .background(DefaultColors.main_color_1)
+        .accessibilityIdentifier("shopMainPageView")
     }
 }
 
@@ -75,7 +61,7 @@ struct ShopItemBlock : View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 100, height: 100)
                 .cornerRadius(10)
-        }
+        }.accessibilityIdentifier("shopButton_\(item.imageName)")
     }
 }
 

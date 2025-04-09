@@ -57,6 +57,8 @@
 		39957E6E2D62A78100A2D89D /* ElephantWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ElephantWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		39957E702D62A78100A2D89D /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = /System/Library/Frameworks/WidgetKit.framework; sourceTree = "<absolute>"; };
 		39957E722D62A78100A2D89D /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = /System/Library/Frameworks/SwiftUI.framework; sourceTree = "<absolute>"; };
+		6C776BCF2DA59F9C00D3DCEB /* Elephant.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Elephant.xctestplan; sourceTree = "<group>"; };
+		6C776BD02DA5A2DB00D3DCEB /* ElephantUITests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = ElephantUITests.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -132,6 +134,8 @@
 		39957E032D62A32D00A2D89D = {
 			isa = PBXGroup;
 			children = (
+				6C776BD02DA5A2DB00D3DCEB /* ElephantUITests.xctestplan */,
+				6C776BCF2DA59F9C00D3DCEB /* Elephant.xctestplan */,
 				39957E0E2D62A32D00A2D89D /* Elephant */,
 				39957E202D62A32E00A2D89D /* ElephantTests */,
 				39957E2A2D62A32E00A2D89D /* ElephantUITests */,
@@ -508,6 +512,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Elephant/Preview Content\"";
+				DEVELOPMENT_TEAM = TT4P7FU29T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -545,6 +550,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Elephant/Preview Content\"";
+				DEVELOPMENT_TEAM = TT4P7FU29T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -667,6 +673,7 @@
 				CODE_SIGN_ENTITLEMENTS = ElephantWidget/ElephantWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TT4P7FU29T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ElephantWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ElephantWidget;
@@ -704,6 +711,7 @@
 				CODE_SIGN_ENTITLEMENTS = ElephantWidget/ElephantWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TT4P7FU29T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ElephantWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ElephantWidget;

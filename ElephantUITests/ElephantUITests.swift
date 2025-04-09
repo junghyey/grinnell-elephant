@@ -5,6 +5,11 @@
 //  Created by 陸卉媫 on 2/16/25.
 //
 
+// testing:
+//      product -> scheme
+//                  --> if some form of UI test is there, run test
+//                  --> if not, new scheme -> target: ElephantUItest
+
 import XCTest
 
 final class ElephantUITests: XCTestCase {
@@ -12,8 +17,10 @@ final class ElephantUITests: XCTestCase {
     var app: XCUIApplication!
     
     var shopButton: XCUIElement { app.buttons["shopPage"] }
-    var settingsButton: XCUIElement { app.buttons["settingsPage"]}
-    var manualButton: XCUIElement { app.buttons["manualPage"]}
+    var settingsButton: XCUIElement { app.buttons["settingsPage"] }
+    var manualButton: XCUIElement { app.buttons["manualPage"] }
+    var pomodoroButton: XCUIElement { app.staticTexts["pomodoroButton"] }
+    var stopwatchButton: XCUIElement { app.staticTexts["stopwatchButton"] }
     
     // reset state prior to tests
     override func setUpWithError() throws {
@@ -23,15 +30,71 @@ final class ElephantUITests: XCTestCase {
     }
     
     // Homepage buttons navigation test
-    func contentViewTest() throws {
+    func testContentView() throws {
         XCTAssertTrue(shopButton.isHittable)
         XCTAssertTrue(settingsButton.isHittable)
         XCTAssertTrue(manualButton.isHittable)
+        XCTAssertTrue(pomodoroButton.isHittable)
+        XCTAssertTrue(stopwatchButton.isHittable)
     }
     
+    
     // ShopMainPageView tests
-    func shopMainPageViewTest() throws {
-        // TODO: add tests
+    func testShopMainPageView() throws {
+        // move to shop main page
+        app.buttons["shopPage"].tap()
+        
+        // extract all shop buttons
+        let shopButtons = app.buttons.allElementsBoundByIndex.filter {
+                $0.identifier.hasPrefix("shopButton_")
+        }
+        
+        // test if each button is hittable
+        for button in shopButtons {
+            XCTAssertTrue(button.isHittable, "Shop button \(button.identifier) not hittable")
+        }
+    }
+    
+    // tests each button in each button view
+    func testItemView() throws {
+        
+        // move to shop main page
+        app.buttons["shopPage"].tap()
+        
+        // extract all shop buttons
+        let shopButtons = app.buttons.allElementsBoundByIndex.filter {
+                $0.identifier.hasPrefix("shopButton_")
+        }
+        
+        // navigate to each item view
+        for shopButton in shopButtons {
+            
+            // skip the back button
+            if (shopButton.identifier.hasPrefix("shopButton_back")) {
+                continue
+            }
+            
+            // else click to get to item view
+            shopButton.tap()
+            
+            // extract all item buttons
+            let itemButtons = app.buttons.allElementsBoundByIndex.filter {
+                    $0.identifier.hasPrefix("itemButton_")
+            }
+            
+            // save back button
+            let backButton = app.buttons.allElementsBoundByIndex.filter {
+                $0.identifier.hasPrefix("itemButton_back_")
+            }.first
+            
+            // see if each button is hittable
+            for button in itemButtons {
+                XCTAssertTrue(button.isHittable, "Item button \(button.identifier) not hittable")
+            }
+            
+            // move back to shop page
+            backButton!.tap()
+        }
     }
     
     // settingsView tests
@@ -88,7 +151,105 @@ final class ElephantUITests: XCTestCase {
         XCTAssertTrue(cancelB.isHittable, "Cancel button is hit within Checklist Sheet")//should only work if previous tests did
         cancelB.tap()//taps cancel button and navigates back to settings page, closing the pop-up sheet
     }//end of SettingsView tests
+
     
     
+    
+    
+    
+    
+    
+    
+    // for manual testing
+    // is page shown?
+    func assertPage(_ identifier: String) {
+            let page = app.otherElements[identifier]
+            XCTAssertTrue(page.waitForExistence(timeout: 2), "Expected Page \(identifier) Not Shown") //wait for
+        }
+    
+    // is button clickable?
+    func assertClickable(_ identifier: String) {
+           let button = app.buttons[identifier]
+            // check existence
+           XCTAssertTrue(button.waitForExistence(timeout: 2), "Button \(identifier) Not Found")
+            // check clicakble
+           XCTAssertTrue(button.isHittable, "Button \(identifier) Not Clickable")
+       }
+
+    // manualView tests
+    
+    func testManualView() throws {
+//        
+//        
+//        
+//        let pageIdentifiers = ["manualFirstPage",
+//                               "manualSecondPage",
+//                               "manualThirdPage",
+//                               "manualFourthPage"]
+//        
+//        XCTAssertTrue(manualButton.waitForExistence(timeout: 2))
+//        manualButton.tap()
+//        
+//        // Test next button exists and work and each page exists
+//        
+//        for (idx, pageId) in pageIdentifiers.enumerated() {
+//            // does the page exist?
+//            assertPage(pageId)
+//            if idx < pageIdentifiers.count - 1 {
+//                let nextPageID = pageIdentifiers[idx + 1]
+//                // check it is clicable
+//                assertClickable("nextButton")
+//                //click and go to nextpage
+//                app.buttons["nextButton"].tap()
+//                // did we land in the correct next page?
+//                assertPage(nextPageID)
+//            }// if
+//        }//for next
+//        // Test back button exists and work and each page exists
+//                
+//      
+//        
+//        for (idx, pageId) in pageIdentifiers.reversed().enumerated() {
+//            // does the page exist?
+//            assertPage(pageId)
+//            if idx < pageIdentifiers.count - 1 {
+//                let backPageID = pageIdentifiers[idx + 1]
+//                // check it is clicable
+//                assertClickable("backButton")
+//                //click and go to nextpage
+//                app.buttons["backButton"].tap()
+//                sleep(10)
+//                // did we land in the correct next page?
+//                assertPage(backPageID)
+//            }//if idx
+//        }// for reversed
+//        
+//        
+//        
+//        // check home button
+//        
+//        for (idx, pageID) in pageIdentifiers.enumerated() {
+//            
+//            // click the manualPage since we are in the home
+//            assertClickable("manualPage")
+//            manualButton.tap()
+//            
+//            for _ in 0..<idx {
+//                assertClickable("nextButton")
+//                app.buttons["nextButton"].tap()
+//            }
+//            
+//            // Assert current page for testing is shown
+//            assertPage(pageID)
+//            
+//            // Check HomeButton is visible and tappable
+//            assertClickable("homeButton")
+//            app.buttons["homeButton"].tap()
+//            assertPage("homePage")
+//            
+//            
+//            
+//        }
+    }//end of manual page testing
 
 }
