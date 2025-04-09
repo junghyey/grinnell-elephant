@@ -161,8 +161,8 @@ struct ContentView: View {
                     .accessibilityIdentifier("shopPage")
                 } // WHOLE PAGE
                 .background(DefaultColors.main_color_1)
-            }
-        }
+            } // ZStack
+        } // NavigationStack
         .frame(width: 500, height: 500)
         .preferredColorScheme(Mode ? .dark : .light)
     }
