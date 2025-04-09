@@ -16,16 +16,16 @@ by testing UI transitions and functions that are not easily and readily testable
 - Application is installed on macOS
 - Includes the most recent version of ManualView.swift
 
-### The Homepage
+###  homePage
 <img width="496" alt="image" src="https://github.com/user-attachments/assets/690a8073-8dca-4c45-853c-af2240f7f5ce" />
 
-### The Manual Page
+###  manualPage
 <img width="496" alt="image" src="https://github.com/user-attachments/assets/8a1f1e1b-b2a9-4d96-8e38-cb244a246e8b" />
 
-### The Settings Page
+###  settingsPage
 <img width="495" alt="image" src="https://github.com/user-attachments/assets/acd60674-8233-4f67-b051-139d06f4c246" />
 
-### The Collectible Shop
+###  collectiblePage
 <img width="496" alt="image" src="https://github.com/user-attachments/assets/d4efdeb3-b4a6-4023-803c-5e5e9308cca8" />
 
 ### Steps and Expectations
@@ -37,7 +37,7 @@ by testing UI transitions and functions that are not easily and readily testable
 
    b. Navigate back to the homepage, follow the instructions of the "ManualView" Manual Testing, or relaunch the app.
 
-   c. Click "⛭" to navigate to an app personalization page, the settings page.
+   c. Click "⛭" to navigate to an app personalization page, the settingsPage.
 
    d. Navigate back to the homepage, follow the instructions of the "SettingsView Manual Testing", or relaunch the app.
 
@@ -60,14 +60,14 @@ by testing UI transitions and functions that are not easily and readily testable
 
 <img width="554" alt="Screenshot 2025-04-08 at 9 28 47 PM" src="https://github.com/user-attachments/assets/40f277f3-7626-4f2a-aedf-4dbce675a755" />
 
-- The page is accessible through button with identifier "shopPage" on the main page, or the back button from any pages under "ItemView"
+- The page is accessible through button with identifier "shopPage" on the homePage, or the back button from any pages under "ItemView"
 - All buttons on this page has an identifier with the prefix "shopButton_"
      - Back button: identifier "shopButton_back"
      - Item listing buttons: identifier "shopButton_item.imageName"
 
 ### Steps
-- To test this page, we first make sure the back button is clickable and brings us back to the main page
-- Next, we click on the shopPage button on the main page to bring us back to the shop page
+- To test this page, we first make sure the back button is clickable and brings us back to the homePage.
+- Next, we click on the shopPage button on the homePage to bring us back to the shop page
 - Next, from the first listing on the first row, we click on each shop listing and check if they bring us to a new page with the corresponding item listing, from left to right, top to bottom
      - For instance, for the button "shopButton_mammal-squirrel", we expect to arrive at a page with a squirrel
  
