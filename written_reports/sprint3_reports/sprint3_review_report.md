@@ -36,6 +36,7 @@ Aside from that we focused on adding more features and app rather than backend. 
 
 #### modeButton and themesButton
 First Section of Settings Scroll view (Mode, Themes, Custom Checklist)
+
 <img width="496" alt="image" src="https://github.com/user-attachments/assets/4b394e57-98f9-4edd-ae2a-bb595e27762b" />
 
 
