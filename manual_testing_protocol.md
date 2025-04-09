@@ -203,10 +203,11 @@ Repeat for each of the 4 pages:
 - The home button exists and each home button's manual page correctly guides to home page.
 
 
-## SettingsPage Manual Testing
+## SettingsView Manual Testing
 
 ### Goal  
 Ensure that all buttons and views within the `SettingsView` function as intended, including correct navigation, updates to app state (such as theme and mode), and time configuration changes.
+This tests the settingsPage.
 
 ### Requirements  
 - Working implementation of `SettingsView` in the Elephant app  
@@ -219,17 +220,17 @@ Ensure that all buttons and views within the `SettingsView` function as intended
 <img widith = "496" alt = "image" src ="https://github.com/user-attachments/assets/b13aebe5-078b-4aa7-9603-b701b00bc156" />
 
 ### "Back" Button Testing (Back Navigation)
-
 #### Steps:
 1. Launch the Elephant app (we see the Home Page)
 2. Tap the **SettingsPage Button** (identifier: Gear Icon in the top-right corner)
-3. Tap a button that pushes to a new view (e.g., Mode or Themes)
-4. Verify the new view appears (e.g., change in background color or content)
-5. Tap the **Back Button** in the navigation bar
-6. Ensure that you return to the Home Page
+3. Make sure you end up in the settingsPage.
+4. Tap a button that pushes to a new view (e.g., Mode or Themes)
+5. Verify the new view appears (e.g., change in background color or content)
+6. Tap the **Back Button** in the navigation bar
+7. Ensure that you return to the Home Page
 
 #### Expected:
-- Tapping the back button from within the `SettingsView` navigates the user back to the Home Page.
+- Tapping the back button from within the `settingsPage` navigates the user back to the Home Page.
 
 
 ### "Mode" Button Testing (Dark / Light Mode Toggle)
@@ -259,12 +260,15 @@ Ensure that all buttons and views within the `SettingsView` function as intended
 - Tapping a Theme button updates the app’s background color
 - The selected theme is applied consistently across the app
 
-### "Checklist" Sheet Testing (Pop-up from Settings)
+###  "Checklist" Sheet Testing (Pop-up from Settings)
+>  **Note:** Checklist customization and persistence features are still under development. Further testing is required once development is complete.
+
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/6877e659-e13f-4db7-aad7-164f9e391d87" />
 
 #### Steps:
 1. Launch the Elephant app (we see the Home Page)
-2. Tap the **SettingsPage Button** (identifier: Gear Icon)
-3. Tap the **"Add New Custom Checklist"** button (identifier: Checklist)
+2. Tap the **settingsPageButton** (identifier: Gear Icon)
+3. Tap the **"Add New Custom Checklist"** button 
 4. Ensure the checklist sheet appears (default name: "Checklist #1")
 5. Tap either the **Save** or **Cancel** button
 6. Confirm the sheet closes and you are returned to the `SettingsView`
@@ -273,19 +277,19 @@ Ensure that all buttons and views within the `SettingsView` function as intended
 - Tapping the Checklist button opens a Checklist sheet
 - Tapping Save or Cancel dismisses the sheet and returns to the Settings view
 
->  **Note:** Checklist customization and persistence features are still under development. Further testing is required once development is complete.
+
 
 ---
 #### Identifiers : pomodoroTimeSetting, stopwatchTimeSetting
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/01f5c153-fb2e-44f5-82fe-88bc800f586e" />
 
-<img width="496" alt="image" src="https://github.com/user-attachments/assets/01f5c153-fb2e-44f5-82fe-88bc800f586e" />
 
 ### "Pomodoro Time Settings" Testing
 
 #### Steps:
 1. Launch the Elephant app
-2. Tap the **SettingsPage Button** (Gear icon)
-3. Scroll to the **Pomodoro Time Settings** section
+2. Tap the **settingsPageButton** (Gear icon)
+3. Scroll to the **PomodoroTimeSettings** section
 4. Move the **Work Duration** and **Short Break Duration** sliders
 5. Observe the updated time values shown in real time
 6. (Optional) Navigate to the Pomodoro widget or related timer screen to verify usage of updated values
