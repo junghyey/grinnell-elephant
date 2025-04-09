@@ -4,7 +4,6 @@
 //
 //  Authors: Hyeyun(creating manual content), Mae(creater of this file)
 //
-//
 
 /*
  https://developer.apple.com/documentation/swiftui/font
