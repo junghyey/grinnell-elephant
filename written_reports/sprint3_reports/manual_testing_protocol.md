@@ -3,30 +3,62 @@
 ---
 
 ## Overview
-This document shows the procedures for manually testing the Elephant app. The tests are performed by humans and verified the UI work as expected. This protocol may reokace the automated tesing 
-by testing UI transitions and functions that are not easily and readily testable via XCUI Test and limited support for SwiftUI navigation behavior.
+This document shows the procedures for manually testing the Elephant app. The tests are performed by humans and verify that the UI works as expected. This protocol may replace the automated testing 
+by testing UI transitions and functions that are not easily and readily testable via XCUI Tes,t and limited support for SwiftUI navigation behavior.
 
 ---
+## "ContentView" Manual Testing
 
-## "ManualView" manual testing
+### Goal
+- All the buttons need to navigate to the correct page or adjust the widget as necessary as development progresses.
+
+### Requirements
+- Application is installed on macOS
+- Includes the most recent version of ManualView.swift
+
+### The Homepage
+<img width="496" alt="image" src="https://github.com/user-attachments/assets/690a8073-8dca-4c45-853c-af2240f7f5ce" />
+
+### The Manual Page
+<img width="496" alt="image" src="https://github.com/user-attachments/assets/8a1f1e1b-b2a9-4d96-8e38-cb244a246e8b" />
+
+### The Settings Page
+<img width="495" alt="image" src="https://github.com/user-attachments/assets/acd60674-8233-4f67-b051-139d06f4c246" />
+
+### The Collectible Shop
+<img width="496" alt="image" src="https://github.com/user-attachments/assets/d4efdeb3-b4a6-4023-803c-5e5e9308cca8" />
+
+### Steps and Expectations
+1. Launch the Elephant app (it opens to the Homepage)
+2. Begin at the top:
+   a. Click "?" to navigate to an information page, the manual page.
+   b. Navigate back to the homepage, follow the instructions of the "ManualView" manual testing, or relaunch the app.
+   c. Click "⛭" to navigate to an app personalization page, the settings page.
+   d. Navigate back to the homepage, follow the instructions of the "SettingsView manual testing", or relaunch the app.
+3. The Pomodoro and Stopwatch buttons are still under development; skip past those.
+4. Click "Collectibles Shop" to navigate to the in-app store, the Collectibles Shop.
+5. Navigate back to the homepage, follow the instructions of the "ShopMainPageView manual testing", or relaunch the app.
+
+
+## "ManualView" Manual Testing
 
 ### Goal
 - Make sure every page is presented correctly (all four pages) and the buttons next, back, home buttons navigate to the correct page.
 
 ### Requirements
-- Application is installed in MacOs
+- Application is installed in macOS
 - Includes the most recent version of ManualView.swift
 
 
 ### Page Identifiers
-- We have identifier for the homepage.
+- We have an identifier for the homepage.
 
 1. homePage
 
    <img width="300" alt="image" src="https://github.com/user-attachments/assets/3bfe739d-9293-456c-97ee-cea21a656048" />
 
 
-- We have identifier for the homepage.
+- We have an identifier for the homepage.
 
 1. Manual Button (manualPage)
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/5cefb47e-c9d3-42fe-a134-7668f57374f6" />
