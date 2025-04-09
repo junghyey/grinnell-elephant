@@ -23,9 +23,9 @@ by testing UI transitions and functions that are not easily and readily testable
 <img width="496" alt="image" src="https://github.com/user-attachments/assets/8a1f1e1b-b2a9-4d96-8e38-cb244a246e8b" />
 
 ###  settingsPage
-![Image (27)](https://github.com/user-attachments/assets/6877e659-e13f-4db7-aad7-164f9e391d87)
+<img width="496" alt="image" src="https://github.com/user-attachments/assets/6877e659-e13f-4db7-aad7-164f9e391d87" />
+<img width="496" alt="image" src="https://github.com/user-attachments/assets/01f5c153-fb2e-44f5-82fe-88bc800f586e" />
 
-![Image (28)](https://github.com/user-attachments/assets/01f5c153-fb2e-44f5-82fe-88bc800f586e)
 
 
 ###  collectiblePage
