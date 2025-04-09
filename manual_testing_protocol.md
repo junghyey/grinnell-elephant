@@ -68,7 +68,7 @@ by testing UI transitions and functions that are not easily and readily testable
 ### CollectiblesShop (inside)
 - While you are in the homePage.
 - Click button named "CollectiblesShop"
--  (Candice Fix this to more direct way. THis is unclear of what to do). Also Label all the parts of your page and use that corresponding name. ext, from the first listing on the first row, we click on each shop listing and check if they bring us to a new page with the corresponding item listing, from left to right, top to bottom
+- From the first listing on the first row, we click on each shop listing and check if they bring us to a new page with the corresponding item listing, from left to right, top to bottom
 - For instance, for the button "shopButton_mammal-squirrel", we expect to arrive at a page with a squirrel
  
 ## "ItemView" Manual Testing
