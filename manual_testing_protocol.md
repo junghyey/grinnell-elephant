@@ -56,20 +56,20 @@ by testing UI transitions and functions that are not easily and readily testable
 - Application is installed in macOS
 - Includes the most recent version of the Elephant app
 
-### Page identifiers
-
-<img width="554" alt="Screenshot 2025-04-08 at 9 28 47 PM" src="https://github.com/user-attachments/assets/40f277f3-7626-4f2a-aedf-4dbce675a755" />
-
-- The page is accessible through button with identifier "shopPage" on the homePage, or the back button from any pages under "ItemView"
-- All buttons on this page has an identifier with the prefix "shopButton_"
-     - Back button: identifier "shopButton_back"
-     - Item listing buttons: identifier "shopButton_item.imageName"
 
 ### Steps
-- To test this page, we first make sure the back button is clickable and brings us back to the homePage.
-- Next, we click on the shopPage button on the homePage to bring us back to the shop page
-- Next, from the first listing on the first row, we click on each shop listing and check if they bring us to a new page with the corresponding item listing, from left to right, top to bottom
-     - For instance, for the button "shopButton_mammal-squirrel", we expect to arrive at a page with a squirrel
+
+### Back Button Testing
+- While you are in the homePage.
+- Click button named "CollectiblesShop"
+- Verify you are on the collectiblePage.
+- Click the backButton. Verify you are on the homePage.
+
+### CollectiblesShop (inside)
+- While you are in the homePage.
+- Click button named "CollectiblesShop"
+-  (Candice Fix this to more direct way. THis is unclear of what to do). Also Label all the parts of your page and use that corresponding name. ext, from the first listing on the first row, we click on each shop listing and check if they bring us to a new page with the corresponding item listing, from left to right, top to bottom
+- For instance, for the button "shopButton_mammal-squirrel", we expect to arrive at a page with a squirrel
  
 ## "ItemView" Manual Testing
 
@@ -143,7 +143,7 @@ by testing UI transitions and functions that are not easily and readily testable
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/e9738837-5d1f-4c66-9c64-64944d4adda3" />
 
 
-### "Next" Button Testing (Forward)
+### (nextButton) "Next" Button Testing (Forward)
 
 #### Steps:
 
@@ -160,7 +160,7 @@ by testing UI transitions and functions that are not easily and readily testable
 #### Expected:
 - Each tap on "Next" goes to the next manual page
 
-### "Back" Button Testing (Backward)
+### (backbutton) "Back" Button Testing (Backward)
 
 #### Steps:
 
