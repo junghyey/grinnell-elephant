@@ -19,7 +19,7 @@ Aside from that we focused on adding more features and app rather than backend. 
 - We have a Settings Page identifier pictured as the Gear Icon
 
 ### Initial HomePage View
-<img width="495" alt="Screenshot 2025-04-09 at 10 59 41 AM" src="https://github.com/user-attachments/assets/35991ecb-ee0b-470b-b6e3-c11489be02b0" />
+<img width="496" alt="image" src="https://github.com/user-attachments/assets/35991ecb-ee0b-470b-b6e3-c11489be02b0" />
 
 #### Example Flow:
 - A test user would navigate to the Settings Page by tapping on the Settings Page button or the Gear Icon in the top-right corner.
@@ -36,7 +36,7 @@ Aside from that we focused on adding more features and app rather than backend. 
 
 #### modeButton and themesButton
 First Section of Settings Scroll view (Mode, Themes, Custom Checklist)
-![Image (1)](https://github.com/user-attachments/assets/4b394e57-98f9-4edd-ae2a-bb595e27762b)
+<img width="496" alt="image" src="https://github.com/user-attachments/assets/4b394e57-98f9-4edd-ae2a-bb595e27762b" />
 
 #### Example Flow:
 - From the settings page, users can select the light and dark mode buttons to change the screen layout for all main pages
@@ -47,7 +47,7 @@ First Section of Settings Scroll view (Mode, Themes, Custom Checklist)
 
 #### pomodoroTimeSetting and stopwatchTimeSetting
 Second Section of Settings Scroll View (Time Settings - Pomodoro & Stopwatch)
-![Image (3)](https://github.com/user-attachments/assets/1e472b7a-4b59-400f-8fe1-c80f06dfa77e)
+<img width="496" alt="image" src= "https://github.com/user-attachments/assets/1e472b7a-4b59-400f-8fe1-c80f06dfa77e" />
 
 #### Example Flow:
 - For the pomodoroTimeSettings, users can select the duration of their work time and long break time using the sliders
