@@ -23,7 +23,10 @@ by testing UI transitions and functions that are not easily and readily testable
 <img width="496" alt="image" src="https://github.com/user-attachments/assets/8a1f1e1b-b2a9-4d96-8e38-cb244a246e8b" />
 
 ###  settingsPage
-<img width="495" alt="image" src="https://github.com/user-attachments/assets/acd60674-8233-4f67-b051-139d06f4c246" />
+![Image (27)](https://github.com/user-attachments/assets/6877e659-e13f-4db7-aad7-164f9e391d87)
+
+![Image (28)](https://github.com/user-attachments/assets/01f5c153-fb2e-44f5-82fe-88bc800f586e)
+
 
 ###  collectiblePage
 <img width="496" alt="image" src="https://github.com/user-attachments/assets/d4efdeb3-b4a6-4023-803c-5e5e9308cca8" />
