@@ -83,8 +83,7 @@ by testing UI transitions and functions that are not easily and readily testable
 - Includes the most recent version of the Elephant app
 
 ### Identifiers
-<img width="584" alt="Screenshot 2025-04-08 at 9 33 26 PM" src="https://github.com/user-attachments/assets/04bca896-c64b-49b6-b248-3eca71698405" />
-<img width="566" alt="Screenshot 2025-04-08 at 9 34 54 PM" src="https://github.com/user-attachments/assets/83e7fa92-07bf-4b05-8779-0dbea1874dd0" />
+<img width="555" alt="Screenshot 2025-04-09 at 10 43 39 AM" src="https://github.com/user-attachments/assets/6f9a3145-0572-4233-98f8-89cc737ff88d" />
 
 - The page is accessible through corresponding listing button in MainShopView, with identifiers "shopButton_item.imageName" and an image with the corresponding animal
 - All buttons on this page has an identifier "itemButton_item.imageName_function"
@@ -92,6 +91,8 @@ by testing UI transitions and functions that are not easily and readily testable
      - Purchase button: identifier "itemButton_item.imageName_purchase"
 
 ### Back Button Testing
+<img width="558" alt="Screenshot 2025-04-09 at 10 44 08 AM" src="https://github.com/user-attachments/assets/42d8c202-90a5-4b53-a53e-5e5f68531e70" />
+
 - Open the main app, which defaults to the home page view
 - Click the "Collectibles Shop" button at the bottom of home page
 - Click on the item listing that you want to test the item page for on the main shop page
@@ -99,9 +100,10 @@ by testing UI transitions and functions that are not easily and readily testable
 - Click the back button and verify you are on the main shop page
 
 ### Other button testing
-<img width="547" alt="Screenshot 2025-04-09 at 10 43 47 AM" src="https://github.com/user-attachments/assets/2d25193c-0b14-4258-8790-6d05c4619a20" />
-<img width="553" alt="Screenshot 2025-04-09 at 10 43 55 AM" src="https://github.com/user-attachments/assets/c82c3441-8632-491a-a18a-8222e68847cf" />
+<img width="547" alt="Screenshot 2025-04-09 at 10 43 47 AM" src="https://github.com/user-attachments/assets/90ba78ab-4c7f-4cd9-a90c-5b3ab9636ed6" />
 - Next, we click on the buy button and see if a confirmation dialogue pops up
+<img width="553" alt="Screenshot 2025-04-09 at 10 43 55 AM" src="https://github.com/user-attachments/assets/e54dbe17-4c10-4836-963f-30168b650f3b" />
+
 - Check that both `Cancel` and `Confirm` buttons on the confirmation dialogue is clickable
 
 ## "ManualView" Manual Testing
