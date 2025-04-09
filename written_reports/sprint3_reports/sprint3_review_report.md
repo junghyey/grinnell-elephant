@@ -38,6 +38,7 @@ Aside from that we focused on adding more features and app rather than backend. 
 First Section of Settings Scroll view (Mode, Themes, Custom Checklist)
 <img width="496" alt="image" src="https://github.com/user-attachments/assets/4b394e57-98f9-4edd-ae2a-bb595e27762b" />
 
+
 #### Example Flow:
 - From the settings page, users can select the light and dark mode buttons to change the screen layout for all main pages
 - Also from the settings page, users can select from one of the currently displayed ThemeButtons to change the app background for all main pages
