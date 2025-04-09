@@ -41,7 +41,7 @@ struct ContentView: View {
                         .buttonStyle(PlainButtonStyle())
                         .frame(maxWidth: .infinity, alignment: .trailing)
                         .background(DefaultColors.main_color_1)
-                        .accessibilityIdentifier("settingsPage")
+                        .accessibilityIdentifier("homepage_SettingsButton")
                         
                         // Button to manual page
                         NavigationLink(destination: ManualView()) {
@@ -58,7 +58,7 @@ struct ContentView: View {
                         .buttonStyle(PlainButtonStyle())
                         .frame(alignment: .trailing)
                         .background(DefaultColors.main_color_1)
-                        .accessibilityIdentifier("manualPage")
+                        .accessibilityIdentifier("homepage_ManualButton")
 
                     } // manual and settings page button area
                     .padding(.top, 15)
@@ -70,7 +70,7 @@ struct ContentView: View {
                         .fontWeight(.bold)
                         .fontDesign(.rounded)
                         .kerning(2)
-                        .accessibilityIdentifier("mainPage")
+                        .accessibilityIdentifier("homepage_ElephantTitle")
                     Text("A Wellness Trunk")
                         .font(.headline)
                         .fontWeight(.semibold)
@@ -120,7 +120,7 @@ struct ContentView: View {
                     .cornerRadius(15)
                     .scaleEffect(isPressed ? 0.9 : 1.0)
                     .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
-                    .accessibilityIdentifier("stopwatchButton")
+                    .accessibilityIdentifier("homepage_StopwatchButton")
                     
                     // POMODORO BUTTON
                     Button(action: {
@@ -138,7 +138,7 @@ struct ContentView: View {
                     .cornerRadius(15)
                     .scaleEffect(isPressed ? 0.9 : 1.0)
                     .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
-                    .accessibilityIdentifier("pomodoroButton")
+                    .accessibilityIdentifier("homepage_PomodoroButton")
                     
                     // COLLECTIBLES SHOP BUTTON
                     NavigationLink(destination: ShopMainPageView()) {
@@ -158,7 +158,7 @@ struct ContentView: View {
                     .frame(maxWidth: .infinity, alignment: .center)
                     .background(DefaultColors.main_color_1)
                     .padding(.bottom, 25)
-                    .accessibilityIdentifier("shopPage")
+                    .accessibilityIdentifier("homepage_ShopPageButton")
                 } // WHOLE PAGE
                 .background(DefaultColors.main_color_1)
             } // ZStack
