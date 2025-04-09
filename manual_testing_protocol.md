@@ -47,6 +47,53 @@ by testing UI transitions and functions that are not easily and readily testable
 
 5. Navigate back to the homepage, follow the instructions of the "ShopMainPageView Manual Testing", or relaunch the app.
 
+## "MainStoreView" Manual Testing
+
+### Goal
+- Make sure and back button and all items on the store listing are clickable
+
+### Requirements
+- Application is installed in macOS
+- Includes the most recent version of the Elephant app
+
+### Page identifiers
+
+<img width="554" alt="Screenshot 2025-04-08 at 9 28 47 PM" src="https://github.com/user-attachments/assets/40f277f3-7626-4f2a-aedf-4dbce675a755" />
+
+- The page is accessible through button with identifier "shopPage" on the main page, or the back button from any pages under "ItemView"
+- All buttons on this page has an identifier with the prefix "shopButton_"
+     - Back button: identifier "shopButton_back"
+     - Item listing buttons: identifier "shopButton_item.imageName"
+
+### Steps
+- To test this page, we first make sure the back button is clickable and brings us back to the main page
+- Next, we click on the shopPage button on the main page to bring us back to the shop page
+- Next, from the first listing on the first row, we click on each shop listing and check if they bring us to a new page with the corresponding item listing, from left to right, top to bottom
+     - For instance, for the button "shopButton_mammal-squirrel", we expect to arrive at a page with a squirrel
+ 
+## "ItemView" Manual Testing
+
+### Goal
+- Make sure and back button and the purchase button on the item page are clickable
+
+### Requirements
+- Application is installed in macOS
+- Includes the most recent version of the Elephant app
+
+### Page identifiers
+<img width="584" alt="Screenshot 2025-04-08 at 9 33 26 PM" src="https://github.com/user-attachments/assets/04bca896-c64b-49b6-b248-3eca71698405" />
+<img width="566" alt="Screenshot 2025-04-08 at 9 34 54 PM" src="https://github.com/user-attachments/assets/83e7fa92-07bf-4b05-8779-0dbea1874dd0" />
+
+- The page is accessible through corresponding listing button in MainShopView, with identifiers "shopButton_item.imageName"
+- All buttons on this page has an identifier "itemButton_item.imageName_function"
+     - Back button: identifier "itemButton_item.imageName_back"
+     - Purchase button: identifier "itemButton_item.imageName_price"
+
+### Steps
+- To test this page, we first make sure the back button is clickable and brings us back to the shop page
+- Next, we click on the same button on the shop page to bring us back to the item page
+- Next, we click on the purchase button and see if a confirmation dialogue pops up
+  
 
 ## "ManualView" Manual Testing
 
