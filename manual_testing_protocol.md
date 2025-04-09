@@ -104,7 +104,9 @@ by testing UI transitions and functions that are not easily and readily testable
 
 ### Other button testing
 <img width="547" alt="Screenshot 2025-04-09 at 10 43 47 AM" src="https://github.com/user-attachments/assets/90ba78ab-4c7f-4cd9-a90c-5b3ab9636ed6" />
+
 - Next, we click on the buy button and see if a confirmation dialogue pops up
+
 <img width="553" alt="Screenshot 2025-04-09 at 10 43 55 AM" src="https://github.com/user-attachments/assets/e54dbe17-4c10-4836-963f-30168b650f3b" />
 
 - Check that both `Cancel` and `Confirm` buttons on the confirmation dialogue is clickable
@@ -206,7 +208,7 @@ Repeat for each of the 4 pages:
 ## SettingsView Manual Testing
 
 ### Goal  
-Ensure that all buttons and views within the `SettingsView` function as intended, including correct navigation, updates to app state (such as theme and mode), and time configuration changes.
+Ensure that all buttons and views within the `SettingsView` (settingsPage) function as intended, including correct navigation, updates to app state (such as theme and mode), and time configuration changes.
 This tests the settingsPage.
 
 ### Requirements  
@@ -217,7 +219,7 @@ This tests the settingsPage.
 
 #### Identifiers: backButton, modeButton, themesButton
 
-<img widith = "496" alt = "image" src ="https://github.com/user-attachments/assets/b13aebe5-078b-4aa7-9603-b701b00bc156" />
+<img widith = "300" alt = "image" src ="https://github.com/user-attachments/assets/b13aebe5-078b-4aa7-9603-b701b00bc156" />
 
 ### "Back" Button Testing (Back Navigation)
 #### Steps:
