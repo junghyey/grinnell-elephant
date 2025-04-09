@@ -16,17 +16,17 @@ final class ElephantUITests: XCTestCase {
     
     var app: XCUIApplication!
     
-    var manualPageButton: XCUIElement { app.buttons["manualPage"] }
+    var homepage_ManualButton: XCUIElement { app.buttons["homepage_ManualButton"] }
     var manualFirstPage: XCUIElement { app.otherElements["manualFirstPage"] }
 
-    var shopMainPageButton: XCUIElement { app.buttons["shopPage"] }
+    var homepage_ShopPageButton: XCUIElement { app.buttons["homepage_ShopPageButton"] }
     var shopMainPageView: XCUIElement { app.scrollViews["shopMainPageView"] }
 
-//    var settingsPageButton: XCUIElement { app.buttons["settingsPage"] }
+    var homepage_SettingsButton: XCUIElement { app.buttons["homepage_SettingsButton"] }
 //    var settingsPage: XCUIElement { app.scrollViews["settingsPage"] }
 
-//    var pomodoroButton: XCUIElement { app.staticTexts["pomodoroButton"] }
-//    var stopwatchButton: XCUIElement { app.staticTexts["stopwatchButton"] }
+//    var homepage_PomodoroButton: XCUIElement { app.staticTexts["homepage_PomodoroButton"] }
+//    var homepage_StopwatchButton: XCUIElement { app.staticTexts["homepage_StopwatchButton"] }
     
     // reset state prior to tests
     override func setUpWithError() throws {
@@ -37,22 +37,22 @@ final class ElephantUITests: XCTestCase {
     
     // Manual Button on homepage navigation test
     func testContentViewManualButton() throws {
-        XCTAssertTrue(manualPageButton.isHittable) // Given
-        manualPageButton.tap() // When
+        XCTAssertTrue(homepage_ManualButton.isHittable) // Given
+        homepage_ManualButton.tap() // When
         XCTAssertTrue(manualFirstPage.exists) // Then
     }
 
     // Shop Button on homepage navigation test
     func testContentViewShopButton() throws {
-        XCTAssertTrue(shopMainPageButton.isHittable) // Given
-        shopMainPageButton.tap() // When
+        XCTAssertTrue(homepage_ShopPageButton.isHittable) // Given
+        homepage_ShopPageButton.tap() // When
         XCTAssertTrue(shopMainPageView.exists) // Then
     }
 
 //    // Settings Button on homepage navigation test
 //    func testContentViewSettingsButton() throws {
-//        XCTAssertTrue(settingsPageButton.isHittable) // Given
-//        settingsPageButton.tap() // When
+//        XCTAssertTrue(homepage_SettingsButton.isHittable) // Given
+//        homepage_SettingsButton.tap() // When
 //        XCTAssertTrue(settingsPage.exists) // Then -- FAILS HERE
 //    }
 
@@ -92,7 +92,7 @@ final class ElephantUITests: XCTestCase {
     func testItemView() throws {
         
         // move to shop main page
-        app.buttons["shopPage"].tap()
+        app.buttons["homepage_ShopPageButton"].tap()
         
         // extract all shop buttons
         let shopButtons = app.buttons.allElementsBoundByIndex.filter {
@@ -132,7 +132,7 @@ final class ElephantUITests: XCTestCase {
     
     // settingsView tests
     func testSettingsView() throws {
-        settingsButton.tap()//moves to SettingsView page
+        homepage_SettingsButton.tap()//moves to SettingsView page
         
         /* let definitions for each buttons on Settings View -
         Back Button (bb), Light/Dark Mode button (modeB),
@@ -148,7 +148,7 @@ final class ElephantUITests: XCTestCase {
         //Back button test
         XCTAssertTrue(bb.isHittable, "Back button should hit")
         bb.tap() //taps back button to navigate to Homepage
-        XCTAssertTrue(app.buttons["settingsPage"].isHittable, "Returns to Settings after hitting Back button")
+        XCTAssertTrue(app.buttons["homepage_SettingsButton"].isHittable, "Returns to Settings after hitting Back button")
         //should navigate back to settings^
         
         //Mode buttons test
