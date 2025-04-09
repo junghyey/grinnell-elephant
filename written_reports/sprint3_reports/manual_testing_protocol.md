@@ -35,17 +35,17 @@ by testing UI transitions and functions that are not easily and readily testable
  
    a. Click "?" to navigate to an information page, the manual page.
 
-   b. Navigate back to the homepage, follow the instructions of the "ManualView" manual testing, or relaunch the app.
+   b. Navigate back to the homepage, follow the instructions of the "ManualView" Manual Testing, or relaunch the app.
 
    c. Click "⛭" to navigate to an app personalization page, the settings page.
 
-   d. Navigate back to the homepage, follow the instructions of the "SettingsView manual testing", or relaunch the app.
+   d. Navigate back to the homepage, follow the instructions of the "SettingsView Manual Testing", or relaunch the app.
 
 3. The Pomodoro and Stopwatch buttons are still under development; skip past those.
 
 4. Click "Collectibles Shop" to navigate to the in-app store, the Collectibles Shop.
 
-5. Navigate back to the homepage, follow the instructions of the "ShopMainPageView manual testing", or relaunch the app.
+5. Navigate back to the homepage, follow the instructions of the "ShopMainPageView Manual Testing", or relaunch the app.
 
 
 ## "ManualView" Manual Testing
