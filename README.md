@@ -14,6 +14,11 @@ Elephant: A Wellness Trunk is an extension/widget for macOS designed to help use
 - Data security and privacy: Secure data storage and management</br>
 - Lightweight, intuitive interface</br>
 
+### Operational Use Cases
+Referring to the use cases defined in our Requirements.md document, we currently have functionality for **use cases 2 (Users who want to customize their wellness checklist)** and **3  - Users who want to change themes/mode settings due to visual accessibility needs or just preference**. For User case 2, we currently have an operating flow 2: adding tasks from the in-app settings, and for User case 3, we have the default flow operating: the User opens the app manually, and then navigates to the settings page using the Gear icon in the top right corner. Once in the settings page, the User can choose between light or dark mode, and the theme choices should be right below. Once the user has made these choices, changes to the app and widget are applied immediately. To navigate back to the home page, the user will use the Back button on the top left.
+
+The buttons are correctly navigating to their respective pages, a test user would at this point be able to test out the working settings, shop page, manual page, and directory home page. So, we are working on getting user functionality for connection to the widget and working on the stopwatch and pomodoro features, currently still under implementation.
+
 # Repository Layout
 ## Overview
 This section includes the overview/outline of the repository structure.</br>
