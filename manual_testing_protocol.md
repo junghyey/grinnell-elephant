@@ -17,7 +17,7 @@ by testing UI transitions and functions that are not easily and readily testable
 - Includes the most recent version of ManualView.swift
 
 ### The Homepage
-<img width="496" alt="image" src="https://github.com/user-attachments/assets/690a8073-8dca-4c45-853c-af2240f7f5ce" />
+<img width="496" alt="image" src="https://github.com/user-attachments/assets/6f50a8c5-6533-4f39-bf25-ae3a6f76ed7d" />
 
 ### The Manual Page
 <img width="496" alt="image" src="https://github.com/user-attachments/assets/8a1f1e1b-b2a9-4d96-8e38-cb244a246e8b" />
@@ -63,15 +63,12 @@ by testing UI transitions and functions that are not easily and readily testable
 
 1. homePage
 
-   <img width="300" alt="image" src="https://github.com/user-attachments/assets/3bfe739d-9293-456c-97ee-cea21a656048" />
+<img width="496" alt="image" src="https://github.com/user-attachments/assets/6f50a8c5-6533-4f39-bf25-ae3a6f76ed7d" />
 
 
 - We have an identifier for the homepage.
 
 1. Manual Button (manualPage)
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/5cefb47e-c9d3-42fe-a134-7668f57374f6" />
-
-
 
 - We have identifiers for each page in the manual.
 
