@@ -13,3 +13,6 @@ For this milestone, the main non-user-facing progress involved setting up struct
 
 - Moreover, we tried to run CI with our testing for macOS, but macOS builds require code signing, even for development builds. The error says "No signing certificate "Mac Development"", which basically means we do not have certificate. We have not purchased yet, but we ran the testing through xcode IDE in each of us laptop.
 - Since CI does not work, we added manual testing in the manual testing protocol document for the supplment. (check: manual_testing_protocol.md)
+
+## Tag containing demo code
+the tag named **sprint-3-initial-release** contains the demo code for initial release
