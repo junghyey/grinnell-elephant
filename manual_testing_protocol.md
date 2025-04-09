@@ -17,7 +17,7 @@ by testing UI transitions and functions that are not easily and readily testable
 - Includes the most recent version of ManualView.swift
 
 ###  homePage
-<img width="496" alt="image" src="https://github.com/user-attachments/assets/690a8073-8dca-4c45-853c-af2240f7f5ce" />
+<img width="496" alt="image" src="https://github.com/user-attachments/assets/6f50a8c5-6533-4f39-bf25-ae3a6f76ed7d" />
 
 ###  manualPage
 <img width="496" alt="image" src="https://github.com/user-attachments/assets/8a1f1e1b-b2a9-4d96-8e38-cb244a246e8b" />
