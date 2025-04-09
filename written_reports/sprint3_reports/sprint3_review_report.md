@@ -60,6 +60,40 @@ The step is similar to the testing protocol.
 
 5. Navigate back to the homepage, follow the instructions of the "ShopMainPageView", or relaunch the app.
    
+## Shop Views (including ShopMainPageView and ItemView)
+
+### Identifiers
+
+<img width="547" alt="Screenshot 2025-04-09 at 10 37 35 AM" src="https://github.com/user-attachments/assets/9ee96821-f11e-4b44-bf86-9aafbed164bd" />
+
+1. The main page of the shop can be navigated to from the 'Collectible Shop' button on the home page and has the identifier `shopMainPageView`
+2. On the shop main page, each horizontal scroll bar represent a pack (with the identifier `shopView_scroll_packName`), and the name of the pack is shown in the caption above the horizontal scroll views
+3. All item buttons in the shop has the identifier `shopButton_itemName`
+4. All item buttons navigate to a corresponding item view, with the identifier `itemView_itemName`
+
+### Navigating
+- To navigate back to the previous page, click on the back button on the item or shop view
+
+### Example flow
+<img width="547" alt="Screenshot 2025-04-09 at 10 37 35 AM" src="https://github.com/user-attachments/assets/76a447e1-e5c9-4f78-a2a1-6159a5a9b0ef" />
+
+1. Navigate to the shop page from the 'Collectible Shop' button on the home page
+
+<img width="555" alt="Screenshot 2025-04-09 at 10 43 39 AM" src="https://github.com/user-attachments/assets/708eabc0-b438-479e-8798-20188a91f030" />
+
+2. Click on the elephant item listing, which brings us to the item view
+   
+   <img width="547" alt="Screenshot 2025-04-09 at 10 43 47 AM" src="https://github.com/user-attachments/assets/549c107f-3432-47dc-982e-0c0275b9d42f" />
+
+4. Click on the buy button
+   
+<img width="553" alt="Screenshot 2025-04-09 at 10 43 55 AM" src="https://github.com/user-attachments/assets/9564282a-86d4-4955-b6f1-5d9365d23fb5" />
+
+5. Click on the confirm button to confirm purchase, which brings us back to the listing page
+
+<img width="558" alt="Screenshot 2025-04-09 at 10 44 08 AM" src="https://github.com/user-attachments/assets/e643b683-7a92-42c5-8e96-c85d79b58200" />
+
+6. Click on the back button to navigate back to the shop page
 
 ## ManualView
 
@@ -133,22 +167,9 @@ Repeat for each of the 4 pages:
 3. Tap the homeButton
 4. Make sure the app goes to the homePage.
    
-## MainStoreView
-### Page identifiers
-
-<img width="554" alt="Screenshot 2025-04-08 at 9 28 47 PM" src="https://github.com/user-attachments/assets/40f277f3-7626-4f2a-aedf-4dbce675a755" />
-
-- The page is accessible through button with identifier "shopPage" on the homePage,
-
-### Steps
--  Click on the shopPage button on the main page to bring us back to the shop page
-- Next, from the first listing on the first row, we click on each shop listing and check if they bring us to a new page with the corresponding item listing, from left to right, top to bottom
-     - For instance, for the button "shopButton_mammal-squirrel", we expect to arrive at a page with a squirrel
-
-## 
 
 
-## Shop
+
 
 
 
