@@ -85,5 +85,8 @@ The written_reports folder will contain all the reports for milestone submission
     - Navigate to "Product"
     - Navigate to "Build" or click "⌘B"
 
+### Testing
+- For manual testing, follow manual_testing_protocol.md
+
 # Issue Tracking Tool
 Include a link to your issue tracking tool: [Elephant Dev Board🐘💻](https://trello.com/b/4KAD6ca1/elephant-dev-board-%F0%9F%90%98%F0%9F%92%BB)
