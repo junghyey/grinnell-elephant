@@ -42,6 +42,7 @@ struct ShopMainPageView: View {
         .frame(width: 500, height: 500)
         .padding(10)
         .background(DefaultColors.main_color_1)
+        .accessibilityIdentifier("shopMainPageView")
     }
 }
 
