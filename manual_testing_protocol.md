@@ -188,4 +188,42 @@ Repeat for each of the 4 pages:
 #### Expected:
 - The home button exists and each home button's manual page correctly guides to home page.
 
-   
+---
+
+## SettingsView Manual Testing
+
+---
+
+I am doing manual testing for the navigation link from the customizable checklist to the task list sheet, and the navigation from the settings page using the back button to the homepage view.
+
+### "Checklist" Sheet Testing (Pop-up from Settings)
+
+#### Steps:
+- Launch the Elephant app (we see the home page)
+- Tap the Settings Button (identifier: Sun Image)
+- Tap the 'Add new custom checklist' Button (identifier: Checklist)
+- Make sure the checklist sheet appears (default as "Checklist #1")
+- Tap the Save or Cancel Button to close the sheet
+- Make sure you are back on the Settings view (check for the 'Add new custom checklist' button again)
+
+#### Expected:
+- Tapping the "Checklist" button opens the checklist sheet.
+- Tapping the "Save" or "Cancel" button closes the sheet and returns to the settingsView.
+
+---
+### Back Button Navigation Testing
+
+#### Steps:
+- Launch the Elephant app (we see the home page)
+- Tap the Settings Button (identifier: Sun Image)
+- Tap a button that pushes to a view inside the ScrollView (like Mode or Themes)
+- Make sure the pushed view appears (check for background color change, for example)
+- Tap the back button at the top of the Settings
+- Make sure you are back on the home page (check for the Navigation Link takes you back to the home page)
+
+#### Expected:
+- The Settings view appears when you tap the Sun image from the Home page.
+- Tapping the SettingsView back button returns you to the previous screen (Homepage).
+
+
+
