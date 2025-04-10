@@ -39,15 +39,14 @@ Root
   |       |-- sprint2_review_report.md
   |   |-- sprint3_reports/
   |       |-- sprint3_journal.md
-  |       |-- sprint3_plan_report.md         # this is where we have sprint2 planning report
+  |       |-- sprint3_plan_report.md         # this is where we have sprint3 planning report
   |       |-- sprint3_review_report.md
-  |       |-- manual_testing_protocol.md    
   |-- Elephant
   |-- ElephantWidget 
   |-- ElephantUITests
   |-- ElephantTests
   |-- Elephant.xcodeproj      
-  |
+  |-- manual_testing_protocol.md    # manual testing
 ```
 ## Description
 This repository (currently) includes README.md file and written_reports folder. 
@@ -79,6 +78,15 @@ The written_reports folder will contain all the reports for milestone submission
     
 - [Link to coding guidelines](https://google.github.io/swift/)
 
+### How to Build
+- Download and launch XCode
+- Clone git repository
+- Once it loads:
+    - Navigate to "Product"
+    - Navigate to "Build" or click "⌘B"
+
+### Testing
+- For manual testing, follow manual_testing_protocol.md
 
 # Issue Tracking Tool
 Include a link to your issue tracking tool: [Elephant Dev Board🐘💻](https://trello.com/b/4KAD6ca1/elephant-dev-board-%F0%9F%90%98%F0%9F%92%BB)

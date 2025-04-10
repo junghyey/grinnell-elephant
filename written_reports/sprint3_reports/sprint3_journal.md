@@ -12,4 +12,7 @@ For this milestone, the main non-user-facing progress involved setting up struct
 - We did manual testing for checking buttons and make sure page show for manual of the app. The reason is because of the limitations in automated testing support for SwiftUI navigation behavior. We used NavigationLink for buttons to navigate to different pages but somehow the XCUITest is inconsistent with view states that is controlled internally. Since it is just simple sets of button testing, we though it would be more time-efficient for manually testing.
 
 - Moreover, we tried to run CI with our testing for macOS, but macOS builds require code signing, even for development builds. The error says "No signing certificate "Mac Development"", which basically means we do not have certificate. We have not purchased yet, but we ran the testing through xcode IDE in each of us laptop.
-- Since CI does not work, we added manual testing in the manual testing protocol document for the supplment.
+- Since CI does not work, we added manual testing in the manual testing protocol document for the supplment. (check: manual_testing_protocol.md)
+
+## Tag containing demo code
+the tag named **sprint-3-initial-release** contains the demo code for initial release

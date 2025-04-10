@@ -42,7 +42,7 @@ Elephant supports several different user roles to include different usage:
 - As Hughie, I need to reach a new milestone so that I feel ready to end the day and fall asleep.
 - As Hughie, I have trouble staying asleep and would appreciate a time out period where I don’t receive notifications. 
 
-## () **Hyeyun’s Persona**
+## (2) **Hyeyun’s Persona**
 **Karen (she/her):** Karen is a 65-year-old retired middle school teacher, who is not comfortable with using technology.  
 She knows how to use basic functions in laptop. She lives alone in a suburban area and is skeptical about technology. She needs to take medication twice a day for her disease and she has doctor’s appointments regularly once a month. 
 
