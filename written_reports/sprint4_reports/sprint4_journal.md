@@ -1,4 +1,8 @@
 ## Documentation Lab
+
+**Note: Since we are small group (4 people only), we collaborated on code before. Therefore, our subgroups already shared knowledge on what we were working on and we used the same langauge. However, there was still room for imporvement in terms of documentation**
+
+
 ### Subgroup 1: Medhashree & Hyeyun
 
 1. Teammate A: Medhashree, Teammate B: Hyeyun
