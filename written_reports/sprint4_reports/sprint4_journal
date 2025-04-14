@@ -1,1 +1,17 @@
+## Documentation Lab
+### Subgroup 1: Medhashree & Hyeyun
 
+1. Teammate A: Medhashree, Teammate B: Hyeyun
+
+ContentView, entire file
+
+Teammate A (Medhashree) needs to adjust the header to include the main author(s) of the file, a description of the file, dependencies, and resources used when developing. Furthermore, the documentation in the code should include a small description of the scope of the code within "{...}
+
+Teammate A made sure to include a description at the end of larger blocks of code within "{...}" that showed the responsibilities of the buttons. The inclusion of "TODO" comments were helpful as it is easy to find and has a note of what needs to be done.
+
+Commit hash:
+Github link:
+
+2. Teammate A: Hyeyun, Teammate B: Medhashree
+
+### Subgroup 2: Candice & Gabby
