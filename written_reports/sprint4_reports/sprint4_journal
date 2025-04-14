@@ -14,4 +14,18 @@ Github link:
 
 2. Teammate A: Hyeyun, Teammate B: Medhashree
 
+ManualView.swift, entire file
+
+Teammat A (Mae) suggested: Adding description of the file, more documnation on the purpose of the function, documentation on what is happening (a line is sufficent) before each code block for each UI,
+                          Add Todo for aesthetics part so that others can see what I have to work on/ and it is easily navigatble for others.
+                          Spacing consistnet -- devleoper guideline on formaning (needed to be added).
+                          You can put other referneces in each function on top and write where each used.
+
+Helpful: Resources/References on the top & before each function (wehre we used it), comment after each "}" helpful to navigate the scope, but it would be more helpful to add what vstack belongs to (is it for button or not?) since
+we have multiple vstacks.
+
+
+Commit hash:
+Github link:
+
 ### Subgroup 2: Candice & Gabby
