@@ -7,7 +7,7 @@
 
 import Foundation
 
-//Represents a TaskItem object for each
+// Represents a TaskItem object for each
 struct TaskItem: Identifiable, Codable{
     let id: UUID //unique task identifier
     var title: String // title/description of the task
