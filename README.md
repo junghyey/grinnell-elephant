@@ -41,6 +41,9 @@ Root
   |       |-- sprint3_journal.md
   |       |-- sprint3_plan_report.md         # this is where we have sprint3 planning report
   |       |-- sprint3_review_report.md
+  |   |-- sprint4_reports/
+  |       |-- sprint4_journal.md
+  |       |-- sprint4_plan_report.md         # this is where we have sprint4 planning report
   |-- Elephant
   |-- ElephantWidget 
   |-- ElephantUITests
