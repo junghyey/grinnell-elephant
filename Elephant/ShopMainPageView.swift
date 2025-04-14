@@ -89,6 +89,6 @@ struct PackBlock : View {
             }
         }
         .padding(10)
-        .accessibilityIdentifier("\(packName)ScrollView")
+        .accessibilityIdentifier("shopView_scroll_\(packName)")
     }
 }
