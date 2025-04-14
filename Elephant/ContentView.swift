@@ -2,8 +2,17 @@
 //  ContentView.swift
 //  Elephant
 //
-//  Created by 陸卉媫 on 2/16/25.
+//  Description: App's homepage that appears once app is launched.
 //
+//  Author(s): Medhashree (main editor), Candice (creator)
+//
+//  The following pages are linked: Manual, Settings, Collectibles Shop, and widget Timer selection
+//
+
+/** References:
+ https://developer.apple.com/documentation/swiftui/button -  Buttons
+ https://developer.apple.com/documentation/swiftui/picker - Picker
+ */
 
 import SwiftUI
 
@@ -64,24 +73,28 @@ struct ContentView: View {
                     .padding(.top, 15)
                     .padding(.trailing, 15)
                     
-                    // Title area
+                    // Main title
                     Text("Elephant")
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .fontDesign(.rounded)
                         .kerning(2)
                         .accessibilityIdentifier("mainPage")
+                    // Subheadline following Elephant
                     Text("A Wellness Trunk")
                         .font(.headline)
                         .fontWeight(.semibold)
                         .fontDesign(.rounded)
                         .kerning(1)
+                    // Subheadline following "A Wellness Trunk"
                     Text("♡🐘♡")
                         .font(.headline)
                         .fontWeight(.semibold)
+                    // App logo placeholder
                     Image("realistic_elephant")
                         .resizable()
                         .scaledToFit()
+                    // Title area and button separator
                     Text("⸻⸻⸻")
                         .font(.headline)
                         .fontWeight(.bold)
@@ -114,7 +127,7 @@ struct ContentView: View {
                             .fontDesign(.rounded)
                             .foregroundColor(.black)
                             .frame(width: 200, height: 60)
-                    }
+                    }  // Stopwatch Button - set up and adjustments
                     .buttonStyle(PlainButtonStyle()).background(DefaultColors.background)
                     .clipShape(RoundedRectangle(cornerRadius: 15))
                     .cornerRadius(15)
@@ -132,7 +145,7 @@ struct ContentView: View {
                             .fontDesign(.rounded)
                             .foregroundColor(.black)
                             .frame(width: 200, height: 60)
-                    }
+                    }  // Pomodoro Button - set up and adjustments
                     .buttonStyle(PlainButtonStyle()).background(DefaultColors.background)
                     .clipShape(RoundedRectangle(cornerRadius: 15))
                     .cornerRadius(15)
@@ -153,20 +166,21 @@ struct ContentView: View {
                                 .cornerRadius(10)
                                 .scaleEffect(isPressed ? 0.9 : 1.0)
                                 .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
-                    }
+                    }  // NavigationLink - set up and adjustments
                     .buttonStyle(PlainButtonStyle())
                     .frame(maxWidth: .infinity, alignment: .center)
                     .background(DefaultColors.main_color_1)
                     .padding(.bottom, 25)
                     .accessibilityIdentifier("shopPage")
-                } // WHOLE PAGE
+                    
+                } // VStack - structures whole page
                 .background(DefaultColors.main_color_1)
             } // ZStack
         } // NavigationStack
         .frame(width: 500, height: 500)
         .preferredColorScheme(Mode ? .dark : .light)
-    }
-}
+    } // main body
+} // ContentView Struct
 
 #Preview {
     ContentView()
