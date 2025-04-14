@@ -82,7 +82,7 @@ struct ItemView: View {
                     })
                 .zIndex(1)
             }
-        }
+        }.accessibilityIdentifier("itemView_\(item.imageName)")
     }
     
 }

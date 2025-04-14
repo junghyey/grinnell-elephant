@@ -44,6 +44,19 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       shouldAutocreateTestPlan = "YES">
+      <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "39957E1C2D62A32E00A2D89D"
+               BuildableName = "ElephantTests.xctest"
+               BlueprintName = "ElephantTests"
+               ReferencedContainer = "container:Elephant.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -57,8 +70,19 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "1"
+         BundleIdentifier = "com.apple.widgetkit.simulator"
+         RemotePath = "/System/Library/CoreServices/WidgetKit Simulator.app/Contents/MacOS/WidgetKit Simulator">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "39957E6D2D62A78100A2D89D"
+            BuildableName = "ElephantWidgetExtension.appex"
+            BlueprintName = "ElephantWidgetExtension"
+            ReferencedContainer = "container:Elephant.xcodeproj">
+         </BuildableReference>
+      </RemoteRunnable>
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "39957E0B2D62A32D00A2D89D"
@@ -66,7 +90,7 @@
             BlueprintName = "Elephant"
             ReferencedContainer = "container:Elephant.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "_XCWidgetKind"
@@ -91,6 +115,7 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES"
+      askForAppToLaunch = "Yes"
       launchAutomaticallySubstyle = "2">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">

@@ -30,10 +30,8 @@ struct Provider: AppIntentTimelineProvider {
 
         return Timeline(entries: entries, policy: .atEnd)
     }
-
 //    func relevances() async -> WidgetRelevances<ConfigurationAppIntent> {
 //        // Generate a list containing the contexts this widget is relevant in.
-//    }
 }
 
 struct SimpleEntry: TimelineEntry {
@@ -67,13 +65,13 @@ struct ElephantWidget: Widget {
 extension ConfigurationAppIntent {
     fileprivate static var smiley: ConfigurationAppIntent {
         let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "😀"
+        intent.favoriteEmoji = "hi"
         return intent
     }
     
     fileprivate static var starEyes: ConfigurationAppIntent {
         let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "🤩"
+        intent.favoriteEmoji = "bye"
         return intent
     }
 }
