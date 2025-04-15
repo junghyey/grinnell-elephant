@@ -12,6 +12,8 @@ struct ContentView: View {
     @State private var isPressed = false
     @AppStorage("mode") private var Mode: Bool = false //global mode setting
     // @State private var currentMode = "Stopwatch" // preset for timer mode - if picker
+    // theme manager
+    @StateObject var themeManager = ThemeManager()
     
     // let modes = ["Pomodoro", "Stopwatch"] // timer mode options
     
@@ -141,7 +143,7 @@ struct ContentView: View {
                     .accessibilityIdentifier("pomodoroButton")
                     
                     // COLLECTIBLES SHOP BUTTON
-                    NavigationLink(destination: ShopMainPageView()) {
+                    NavigationLink(destination: ShopMainPageView().environmentObject(themeManager)) {
                             Text("Collectibles Shop")
                                 .font(.title2)
                                 .fontWeight(.bold)

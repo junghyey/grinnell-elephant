@@ -10,6 +10,9 @@ struct ShopMainPageView: View {
     
     @AppStorage("mode") private var Mode: Bool = false //global mode setting
     @AppStorage("user_tokens") var userTokens: Int = 15
+    @AppStorage("curPalette") var curPalette: String = "defaultElephant"
+    
+    @EnvironmentObject private var themeManager: ThemeManager
     
     var body: some View {
         ScrollView{
@@ -18,10 +21,10 @@ struct ShopMainPageView: View {
                     HStack{
                         NavigationLink(destination: ContentView()) {
                             RoundedRectangle(cornerRadius: 10)
-                                .foregroundStyle(DefaultColors.main_color_2)
+                                .foregroundStyle(themeManager.curTheme.main_color_2)
                                 .frame(width: 50, height: 30)
                                 .overlay(
-                                    Text("Back").foregroundColor(DefaultColors.background))
+                                    Text("Back").foregroundColor(themeManager.curTheme.background))
                         }
                         .buttonStyle(PlainButtonStyle())
                         .padding(10)
@@ -41,13 +44,18 @@ struct ShopMainPageView: View {
         .preferredColorScheme(Mode ? .dark : .light)
         .frame(width: 500, height: 500)
         .padding(10)
-        .background(DefaultColors.main_color_1)
+        .background(themeManager.curTheme.main_color_1)
         .accessibilityIdentifier("shopMainPageView")
     }
 }
 
 #Preview {
-    ShopMainPageView()
+    // theme manager
+    let themeManager = ThemeManager()
+    themeManager.setTheme(named: "blackWhite")
+    // themeManager.setTheme(named: "defaultElephant")
+    return ShopMainPageView()
+        .environmentObject(themeManager)
 }
 
 struct ShopItemBlock : View {
