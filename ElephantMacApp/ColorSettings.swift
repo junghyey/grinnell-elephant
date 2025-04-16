@@ -9,16 +9,7 @@
 
 import SwiftUI
 
-//struct ColorPalette {
-//    var main_color_1: Color
-//    var main_color_2: Color
-//    var main_color_3: Color
-//    var background_color: Color
-//    var shadow_1: Color
-//    var shadow_2: Color
-//}
-
-
+// data structure for each theme
 protocol ThemeProtocol {
     var main_color_1: Color {get}
     var main_color_2: Color {get}
@@ -35,20 +26,23 @@ class ThemeManager: ObservableObject {
             }
         }
     
+    // takes the string name of theme protocol and return the correct settings
     var curTheme: ThemeProtocol {
             switch curThemeKey {
-            case "blackWhite":
-                return BlackWhite()
-            default:
-                return DefaultElephant()
+                case "blackWhite":
+                    return BlackWhite()
+                default:
+                    return DefaultElephant()
             }
         }
         
+    // function to set global theme
     func setTheme(named name: String) {
         curThemeKey = name
     }
 }
 
+// color themes
 struct DefaultElephant: ThemeProtocol {
     var main_color_1: Color {return Color(red: 255/255, green: 201/255, blue: 185/255)}
     var main_color_2: Color {return Color(red: 193/255, green: 150/255, blue: 109/255)}
