@@ -48,16 +48,79 @@ struct SimpleEntry: TimelineEntry {
 }
 
 struct MacWidgetEntryView : View {
+    @AppStorage("mode") private var Mode: Bool = false //global mode setting
     var entry: Provider.Entry
 
     var body: some View {
-        VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
+        ZStack {
+            VStack {
+                HStack{
+                    Text("🐘🧳")
+                        .font(.headline)
 
-            Text("Favorite Emoji:")
-            Text(entry.configuration.favoriteEmoji)
-        }
+                    Text("Elephant: A Wellness Trunk")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                    
+                    Spacer()
+                    
+                    // TODO: replace with buttons
+                    Text("⛭")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                    Text("?")
+                        .font(.headline)
+                        .foregroundColor(.white)
+
+                } // HStack for widget headers
+
+                
+                Spacer()
+                
+                ZStack {
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(Color.orange)
+                        .overlay(Text(entry.configuration.currentAvatar))
+                        .frame(alignment: .top)
+
+                    VStack {
+                        Text("🐘")
+                            .frame(height: 50)
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill(Color.white)
+                            .overlay(Text(entry.date, style: .time))
+                            .frame(height: 120, alignment: .bottom)
+                        
+                        Text("You got this ♡")
+                            .font(.headline)
+
+                    }
+                } // first frame
+                
+                ZStack {
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(Color.white)
+                        .overlay(Text("Task Checklist"))
+//                        .frame(alignment: .top)
+
+                    HStack{
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill(Color.white)
+                            .overlay(Text("[] task 1, \n task 2, \n task 3"))
+                            .frame(alignment: .leading)
+                        
+                        Circle()
+                            .fill(Color.yellow)
+                            .overlay(Text("\(entry.configuration.tokens)"))
+                            .frame(alignment: .trailing)
+                    }
+                } // second frame
+//                .frame(height: 100)
+//                Text("time:")
+                Text(entry.date, style: .time)
+            } // VStack - vertically align all sections
+        } // main ZStack
+        .preferredColorScheme(Mode ? .dark : .light)
     }
 }
 
