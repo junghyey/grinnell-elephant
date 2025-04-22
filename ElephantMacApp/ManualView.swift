@@ -4,7 +4,6 @@
 //
 //  Authors: Hyeyun(creating manual content), Mae(creater of this file)
 //
-//
 
 /*
  https://developer.apple.com/documentation/swiftui/font
@@ -55,24 +54,29 @@ struct ManualTemplateView<Content: View>:  View {
     }//init
     
     var body: some View {
-       
+            // Main layout stack
             VStack(spacing: 0) {
-                HStack {
+                HStack {// Header stack with home button
                     Spacer()//expands leftward
                     if let homePage = homePage {
                         NavigationLink(destination: homePage) {
                             Image(systemName: "house.fill")
                                 .font(.title2)
-                                .foregroundColor(.blue)
+                                .foregroundColor(DefaultColors.main_color_3)
                                 .accessibilityIdentifier("homeButton")
                                 .allowsHitTesting(true)
                                 //nopadding
                         }//NavigationLink
+                        .buttonStyle(PlainButtonStyle()) // get rid of the white box behind
                     }//homepage
                 }//HStack
-               
+                
+                .padding()
+                .background(DefaultColors.main_color_1)
+                
+                // Scrollable content area
                 ScrollView {
-                    VStack(alignment: .leading, spacing: 24) {
+                    VStack(alignment: .leading, spacing: 24) {// Content stack inside scroll
                         content
                         Spacer(minLength: 80) // space above the nav buttons
                     }//VStack
@@ -81,20 +85,23 @@ struct ManualTemplateView<Content: View>:  View {
                         Color.clear
                             .accessibilityElement(children: .combine)
                             .accessibilityIdentifier(currentPageIdentifier)
+                            .shadow(color: DefaultColors.shadow_1.opacity(0.2), radius: 8, x: 0, y: 4)
                     )
                     .id(currentPageIdentifier)
                 }//ScrollView
-                
+                .background(DefaultColors.background)
+                // Footer stack with navigation buttons
                 HStack {
                     if let backPage = backPage {
                         NavigationLink(destination: backPage) {
                             Image(systemName: "arrow.left.circle.fill")
                                 .font(.title)
-                                .foregroundColor(.blue)
+                                .foregroundColor(DefaultColors.main_color_2)
                                 .accessibilityIdentifier("backButton")
                                 .allowsHitTesting(true)
-                        }
-                    }
+                        }//NavigationLink
+                        .buttonStyle(PlainButtonStyle()) // get rid of the white box behind
+                    }// if backPage
                     
                     Spacer()//expands leftward
                     
@@ -102,14 +109,16 @@ struct ManualTemplateView<Content: View>:  View {
                         NavigationLink(destination: nextPage) {
                             Image(systemName: "arrow.right.circle.fill")
                                 .font(.title)
-                                .foregroundColor(.blue)
+                                .foregroundColor(DefaultColors.main_color_2)
                                 .accessibilityIdentifier("nextButton")
                                 .allowsHitTesting(true)
                         }//NavigationLink
+                        .buttonStyle(PlainButtonStyle()) // get rid of the white box behind
                     }//nextPage
                 }//HStack
                 .padding(.horizontal)
                 .padding(.bottom, 20)
+                .background(DefaultColors.background)
             }
             .preferredColorScheme(Mode ? .dark : .light)
             .frame(width: 500, height: 500)
@@ -125,8 +134,9 @@ struct ManualView:View{
             ManualTemplateView(
                 currentPageIdentifier: "manualFirstPage",
                 content: {
+                    // First Page Content Stack
                     VStack(alignment: .leading, spacing: 20) {
-                        Text("Welcome to Elephant: A Wellness Trunk!")
+                       Text("Welcome to Elephant...")
                             .font(.title)
                             .fontWeight(.bold)
                             .lineSpacing(4)
@@ -138,6 +148,7 @@ struct ManualView:View{
                         .fontWeight(.medium)
                         .lineSpacing(6)
                         
+                        // Stopwatch section
                         VStack(alignment: .leading, spacing: 10) {
                             Text("Stopwatch Mode")
                                 .font(.title3)
@@ -149,6 +160,7 @@ struct ManualView:View{
                             .lineSpacing(4)
                         }//Vstack
                         
+                        // Pomodoro section
                         VStack(alignment: .leading, spacing: 10) {
                             Text("Pomodoro Mode")
                                 .font(.title3)
@@ -160,6 +172,7 @@ struct ManualView:View{
                             .lineSpacing(4)
                         }//Vstack
                         
+                        // Token earning section
                         VStack(alignment: .leading, spacing: 10) {
                             Text("Earn Tokens")
                                 .font(.title3)
@@ -177,7 +190,8 @@ struct ManualView:View{
                 homePage: AnyView(ContentView())
                 
             )//ManualTemplateView
-        
+            .frame(maxWidth: .infinity, alignment: .leading)
+         
     }//body
 }//ManualView
 
@@ -187,6 +201,7 @@ struct SecondPageView:View{
         ManualTemplateView(
             currentPageIdentifier: "manualSecondPage",
             content: {
+                // Second Page Content Stack
                 VStack(alignment: .leading, spacing: 24) {
                     Text("How To ")
                         .font(.title)
@@ -237,7 +252,8 @@ struct SecondPageView:View{
                         
                     }//Vstack
                 }//Vstack
-        
+                .frame(maxWidth: .infinity, alignment: .leading)
+              
             }//content
             ,
             backPage: AnyView(ManualView()),
@@ -270,7 +286,7 @@ struct CheckBoxView: View {
     
     var body: some View {
         Image(systemName: isChecked ? "checkmark.square.fill" : "square")
-            .foregroundColor(isChecked ? Color.blue : Color.secondary)
+            .foregroundColor(isChecked ?  DefaultColors.main_color_3: Color.secondary)
     }//var body
 }//CheckBoxView
 /*
@@ -302,12 +318,13 @@ struct ThirdPageView:View{
         ManualTemplateView(
             currentPageIdentifier: "manualThirdPage",
             content: {
+                // Third Page Content Stack
                 VStack(alignment: .leading, spacing: 24) {
                     Text("Customize Elephant to your need!")
                         .font(.title)
                         .fontWeight(.bold)
                     
-                    // Stopwatch Section
+                    // Stopwatch Section Example Sam
                     VStack(alignment: .leading, spacing: 8) {
                         Text(
                       """
@@ -331,7 +348,7 @@ struct ThirdPageView:View{
                         
                     }//Vstack
                     
-                    // Pomodro Section
+                    // Example Cam Pomodro Section
                     VStack(alignment: .leading, spacing: 8) {
                         Text(
                         """
@@ -352,10 +369,10 @@ struct ThirdPageView:View{
                         ])
                         
                         
-                        
                     }//Vstack
                 }//VStack
-                .padding(.bottom, 40)
+                .frame(maxWidth: .infinity, alignment: .leading)
+               
             }//content
             ,
             backPage: AnyView(SecondPageView()),
@@ -371,26 +388,34 @@ struct FourthPageView:View{
     var body: some View {
         ManualTemplateView(
             currentPageIdentifier: "manualFourthPage",
-            content: {
-                VStack(alignment: .leading, spacing: 20) {
-                    Text("Add Widget to Widget Bar")
-                        .font(.title)
-                        .fontWeight(.bold)
-                    Text("(1) Navigate to the widget bar")
-                    Text("(2) Scroll down to “Edit Widget”")
-                    Text("(3) Add **“Elephant: A Wellness Trunk”** as a widget")
-                    Text("(4) Enjoy! ")
-                    
-                    //insert video for tutorial?
-                }//Vstack
-            }//content
-               
-            ,
-            backPage: AnyView(ThirdPageView()),
-            homePage: AnyView(ContentView())
-            
-        )//ManualTemplateView
-    }//var body
+                      content: {
+                          // Fourth Page Content Stack
+                          VStack(alignment: .leading, spacing: 24) { // Fourth Page Content Stack
+                              Text("Add Widget to Widget Bar")
+                                  .font(.title)
+                                  .fontWeight(.bold)
+
+                              VStack(alignment: .leading, spacing: 10) { // Steps block
+                                  Text("(1) Navigate to the widget bar")
+                                  Text("(2) Scroll down to “Edit Widget”")
+                                  (
+                                      Text("(3) Add ") +
+                                      Text("“Elephant: A Wellness Trunk”").bold() +
+                                      Text(" as a widget")
+                                  )
+                                  Text("(4) Enjoy!")
+                              }
+                              .font(.body)
+                              .lineSpacing(5)
+                          }
+                          .frame(maxWidth: .infinity, alignment: .leading)
+                         
+                      }//content
+                ,
+                      backPage: AnyView(ThirdPageView()),
+                      homePage: AnyView(ContentView())
+                  )//ManualTemplateView
+              }//var body
 }//FourthPageView
 
 #Preview {
