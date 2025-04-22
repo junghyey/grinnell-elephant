@@ -18,10 +18,11 @@ final class ElephantUITests: XCTestCase {
     
     var manualPageButton: XCUIElement { app.buttons["manualPage"] }
     var manualFirstPage: XCUIElement { app.otherElements["manualFirstPage"] }
+    
 
     var shopMainPageButton: XCUIElement { app.buttons["shopPage"] }
     var shopMainPageView: XCUIElement { app.scrollViews["shopMainPageView"] }
-
+    var settingsButton: XCUIElement { app.buttons["settingsPage"] }
 //    var settingsPageButton: XCUIElement { app.buttons["settingsPage"] }
 //    var settingsPage: XCUIElement { app.scrollViews["settingsPage"] }
 
