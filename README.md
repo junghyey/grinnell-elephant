@@ -105,7 +105,7 @@ The written_reports folder will contain all the reports for milestone submission
 3. Click the **`+`** button at the bottom left.
 4. Select **Apple ID** and log in with your credentials.
 
-### 2. Set the Bundle Identifier
+#### 2. Set the Bundle Identifier
 
 To avoid code signing issues and prevent conflicts with the `Grinnell.Elephant` namespace, update the bundle identifier:
 
@@ -119,7 +119,7 @@ To avoid code signing issues and prevent conflicts with the `Grinnell.Elephant` 
 6. In **Signing & Capabilities**, check the box: ✅ Automatically manage signing
 This setup allows Xcode to generate valid provisioning profiles automatically.
 
-### 3. MacWidget Error
+#### 3. MacWidget Error
 
 Currently MacWidget folder is not properly being pulled from Main.
 
