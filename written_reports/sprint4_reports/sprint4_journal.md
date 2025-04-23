@@ -1,3 +1,61 @@
+## Developments for Sprint 4
+
+#### Working widget and basic interface setup
+
+**Scope:** 8-10 hours
+**Verification:** When previewing the widget extension, user can now see the sections of the widget and placeholders for affordances. The code is on GitHub and is approved through code reviews.
+
+#### Working logic for stopwatch and pomodoro functions
+**Scope:** 6-8 hours
+**Verification:** When viewing the preview pages of each file, user can now interact with the buttons and stop, pause, or reset the timers. The code is on GitHub and is approved through code reviews.
+**Further improvements:**
+- The timers are yet to be integrated with the widget
+
+#### Global theme setting mechanism through ThemeManager
+**Scope:** 6-8 hours
+**Verification:** When viewing the preview page of the shopPage user can see the color changes. The code is on GitHub and is approved through code reviews.
+**Further improvements:**
+- The theme setting mechanism is only experimented with the shopPage and is yet to be integrated with other pages in the main app, as well as the widget.
+- More setting options can be added, such as font, font size, etc
+
+##  External Documentation and Stakeholder Meetings
+
+### Meeting 1
+#### Who you met with
+##### Name, occupation, and other relevant information about the stakeholder
+- Hannah Kim, student biology major & statistics concentration. Not a long time mac user.
+- Reviewed paper prototype
+##### Date and time of the stakeholder meeting
+- 04/22/2025 02:30pm - 3:00pm
+##### Description of the test session and feedback
+##### What was their behavior of interacting with the documentation?
+1. Navigation to the app: When she opened the app, I told her to navigate to the manual/help page.
+2. Navigation to the settings page: In the home screen, told her to navigate to the settings page
+3. Changing themes in settings page: Prompted to change the themes
+4. Purchasing Avatar in the collectible shop: Asked to navigate to collectible shop and try purchasing the avatar.
+5. Read through the manual: Asked her to read all pages the manual till the end using the buttons
+6. Adding to Widget: Asked her to add the elephant app to the widget bar just by manual explanation.
+##### Did they succeed or get stuck?
+- She succeeded in all 1-5, but since it was not clear what the widget bar is and there were no photos on how to add (and she is new to mac), so she could not success the task 6. 
+##### What feedback did they provide about documentation?
+- She said a picture or video of how to add widget to the widget bar would be helpful. The tester did not know what even widget bar is.
+##### What questions did you ask, and what were the stakeholder's answers?
+- I asked the if there is any buttons or other parts confusing
+  - She said except for widget description everything was straightforward.
+  - Additionally, she told us the time changing scroll in the settings page is not intuitivie. It does not show what time she is currently setting to if she scrolls.
+- Is design suitable for readability and accesibility?
+  - She said themes needed to be changed because only the background color changes and the font colors dont change. This makes letters hard to read
+- Any other feedback
+  - The homebutton crashes in the settings page.
+  - The back button crashes in collectible shop for MacApp scheme.   
+
+
+### Meeting 2
+
+
+
+### Meeting 3
+
 ## Documentation Lab
 
 **Note: Since we are small group (4 people only), we collaborated on code before. Therefore, our subgroups already shared knowledge on what we were working on and we used the same langauge. However, there was still room for imporvement in terms of documentation**

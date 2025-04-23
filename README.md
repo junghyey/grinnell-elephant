@@ -91,5 +91,45 @@ The written_reports folder will contain all the reports for milestone submission
 ### Testing
 - For manual testing, follow manual_testing_protocol.md
 
+
+### Pulling From Main
+
+***Currently we are experiencing issues with Xcode if we pull from main. These are temporary solutions***
+
+#### 1. Code Signing Issues (Elephant)
+
+❌ **No Accounts: Add a new account in Accounts settings.**  
+→ You need to add your Apple ID to Xcode:
+1. Open **Xcode**.
+2. Go to **Xcode > Settings > Accounts**.
+3. Click the **`+`** button at the bottom left.
+4. Select **Apple ID** and log in with your credentials.
+
+#### 2. Set the Bundle Identifier
+
+To avoid code signing issues and prevent conflicts with the `Grinnell.Elephant` namespace, update the bundle identifier:
+
+1. Select the **project file** in the Xcode navigator.
+2. Click on each **target** (e.g., `Elephant`, `ElephantWidgetExtension`, `MacWidget`).
+3. Go to the **Signing & Capabilities** tab.
+4. Replace the existing `Bundle Identifier` with:
+   - if it looks like: Grinnell.Elephant.ElephantMacApp.MacWidget
+   - Replace Grinnell with com.Name (if your apple id name is Jane, then com.Jane)
+5. Under **Team**, select your **Personal Team** or Apple Developer account.
+6. In **Signing & Capabilities**, check the box: ✅ Automatically manage signing
+This setup allows Xcode to generate valid provisioning profiles automatically.
+
+#### 3. MacWidget Error
+
+Currently MacWidget folder is not properly being pulled from Main.
+
+1. Create new file (File > new > target)
+2. Go to macOS and search for "widget extension"
+3. Click and create it as:
+   - Product Name: MacWidget
+   - Team (your team in part 2)
+   - Emdbed in Application: ElephantMacApp 
+4. Then copy and paste the codes from the github for MacWidgetBundle, AppIntent, MacWidget
+
 # Issue Tracking Tool
 Include a link to your issue tracking tool: [Elephant Dev Board🐘💻](https://trello.com/b/4KAD6ca1/elephant-dev-board-%F0%9F%90%98%F0%9F%92%BB)
