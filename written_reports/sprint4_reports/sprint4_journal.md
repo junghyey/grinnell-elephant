@@ -1,3 +1,23 @@
+## Developments for Sprint 4
+
+#### Working widget and basic interface setup
+
+**Scope:** 8-10 hours
+**Verification:** When previewing the widget extension, user can now see the sections of the widget and placeholders for affordances. The code is on GitHub and is approved through code reviews.
+
+#### Working logic for stopwatch and pomodoro functions
+**Scope:** 6-8 hours
+**Verification:** When viewing the preview pages of each file, user can now interact with the buttons and stop, pause, or reset the timers. The code is on GitHub and is approved through code reviews.
+**Further improvements:**
+- The timers are yet to be integrated with the widget
+
+#### Global theme setting mechanism through ThemeManager
+**Scope:** 6-8 hours
+**Verification:** When viewing the preview page of the shopPage user can see the color changes. The code is on GitHub and is approved through code reviews.
+**Further improvements:**
+- The theme setting mechanism is only experimented with the shopPage and is yet to be integrated with other pages in the main app, as well as the widget.
+- More setting options can be added, such as font, font size, etc
+
 ##  External Documentation and Stakeholder Meetings
 
 ### Meeting 1
