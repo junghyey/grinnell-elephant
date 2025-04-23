@@ -30,6 +30,7 @@ import SwiftUI
 struct ManualTemplateView<Content: View>:  View {
     @AppStorage("mode") private var Mode: Bool = false
     @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject var themeManager: ThemeManager
     //Variables
     var currentPageIdentifier: String
     var content: Content
@@ -72,7 +73,7 @@ struct ManualTemplateView<Content: View>:  View {
                 }//HStack
                 
                 .padding()
-                .background(DefaultColors.main_color_1)
+                .background(themeManager.curTheme.background)
                 
                 // Scrollable content area
                 ScrollView {
@@ -89,7 +90,7 @@ struct ManualTemplateView<Content: View>:  View {
                     )
                     .id(currentPageIdentifier)
                 }//ScrollView
-                .background(DefaultColors.background)
+                .background(themeManager.curTheme.background)
                 // Footer stack with navigation buttons
                 HStack {
                     if let backPage = backPage {
@@ -118,7 +119,7 @@ struct ManualTemplateView<Content: View>:  View {
                 }//HStack
                 .padding(.horizontal)
                 .padding(.bottom, 20)
-                .background(DefaultColors.background)
+                .background(themeManager.curTheme.background)
             }
             .preferredColorScheme(Mode ? .dark : .light)
             .frame(width: 500, height: 500)

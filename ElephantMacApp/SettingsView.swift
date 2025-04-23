@@ -14,18 +14,21 @@ struct SettingsView: View {
     @State private var showingChecklist = false
     
     @AppStorage("ThemeSelection") private var selectedTheme: ThemeSelection = .Default
+    @EnvironmentObject var themeManager: ThemeManager
     @AppStorage("colorTheme") var colorTheme: String = "classic" // classic as the default value
     @AppStorage("mode") var mode: String = "pomodoro"
     @AppStorage("mode")  private var Mode: Bool = false //default light mode, toggle for dark mode
     
     @State private var selectedWorkTime: Double = 25 //default for pomodoro
-    @State private var selectedBreakTime: Double = 5 //default for pomodoro
+    @State private var shortBreakTime: Double = 5 //default for pomodoro
+    @State private var longBreakTime: Double = 15//default for pomodoro
     @State private var selectedReminderTime: Double = 30 //default for stopwatch
     
         // Todo:
             // figure out what are the settings and the buttons and things
             // figure out where to store the info being changed, maybe a json with all the configurations
-            // figure out how to update settings when user clicks a configuration buttons
+            // figure out how to update settings when user clicks a configuration buttons (make settings global)
+            //add dynamic text changse and make sure checklist view works
     var body: some View {
         ScrollView{
             VStack(alignment: .leading, spacing: 20){
@@ -45,10 +48,12 @@ struct SettingsView: View {
                 ElephantButton(buttonText: Mode ? "Dark Mode" : "Light Mode", action:{ Mode.toggle()}, color: Mode ? .gray.opacity(0.6) : .gray.opacity(0.3))
 
                 sectionTitle(text: "Themes")
-                HStack(spacing: 15){
+                HStack(spacing: 15){//make changes to theme selection with ThemeManager
                     ForEach(ThemeSelection.allCases){
                         theme in ElephantButton(buttonText: theme.rawValue.capitalized, action: {selectedTheme = theme}, color: selectedTheme == theme ? DefaultColors.background : Color.gray.opacity(0.2))
+                        
                     }
+                    
                 }
                 
                 /*Button navigation to sheet that shows larger custom checklist*/
@@ -61,7 +66,8 @@ struct SettingsView: View {
                 
                 timeSection(title: "Pomodoro" , sliders: [
                     ("Work Duration", $selectedWorkTime, 20, 60, 5),
-                    ("Short Break Duration", $selectedBreakTime, 5, 30, 5)
+                    ("Short Break Duration", $shortBreakTime, 5, 30, 5),
+                    ("Long Break Duration" , $longBreakTime, 15, 30, 5)
                 ])
                 
                 timeSection(title: "Stopwatch", sliders: [
@@ -75,6 +81,7 @@ struct SettingsView: View {
             NavigationView{
                 CheckListView()
                     .environmentObject(storage)
+                    .frame(width: 500, height: 500)
             }
         }
         

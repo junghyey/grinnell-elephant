@@ -61,6 +61,15 @@ struct BlackWhite: ThemeProtocol {
     var shadow_2: Color      { return Color.black }
 }
 
+struct Benny: ThemeProtocol {
+    var main_color_1: Color {return Color(hex: "4B90CD")}
+    var main_color_2: Color {return Color(hex: "094F98")}
+    var main_color_3: Color {return Color(hex: "B8D2F0")}
+    var background: Color {return Color(hex: "F3A3B5")}
+    var shadow_1: Color {return Color(hex: "19171A")}
+    var shadow_2: Color {return Color(hex: "F0CC34")}
+}
+
 //enum PaletteType: String, CaseIterable {
 //    case defaultElephant
 //    case blackWhite
