@@ -26,7 +26,8 @@
 - Is design suitable for readability and accesibility?
   - She said themes needed to be changed because only the background color changes and the font colors dont change. This makes letters hard to read
 - Any other feedback
-  - The homebutton crashes in the settings page.      
+  - The homebutton crashes in the settings page.
+  - The back button crashes in collectible shop for MacApp scheme.   
 
 
 ### Meeting 2
