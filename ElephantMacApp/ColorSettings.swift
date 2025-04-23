@@ -31,6 +31,8 @@ class ThemeManager: ObservableObject {
             switch curThemeKey {
                 case "blackWhite":
                     return BlackWhite()
+                case "benny":
+                    return Benny()
                 default:
                     return DefaultElephant()
             }

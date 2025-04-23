@@ -32,16 +32,10 @@ struct SettingsView: View {
     var body: some View {
         ScrollView{
             VStack(alignment: .leading, spacing: 20){
-                //Back button Navigation back to initial ContentView Page
-                //Credits to Candice for the Back button
-                NavigationLink(destination: ContentView()) {
-                    RoundedRectangle(cornerRadius: 10)
-                        .foregroundStyle(DefaultColors.main_color_2)
-                        .frame(width: 50, height: 30)
-                        .overlay(
-                            Text("Back").foregroundColor(DefaultColors.background))
-                }
-                .buttonStyle(PlainButtonStyle())
+                /*dismisses current Settings View for previous view of homepage, navigating back to ContentView*/
+                ElephantButton(buttonText: "< Back", action:{ presentationMode.wrappedValue.dismiss()}, color: themeManager.curTheme.background)
+                
+                
                 
                 //Utilized ElephantButton struct from Utils
                 sectionTitle(text: "Modes")
@@ -50,7 +44,18 @@ struct SettingsView: View {
                 sectionTitle(text: "Themes")
                 HStack(spacing: 15){//make changes to theme selection with ThemeManager
                     ForEach(ThemeSelection.allCases){
-                        theme in ElephantButton(buttonText: theme.rawValue.capitalized, action: {selectedTheme = theme}, color: selectedTheme == theme ? DefaultColors.background : Color.gray.opacity(0.2))
+                        theme in ElephantButton(buttonText: theme.rawValue.capitalized, action: {
+                            selectedTheme = theme
+                            //update Theme globally with ThemeManager in ColorSettings
+                            switch theme{
+                            case .Default:
+                                themeManager.setTheme(named: "default")
+                            case .BW:
+                                themeManager.setTheme(named: "blackWhite")
+                            case .Benny:
+                                themeManager.setTheme(named: "benny")
+                            }
+                        }, color: selectedTheme == theme ? themeManager.curTheme.background : Color.gray.opacity(0.2))
                         
                     }
                     
@@ -59,7 +64,7 @@ struct SettingsView: View {
                 /*Button navigation to sheet that shows larger custom checklist*/
                 sectionTitle(text: "Checklist")
                 ElephantButton(buttonText: "Add new custom list", action: { showingChecklist = true
-                }, color: selectedTheme.colors.first ?? DefaultColors.main_color_2)
+                }, color: selectedTheme.colors.first ?? themeManager.curTheme.main_color_2)
                 
                 
                sectionTitle(text: "Time Settings", centered: true)
@@ -87,7 +92,7 @@ struct SettingsView: View {
         
         .padding()
         .preferredColorScheme(Mode ? .dark : .light)
-        .background(selectedTheme.colors.first ?? DefaultColors.background)
+        .background(themeManager.curTheme.background)
         .frame(width: 500, height: 500)
     }
     
@@ -120,7 +125,7 @@ struct SettingsView: View {
     @State private var newTask = ""
 }//bottom of SettingsView
 
-//enum for ThemeSelection
+
 enum ThemeSelection: String, CaseIterable, Identifiable{
     case Default //default theme setting
     case BW //Black and White theme setting
@@ -169,6 +174,7 @@ struct ModeSelection: View{
 struct CheckListView: View{
     @Environment(\.dismiss) private var dismiss
     @EnvironmentObject var storage: TaskListStorage
+    @EnvironmentObject var themeManager: ThemeManager
     @State private var newTask: String = "" //initial string Task
     @State private var taskList: [TaskItem] = [] //create a list of TaskItems
     
@@ -186,14 +192,14 @@ struct CheckListView: View{
                 if storage.taskList.tasks.isEmpty {
                     Spacer()
                     Text("No tasks yet!")//Default message for empty task list
-                        .foregroundColor(DefaultColors.main_color_2)
+                        .foregroundColor(themeManager.curTheme.main_color_2)
                         .padding(10)
                 } else { //Once tasks have been added by the user
                     List {
                         ForEach(storage.taskList.tasks) { task in
                             HStack {//Allows user to check off their tasks within settings
                                 Image(systemName: task.isCompleted ? "checkmark.square.fill" : "square")
-                                    .foregroundColor(task.isCompleted ? .green : .gray)
+                                    .foregroundColor(task.isCompleted ? themeManager.curTheme.shadow_1 : themeManager.curTheme.shadow_2)
                                     .onTapGesture { //calls on function to complete task
                                         storage.markTastCompleted(task: task)
                                     }
@@ -201,7 +207,7 @@ struct CheckListView: View{
                                 //Writes our user task
                                 Text(task.title)
                                     .strikethrough(task.isCompleted)
-                                    .foregroundColor(task.isCompleted ? .green : .primary)
+                                    .foregroundColor(task.isCompleted ? themeManager.curTheme.shadow_1 : themeManager.curTheme.shadow_2)
                             }
                         }//once the user checks off a task as complete, that task will be removed
                         .onDelete { indexSet in
@@ -242,7 +248,7 @@ struct CheckListView: View{
                             storage.saveTasks()
                             dismiss()
                         },
-                        color: DefaultColors.main_color_2
+                        color: themeManager.curTheme.main_color_2
                     )
                 }
                 .padding(.bottom)

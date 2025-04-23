@@ -22,7 +22,7 @@ struct ContentView: View {
     @AppStorage("mode") private var Mode: Bool = false //global mode setting
     // @State private var currentMode = "Stopwatch" // preset for timer mode - if picker
     // theme manager
-    @StateObject var themeManager = ThemeManager()
+    @EnvironmentObject var themeManager: ThemeManager
     
     // let modes = ["Pomodoro", "Stopwatch"] // timer mode options
     
@@ -44,14 +44,14 @@ struct ContentView: View {
                                 .fontWeight(.bold)
                                 .foregroundColor(.black)
                                 .frame(width: 45, height: 45, alignment: .center)
-                                .background(DefaultColors.background)
+                                .background(themeManager.curTheme.background)
                                 .clipShape(Circle())
                                 .scaleEffect(isPressed ? 0.9 : 1.0)
                                 .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
                         }
                         .buttonStyle(PlainButtonStyle())
                         .frame(maxWidth: .infinity, alignment: .trailing)
-                        .background(DefaultColors.main_color_1)
+                        .background(themeManager.curTheme.main_color_1)
                         .accessibilityIdentifier("settingsPage")
                         
                         // Button to manual page
@@ -61,14 +61,14 @@ struct ContentView: View {
                                 .fontWeight(.bold)
                                 .foregroundColor(.black)
                                 .frame(width: 45, height: 45, alignment: .center)
-                                .background(DefaultColors.background)
+                                .background(themeManager.curTheme.background)
                                 .clipShape(Circle())
                                 .scaleEffect(isPressed ? 0.9 : 1.0)
                                 .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
                         }
                         .buttonStyle(PlainButtonStyle())
                         .frame(alignment: .trailing)
-                        .background(DefaultColors.main_color_1)
+                        .background(themeManager.curTheme.main_color_1)
                         .accessibilityIdentifier("manualPage")
 
                     } // manual and settings page button area
@@ -130,7 +130,7 @@ struct ContentView: View {
                             .foregroundColor(.black)
                             .frame(width: 200, height: 60)
                     }  // Stopwatch Button - set up and adjustments
-                    .buttonStyle(PlainButtonStyle()).background(DefaultColors.background)
+                    .buttonStyle(PlainButtonStyle()).background(themeManager.curTheme.main_color_2)
                     .clipShape(RoundedRectangle(cornerRadius: 15))
                     .cornerRadius(15)
                     .scaleEffect(isPressed ? 0.9 : 1.0)
@@ -148,7 +148,7 @@ struct ContentView: View {
                             .foregroundColor(.black)
                             .frame(width: 200, height: 60)
                     }  // Pomodoro Button - set up and adjustments
-                    .buttonStyle(PlainButtonStyle()).background(DefaultColors.background)
+                    .buttonStyle(PlainButtonStyle()).background(themeManager.curTheme.main_color_2)
                     .clipShape(RoundedRectangle(cornerRadius: 15))
                     .cornerRadius(15)
                     .scaleEffect(isPressed ? 0.9 : 1.0)
@@ -163,7 +163,7 @@ struct ContentView: View {
                                 .fontDesign(.rounded)
                                 .foregroundColor(.black)
                                 .frame(width: 200, height: 60)
-                                .background(DefaultColors.background)
+                                .background(themeManager.curTheme.main_color_2)
                                 .clipShape(RoundedRectangle(cornerRadius: 15))
                                 .cornerRadius(10)
                                 .scaleEffect(isPressed ? 0.9 : 1.0)
@@ -171,12 +171,12 @@ struct ContentView: View {
                     }  // NavigationLink - set up and adjustments
                     .buttonStyle(PlainButtonStyle())
                     .frame(maxWidth: .infinity, alignment: .center)
-                    .background(DefaultColors.main_color_1)
+                    .background(themeManager.curTheme.main_color_1)
                     .padding(.bottom, 25)
                     .accessibilityIdentifier("shopPage")
                     
                 } // VStack - structures whole page
-                .background(DefaultColors.main_color_1)
+                .background(themeManager.curTheme.main_color_1)
             } // ZStack
         } // NavigationStack
         .frame(width: 500, height: 500)
