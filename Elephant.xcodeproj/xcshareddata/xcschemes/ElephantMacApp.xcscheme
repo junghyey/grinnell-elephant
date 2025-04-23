@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1620"
+   LastUpgradeVersion = "1630"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,9 +15,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "39957E0B2D62A32D00A2D89D"
-               BuildableName = "Elephant.app"
-               BlueprintName = "Elephant"
+               BlueprintIdentifier = "398DCF1B2DAC7ABD003363BD"
+               BuildableName = "ElephantMacApp.app"
+               BlueprintName = "ElephantMacApp"
                ReferencedContainer = "container:Elephant.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -35,9 +35,20 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "39957E1C2D62A32E00A2D89D"
-               BuildableName = "ElephantTests.xctest"
-               BlueprintName = "ElephantTests"
+               BlueprintIdentifier = "398DCF2B2DAC7AC0003363BD"
+               BuildableName = "ElephantMacAppTests.xctest"
+               BlueprintName = "ElephantMacAppTests"
+               ReferencedContainer = "container:Elephant.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "398DCF352DAC7AC0003363BD"
+               BuildableName = "ElephantMacAppUITests.xctest"
+               BlueprintName = "ElephantMacAppUITests"
                ReferencedContainer = "container:Elephant.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -57,9 +68,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "39957E0B2D62A32D00A2D89D"
-            BuildableName = "Elephant.app"
-            BlueprintName = "Elephant"
+            BlueprintIdentifier = "398DCF1B2DAC7ABD003363BD"
+            BuildableName = "ElephantMacApp.app"
+            BlueprintName = "ElephantMacApp"
             ReferencedContainer = "container:Elephant.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -74,9 +85,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "39957E0B2D62A32D00A2D89D"
-            BuildableName = "Elephant.app"
-            BlueprintName = "Elephant"
+            BlueprintIdentifier = "398DCF1B2DAC7ABD003363BD"
+            BuildableName = "ElephantMacApp.app"
+            BlueprintName = "ElephantMacApp"
             ReferencedContainer = "container:Elephant.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

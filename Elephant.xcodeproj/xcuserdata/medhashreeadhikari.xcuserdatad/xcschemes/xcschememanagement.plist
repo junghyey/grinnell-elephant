@@ -9,10 +9,58 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>ElephantWidgetExtension.xcscheme_^#shared#^_</key>
+		<key>ElephantMacApp.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
+		</dict>
+		<key>ElephantMacAppUITests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>MacWidgetExtension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>398DCF1B2DAC7ABD003363BD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>398DCF2B2DAC7AC0003363BD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>398DCF352DAC7AC0003363BD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>39957E0B2D62A32D00A2D89D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>39957E1C2D62A32E00A2D89D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>39957E262D62A32E00A2D89D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>99C305612DB1BF27008FBA75</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		395887012DAC85D8007859A6 /* ElephantWidgetExtension.appex in Embed Widget Extensions */ = {isa = PBXBuildFile; fileRef = 39957E6E2D62A78100A2D89D /* ElephantWidgetExtension.appex */; };
-		39957E712D62A78100A2D89D /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39957E702D62A78100A2D89D /* WidgetKit.framework */; };
-		39957E732D62A78100A2D89D /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39957E722D62A78100A2D89D /* SwiftUI.framework */; };
-		39957E812D62A78300A2D89D /* ElephantWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 39957E6E2D62A78100A2D89D /* ElephantWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		99C305632DB1BF27008FBA75 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39957E702D62A78100A2D89D /* WidgetKit.framework */; };
+		99C305642DB1BF27008FBA75 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39957E722D62A78100A2D89D /* SwiftUI.framework */; };
+		99C305722DB1BF28008FBA75 /* MacWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 99C305622DB1BF27008FBA75 /* MacWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,33 +27,12 @@
 			remoteGlobalIDString = 398DCF1B2DAC7ABD003363BD;
 			remoteInfo = ElephantMacApp;
 		};
-		398DCF482DAC7AFB003363BD /* PBXContainerItemProxy */ = {
+		99C305702DB1BF28008FBA75 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 39957E042D62A32D00A2D89D /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 39957E6D2D62A78100A2D89D;
-			remoteInfo = ElephantWidgetExtension;
-		};
-		39957E1E2D62A32E00A2D89D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 39957E042D62A32D00A2D89D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 39957E0B2D62A32D00A2D89D;
-			remoteInfo = Elephant;
-		};
-		39957E282D62A32E00A2D89D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 39957E042D62A32D00A2D89D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 39957E0B2D62A32D00A2D89D;
-			remoteInfo = Elephant;
-		};
-		39957E7F2D62A78300A2D89D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 39957E042D62A32D00A2D89D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 39957E6D2D62A78100A2D89D;
-			remoteInfo = ElephantWidgetExtension;
+			remoteGlobalIDString = 99C305612DB1BF27008FBA75;
+			remoteInfo = MacWidgetExtension;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -65,18 +43,17 @@
 			dstPath = ElephantMacApp.app/Contents/PlugIns;
 			dstSubfolderSpec = 16;
 			files = (
-				395887012DAC85D8007859A6 /* ElephantWidgetExtension.appex in Embed Widget Extensions */,
 			);
 			name = "Embed Widget Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		39957E822D62A78300A2D89D /* Embed Foundation Extensions */ = {
+		99C305772DB1BF28008FBA75 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				39957E812D62A78300A2D89D /* ElephantWidgetExtension.appex in Embed Foundation Extensions */,
+				99C305722DB1BF28008FBA75 /* MacWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,23 +64,20 @@
 		398DCF1C2DAC7ABD003363BD /* ElephantMacApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElephantMacApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		398DCF2C2DAC7AC0003363BD /* ElephantMacAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElephantMacAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		398DCF362DAC7AC0003363BD /* ElephantMacAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElephantMacAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		39957E0C2D62A32D00A2D89D /* Elephant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elephant.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		39957E1D2D62A32E00A2D89D /* ElephantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElephantTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		39957E272D62A32E00A2D89D /* ElephantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElephantUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		39957E6E2D62A78100A2D89D /* ElephantWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ElephantWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		39957E702D62A78100A2D89D /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = /System/Library/Frameworks/WidgetKit.framework; sourceTree = "<absolute>"; };
 		39957E722D62A78100A2D89D /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = /System/Library/Frameworks/SwiftUI.framework; sourceTree = "<absolute>"; };
 		6C776BCF2DA59F9C00D3DCEB /* Elephant.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Elephant.xctestplan; sourceTree = "<group>"; };
 		6C776BD02DA5A2DB00D3DCEB /* ElephantUITests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = ElephantUITests.xctestplan; sourceTree = "<group>"; };
+		99C305622DB1BF27008FBA75 /* MacWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MacWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		39957E852D62A78300A2D89D /* Exceptions for "ElephantWidget" folder in "ElephantWidgetExtension" target */ = {
+		99C305732DB1BF28008FBA75 /* Exceptions for "MacWidget" folder in "MacWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 39957E6D2D62A78100A2D89D /* ElephantWidgetExtension */;
+			target = 99C305612DB1BF27008FBA75 /* MacWidgetExtension */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -123,27 +97,12 @@
 			path = ElephantMacAppUITests;
 			sourceTree = "<group>";
 		};
-		39957E0E2D62A32D00A2D89D /* Elephant */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Elephant;
-			sourceTree = "<group>";
-		};
-		39957E202D62A32E00A2D89D /* ElephantTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ElephantTests;
-			sourceTree = "<group>";
-		};
-		39957E2A2D62A32E00A2D89D /* ElephantUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ElephantUITests;
-			sourceTree = "<group>";
-		};
-		39957E742D62A78100A2D89D /* ElephantWidget */ = {
+		99C305652DB1BF27008FBA75 /* MacWidget */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				39957E852D62A78300A2D89D /* Exceptions for "ElephantWidget" folder in "ElephantWidgetExtension" target */,
+				99C305732DB1BF28008FBA75 /* Exceptions for "MacWidget" folder in "MacWidgetExtension" target */,
 			);
-			path = ElephantWidget;
+			path = MacWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -170,33 +129,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		39957E092D62A32D00A2D89D /* Frameworks */ = {
+		99C3055F2DB1BF27008FBA75 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		39957E1A2D62A32E00A2D89D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		39957E242D62A32E00A2D89D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		39957E6B2D62A78100A2D89D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				39957E732D62A78100A2D89D /* SwiftUI.framework in Frameworks */,
-				39957E712D62A78100A2D89D /* WidgetKit.framework in Frameworks */,
+				99C305642DB1BF27008FBA75 /* SwiftUI.framework in Frameworks */,
+				99C305632DB1BF27008FBA75 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,13 +146,10 @@
 			children = (
 				6C776BD02DA5A2DB00D3DCEB /* ElephantUITests.xctestplan */,
 				6C776BCF2DA59F9C00D3DCEB /* Elephant.xctestplan */,
-				39957E0E2D62A32D00A2D89D /* Elephant */,
-				39957E202D62A32E00A2D89D /* ElephantTests */,
-				39957E2A2D62A32E00A2D89D /* ElephantUITests */,
-				39957E742D62A78100A2D89D /* ElephantWidget */,
 				398DCF1D2DAC7ABD003363BD /* ElephantMacApp */,
 				398DCF2F2DAC7AC0003363BD /* ElephantMacAppTests */,
 				398DCF392DAC7AC0003363BD /* ElephantMacAppUITests */,
+				99C305652DB1BF27008FBA75 /* MacWidget */,
 				39957E6F2D62A78100A2D89D /* Frameworks */,
 				39957E0D2D62A32D00A2D89D /* Products */,
 			);
@@ -223,13 +158,10 @@
 		39957E0D2D62A32D00A2D89D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				39957E0C2D62A32D00A2D89D /* Elephant.app */,
-				39957E1D2D62A32E00A2D89D /* ElephantTests.xctest */,
-				39957E272D62A32E00A2D89D /* ElephantUITests.xctest */,
-				39957E6E2D62A78100A2D89D /* ElephantWidgetExtension.appex */,
 				398DCF1C2DAC7ABD003363BD /* ElephantMacApp.app */,
 				398DCF2C2DAC7AC0003363BD /* ElephantMacAppTests.xctest */,
 				398DCF362DAC7AC0003363BD /* ElephantMacAppUITests.xctest */,
+				99C305622DB1BF27008FBA75 /* MacWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -254,11 +186,12 @@
 				398DCF192DAC7ABD003363BD /* Frameworks */,
 				398DCF1A2DAC7ABD003363BD /* Resources */,
 				395887002DAC8560007859A6 /* Embed Widget Extensions */,
+				99C305772DB1BF28008FBA75 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				398DCF492DAC7AFB003363BD /* PBXTargetDependency */,
+				99C305712DB1BF28008FBA75 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				398DCF1D2DAC7ABD003363BD /* ElephantMacApp */,
@@ -316,96 +249,26 @@
 			productReference = 398DCF362DAC7AC0003363BD /* ElephantMacAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		39957E0B2D62A32D00A2D89D /* Elephant */ = {
+		99C305612DB1BF27008FBA75 /* MacWidgetExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 39957E312D62A32E00A2D89D /* Build configuration list for PBXNativeTarget "Elephant" */;
+			buildConfigurationList = 99C305742DB1BF28008FBA75 /* Build configuration list for PBXNativeTarget "MacWidgetExtension" */;
 			buildPhases = (
-				39957E082D62A32D00A2D89D /* Sources */,
-				39957E092D62A32D00A2D89D /* Frameworks */,
-				39957E0A2D62A32D00A2D89D /* Resources */,
-				39957E822D62A78300A2D89D /* Embed Foundation Extensions */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				39957E802D62A78300A2D89D /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				39957E0E2D62A32D00A2D89D /* Elephant */,
-			);
-			name = Elephant;
-			packageProductDependencies = (
-			);
-			productName = Elephant;
-			productReference = 39957E0C2D62A32D00A2D89D /* Elephant.app */;
-			productType = "com.apple.product-type.application";
-		};
-		39957E1C2D62A32E00A2D89D /* ElephantTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 39957E342D62A32E00A2D89D /* Build configuration list for PBXNativeTarget "ElephantTests" */;
-			buildPhases = (
-				39957E192D62A32E00A2D89D /* Sources */,
-				39957E1A2D62A32E00A2D89D /* Frameworks */,
-				39957E1B2D62A32E00A2D89D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				39957E1F2D62A32E00A2D89D /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				39957E202D62A32E00A2D89D /* ElephantTests */,
-			);
-			name = ElephantTests;
-			packageProductDependencies = (
-			);
-			productName = ElephantTests;
-			productReference = 39957E1D2D62A32E00A2D89D /* ElephantTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		39957E262D62A32E00A2D89D /* ElephantUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 39957E372D62A32E00A2D89D /* Build configuration list for PBXNativeTarget "ElephantUITests" */;
-			buildPhases = (
-				39957E232D62A32E00A2D89D /* Sources */,
-				39957E242D62A32E00A2D89D /* Frameworks */,
-				39957E252D62A32E00A2D89D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				39957E292D62A32E00A2D89D /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				39957E2A2D62A32E00A2D89D /* ElephantUITests */,
-			);
-			name = ElephantUITests;
-			packageProductDependencies = (
-			);
-			productName = ElephantUITests;
-			productReference = 39957E272D62A32E00A2D89D /* ElephantUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-		39957E6D2D62A78100A2D89D /* ElephantWidgetExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 39957E862D62A78300A2D89D /* Build configuration list for PBXNativeTarget "ElephantWidgetExtension" */;
-			buildPhases = (
-				39957E6A2D62A78100A2D89D /* Sources */,
-				39957E6B2D62A78100A2D89D /* Frameworks */,
-				39957E6C2D62A78100A2D89D /* Resources */,
+				99C3055E2DB1BF27008FBA75 /* Sources */,
+				99C3055F2DB1BF27008FBA75 /* Frameworks */,
+				99C305602DB1BF27008FBA75 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				39957E742D62A78100A2D89D /* ElephantWidget */,
+				99C305652DB1BF27008FBA75 /* MacWidget */,
 			);
-			name = ElephantWidgetExtension;
+			name = MacWidgetExtension;
 			packageProductDependencies = (
 			);
-			productName = ElephantWidgetExtension;
-			productReference = 39957E6E2D62A78100A2D89D /* ElephantWidgetExtension.appex */;
+			productName = MacWidgetExtension;
+			productReference = 99C305622DB1BF27008FBA75 /* MacWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -415,8 +278,8 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1620;
+				LastSwiftUpdateCheck = 1630;
+				LastUpgradeCheck = 1630;
 				TargetAttributes = {
 					398DCF1B2DAC7ABD003363BD = {
 						CreatedOnToolsVersion = 16.2;
@@ -429,19 +292,8 @@
 						CreatedOnToolsVersion = 16.2;
 						TestTargetID = 398DCF1B2DAC7ABD003363BD;
 					};
-					39957E0B2D62A32D00A2D89D = {
-						CreatedOnToolsVersion = 16.2;
-					};
-					39957E1C2D62A32E00A2D89D = {
-						CreatedOnToolsVersion = 16.2;
-						TestTargetID = 39957E0B2D62A32D00A2D89D;
-					};
-					39957E262D62A32E00A2D89D = {
-						CreatedOnToolsVersion = 16.2;
-						TestTargetID = 39957E0B2D62A32D00A2D89D;
-					};
-					39957E6D2D62A78100A2D89D = {
-						CreatedOnToolsVersion = 16.2;
+					99C305612DB1BF27008FBA75 = {
+						CreatedOnToolsVersion = 16.3;
 					};
 				};
 			};
@@ -459,13 +311,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				39957E0B2D62A32D00A2D89D /* Elephant */,
-				39957E1C2D62A32E00A2D89D /* ElephantTests */,
-				39957E262D62A32E00A2D89D /* ElephantUITests */,
-				39957E6D2D62A78100A2D89D /* ElephantWidgetExtension */,
 				398DCF1B2DAC7ABD003363BD /* ElephantMacApp */,
 				398DCF2B2DAC7AC0003363BD /* ElephantMacAppTests */,
 				398DCF352DAC7AC0003363BD /* ElephantMacAppUITests */,
+				99C305612DB1BF27008FBA75 /* MacWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -492,28 +341,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		39957E0A2D62A32D00A2D89D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		39957E1B2D62A32E00A2D89D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		39957E252D62A32E00A2D89D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		39957E6C2D62A78100A2D89D /* Resources */ = {
+		99C305602DB1BF27008FBA75 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -544,28 +372,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		39957E082D62A32D00A2D89D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		39957E192D62A32E00A2D89D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		39957E232D62A32E00A2D89D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		39957E6A2D62A78100A2D89D /* Sources */ = {
+		99C3055E2DB1BF27008FBA75 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -585,25 +392,10 @@
 			target = 398DCF1B2DAC7ABD003363BD /* ElephantMacApp */;
 			targetProxy = 398DCF372DAC7AC0003363BD /* PBXContainerItemProxy */;
 		};
-		398DCF492DAC7AFB003363BD /* PBXTargetDependency */ = {
+		99C305712DB1BF28008FBA75 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 39957E6D2D62A78100A2D89D /* ElephantWidgetExtension */;
-			targetProxy = 398DCF482DAC7AFB003363BD /* PBXContainerItemProxy */;
-		};
-		39957E1F2D62A32E00A2D89D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 39957E0B2D62A32D00A2D89D /* Elephant */;
-			targetProxy = 39957E1E2D62A32E00A2D89D /* PBXContainerItemProxy */;
-		};
-		39957E292D62A32E00A2D89D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 39957E0B2D62A32D00A2D89D /* Elephant */;
-			targetProxy = 39957E282D62A32E00A2D89D /* PBXContainerItemProxy */;
-		};
-		39957E802D62A78300A2D89D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 39957E6D2D62A78100A2D89D /* ElephantWidgetExtension */;
-			targetProxy = 39957E7F2D62A78300A2D89D /* PBXContainerItemProxy */;
+			target = 99C305612DB1BF27008FBA75 /* MacWidgetExtension */;
+			targetProxy = 99C305702DB1BF28008FBA75 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -617,8 +409,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"ElephantMacApp/Preview Content\"";
-				DEVELOPMENT_TEAM = TT4P7FU29T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -628,8 +420,9 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Grinnell.Elephant.ElephantMacApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Medhashree.Elephant.ElephantMacApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -645,8 +438,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"ElephantMacApp/Preview Content\"";
-				DEVELOPMENT_TEAM = TT4P7FU29T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -656,8 +449,9 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Grinnell.Elephant.ElephantMacApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Medhashree.Elephant.ElephantMacApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -670,10 +464,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Grinnell.Elephant.ElephantMacAppTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Medhashree.Elephant.ElephantMacAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -688,10 +483,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Grinnell.Elephant.ElephantMacAppTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Medhashree.Elephant.ElephantMacAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -705,10 +501,11 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Grinnell.Elephant.ElephantMacAppUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Medhashree.Elephant.ElephantMacAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -722,10 +519,11 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Grinnell.Elephant.ElephantMacAppUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Medhashree.Elephant.ElephantMacAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -768,7 +566,9 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 399K2HS5R5;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -829,7 +629,9 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 399K2HS5R5;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -848,241 +650,61 @@
 			};
 			name = Release;
 		};
-		39957E322D62A32E00A2D89D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Elephant/Elephant.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Elephant/Preview Content\"";
-				DEVELOPMENT_TEAM = TT4P7FU29T;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Grinnell.Elephant;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				XROS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Debug;
-		};
-		39957E332D62A32E00A2D89D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Elephant/Elephant.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Elephant/Preview Content\"";
-				DEVELOPMENT_TEAM = TT4P7FU29T;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Grinnell.Elephant;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				XROS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Release;
-		};
-		39957E352D62A32E00A2D89D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Grinnell.ElephantTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Elephant.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Elephant";
-				XROS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Debug;
-		};
-		39957E362D62A32E00A2D89D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Grinnell.ElephantTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Elephant.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Elephant";
-				XROS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Release;
-		};
-		39957E382D62A32E00A2D89D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Grinnell.ElephantUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_TARGET_NAME = Elephant;
-				XROS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Debug;
-		};
-		39957E392D62A32E00A2D89D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Grinnell.ElephantUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_TARGET_NAME = Elephant;
-				XROS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Release;
-		};
-		39957E832D62A78300A2D89D /* Debug */ = {
+		99C305752DB1BF28008FBA75 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = ElephantWidget/ElephantWidget.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_ENTITLEMENTS = MacWidget/MacWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TT4P7FU29T;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ElephantWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = ElephantWidget;
+				INFOPLIST_FILE = MacWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MacWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Grinnell.Elephant.ElephantMacApp.ElephantWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Medhashree.Elephant.ElephantMacApp.MacWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				XROS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Debug;
 		};
-		39957E842D62A78300A2D89D /* Release */ = {
+		99C305762DB1BF28008FBA75 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = ElephantWidget/ElephantWidget.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_ENTITLEMENTS = MacWidget/MacWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TT4P7FU29T;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ElephantWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = ElephantWidget;
+				INFOPLIST_FILE = MacWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MacWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Grinnell.Elephant.ElephantMacApp.ElephantWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Medhashree.Elephant.ElephantMacApp.MacWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				XROS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Release;
 		};
@@ -1125,38 +747,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		39957E312D62A32E00A2D89D /* Build configuration list for PBXNativeTarget "Elephant" */ = {
+		99C305742DB1BF28008FBA75 /* Build configuration list for PBXNativeTarget "MacWidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				39957E322D62A32E00A2D89D /* Debug */,
-				39957E332D62A32E00A2D89D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		39957E342D62A32E00A2D89D /* Build configuration list for PBXNativeTarget "ElephantTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				39957E352D62A32E00A2D89D /* Debug */,
-				39957E362D62A32E00A2D89D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		39957E372D62A32E00A2D89D /* Build configuration list for PBXNativeTarget "ElephantUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				39957E382D62A32E00A2D89D /* Debug */,
-				39957E392D62A32E00A2D89D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		39957E862D62A78300A2D89D /* Build configuration list for PBXNativeTarget "ElephantWidgetExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				39957E832D62A78300A2D89D /* Debug */,
-				39957E842D62A78300A2D89D /* Release */,
+				99C305752DB1BF28008FBA75 /* Debug */,
+				99C305762DB1BF28008FBA75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

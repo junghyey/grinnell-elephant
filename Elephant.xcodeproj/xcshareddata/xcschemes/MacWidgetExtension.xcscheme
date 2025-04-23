@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1620"
-   wasCreatedForAppExtension = "YES"
+   LastUpgradeVersion = "1630"
    version = "2.0">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -16,9 +15,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "39957E6D2D62A78100A2D89D"
-               BuildableName = "ElephantWidgetExtension.appex"
-               BlueprintName = "ElephantWidgetExtension"
+               BlueprintIdentifier = "99C305612DB1BF27008FBA75"
+               BuildableName = "MacWidgetExtension.appex"
+               BlueprintName = "MacWidgetExtension"
                ReferencedContainer = "container:Elephant.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -30,9 +29,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "39957E0B2D62A32D00A2D89D"
-               BuildableName = "Elephant.app"
-               BlueprintName = "Elephant"
+               BlueprintIdentifier = "398DCF1B2DAC7ABD003363BD"
+               BuildableName = "ElephantMacApp.app"
+               BlueprintName = "ElephantMacApp"
                ReferencedContainer = "container:Elephant.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,19 +43,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       shouldAutocreateTestPlan = "YES">
-      <Testables>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "39957E1C2D62A32E00A2D89D"
-               BuildableName = "ElephantTests.xctest"
-               BlueprintName = "ElephantTests"
-               ReferencedContainer = "container:Elephant.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -70,27 +56,16 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
-      <RemoteRunnable
-         runnableDebuggingMode = "1"
-         BundleIdentifier = "com.apple.widgetkit.simulator"
-         RemotePath = "/System/Library/CoreServices/WidgetKit Simulator.app/Contents/MacOS/WidgetKit Simulator">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "39957E6D2D62A78100A2D89D"
-            BuildableName = "ElephantWidgetExtension.appex"
-            BlueprintName = "ElephantWidgetExtension"
+            BlueprintIdentifier = "398DCF1B2DAC7ABD003363BD"
+            BuildableName = "ElephantMacApp.app"
+            BlueprintName = "ElephantMacApp"
             ReferencedContainer = "container:Elephant.xcodeproj">
          </BuildableReference>
-      </RemoteRunnable>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "39957E0B2D62A32D00A2D89D"
-            BuildableName = "Elephant.app"
-            BlueprintName = "Elephant"
-            ReferencedContainer = "container:Elephant.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "_XCWidgetKind"
@@ -121,9 +96,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "39957E0B2D62A32D00A2D89D"
-            BuildableName = "Elephant.app"
-            BlueprintName = "Elephant"
+            BlueprintIdentifier = "398DCF1B2DAC7ABD003363BD"
+            BuildableName = "ElephantMacApp.app"
+            BlueprintName = "ElephantMacApp"
             ReferencedContainer = "container:Elephant.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
