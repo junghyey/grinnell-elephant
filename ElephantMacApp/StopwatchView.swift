@@ -66,8 +66,7 @@ struct StopwatchView: View {
                         startTime = Date().addingTimeInterval( -elapsedTime)
                         isRunning = true
                     },
-                    color: themeManager.curTheme.main_color_2,
-                    textColor: themeManager.textColor(for: themeManager.curTheme.main_color_2))
+                    color: themeManager.curTheme.main_color_2)
                 ElephantButton(
                     buttonText: "Reset",
                     action: {
@@ -75,8 +74,7 @@ struct StopwatchView: View {
                         elapsedTime = 0.0
                         timerString = formatTime(secs: 0)
                     },
-                    color: themeManager.curTheme.main_color_2,
-                    textColor: themeManager.textColor(for: themeManager.curTheme.main_color_2))
+                    color: themeManager.curTheme.main_color_2)
                 ElephantButton(
                     buttonText: "Pause",
                     action: {
@@ -85,8 +83,7 @@ struct StopwatchView: View {
                         elapsedTime += now.timeIntervalSince(startTime)
                         isRunning = false
                     },
-                    color: themeManager.curTheme.main_color_2,
-                    textColor: themeManager.textColor(for: themeManager.curTheme.main_color_2))
+                    color: themeManager.curTheme.main_color_2)
             }
         }
         .frame(width: 500, height: 500)
