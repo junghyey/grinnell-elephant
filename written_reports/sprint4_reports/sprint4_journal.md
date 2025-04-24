@@ -186,6 +186,22 @@ The inline suggesntions were:
 
 
 ### Candice
+1. In CSC 324, which uses of AI have the potential to advance product development and how?
+   - Use of AI is particularly helpful for collaboration, such as summarizing updates or creating documentations. This can potentially avoid us overlooking certain details that we may have updated (or serve as a double check).
+   - The existence of AI as a last resort alleviates stress when encountering deadlines or tough situations, making it feel more okay to spend more time experimenting and debugging.
+   - Use of AI is helpful for debugging and can help us save time, particularly when the bug is rather minor and has little value for learning
+2. In CSC 324, which uses of AI have the potential to support student learning and how?
+   - Use of AI saves time looking up online sources, as keyword searches may not be as effective and may require prior knowledge. For example, without knowing the term "persistent storage", it might take me more time to find out that swift uses @AppStorage and UserDefaults to store variables across interfaces. AI bridges that gap by taking in longer descriptions that might be less accurate and respond based on plausible guesses.
+   - Asking right questions can also yield helpful information, for example, asking AI to compare the similarities and differences between UserDefaults and @AppStorage can be helpful in learning when to use which.
+   - Asking AI for hints or pseudocode can help students think and move forward with development without completely get stuck because they do not have the knowledge to know where to begin with.
+3. In CSC 324, which uses of AI have the potential to undermine student learning and how?
+   - Giving AI a description and asking AI to generate source code, as this hinders students' opportunities to think through the task and goals and write the code themselves.
+   - Asking AI to generate documentation without considering formats may hinder collaboration, for example, a team may agree on a specific format and requirements, but an AI might not be aware and will not be able to meet that expectation.
+4. What are some ethical considerations of using AI in CSC 324?
+   - Overreliance on AI might hinder learning.
+   - There is always the possibility that the code AI creates has undesirable side effects and potentially inefficient, especially if the user is not double checking the AI's output.
+   - AI output is also potentially biased.
+   - Some additional controversies of AI lies in how AI are trained on online materials that are not necessarily approved by original owners, raising problems of consent and copyright infringements.
 
 ### Gabby
    
