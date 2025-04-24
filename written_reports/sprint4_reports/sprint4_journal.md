@@ -113,4 +113,21 @@ Helpful: There are initial comment descriptions for each utility, describing wha
 
 Commit hash:
 Github link:
+
+## Generative AI Experiment 
+***Answer Following Questions***
+1. In CSC 324, which uses of AI have the potential to advance product development and how?
+2. In CSC 324, which uses of AI have the potential to support student learning and how?
+3. In CSC 324, which uses of AI have the potential to undermine student learning and how?
+4. What are some ethical considerations of using AI in CSC 324?
+
+### Hyeyun
+
+
+### Mae
+
+
+### Candice
+
+### Gabby
    
