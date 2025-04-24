@@ -64,26 +64,45 @@
 3. Try purchasing one item (just  UI part)
 4. Navigate to settings and try changing one setting (is UI intuititive)
 5. Try adding task using add task list.
+
 ##### Did they succeed or get stuck?
-- 
+1. He was a bit confused in navigating to the manual, but eventually found it once clicking on the question mark in the top-right corner
+    - Text alignment also came into question but it was more of a nitpicky suggestions (as quoted)
+    - Non-clickable check boxes within the manual page view (either make them as a screenshot image or make them clickable)
+    - Wants more description for the difference between Pomodoro and Stopwatch (hovering over it to get more information)
+1. Professor Wells tried to navigate to add the widget to the desktop but since he's not as familiar with macs, it took a bit more time to open the widget.
+   He attempted to add the widget using the manual instructions but had to navigate back to the app to add it to the laptop widget bar.
+
+2. & 3. Was able to navigate the collectible shop and successfully accessed
+4. Mode changes for light mode are not working and make it unable to read. You can do any themes in dark mode, however. So he asked for changes to the text within light mode to be able to see within any theme setting
+5. Had trouble finding out how to add a new task; the + symbol to add a new task within the custom checklist was confusing.
+   The only way to add the task is with a return and you can only get out of the checklist with esc button on the keyboard.
+   The scale for the time durations should begin at 0. He did like how the time sliders we're able to show what position the user selected easily.
 ##### What feedback did they provide about documentation?
-- 
+~ In the help section, he felt that he wasn't sure what was there for him to read or actually thoroughly go through.
+~ Consistency with going back to home page, there wasn't really a way to go back from the checklist page.
+~ Back and next button for every page view or set the Manual page view to be a scroll view instead (consistency with either scroll view/next page action)
+
+
+  ~ It might be too much information for the first user, there's a lot of context that a first time user wouldn't really understand in reading up to 4 pages
+  ~ He likes the first manual page, and suggested that we change the manual to be a step-by-step introduction for the app (e.g. get the user to make the first task to get familiar with the app) and possibly add sections to the manual to understand what each page's information includes for the user's questions.
 ##### What questions did you ask, and what were the stakeholder's answers?
 
 ***Before***
 
-- What is the first impression when you saw the app? (Confusing? less intuitivie)?
+- What is the first impression when you saw the app? (Confusing? less intuitive)?
+~ Professor Wells stated that he likes the initial view of the app, and then asked what the elephant does, haha
 
-***During***
-
-- Which parts of the UI felt smooth or not working as expected?
-
-***After***
+***After & During***
+- We asked for more feedback on the UI and what was confusing upon first interaction, but he had already answered previously for our documentation feedback questions.
 
 - Was anything unclear or confusing when using the app?
-- Is documentation of the app (manual) too minimal or not enough?
-- Is anything missing that you expected? (like what do you expect widget to do?)
+  ~ Nothing else from what was already mentioned
 
+- Is anything missing that you expected? (like what do you expect widget to do?)
+  ~ He wants the elephant to be more interactive (possibly move around or something when presssed on)
+  ~ Also within shop page view, he'd like to see how many total tokens you have
+  ~ And be able to hover over each item and label the tokens that the avatar costs
 
 ### Meeting 3
 
