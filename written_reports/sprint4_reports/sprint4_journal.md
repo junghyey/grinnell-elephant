@@ -65,9 +65,9 @@
 4. Navigate to settings and try changing one setting (is UI intuititive)
 5. Try adding task using add task list.
 ##### Did they succeed or get stuck?
-- S 
+- 
 ##### What feedback did they provide about documentation?
-- She said a picture or video of how to add widget to the widget bar would be helpful. The tester did not know what even widget bar is.
+- 
 ##### What questions did you ask, and what were the stakeholder's answers?
 
 ***Before***
