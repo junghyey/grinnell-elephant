@@ -122,7 +122,65 @@ Github link:
 4. What are some ethical considerations of using AI in CSC 324?
 
 ### Hyeyun
+Hyeyun's Prompt: **I am doing a project for the Wellness app called Elephant. I am in charge of Manual Page. I am using swift. I have a template struct for each page. Can you create a documentation (like purpose, pre,post conditions) for this struct so that others can understand? Also, suggest internal documentations too:** I attached the code block of ***struct ManualTemplateView***.
 
+AI gave me both top-level documentation (3p) and suggested inline comments. The top level documentation looks like:
+
+/// `ManualTemplateView` is a reusable SwiftUI view component used to create consistent layout pages
+/// in the Elephant wellness app's Manual section. It supports navigation between sequential manual pages,
+/// and optionally provides a return to the home page.
+///
+/// - Purpose:
+///   - To provide a consistent layout wrapper for individual manual pages with navigation and styling support.
+///
+/// - Pre-conditions:
+///   - `content` must be a valid SwiftUI view.
+///   - `currentPageIdentifier` must be a unique string identifier used for accessibility.
+///
+/// - Post-conditions:
+///   - The rendered view will include:
+///     - A home button (if `homePage` is provided)
+///     - A scrollable content view area with the supplied `content`
+///     - Optional navigation buttons to `backPage` and `nextPage`
+///
+/// - Parameters:
+///   - `currentPageIdentifier`: A unique string used for accessibility and view identification.
+///   - `content`: A closure that returns the SwiftUI View representing the main content of the page.
+///   - `backPage`: An optional view to navigate to the previous page.
+///   - `nextPage`: An optional view to navigate to the next page.
+///   - `homePage`: An optional view to return to the home screen.
+
+
+The inline suggesntions were: 
+1. Adding Example usage:
+/// ## Example Usage:
+/// ```swift
+/// ManualTemplateView(currentPageIdentifier: "welcomePage") {
+///     Text("Welcome to the Elephant App!")
+/// } backPage: {
+///     AnyView(IntroPageView())
+/// } nextPage: {
+///     AnyView(SetupPageView())
+/// } homePage: {
+///     AnyView(HomeScreenView())
+/// }
+/// ```
+2. Make consistent and aligned
+
+#### Questions
+1. In CSC 324, which uses of AI have the potential to advance product development and how?
+   - The documentation generation would save some time if the intention of the app is clear.
+   - Moreover, debugging the git issue could be also helpful for entry-level developers not used to github
+   - If students have stress, they can use it for venting or suggest ways to how to talk about this issue with other peers.
+2. In CSC 324, which uses of AI have the potential to support student learning and how?
+   - Since there are so many resources out there, using AI that provides sources/references to the answers can support student learning by providing what sources they should look for.
+   - Moreover, there can be languages that are unpopular, so if a student wants to learn, there may be limited resources. AI can help with the learning by helping students to learn unpopular langauge through LLM model.
+3. In CSC 324, which uses of AI have the potential to undermine student learning and how?
+   - The worrying part is that AI hallucinations. It is possible that student trust the unverified information and apply that to their understanding. This could harm the student's learning overall.
+   - Moreover, generating the entire code is not helpful since the student won't learn anything.
+4. What are some ethical considerations of using AI in CSC 324?
+   - Since most of students are developing an app, user cases are important. It is possible that there can be bias in the model due to their training data. We should be careful with the answers we get and make sure our app is not biased.
+   - In terms of fairness, it would be unfair for a groupmate to use AI for their entire work while others try hard and learn. That would undermine others' work.
 
 ### Mae
 
