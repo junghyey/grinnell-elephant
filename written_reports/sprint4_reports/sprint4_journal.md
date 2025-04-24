@@ -51,7 +51,38 @@
 
 
 ### Meeting 2
+#### Who you met with
+##### Name, occupation, and other relevant information about the stakeholder
+- Professor Wells, a Statistics Professor at Grinnell
+##### Date and time of the stakeholder meeting
+- 04/24/2025 1:00pm -1:30pm
+##### Description of the test session and feedback
+##### What was their behavior of interacting with the documentation?
+1. Find and read the manual or help section
+  - In the last page of the manual, try adding widget based on the instruction
+2. Try to access and browse the collectible shop
+3. Try purchasing one item (just  UI part)
+4. Navigate to settings and try changing one setting (is UI intuititive)
+5. Try adding task using add task list.
+##### Did they succeed or get stuck?
+- S 
+##### What feedback did they provide about documentation?
+- She said a picture or video of how to add widget to the widget bar would be helpful. The tester did not know what even widget bar is.
+##### What questions did you ask, and what were the stakeholder's answers?
 
+***Before***
+
+- What is the first impression when you saw the app? (Confusing? less intuitivie)?
+
+***During***
+
+- Which parts of the UI felt smooth or not working as expected?
+
+***After***
+
+- Was anything unclear or confusing when using the app?
+- Is documentation of the app (manual) too minimal or not enough?
+- Is anything missing that you expected? (like what do you expect widget to do?)
 
 
 ### Meeting 3
