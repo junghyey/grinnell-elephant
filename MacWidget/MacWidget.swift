@@ -8,7 +8,7 @@
 /**
  References:
  https://youtu.be/jucm6e9M6LA?si=TkMWXPY481b8FCKu - main explaination starts at 12:15
-https://www.youtube.com/watch?v=Z_m5d8RS4xU
+ https://www.youtube.com/watch?v=Z_m5d8RS4xU
  */
 
 import WidgetKit
@@ -54,76 +54,100 @@ struct MacWidgetEntryView : View {
 
     var body: some View {
         ZStack {
+            Color("aqua")
+                .ignoresSafeArea()
+            
             VStack {
+                
+                // Header HStack
                 HStack{
                     Text("🐘🧳")
                         .font(.headline)
 
                     Text("Elephant: A Wellness Trunk")
                         .font(.headline)
-                        .foregroundColor(.white)
                     
                     Spacer()
                     
                     // TODO: replace with buttons
                     Text("⛭")
                         .font(.headline)
-                        .foregroundColor(.white)
                     Text("?")
                         .font(.headline)
-                        .foregroundColor(.white)
 
                 } // HStack for widget headers
 
                 
                 Spacer()
                 
-                ZStack {
+                // Main 2 Frames
+                VStack {
+                    // Frame 1 - Timer
                     RoundedRectangle(cornerRadius: 20)
                         .fill(Color.orange)
-                        .overlay(Text(entry.configuration.currentAvatar))
+                        .overlay(
+                            VStack{
+                                // Avatar first
+                                Image(entry.configuration.currentAvatar)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(alignment: .center)
+                                
+                                // timer buttons and indicators
+                                Button(action: {
+                                    // TODO: add stopwatch or timer
+                                }) {
+                                    Text("Start \(entry.configuration.timer)")
+                                        .foregroundStyle(.black)
+                                }
+                                
+                                // time left or encouraging phrase
+                                Text(entry.configuration.timeLeft)
+                                    .foregroundStyle(.black)
+                            } // first frame - inner
+                        ) // first frame - outer
                         .frame(alignment: .top)
-
-                    VStack {
-                        Text("🐘")
-                            .frame(height: 50)
-                        RoundedRectangle(cornerRadius: 20)
-                            .fill(Color.white)
-                            .overlay(Text(entry.date, style: .time))
-                            .frame(height: 120, alignment: .bottom)
-                        
-                        Text("You got this ♡")
-                            .font(.headline)
-
-                    }
-                } // first frame
-                
-                ZStack {
+                    
+                    // Frame 2 - Checklist(s) & Token(s)
                     RoundedRectangle(cornerRadius: 20)
-                        .fill(Color.white)
-                        .overlay(Text("Task Checklist"))
-//                        .frame(alignment: .top)
-
-                    HStack{
-                        RoundedRectangle(cornerRadius: 20)
-                            .fill(Color.white)
-                            .overlay(Text("[] task 1, \n task 2, \n task 3"))
-                            .frame(alignment: .leading)
-                        
-                        Circle()
-                            .fill(Color.yellow)
-                            .overlay(Text("\(entry.configuration.tokens)"))
-                            .frame(alignment: .trailing)
-                    }
-                } // second frame
-//                .frame(height: 100)
-//                Text("time:")
-                Text(entry.date, style: .time)
-            } // VStack - vertically align all sections
+                        .fill(Color.orange)
+                        .overlay(
+                            HStack{
+                                // TODO: probably make checklist scrollable (this tiny vstack = scroll)
+                                VStack (alignment: .leading) {
+                                    Text("Checklist")
+                                        .font(.title)
+                                        .foregroundStyle(.black)
+                                    
+                                    // TODO: replace with chosen list
+                                    Text("[] task 1, \n[] task 2, \n[] task 3")
+                                        .frame(alignment: .leading)
+                                        .multilineTextAlignment(.leading)
+                                } // checklist title and list
+                                .padding(.leading, 20)
+                                .padding(.vertical, 12)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                
+                                // Token
+                                Circle()
+                                    .fill(Color.yellow)
+                                    .frame(width: 70, height: 70, alignment: .trailing)
+                                    .overlay(
+                                        Text("\(entry.configuration.tokens)")
+                                            .font(.caption)
+                                            .foregroundColor(.black)
+                                            .multilineTextAlignment(.center)
+                                    )
+                            } // side by side token & checklist
+                                .padding(.trailing, 20)
+                        ) // second frame - outer
+                } // VStack - main 2 frames
+            } // VStack - vertically align all 3 sections
         } // main ZStack
         .preferredColorScheme(Mode ? .dark : .light)
-    }
-}
+        
+    } // entire view
+} // MacWidgetEntryView
 
 struct MacWidget: Widget {
     let kind: String = "MacWidget"
@@ -131,7 +155,7 @@ struct MacWidget: Widget {
     var body: some WidgetConfiguration {
         AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) { entry in
             MacWidgetEntryView(entry: entry)
-                .containerBackground(.pink.gradient, for: .widget) // change widget background color here
+//                .containerBackground(.pink.gradient, for: .widget) // can change widget background color here
         }
     }
 }
