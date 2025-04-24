@@ -51,8 +51,58 @@
 
 
 ### Meeting 2
+#### Who you met with
+##### Name, occupation, and other relevant information about the stakeholder
+- Professor Wells, a Statistics Professor at Grinnell
+##### Date and time of the stakeholder meeting
+- 04/24/2025 1:00pm -1:30pm
+##### Description of the test session and feedback
+##### What was their behavior of interacting with the documentation?
+1. Find and read the manual or help section
+  - In the last page of the manual, try adding widget based on the instruction
+2. Try to access and browse the collectible shop
+3. Try purchasing one item (just  UI part)
+4. Navigate to settings and try changing one setting (is UI intuititive)
+5. Try adding task using add task list.
+
+##### Did they succeed or get stuck?
+1. He was a bit confused in navigating to the manual, but eventually found it once clicking on the question mark in the top-right corner
+    - Text alignment also came into question but it was more of a nitpicky suggestions (as quoted)
+    - Non-clickable check boxes within the manual page view (either make them as a screenshot image or make them clickable)
+    - Wants more description for the difference between Pomodoro and Stopwatch (hovering over it to get more information)
+1. Professor Wells tried to navigate to add the widget to the desktop but since he's not as familiar with macs, it took a bit more time to open the widget.
+   He attempted to add the widget using the manual instructions but had to navigate back to the app to add it to the laptop widget bar.
+
+2. & 3. Was able to navigate the collectible shop and successfully accessed
+4. Mode changes for light mode are not working and make it unable to read. You can do any themes in dark mode, however. So he asked for changes to the text within light mode to be able to see within any theme setting
+5. Had trouble finding out how to add a new task; the + symbol to add a new task within the custom checklist was confusing.
+   The only way to add the task is with a return and you can only get out of the checklist with esc button on the keyboard.
+   The scale for the time durations should begin at 0. He did like how the time sliders we're able to show what position the user selected easily.
+##### What feedback did they provide about documentation?
+~ In the help section, he felt that he wasn't sure what was there for him to read or actually thoroughly go through.
+~ Consistency with going back to home page, there wasn't really a way to go back from the checklist page.
+~ Back and next button for every page view or set the Manual page view to be a scroll view instead (consistency with either scroll view/next page action)
 
 
+  ~ It might be too much information for the first user, there's a lot of context that a first time user wouldn't really understand in reading up to 4 pages
+  ~ He likes the first manual page, and suggested that we change the manual to be a step-by-step introduction for the app (e.g. get the user to make the first task to get familiar with the app) and possibly add sections to the manual to understand what each page's information includes for the user's questions.
+##### What questions did you ask, and what were the stakeholder's answers?
+
+***Before***
+
+- What is the first impression when you saw the app? (Confusing? less intuitive)?
+~ Professor Wells stated that he likes the initial view of the app, and then asked what the elephant does, haha
+
+***After & During***
+- We asked for more feedback on the UI and what was confusing upon first interaction, but he had already answered previously for our documentation feedback questions.
+
+- Was anything unclear or confusing when using the app?
+  ~ Nothing else from what was already mentioned
+
+- Is anything missing that you expected? (like what do you expect widget to do?)
+  ~ He wants the elephant to be more interactive (possibly move around or something when presssed on)
+  ~ Also within shop page view, he'd like to see how many total tokens you have
+  ~ And be able to hover over each item and label the tokens that the avatar costs
 
 ### Meeting 3
 
@@ -113,4 +163,99 @@ Helpful: There are initial comment descriptions for each utility, describing wha
 
 Commit hash:
 Github link:
+
+## Generative AI Experiment 
+***Answer Following Questions***
+1. In CSC 324, which uses of AI have the potential to advance product development and how?
+2. In CSC 324, which uses of AI have the potential to support student learning and how?
+3. In CSC 324, which uses of AI have the potential to undermine student learning and how?
+4. What are some ethical considerations of using AI in CSC 324?
+
+### Hyeyun
+Hyeyun's Prompt: **I am doing a project for the Wellness app called Elephant. I am in charge of Manual Page. I am using swift. I have a template struct for each page. Can you create a documentation (like purpose, pre,post conditions) for this struct so that others can understand? Also, suggest internal documentations too:** I attached the code block of ***struct ManualTemplateView***.
+
+AI gave me both top-level documentation (3p) and suggested inline comments. The top level documentation looks like:
+
+```
+/// `ManualTemplateView` is a reusable SwiftUI view component used to create consistent layout pages
+/// in the Elephant wellness app's Manual section. It supports navigation between sequential manual pages,
+/// and optionally provides a return to the home page.
+///
+/// - Purpose:
+///   - To provide a consistent layout wrapper for individual manual pages with navigation and styling support.
+///
+/// - Pre-conditions:
+///   - `content` must be a valid SwiftUI view.
+///   - `currentPageIdentifier` must be a unique string identifier used for accessibility.
+///
+/// - Post-conditions:
+///   - The rendered view will include:
+///     - A home button (if `homePage` is provided)
+///     - A scrollable content view area with the supplied `content`
+///     - Optional navigation buttons to `backPage` and `nextPage`
+///
+/// - Parameters:
+///   - `currentPageIdentifier`: A unique string used for accessibility and view identification.
+///   - `content`: A closure that returns the SwiftUI View representing the main content of the page.
+///   - `backPage`: An optional view to navigate to the previous page.
+///   - `nextPage`: An optional view to navigate to the next page.
+///   - `homePage`: An optional view to return to the home screen.
+```
+
+The inline suggesntions were: 
+1. Adding Example usage:
+
+```
+/// ## Example Usage:
+/// ```swift
+/// ManualTemplateView(currentPageIdentifier: "welcomePage") {
+///     Text("Welcome to the Elephant App!")
+/// } backPage: {
+///     AnyView(IntroPageView())
+/// } nextPage: {
+///     AnyView(SetupPageView())
+/// } homePage: {
+///     AnyView(HomeScreenView())
+/// }
+/// ```
+```
+2. Make consistent and aligned
+
+#### Questions
+1. In CSC 324, which uses of AI have the potential to advance product development and how?
+   - The documentation generation would save some time if the intention of the app is clear.
+   - Moreover, debugging the git issue could be also helpful for entry-level developers not used to github
+   - If students have stress, they can use it for venting or suggest ways to how to talk about this issue with other peers.
+2. In CSC 324, which uses of AI have the potential to support student learning and how?
+   - Since there are so many resources out there, using AI that provides sources/references to the answers can support student learning by providing what sources they should look for.
+   - Moreover, there can be languages that are unpopular, so if a student wants to learn, there may be limited resources. AI can help with the learning by helping students to learn unpopular langauge through LLM model.
+3. In CSC 324, which uses of AI have the potential to undermine student learning and how?
+   - The worrying part is that AI hallucinations. It is possible that student trust the unverified information and apply that to their understanding. This could harm the student's learning overall.
+   - Moreover, generating the entire code is not helpful since the student won't learn anything.
+4. What are some ethical considerations of using AI in CSC 324?
+   - Since most of students are developing an app, user cases are important. It is possible that there can be bias in the model due to their training data. We should be careful with the answers we get and make sure our app is not biased.
+   - In terms of fairness, it would be unfair for a groupmate to use AI for their entire work while others try hard and learn. That would undermine others' work.
+
+### Mae
+
+
+### Candice
+1. In CSC 324, which uses of AI have the potential to advance product development and how?
+   - Use of AI is particularly helpful for collaboration, such as summarizing updates or creating documentations. This can potentially avoid us overlooking certain details that we may have updated (or serve as a double check).
+   - The existence of AI as a last resort alleviates stress when encountering deadlines or tough situations, making it feel more okay to spend more time experimenting and debugging.
+   - Use of AI is helpful for debugging and can help us save time, particularly when the bug is rather minor and has little value for learning
+2. In CSC 324, which uses of AI have the potential to support student learning and how?
+   - Use of AI saves time looking up online sources, as keyword searches may not be as effective and may require prior knowledge. For example, without knowing the term "persistent storage", it might take me more time to find out that swift uses @AppStorage and UserDefaults to store variables across interfaces. AI bridges that gap by taking in longer descriptions that might be less accurate and respond based on plausible guesses.
+   - Asking right questions can also yield helpful information, for example, asking AI to compare the similarities and differences between UserDefaults and @AppStorage can be helpful in learning when to use which.
+   - Asking AI for hints or pseudocode can help students think and move forward with development without completely get stuck because they do not have the knowledge to know where to begin with.
+3. In CSC 324, which uses of AI have the potential to undermine student learning and how?
+   - Giving AI a description and asking AI to generate source code, as this hinders students' opportunities to think through the task and goals and write the code themselves.
+   - Asking AI to generate documentation without considering formats may hinder collaboration, for example, a team may agree on a specific format and requirements, but an AI might not be aware and will not be able to meet that expectation.
+4. What are some ethical considerations of using AI in CSC 324?
+   - Overreliance on AI might hinder learning.
+   - There is always the possibility that the code AI creates has undesirable side effects and potentially inefficient, especially if the user is not double checking the AI's output.
+   - AI output is also potentially biased.
+   - Some additional controversies of AI lies in how AI are trained on online materials that are not necessarily approved by original owners, raising problems of consent and copyright infringements.
+
+### Gabby
    
