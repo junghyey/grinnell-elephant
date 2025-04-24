@@ -14,20 +14,37 @@ on:
       - main
 
 jobs:
- build:
+  build:
     runs-on: macos-latest
     steps:
-    - name: Checkout action on code
-      uses: actions/checkout@v4
-    - name: Set Xcode version
-      run: sudo xcode-select --switch /Applications/Xcode_16.2.app
-    - name: Show current version of Xcode
-      run: xcodebuild -version
-    - name: List all test targets
-      run: xcodebuild -list -project Elephant.xcodeproj
-    - name: Build app  
-      run: xcodebuild build -scheme Elephant -project Elephant.xcodeproj -destination 'platform=macOS' CODE_SIGN_IDENTITY= CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
-    - name: Run UI Tests
-      run: xcodebuild test -scheme ElephantUITests -project Elephant.xcodeproj -destination 'platform=macOS' CODE_SIGN_IDENTITY= CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
-     
-      
+      - name: Checkout action on code
+        uses: actions/checkout@v4
+
+      - name: Set Xcode version
+        run: sudo xcode-select --switch /Applications/Xcode_16.2.app
+
+      - name: Show current version of Xcode
+        run: xcodebuild -version
+
+      - name: List all test targets
+        run: xcodebuild -list -project Elephant.xcodeproj
+
+      - name: Build app  
+        run: |
+          xcodebuild build \
+          -scheme ElephantMacApp \
+          -project Elephant.xcodeproj \
+          -destination 'platform=macOS' \
+          CODE_SIGN_IDENTITY= \
+          CODE_SIGNING_REQUIRED=NO \
+          CODE_SIGNING_ALLOWED=NO
+
+      - name: Run UI Tests
+        run: |
+          xcodebuild test \
+          -scheme ElephantMacAppUITests \
+          -project Elephant.xcodeproj \
+          -destination 'platform=macOS' \
+          CODE_SIGN_IDENTITY= \
+          CODE_SIGNING_REQUIRED=NO \
+          CODE_SIGNING_ALLOWED=NO
