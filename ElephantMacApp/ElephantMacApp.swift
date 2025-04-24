@@ -10,13 +10,13 @@ import SwiftUI
 @main
 struct ElephantMacApp: App {
     @StateObject private var taskListStorage = TaskListStorage()
-    @StateObject private var settingsModel = SettingsModel()
+    @StateObject var themeManager = ThemeManager()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(taskListStorage)//defines storage for task list upon app build
-                .environmentObject(settingsModel)//sets settings mode and theme background upon app build
+                .environmentObject(themeManager)//sets settings mode and theme background upon app build
         }
         .windowResizability(.contentSize)
         .defaultSize(width: 500, height: 500)

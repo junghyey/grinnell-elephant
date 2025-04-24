@@ -85,7 +85,6 @@ struct ElephantButton: View {
 //                )
         }
         .buttonStyle(PlainButtonStyle())
-        .background(DefaultColors.main_color_1)
     }
 }
 

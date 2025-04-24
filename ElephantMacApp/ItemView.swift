@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ItemView: View {
+    @EnvironmentObject var themeManager: ThemeManager
     
     let item: ShopItem
     @State var showConfirmation = false
@@ -19,10 +20,10 @@ struct ItemView: View {
                     HStack {
                         NavigationLink(destination: ShopMainPageView()) {
                             RoundedRectangle(cornerRadius: 10)
-                                .foregroundStyle(DefaultColors.main_color_2)
+                                .foregroundStyle(themeManager.curTheme.main_color_2)
                                 .frame(width: 50, height: 30)
                                 .overlay(
-                                    Text("Back").foregroundColor(DefaultColors.background))
+                                    Text("Back").foregroundColor(themeManager.curTheme.background))
                         }
                         .buttonStyle(PlainButtonStyle())
                         .padding(10)
@@ -34,7 +35,7 @@ struct ItemView: View {
                     }
                     ZStack{
                         Circle()
-                            .foregroundStyle(DefaultColors.background)
+                            .foregroundStyle(themeManager.curTheme.background)
                             .frame(width: 300)
                         Image(item.imageName)
                             .resizable()
@@ -49,7 +50,7 @@ struct ItemView: View {
                         showConfirmation = true
                     }){
                         RoundedRectangle(cornerRadius: 15)
-                            .foregroundStyle(DefaultColors.main_color_2)
+                            .foregroundStyle(themeManager.curTheme.main_color_2)
                             .frame(width: 150, height: 50)
                             .overlay{
                                 Text("Buy")
@@ -66,7 +67,7 @@ struct ItemView: View {
             }
             .frame(width: 500, height: 500)
             .padding(10)
-            .background(DefaultColors.main_color_1)
+            .background(themeManager.curTheme.main_color_1)
             
             if(showConfirmation) {
                 ElephantConfirmationDialogue(

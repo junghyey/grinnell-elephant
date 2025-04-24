@@ -16,7 +16,8 @@
 import SwiftUI
 
 struct StopwatchView: View {
-
+    
+    @EnvironmentObject var themeManager: ThemeManager
     // whether the timer is running or not
     @State private var isRunning: Bool = false
     // timer start time
@@ -65,7 +66,7 @@ struct StopwatchView: View {
                         startTime = Date().addingTimeInterval( -elapsedTime)
                         isRunning = true
                     },
-                    color: DefaultColors.main_color_2)
+                    color: themeManager.curTheme.main_color_2)
                 ElephantButton(
                     buttonText: "Reset",
                     action: {
@@ -73,7 +74,7 @@ struct StopwatchView: View {
                         elapsedTime = 0.0
                         timerString = formatTime(secs: 0)
                     },
-                    color: DefaultColors.main_color_2)
+                    color: themeManager.curTheme.main_color_2)
                 ElephantButton(
                     buttonText: "Pause",
                     action: {
@@ -82,12 +83,12 @@ struct StopwatchView: View {
                         elapsedTime += now.timeIntervalSince(startTime)
                         isRunning = false
                     },
-                    color: DefaultColors.main_color_2)
+                    color: themeManager.curTheme.main_color_2)
             }
         }
         .frame(width: 500, height: 500)
         .padding(10)
-        .background(DefaultColors.main_color_1)
+        .background(themeManager.curTheme.main_color_1)
         .accessibilityIdentifier("shopMainPageView")
     }
 }

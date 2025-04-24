@@ -30,6 +30,7 @@ import SwiftUI
 struct ManualTemplateView<Content: View>:  View {
     @AppStorage("mode") private var Mode: Bool = false
     @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject var themeManager: ThemeManager
     //Variables
     var currentPageIdentifier: String
     var content: Content
@@ -62,7 +63,7 @@ struct ManualTemplateView<Content: View>:  View {
                         NavigationLink(destination: homePage) {
                             Image(systemName: "house.fill")
                                 .font(.title2)
-                                .foregroundColor(DefaultColors.main_color_3)
+                                .foregroundColor(themeManager.curTheme.main_color_3)
                                 .accessibilityIdentifier("homeButton")
                                 .allowsHitTesting(true)
                                 //nopadding
@@ -72,7 +73,7 @@ struct ManualTemplateView<Content: View>:  View {
                 }//HStack
                 
                 .padding()
-                .background(DefaultColors.main_color_1)
+                .background(themeManager.curTheme.background)
                 
                 // Scrollable content area
                 ScrollView {
@@ -85,18 +86,18 @@ struct ManualTemplateView<Content: View>:  View {
                         Color.clear
                             .accessibilityElement(children: .combine)
                             .accessibilityIdentifier(currentPageIdentifier)
-                            .shadow(color: DefaultColors.shadow_1.opacity(0.2), radius: 8, x: 0, y: 4)
+                            .shadow(color: themeManager.curTheme.shadow_1.opacity(0.2), radius: 8, x: 0, y: 4)
                     )
                     .id(currentPageIdentifier)
                 }//ScrollView
-                .background(DefaultColors.background)
+                .background(themeManager.curTheme.background)
                 // Footer stack with navigation buttons
                 HStack {
                     if let backPage = backPage {
                         NavigationLink(destination: backPage) {
                             Image(systemName: "arrow.left.circle.fill")
                                 .font(.title)
-                                .foregroundColor(DefaultColors.main_color_2)
+                                .foregroundColor(themeManager.curTheme.main_color_2)
                                 .accessibilityIdentifier("backButton")
                                 .allowsHitTesting(true)
                         }//NavigationLink
@@ -109,7 +110,7 @@ struct ManualTemplateView<Content: View>:  View {
                         NavigationLink(destination: nextPage) {
                             Image(systemName: "arrow.right.circle.fill")
                                 .font(.title)
-                                .foregroundColor(DefaultColors.main_color_2)
+                                .foregroundColor(themeManager.curTheme.main_color_2)
                                 .accessibilityIdentifier("nextButton")
                                 .allowsHitTesting(true)
                         }//NavigationLink
@@ -118,7 +119,7 @@ struct ManualTemplateView<Content: View>:  View {
                 }//HStack
                 .padding(.horizontal)
                 .padding(.bottom, 20)
-                .background(DefaultColors.background)
+                .background(themeManager.curTheme.background)
             }
             .preferredColorScheme(Mode ? .dark : .light)
             .frame(width: 500, height: 500)
@@ -282,11 +283,12 @@ struct ChecklistItem: Identifiable {
  https://www.hackingwithswift.com/quick-start/swiftui/building-a-menu-using-list
  */
 struct CheckBoxView: View {
+    @EnvironmentObject var themeManager: ThemeManager
     let isChecked: Bool
     
     var body: some View {
         Image(systemName: isChecked ? "checkmark.square.fill" : "square")
-            .foregroundColor(isChecked ?  DefaultColors.main_color_3: Color.secondary)
+            .foregroundColor(isChecked ?  themeManager.curTheme.main_color_3: Color.secondary)
     }//var body
 }//CheckBoxView
 /*

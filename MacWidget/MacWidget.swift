@@ -48,6 +48,7 @@ struct SimpleEntry: TimelineEntry {
 }
 
 struct MacWidgetEntryView : View {
+    
     @AppStorage("mode") private var Mode: Bool = false //global mode setting
     var entry: Provider.Entry
 

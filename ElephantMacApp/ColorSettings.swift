@@ -31,6 +31,8 @@ class ThemeManager: ObservableObject {
             switch curThemeKey {
                 case "blackWhite":
                     return BlackWhite()
+                case "benny":
+                    return Benny()
                 default:
                     return DefaultElephant()
             }
@@ -59,6 +61,15 @@ struct BlackWhite: ThemeProtocol {
     var background: Color    { return Color(red: 244/255, green: 243/255, blue: 238/255) }
     var shadow_1: Color      { return Color(red: 70/255, green: 63/255, blue: 58/255) }
     var shadow_2: Color      { return Color.black }
+}
+
+struct Benny: ThemeProtocol {
+    var main_color_1: Color {return Color(hex: "4B90CD")}
+    var main_color_2: Color {return Color(hex: "094F98")}
+    var main_color_3: Color {return Color(hex: "B8D2F0")}
+    var background: Color {return Color(hex: "F3A3B5")}
+    var shadow_1: Color {return Color(hex: "19171A")}
+    var shadow_2: Color {return Color(hex: "F0CC34")}
 }
 
 //enum PaletteType: String, CaseIterable {
