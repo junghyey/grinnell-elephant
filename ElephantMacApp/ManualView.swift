@@ -30,7 +30,6 @@ import SwiftUI
 struct ManualTemplateView<Content: View>:  View {
     @AppStorage("mode") private var Mode: Bool = false
     @Environment(\.dismiss) private var dismiss
-    @EnvironmentObject var themeManager: ThemeManager
     //Variables
     var currentPageIdentifier: String
     var content: Content
@@ -63,7 +62,7 @@ struct ManualTemplateView<Content: View>:  View {
                         NavigationLink(destination: homePage) {
                             Image(systemName: "house.fill")
                                 .font(.title2)
-                                .foregroundColor(themeManager.curTheme.main_color_3)
+                                .foregroundColor(DefaultColors.main_color_3)
                                 .accessibilityIdentifier("homeButton")
                                 .allowsHitTesting(true)
                                 //nopadding
@@ -73,7 +72,7 @@ struct ManualTemplateView<Content: View>:  View {
                 }//HStack
                 
                 .padding()
-                .background(themeManager.curTheme.background)
+                .background(DefaultColors.main_color_1)
                 
                 // Scrollable content area
                 ScrollView {
@@ -86,18 +85,18 @@ struct ManualTemplateView<Content: View>:  View {
                         Color.clear
                             .accessibilityElement(children: .combine)
                             .accessibilityIdentifier(currentPageIdentifier)
-                            .shadow(color: themeManager.curTheme.shadow_1.opacity(0.2), radius: 8, x: 0, y: 4)
+                            .shadow(color: DefaultColors.shadow_1.opacity(0.2), radius: 8, x: 0, y: 4)
                     )
                     .id(currentPageIdentifier)
                 }//ScrollView
-                .background(themeManager.curTheme.background)
+                .background(DefaultColors.background)
                 // Footer stack with navigation buttons
                 HStack {
                     if let backPage = backPage {
                         NavigationLink(destination: backPage) {
                             Image(systemName: "arrow.left.circle.fill")
                                 .font(.title)
-                                .foregroundColor(themeManager.curTheme.main_color_2)
+                                .foregroundColor(DefaultColors.main_color_2)
                                 .accessibilityIdentifier("backButton")
                                 .allowsHitTesting(true)
                         }//NavigationLink
@@ -110,7 +109,7 @@ struct ManualTemplateView<Content: View>:  View {
                         NavigationLink(destination: nextPage) {
                             Image(systemName: "arrow.right.circle.fill")
                                 .font(.title)
-                                .foregroundColor(themeManager.curTheme.main_color_2)
+                                .foregroundColor(DefaultColors.main_color_2)
                                 .accessibilityIdentifier("nextButton")
                                 .allowsHitTesting(true)
                         }//NavigationLink
@@ -119,7 +118,7 @@ struct ManualTemplateView<Content: View>:  View {
                 }//HStack
                 .padding(.horizontal)
                 .padding(.bottom, 20)
-                .background(themeManager.curTheme.background)
+                .background(DefaultColors.background)
             }
             .preferredColorScheme(Mode ? .dark : .light)
             .frame(width: 500, height: 500)
@@ -283,12 +282,11 @@ struct ChecklistItem: Identifiable {
  https://www.hackingwithswift.com/quick-start/swiftui/building-a-menu-using-list
  */
 struct CheckBoxView: View {
-    @EnvironmentObject var themeManager: ThemeManager
     let isChecked: Bool
     
     var body: some View {
         Image(systemName: isChecked ? "checkmark.square.fill" : "square")
-            .foregroundColor(isChecked ?  themeManager.curTheme.main_color_3: Color.secondary)
+            .foregroundColor(isChecked ?  DefaultColors.main_color_3: Color.secondary)
     }//var body
 }//CheckBoxView
 /*
@@ -398,11 +396,11 @@ struct FourthPageView:View{
                                   .fontWeight(.bold)
 
                               VStack(alignment: .leading, spacing: 10) { // Steps block
-                                  Text("(1) Navigate to the widget bar")
-                                  Text("(2) Scroll down to “Edit Widget”")
+                                  Text("(1) Open Notification Center, click the date and \n time in the menu bar or swipe left with two fingers from the right edge of the trackpad. ")
+                                  Text("(2) Scroll down to “Edit Widgets”")
                                   (
-                                      Text("(3) Add ") +
-                                      Text("“Elephant: A Wellness Trunk”").bold() +
+                                      Text("(3) In the widget gallery, search for a widget. Or click: ") +
+                                      Text("“ElephantMacApp”").bold() +
                                       Text(" as a widget")
                                   )
                                   Text("(4) Enjoy!")
