@@ -2,7 +2,7 @@
 //  PomodoroView.swift
 //  Elephant
 //
-//  Created by Pruneda Turcios, Gabriela (Gabby) on 4/23/25.
+//  Created by Pruneda Turcios, Gabriela
 //
 
 import SwiftUI
