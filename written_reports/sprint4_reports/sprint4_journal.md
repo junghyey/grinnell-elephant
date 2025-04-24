@@ -126,6 +126,7 @@ Hyeyun's Prompt: **I am doing a project for the Wellness app called Elephant. I 
 
 AI gave me both top-level documentation (3p) and suggested inline comments. The top level documentation looks like:
 
+```
 /// `ManualTemplateView` is a reusable SwiftUI view component used to create consistent layout pages
 /// in the Elephant wellness app's Manual section. It supports navigation between sequential manual pages,
 /// and optionally provides a return to the home page.
@@ -149,10 +150,12 @@ AI gave me both top-level documentation (3p) and suggested inline comments. The 
 ///   - `backPage`: An optional view to navigate to the previous page.
 ///   - `nextPage`: An optional view to navigate to the next page.
 ///   - `homePage`: An optional view to return to the home screen.
-
+```
 
 The inline suggesntions were: 
 1. Adding Example usage:
+
+```
 /// ## Example Usage:
 /// ```swift
 /// ManualTemplateView(currentPageIdentifier: "welcomePage") {
@@ -165,6 +168,7 @@ The inline suggesntions were:
 ///     AnyView(HomeScreenView())
 /// }
 /// ```
+```
 2. Make consistent and aligned
 
 #### Questions
