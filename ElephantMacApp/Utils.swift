@@ -15,6 +15,8 @@ import SwiftUI
 //      color: color of button background
 
 struct ElephantConfirmationDialogue: View {
+    @EnvironmentObject var themeManager: ThemeManager
+    
     let title: String
     let message: String
     let confirmButtonText: String
@@ -35,12 +37,14 @@ struct ElephantConfirmationDialogue: View {
                 ElephantButton(
                     buttonText: "Cancel",
                     action: onConfirm,
-                    color: DefaultColors.background
+                    color: themeManager.curTheme.background,
+                    textColor: themeManager.textColor(for: themeManager.curTheme.background)
                 )
                 ElephantButton(
                     buttonText: "Confirm",
                     action: onConfirm,
-                    color: DefaultColors.main_color_1
+                    color: themeManager.curTheme.background,
+                    textColor: themeManager.textColor(for: themeManager.curTheme.background)
                 )
             }
         }
@@ -63,17 +67,20 @@ struct ElephantConfirmationDialogue: View {
 //      buttonImage: string, name of image displayed on button
 //      action: function, what happens once you click on button
 //      color: color of button background
+//      textColor: color of button text
 
 struct ElephantButton: View {
     let buttonText: String
     let buttonImage: String = "mammal-elephant"
     let action: () -> Void
     let color: Color
+    let textColor: Color
     
     var body: some View{
         Button (action: action) {
             Text("\(buttonText)")
                 .fontWeight(.bold)
+                .foregroundColor(textColor)
                 .padding()
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
