@@ -121,6 +121,7 @@ struct PomodoroView: View{
     }
 }
 
-#Preview {
-    PomodoroView()
-}
+// since it's not working yet I temporarily commented out the preview in case it causes more issues
+//#Preview {
+//    PomodoroView()
+//}
