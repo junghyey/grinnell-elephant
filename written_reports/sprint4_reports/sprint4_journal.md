@@ -237,7 +237,19 @@ The inline suggesntions were:
    - In terms of fairness, it would be unfair for a groupmate to use AI for their entire work while others try hard and learn. That would undermine others' work.
 
 ### Mae
-
+1. In CSC 324, which uses of AI have the potential to advance product development and how?
+   - If well informed, AI could be used as an aid in revising the sprint report or journal. This would have to include us providing the AI model with the report so it can suggest the changes.
+   - Given a function with a simple documentation, but sufficient examples, it could assist in figuring out the intent of the function.
+2. In CSC 324, which uses of AI have the potential to support student learning and how?
+   - After utilizing documentation and tutorials, it can then be used as a last resort to further explain or even help find a starting point.
+   - It can be helpful when working with UI for formatting issues. Using AI to help solve formatting issues with minimal code can save time and place focus on further development. This can help avoid getting hung up on a minor detail that is difficult to format and help you understand it for next time.
+3. In CSC 324, which uses of AI have the potential to undermine student learning and how?
+   - If a developer is prompting AI to write starter code for the program, it can hinder their knowledge of the basic building blocks of the language.
+   - While AI answers can be somewhat correct, blindly trusting and an over-reliance on it can produce hidden bugs. In these cases, the developer wouldn't have built the knowledge or ability to debug the issue.
+   - If there is a bug or the developer is having trouble starting the code, going straight to AI rather than following video or written tutorials or other forms of documentation, takes away from the thinking process. 
+4. What are some ethical considerations of using AI in CSC 324?
+   - Using AI at any point is harmful to the environment. In 324, developers should be aware of the environmental impacts of using AI extensively in the coding process.
+   - As a developer, following and complying with the code of ethics is vital. Developers should have a sense of what information should not be input with prompts.
 
 ### Candice
 1. In CSC 324, which uses of AI have the potential to advance product development and how?
