@@ -9,7 +9,7 @@
  References:
  https://youtu.be/jucm6e9M6LA?si=TkMWXPY481b8FCKu - main explaination starts at 12:15
  https://www.youtube.com/watch?v=Z_m5d8RS4xU
- ChatGPT - line 120-132
+ ChatGPT - line 115-146
  */
 
 import WidgetKit
