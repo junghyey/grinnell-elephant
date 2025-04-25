@@ -84,7 +84,7 @@ struct MacWidgetEntryView : View {
                 VStack {
                     // Frame 1 - Timer
                     RoundedRectangle(cornerRadius: 20)
-                        .fill(Color.orange)
+                        .fill(DefaultColors.main_color_1)
                         .overlay(
                             VStack{
                                 // Avatar first
@@ -110,7 +110,7 @@ struct MacWidgetEntryView : View {
                     
                     // Frame 2 - Checklist(s) & Token(s)
                     RoundedRectangle(cornerRadius: 20)
-                        .fill(Color.orange)
+                        .fill(DefaultColors.main_color_1)
                         .overlay(
                             HStack{
                                 // TODO: probably make checklist scrollable (this tiny vstack = scroll)
@@ -130,7 +130,7 @@ struct MacWidgetEntryView : View {
                                 
                                 // Token
                                 Circle()
-                                    .fill(Color.yellow)
+                                    .fill(Color.orange)
                                     .frame(width: 70, height: 70, alignment: .trailing)
                                     .overlay(
                                         Text("\(entry.configuration.tokens)")
@@ -155,7 +155,7 @@ struct MacWidget: Widget {
     var body: some WidgetConfiguration {
         AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) { entry in
             MacWidgetEntryView(entry: entry)
-//                .containerBackground(.pink.gradient, for: .widget) // can change widget background color here
+                .containerBackground(DefaultColors.background, for: .widget) // can change widget background color here
         }
     }
 }
