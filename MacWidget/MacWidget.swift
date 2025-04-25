@@ -9,6 +9,7 @@
  References:
  https://youtu.be/jucm6e9M6LA?si=TkMWXPY481b8FCKu - main explaination starts at 12:15
  https://www.youtube.com/watch?v=Z_m5d8RS4xU
+ ChatGPT - line 115-146
  */
 
 import WidgetKit
@@ -47,6 +48,7 @@ struct SimpleEntry: TimelineEntry {
     let configuration: ConfigurationAppIntent
 }
 
+// Edits for widget UI
 struct MacWidgetEntryView : View {
     
     @AppStorage("mode") private var Mode: Bool = false //global mode setting
@@ -84,7 +86,7 @@ struct MacWidgetEntryView : View {
                 VStack {
                     // Frame 1 - Timer
                     RoundedRectangle(cornerRadius: 20)
-                        .fill(Color.orange)
+                        .fill(DefaultColors.main_color_1)
                         .overlay(
                             VStack{
                                 // Avatar first
@@ -109,8 +111,9 @@ struct MacWidgetEntryView : View {
                         .frame(alignment: .top)
                     
                     // Frame 2 - Checklist(s) & Token(s)
+                    // ChatGPT utilized from line 120-132 to help clean up format
                     RoundedRectangle(cornerRadius: 20)
-                        .fill(Color.orange)
+                        .fill(DefaultColors.main_color_1)
                         .overlay(
                             HStack{
                                 // TODO: probably make checklist scrollable (this tiny vstack = scroll)
@@ -130,7 +133,7 @@ struct MacWidgetEntryView : View {
                                 
                                 // Token
                                 Circle()
-                                    .fill(Color.yellow)
+                                    .fill(Color.orange)
                                     .frame(width: 70, height: 70, alignment: .trailing)
                                     .overlay(
                                         Text("\(entry.configuration.tokens)")
@@ -141,6 +144,7 @@ struct MacWidgetEntryView : View {
                             } // side by side token & checklist
                                 .padding(.trailing, 20)
                         ) // second frame - outer
+                    
                 } // VStack - main 2 frames
             } // VStack - vertically align all 3 sections
         } // main ZStack
@@ -155,7 +159,7 @@ struct MacWidget: Widget {
     var body: some WidgetConfiguration {
         AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) { entry in
             MacWidgetEntryView(entry: entry)
-//                .containerBackground(.pink.gradient, for: .widget) // can change widget background color here
+                .containerBackground(DefaultColors.background, for: .widget) // can change widget background color here
         }
     }
 }

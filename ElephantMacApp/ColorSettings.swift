@@ -18,23 +18,25 @@ protocol ThemeProtocol {
     var shadow_1: Color {get}
     var shadow_2: Color {get}
     
-    func textColor(for background: Color, isDarkMode: Bool) -> Color
-    var primaryTextColor: Color {get}
-    var secondaryTextColor: Color {get}
+//    func textColor(for background: Color, isDarkMode: Bool) -> Color
+//    var primaryTextColor: Color {get}
+//    var secondaryTextColor: Color {get}
 }
 
 class ThemeManager: ObservableObject {
-    @AppStorage("curTheme") private var curThemeKey: String = "defaultElephant" {
+    @AppStorage("mode") private var Mode: Bool = false // default light mode
+    
+    @AppStorage("curTheme") var curThemeKey: String = "defaultElephant" {
             didSet {
                 objectWillChange.send()
             }
         }
     
-    @AppStorage("isDarkMode") private var isDarkMode: Bool = false{
-        didSet{
-            objectWillChange.send()
-        }
-    }
+//    @AppStorage("isDarkMode") private var isDarkMode: Bool = false{
+//        didSet{
+//            objectWillChange.send()
+//        }
+//    }
     
     // takes the string name of theme protocol and return the correct settings
     var curTheme: ThemeProtocol {
@@ -53,35 +55,61 @@ class ThemeManager: ObservableObject {
         curThemeKey = name
     }
     
-    //toggles dark mode
-    func toggleDarkMode(){
-        isDarkMode.toggle()
+    // Add to ThemeManager class
+    var currentThemeName: String {
+        return curThemeKey
     }
-    
-    //gets current mode
-    func isDarkModeEnabled() -> Bool {
-        return isDarkMode
-    }
-    
-    //appropriate text color given selected theme background
-    func textColor(for background: Color) -> Color {
-        return curTheme.textColor(for: background, isDarkMode: isDarkMode)
-    }
-}
 
-//default settings for text based on defaultTheme
-extension ThemeProtocol{
-    func textColor(for background: Color, isDarkMode: Bool) -> Color {
-        if isDarkMode{
+    func textColor(for background: Color) -> Color {
+        // Check if we're in dark mode
+        if Mode {
+            // For light backgrounds in dark mode, use dark text
+            if background == curTheme.background &&
+               (curThemeKey == "defaultElephant" || curThemeKey == "blackWhite") {
+                return .black
+            }
+            // For other backgrounds in dark mode, use white text
             return .white
-        }else{
+        } else {
+            // In light mode
+            // For dark backgrounds, use white text
+            if background == curTheme.main_color_2 && curThemeKey == "benny" {
+                return .white
+            }
+            // For light backgrounds, use black text
             return .black
         }
     }
     
-    var primaryTextColor: Color {return .primary}
-    var secondaryTextColor: Color {return .secondary}
+//    //toggles dark mode
+//    func toggleDarkMode(){
+//        isDarkMode.toggle()
+//    }
+//    
+//    //gets current mode
+//    func isDarkModeEnabled() -> Bool {
+//        return isDarkMode
+//    }
+//    
+//    //appropriate text color given selected theme background
+//    func textColor(for background: Color) -> Color {
+//        return curTheme.textColor(for: background, isDarkMode: isDarkMode)
+//    }
 }
+//
+////default settings for text based on defaultTheme
+//extension ThemeProtocol{
+//    func textColor(for background: Color, isDarkMode: Bool) -> Color {
+//        if isDarkMode{
+//            return .white
+//        }else{
+//            return .black
+//        }
+//    }
+//    
+//    var primaryTextColor: Color {return .primary}
+//    var secondaryTextColor: Color {return .secondary}
+//}
 
 // color themes
 struct DefaultElephant: ThemeProtocol {
@@ -92,17 +120,17 @@ struct DefaultElephant: ThemeProtocol {
     var shadow_1: Color {return Color(red: 254/255, green: 254/255, blue: 227/255)}
     var shadow_2: Color {return Color(red: 44/255, green: 110/255, blue: 73/255)}
     
-    var primaryTextColor: Color { return Color(red: 50/255, green: 50/255, blue: 50/255)}
-    var secondaryTextColor: Color { return Color(red: 90/255, green: 90/255, blue: 90/255)}
-    
-    //dynamic text re-coloring based on mode
-    func textColor(for background: Color, isDarkMode: Bool) -> Color {
-        if isDarkMode{ //since the mode is in dark mode, we make changes with lighter text
-            return Color(red: 240/255, green: 240/255, blue: 240/255)
-        }else{//since the mode must be in light mode, we make changes to darken the text
-            return Color(red: 40/255, green: 40/255, blue: 40/255)
-        }
-    }
+//    var primaryTextColor: Color { return Color(red: 50/255, green: 50/255, blue: 50/255)}
+//    var secondaryTextColor: Color { return Color(red: 90/255, green: 90/255, blue: 90/255)}
+//    
+//    //dynamic text re-coloring based on mode
+//    func textColor(for background: Color, isDarkMode: Bool) -> Color {
+//        if isDarkMode{ //since the mode is in dark mode, we make changes with lighter text
+//            return Color(red: 240/255, green: 240/255, blue: 240/255)
+//        }else{//since the mode must be in light mode, we make changes to darken the text
+//            return Color(red: 40/255, green: 40/255, blue: 40/255)
+//        }
+//    }
 }
 
 struct BlackWhite: ThemeProtocol {
@@ -113,18 +141,18 @@ struct BlackWhite: ThemeProtocol {
     var shadow_1: Color      { return Color(red: 70/255, green: 63/255, blue: 58/255) }
     var shadow_2: Color      { return Color.black }
     
-    //High contrast text for black and white theme
-    var primaryTextColor: Color { return .black}
-    var secondaryTextColor: Color { return Color(white: 0.3)}
-    
-    //dynamic text re-coloring based on mode
-    func textColor(for background: Color, isDarkMode: Bool) -> Color {
-        if isDarkMode{ //since the mode is in dark mode, we make changes with lighter text
-            return .white
-        }else{//since the mode must be in light mode, we make changes to darken the text
-            return .black
-        }
-    }
+//    //High contrast text for black and white theme
+//    var primaryTextColor: Color { return .black}
+//    var secondaryTextColor: Color { return Color(white: 0.3)}
+//    
+//    //dynamic text re-coloring based on mode
+//    func textColor(for background: Color, isDarkMode: Bool) -> Color {
+//        if isDarkMode{ //since the mode is in dark mode, we make changes with lighter text
+//            return .white
+//        }else{//since the mode must be in light mode, we make changes to darken the text
+//            return .black
+//        }
+//    }
 }
 
 struct Benny: ThemeProtocol {
@@ -138,27 +166,27 @@ struct Benny: ThemeProtocol {
     var primaryTextColor: Color { return Color(hex: "19171A")} //dark gray color
     var secondaryTextColor: Color { return Color(hex: "094F98")} //dark blue color
     
-    //dynamic text re-coloring based on mode
-    func textColor(for background: Color, isDarkMode: Bool) -> Color {
-        if isDarkMode{
-            if background == self.background{ //pink background in dark mode needs even darker text
-                return Color(hex: "19171A")
-            }
-            // we'll want lighter text for blue or deeper color backgrounds
-            if background == self.main_color_1 || background == self.main_color_2 || background == self.main_color_3 {
-                return .white
-            }
-            return .white //defaults to white text
-        }else{//we're in light mode
-            if background == self.background { //on pink
-                return Color(hex: "19171A")
-            }
-            if background == self.main_color_2{//on dark blue
-                return .white
-            }
-            return Color(hex: "19171A")//defaults to dark text
-        }
-    }
+//    //dynamic text re-coloring based on mode
+//    func textColor(for background: Color, isDarkMode: Bool) -> Color {
+//        if isDarkMode{
+//            if background == self.background{ //pink background in dark mode needs even darker text
+//                return Color(hex: "19171A")
+//            }
+//            // we'll want lighter text for blue or deeper color backgrounds
+//            if background == self.main_color_1 || background == self.main_color_2 || background == self.main_color_3 {
+//                return .white
+//            }
+//            return .white //defaults to white text
+//        }else{//we're in light mode
+//            if background == self.background { //on pink
+//                return Color(hex: "19171A")
+//            }
+//            if background == self.main_color_2{//on dark blue
+//                return .white
+//            }
+//            return Color(hex: "19171A")//defaults to dark text
+//        }
+//    }
 }
 
 //enum PaletteType: String, CaseIterable {
