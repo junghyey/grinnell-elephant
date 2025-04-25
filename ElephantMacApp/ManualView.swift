@@ -27,6 +27,39 @@ import SwiftUI
  https://docs.swift.org/swift-book/documentation/the-swift-programming-language/classesandstructures/
  https://stackoverflow.com/questions/55213078/what-is-the-difference-between-swift-structs-and-objective-c-structs
  */
+
+/**
+ `ManualTemplateView` is a reusable SwiftUI component that defines a consistent layout for pages
+ within the Elephant app’s interactive manual. It provides a scrollable content area, navigation
+ controls, and an optional home button — making it ideal for onboarding flows or multi-step guides.
+
+ ## Purpose:
+ - Provide a consistent and styled layout wrapper for manual/help pages.
+ - Support step-based navigation and return-to-home functionality.
+
+ ## Behavior:
+ - Displays a scrollable content view passed as a closure.
+ - Shows a home button if `homePage` is provided.
+ - Shows back/next navigation buttons if `backPage` or `nextPage` are provided.
+ - Automatically applies accessibility identifiers and dynamic theming.
+
+ ## Parameters:
+ - `currentPageIdentifier`: A unique string identifier for accessibility and view recognition.
+ - `content`: A closure that returns the SwiftUI view displayed in the content area.
+ - `backPage`: An optional view to navigate back to the previous manual page.
+ - `nextPage`: An optional view to navigate forward to the next manual page.
+ - `homePage`: An optional view that serves as a return point to the app’s homepage.
+
+ ## Preconditions:
+ - `content` must be a valid SwiftUI `View`.
+ - `currentPageIdentifier` must be unique within the manual flow.
+
+ ## Postconditions:
+ - The rendered page includes:
+    - A header with an optional home button.
+    - Scrollable manual content.
+    - Navigation buttons (if applicable) for linear page traversal.
+ */
 struct ManualTemplateView<Content: View>:  View {
     @AppStorage("mode") private var Mode: Bool = false
     @Environment(\.dismiss) private var dismiss
