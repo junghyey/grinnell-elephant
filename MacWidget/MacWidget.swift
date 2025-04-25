@@ -47,6 +47,7 @@ struct SimpleEntry: TimelineEntry {
     let configuration: ConfigurationAppIntent
 }
 
+// Edits for widget UI
 struct MacWidgetEntryView : View {
     
     @AppStorage("mode") private var Mode: Bool = false //global mode setting

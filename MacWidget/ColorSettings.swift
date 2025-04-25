@@ -72,34 +72,6 @@ struct Benny: ThemeProtocol {
     var shadow_2: Color {return Color(hex: "F0CC34")}
 }
 
-//enum PaletteType: String, CaseIterable {
-//    case defaultElephant
-//    case blackWhite
-//    
-//    var curPalette: ColorPalette {
-//        switch self {
-//        case .defaultElephant:
-//            return ColorPalette(
-//                main_color_1: Color(red: 255/255, green: 201/255, blue: 185/255),
-//                main_color_2: Color(red: 193/255, green: 150/255, blue: 109/255),
-//                main_color_3: Color(red: 76/255, green: 149/255, blue: 108/255),
-//                background: Color(red: 254/255, green: 254/255, blue: 227/255),
-//                shadow_1: Color(red: 254/255, green: 254/255, blue: 227/255),
-//                shadow_2: Color(red: 44/255, green: 110/255, blue: 73/255)
-//            )
-//        case .blackWhite:
-//            return ColorPalette(
-//                main_color_1: Color(red: 224/255, green: 175/255, blue: 160/255),
-//                main_color_2: Color(red: 188/255, green: 184/255, blue: 177/255),
-//                main_color_3: Color(red: 138/255, green: 129/255, blue: 124/255),
-//                background: Color(red: 244/255, green: 243/255, blue: 238/255),
-//                shadow_1: Color(red: 70/255, green: 63/255, blue: 58/255),
-//                shadow_2: Color(red: 0/255, green: 0/255, blue: 0/255)
-//            )
-//        }
-//    }
-//}
-
 // default color palette
 struct DefaultColors {
     static let main_color_1 = Color(red: 255/255, green: 201/255, blue: 185/255)
