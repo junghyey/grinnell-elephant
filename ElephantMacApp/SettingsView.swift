@@ -8,100 +8,129 @@
 import SwiftUI
 
 struct SettingsView: View {
-
     @Environment(\.presentationMode) var presentationMode //navigating to different presentation based on command
-    @EnvironmentObject var storage: TaskListStorage
-    @State private var showingChecklist = false
+    @EnvironmentObject var storage: TaskListStorage //local storage for checklist
+    @State private var showingChecklist = false //default set to false until user opens the checklist
     
-    @AppStorage("ThemeSelection") private var selectedTheme: ThemeSelection = .Default
-    @EnvironmentObject var themeManager: ThemeManager
-    //utilizing dark mode state withing ThemeManager
-    private var Mode: Bool{
-        themeManager.isDarkModeEnabled()
-    }
-    @AppStorage("colorTheme") var colorTheme: String = "classic" // classic as the default value
-    @AppStorage("mode") var mode: String = "pomodoro"
+    @EnvironmentObject var themeManager: ThemeManager //found within ColorSettings, manages global theme settings
+    @AppStorage("mode") private var Mode: Bool = false // default light mode
     
-    @AppStorage("workDuration") private var selectedWorkTime: Double = 25 //default for pomodoro
-    @AppStorage("shortBreakTime") private var shortBreakTime: Double = 5 //default for pomodoro
-    @AppStorage("longBreakTime") private var longBreakTime: Double = 15//default for pomodoro
-    @AppStorage("reminderTime") private var selectedReminderTime: Double = 30 //default for stopwatch
+    @AppStorage("mode") var mode: String = "pomodoro" //set default to pomodoro
     
+    //Default time settings for Pomodoro and Stopwatch widget integration
+    @AppStorage("workDuration") private var selectedWorkTime: Double = 25
+    @AppStorage("shortBreakTime") private var shortBreakTime: Double = 5
+    @AppStorage("longBreakTime") private var longBreakTime: Double = 15
+    @AppStorage("reminderTime") private var selectedReminderTime: Double = 30
     
-        // Todo:
-            // figure out what are the settings and the buttons and things
-            // figure out where to store the info being changed, maybe a json with all the configurations
-            // figure out how to update settings when user clicks a configuration buttons (make settings global)
-            //add dynamic text changse and make sure checklist view works
     var body: some View {
-        ScrollView{
-            VStack(alignment: .leading, spacing: 20){
-                /*dismisses current Settings View for previous view of homepage, navigating back to ContentView*/
-                ElephantButton(buttonText: "< Back", action:{ presentationMode.wrappedValue.dismiss()}, color: themeManager.curTheme.background, textColor: themeManager.textColor(for: themeManager.curTheme.background))
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
                 
-                //Utilized ElephantButton struct from Utils
-                sectionTitle(text: "Modes")
-                ElephantButton(buttonText: Mode ? "Dark Mode" : "Light Mode", action:{ themeManager.toggleDarkMode()}, color: Mode ? .gray.opacity(0.6) : .gray.opacity(0.3), textColor: Mode ? .white : .black)
-
-                sectionTitle(text: "Themes")
-                HStack(spacing: 15){//make changes to theme selection with ThemeManager
-                    ForEach(ThemeSelection.allCases){
-                        theme in ElephantButton(buttonText: theme.rawValue.capitalized, action: {
-                            selectedTheme = theme //initializes the selectedTheme based on user selection
-                            //update Theme globally with ThemeManager in ColorSettings
-                            switch theme{ //switch cases for user selection
-                            case .Default:
-                                themeManager.setTheme(named: "default")
-                            case .BW:
-                                themeManager.setTheme(named: "blackWhite")
-                            case .Benny:
-                                themeManager.setTheme(named: "benny")
-                            }
-                        }, color: selectedTheme == theme ? themeManager.curTheme.background : Color.gray.opacity(0.2), textColor: selectedTheme == theme ? themeManager.textColor(for: themeManager.curTheme.background) : (Mode ? .white : .black))//sets the selectedTheme as the current page theme
-                        
-                    }
-                    
-                }
+                backButton // Back button
                 
-                /*Button navigation to sheet that shows larger custom checklist*/
-                sectionTitle(text: "Checklist")
-                ElephantButton(buttonText: "Custom list", action: { showingChecklist = true
-                }, color: themeManager.curTheme.main_color_2, textColor: themeManager.textColor(for: themeManager.curTheme.main_color_2)) //navigates to showingChecklist at the bottom of ScrollView
+                modeSection // Mode selection
                 
+                themeSection // Theme selection
                 
-               sectionTitle(text: "Time Settings", centered: true)
-            
-                timeSection(title: "Pomodoro" , sliders: [ //Pomodoro slider timers
-                    ("Work Duration", $selectedWorkTime, 20, 60, 5),
-                    ("Short Break Duration", $shortBreakTime, 5, 30, 5),
-                    ("Long Break Duration" , $longBreakTime, 15, 30, 5)
-                ])
+                checklistSection // Checklist button
                 
-                timeSection(title: "Stopwatch", sliders: [ //Stopwatch slider reminders
-                    ("Reminder Intervals", $selectedReminderTime, 20, 120, 10)
-                ])
+                sectionTitle(text: "Time Settings", centered: true)
+                // Pomodoro time settings
+                pomodoroTimeSection
+                // Stopwatch time settings
+                stopwatchTimeSection
                 
                 Spacer()
             }
-        }//end of ScrollView
-        .sheet(isPresented: $showingChecklist){ //once add custom checklist has been selected, showingChecklist = true
-            NavigationView{
-                CheckListView()//navigates to checklist view further down
-                    .environmentObject(storage) //stores task list into local taskList
-            }
-            .frame(width: 500, height: 500) //sheet size
-            .presentationDetents([.height(500)])
-            
         }
-        
+        .sheet(isPresented: $showingChecklist) { //custom list pop-up
+            NavigationView {
+                CheckListView() //calls on CheckList view to appear on user command
+                    .environmentObject(storage)
+            }
+            .frame(width: 500, height: 500) //frames pop-up sheet
+        }
         .padding()
-        .preferredColorScheme(Mode ? .dark : .light)
-        .background(themeManager.curTheme.background)
-        .frame(width: 500, height: 500)
+        .preferredColorScheme(Mode ? .dark : .light) //based on user selection
+        .background(themeManager.curTheme.background) //based on user selection
+        .frame(width: 500, height: 500) //frames scroll view
     }
     
-    //seperate sectionTitle function for setting headliners
-    func sectionTitle(text: String, centered: Bool = false) -> some View{
+    //re-usable back button, calls presentationMode to go "back" to previous
+    private var backButton: some View {
+        ElephantButton(buttonText: "Back", action: {
+            presentationMode.wrappedValue.dismiss()
+        }, color: themeManager.curTheme.main_color_1)
+    }
+    
+    //mode section Button that chooses between light and dark mode, applying the mode globally
+    private var modeSection: some View {
+        VStack(alignment: .leading) {
+            sectionTitle(text: "Modes")
+            ElephantButton(buttonText: Mode ? "Dark Mode" : "Light Mode", action: {
+                Mode.toggle()
+            }, color: Mode ? .gray.opacity(0.7) : .gray.opacity(0.2))
+        }
+    }
+    
+    //Includes all current theme options
+    //Utilizes ElephantButton from Utils for theme selection
+    private var themeSection: some View {
+        VStack(alignment: .leading) {
+            sectionTitle(text: "Themes")
+            HStack(spacing: 15) {
+                // Create buttons for each theme
+                //Default elephant theme
+                ElephantButton(
+                    buttonText: "Default",
+                    action: { themeManager.setTheme(named: "defaultElephant") },
+                    color: themeManager.curThemeKey == "defaultElephant" ?
+                    themeManager.curTheme.main_color_1 : Color.gray.opacity(0.2))
+                //Black and White theme
+                ElephantButton(
+                    buttonText: "Black & White",
+                    action: { themeManager.setTheme(named: "blackWhite") },
+                    color: themeManager.curThemeKey == "blackWhite" ?
+                    themeManager.curTheme.main_color_1 : Color.gray.opacity(0.2))
+                //Benny the Cow theme
+                ElephantButton(
+                    buttonText: "Benny",
+                    action: { themeManager.setTheme(named: "benny") },
+                    color: themeManager.curThemeKey == "benny" ?
+                    themeManager.curTheme.main_color_1 : Color.gray.opacity(0.2))
+            }
+        }
+    }
+    
+    //Button for add new custom checklist
+    private var checklistSection: some View {
+        VStack(alignment: .leading) {
+            sectionTitle(text: "Checklist")
+            ElephantButton(buttonText: "Custom list", action: {
+                showingChecklist = true
+            }, color: themeManager.curTheme.main_color_2)
+        }
+    }
+    
+    // Displays Pomodoro time settings and sliders
+    private var pomodoroTimeSection: some View {
+        timeSection(title: "Pomodoro", sliders: [
+            ("Work Duration", $selectedWorkTime, 20, 60, 5),
+            ("Short Break Duration", $shortBreakTime, 5, 30, 5),
+            ("Long Break Duration", $longBreakTime, 15, 30, 5)
+        ])
+    }
+    
+    //displays stopwatch time settings for reminder intervals
+    private var stopwatchTimeSection: some View {
+        timeSection(title: "Stopwatch", sliders: [
+            ("Reminder Intervals", $selectedReminderTime, 20, 120, 10)
+        ])
+    }
+    
+    //reusable sectionTitle for various section headers
+    func sectionTitle(text: String, centered: Bool = false) -> some View {
         Text(text)
             .font(.title2)
             .fontWeight(.bold)
@@ -109,234 +138,183 @@ struct SettingsView: View {
             .padding()
             .frame(maxWidth: .infinity, alignment: centered ? .center : .leading)
     }
-    
-    //seperate timeSection frame to condense lines of code
-    func timeSection(title: String, sliders: [(String, Binding<Double>, Double, Double, Double)]) -> some View{
-        VStack(alignment: .leading, spacing: 10){
-            sectionTitle(text: title)// Pomodoro or Stopwatch
-            ForEach(0..<sliders.count, id: \.self){ index in
-                let time_set = sliders[index] //time settings array
-                HStack{
-                    Text(time_set.0) //Work Duration, Short break duration, and reminder intervals
+    //displays time section for both pomodoro and stopwatch settings
+    func timeSection(title: String, sliders: [(String, Binding<Double>, Double, Double, Double)]) -> some View {
+        VStack(alignment: .leading, spacing: 10) {
+            sectionTitle(text: title)
+            ForEach(0..<sliders.count, id: \.self) { index in
+                let time_set = sliders[index]
+                HStack {
+                    Text(time_set.0)
                         .font(.title3)
                         .fontWeight(.thin)
                         .fontDesign(.rounded)
                     
                     Spacer()
-                    //displays currently selected time to user
+                    //displays user currently selected time above each slider
                     Text("Current Setting: \(Int(time_set.1.wrappedValue)) min")
                         .font(.headline)
                         .foregroundColor(themeManager.curTheme.main_color_2)
-                }
+                }//calls customSlider based on interval ranges
                 customSlider(selectedTime: time_set.1, minTime: time_set.2, maxTime: time_set.3, interval: time_set.4)
-                //creates custom slider given the selected time section
             }
         }
     }
 }//bottom of SettingsView
 
-
-//only utilized for selectedTheme within SettingsView, ThemeManager is utilized for everything else
-enum ThemeSelection: String, CaseIterable, Identifiable{
-    case Default //default theme setting
-    case BW //Black and White theme setting
-    case Benny //Benny character theme setting
-    
-    var id: String{self.rawValue} //initializes var id for theme selection
-    
-    //different color themes and access DefaultColors in Utils
-    var colors:[Color]{
-        switch self{
-        case .Default:
-            return [DefaultColors.main_color_1, DefaultColors.main_color_2, DefaultColors.main_color_3, DefaultColors.background, DefaultColors.shadow_1, DefaultColors.shadow_2]
-        case .BW:
-            return[Color(hex: "343434"), Color(hex: "FFFFFF"), Color(hex: "000000"), Color(hex: "C0C0C0")]
-        case .Benny:
-            return [Color(hex: "4B90CD"),Color(hex: "094F98"), Color(hex: "B8D2F0"), Color(hex: "F3A3B5"), Color(hex: "19171A"), Color(hex: "F0CC34")]
-            
-        }
-    }
-    
-}
-
-//Mode Selection button between light and dark mode
-struct ModeSelection: View{
-    @AppStorage("mode") private var Mode: Bool = false //sets default mode
-    
-    var body: some View{
-        Button(action:{
-            Mode.toggle() //to select dark mode
-        }){
-            HStack{
-                Image(systemName: Mode ? "moon.fill": "sun.max.fill")
-                    .foregroundColor(Mode ? .yellow : .blue)
-                Text(Mode ? "Dark Mode" : "Light Mode")
-                    .foregroundColor(Mode ? .white : .black)
-                    .fontWeight(.medium)
-            }
-            .padding()
-            .background(RoundedRectangle(cornerRadius: 10).fill(Mode ? Color.gray.opacity(0.3) : Color.gray.opacity(0.1)))
-            
-        }
-    }
-}
-
-//Checklist struct that appears for users to make a local taskList within Settings and stored locally
-// use in the widget functionality for task completion, adding to overall tokens
-struct CheckListView: View{
-    @Environment(\.dismiss) private var dismiss
-    @EnvironmentObject var storage: TaskListStorage
-    @EnvironmentObject var themeManager: ThemeManager
-    @State private var newTask: String = "" //initial string Task
-    @State private var localTasks: [TaskItem] = [] //create a list of tasks stored locally
-    @State private var hasChanged: Bool = false //tracks if any changes were made to the checklist
-    
+//ChecklistView for custom checklist
+struct CheckListView: View {
+    @AppStorage("mode") private var Mode: Bool = false // default light mode
+    //variables for task list storage and array of task items defined
+    @Environment(\.dismiss) private var dismiss //used for dismissing current presentation
+    @EnvironmentObject var storage: TaskListStorage //defined storage
+    @EnvironmentObject var themeManager: ThemeManager //defined within scope for theme changes
+    @State private var newTask: String = "" //default empty task
+    @State private var localTasks: [TaskItem] = [] //array of locally stored tasks
+    @State private var hasChanged: Bool = false //checks if the task list has any changes
     
     var body: some View {
-            VStack(spacing: 16) {
-                Spacer()
-                //First Checklist
-                Text("Checklist #1") //section title for the checklist
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .fontDesign(.rounded)
-                    .padding()
-                    .frame(maxWidth: .infinity, alignment: .leading)
+        VStack(spacing: 16) {
+            Spacer()
+            
+            //displays first default checklist
+            Text("Checklist #1")
+                .font(.title2)
+                .fontWeight(.bold)
+                .fontDesign(.rounded)
+                .padding()
+                .frame(maxWidth: .infinity, alignment: .leading)
 
-                List{
-                    //Displays current task list
-                    if localTasks.isEmpty {
-                        Text("No tasks yet!")//Default message for empty task list
-                            .foregroundColor(themeManager.curTheme.main_color_2)
-                            .padding(10)
-                            .listRowBackground(themeManager.curTheme.background)
-                    }else{//if there aren't any initialized tasks
-                        ForEach(localTasks){ task in
-                            HStack{//Allows user to check off their tasks within settings
-                                Image(systemName: task.isCompleted ? "checkmark.square.fill" : "square")//checkboxes for tasks within user view
-                                    .foregroundColor(task.isCompleted ? themeManager.curTheme.main_color_2: themeManager.curTheme.main_color_3)
-                                    .onTapGesture { //calls on function to complete task
-                                        if let index = localTasks.firstIndex(where: {$0.id == task.id}){
-                                            localTasks[index].isCompleted.toggle() //marks completed task as such
-                                            hasChanged = true //tracks changes made to task list
-                                        }
-                                    }
-                                Text(task.title) //Adds task to the current custom list, saves upon user 'Save'
-                                    .strikethrough(task.isCompleted)
-                                    .foregroundColor(task.isCompleted ? themeManager.curTheme.main_color_2: themeManager.curTheme.main_color_3)
-                            }
-                            
-                        }
-                        //once the user checks off/strikes through a task, that task is removed from the local server
-                        .onDelete{ indexSet in
-                            indexSet.forEach{ index in
-                                localTasks.remove(at: index)
-                                hasChanged = true
-                            }
-                        }
-                    }
-                    //Adding a new task prompt, regenerates after user input
-                    HStack{
-                        Image(systemName: "plus")
-                            .foregroundColor(themeManager.curTheme.main_color_1)
-                        TextField("Add new task...", text: $newTask)
-                            .textFieldStyle(PlainTextFieldStyle())
-                            .onSubmit{
-                                addNewTask() //adds new task to the localtask list and displays it on user end
-                            }
-                    }
-                }
-                .listStyle(PlainListStyle())
-                    
-                Spacer()
-
-                //Cancel & Save button at the bottom of the checklist sheet
-                HStack(spacing: 20) {
-                    ElephantButton(
-                        buttonText: "Cancel",
-                        action: {
-                            dismiss() }, //makes no changes to the list, cancel means that all work is lost
-                        color: themeManager.curTheme.main_color_2,
-                        textColor: themeManager.textColor(for: themeManager.curTheme.main_color_2)
-                    )
-
-
-                    ElephantButton(
-                        buttonText: "Save",
-                        action: {
-                            for task in storage.taskList.tasks{
-                                storage.removeTask(task: task) //checks for all striked through tasks and removes them
-                            }
-                            
-                            for task in localTasks{
-                                if !task.isCompleted{ //if that task is not yet marked
-                                    storage.addTask(title: task.title) //add the new task
-                                    
-                                    if task.isCompleted{ //if that task has been marked completed, then we mark it as such
-                                        if let addedTask = storage.taskList.tasks.last{
-                                            storage.markTastCompleted(task: addedTask)
-                                        }
-                                    }
+            taskList //calls taskList appearance
+            
+            Spacer()
+            
+            actionButtons //calls for Cancel and Save buttons appearance
+        }
+        .padding()
+        .cornerRadius(12)
+        .padding()
+        .onAppear {
+            localTasks = storage.taskList.tasks //displays currently incomplete tasks
+        }
+    }
+    
+    //tasklist displays the custom checklist for user within SettingsView
+    private var taskList: some View {
+        List {
+            if localTasks.isEmpty { //if no tasks are currently set
+                Text("No tasks yet!")
+                    .foregroundColor(themeManager.curTheme.main_color_2)
+                    .padding(10)
+                    .listRowBackground(themeManager.curTheme.background)
+            } else { //for each incomplete tasks
+                ForEach(localTasks) { task in
+                    HStack { //ability to check off tasks once completed
+                        Image(systemName: task.isCompleted ? "checkmark.square.fill" : "square")
+                            .foregroundColor(task.isCompleted ? themeManager.curTheme.main_color_2 : themeManager.curTheme.main_color_3)
+                            .onTapGesture { //marks tasks as completed based on user input
+                                if let index = localTasks.firstIndex(where: { $0.id == task.id }) {
+                                    localTasks[index].isCompleted.toggle()
+                                    hasChanged = true
                                 }
                             }
-                            storage.saveTasks()
-                            dismiss()
-                        },
-                        color: themeManager.curTheme.main_color_1,
-                        textColor: themeManager.textColor(for: themeManager.curTheme.main_color_2)
-                    )
+                        // strikes through completed tasks
+                        Text(task.title)
+                            .strikethrough(task.isCompleted)
+                            .foregroundColor(task.isCompleted ? themeManager.curTheme.main_color_2 : themeManager.curTheme.main_color_3)
+                    }
+                }//removes tasks once they've been marked as completed
+                .onDelete { indexSet in
+                    indexSet.forEach { index in
+                        localTasks.remove(at: index)
+                        hasChanged = true
+                    }
                 }
-                .padding(.bottom)
             }
-            .padding()
-            .cornerRadius(12)
-            .padding()
-            .onAppear{
-                localTasks = storage.taskList.tasks //upon re-opening of the custom list, all incomplete tasks are saved in storage
+            //section for adding a new task within custom list view
+            //whether the user hits enter for a new task or clicks the plus sign, they can add a new task
+            HStack {
+                Image(systemName: "plus")
+                    .foregroundColor(themeManager.curTheme.main_color_1)
+                TextField("Add new task...", text: $newTask, onCommit: addNewTask)
+                    .textFieldStyle(PlainTextFieldStyle())
             }
         }
-
-    //adds new task made from the user to TaskListsStorage and stores in
-    //TaskLists.json
+        .listStyle(PlainListStyle())
+    }
+    
+    //Actionable buttons within custom checklist view
+    private var actionButtons: some View {
+        HStack(spacing: 20) {
+            ElephantButton(
+                buttonText: "Cancel",
+                action: { dismiss() }, //does not save any changes on cancel
+                color: themeManager.curTheme.main_color_2)
+            
+            ElephantButton(
+                buttonText: "Save",
+                action: {
+                    for task in storage.taskList.tasks {
+                        storage.removeTask(task: task) //removes any completed tasks
+                    }
+                    //for locally created tasks,
+                    for task in localTasks {
+                        if !task.isCompleted { //first checks if they're are incomplete tasks in the list
+                            storage.addTask(title: task.title) //adds any newly created task
+                            
+                            //once the task has been marked complete
+                            if task.isCompleted {
+                                if let addedTask = storage.taskList.tasks.last {
+                                    storage.markTastCompleted(task: addedTask)
+                                } //stores completed task within storage
+                            }
+                        }
+                    }
+                    storage.saveTasks() //updates tasks
+                    dismiss()
+                },
+                color: themeManager.curTheme.main_color_1)
+        }
+        .padding(.bottom)
+        .preferredColorScheme(Mode ? .dark : .light) //based on user selection
+    }
+    //seperate function for adding a new task in real time currently within SettingsView only
     private func addNewTask() {
         let trim = newTask.trimmingCharacters(in: .whitespaces)
         guard !trim.isEmpty else { return }
-        //adds to each local users custom checklist
+        //allows for an additional task to be added within custom list view
         let newItem = TaskItem(title: trim)
-        localTasks.append(newItem)
+        localTasks.append(newItem) //adds new task to local tasks array
         hasChanged = true
-        
         //Clears the input field
-        DispatchQueue.main.async{
+        DispatchQueue.main.async {
             self.newTask = ""
         }
     }
-    
 }
-
-
-//Slider customizable between minimum, maximum and break time intervals between work breaks
-struct customSlider: View{ //Custom slider struct
+ /*Custom slider for various time settings for pomodoro and stopwatch.
+  Slider customizable between minimum, maximum and break time intervals between work breaks*/
+struct customSlider: View {
+    @AppStorage("mode") private var Mode: Bool = false // default light mode
     @EnvironmentObject var themeManager: ThemeManager
     @Binding var selectedTime: Double
     let minTime: Double
     let maxTime: Double
     let interval: Double
     
-    var body: some View{
-        VStack(spacing: 8){
-            //builds slider for various settings
+    var body: some View {
+        VStack(spacing: 8) { //builds slider for various settings
             Slider(value: $selectedTime, in: minTime...maxTime, step: interval)
                 .accentColor(themeManager.curTheme.main_color_2)
                 .padding(.vertical, 8)
             
-            HStack{
-                Text("\(Int(minTime)) min")
+            HStack {
+                Text("\(Int(minTime)) min") //displays lowest interval in the range
                     .fontWeight(.semibold)
                     .fontDesign(.rounded)
                     .foregroundColor(themeManager.curTheme.main_color_3)
                 Spacer()
-                Text("\(Int(maxTime)) min")
+                Text("\(Int(maxTime)) min") //displays highest interval in the range
                     .fontWeight(.semibold)
                     .fontDesign(.rounded)
                     .foregroundColor(themeManager.curTheme.main_color_3)
@@ -344,6 +322,7 @@ struct customSlider: View{ //Custom slider struct
             .padding(.horizontal)
         }
         .padding()
+        .preferredColorScheme(Mode ? .dark : .light) //based on user selection
     }
 }
 

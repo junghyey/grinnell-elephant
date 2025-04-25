@@ -37,25 +37,25 @@ struct ElephantConfirmationDialogue: View {
                 ElephantButton(
                     buttonText: "Cancel",
                     action: onConfirm,
-                    color: themeManager.curTheme.background,
-                    textColor: themeManager.textColor(for: themeManager.curTheme.background)
+                    color: themeManager.curTheme.background
+                   // textColor: themeManager.textColor(for: themeManager.curTheme.background)
                 )
                 ElephantButton(
                     buttonText: "Confirm",
                     action: onConfirm,
-                    color: themeManager.curTheme.background,
-                    textColor: themeManager.textColor(for: themeManager.curTheme.background)
+                    color: themeManager.curTheme.background
+                    //textColor: themeManager.textColor(for: themeManager.curTheme.background)
                 )
             }
         }
         .padding()
         .frame(width: 300, height: 200, alignment: .center)
         .cornerRadius(20)
-        .background(DefaultColors.background)
+        .background(themeManager.curTheme.background)
         .clipShape(RoundedRectangle(cornerRadius: 20))
         .overlay(
             RoundedRectangle(cornerRadius: 20)
-                .stroke(DefaultColors.shadow_2, lineWidth: 5)
+                .stroke(themeManager.curTheme.shadow_2, lineWidth: 5)
         )
         .shadow(color: .black.opacity(0.3), radius: 20)
     }
@@ -70,17 +70,19 @@ struct ElephantConfirmationDialogue: View {
 //      textColor: color of button text
 
 struct ElephantButton: View {
+    @EnvironmentObject var themeManager: ThemeManager
+    
     let buttonText: String
     let buttonImage: String = "mammal-elephant"
     let action: () -> Void
     let color: Color
-    let textColor: Color
+//    let textColor: Color
     
     var body: some View{
         Button (action: action) {
             Text("\(buttonText)")
                 .fontWeight(.bold)
-                .foregroundColor(textColor)
+//                .foregroundColor(textColor)
                 .padding()
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
@@ -88,9 +90,12 @@ struct ElephantButton: View {
                 )
 //                .background(
 //                    RoundedRectangle(cornerRadius: 10)
-//                        .stroke(DefaultColors.shadow_1, lineWidth: 2)
+//                        .stroke(themeManager.curTheme.shadow_1, lineWidth: 2)
 //                )
         }
+        .background(themeManager.curTheme.main_color_2)
+        .foregroundColor(themeManager.curTheme.shadow_2)
+        .buttonBorderShape(.roundedRectangle(radius: 10))
         .buttonStyle(PlainButtonStyle())
     }
 }
