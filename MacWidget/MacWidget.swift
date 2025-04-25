@@ -9,7 +9,7 @@
  References:
  https://youtu.be/jucm6e9M6LA?si=TkMWXPY481b8FCKu - main explaination starts at 12:15
  https://www.youtube.com/watch?v=Z_m5d8RS4xU
- ChatGPT - line 115-146
+ ChatGPT - line 120-132
  */
 
 import WidgetKit
@@ -111,7 +111,7 @@ struct MacWidgetEntryView : View {
                         .frame(alignment: .top)
                     
                     // Frame 2 - Checklist(s) & Token(s)
-                    // ChatGPT utilized from line 115-146 to help clean up format
+                    // ChatGPT utilized from line 120-132 to help clean up format
                     RoundedRectangle(cornerRadius: 20)
                         .fill(DefaultColors.main_color_1)
                         .overlay(
@@ -144,6 +144,7 @@ struct MacWidgetEntryView : View {
                             } // side by side token & checklist
                                 .padding(.trailing, 20)
                         ) // second frame - outer
+                    
                 } // VStack - main 2 frames
             } // VStack - vertically align all 3 sections
         } // main ZStack
