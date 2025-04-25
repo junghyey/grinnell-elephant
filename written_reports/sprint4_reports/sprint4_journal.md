@@ -270,4 +270,18 @@ The inline suggesntions were:
    - Some additional controversies of AI lies in how AI are trained on online materials that are not necessarily approved by original owners, raising problems of consent and copyright infringements.
 
 ### Gabby
-   
+
+1. In CSC 324, which uses of AI have the potential to advance product development and how?
+* I have been working with the app’s settings and many advancements in my development came from working with my initial implementation of a checklist for example, and then asking AI for assistance for specific features that I had seen in Swift UI documentation but with very little examples of how to implement. I think that AI should not be the backbone of our product development because it reproduces imperfections and also ones that are hard to catch once implementation is in more advanced stages.
+
+2. In CSC 324, which uses of AI have the potential to support student learning and how?
+* For our class, I think that the learning curve to learn programming languages to work on our product as well as technological access have a great impact on our productivity. AI has the potential to support students specifically in moments where overview of certain functions or unknown definitions are needed, acting as a mini-mentor in that way by helping students supplement learning they may be missing due to the fast-paced environment. 
+
+3. In CSC 324, which uses of AI have the potential to undermine student learning and how?
+* I think that the obvious pitfall is over-relying on it as mentioned in the first question because once you reach more advanced stages of development, it’s hard to distinguish between what code the AI wrote and determine what it even does if you’re not also learning at the same time.
+
+4. What are some ethical considerations of using AI in CSC 324?
+* I’d consider the mal-use of AI being when students don’t only receive coding help but also don’t take the time to understand or even type the code suggestion they’re given, making it easy to fall into the trap of being overly-trusting of the solutions it comes up with instead of our own dynamic solutions.
+* I also think about where AI compiles it’s coding solutions from, raising issues of plagiarism or now citing their sources.
+
+
