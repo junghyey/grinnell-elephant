@@ -150,8 +150,8 @@ Github link:
 
 Helpful: There were larger comments before long snippets of code that explained the functionality of the following lines, but for some lines where there wasn't enough description for a longer code line, we made changes to this by making sure those lines were descriptive enough.
 
-Commit hash:
-Github link:
+Commit hash: 1e11d5c0235baf456dd14444ae1e73f2d1bbaf83
+Github link: 
 
 3. Teammate A: Candice, Teammate B: Gabby
 
