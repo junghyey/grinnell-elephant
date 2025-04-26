@@ -106,6 +106,41 @@
 
 ### Meeting 3
 
+#### Who you met with
+##### Name, occupation, and other relevant information about the stakeholder
+- Autumn Kwon, CS major at Grinnell
+##### Date and time of the stakeholder meeting
+- 04/24/2025 6:00pm-6:30pm
+##### Description of the test session and feedback
+##### What was their behavior of interacting with the documentation?
+1. Find and read the manual or help section
+  - In the last page of the manual, try adding widget based on the instruction
+2. Try to access and browse the collectible shop
+3. Try purchasing one item (just  UI part)
+4. Navigate to settings and try changing one setting (is UI intuititive)
+5. Try adding task using add task list.
+
+##### Did they succeed or get stuck?
+
+##### What feedback did they provide about documentation?
+
+##### What questions did you ask, and what were the stakeholder's answers?
+
+***Before***
+
+- What is the first impression when you saw the app? (Confusing? less intuitive)?
+
+
+***After & During***
+- We asked for more feedback on the UI and what was confusing upon first interaction, but he had already answered previously for our documentation feedback questions.
+
+- Was anything unclear or confusing when using the app?
+
+
+- Is anything missing that you expected? (like what do you expect widget to do?)
+
+
+  
 ## Documentation Lab
 
 **Note: Since we are small group (4 people only), we collaborated on code before. Therefore, our subgroups already shared knowledge on what we were working on and we used the same langauge. However, there was still room for imporvement in terms of documentation**
