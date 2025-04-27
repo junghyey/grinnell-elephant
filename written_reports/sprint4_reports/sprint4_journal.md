@@ -308,6 +308,24 @@ The inline suggesntions were:
    - In terms of fairness, it would be unfair for a groupmate to use AI for their entire work while others try hard and learn. That would undermine others' work.
 
 ### Mae
+I experimented with ChatGPT as the AI Experiment. I was having trouble formatting and aligning the features on the widget, so I input about 10 lines of code into ChatGPT, prompting it to help solve this issue. ChatGPT, in turn, made slight tweaks to the stack order.
+
+```
+HStack{
+    VStack (alignment: .leading) {
+        Text("Checklist")
+            .font(.title)
+            .foregroundStyle(.black)
+
+        Text("[] task 1, \n[] task 2, \n[] task 3")
+            .frame(alignment: .leading)
+            .multilineTextAlignment(.leading)
+    } // checklist title and list
+    .padding(.leading, 20)
+    .padding(.vertical, 12)
+    .frame(maxWidth: .infinity, alignment: .leading)
+```
+
 1. In CSC 324, which uses of AI have the potential to advance product development and how?
    - If well informed, AI could be used as an aid in revising the sprint report or journal. This would have to include us providing the AI model with the report so it can suggest the changes.
    - Given a function with a simple documentation, but sufficient examples, it could assist in figuring out the intent of the function.
