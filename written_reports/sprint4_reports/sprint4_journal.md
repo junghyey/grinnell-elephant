@@ -181,15 +181,30 @@ Github link:
 
 2. Teammate A: Hyeyun, Teammate B: Medhashree
 
-ManualView.swift, entire file
-
-Teammat A (Mae) suggested: Adding description of the file, more documnation on the purpose of the function, documentation on what is happening (a line is sufficent) before each code block for each UI,
-                          Add Todo for aesthetics part so that others can see what I have to work on/ and it is easily navigatble for others.
-                          Spacing consistnet -- devleoper guideline on formaning (needed to be added).
-                          You can put other referneces in each function on top and write where each used.
-
-Helpful: Resources/References on the top & before each function (wehre we used it), comment after each "}" helpful to navigate the scope, but it would be more helpful to add what vstack belongs to (is it for button or not?) since
+- Identify the code that you worked with in the lab (e.g. calico.java, lines 1-437)
+  - ManualView.swift, entire file 
+- Write a paragraph to describe the changes that you made to the code and the documentation
+  - **Feedback**
+  - Teammat A (Mae) suggested: Adding description of the file, more documnation on the purpose of the function, documentation on what is happening (a line is sufficent) before eachcode block for each UI. Add Todo for aesthetics part so that others can see what I have to work on/ and it is easily navigatble for others. Spacing consistnet -- devleoper guideline on formaning (needed to be added). You can put other referneces in each function on top and write where each used.
+  - **Changes**
+  - I added the file description on top of the file.
+  - I added purpose of the template struct on top of ManualTemplateView struct
+  - I added the Todo for the parts that needed to be completed later
+  - I added box for each section in the stack what each stack accounts for in the template struct
+  - I formated using the Xcode>structure>'swift-file format'
+  - I put references altogether on top
+- Identify existing documentation that was helpful
+  - Helpful: Resources/References on the top & before each function (wehre we used it), comment after each "}" helpful to navigate the scope, but it would be more helpful to add what  vstack belongs to (is it for button or not?) since
 we have multiple vstacks.
+- Identify the commit hash of the commit in which you wrote your new documentation. Provide a Github link where your instructor can view the diff of that commit. If you created or updated any issues in your issue tracker, show a "before" and "after" snapshot of the detailed view of each issue so that the difference can clearly be seen
+  - Before: eb89772 (tag initial-release)
+  - After:  858610e
+
+
+
+
+
+
 
 
 Commit hash:
