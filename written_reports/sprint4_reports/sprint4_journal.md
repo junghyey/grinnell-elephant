@@ -170,14 +170,23 @@
 
 1. Teammate A: Medhashree, Teammate B: Hyeyun
 
-ContentView, entire file
+- Identify the code that you worked with in the lab (e.g., calico.java, lines 1-437)
+  - ContentView, entire file
 
-Teammate A (Medhashree) needs to adjust the header to include the main author(s) of the file, a description of the file, dependencies, and resources used when developing. Furthermore, the documentation in the code should include a small description of the scope of the code within "{...}
+- Write a paragraph to describe the changes that you made to the code and the documentation
+  - **Feedback**
+  - Teammate A (Medhashree) needs to adjust the header to include the main author(s) of the file, a description of the file, dependencies, and resources used when developing. Furthermore, the documentation in the code should include a small description of the scope of the code within "{...}
+  - **Changes**
+  - In the ContentView header, I added the main authors, description, dependencies, and resources as suggested.
+  - I also added more comments throughout the file.
 
-Teammate A made sure to include a description at the end of larger blocks of code within "{...}" that showed the responsibilities of the buttons. The inclusion of "TODO" comments were helpful as it is easy to find and has a note of what needs to be done.
+- Identify existing documentation that was helpful
+  - Teammate A made sure to include a description at the end of larger blocks of code within "{...}" that showed the responsibilities of the buttons. The inclusion of "TODO" comments was helpful as it is easy to find and has a note of what needs to be done.
 
-Commit hash:
-Github link:
+- Identify the commit hash of the commit in which you wrote your new documentation. Provide a Github link where your instructor can view the diff of that commit. If you created or updated any issues in your issue tracker, show a "before" and "after" snapshot of the detailed view of each issue so that the difference can clearly be seen
+  - Before: eb89772 (tag initial-release)
+  - After: 06d6b95
+
 
 2. Teammate A: Hyeyun, Teammate B: Medhashree
 
@@ -185,7 +194,7 @@ Github link:
   - ManualView.swift, entire file 
 - Write a paragraph to describe the changes that you made to the code and the documentation
   - **Feedback**
-  - Teammat A (Mae) suggested: Adding description of the file, more documnation on the purpose of the function, documentation on what is happening (a line is sufficent) before eachcode block for each UI. Add Todo for aesthetics part so that others can see what I have to work on/ and it is easily navigatble for others. Spacing consistnet -- devleoper guideline on formaning (needed to be added). You can put other referneces in each function on top and write where each used.
+  - Teammate A (Mae) suggested: Adding description of the file, more documentation on the purpose of the function, documentation on what is happening (a line is sufficient) before each code block for each UI. Add a TODO for the aesthetics part so that others can see what I have to work on/ and it is easily navigable for others—spacing consistent -- developer guideline on formatting (needed to be added). You can put other references in each function on top and write where they each used.
   - **Changes**
   - I added the file description on top of the file.
   - I added purpose of the template struct on top of ManualTemplateView struct
