@@ -28,5 +28,5 @@ We added and refiend documentation to each file's codes so that teammates can un
 
 - Power point presentation
   - The slide show is added in the folder. (CSC_324_Demo_2.pptx)
- 
+  - For the Demo2 codes & apps got to https://github.com/junghyey/grinnell-elephant/releases/tag/sprint-4-second-release 
  
