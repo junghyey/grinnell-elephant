@@ -106,6 +106,61 @@
 
 ### Meeting 3
 
+#### Who you met with
+##### Name, occupation, and other relevant information about the stakeholder
+- Autumn Kwon, CS major at Grinnell
+##### Date and time of the stakeholder meeting
+- 04/24/2025 7:20pm - 7:50pm
+##### Description of the test session and feedback
+##### What was their behavior of interacting with the documentation?
+1. Find and read the manual or help section
+  - In the last page of the manual, try adding widget based on the instruction
+2. Try to access and browse the collectible shop
+3. Try purchasing one item (just  UI part)
+4. Navigate to settings and try changing one setting (is UI intuititive)
+5. Try adding task using add task list.
+6. Try to check off one of the task
+
+##### Did they succeed or get stuck?
+1. Getting to manual Sucess
+  - She was confused with does date and time mean in the app or not.
+  - She managed to get to add 
+2. Success
+3. Successfully
+4. Succesfully changed the setting
+5. Success
+
+##### What feedback did they provide about documentation?
+- The alignment of text of manual is not pleasing
+- The checklist looks like it is clickable
+- Why black and white defulat? (default is not set to the default color)
+- Why is there no elephant theme
+- If change theme, the frame looks funky
+- Why is there checklist #1? What does each number mean.
+- What if I want to create another checklist? Why is it still #1?
+- Why is there empty spot after custom list? (WHat is the intention?)
+- The checklist does not fit well with the meaning of the settings.
+- The color combination of the widget is not appealing. Why orange not pastel?
+
+##### What questions did you ask, and what were the stakeholder's answers?
+
+***Before***
+
+- What is the first impression when you saw the app? (Confusing? less intuitive)?
+  - She said the design is cute. Why the app name is Elephant?    
+
+***After & During***
+- Was anything unclear or confusing when using the app?
+  - WHy the checklist is in the settings?
+  - Does not get how the checklist operates
+  - How does avatar work?
+    
+- Is anything missing that you expected? (like what do you expect widget to do?)
+  - She wanted to try buying the avatar. She wanted some free tokens to try out purchasing.
+  - Why are charactesr all 5 tokens?
+
+
+  
 ## Documentation Lab
 
 **Note: Since we are small group (4 people only), we collaborated on code before. Therefore, our subgroups already shared knowledge on what we were working on and we used the same langauge. However, there was still room for imporvement in terms of documentation**
@@ -126,15 +181,30 @@ Github link:
 
 2. Teammate A: Hyeyun, Teammate B: Medhashree
 
-ManualView.swift, entire file
-
-Teammat A (Mae) suggested: Adding description of the file, more documnation on the purpose of the function, documentation on what is happening (a line is sufficent) before each code block for each UI,
-                          Add Todo for aesthetics part so that others can see what I have to work on/ and it is easily navigatble for others.
-                          Spacing consistnet -- devleoper guideline on formaning (needed to be added).
-                          You can put other referneces in each function on top and write where each used.
-
-Helpful: Resources/References on the top & before each function (wehre we used it), comment after each "}" helpful to navigate the scope, but it would be more helpful to add what vstack belongs to (is it for button or not?) since
+- Identify the code that you worked with in the lab (e.g. calico.java, lines 1-437)
+  - ManualView.swift, entire file 
+- Write a paragraph to describe the changes that you made to the code and the documentation
+  - **Feedback**
+  - Teammat A (Mae) suggested: Adding description of the file, more documnation on the purpose of the function, documentation on what is happening (a line is sufficent) before eachcode block for each UI. Add Todo for aesthetics part so that others can see what I have to work on/ and it is easily navigatble for others. Spacing consistnet -- devleoper guideline on formaning (needed to be added). You can put other referneces in each function on top and write where each used.
+  - **Changes**
+  - I added the file description on top of the file.
+  - I added purpose of the template struct on top of ManualTemplateView struct
+  - I added the Todo for the parts that needed to be completed later
+  - I added box for each section in the stack what each stack accounts for in the template struct
+  - I formated using the Xcode>structure>'swift-file format'
+  - I put references altogether on top
+- Identify existing documentation that was helpful
+  - Helpful: Resources/References on the top & before each function (wehre we used it), comment after each "}" helpful to navigate the scope, but it would be more helpful to add what  vstack belongs to (is it for button or not?) since
 we have multiple vstacks.
+- Identify the commit hash of the commit in which you wrote your new documentation. Provide a Github link where your instructor can view the diff of that commit. If you created or updated any issues in your issue tracker, show a "before" and "after" snapshot of the detailed view of each issue so that the difference can clearly be seen
+  - Before: eb89772 (tag initial-release)
+  - After:  858610e
+
+
+
+
+
+
 
 
 Commit hash:
@@ -271,6 +341,7 @@ The inline suggesntions were:
 
 ### Gabby
 
+
 1. In CSC 324, which uses of AI have the potential to advance product development and how?
 * I have been working with the app’s settings and many advancements in my development came from working with my initial implementation of a checklist for example, and then asking AI for assistance for specific features that I had seen in Swift UI documentation but with very little examples of how to implement. I think that AI should not be the backbone of our product development because it reproduces imperfections and also ones that are hard to catch once implementation is in more advanced stages.
 
@@ -285,3 +356,10 @@ The inline suggesntions were:
 * I also think about where AI compiles it’s coding solutions from, raising issues of plagiarism or now citing their sources.
 
 
+## Self-Selected Work toward Minimum Viable Product (MVP)
+Your team should also continue working towards your initial release by choosing work from your product backlog to complete this sprint. Aim to deliver your MVP with this milestone
+In a Sprint Journal entry, remind us what your MVP is (look back to Milestone 1 where you described what features would be included in your MVP)
+Describe what work, if any, remains toward delivering your MVP
+
+- What is our MVP
+- Describe what work remains toward MVP
