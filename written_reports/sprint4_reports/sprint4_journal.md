@@ -323,6 +323,15 @@ The inline suggesntions were:
    - As a developer, following and complying with the code of ethics is vital. Developers should have a sense of what information should not be input with prompts.
 
 ### Candice
+I submitted a screenshot and asked ChatGPT what the error message meant when I encountered problems with the bundle identifier in Xcode. Xcode gave me the error message: The app identifier 'Grinnell.Elephant' cannot be registered to your development team because it is not available.
+![image](https://github.com/user-attachments/assets/381b1efa-dc86-48b1-99ed-05d029c15770)
+
+ChatGPT explained that: "This usually means the bundle ID Grinnell.Elephant is already taken by someone else (or was already used in your Apple Developer account). You can fix this by changing the Bundle Identifier to something more unique." It also proceeeded to give me steps on how to change the bundle identifier. 
+<img width="671" alt="Screenshot 2025-04-27 at 11 25 08 AM" src="https://github.com/user-attachments/assets/96b1fa29-6c34-45c6-b921-67a3403ae856" />
+
+However, the target column was grey and Xcode wasn't letting me edit the bundle identifier. I asked ChatGPT again and it gave me further instructions on how to fix it. I followed the next steps, directly edited the plist.info file, and was able to build the app again.
+<img width="709" alt="Screenshot 2025-04-27 at 11 24 36 AM" src="https://github.com/user-attachments/assets/60ff4f0a-7d8c-4bf2-9c6d-15b1c86ca0aa" />
+
 1. In CSC 324, which uses of AI have the potential to advance product development and how?
    - Use of AI is particularly helpful for collaboration, such as summarizing updates or creating documentations. This can potentially avoid us overlooking certain details that we may have updated (or serve as a double check).
    - The existence of AI as a last resort alleviates stress when encountering deadlines or tough situations, making it feel more okay to spend more time experimenting and debugging.
