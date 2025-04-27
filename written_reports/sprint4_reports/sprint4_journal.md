@@ -231,8 +231,9 @@ Github link:
 
 Helpful: There are initial comment descriptions for each utility, describing what that utility performs as well as helpful function definitions describing what use that function/struct performs.
 
-Commit hash:
-Github link:
+Commit hash: c1eb164ae583405d5bfc0b923a83c66f53927b15 (1 parent e8d005d commit c1eb164)
+
+Github link: 
 
 ## Generative AI Experiment 
 ***Answer Following Questions***
@@ -341,6 +342,27 @@ The inline suggesntions were:
 
 ### Gabby
 
+I utilized ClaudeAI to help me in adding a section for adding a new task locally within the custom checklist section of SettingsView.
+**Explanation of My Request:** I requested help implementing the ability to add a new task to a custom checklist. Specifically, I needed a way for a user to input a task name, add that task to a local list of tasks, clear the input field afterward, and mark the changes that were made so they could be saved or updated later. I asked the AI to help me come up with a local addNewTask function as follows: 
+
+```
+private func addNewTask() {
+    let trim = newTask.trimmingCharacters(in: .whitespaces)
+    guard !trim.isEmpty else { return }
+    let newItem = TaskItem(title: trim)
+    localTasks.append(newItem)
+    hasChanged = true
+    DispatchQueue.main.async {
+        self.newTask = ""
+    }
+}
+```
+
+The first line of code initializes trim, removing any leading or trailing spaces from the user's input (newTask) and stores the cleaned-up text in a variable called trim. Then, if the trimmed text is empty (meaning the user didn't type anything), the function exits early without doing anything and doesn't allow the user to add an empty string task. 
+
+If trim is not empty then the function adds a new task (TaskItem) with trim as the task item title, adding the newly added task to the localTasks array of Task items. I also defined a boolean called hasChanged to work as a flag - tracking when the checklist has been modified, to allow a save or update later. The last few lines we're completely AI generated since DispatchQueue was an operator I was not familiar with - it clears the newTask input field to get it ready for the next task the user might want to enter.
+
+---
 
 1. In CSC 324, which uses of AI have the potential to advance product development and how?
 * I have been working with the app’s settings and many advancements in my development came from working with my initial implementation of a checklist for example, and then asking AI for assistance for specific features that I had seen in Swift UI documentation but with very little examples of how to implement. I think that AI should not be the backbone of our product development because it reproduces imperfections and also ones that are hard to catch once implementation is in more advanced stages.
