@@ -186,7 +186,7 @@
   - Helpful: Resources/References on the top & before each function (wehre we used it), comment after each "}" helpful to navigate the scope, but it would be more helpful to add what  vstack belongs to (is it for button or not?) since
 we have multiple vstacks.
 - Identify the commit hash of the commit in which you wrote your new documentation. Provide a Github link where your instructor can view the diff of that commit. If you created or updated any issues in your issue tracker, show a "before" and "after" snapshot of the detailed view of each issue so that the difference can clearly be seen
-  - Before: eb89772 (tag initial-release)
+  - Before: eb8977286d98e1303a18065a0ef8071115949af2 (tag initial-release)
   - After:  858610e
 
 
