@@ -27,6 +27,6 @@ We added and refiend documentation to each file's codes so that teammates can un
 <img width="700 " alt="image" src="https://github.com/user-attachments/assets/f973df5a-c809-4888-8178-54755ccf13db" />
 
 - Power point presentation
-  - The slide show is added in the folder. 
+  - The slide show is added in the folder. (CSC_324_Demo_2.pptx)
  
  
