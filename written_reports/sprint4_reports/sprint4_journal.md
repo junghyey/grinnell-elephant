@@ -407,8 +407,11 @@ If trim is not empty then the function adds a new task (TaskItem) with trim as t
 
 ## Self-Selected Work toward Minimum Viable Product (MVP)
 Your team should also continue working towards your initial release by choosing work from your product backlog to complete this sprint. Aim to deliver your MVP with this milestone
-In a Sprint Journal entry, remind us what your MVP is (look back to Milestone 1 where you described what features would be included in your MVP)
+In a Sprint Journal entry, remind us what your MVP is (look back to Milestone 1, where you described what features would be included in your MVP)
 Describe what work, if any, remains toward delivering your MVP
 
 - What is our MVP
+  - We imagine our MVP to be a macOS widget UI that's compatible with dark and light mode and has high contrast options, such as black and white mode for those with color blindness. We also want to be able to push notifications to remind users to take wellness breaks. These breaks and tasks should be customizable based on the user. Users are also meant to earn tokens that can be exchanged for avatars that they can use to customize the widget.
+  
 - Describe what work remains toward MVP
+  - We still need to work on incrementing the user's token status, pushing notifications, and the timers' logic. Currently, we have multiple parts of the software in development that need to come together.
