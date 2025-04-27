@@ -228,11 +228,14 @@ Github link:
 
 4. Review Utils.swift file, entire file
 
-- Candice worked on re-usable functions and stucts, including Default Colors for theme changes as well as a default ElephantButton that can be used across various files. We discussed adding more documentation to the file for more descriptive explanations of each function and which files it mostly interacts with, like SettingsView.
+***Feedback:*** Candice worked on re-usable functions and stucts, including Default Colors for theme changes as well as a default ElephantButton that can be used across various files. We discussed adding more documentation to the file for more descriptive explanations of each function and which files it mostly interacts with, like SettingsView.
 
-Helpful: There are initial comment descriptions for each utility, describing what that utility performs as well as helpful function definitions describing what use that function/struct performs.
+***Helpful:*** There are initial comment descriptions for each utility, describing what that utility performs as well as helpful function definitions describing what use that function/struct performs.
 
-Commit hash: c1eb164ae583405d5bfc0b923a83c66f53927b15 (1 parent e8d005d commit c1eb164)
+***Changes:*** I added more documentation in the beginning of the file, specifically what the reusable components are, as well as some in-line documentation of how the reusable components can be further changed to allow more customization.
+
+Before: eb8977286d98e1303a18065a0ef8071115949af2 (tag initial-release)
+After: dfc1da55877419861e1e670bee239d652c0724b6
 
 Github link: 
 
