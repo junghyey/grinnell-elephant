@@ -221,8 +221,8 @@ we have multiple vstacks.
 
 Helpful: There were larger comments before long snippets of code that explained the functionality of the following lines, but for some lines where there wasn't enough description for a longer code line, we made changes to this by making sure those lines were descriptive enough.
 
-Commit hash: 1e11d5c0235baf456dd14444ae1e73f2d1bbaf83
-Github link: 
+**Before:** `498a509275f70ac9ef75495f8b5832ef2e475ab9` (tag `sprint-4-second-release`)  
+**After:** `1e11d5c0235baf456dd14444ae1e73f2d1bbaf83`
 
 3. Teammate A: Candice, Teammate B: Gabby
 
@@ -237,7 +237,6 @@ Github link:
 Before: eb8977286d98e1303a18065a0ef8071115949af2 (tag initial-release)
 After: dfc1da55877419861e1e670bee239d652c0724b6
 
-Github link: 
 
 ## Generative AI Experiment 
 ***Answer Following Questions***
@@ -373,38 +372,46 @@ However, the target column was grey and Xcode wasn't letting me edit the bundle 
 
 ### Gabby
 
-I utilized ClaudeAI to help me in adding a section for adding a new task locally within the custom checklist section of SettingsView.
-**Explanation of My Request:** I requested help implementing the ability to add a new task to a custom checklist. Specifically, I needed a way for a user to input a task name, add that task to a local list of tasks, clear the input field afterward, and mark the changes that were made so they could be saved or updated later. I asked the AI to help me come up with a local addNewTask function as follows: 
+I utilized ClaudeAI to help me with a section for adding a new task locally within the custom checklist section of SettingsView.
+Explanation of My Request: I requested help implementing the ability to add a new task to a custom checklist. Specifically, I needed a way for a user to input a task name, add that task to a local list of tasks, clear the input field afterward, and mark the changes that were made so they could be saved or updated later. A portion of this functionality meant I had to create a function addNewTask() as cited in the TaskListStorage.swift, but I also needed help adding a local version within SettingsView since I was having trouble displaying saved changes. I asked the AI to help me think more granularly about adding a new input task, considering settings formatting with user input in the UI. I also asked AI more information about DispatchQueue [DispatchQueue – Apple Developer Documentation](https://developer.apple.com/documentation/dispatch/dispatch-queue) from what I read because of the FIFO queue implementation of that localTasks array where users newly added Tasks are moved into a queue order for the custom checklist implementation within  SettingsView.swift
+
+//function `addTask(title)` in TaskList Storage.swift that I based off of for addNewTask() in SettingsView.swift
+```
+  //updates a new task to the taskList
+    func addTask(title: String){
+        let newTask = TaskItem(title: title)
+        taskList.tasks.append(newTask)
+        saveTasks()
+    }
+```
 
 ```
 private func addNewTask() {
-    let trim = newTask.trimmingCharacters(in: .whitespaces)
+   ** let trim = newTask.trimmingCharacters(in: .whitespace) //Removes all extra spaces from user input on commit**
     guard !trim.isEmpty else { return }
     let newItem = TaskItem(title: trim)
     localTasks.append(newItem)
     hasChanged = true
-    DispatchQueue.main.async {
-        self.newTask = ""
-    }
+    **DispatchQueue.main.async { //orders newly added task in the main UI in FIFO order to be displayed after
+        self.newTask = "" //clears the input line (task) with an empty string
+    }**
 }
 ```
+The bolded lines of code we're suggested in the AI's response, specifically for how to clean up given user formatting such as extra spaces before and after valid string input as suggested by .trimmingCharacters method that removes all whitespace, and how to use DispatchQueue to call on the main thread and perform the following action (clearing for a new task input) only after changes have been saved by selecting the Save button at bottom of the checklist #1 view sheet.
 
-The first line of code initializes trim, removing any leading or trailing spaces from the user's input (newTask) and stores the cleaned-up text in a variable called trim. Then, if the trimmed text is empty (meaning the user didn't type anything), the function exits early without doing anything and doesn't allow the user to add an empty string task. 
-
+addNewTask(): The first line of code initializes trim, removing any leading or trailing spaces from the user's input (newTask) and stores the cleaned-up text in a variable called trim. Then, if the trimmed text is empty (meaning the user didn't type anything), the function exits early without doing anything and doesn't allow the user to add an empty string task. 
 If trim is not empty then the function adds a new task (TaskItem) with trim as the task item title, adding the newly added task to the localTasks array of Task items. I also defined a boolean called hasChanged to work as a flag - tracking when the checklist has been modified, to allow a save or update later. The last few lines we're completely AI generated since DispatchQueue was an operator I was not familiar with - it clears the newTask input field to get it ready for the next task the user might want to enter.
 
----
-
-1. In CSC 324, which uses of AI have the potential to advance product development and how?
+#### 1. In CSC 324, which uses of AI have the potential to advance product development and how?
 * I have been working with the app’s settings and many advancements in my development came from working with my initial implementation of a checklist for example, and then asking AI for assistance for specific features that I had seen in Swift UI documentation but with very little examples of how to implement. I think that AI should not be the backbone of our product development because it reproduces imperfections and also ones that are hard to catch once implementation is in more advanced stages.
 
-2. In CSC 324, which uses of AI have the potential to support student learning and how?
+#### 2. In CSC 324, which uses of AI have the potential to support student learning and how?
 * For our class, I think that the learning curve to learn programming languages to work on our product as well as technological access have a great impact on our productivity. AI has the potential to support students specifically in moments where overview of certain functions or unknown definitions are needed, acting as a mini-mentor in that way by helping students supplement learning they may be missing due to the fast-paced environment. 
 
-3. In CSC 324, which uses of AI have the potential to undermine student learning and how?
+#### 3. In CSC 324, which uses of AI have the potential to undermine student learning and how?
 * I think that the obvious pitfall is over-relying on it as mentioned in the first question because once you reach more advanced stages of development, it’s hard to distinguish between what code the AI wrote and determine what it even does if you’re not also learning at the same time.
 
-4. What are some ethical considerations of using AI in CSC 324?
+#### 4. What are some ethical considerations of using AI in CSC 324?
 * I’d consider the mal-use of AI being when students don’t only receive coding help but also don’t take the time to understand or even type the code suggestion they’re given, making it easy to fall into the trap of being overly-trusting of the solutions it comes up with instead of our own dynamic solutions.
 * I also think about where AI compiles it’s coding solutions from, raising issues of plagiarism or now citing their sources.
 
