@@ -29,7 +29,14 @@
   - The homebutton crashes in the settings page.
   - The back button crashes in collectible shop for MacApp scheme.   
 
-
+#### How we will change
+- Fix homebutton for each page
+- Themes should be changed (fonts should be readable colors wheren light/dark mode)
+- Check every buttons for working
+- Fix manual to be more intuitive
+- Add description of what the widget bar is
+- Add the entry showing what current time is set to.
+  
 ### Meeting 2
 #### Who you met with
 ##### Name, occupation, and other relevant information about the stakeholder
@@ -59,30 +66,40 @@
    The only way to add the task is with a return and you can only get out of the checklist with esc button on the keyboard.
    The scale for the time durations should begin at 0. He did like how the time sliders we're able to show what position the user selected easily.
 ##### What feedback did they provide about documentation?
-~ In the help section, he felt that he wasn't sure what was there for him to read or actually thoroughly go through.
-~ Consistency with going back to home page, there wasn't really a way to go back from the checklist page.
-~ Back and next button for every page view or set the Manual page view to be a scroll view instead (consistency with either scroll view/next page action)
-
-
-  ~ It might be too much information for the first user, there's a lot of context that a first time user wouldn't really understand in reading up to 4 pages
-  ~ He likes the first manual page, and suggested that we change the manual to be a step-by-step introduction for the app (e.g. get the user to make the first task to get familiar with the app) and possibly add sections to the manual to understand what each page's information includes for the user's questions.
+- In the help section, he felt that he wasn't sure what was there for him to read or actually thoroughly go through.
+- Consistency with going back to home page, there wasn't really a way to go back from the checklist page.
+- Back and next button for every page view or set the Manual page view to be a scroll view instead (consistency with either scroll view/next page action)
+- It might be too much information for the first user, there's a lot of context that a first time user wouldn't really understand in reading up to 4 pages
+- He likes the first manual page, and suggested that we change the manual to be a step-by-step introduction for the app (e.g. get the user to make the first task to get familiar with the app) and possibly add sections to the manual to understand what each page's information includes for the user's questions.
 ##### What questions did you ask, and what were the stakeholder's answers?
 
 ***Before***
 
 - What is the first impression when you saw the app? (Confusing? less intuitive)?
-~ Professor Wells stated that he likes the initial view of the app, and then asked what the elephant does, haha
+  - Professor Wells stated that he likes the initial view of the app, and then asked what the elephant does, haha
 
 ***After & During***
 - We asked for more feedback on the UI and what was confusing upon first interaction, but he had already answered previously for our documentation feedback questions.
 
 - Was anything unclear or confusing when using the app?
-  ~ Nothing else from what was already mentioned
+  -  Nothing else from what was already mentioned
 
 - Is anything missing that you expected? (like what do you expect widget to do?)
-  ~ He wants the elephant to be more interactive (possibly move around or something when presssed on)
-  ~ Also within shop page view, he'd like to see how many total tokens you have
-  ~ And be able to hover over each item and label the tokens that the avatar costs
+  - He wants the elephant to be more interactive (possibly move around or something when presssed on)
+  - Also within shop page view, he'd like to see how many total tokens you have
+  -  And be able to hover over each item and label the tokens that the avatar costs
+
+
+#### How we might change
+- For the manual instead of long readings, we will create buttons that go to the specific page so that user has more control
+- Make checklist clickable in manual
+- Change elephant to moving.
+- Make checklist addable with the + button
+- Make it checkable & save, cancel
+- Add how many tokens do I have left in the collectible shop
+- Unify back & homebutton for each page
+- Theme fixes
+
 
 ### Meeting 3
 
@@ -140,6 +157,11 @@
   - Why are charactesr all 5 tokens?
 
 
+#### How we might change
+- Change the locaiton of the checklist
+- Add description of how avatar works
+- More direction on the colectible shop.
+- More intuitive explanation & with pictures for first time mac users.
   
 ## Documentation Lab
 
@@ -164,7 +186,7 @@
   - Teammate A made sure to include a description at the end of larger blocks of code within "{...}" that showed the responsibilities of the buttons. The inclusion of "TODO" comments was helpful as it is easy to find and has a note of what needs to be done.
 
 - Identify the commit hash of the commit in which you wrote your new documentation. Provide a Github link where your instructor can view the diff of that commit. If you created or updated any issues in your issue tracker, show a "before" and "after" snapshot of the detailed view of each issue so that the difference can clearly be seen
-  - Before: eb89772 (tag initial-release)
+  - Before: eb8977286d98e1303a18065a0ef8071115949af2 (tag initial-release)
   - After: 06d6b95
 
 
@@ -187,17 +209,7 @@
 we have multiple vstacks.
 - Identify the commit hash of the commit in which you wrote your new documentation. Provide a Github link where your instructor can view the diff of that commit. If you created or updated any issues in your issue tracker, show a "before" and "after" snapshot of the detailed view of each issue so that the difference can clearly be seen
   - Before: eb8977286d98e1303a18065a0ef8071115949af2 (tag initial-release)
-  - After:  858610e
-
-
-
-
-
-
-
-
-Commit hash:
-Github link:
+  - After:  ebaf7948204541fd617dcf8a51d1246454408102
 
 ### Subgroup 2: Candice & Gabby
 
