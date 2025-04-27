@@ -110,7 +110,7 @@
 ##### Name, occupation, and other relevant information about the stakeholder
 - Autumn Kwon, CS major at Grinnell
 ##### Date and time of the stakeholder meeting
-- 04/24/2025 6:00pm-6:30pm
+- 04/24/2025 7:20pm - 7:50pm
 ##### Description of the test session and feedback
 ##### What was their behavior of interacting with the documentation?
 1. Find and read the manual or help section
@@ -119,25 +119,45 @@
 3. Try purchasing one item (just  UI part)
 4. Navigate to settings and try changing one setting (is UI intuititive)
 5. Try adding task using add task list.
+6. Try to check off one of the task
 
 ##### Did they succeed or get stuck?
+1. Getting to manual Sucess
+  - She was confused with does date and time mean in the app or not.
+  - She managed to get to add 
+2. Success
+3. Successfully
+4. Succesfully changed the setting
+5. Success
 
 ##### What feedback did they provide about documentation?
+- The alignment of text of manual is not pleasing
+- The checklist looks like it is clickable
+- Why black and white defulat? (default is not set to the default color)
+- Why is there no elephant theme
+- If change theme, the frame looks funky
+- Why is there checklist #1? What does each number mean.
+- What if I want to create another checklist? Why is it still #1?
+- Why is there empty spot after custom list? (WHat is the intention?)
+- The checklist does not fit well with the meaning of the settings.
+- The color combination of the widget is not appealing. Why orange not pastel?
 
 ##### What questions did you ask, and what were the stakeholder's answers?
 
 ***Before***
 
 - What is the first impression when you saw the app? (Confusing? less intuitive)?
-
+  - She said the design is cute. Why the app name is Elephant?    
 
 ***After & During***
-- We asked for more feedback on the UI and what was confusing upon first interaction, but he had already answered previously for our documentation feedback questions.
-
 - Was anything unclear or confusing when using the app?
-
-
+  - WHy the checklist is in the settings?
+  - Does not get how the checklist operates
+  - How does avatar work?
+    
 - Is anything missing that you expected? (like what do you expect widget to do?)
+  - She wanted to try buying the avatar. She wanted some free tokens to try out purchasing.
+  - Why are charactesr all 5 tokens?
 
 
   
