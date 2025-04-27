@@ -340,4 +340,13 @@ The inline suggesntions were:
    - Some additional controversies of AI lies in how AI are trained on online materials that are not necessarily approved by original owners, raising problems of consent and copyright infringements.
 
 ### Gabby
-   
+
+
+
+## Self-Selected Work toward Minimum Viable Product (MVP)
+Your team should also continue working towards your initial release by choosing work from your product backlog to complete this sprint. Aim to deliver your MVP with this milestone
+In a Sprint Journal entry, remind us what your MVP is (look back to Milestone 1 where you described what features would be included in your MVP)
+Describe what work, if any, remains toward delivering your MVP
+
+- What is our MVP
+- Describe what work remains toward MVP
