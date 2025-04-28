@@ -224,7 +224,7 @@ we have multiple vstacks.
 ***What Changes were made***
 - 
 
-
+***Helpful:*** 
 Helpful: There were larger comments before long snippets of code that explained the functionality of the following lines, but for some lines where there wasn't enough description for a longer code line, we made changes to this by making sure those lines were descriptive enough.
 
 **Before:**  eb8977286d98e1303a18065a0ef8071115949af2 (tag initial-release)
