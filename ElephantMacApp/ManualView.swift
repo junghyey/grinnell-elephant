@@ -6,14 +6,13 @@
  
  ## Components:
  - `ManualTemplateView`: A reusable SwiftUI template providing navigation, layout, and dynamic styling for each page in manual pages.
- - `ManualView`, `SecondPageView`, `ThirdPageView`, `FourthPageView`: Specific manual pages introducing app features step-by-step.
+ - `ManualView`, `SecondPageView`, `ThirdPageView`, `FourthPageView`: Specific manual pages for each feature
  - `ChecklistItem`, `CheckBoxView`, `ChecklistView`: Supporting views for displaying example checklists and user stories.
  ## Features:
  - Scrollable, styled content sections with clear headings.
- - Step-by-step user onboarding with examples.
+ - The first page contains all the link to other pages for navigation.
  - Navigation controls (Back, Next, Home buttons) for linear walkthrough.
  - Accessibility identifiers for UI testing and improved accessibility.
- - Dynamic light/dark mode theming based on user settings.
  
  ## References:
  https://developer.apple.com/documentation/swiftui/font
@@ -44,36 +43,32 @@ import SwiftUI
 // ====================================================
 
 /*
- `ManualTemplateView` is a reusable SwiftUI component that defines a consistent layout for pages
- within the Elephant app’s interactive manual. It provides a scrollable content area, navigation
- controls, and an optional home button — making it ideal for onboarding flows or multi-step guides.
+ `ManualTemplateView` is a reusable SwiftUI component for layout for pages for each manual page
 
  ## Purpose:
- - Provide a consistent and styled layout wrapper for manual/help pages.
- - Support step-based navigation and return-to-home functionality.
+ - Provide a consistent and reusable layout wrapper for manual/help pages.
+ - It prevents from manually configuring each page.
 
  ## Behavior:
- - Displays a scrollable content view passed as a closure.
- - Shows a home button if `homePage` is provided.
- - Shows back/next navigation buttons if `backPage` or `nextPage` are provided.
- - Automatically applies accessibility identifiers and dynamic theming.
+ - It contains scrollable area where content goes
+ - It has options to add next,back button and home button is automatically added 
 
  ## Parameters:
- - `currentPageIdentifier`: A unique string identifier for accessibility and view recognition.
- - `content`: A closure that returns the SwiftUI view displayed in the content area.
- - `backPage`: An optional view to navigate back to the previous manual page.
- - `nextPage`: An optional view to navigate forward to the next manual page.
- - `homePage`: An optional view that serves as a return point to the app’s homepage.
+ - `currentPageIdentifier`: A unique string identifier for each page
+ - `content`: Content to display 
+ - `backPage`: Navigate back button to go back to page (optional)
+ - `nextPage`: Navigate forward button to go front (optional)
+ - `homePage`: Navigate home button to go to main page of the app.
 
  ## Preconditions:
  - `content` must be a valid SwiftUI `View`.
- - `currentPageIdentifier` must be unique within the manual flow.
+ - `currentPageIdentifier` must be unique for each page
+ - There needs to be an identifier for main page. 
 
  ## Postconditions:
- - The rendered page includes:
-    - A header with an optional home button.
+ - The rendered manual includes
     - Scrollable manual content.
-    - Navigation buttons (if applicable) for linear page traversal.
+    - Navigation buttons (if applicable).
  */
 struct ManualTemplateView<Content: View>:  View {
     @AppStorage("mode") private var Mode: Bool = false
