@@ -222,7 +222,7 @@ we have multiple vstacks.
 - For sections where Gabby didn't give very descriptive or detailed documentation, she added more helpful comments that explained thoroughly how each part of the SettingsView was implemented. She included more description about where certain functions defined in the lower lines of the snippet (88-112) are coming from and how this compacting of functions at the end of SettingsView allowed for greater readability within the main SettingsView view.
 
 **What Changes were made**
-- Describe what changes you made
+- I made changes to the SettingsView.swift file by not only committing more documentation for various components within settings, but also reduced the cluttering of the ScrollView by sectioning off settings options such as mode and theme selection, custom checklist features with it's own structure and descriptive documentation that explains the functionality in greater detail, and the time selection sections that demonstrate user interactive input. Cleaning up this file allowed for more comprehensive view and faster build (SettingsView scrollview was too long and would not build) while maintaining readability.
 
 **Helpful:**
 Helpful: There were larger comments before long snippets of code that explained the functionality of the following lines, but for some lines where there wasn't enough description for a longer code line, we made changes to this by making sure those lines were descriptive enough.
