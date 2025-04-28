@@ -218,13 +218,13 @@ we have multiple vstacks.
 2. Reviewed SetingsView.swift file, 
 - code snippet: ~lines 10-114~ within ~SettingsView~
 
-***Feedback***
+**Feedback**
 - For sections where Gabby didn't give very descriptive or detailed documentation, she added more helpful comments that explained thoroughly how each part of the SettingsView was implemented. She included more description about where certain functions defined in the lower lines of the snippet (88-112) are coming from and how this compacting of functions at the end of SettingsView allowed for greater readability within the main SettingsView view.
 
-***What Changes were made***
-- 
+**What Changes were made**
+- Describe what changes you made
 
-***Helpful:*** 
+**Helpful:**
 Helpful: There were larger comments before long snippets of code that explained the functionality of the following lines, but for some lines where there wasn't enough description for a longer code line, we made changes to this by making sure those lines were descriptive enough.
 
 **Before:**  eb8977286d98e1303a18065a0ef8071115949af2 (tag initial-release)
@@ -234,9 +234,9 @@ Helpful: There were larger comments before long snippets of code that explained 
 
 4. Review Utils.swift file, entire file
 
-***Feedback:*** Candice worked on re-usable functions and stucts, including Default Colors for theme changes as well as a default ElephantButton that can be used across various files. We discussed adding more documentation to the file for more descriptive explanations of each function and which files it mostly interacts with, like SettingsView.
+**Feedback:** Candice worked on re-usable functions and stucts, including Default Colors for theme changes as well as a default ElephantButton that can be used across various files. We discussed adding more documentation to the file for more descriptive explanations of each function and which files it mostly interacts with, like SettingsView.
 
-***Helpful:*** There are initial comment descriptions for each utility, describing what that utility performs as well as helpful function definitions describing what use that function/struct performs.
+**Helpful:** There are initial comment descriptions for each utility, describing what that utility performs as well as helpful function definitions describing what use that function/struct performs.
 
 ***Changes:*** I added more documentation in the beginning of the file, specifically what the reusable components are, as well as some in-line documentation of how the reusable components can be further changed to allow more customization.
 
