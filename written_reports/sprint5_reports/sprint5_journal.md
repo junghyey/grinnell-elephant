@@ -22,6 +22,7 @@ Links to Bug Reports
   1. [Bug 1 Title & Link] - [description]
   2. [Bug 2 Title & Link] - [description]
   3. [Bug 3 Title & Link] - [description]
+  4. [Bug 4 Title & Link] - [description]
      
 ## License
 Software license for the product and include the license (or a link to it
