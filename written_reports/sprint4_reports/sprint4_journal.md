@@ -254,6 +254,8 @@ After: dfc1da55877419861e1e670bee239d652c0724b6
 ### Hyeyun
 Hyeyun's Prompt: **I am doing a project for the Wellness app called Elephant. I am in charge of Manual Page. I am using swift. I have a template struct for each page. Can you create a documentation (like purpose, pre,post conditions) for this struct so that others can understand? Also, suggest internal documentations too:** I attached the code block of ***struct ManualTemplateView***.
 
+I used chatgpt 
+
 AI gave me both top-level documentation (3p) and suggested inline comments. The top level documentation looks like:
 
 ```
