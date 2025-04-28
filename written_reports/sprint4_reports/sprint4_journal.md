@@ -217,11 +217,17 @@ we have multiple vstacks.
 
 2. Reviewed SetingsView.swift file, 
 - code snippet: ~lines 10-114~ within ~SettingsView~
+
+***Feedback***
 - For sections where Gabby didn't give very descriptive or detailed documentation, she added more helpful comments that explained thoroughly how each part of the SettingsView was implemented. She included more description about where certain functions defined in the lower lines of the snippet (88-112) are coming from and how this compacting of functions at the end of SettingsView allowed for greater readability within the main SettingsView view.
+
+***What Changes were made***
+- 
+
 
 Helpful: There were larger comments before long snippets of code that explained the functionality of the following lines, but for some lines where there wasn't enough description for a longer code line, we made changes to this by making sure those lines were descriptive enough.
 
-**Before:** `498a509275f70ac9ef75495f8b5832ef2e475ab9` (tag `sprint-4-second-release`)  
+**Before:**  eb8977286d98e1303a18065a0ef8071115949af2 (tag initial-release)
 **After:** `1e11d5c0235baf456dd14444ae1e73f2d1bbaf83`
 
 3. Teammate A: Candice, Teammate B: Gabby
