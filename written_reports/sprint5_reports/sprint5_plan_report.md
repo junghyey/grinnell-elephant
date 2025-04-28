@@ -1,0 +1,28 @@
+# Sprint 5 Planning Report
+
+### Capacity:
+- For sprint 5, our team is aiming to...
+### Goals:
+- This sprint, we plan to...
+### Task breakdown:
+Our current task breakdown is as follows:
+- Hyeyun: 
+- Gabby: 
+- Mae: 
+- Candice: 
+- Other tasks: 
+
+Once we reach a good place in development and feedback, we will refer to our issue tracker, where we have assigned tasks to each team member. Once the basic widget is ready for connection, we will connect the widget to the app then work on the widget UI. 
+
+### Assignment: What will each team member do this sprint?
+In this sprint, our main focus is the development of the ...
+
+| Role                         | Responsibilities |
+|------------------------------|-----------------|
+| **Project Manager (Hyeyun)**    | Oversees sprint progress and reports, manages deadlines/Trello board, organizes meetings, and ensures team coordination. |
+| **Lead Developer (Candice)** | Oversees overall implementation, handles technical setup, coding standards, and supports development in Swift and Xcode. |
+| **Lead Designer (Mae)** | Responsible for design-related tasks (e.g., character design, coloring, paper prototyping) and brainstorming app ideas. |
+| **Documentation & Reporting Lead (Gabby)** | Reviews and updates sprint reports, maintains documentation, and ensures clear communication of progress (grammar, wording..etc..).  |
+
+### Issue Tracker: How can your instructor view the results of your sprint planning using your issue tracker?
+[Elephant🐘💻 Trello](https://trello.com/b/4KAD6ca1/elephant-dev-board-%F0%9F%90%98%F0%9F%92%BB)
