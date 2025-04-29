@@ -28,7 +28,7 @@ import SwiftUI
  https://stackoverflow.com/questions/55213078/what-is-the-difference-between-swift-structs-and-objective-c-structs
  */
 struct ManualTemplateView<Content: View>:  View {
-    @AppStorage("mode") private var Mode: Bool = false
+    @EnvironmentObject var themeManager: ThemeManager
     @Environment(\.dismiss) private var dismiss
     //Variables
     var currentPageIdentifier: String
@@ -62,7 +62,7 @@ struct ManualTemplateView<Content: View>:  View {
                         NavigationLink(destination: homePage) {
                             Image(systemName: "house.fill")
                                 .font(.title2)
-                                .foregroundColor(DefaultColors.main_color_3)
+                                .foregroundColor(themeManager.curTheme.main_color_3)
                                 .accessibilityIdentifier("homeButton")
                                 .allowsHitTesting(true)
                                 //nopadding
@@ -72,7 +72,6 @@ struct ManualTemplateView<Content: View>:  View {
                 }//HStack
                 
                 .padding()
-                .background(DefaultColors.main_color_1)
                 
                 // Scrollable content area
                 ScrollView {
@@ -85,18 +84,18 @@ struct ManualTemplateView<Content: View>:  View {
                         Color.clear
                             .accessibilityElement(children: .combine)
                             .accessibilityIdentifier(currentPageIdentifier)
-                            .shadow(color: DefaultColors.shadow_1.opacity(0.2), radius: 8, x: 0, y: 4)
+                            .shadow(color: themeManager.curTheme.shadow_1.opacity(0.2), radius: 8, x: 0, y: 4)
                     )
                     .id(currentPageIdentifier)
                 }//ScrollView
-                .background(DefaultColors.background)
+                
                 // Footer stack with navigation buttons
                 HStack {
                     if let backPage = backPage {
                         NavigationLink(destination: backPage) {
                             Image(systemName: "arrow.left.circle.fill")
                                 .font(.title)
-                                .foregroundColor(DefaultColors.main_color_2)
+                                .foregroundColor(themeManager.curTheme.main_color_2)
                                 .accessibilityIdentifier("backButton")
                                 .allowsHitTesting(true)
                         }//NavigationLink
@@ -109,7 +108,7 @@ struct ManualTemplateView<Content: View>:  View {
                         NavigationLink(destination: nextPage) {
                             Image(systemName: "arrow.right.circle.fill")
                                 .font(.title)
-                                .foregroundColor(DefaultColors.main_color_2)
+                                .foregroundColor(themeManager.curTheme.main_color_2)
                                 .accessibilityIdentifier("nextButton")
                                 .allowsHitTesting(true)
                         }//NavigationLink
@@ -118,11 +117,11 @@ struct ManualTemplateView<Content: View>:  View {
                 }//HStack
                 .padding(.horizontal)
                 .padding(.bottom, 20)
-                .background(DefaultColors.background)
             }
-            .preferredColorScheme(Mode ? .dark : .light)
+            .preferredColorScheme(themeManager.Mode ? .dark : .light)
+            .foregroundColor(themeManager.textColor(for: themeManager.curTheme.background))
             .frame(width: 500, height: 500)
-            .background(Mode ? Color.black : Color.white)
+            .background(themeManager.curTheme.background)
         }//VStack
   
 }//ManualTemplateView
@@ -282,11 +281,13 @@ struct ChecklistItem: Identifiable {
  https://www.hackingwithswift.com/quick-start/swiftui/building-a-menu-using-list
  */
 struct CheckBoxView: View {
+    @EnvironmentObject var themeManager: ThemeManager
+    
     let isChecked: Bool
     
     var body: some View {
         Image(systemName: isChecked ? "checkmark.square.fill" : "square")
-            .foregroundColor(isChecked ?  DefaultColors.main_color_3: Color.secondary)
+            .foregroundColor(isChecked ?  themeManager.curTheme.main_color_3: Color.secondary)
     }//var body
 }//CheckBoxView
 /*

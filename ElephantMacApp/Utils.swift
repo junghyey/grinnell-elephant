@@ -94,8 +94,9 @@ struct ElephantButton: View {
 //                )
         }
         .background(themeManager.curTheme.main_color_2)
-        .foregroundColor(themeManager.curTheme.shadow_2)
-        .buttonBorderShape(.roundedRectangle(radius: 10))
+        .cornerRadius(20)
+        .foregroundColor(themeManager.textColor(for: themeManager.curTheme.main_color_2))
+        .buttonBorderShape(.capsule)
         .buttonStyle(PlainButtonStyle())
     }
 }
