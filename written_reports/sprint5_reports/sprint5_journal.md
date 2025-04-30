@@ -30,8 +30,12 @@ If the app is fully developed, then:
 
 
 ##### Risk
-For current version, the Risks are:
-(ask professor)
+(If fully developed)
+1. Becoming too  reliant on the app.
+2. Abuse use of tokens
+3. Possible privacy & data concerns since this is integrated to Apple (since appple app).
+4. There can be stress & guilt for users if they could not do tasks --> could dismotivate users.
+5. The notifications can be distracting and bother the focus.
 
 ##### Is it right to encourage people to adopt your product in its current state? Or will you continue developing instead? Explain your decision.
 No, it is not right to encourage people to adopt our prduct in its current state because we do not have working functionalities. For example, we do not have stopwatch, pomodoro, widget integrations except for basic UIs. So, it is not appropriate. Therefore, we will continue developing instead to have working pomodoro and stopwatch function with widget.
