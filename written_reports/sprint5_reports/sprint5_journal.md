@@ -1,7 +1,7 @@
 # Sprint 5 Journal
 
 ## Adoption Plan
-#### Date: 
+#### Date: Apr/30/2025
 #### Is your product ready for adoption?
 
 #### Current State of product development
