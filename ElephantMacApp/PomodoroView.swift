@@ -3,7 +3,6 @@
 //  Elephant
 //
 //  Created by Pruneda Turcios, Gabriela, modified by Candice Lu
-//  Not yet working because I can't test it - Candice
 
 import SwiftUI
 
@@ -11,12 +10,14 @@ struct PomodoroView: View{
     @EnvironmentObject var themeManager: ThemeManager
     
     // pomodoro break time variables
-    @State private var selectedWorkTime: Int = 25 //default for pomodoro
-    @State private var shortBreakTime: Int = 5 //default for pomodoro
-    @State private var longBreakTime: Int = 15//default for pomodoro
+    @State private var selectedWorkTime: Int = 1 //default for pomodoro
+    @State private var shortBreakTime: Int = 2 //default for pomodoro
+    @State private var longBreakTime: Int = 15 //default for pomodoro
     
     // whether timer is running
     @State private var isRunning: Bool = false
+    // whether timer is paused
+    @State private var isPaused: Bool = false
     // timer start time
     @State private var startTime: Date = Date()
     // how many seconds has passed
@@ -51,26 +52,43 @@ struct PomodoroView: View{
         } else {
             // if timer ends, start new session
             isRunning = false
-            startNewCycle()
+            if isBreak {
+                isBreak = false
+                timerString = formatTime(secs: selectedWorkTime*60)
+                remainingTime = Double(selectedWorkTime*60)
+            } else {
+                isBreak = true
+                if breakCount % 4 != 3 {
+                    timerString = formatTime(secs: shortBreakTime*60)
+                    remainingTime = Double(shortBreakTime*60)
+                }   else {
+                    timerString = formatTime(secs: longBreakTime*60)
+                    remainingTime = Double(longBreakTime*60)
+                }
+            }
+            // startNewCycle()
         }
     }
     
+    // resets timer and starts a new cycle
+    // Developed under assistance of ChatGPT
     func startNewCycle() {
-        // if it's break
-        if isBreak {
-            isBreak = false
+        // if it's not break: start a timer for work
+        if !isBreak {
+//            isBreak = false
             timerString = formatTime(secs: selectedWorkTime*60)
             remainingTime = Double(selectedWorkTime*60)
         } else {
-            isBreak = true
+            // if break: start a timer for break and increment break
+//            isBreak = true
             breakCount += 1
             // long break if three breaks have passed
-            if breakCount % 4 == 0 {
-                timerString = formatTime(secs: longBreakTime*60)
-                remainingTime = Double(selectedWorkTime*60)
-            } else {
+            if breakCount % 4 != 3 {
                 timerString = formatTime(secs: shortBreakTime*60)
-                remainingTime = Double(selectedWorkTime*60)
+                remainingTime = Double(shortBreakTime*60)
+            }   else {
+                timerString = formatTime(secs: longBreakTime*60)
+                remainingTime = Double(longBreakTime*60)
             }
         }
     }
@@ -85,15 +103,34 @@ struct PomodoroView: View{
                                 }
                             }
             HStack{
+                // start button:
+                // if timer is already running, do nothing
+                // if timer not running:
+                    // if paused: resume
+                    // if not paused:
+                        // if we just finished a break cycle: reset to work interval and start new cycle
+                        // if we just finished a work cycle: reset to break interval
                 ElephantButton(
                     buttonText: "Start",
                     action: {
-                        isRunning = true
-                        startNewCycle()
+                        // only do something if it's not already running
+                        if !isRunning {
+                            isRunning = true
+                            if !isPaused {
+                                if isBreak {
+//                                    isBreak = false
+                                    startNewCycle()
+                                } else {
+//                                    isBreak = true
+                                    startNewCycle()
+                                }
+                            }
+                        }
                     },
                     color: themeManager.curTheme.main_color_2)
                 ElephantButton(
                     buttonText: "Reset",
+                    // resets remaining time to selected work time
                     action: {
                         isRunning = false
                         elapsedTime = 0.0
@@ -110,9 +147,13 @@ struct PomodoroView: View{
                         // store how long the timer has ran so we can resume later
                         elapsedTime += now.timeIntervalSince(startTime)
                         isRunning = false
+                        isPaused = true
                     },
                     color: themeManager.curTheme.main_color_2)
+                // strings for clarity and testing purpose
             }
+            ElephantText(displayText: "break count: \(breakCount)")
+            ElephantText(displayText: "is break?: \(isBreak)")
         }
         .frame(width: 500, height: 500)
         .padding(10)
@@ -121,7 +162,8 @@ struct PomodoroView: View{
     }
 }
 
-// since it's not working yet I temporarily commented out the preview in case it causes more issues
-//#Preview {
-//    PomodoroView()
-//}
+#Preview {
+    let themeManager = ThemeManager()
+    PomodoroView()
+        .environmentObject(themeManager)
+}
