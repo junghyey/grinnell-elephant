@@ -3,9 +3,38 @@
 ## Adoption Plan
 #### Date: 
 #### Is your product ready for adoption?
+
+#### Current State of product development
 Describe the current state of your product's development at the time of writing this journal entry.
+
+So far, Elephant is in a prototype stage, with only the user interface (UI) components are completed. Users can interact with the homepage functionalities such as manual, changing themes in settings. Moreover, users can add a widget to the widget bar. However, there is no functional pomodoro or stopwatch working at this point. Moreover, users can experience adding checklist, but there is no backend data structure to store it. The main app UI exists, but core features like timer settings, purchasing avatars are not availalble. No backend or data storage beyong this UI mockup is currently available.
+
+
+#### Risk/Benefit Analysis
 Give a comprehensive risk/benefit analysis of your product by stating at least 5 risks or benefits of using your product
-Is it right to encourage people to adopt your product in its current state? Or will you continue developing instead? Explain your decision.
+
+##### Benefits
+For current version, the benefits are:
+1. The app has a visually appealing and intuitive interface, which helps users to navigate the app easily.
+2. For weidget, users can see how the widget will look like and where it will show in their laptop
+3. We can get feedbacks from stakeholders through current UI-focused prototype and fix it before backend. (Our backend is straightforward since we store data locally)
+4. For the current state, by using this product, we can finalize the UI structure early to reducing the possible waste of time that does not go well with front-end
+5. Having a working UI in current states allow developers to get direct experience what users are facing.
+
+If the app is fully developed, then:
+1. (If the app is fully developed) Users can acheive wellness and work balance.
+2. Users can motivate themselves by checking off the task and earn tokens
+3. Fratures like customizable themes, timers, and avatars make the app fun and personal, increasing the engagement.
+4. Widget-based interactions will allow distraction-free experience.
+5. Shared team boards can support social motivation and group productivity.
+
+
+##### Risk
+For current version, the Risks are:
+(ask professor)
+
+##### Is it right to encourage people to adopt your product in its current state? Or will you continue developing instead? Explain your decision.
+No, it is not right to encourage people to adopt our prduct in its current state because we do not have working functionalities. For example, we do not have stopwatch, pomodoro, widget integrations except for basic UIs. So, it is not appropriate. Therefore, we will continue developing instead to have working pomodoro and stopwatch function with widget.
 
 #### Adoption plan (if ready for adoption)
 
