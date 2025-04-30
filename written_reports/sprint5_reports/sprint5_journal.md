@@ -31,9 +31,9 @@ If the app is fully developed, then:
 
 ##### Risk
 (If fully developed)
-1. Becoming too  reliant on the app.
-2. Abuse use of tokens
-3. Possible privacy & data concerns since this is integrated to Apple (since appple app).
+1. Users can become too  reliant on the app.
+2. There can be abuse of tokens.
+3. There can be possible privacy & data concerns since this is integrated to Apple (since appple app).
 4. There can be stress & guilt for users if they could not do tasks --> could dismotivate users.
 5. The notifications can be distracting and bother the focus.
 
