@@ -42,8 +42,10 @@ Root
   |       |-- sprint3_plan_report.md         # this is where we have sprint3 planning report
   |       |-- sprint3_review_report.md
   |   |-- sprint4_reports/
+  |       |-- CSC_324_DEMO_2.pptx
   |       |-- sprint4_journal.md
   |       |-- sprint4_plan_report.md         # this is where we have sprint4 planning report
+  |       |-- sprint4_review_report.md
   |-- Elephant
   |-- ElephantWidget 
   |-- ElephantUITests
