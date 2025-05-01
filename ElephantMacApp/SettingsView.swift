@@ -4,6 +4,13 @@
 //
 //  Created by 陸卉媫 on 3/14/25.
 //  Authored by Gabriela Pruneda Turcios
+//
+ //Sources: preferredColorScheme mode:
+/*https://developer.apple.com/documentation/swiftui/view/preferredcolorscheme(_:)*/
+
+// source for Geometry Reader used for custom slider:
+/*https://medium.com/@amitaswal87/understanding-geometryreader-in-swiftui-a-detailed-guide-2bd3031e5712*/
+//
 
 import SwiftUI
 
@@ -13,9 +20,9 @@ struct SettingsView: View {
     @State private var showingChecklist = false //default set to false until user opens the checklist
     
     @EnvironmentObject var themeManager: ThemeManager //found within ColorSettings, manages global theme settings
-    @AppStorage("mode") private var Mode: Bool = false // default light mode
+//    @AppStorage("displayMode") private var Mode: Bool = false // default light mode
     
-    @AppStorage("mode") var mode: String = "pomodoro" //set default to pomodoro
+    @AppStorage("timerMode") var timerMode: String = "pomodoro" //set default to pomodoro
     
     //Default time settings for Pomodoro and Stopwatch widget integration
     @AppStorage("workDuration") private var selectedWorkTime: Double = 25
@@ -52,10 +59,12 @@ struct SettingsView: View {
             .frame(width: 500, height: 500) //frames pop-up sheet
         }
         .padding()
-        .preferredColorScheme(Mode ? .dark : .light) //based on user selection
+        .preferredColorScheme(themeManager.Mode ? .dark : .light) //based on user selection
+        .foregroundColor(themeManager.textColor(for: themeManager.curTheme.background))
         .background(themeManager.curTheme.background) //based on user selection
         .frame(width: 500, height: 500) //frames scroll view
     }
+    
     
     //re-usable back button, calls presentationMode to go "back" to previous
     private var backButton: some View {
@@ -68,9 +77,9 @@ struct SettingsView: View {
     private var modeSection: some View {
         VStack(alignment: .leading) {
             sectionTitle(text: "Modes")
-            ElephantButton(buttonText: Mode ? "Dark Mode" : "Light Mode", action: {
-                Mode.toggle()
-            }, color: Mode ? .gray.opacity(0.7) : .gray.opacity(0.2))
+            ElephantButton(buttonText: themeManager.Mode ? "Dark Mode" : "Light Mode", action: {
+                themeManager.toggleMode()
+            }, color: themeManager.Mode ? .gray.opacity(0.7) : .gray.opacity(0.2))
         }
     }
     
@@ -160,11 +169,12 @@ struct SettingsView: View {
             }
         }
     }
+        
 }//bottom of SettingsView
 
 //ChecklistView for custom checklist
 struct CheckListView: View {
-    @AppStorage("mode") private var Mode: Bool = false // default light mode
+
     //variables for task list storage and array of task items defined
     @Environment(\.dismiss) private var dismiss //used for dismissing current presentation
     @EnvironmentObject var storage: TaskListStorage //defined storage
@@ -238,9 +248,11 @@ struct CheckListView: View {
                     .foregroundColor(themeManager.curTheme.main_color_1)
                 TextField("Add new task...", text: $newTask, onCommit: addNewTask)
                     .textFieldStyle(PlainTextFieldStyle())
+                    .foregroundColor(themeManager.textColor(for: themeManager.curTheme.main_color_1))
             }
         }
         .listStyle(PlainListStyle())
+        
     }
     
     //Actionable buttons within custom checklist view
@@ -276,7 +288,7 @@ struct CheckListView: View {
                 color: themeManager.curTheme.main_color_1)
         }
         .padding(.bottom)
-        .preferredColorScheme(Mode ? .dark : .light) //based on user selection
+        .preferredColorScheme(themeManager.Mode ? .dark : .light) //based on user selection
     }
     //seperate function for adding a new task in real time currently within SettingsView only
     private func addNewTask() {
@@ -295,7 +307,7 @@ struct CheckListView: View {
  /*Custom slider for various time settings for pomodoro and stopwatch.
   Slider customizable between minimum, maximum and break time intervals between work breaks*/
 struct customSlider: View {
-    @AppStorage("mode") private var Mode: Bool = false // default light mode
+
     @EnvironmentObject var themeManager: ThemeManager
     @Binding var selectedTime: Double
     let minTime: Double
@@ -305,7 +317,15 @@ struct customSlider: View {
     var body: some View {
         VStack(spacing: 8) { //builds slider for various settings
             Slider(value: $selectedTime, in: minTime...maxTime, step: interval)
-                .accentColor(themeManager.curTheme.main_color_2)
+                .accentColor(.clear)
+                .background(
+                    GeometryReader { geo in
+                        Capsule()
+                            .fill(themeManager.curTheme.shadow_2)
+                            .frame(height: 4)
+                            .position(x: geo.size.width / 2, y: geo.size.height / 2)
+                    }
+                )
                 .padding(.vertical, 8)
             
             HStack {
@@ -322,7 +342,8 @@ struct customSlider: View {
             .padding(.horizontal)
         }
         .padding()
-        .preferredColorScheme(Mode ? .dark : .light) //based on user selection
+        .preferredColorScheme(themeManager.Mode ? .dark : .light) //based on user selection
+
     }
 }
 

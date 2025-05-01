@@ -24,19 +24,19 @@ protocol ThemeProtocol {
 }
 
 class ThemeManager: ObservableObject {
-    @AppStorage("mode") private var Mode: Bool = false // default light mode
-    
+    //sets the curThemeKey to default theme
     @AppStorage("curTheme") var curThemeKey: String = "defaultElephant" {
             didSet {
                 objectWillChange.send()
             }
         }
     
-//    @AppStorage("isDarkMode") private var isDarkMode: Bool = false{
-//        didSet{
-//            objectWillChange.send()
-//        }
-//    }
+    //sets the display mode to light mode by default
+    @AppStorage("displayMode") var Mode: Bool = false{
+        didSet{
+            objectWillChange.send()
+        }
+    }
     
     // takes the string name of theme protocol and return the correct settings
     var curTheme: ThemeProtocol {
@@ -60,13 +60,17 @@ class ThemeManager: ObservableObject {
         return curThemeKey
     }
 
+    //gets appropriate color for text based on background and current mode
     func textColor(for background: Color) -> Color {
-        // Check if we're in dark mode
+        // Checks current state of mode
         if Mode {
-            // For light backgrounds in dark mode, use dark text
-            if background == curTheme.background &&
-               (curThemeKey == "defaultElephant" || curThemeKey == "blackWhite") {
+            // For light backgrounds in dark mode, use black text
+            if background == curTheme.background && Mode {
                 return .black
+            }
+            //for dark backgrounds in dark mode, use white text
+            if background == curTheme.main_color_1{
+                return .white
             }
             // For other backgrounds in dark mode, use white text
             return .white
@@ -81,21 +85,14 @@ class ThemeManager: ObservableObject {
         }
     }
     
-//    //toggles dark mode
-//    func toggleDarkMode(){
-//        isDarkMode.toggle()
-//    }
-//    
-//    //gets current mode
-//    func isDarkModeEnabled() -> Bool {
-//        return isDarkMode
-//    }
-//    
-//    //appropriate text color given selected theme background
-//    func textColor(for background: Color) -> Color {
-//        return curTheme.textColor(for: background, isDarkMode: isDarkMode)
-//    }
-}
+    //toggles between light/dark mode
+    func toggleMode(){
+        Mode.toggle()
+    }
+    
+
+}//end of ThemeManager
+
 //
 ////default settings for text based on defaultTheme
 //extension ThemeProtocol{

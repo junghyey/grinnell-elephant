@@ -68,6 +68,7 @@ struct ItemView: View {
             .frame(width: 500, height: 500)
             .padding(10)
             .background(themeManager.curTheme.main_color_1)
+            .preferredColorScheme(themeManager.Mode ? .dark : .light)
             
             if(showConfirmation) {
                 ElephantConfirmationDialogue(
@@ -83,6 +84,8 @@ struct ItemView: View {
                 .zIndex(1)
             }
         }.accessibilityIdentifier("itemView_\(item.imageName)")
+        .preferredColorScheme(themeManager.Mode ? .dark : .light)
+        .foregroundColor(themeManager.textColor(for: themeManager.curTheme.background))
     }
     
 }
