@@ -7,6 +7,9 @@
 //
  //Sources: preferredColorScheme mode:
 /*https://developer.apple.com/documentation/swiftui/view/preferredcolorscheme(_:)*/
+
+// source for Geometry Reader used for custom slider:
+/*https://medium.com/@amitaswal87/understanding-geometryreader-in-swiftui-a-detailed-guide-2bd3031e5712*/
 //
 
 import SwiftUI
@@ -245,9 +248,11 @@ struct CheckListView: View {
                     .foregroundColor(themeManager.curTheme.main_color_1)
                 TextField("Add new task...", text: $newTask, onCommit: addNewTask)
                     .textFieldStyle(PlainTextFieldStyle())
+                    .foregroundColor(themeManager.textColor(for: themeManager.curTheme.main_color_1))
             }
         }
         .listStyle(PlainListStyle())
+        
     }
     
     //Actionable buttons within custom checklist view
@@ -312,8 +317,15 @@ struct customSlider: View {
     var body: some View {
         VStack(spacing: 8) { //builds slider for various settings
             Slider(value: $selectedTime, in: minTime...maxTime, step: interval)
-                .accentColor(themeManager.curTheme.main_color_3)
-                
+                .accentColor(.clear)
+                .background(
+                    GeometryReader { geo in
+                        Capsule()
+                            .fill(themeManager.curTheme.shadow_2)
+                            .frame(height: 4)
+                            .position(x: geo.size.width / 2, y: geo.size.height / 2)
+                    }
+                )
                 .padding(.vertical, 8)
             
             HStack {

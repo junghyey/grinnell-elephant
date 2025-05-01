@@ -181,6 +181,7 @@ struct ContentView: View {
         } // NavigationStack
         .frame(width: 500, height: 500)
         .preferredColorScheme(themeManager.Mode ? .dark : .light)
+        .foregroundColor(themeManager.textColor(for: themeManager.curTheme.main_color_1))
     } // main body
 } // ContentView Struct
 

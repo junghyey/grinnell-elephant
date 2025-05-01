@@ -89,6 +89,7 @@ struct StopwatchView: View {
         .frame(width: 500, height: 500)
         .padding(10)
         .background(themeManager.curTheme.main_color_1)
+        .preferredColorScheme(themeManager.Mode ? .dark : .light)
         .accessibilityIdentifier("shopMainPageView")
     }
 }
