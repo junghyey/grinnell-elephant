@@ -8,7 +8,6 @@ import SwiftUI
 
 struct ShopMainPageView: View {
     
-    @AppStorage("mode") private var Mode: Bool = false //global mode setting
     @AppStorage("user_tokens") var userTokens: Int = 15
     @AppStorage("curPalette") var curPalette: String = "defaultElephant"
     
@@ -41,7 +40,7 @@ struct ShopMainPageView: View {
                 }
             }.frame(alignment: .leading)
         }
-        .preferredColorScheme(Mode ? .dark : .light)
+        .preferredColorScheme(themeManager.Mode ? .dark : .light)
         .frame(width: 500, height: 500)
         .padding(10)
         .background(themeManager.curTheme.main_color_1)

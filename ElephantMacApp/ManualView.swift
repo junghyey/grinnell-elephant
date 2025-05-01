@@ -71,7 +71,7 @@ import SwiftUI
     - Navigation buttons (if applicable).
  */
 struct ManualTemplateView<Content: View>:  View {
-    @AppStorage("mode") private var Mode: Bool = false
+    @EnvironmentObject var themeManager: ThemeManager
     @Environment(\.dismiss) private var dismiss
    
     //--------------------------
@@ -111,7 +111,7 @@ struct ManualTemplateView<Content: View>:  View {
                         NavigationLink(destination: homePage) {
                             Image(systemName: "house.fill")
                                 .font(.title2)
-                                .foregroundColor(DefaultColors.main_color_3)
+                                .foregroundColor(themeManager.curTheme.main_color_3)
                                 .accessibilityIdentifier("homeButton")
                                 .allowsHitTesting(true)
                                 //nopadding
@@ -121,9 +121,7 @@ struct ManualTemplateView<Content: View>:  View {
                 }//HStack
                 
                 .padding()
-            
-                .background(DefaultColors.main_color_1)
-                
+
                 //-------------------
                 // Content Area Start
                 //-------------------
@@ -137,12 +135,12 @@ struct ManualTemplateView<Content: View>:  View {
                         Color.clear
                             .accessibilityElement(children: .combine)
                             .accessibilityIdentifier(currentPageIdentifier)
-                            .shadow(color: DefaultColors.shadow_1.opacity(0.2), radius: 8, x: 0, y: 4)
+                            .shadow(color: themeManager.curTheme.shadow_1.opacity(0.2), radius: 8, x: 0, y: 4)
                     )
                     .id(currentPageIdentifier)
                 }//ScrollView
+
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(DefaultColors.background)
                 //---------------------------------------------------------------
                 //--------------------
                 // Button Stack Starts
@@ -153,7 +151,7 @@ struct ManualTemplateView<Content: View>:  View {
                         NavigationLink(destination: backPage) {
                             Image(systemName: "arrow.left.circle.fill")
                                 .font(.title)
-                                .foregroundColor(DefaultColors.main_color_2)
+                                .foregroundColor(themeManager.curTheme.main_color_2)
                                 .accessibilityIdentifier("backButton")
                                 .allowsHitTesting(true)
                         }//NavigationLink
@@ -166,7 +164,7 @@ struct ManualTemplateView<Content: View>:  View {
                         NavigationLink(destination: nextPage) {
                             Image(systemName: "arrow.right.circle.fill")
                                 .font(.title)
-                                .foregroundColor(DefaultColors.main_color_2)
+                                .foregroundColor(themeManager.curTheme.main_color_2)
                                 .accessibilityIdentifier("nextButton")
                                 .allowsHitTesting(true)
                         }//NavigationLink
@@ -175,16 +173,15 @@ struct ManualTemplateView<Content: View>:  View {
                 }//HStack
                 .padding(.horizontal)
                 .padding(.bottom, 20)
-                .background(DefaultColors.background)
-              
-                //---------------------------------------------------------------
-            }//vstack
-     
-        
-            .preferredColorScheme(Mode ? .dark : .light)
+            }
+            .preferredColorScheme(themeManager.Mode ? .dark : .light)
+            .foregroundColor(themeManager.textColor(for: themeManager.curTheme.background))
             .frame(width: 500, height: 500)
-            .background(Mode ? Color.black : Color.white)
-        }// var body
+            .background(themeManager.curTheme.background)
+        }//VStack
+   
+}// var body
+
   
 }//ManualTemplateView
 
@@ -511,6 +508,8 @@ struct ChecklistItem: Identifiable {
  https://www.hackingwithswift.com/quick-start/swiftui/building-a-menu-using-list
  */
 struct CheckBoxView: View {
+
+    @EnvironmentObject var themeManager: ThemeManager
     @Binding var isChecked: Bool  // <-- binding to allow toggling
 
     // Action after the check mark
@@ -521,6 +520,7 @@ struct CheckBoxView: View {
                     isChecked.toggle() // if checked toggle
                 }//.onTapGesture
         }// var body
+
 }//CheckBoxView
 /*
  ChecklistView struct template

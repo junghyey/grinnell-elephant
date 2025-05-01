@@ -19,7 +19,7 @@ import SwiftUI
 // Homepage
 struct ContentView: View {
     @State private var isPressed = false
-    @AppStorage("mode") private var Mode: Bool = false //global mode setting
+    //@AppStorage("mode") private var Mode: Bool = false //global mode setting
     // @State private var currentMode = "Stopwatch" // preset for timer mode - if picker
     // theme manager
     @EnvironmentObject var themeManager: ThemeManager
@@ -29,9 +29,9 @@ struct ContentView: View {
     var body: some View {
             NavigationStack{
             ZStack{
-                (Mode ? Color.black : Color.white)//Background color
-                    .edgesIgnoringSafeArea(.all)
-                    .accessibilityIdentifier("homePage") // identifier for homepage
+//                (Mode ? Color.black : Color.white)//Background color
+//                    .edgesIgnoringSafeArea(.all)
+//                    .accessibilityIdentifier("homePage") // identifier for homepage
                 // homepage structure
                 VStack{
                     // structure the settings and manual page buttons
@@ -180,7 +180,8 @@ struct ContentView: View {
             } // ZStack
         } // NavigationStack
         .frame(width: 500, height: 500)
-        .preferredColorScheme(Mode ? .dark : .light)
+        .preferredColorScheme(themeManager.Mode ? .dark : .light)
+        .foregroundColor(themeManager.textColor(for: themeManager.curTheme.main_color_1))
     } // main body
 } // ContentView Struct
 
