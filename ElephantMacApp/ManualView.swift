@@ -182,8 +182,7 @@ struct ManualTemplateView<Content: View>:  View {
    
 }// var body
 
-  
-}//ManualTemplateView
+
 
 
 // MARK: - Main OverView Page
