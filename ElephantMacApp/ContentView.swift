@@ -20,18 +20,18 @@ import SwiftUI
 struct ContentView: View {
     @State private var isPressed = false
     //@AppStorage("mode") private var Mode: Bool = false //global mode setting
-    // @State private var currentMode = "Stopwatch" // preset for timer mode - if picker
+    @State private var currentMode = "Stopwatch" // preset for timer mode - if picker
     // theme manager
     @EnvironmentObject var themeManager: ThemeManager
     
-    // let modes = ["Pomodoro", "Stopwatch"] // timer mode options
+    let modes = ["Pomodoro", "Stopwatch"] // timer mode options
     
     var body: some View {
-            NavigationStack{
+        NavigationStack{
             ZStack{
-//                (Mode ? Color.black : Color.white)//Background color
-//                    .edgesIgnoringSafeArea(.all)
-//                    .accessibilityIdentifier("homePage") // identifier for homepage
+                //                (Mode ? Color.black : Color.white)//Background color
+                //                    .edgesIgnoringSafeArea(.all)
+                //                    .accessibilityIdentifier("homePage") // identifier for homepage
                 // homepage structure
                 VStack{
                     // structure the settings and manual page buttons
@@ -70,7 +70,7 @@ struct ContentView: View {
                         .frame(alignment: .trailing)
                         .background(themeManager.curTheme.main_color_1)
                         .accessibilityIdentifier("manualPage")
-
+                        
                     } // manual and settings page button area
                     .padding(.top, 15)
                     .padding(.trailing, 15)
@@ -101,23 +101,23 @@ struct ContentView: View {
                         .font(.headline)
                         .fontWeight(.bold)
                         .padding(.bottom, 10)
-
+                    
                     
                     // possible dropdown menu idea
-//                    Picker("Selected Mode", selection: $currentMode) {
-//                        ForEach(modes, id: \.self) { mode in
-//                            Text(mode)
-//                        }
-//                    }
-//                    .pickerStyle(MenuPickerStyle())
-//                    .font(.caption)
-//                    .fontWeight(.bold)
-//                    .fontDesign(.rounded)
-//                    .foregroundColor(.black)
-//                    .frame(width: 200, height: 60)
-//                    .background(DefaultColors.background)
-//                    .clipShape(RoundedRectangle(cornerRadius: 15))
-//                    .cornerRadius(10)
+                    //                    Picker("Selected Mode", selection: $currentMode) {
+                    //                        ForEach(modes, id: \.self) { mode in
+                    //                            Text(mode)
+                    //                        }
+                    //                    }
+                    //                    .pickerStyle(MenuPickerStyle())
+                    //                    .font(.caption)
+                    //                    .fontWeight(.bold)
+                    //                    .fontDesign(.rounded)
+                    //                    .foregroundColor(.black)
+                    //                    .frame(width: 200, height: 60)
+                    //                    .background(DefaultColors.background)
+                    //                    .clipShape(RoundedRectangle(cornerRadius: 15))
+                    //                    .cornerRadius(10)
                     
                     // STOPWATCH BUTTON
                     Button(action: {
@@ -157,17 +157,17 @@ struct ContentView: View {
                     
                     // COLLECTIBLES SHOP BUTTON
                     NavigationLink(destination: ShopMainPageView().environmentObject(themeManager)) {
-                            Text("Collectibles Shop")
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .fontDesign(.rounded)
-                                .foregroundColor(.black)
-                                .frame(width: 200, height: 60)
-                                .background(themeManager.curTheme.main_color_2)
-                                .clipShape(RoundedRectangle(cornerRadius: 15))
-                                .cornerRadius(10)
-                                .scaleEffect(isPressed ? 0.9 : 1.0)
-                                .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
+                        Text("Collectibles Shop")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .fontDesign(.rounded)
+                            .foregroundColor(.black)
+                            .frame(width: 200, height: 60)
+                            .background(themeManager.curTheme.main_color_2)
+                            .clipShape(RoundedRectangle(cornerRadius: 15))
+                            .cornerRadius(10)
+                            .scaleEffect(isPressed ? 0.9 : 1.0)
+                            .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
                     }  // NavigationLink - set up and adjustments
                     .buttonStyle(PlainButtonStyle())
                     .frame(maxWidth: .infinity, alignment: .center)
