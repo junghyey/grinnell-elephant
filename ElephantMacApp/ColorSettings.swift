@@ -8,6 +8,7 @@
 // resources: https://medium.com/@katramesh91/effortless-theming-in-swiftui-mastering-multiple-themes-and-best-practices-061113be6d3d
 
 import SwiftUI
+import WidgetKit
 
 // data structure for each theme
 protocol ThemeProtocol {
@@ -23,18 +24,29 @@ protocol ThemeProtocol {
 //    var secondaryTextColor: Color {get}
 }
 
+
 class ThemeManager: ObservableObject {
-    //sets the curThemeKey to default theme
-    @AppStorage("curTheme") var curThemeKey: String = "defaultElephant" {
-            didSet {
-                objectWillChange.send()
-            }
-        }
     
-    //sets the display mode to light mode by default
-    @AppStorage("displayMode") var Mode: Bool = false{
+    @AppStorage(SharedThemes.curr) var curThemeKey: String = "defaultElephant" {
         didSet{
             objectWillChange.send()
+            
+            WidgetCenter.shared.reloadAllTimelines()
+        }
+    }
+    //sets the curThemeKey to default theme
+//    @AppStorage("curTheme") var curThemeKey: String = "defaultElephant" {
+//            didSet {
+//                objectWillChange.send()
+//            }
+//        }
+    
+    //sets the display mode to light mode by default
+    @AppStorage(SharedThemes.displayMode) var Mode: Bool = false{
+        didSet{
+            objectWillChange.send()
+            
+            WidgetCenter.shared.reloadAllTimelines()
         }
     }
     
@@ -160,30 +172,9 @@ struct Benny: ThemeProtocol {
     var shadow_1: Color {return Color(hex: "19171A")}
     var shadow_2: Color {return Color(hex: "F0CC34")}
     
-    var primaryTextColor: Color { return Color(hex: "19171A")} //dark gray color
-    var secondaryTextColor: Color { return Color(hex: "094F98")} //dark blue color
-    
-//    //dynamic text re-coloring based on mode
-//    func textColor(for background: Color, isDarkMode: Bool) -> Color {
-//        if isDarkMode{
-//            if background == self.background{ //pink background in dark mode needs even darker text
-//                return Color(hex: "19171A")
-//            }
-//            // we'll want lighter text for blue or deeper color backgrounds
-//            if background == self.main_color_1 || background == self.main_color_2 || background == self.main_color_3 {
-//                return .white
-//            }
-//            return .white //defaults to white text
-//        }else{//we're in light mode
-//            if background == self.background { //on pink
-//                return Color(hex: "19171A")
-//            }
-//            if background == self.main_color_2{//on dark blue
-//                return .white
-//            }
-//            return Color(hex: "19171A")//defaults to dark text
-//        }
-//    }
+//    var primaryTextColor: Color { return Color(hex: "19171A")} //dark gray color
+//    var secondaryTextColor: Color { return Color(hex: "094F98")} //dark blue color
+//    
 }
 
 //enum PaletteType: String, CaseIterable {
@@ -223,19 +214,3 @@ struct DefaultColors {
     static let shadow_1 = Color(red: 116/255, green: 79/255, blue: 42/255)
     static let shadow_2 = Color(red: 44/255, green: 110/255, blue: 73/255)
 }
-
-//converts Color to hexcode colors
-extension Color{
-    init(hex: String){
-        let scanner = Scanner(string: hex)
-        var rgb: UInt64 = 0
-        scanner.scanHexInt64(&rgb)
-        
-        let red = Double((rgb >> 16) & 0xFF)/255.0
-        let green = Double((rgb >> 8) & 0xFF)/255.0
-        let blue = Double(rgb & 0xFF)/255.0
-        
-        self.init(red: red, green: green, blue: blue)
-    }
-}
-

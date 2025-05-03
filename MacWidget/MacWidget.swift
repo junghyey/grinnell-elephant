@@ -15,6 +15,8 @@
 import WidgetKit
 import SwiftUI
 
+import Elephant
+
 struct Provider: AppIntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), configuration: ConfigurationAppIntent())
@@ -50,13 +52,36 @@ struct SimpleEntry: TimelineEntry {
 
 // Edits for widget UI
 struct MacWidgetEntryView : View {
+    //Accesses shared theme settings from the MacApp for the widget
+    @AppStorage(SharedThemes.displayMode) private var Mode: Bool = false //global mode setting
+    @AppStorage(SharedThemes.curr) private var curTheme : String = "defaultElephant"
     
-    @AppStorage("mode") private var Mode: Bool = false //global mode setting
     var entry: Provider.Entry
+    
+    //uses Widget theme protocol to grab current theme for the widget
+    private var themeColors: WidgetThemeProtocol {
+        return WidgetThemeColors.getTheme(for: curTheme)
+    }
+    
+    //gets appropriate text color for widget given the mode and theme background
+    //grabbed from MacApp ColorSettings
+    private func widgetTC(for background: Color) -> Color{
+        if Mode{
+            if curTheme == "benny" && background == themeColors.background{
+                return .black //places darker text for light theme backgrounds
+            }
+            return .white
+        } else {
+            if curTheme == "benny" && background == themeColors.main_color_2{
+                return .white // special case for benny blue background
+            }
+            return .black
+        }
+    }
 
     var body: some View {
         ZStack {
-            Color("aqua")
+            themeColors.background
                 .ignoresSafeArea()
             
             VStack {
@@ -68,6 +93,7 @@ struct MacWidgetEntryView : View {
 
                     Text("Elephant: A Wellness Trunk")
                         .font(.headline)
+                        .foregroundColor(widgetTC(for: themeColors.background))
                     
                     Spacer()
                     
@@ -86,7 +112,7 @@ struct MacWidgetEntryView : View {
                 VStack {
                     // Frame 1 - Timer
                     RoundedRectangle(cornerRadius: 20)
-                        .fill(DefaultColors.main_color_1)
+                        .fill(themeColors.main_color_1)
                         .overlay(
                             VStack{
                                 // Avatar first
@@ -100,32 +126,37 @@ struct MacWidgetEntryView : View {
                                     // TODO: add stopwatch or timer
                                 }) {
                                     Text("Start \(entry.configuration.timer)")
-                                        .foregroundStyle(.black)
+                                        .foregroundColor(widgetTC(for: themeColors.main_color_1))
+                                        .padding(6)
+                                        .background(themeColors.main_color_3)
+                                        .cornerRadius(10)
                                 }
                                 
                                 // time left or encouraging phrase
                                 Text(entry.configuration.timeLeft)
-                                    .foregroundStyle(.black)
+                                    .foregroundColor(widgetTC(for: themeColors.main_color_1))
                             } // first frame - inner
+                                .padding(8)
                         ) // first frame - outer
                         .frame(alignment: .top)
                     
                     // Frame 2 - Checklist(s) & Token(s)
                     // ChatGPT utilized from line 120-132 to help clean up format
                     RoundedRectangle(cornerRadius: 20)
-                        .fill(DefaultColors.main_color_1)
+                        .fill(themeColors.main_color_1)
                         .overlay(
                             HStack{
                                 // TODO: probably make checklist scrollable (this tiny vstack = scroll)
                                 VStack (alignment: .leading) {
                                     Text("Checklist")
                                         .font(.title)
-                                        .foregroundStyle(.black)
+                                        .foregroundColor(widgetTC(for: themeColors.main_color_1))
                                     
                                     // TODO: replace with chosen list
                                     Text("[] task 1, \n[] task 2, \n[] task 3")
                                         .frame(alignment: .leading)
                                         .multilineTextAlignment(.leading)
+                                        .foregroundColor(widgetTC(for: themeColors.main_color_1))
                                 } // checklist title and list
                                 .padding(.leading, 20)
                                 .padding(.vertical, 12)
@@ -138,7 +169,7 @@ struct MacWidgetEntryView : View {
                                     .overlay(
                                         Text("\(entry.configuration.tokens)")
                                             .font(.caption)
-                                            .foregroundColor(.black)
+                                            .foregroundColor(widgetTC(for: themeColors.main_color_2))
                                             .multilineTextAlignment(.center)
                                     )
                             } // side by side token & checklist
@@ -159,7 +190,7 @@ struct MacWidget: Widget {
     var body: some WidgetConfiguration {
         AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) { entry in
             MacWidgetEntryView(entry: entry)
-                .containerBackground(DefaultColors.background, for: .widget) // can change widget background color here
+                .containerBackground(.clear, for: .widget) // can change widget background color here
         }
     }
 }
