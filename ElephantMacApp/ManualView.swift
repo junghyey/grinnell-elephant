@@ -1,13 +1,13 @@
 /*
- `ManualView.swift`
+ File Name: ManualView.swift
+ Used  Online Swift Playground (SwiftFiddle) for formatting the code.
   
-  File Description: This file defines the manual and onboarding views for the Elephant app.
-  It introduces users to the core functionalities (Stopwatch Mode, Pomodoro Mode, Token System, and Widget Setup) through an interactive multi-page guide.
+  File Description: This file defines the manual and onboarding views for the Elephant app. The manual contains link to description of each funtionality
  
  ## Components:
- - `ManualTemplateView`: A reusable SwiftUI template providing navigation, layout, and dynamic styling for each page in manual pages.
- - `ManualView`, `SecondPageView`, `ThirdPageView`, `FourthPageView`: Specific manual pages for each feature
- - `ChecklistItem`, `CheckBoxView`, `ChecklistView`: Supporting views for displaying example checklists and user stories.
+ - ManualTemplateView: A reusable SwiftUI template providing navigation, layout, and dynamic styling for each page in manual pages.
+ - Struct for each oage
+ 
  ## Features:
  - Scrollable, styled content sections with clear headings.
  - The first page contains all the link to other pages for navigation.
@@ -44,31 +44,18 @@ import SwiftUI
 
 /*
  `ManualTemplateView` is a reusable SwiftUI component for layout for pages for each manual page
-
+ 
  ## Purpose:
  - Provide a consistent and reusable layout wrapper for manual/help pages.
- - It prevents from manually configuring each page.
-
- ## Behavior:
- - It contains scrollable area where content goes
- - It has options to add next,back button and home button is automatically added 
-
+ - No needto  manually configure each page.
+ 
  ## Parameters:
  - `currentPageIdentifier`: A unique string identifier for each page
- - `content`: Content to display 
+ - `content`: Content to display
  - `backPage`: Navigate back button to go back to page (optional)
  - `nextPage`: Navigate forward button to go front (optional)
  - `homePage`: Navigate home button to go to main page of the app.
 
- ## Preconditions:
- - `content` must be a valid SwiftUI `View`.
- - `currentPageIdentifier` must be unique for each page
- - There needs to be an identifier for main page. 
-
- ## Postconditions:
- - The rendered manual includes
-    - Scrollable manual content.
-    - Navigation buttons (if applicable).
  */
 struct ManualTemplateView<Content: View>:  View {
     @EnvironmentObject var themeManager: ThemeManager
@@ -141,7 +128,6 @@ struct ManualTemplateView<Content: View>:  View {
                 }//ScrollView
 
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                //---------------------------------------------------------------
                 //--------------------
                 // Button Stack Starts
                 //--------------------
@@ -181,9 +167,6 @@ struct ManualTemplateView<Content: View>:  View {
         }//VStack
    
 }// var body
-
-
-
 
 // MARK: - Main OverView Page
 // ====================================================
@@ -268,59 +251,8 @@ struct ManualView:View{
                                            }//NavigationLink widgetsetup
                                            .buttonStyle(PlainButtonStyle())
                                        }//vstack
-//                    // First Page Content Stack
-//                    VStack(alignment: .leading, spacing: 20) {
-//                       Text("Welcome to Elephant...")
-//                            .font(.title)
-//                            .fontWeight(.bold)
-//                            .lineSpacing(4)
-//                        
-//                        Text(
-//                            "Are you ready to incorporate wellness tasks into your work routine with us? Let’s get started!"
-//                        )
-//                        .font(.title3)
-//                        .fontWeight(.medium)
-//                        .lineSpacing(6)
-//                        
-//                        // Stopwatch section
-//                        VStack(alignment: .leading, spacing: 10) {
-//                            Text("Stopwatch Mode")
-//                                .font(.title3)
-//                                .fontWeight(.semibold)
-//                            Text(
-//                                "* Receive wellness reminders at customized time intervals.\n * Turn on when you start working and off when you’re done."
-//                            )
-//                            .font(.body)
-//                            .lineSpacing(4)
-//                        }//Vstack
-//                        
-//                        // Pomodoro section
-//                        VStack(alignment: .leading, spacing: 10) {
-//                            Text("Pomodoro Mode")
-//                                .font(.title3)
-//                                .fontWeight(.semibold)
-//                            Text(
-//                                "* Integrate Pomodoro method with wellness tasks \n * Customize the time intervals"
-//                            )
-//                            .font(.body)
-//                            .lineSpacing(4)
-//                        }//Vstack
-//                        
-//                        // Token earning section
-//                        VStack(alignment: .leading, spacing: 10) {
-//                            Text("Earn Tokens")
-//                                .font(.title3)
-//                                .fontWeight(.semibold)
-//                            Text(
-//                                "* Earn tokens by completing tasks on checklist that you can exchange for collectibles to customize your widget!"
-//                            )
-//                            .font(.body)
-//                            .lineSpacing(4)
-//                        }//Vstack
-//                    }//Vstack
                 }//content
                 ,
-                //nextPage: AnyView(SecondPageView()),
                 homePage: AnyView(ContentView())
                 
             )//ManualTemplateView
@@ -408,86 +340,16 @@ struct TokensPageView: View {
                         .font(.body)
                     Text("Every time you complete the task, you earn one token. The tokens can be used to purchase avatar in the collectible shop.")
                         .font(.body)
-                    
                     Text("Daily limit: 5 ")
                         .font(.body)
                 }//vstack
-            },
+            }//content
+            ,
             backPage: AnyView(ManualView()),
             homePage: AnyView(ContentView())
         )//ManualTemplateView
     }// body
 }// TokensPageView
-
-
-//// SecondPage
-//struct SecondPageView:View{
-//    var body: some View {
-//        ManualTemplateView(
-//            currentPageIdentifier: "manualSecondPage",
-//            content: {
-//                // Second Page Content Stack
-//                VStack(alignment: .leading, spacing: 24) {
-//                    Text("How To ")
-//                        .font(.title)
-//                        .fontWeight(.bold)
-//                    
-//                    // Stopwatch Section
-//                    VStack(alignment: .leading, spacing: 8) {
-//                        Text("StopWatch")
-//                            .font(.title3)
-//                            .fontWeight(.semibold)
-//                        Text(
-//                      """
-//                      Start the stopwatch to begin & be notified at custom intervals.
-//                      """
-//                        )
-//                        .font(.body)
-//                        .lineSpacing(4)
-//                        
-//                    }//Vstack
-//                    
-//                    // Pomodro Section
-//                    VStack(alignment: .leading, spacing: 8) {
-//                        Text("Pomdoro")
-//                            .font(.title3)
-//                            .fontWeight(.semibold)
-//                        Text(
-//                      """
-//                      You get 4 instances of work time with a short break following the first 3 instances and a long break break after the 4th round
-//                      """
-//                        )
-//                        .font(.body)
-//                        .lineSpacing(4)
-//                        
-//                    }//Vstack
-//                    
-//                    // Tokens & Collectibles Section
-//                    VStack(alignment: .leading, spacing: 8) {
-//                        Text("Tokens & Collectibles")
-//                            .font(.title3)
-//                            .fontWeight(.semibold)
-//                        Text(
-//                      """
-//                      After each wellness task or checklist item is completed, you will earn a token.\n Once you have tokens, you can start collecting acatars for the collectible reward!\n (but be warned... you need to have enough tokens to get a collectible).
-//                      """
-//                        )
-//                        .font(.body)
-//                        .lineSpacing(5)
-//                        
-//                    }//Vstack
-//                }//Vstack
-//                .frame(maxWidth: .infinity, alignment: .leading)
-//              
-//            }//content
-//            ,
-//            backPage: AnyView(ManualView()),
-//            nextPage: AnyView(ThirdPageView()),
-//            homePage: AnyView(ContentView())
-//            
-//        )//ManualTemplateView
-//    }//body
-//}//firstPageView
 
 
 
@@ -505,13 +367,13 @@ struct ChecklistItem: Identifiable {
  
  References:
  https://www.hackingwithswift.com/quick-start/swiftui/building-a-menu-using-list
+ https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-binding-property-wrapper
  */
 struct CheckBoxView: View {
-
     @EnvironmentObject var themeManager: ThemeManager
     @Binding var isChecked: Bool  // <-- binding to allow toggling
 
-    // Action after the check mark
+    // Action after the checkmark
     var body: some View {
             Image(systemName: isChecked ? "checkmark.square.fill" : "square")
                 .foregroundColor(isChecked ? DefaultColors.main_color_3 : Color.secondary)
@@ -521,21 +383,24 @@ struct CheckBoxView: View {
         }// var body
 
 }//CheckBoxView
+
 /*
  ChecklistView struct template
  
  References:
  https://developer.apple.com/documentation/swiftui/foreach
+ https://fatbobman.com/en/posts/avoid_repeated_calculations_of_swiftui_views/
+ https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-binding-property-wrapper
  */
 
 struct ChecklistView: View {
-    @State var items: [ChecklistItem]   // <-- @State to allow updates
+    @State var items: [ChecklistItem] // @state will allow update
     
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
             ForEach($items) { $item in
                 HStack {
-                    Text(item.label)
+                    Text(item.label) // allow to be checked.
                     CheckBoxView(isChecked: $item.isChecked)
                 }//Hstack
             }//ForEach
@@ -639,121 +504,13 @@ struct WidgetSetupPageView: View {
                     """)
                         .font(.body)
                         .lineSpacing(5)
-                }
-            },
+                }//Vstack
+            }, //content
             backPage: AnyView(ManualView()),
             homePage: AnyView(ContentView())
-        )
-    }
-}
-
-
-//
-//// ThirdPage
-//struct ThirdPageView:View{
-//    var body: some View {
-//        ManualTemplateView(
-//            currentPageIdentifier: "manualThirdPage",
-//            content: {
-//                // Third Page Content Stack
-//                VStack(alignment: .leading, spacing: 24) {
-//                    Text("Customize Elephant to your need!")
-//                        .font(.title)
-//                        .fontWeight(.bold)
-//                    
-//                    // Stopwatch Section Example Sam
-//                    VStack(alignment: .leading, spacing: 8) {
-//                        Text(
-//                      """
-//                      Sam is a software engineer that sits in front of his computer for long hours. Sam gets so immersed that they forget to eat or rest.
-//                      """
-//                        )
-//                        .font(.body)
-//                        .lineSpacing(4)
-//                        Text("Here is how Sam uses Elephant as Wellness Reminders")
-//                            .font(.headline)
-//                            .fontWeight(.semibold)
-//                        Text("Mode: Stopwatch")
-//                            .italic()
-//                        ChecklistView(items: [
-//                            ChecklistItem(label: "Take a 10min walk", isChecked: true),
-//                            ChecklistItem(label: "Grab a coffee", isChecked: false),
-//                            ChecklistItem(label: "Eat an apple", isChecked: true)
-//                        ])
-//                        
-//                        
-//                        
-//                    }//Vstack
-//                    
-//                    // Example Cam Pomodro Section
-//                    VStack(alignment: .leading, spacing: 8) {
-//                        Text(
-//                        """
-//                        Cam is a college student that finds it hard to stay on top of class and extracurriculars. Cam wants some motivation to get the tasks done.
-//                        """
-//                        )
-//                        .font(.body)
-//                        .lineSpacing(4)
-//                        Text("Here is how Cam uses Elephant as Task Manage")
-//                            .font(.headline)
-//                            .fontWeight(.semibold)
-//                        Text("Mode: Pomodoro")
-//                            .italic()
-//                        ChecklistView(items: [
-//                            ChecklistItem(label: "2 Paragraphs for Political Science Paper", isChecked: true),
-//                            ChecklistItem(label: "Meet Advisor", isChecked: true),
-//                            ChecklistItem(label: "Email Follow-Ups", isChecked: false)
-//                        ])
-//                        
-//                        
-//                    }//Vstack
-//                }//VStack
-//                .frame(maxWidth: .infinity, alignment: .leading)
-//               
-//            }//content
-//            ,
-//            backPage: AnyView(SecondPageView()),
-//            nextPage: AnyView(FourthPageView()),
-//            homePage: AnyView(ContentView())
-//            
-//        )//ManualTemplateView
-//    }//var body
-//}//ThirdPageView
-//
-//// FourthPage
-//struct FourthPageView:View{
-//    var body: some View {
-//        ManualTemplateView(
-//            currentPageIdentifier: "manualFourthPage",
-//                      content: {
-//                          // Fourth Page Content Stack
-//                          VStack(alignment: .leading, spacing: 24) { // Fourth Page Content Stack
-//                              Text("Add Widget to Widget Bar")
-//                                  .font(.title)
-//                                  .fontWeight(.bold)
-//
-//                              VStack(alignment: .leading, spacing: 10) { // Steps block
-//                                  Text("(1) To open Notification Center, click the date and \n time in the menu bar or swipe left with two fingers from the right edge of the trackpad. ")
-//                                  Text("(2) Scroll down to “Edit Widgets”")
-//                                  (
-//                                      Text("(3) In the widget gallery, search for a widget. Or click: ") +
-//                                      Text("“ElephantMacApp”").bold() +
-//                                      Text(" as a widget")
-//                                  )
-//                                  Text("(4) Enjoy!")
-//                              }
-//                              .font(.body)
-//                              .lineSpacing(5)
-//                          }
-//                          .frame(maxWidth: .infinity, alignment: .leading)
-//                         
-//                      }//content
-//                ,
-//                      backPage: AnyView(ThirdPageView()),
-//                      homePage: AnyView(ContentView())
-//                  )//ManualTemplateView
-//              }//var body
-//}//FourthPageView
+        )//ManualTemplateView
+    }// var body
+}//WidgetSetupPageView
 
 #Preview {
     ManualView()
