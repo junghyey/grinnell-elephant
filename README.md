@@ -46,10 +46,14 @@ Root
   |       |-- sprint4_journal.md
   |       |-- sprint4_plan_report.md         # this is where we have sprint4 planning report
   |       |-- sprint4_review_report.md
-  |-- Elephant
-  |-- ElephantWidget 
-  |-- ElephantUITests
-  |-- ElephantTests
+  |   |-- sprint5_reports/
+  |       |-- blog_post.md
+  |       |-- sprint5_journal.md
+  |       |-- sprint5_plan_report.md         # this is where we have sprint5 planning report
+  |-- ElephantMacApp
+  |-- MacWidget
+  |-- ElephantMacAppUITests
+  |-- ElephantMacAppTests
   |-- Elephant.xcodeproj      
   |-- manual_testing_protocol.md    # manual testing
 ```
