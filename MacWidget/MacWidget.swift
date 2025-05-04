@@ -29,8 +29,8 @@ struct Provider: AppIntentTimelineProvider {
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
+        for minuteOffset in 0 ..< 1 {
+            let entryDate = Calendar.current.date(byAdding: .minute, value: minuteOffset, to: currentDate)!
             let entry = SimpleEntry(date: entryDate, configuration: configuration)
             entries.append(entry)
         }
@@ -52,6 +52,7 @@ struct SimpleEntry: TimelineEntry {
 struct MacWidgetEntryView : View {
     
     @AppStorage("mode") private var Mode: Bool = false //global mode setting
+
     var entry: Provider.Entry
 
     var body: some View {
@@ -94,19 +95,24 @@ struct MacWidgetEntryView : View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(alignment: .center)
-                                
-                                // timer buttons and indicators
-                                Button(action: {
-                                    // TODO: add stopwatch or timer
-                                }) {
-                                    Text("Start \(entry.configuration.timer)")
-                                        .foregroundStyle(.black)
+                                StopwatchView()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(alignment: .center)
+                                HStack {
+                                    Button(intent: StartTimerIntent()) {
+                                        Text("Start")
+                                    }
+                                    Button(intent: ResetTimerIntent()) {
+                                        Text("Reset")
+                                    }
+                                    Button(intent: PauseTimerIntent()) {
+                                        Text("Pause")
+                                    }
+                                    Button(intent: RefreshTimerIntent()) {
+                                        Text("Refresh")
+                                    }
                                 }
-                                
-                                // time left or encouraging phrase
-                                Text(entry.configuration.timeLeft)
-                                    .foregroundStyle(.black)
-                            } // first frame - inner
+                                } // first frame - inner
                         ) // first frame - outer
                         .frame(alignment: .top)
                     
