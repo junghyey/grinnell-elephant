@@ -18,12 +18,15 @@ import SwiftUI
 import Elephant
 
 struct Provider: AppIntentTimelineProvider {
+    @AppStorage(SharedThemes.displayMode, store: SharedThemes.shared) private var Mode: Bool = false //global mode setting
+    @AppStorage(SharedThemes.curr, store: SharedThemes.shared) private var curTheme : String = "defaultElephant"
+    
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationAppIntent())
+        SimpleEntry(date: Date(), configuration: ConfigurationAppIntent(), themeKey: curTheme, mode: Mode)
     }
 
     func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: configuration)
+        SimpleEntry(date: Date(), configuration: configuration, themeKey: curTheme, mode: Mode)
     }
     
     func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<SimpleEntry> {
@@ -33,11 +36,11 @@ struct Provider: AppIntentTimelineProvider {
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration)
+            let entry = SimpleEntry(date: entryDate, configuration: configuration, themeKey: curTheme, mode: Mode)
             entries.append(entry)
         }
 
-        return Timeline(entries: entries, policy: .atEnd)
+        return Timeline(entries: entries, policy: .after(Date().addingTimeInterval(15 * 60)))
     }
 
 //    func relevances() async -> WidgetRelevances<ConfigurationAppIntent> {
@@ -48,31 +51,41 @@ struct Provider: AppIntentTimelineProvider {
 struct SimpleEntry: TimelineEntry {
     let date: Date
     let configuration: ConfigurationAppIntent
+    let themeKey: String
+    let mode: Bool
+    
+    init(date: Date, configuration: ConfigurationAppIntent, themeKey: String, mode: Bool) {
+        self.date = date
+        self.configuration = configuration
+        self.themeKey = themeKey
+        self.mode = mode
+    }
 }
 
 // Edits for widget UI
 struct MacWidgetEntryView : View {
-    //Accesses shared theme settings from the MacApp for the widget
-    @AppStorage(SharedThemes.displayMode) private var Mode: Bool = false //global mode setting
-    @AppStorage(SharedThemes.curr) private var curTheme : String = "defaultElephant"
     
     var entry: Provider.Entry
     
     //uses Widget theme protocol to grab current theme for the widget
     private var themeColors: WidgetThemeProtocol {
-        return WidgetThemeColors.getTheme(for: curTheme)
+        return WidgetThemeColors.getTheme(for: entry.themeKey)
+    }
+    
+    private var mode: Bool{
+        return entry.mode
     }
     
     //gets appropriate text color for widget given the mode and theme background
     //grabbed from MacApp ColorSettings
     private func widgetTC(for background: Color) -> Color{
-        if Mode{
-            if curTheme == "benny" && background == themeColors.background{
+        if mode{
+            if entry.themeKey == "benny" && background == themeColors.background{
                 return .black //places darker text for light theme backgrounds
             }
             return .white
         } else {
-            if curTheme == "benny" && background == themeColors.main_color_2{
+            if entry.themeKey == "benny" && background == themeColors.main_color_2{
                 return .white // special case for benny blue background
             }
             return .black
@@ -179,7 +192,7 @@ struct MacWidgetEntryView : View {
                 } // VStack - main 2 frames
             } // VStack - vertically align all 3 sections
         } // main ZStack
-        .preferredColorScheme(Mode ? .dark : .light)
+        .preferredColorScheme(mode ? .dark : .light)
         
     } // entire view
 } // MacWidgetEntryView

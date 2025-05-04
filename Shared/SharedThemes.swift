@@ -8,10 +8,7 @@
 // resources: https://medium.com/@katramesh91/effortless-theming-in-swiftui-mastering-multiple-themes-and-best-practices-061113be6d3d
 
 import SwiftUI
-
-#if canImport(WidgetKit)
-import WidgetKit
-#endif
+import Foundation
 
 // data structure for each theme
 protocol WidgetThemeProtocol {
@@ -27,6 +24,10 @@ protocol WidgetThemeProtocol {
 struct SharedThemes {
     static let curr = "curTheme"
     static let displayMode = "Mode"
+    
+    static let appGroupID = "group.elephant.widget"
+    
+    static let shared = UserDefaults(suiteName: appGroupID) ?? UserDefaults.standard
 }
 
 //same theme colors but for the widget!
@@ -47,6 +48,8 @@ struct WidgetThemeColors {
             return defaultElephant
         }
     }
+    
+
 
 }
 
@@ -79,7 +82,7 @@ struct DefaultElephantWT : WidgetThemeProtocol {
         }
         
         //fucntion for appropriate widget text color given Mode settings (light/dark)
-        func widgetTextColor(for background: Color, Mode: Bool) -> Color {
+        func widgetTC(for background: Color, Mode: Bool) -> Color {
             if Mode{ //if dark mode is on
                 return .white
             } else { //if light mode is on
