@@ -30,7 +30,12 @@ class ThemeManager: ObservableObject {
     @AppStorage(SharedThemes.curr, store: SharedThemes.shared) var curThemeKey: String = "defaultElephant" {
         didSet{
             objectWillChange.send()
+            print("App changed theme to: \(curThemeKey)")
             
+            //forced sync
+            SharedThemes.shared.synchronize()
+            
+            //immediate widget refresh
             WidgetCenter.shared.reloadAllTimelines()
         }
     }
@@ -45,7 +50,12 @@ class ThemeManager: ObservableObject {
     @AppStorage(SharedThemes.displayMode, store: SharedThemes.shared) var Mode: Bool = false{
         didSet{
             objectWillChange.send()
+            print("Mode changed to: \(Mode ? "dark" : "light")")
             
+            //forced sync
+            SharedThemes.shared.synchronize()
+            
+            //immediate widget refresh
             WidgetCenter.shared.reloadAllTimelines()
         }
     }

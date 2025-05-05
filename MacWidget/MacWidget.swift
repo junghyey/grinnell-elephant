@@ -22,25 +22,36 @@ struct Provider: AppIntentTimelineProvider {
     @AppStorage(SharedThemes.curr, store: SharedThemes.shared) private var curTheme : String = "defaultElephant"
     
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationAppIntent(), themeKey: curTheme, mode: Mode)
+        let currentTheme = SharedThemes.shared.string(forKey: SharedThemes.curr) ?? "defaultElephant"
+        let currentMode = SharedThemes.shared.bool(forKey: SharedThemes.displayMode)
+        
+        return SimpleEntry(date: Date(), configuration: ConfigurationAppIntent(), themeKey: currentTheme, mode: currentMode)
     }
 
     func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: configuration, themeKey: curTheme, mode: Mode)
+        let currentTheme = SharedThemes.shared.string(forKey: SharedThemes.curr) ?? "defaultElephant"
+        let currentMode = SharedThemes.shared.bool(forKey: SharedThemes.displayMode)
+        
+        return SimpleEntry(date: Date(), configuration: configuration, themeKey: currentTheme, mode: currentMode)
     }
     
     func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<SimpleEntry> {
         var entries: [SimpleEntry] = []
+        
+        let currentTheme = SharedThemes.shared.string(forKey: SharedThemes.curr) ?? "defaultElephant"
+        let currentMode = SharedThemes.shared.bool(forKey: SharedThemes.displayMode)
+        
+        print("Widget timeline refresh - Current Theme: \(currentTheme), Mode: \(currentMode)") //testing print statement
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration, themeKey: curTheme, mode: Mode)
+            let entry = SimpleEntry(date: entryDate, configuration: configuration, themeKey: currentTheme, mode: currentMode)
             entries.append(entry)
         }
 
-        return Timeline(entries: entries, policy: .after(Date().addingTimeInterval(15 * 60)))
+        return Timeline(entries: entries, policy: .after(Date().addingTimeInterval(60))) //checks every minute
     }
 
 //    func relevances() async -> WidgetRelevances<ConfigurationAppIntent> {
@@ -69,10 +80,12 @@ struct MacWidgetEntryView : View {
     
     //uses Widget theme protocol to grab current theme for the widget
     private var themeColors: WidgetThemeProtocol {
+        print("Widget using theme: \(entry.themeKey)")
         return WidgetThemeColors.getTheme(for: entry.themeKey)
     }
     
     private var mode: Bool{
+        print("Widget using mode: \(entry.mode ? "dark" : "light" )")
         return entry.mode
     }
     
@@ -193,6 +206,9 @@ struct MacWidgetEntryView : View {
             } // VStack - vertically align all 3 sections
         } // main ZStack
         .preferredColorScheme(mode ? .dark : .light)
+        .onAppear{
+            WidgetCenter.shared.reloadAllTimelines()//refreshes when the view appears
+        }
         
     } // entire view
 } // MacWidgetEntryView
@@ -205,5 +221,9 @@ struct MacWidget: Widget {
             MacWidgetEntryView(entry: entry)
                 .containerBackground(.clear, for: .widget) // can change widget background color here
         }
+        
+        .configurationDisplayName("Elephant Widget")
+        .description("Keep track of your tasks and time")
+        .supportedFamilies([.systemMedium])
     }
 }

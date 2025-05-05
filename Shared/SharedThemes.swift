@@ -9,6 +9,7 @@
 
 import SwiftUI
 import Foundation
+import WidgetKit
 
 // data structure for each theme
 protocol WidgetThemeProtocol {
@@ -25,9 +26,13 @@ struct SharedThemes {
     static let curr = "curTheme"
     static let displayMode = "Mode"
     
-    static let appGroupID = "group.elephant.widget"
+    static let appGroupID = "group.elephant.widget" //app group name to share data across the app and widget
     
-    static let shared = UserDefaults(suiteName: appGroupID) ?? UserDefaults.standard
+    static let shared = UserDefaults(suiteName: appGroupID) ?? UserDefaults.standard //defines default app group name as appGroupID or standard if not found
+    
+    static func refreshWidget(){
+        WidgetCenter.shared.reloadAllTimelines() //updates Widget along with app theme and modal changes
+    }
 }
 
 //same theme colors but for the widget!
@@ -44,6 +49,8 @@ struct WidgetThemeColors {
             return blackWhite
         case "benny":
             return benny
+        case "defaultElephant":
+            return defaultElephant
         default:
             return defaultElephant
         }
@@ -106,3 +113,4 @@ extension Color{
         self.init(red: red, green: green, blue: blue)
     }
 }
+
