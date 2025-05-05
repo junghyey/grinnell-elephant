@@ -12,6 +12,11 @@ struct ElephantMacApp: App {
     @StateObject private var taskListStorage = TaskListStorage()
     @StateObject var themeManager = ThemeManager()
 
+    // ask permission of notificaiont
+    init() {
+        NotificationView.shared.requestNotificationPermission()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

@@ -19,19 +19,23 @@ import SwiftUI
 // Homepage
 struct ContentView: View {
     @State private var isPressed = false
-    //@AppStorage("mode") private var Mode: Bool = false //global mode setting
-    // @State private var currentMode = "Stopwatch" // preset for timer mode - if picker
-    // theme manager
-    @EnvironmentObject var themeManager: ThemeManager
-    
-    // let modes = ["Pomodoro", "Stopwatch"] // timer mode options
-    
+    @EnvironmentObject var themeManager: ThemeManager // theme manager
+    // @AppStorage("mode") private var Mode: Bool = false //global mode setting
+
+    // timer mode options
+    enum modes: String, CaseIterable, Identifiable {
+        case stopwatch, pomodoro
+        var id: Self { self }
+    }
+
+    @State private var currentMode: modes = .stopwatch // preset for timer mode
+
     var body: some View {
-            NavigationStack{
+        NavigationStack{
             ZStack{
-//                (Mode ? Color.black : Color.white)//Background color
-//                    .edgesIgnoringSafeArea(.all)
-//                    .accessibilityIdentifier("homePage") // identifier for homepage
+                //                (Mode ? Color.black : Color.white)//Background color
+                //                    .edgesIgnoringSafeArea(.all)
+                //                    .accessibilityIdentifier("homePage") // identifier for homepage
                 // homepage structure
                 VStack{
                     // structure the settings and manual page buttons
@@ -40,11 +44,9 @@ struct ContentView: View {
                         // Button to settings page
                         NavigationLink(destination: SettingsView()) {
                             Text("⛭")
-                                .font(.system(size: 30))
-                                .fontWeight(.bold)
-                                .foregroundColor(.black)
-                                .frame(width: 45, height: 45, alignment: .center)
-                                .background(themeManager.curTheme.background)
+                                .font(.system(size: 25).weight(.bold))
+                                .frame(width: 40, height: 40, alignment: .center)
+                                .background(themeManager.curTheme.main_color_2)
                                 .clipShape(Circle())
                                 .scaleEffect(isPressed ? 0.9 : 1.0)
                                 .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
@@ -57,11 +59,9 @@ struct ContentView: View {
                         // Button to manual page
                         NavigationLink(destination: ManualView()) {
                             Text("?")
-                                .font(.system(size: 30))
-                                .fontWeight(.bold)
-                                .foregroundColor(.black)
-                                .frame(width: 45, height: 45, alignment: .center)
-                                .background(themeManager.curTheme.background)
+                                .font(.system(size: 25).weight(.bold))
+                                .frame(width: 40, height: 40, alignment: .center)
+                                .background(themeManager.curTheme.main_color_2)
                                 .clipShape(Circle())
                                 .scaleEffect(isPressed ? 0.9 : 1.0)
                                 .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
@@ -70,28 +70,22 @@ struct ContentView: View {
                         .frame(alignment: .trailing)
                         .background(themeManager.curTheme.main_color_1)
                         .accessibilityIdentifier("manualPage")
-
+                        
                     } // manual and settings page button area
-                    .padding(.top, 15)
-                    .padding(.trailing, 15)
-                    
+                    .padding([.top, .trailing], 15)
+
                     // Main title
                     Text("Elephant")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .fontDesign(.rounded)
-                        .kerning(2)
+                        .font(.system(.largeTitle, design: .rounded).weight(.bold))
+                        .kerning(2) // keep space between letters for better readability
                         .accessibilityIdentifier("mainPage")
                     // Subheadline following Elephant
                     Text("A Wellness Trunk")
-                        .font(.headline)
-                        .fontWeight(.semibold)
-                        .fontDesign(.rounded)
+                        .font(.system(.headline, design: .rounded).weight(.semibold))
                         .kerning(1)
                     // Subheadline following "A Wellness Trunk"
                     Text("♡🐘♡")
-                        .font(.headline)
-                        .fontWeight(.semibold)
+                        .font(.system(.headline, design: .rounded).weight(.semibold))
                     // App logo placeholder
                     Image("realistic_elephant")
                         .resizable()
@@ -101,79 +95,49 @@ struct ContentView: View {
                         .font(.headline)
                         .fontWeight(.bold)
                         .padding(.bottom, 10)
-
-                    
-                    // possible dropdown menu idea
-//                    Picker("Selected Mode", selection: $currentMode) {
-//                        ForEach(modes, id: \.self) { mode in
-//                            Text(mode)
-//                        }
-//                    }
-//                    .pickerStyle(MenuPickerStyle())
-//                    .font(.caption)
-//                    .fontWeight(.bold)
-//                    .fontDesign(.rounded)
-//                    .foregroundColor(.black)
-//                    .frame(width: 200, height: 60)
-//                    .background(DefaultColors.background)
-//                    .clipShape(RoundedRectangle(cornerRadius: 15))
-//                    .cornerRadius(10)
-                    
-                    // STOPWATCH BUTTON
-                    Button(action: {
-                        // TODO: connect with widget
-                    }) {
-                        Text("Stopwatch")
-                            .font(.title2)
-                            .fontWeight(.bold)
-                            .fontDesign(.rounded)
-                            .foregroundColor(.black)
-                            .frame(width: 200, height: 60)
-                    }  // Stopwatch Button - set up and adjustments
-                    .buttonStyle(PlainButtonStyle()).background(themeManager.curTheme.main_color_2)
+                
+                    // TIMERS MODE MENU
+                    Picker("Mode", selection: $currentMode) {
+                        Text("Stopwatch").tag(modes.stopwatch)
+                        Text("Pomodoro").tag(modes.pomodoro)
+                    }
+                    .pickerStyle(.menu)
+                    .frame(width: 150, alignment: .center) // keeps the "mode: currentmode" padded and centered
+                    .frame(width: 200, height: 60) // size of outer frame
+                    .font(.system(.title2, design: .rounded).weight(.bold))
+                    .background(themeManager.curTheme.main_color_2)
                     .clipShape(RoundedRectangle(cornerRadius: 15))
-                    .cornerRadius(15)
-                    .scaleEffect(isPressed ? 0.9 : 1.0)
-                    .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
-                    .accessibilityIdentifier("stopwatchButton")
-                    
-                    // POMODORO BUTTON
-                    Button(action: {
-                        // TODO: connect with widget
-                    }) {
-                        Text("Pomodoro")
-                            .font(.title2)
-                            .fontWeight(.bold)
-                            .fontDesign(.rounded)
-                            .foregroundColor(.black)
-                            .frame(width: 200, height: 60)
-                    }  // Pomodoro Button - set up and adjustments
-                    .buttonStyle(PlainButtonStyle()).background(themeManager.curTheme.main_color_2)
-                    .clipShape(RoundedRectangle(cornerRadius: 15))
-                    .cornerRadius(15)
-                    .scaleEffect(isPressed ? 0.9 : 1.0)
-                    .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
-                    .accessibilityIdentifier("pomodoroButton")
-                    
+                                        
                     // COLLECTIBLES SHOP BUTTON
                     NavigationLink(destination: ShopMainPageView().environmentObject(themeManager)) {
-                            Text("Collectibles Shop")
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .fontDesign(.rounded)
-                                .foregroundColor(.black)
-                                .frame(width: 200, height: 60)
-                                .background(themeManager.curTheme.main_color_2)
-                                .clipShape(RoundedRectangle(cornerRadius: 15))
-                                .cornerRadius(10)
-                                .scaleEffect(isPressed ? 0.9 : 1.0)
-                                .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
+                        Text("Collectibles Shop")
+                            .font(.system(.title2, design: .rounded).weight(.bold))
+                            .frame(width: 200, height: 60)
+                            .background(themeManager.curTheme.main_color_2)
+                            .clipShape(RoundedRectangle(cornerRadius: 15))
+                            .scaleEffect(isPressed ? 0.9 : 1.0)
+                            .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
+                    }  // NavigationLink - set up and adjustments
+                    .buttonStyle(PlainButtonStyle())
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .background(themeManager.curTheme.main_color_1)
+                    .accessibilityIdentifier("shopPage")
+                    
+                    // CHECKLISTS SHOP BUTTON
+                    NavigationLink(destination: ChecklistMainPageView().environmentObject(themeManager)) {
+                        Text("Checklists")
+                            .font(.system(.title2, design: .rounded).weight(.bold))
+                            .frame(width: 200, height: 60)
+                            .background(themeManager.curTheme.main_color_2)
+                            .clipShape(RoundedRectangle(cornerRadius: 15))
+                            .scaleEffect(isPressed ? 0.9 : 1.0)
+                            .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
                     }  // NavigationLink - set up and adjustments
                     .buttonStyle(PlainButtonStyle())
                     .frame(maxWidth: .infinity, alignment: .center)
                     .background(themeManager.curTheme.main_color_1)
                     .padding(.bottom, 25)
-                    .accessibilityIdentifier("shopPage")
+                    .accessibilityIdentifier("checklistsPageLink")
                     
                 } // VStack - structures whole page
                 .background(themeManager.curTheme.main_color_1)
