@@ -16,8 +16,6 @@ import SwiftUI
 
 struct SettingsView: View {
     @Environment(\.presentationMode) var presentationMode //navigating to different presentation based on command
-    @EnvironmentObject var storage: TaskListStorage //local storage for checklist
-    @State private var showingChecklist = false //default set to false until user opens the checklist
     
     @EnvironmentObject var themeManager: ThemeManager //found within ColorSettings, manages global theme settings
 //    @AppStorage("displayMode") private var Mode: Bool = false // default light mode
@@ -40,7 +38,7 @@ struct SettingsView: View {
                 
                 themeSection // Theme selection
                 
-                checklistSection // Checklist button
+                //checklistSection // Checklist button
                 
                 sectionTitle(text: "Time Settings", centered: true)
                 // Pomodoro time settings
@@ -50,13 +48,6 @@ struct SettingsView: View {
                 
                 Spacer()
             }
-        }
-        .sheet(isPresented: $showingChecklist) { //custom list pop-up
-            NavigationView {
-                CheckListView() //calls on CheckList view to appear on user command
-                    .environmentObject(storage)
-            }
-            .frame(width: 500, height: 500) //frames pop-up sheet
         }
         .padding()
         .preferredColorScheme(themeManager.Mode ? .dark : .light) //based on user selection
@@ -112,16 +103,6 @@ struct SettingsView: View {
         }
     }
     
-    //Button for add new custom checklist
-    private var checklistSection: some View {
-        VStack(alignment: .leading) {
-            sectionTitle(text: "Checklist")
-            ElephantButton(buttonText: "Custom list", action: {
-                showingChecklist = true
-            }, color: themeManager.curTheme.main_color_2)
-        }
-    }
-    
     // Displays Pomodoro time settings and sliders
     private var pomodoroTimeSection: some View {
         timeSection(title: "Pomodoro", sliders: [
@@ -172,138 +153,7 @@ struct SettingsView: View {
         
 }//bottom of SettingsView
 
-//ChecklistView for custom checklist
-struct CheckListView: View {
 
-    //variables for task list storage and array of task items defined
-    @Environment(\.dismiss) private var dismiss //used for dismissing current presentation
-    @EnvironmentObject var storage: TaskListStorage //defined storage
-    @EnvironmentObject var themeManager: ThemeManager //defined within scope for theme changes
-    @State private var newTask: String = "" //default empty task
-    @State private var localTasks: [TaskItem] = [] //array of locally stored tasks
-    @State private var hasChanged: Bool = false //checks if the task list has any changes
-    
-    var body: some View {
-        VStack(spacing: 16) {
-            Spacer()
-            
-            //displays first default checklist
-            Text("Checklist #1")
-                .font(.title2)
-                .fontWeight(.bold)
-                .fontDesign(.rounded)
-                .padding()
-                .frame(maxWidth: .infinity, alignment: .leading)
-
-            taskList //calls taskList appearance
-            
-            Spacer()
-            
-            actionButtons //calls for Cancel and Save buttons appearance
-        }
-        .padding()
-        .cornerRadius(12)
-        .padding()
-        .onAppear {
-            localTasks = storage.taskList.tasks //displays currently incomplete tasks
-        }
-    }
-    
-    //tasklist displays the custom checklist for user within SettingsView
-    private var taskList: some View {
-        List {
-            if localTasks.isEmpty { //if no tasks are currently set
-                Text("No tasks yet!")
-                    .foregroundColor(themeManager.curTheme.main_color_2)
-                    .padding(10)
-                    .listRowBackground(themeManager.curTheme.background)
-            } else { //for each incomplete tasks
-                ForEach(localTasks) { task in
-                    HStack { //ability to check off tasks once completed
-                        Image(systemName: task.isCompleted ? "checkmark.square.fill" : "square")
-                            .foregroundColor(task.isCompleted ? themeManager.curTheme.main_color_2 : themeManager.curTheme.main_color_3)
-                            .onTapGesture { //marks tasks as completed based on user input
-                                if let index = localTasks.firstIndex(where: { $0.id == task.id }) {
-                                    localTasks[index].isCompleted.toggle()
-                                    hasChanged = true
-                                }
-                            }
-                        // strikes through completed tasks
-                        Text(task.title)
-                            .strikethrough(task.isCompleted)
-                            .foregroundColor(task.isCompleted ? themeManager.curTheme.main_color_2 : themeManager.curTheme.main_color_3)
-                    }
-                }//removes tasks once they've been marked as completed
-                .onDelete { indexSet in
-                    indexSet.forEach { index in
-                        localTasks.remove(at: index)
-                        hasChanged = true
-                    }
-                }
-            }
-            //section for adding a new task within custom list view
-            //whether the user hits enter for a new task or clicks the plus sign, they can add a new task
-            HStack {
-                Image(systemName: "plus")
-                    .foregroundColor(themeManager.curTheme.main_color_1)
-                TextField("Add new task...", text: $newTask, onCommit: addNewTask)
-                    .textFieldStyle(PlainTextFieldStyle())
-                    .foregroundColor(themeManager.textColor(for: themeManager.curTheme.main_color_1))
-            }
-        }
-        .listStyle(PlainListStyle())
-        
-    }
-    
-    //Actionable buttons within custom checklist view
-    private var actionButtons: some View {
-        HStack(spacing: 20) {
-            ElephantButton(
-                buttonText: "Cancel",
-                action: { dismiss() }, //does not save any changes on cancel
-                color: themeManager.curTheme.main_color_2)
-            
-            ElephantButton(
-                buttonText: "Save",
-                action: {
-                    for task in storage.taskList.tasks {
-                        storage.removeTask(task: task) //removes any completed tasks
-                    }
-                    //for locally created tasks,
-                    for task in localTasks {
-                        if !task.isCompleted { //first checks if they're are incomplete tasks in the list
-                            storage.addTask(title: task.title) //adds any newly created task
-                            
-                            //once the task has been marked complete
-                            if task.isCompleted {
-                                if let addedTask = storage.taskList.tasks.last {
-                                    storage.markTastCompleted(task: addedTask)
-                                } //stores completed task within storage
-                            }
-                        }
-                    }
-                    storage.saveTasks() //updates tasks
-                    dismiss()
-                },
-                color: themeManager.curTheme.main_color_1)
-        }
-        .padding(.bottom)
-        .preferredColorScheme(themeManager.Mode ? .dark : .light) //based on user selection
-    }
-    //seperate function for adding a new task in real time currently within SettingsView only
-    private func addNewTask() {
-        let trim = newTask.trimmingCharacters(in: .whitespaces)
-        guard !trim.isEmpty else { return }
-        //allows for an additional task to be added within custom list view
-        let newItem = TaskItem(title: trim)
-        localTasks.append(newItem) //adds new task to local tasks array
-        hasChanged = true
-        //Clears the input field
-        DispatchQueue.main.async {
-            self.newTask = ""
-        }
-    }
-}
  /*Custom slider for various time settings for pomodoro and stopwatch.
   Slider customizable between minimum, maximum and break time intervals between work breaks*/
 struct customSlider: View {
