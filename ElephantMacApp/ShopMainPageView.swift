@@ -18,22 +18,22 @@ struct ShopMainPageView: View {
             NavigationStack{
                 VStack(alignment: .leading) {
                     HStack{
-                        NavigationLink(destination: ContentView()) {
-                            RoundedRectangle(cornerRadius: 10)
-                                .foregroundStyle(themeManager.curTheme.main_color_2)
-                                .frame(width: 50, height: 30)
-                                .overlay(
-                                    Text("Back").foregroundColor(themeManager.curTheme.background))
-                        }
-                        .buttonStyle(PlainButtonStyle())
-                        .padding(10)
-                        .accessibilityIdentifier("shopButton_back")
-                        
                         Text("Shop")
                             .font(.title)
                             .fontWeight(.bold)
                             .padding()
                             .frame(alignment: .center)
+                        Spacer()
+                        // home button, taken from ManualView
+                        NavigationLink(destination: ContentView()) {
+                            Image(systemName: "house.fill")
+                                .font(.title2)
+                                .foregroundColor(themeManager.curTheme.main_color_3)
+                                .accessibilityIdentifier("homeButton")
+                                .allowsHitTesting(true)
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        .padding()
                     }
                     PackBlock(pack: mammals, packName: "Mammal")
                     PackBlock(pack: marines, packName: "Marine")
@@ -42,7 +42,6 @@ struct ShopMainPageView: View {
         }
         .preferredColorScheme(themeManager.Mode ? .dark : .light)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding(10)
         .background(themeManager.curTheme.main_color_1)
         .accessibilityIdentifier("shopMainPageView")
     }

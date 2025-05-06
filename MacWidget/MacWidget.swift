@@ -29,7 +29,7 @@ struct Provider: AppIntentTimelineProvider {
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
-        for minuteOffset in 0 ..< 1 {
+        for minuteOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .minute, value: minuteOffset, to: currentDate)!
             let entry = SimpleEntry(date: entryDate, configuration: configuration)
             entries.append(entry)
@@ -95,7 +95,7 @@ struct MacWidgetEntryView : View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(alignment: .center)
-                                StopwatchView()
+                                // StopwatchWidgetView()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(alignment: .center)
                                 HStack {

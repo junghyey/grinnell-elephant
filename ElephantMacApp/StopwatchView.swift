@@ -17,7 +17,7 @@ import SwiftUI
 
 struct StopwatchView: View {
     
-    // @EnvironmentObject var themeManager: ThemeManager
+    @EnvironmentObject var themeManager: ThemeManager
     // whether the timer is running or not
     @State private var isRunning: Bool = false
     // timer start time
@@ -96,14 +96,66 @@ struct StopwatchView: View {
                 )
             }
         }
-        .frame(width: 250, height: 100)
         .padding(10)
-        // .background(DefaultColors.main_color_1)
-        // .background(themeManager.curTheme.main_color_1)
-        // .preferredColorScheme(themeManager.Mode ? .dark : .light)
+         //.background(DefaultColors.main_color_1)
+        .background(themeManager.curTheme.main_color_1)
+        .preferredColorScheme(themeManager.Mode ? .dark : .light)
         .accessibilityIdentifier("stopwatchView")
     }
 }
+
+//struct StopwatchWidgetView: View {
+//    
+//    // @EnvironmentObject var themeManager: ThemeManager
+//    // whether the timer is running or not
+//    @State private var isRunning: Bool = false
+//    // timer start time
+//    @State private var startTime: Date = Date()
+//    // how many seconds has passed
+//    @State private var elapsedTime: Double = 0.0
+//    // string to display on timer
+//    @State private var timerString: String = "00:00:00"
+//    // timer that updates everysecond and triggers re-render
+//    @State private var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+//    
+//    // use user defaults to ensure generalizability to widget
+//    let timerValues = UserDefaults(suiteName: "group.elephant.widget")
+//    
+//    // returns a formatted string based on how many seconds have passed
+//    func formatTime(secs: Int) -> String {
+//        let hours = Int(secs) / 3600
+//        let minutes = (Int(secs) % 3600) / 60
+//        let seconds = Int(secs) % 60
+//        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+//    }
+//    
+//    // updates timer as long as timer is running
+//    func updateTimer() {
+//        // manually add values to user default
+//        timerValues?.set(isRunning, forKey: "isRunning")
+//        timerValues?.set(startTime, forKey: "startTime")
+//        timerValues?.set(elapsedTime, forKey: "elapsedTime")
+//        let timeInterval =  Int(Date().timeIntervalSince(startTime))
+//        timerString = formatTime(secs: timeInterval)
+//    }
+//    
+//    var body: some View {
+//        VStack{
+//            // show timer string and update
+//            Text(timerString)
+//                .font(Font.system(.largeTitle, design: .monospaced))
+//                .onReceive(timer) { _ in
+//                    if isRunning {
+//                        updateTimer()
+//                    }
+//                }
+//            
+//        }
+//        .frame(width: 500, height: 500)
+//        .padding(10)
+//        .accessibilityIdentifier("stopwatchWidgetView")
+//    }
+//}
 
 #Preview {
     let themeManager = ThemeManager()

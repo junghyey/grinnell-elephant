@@ -111,7 +111,7 @@ struct ElephantButton: View {
         }
         .background(themeManager.curTheme.main_color_2)
         .cornerRadius(20)
-        .foregroundColor(themeManager.textColor(for: themeManager.curTheme.main_color_2))
+        // .foregroundColor(themeManager.textColor(for: themeManager.curTheme.main_color_2))
         .buttonBorderShape(.capsule)
         .buttonStyle(PlainButtonStyle())
     }

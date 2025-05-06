@@ -42,9 +42,6 @@ struct ResetTimerIntent: AppIntent {
     func perform() async throws -> some IntentResult {
         // get variables
         let timerDefaults = UserDefaults(suiteName: "group.elephant.widget")
-//        let isRunning = timerDefaults?.bool(forKey: "isRunning") ?? false
-//        let elapsedTime = timerDefaults?.double(forKey: "elapsedTime") ?? 0.0
-//        let timerString = timerDefaults?.string(forKey: "timerString") ?? "00:00:00"
 
         // set variables
         timerDefaults?.set(0.0, forKey: "elapsedTime")
@@ -68,7 +65,7 @@ struct PauseTimerIntent: AppIntent {
         let now = Date()
 
         // set variables
-        if (isRunning != true) {
+        if isRunning {
             // store how long the timer has ran so we can resume later
             timerDefaults?.set(elapsedTime + now.timeIntervalSince(startTime), forKey: "elapsedTime")
             timerDefaults?.set(false, forKey: "isRunning")

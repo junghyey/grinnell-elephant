@@ -72,6 +72,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		3935937B2DC83DCE008E1D42 /* Exceptions for "MacWidget" folder in "ElephantMacApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				TimerIntents.swift,
+			);
+			target = 398DCF1B2DAC7ABD003363BD /* ElephantMacApp */;
+		};
 		99C305732DB1BF28008FBA75 /* Exceptions for "MacWidget" folder in "MacWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -100,6 +107,7 @@
 		99C305652DB1BF27008FBA75 /* MacWidget */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				3935937B2DC83DCE008E1D42 /* Exceptions for "MacWidget" folder in "ElephantMacApp" target */,
 				99C305732DB1BF28008FBA75 /* Exceptions for "MacWidget" folder in "MacWidgetExtension" target */,
 			);
 			path = MacWidget;
@@ -412,7 +420,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"ElephantMacApp/Preview Content\"";
-				DEVELOPMENT_TEAM = TM8A3T389Q;
+				DEVELOPMENT_TEAM = TT4P7FU29T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -420,9 +428,9 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Hyeyun.Elephant.ElephantMacApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.candicehclu.Elephant.ElephantMacApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = macosx;
@@ -443,7 +451,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"ElephantMacApp/Preview Content\"";
-				DEVELOPMENT_TEAM = TM8A3T389Q;
+				DEVELOPMENT_TEAM = TT4P7FU29T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -451,9 +459,9 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Hyeyun.Elephant.ElephantMacApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.candicehclu.Elephant.ElephantMacApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = macosx;
@@ -470,11 +478,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = TM8A3T389Q;
+				DEVELOPMENT_TEAM = TT4P7FU29T;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Hyeyun.Elephant.ElephantMacAppTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.candicehclu.Elephant.ElephantMacAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -491,11 +499,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = TM8A3T389Q;
+				DEVELOPMENT_TEAM = TT4P7FU29T;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Hyeyun.Elephant.ElephantMacAppTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.candicehclu.Elephant.ElephantMacAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -510,11 +518,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = TM8A3T389Q;
+				DEVELOPMENT_TEAM = TT4P7FU29T;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Hyeyun.Elephant.ElephantMacAppUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.candicehclu.Elephant.ElephantMacAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -529,11 +537,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = TM8A3T389Q;
+				DEVELOPMENT_TEAM = TT4P7FU29T;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Hyeyun.Elephant.ElephantMacAppUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.candicehclu.Elephant.ElephantMacAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -668,7 +676,7 @@
 				CODE_SIGN_ENTITLEMENTS = MacWidget/MacWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TM8A3T389Q;
+				DEVELOPMENT_TEAM = TT4P7FU29T;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MacWidget/Info.plist;
@@ -679,9 +687,9 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Hyeyun.Elephant.ElephantMacApp.MacWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.candicehclu.Elephant.ElephantMacApp.MacWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -698,7 +706,7 @@
 				CODE_SIGN_ENTITLEMENTS = MacWidget/MacWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TM8A3T389Q;
+				DEVELOPMENT_TEAM = TT4P7FU29T;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MacWidget/Info.plist;
@@ -709,9 +717,9 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Hyeyun.Elephant.ElephantMacApp.MacWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.candicehclu.Elephant.ElephantMacApp.MacWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;

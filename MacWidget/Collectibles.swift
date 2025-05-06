@@ -7,6 +7,13 @@
 
 import SwiftUI
 
+struct ShopItem : Identifiable {
+    let id: String
+    let name: String
+    let imageName: String
+    let price: Int
+}
+
 let mammals = [
     ShopItem(id: "mammal-lion", name: "Lion", imageName: "mammal-lion", price: 5),
     ShopItem(id: "mammal-sheep", name: "Sheep", imageName: "mammal-sheep", price: 5),

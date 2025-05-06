@@ -168,13 +168,9 @@ struct ManualTemplateView<Content: View>:  View {
    
 }// var body
 
-<<<<<<< HEAD
-  
+
 //ManualTemplateView
 
-
-=======
->>>>>>> main
 // MARK: - Main OverView Page
 // ====================================================
 // OverView
