@@ -76,13 +76,25 @@ struct PauseTimerIntent: AppIntent {
     }
 }
 
+//struct RefreshTimerIntent: AppIntent {
+//    static var title: LocalizedStringResource = "Refresh"
+//
+//    func perform() async throws -> some IntentResult {
+//        let timerDefaults = UserDefaults(suiteName: "group.elephant.widget")
+//
+//        timerDefaults?.set("hi", forKey: "timerString")
+//
+//        WidgetCenter.shared.reloadAllTimelines()
+//        return .result()
+//    }
+//}
+
+// shows integer of how many minutes remaining
 struct RefreshTimerIntent: AppIntent {
     static var title: LocalizedStringResource = "Refresh"
 
     func perform() async throws -> some IntentResult {
-        let timerDefaults = UserDefaults(suiteName: "group.elephant.widget")
-
-        timerDefaults?.set("hi", forKey: "timerString")
+        // let timerDefaults = UserDefaults(suiteName: "group.elephant.widget")
 
         WidgetCenter.shared.reloadAllTimelines()
         return .result()

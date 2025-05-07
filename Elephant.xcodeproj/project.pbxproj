@@ -72,6 +72,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		39148DF82DCAD096008DA14D /* Exceptions for "ElephantMacApp" folder in "MacWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Assets.xcassets,
+			);
+			target = 99C305612DB1BF27008FBA75 /* MacWidgetExtension */;
+		};
 		3935937B2DC83DCE008E1D42 /* Exceptions for "MacWidget" folder in "ElephantMacApp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -91,6 +98,9 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		398DCF1D2DAC7ABD003363BD /* ElephantMacApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				39148DF82DCAD096008DA14D /* Exceptions for "ElephantMacApp" folder in "MacWidgetExtension" target */,
+			);
 			path = ElephantMacApp;
 			sourceTree = "<group>";
 		};
