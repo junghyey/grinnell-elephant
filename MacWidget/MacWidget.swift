@@ -16,7 +16,6 @@ import WidgetKit
 import SwiftUI
 
 struct Provider: AppIntentTimelineProvider {
-    let timerDefaults = 
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), configuration: ConfigurationAppIntent())
     }
@@ -33,7 +32,6 @@ struct Provider: AppIntentTimelineProvider {
         for minuteOffset in 0 ..< 15 {
             let entryDate = Calendar.current.date(byAdding: .minute, value: minuteOffset, to: currentDate)!
             let entry = SimpleEntry(date: entryDate, configuration: configuration)
-            let
             entries.append(entry)
         }
 
