@@ -16,6 +16,7 @@ import WidgetKit
 import SwiftUI
 
 struct Provider: AppIntentTimelineProvider {
+    let timerDefaults = 
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), configuration: ConfigurationAppIntent())
     }
@@ -29,9 +30,10 @@ struct Provider: AppIntentTimelineProvider {
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
+        for minuteOffset in 0 ..< 15 {
+            let entryDate = Calendar.current.date(byAdding: .minute, value: minuteOffset, to: currentDate)!
             let entry = SimpleEntry(date: entryDate, configuration: configuration)
+            let
             entries.append(entry)
         }
 
@@ -52,6 +54,7 @@ struct SimpleEntry: TimelineEntry {
 struct MacWidgetEntryView : View {
     
     @AppStorage("mode") private var Mode: Bool = false //global mode setting
+
     var entry: Provider.Entry
 
     var body: some View {
@@ -90,23 +93,16 @@ struct MacWidgetEntryView : View {
                         .overlay(
                             VStack{
                                 // Avatar first
-                                Image(entry.configuration.currentAvatar)
+                                // Image(entry.configuration.currentAvatar)
+                                // hardcode for now since image is not showing up
+                                Image("mammal-elephant")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(alignment: .center)
-                                
-                                // timer buttons and indicators
-                                Button(action: {
-                                    // TODO: add stopwatch or timer
-                                }) {
-                                    Text("Start \(entry.configuration.timer)")
-                                        .foregroundStyle(.black)
-                                }
-                                
-                                // time left or encouraging phrase
-                                Text(entry.configuration.timeLeft)
-                                    .foregroundStyle(.black)
-                            } // first frame - inner
+                                WidgetTimerView()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(alignment: .center)
+                                } // first frame - inner
                         ) // first frame - outer
                         .frame(alignment: .top)
                     
@@ -161,5 +157,6 @@ struct MacWidget: Widget {
             MacWidgetEntryView(entry: entry)
                 .containerBackground(DefaultColors.background, for: .widget) // can change widget background color here
         }
+        .supportedFamilies([.systemLarge])
     }
 }
