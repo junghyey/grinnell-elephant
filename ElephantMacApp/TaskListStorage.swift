@@ -7,9 +7,17 @@
 import SwiftUI
 import Foundation
 
+//struct for individual checklist initialization
+struct Checklist: Identifiable, Codable {
+    var id = UUID()
+    var name: String
+    var tasks: [TaskItem]
+}
+
 //TaskListStorage stores tasks objects to file TaskLists.json
 class TaskListStorage: ObservableObject{
-    private let filename = "TaskLists.json"
+    private let tasksFilename = "TaskLists.json"
+    private let checklistsFilename = "Checklists.json"
     
     @Published var taskList = TaskList(tasks: []){ //saves current task list
         didSet{
@@ -17,19 +25,39 @@ class TaskListStorage: ObservableObject{
         }
     }
     
-    init(){
-        loadTasks() //loads tasks for user view
+    @Published var checklists: [Checklist] = [] {
+        didSet {
+            saveChecklists()
+        }
     }
     
-    private func getFile() -> URL? { //retrieves the TaskLists.json file and creates a direct path to append new tasks
+    init(){
+        loadTasks() //loads tasks for user view
+        loadChecklists()
+        
+        // created default checklist if none currently exists
+        if checklists.isEmpty {
+            checklists.append(Checklist(name: "Checklist #1", tasks: []))
+            saveChecklists()
+        }
+    }
+    
+    private func getTasksFile() -> URL? { //retrieves the TaskLists.json file and creates a direct path to append new tasks
         guard let direct = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else{
             return nil
         }
-        return direct.appendingPathComponent(filename) //returns direct path to file
+        return direct.appendingPathComponent(tasksFilename) //returns direct path to file
+    }
+    
+    private func getListsFile() -> URL? { //retrieves the TaskLists.json file and creates a direct path to append new tasks
+        guard let direct = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else{
+            return nil
+        }
+        return direct.appendingPathComponent(checklistsFilename) //returns direct path to file
     }
     
     func loadTasks(){ //shows task list to the user in settings
-        guard let file = getFile() else {return} //exits if the file is not accesed
+        guard let file = getTasksFile() else {return} //exits if the file is not accesed
         
         do{
             let data = try Data(contentsOf: file)
@@ -42,7 +70,7 @@ class TaskListStorage: ObservableObject{
     
     //saves new tasks to the taskList encoding through the defined path
     func saveTasks(){
-        guard let file = getFile() else {return} //exits if the file is not accesed
+        guard let file = getListsFile() else {return} //exits if the file is not accesed
         
         do{
             let data = try JSONEncoder().encode(taskList)
@@ -51,13 +79,87 @@ class TaskListStorage: ObservableObject{
             print("Error: failed to save tasks")
         }
     }
-
-  //updates a new task to the taskList
-    func addTask(title: String){
-        let newTask = TaskItem(title: title)
-        taskList.tasks.append(newTask)
-        saveTasks()
+    
+    //loads checklists from file
+    func loadChecklists(){
+        guard let file = getListsFile() else {return}
+        
+        do{
+            if FileManager.default.fileExists(atPath: file.path){
+                let data = try Data(contentsOf: file)
+                let decodedLists = try JSONDecoder().decode([Checklist].self, from: data)
+                checklists = decodedLists
+            }
+        } catch {
+            print("Error loading checklists, default list will be displayed")
+        }
     }
+    
+    func saveChecklists(){
+        guard let file = getListsFile() else {return}
+        
+        do {
+            let data = try JSONEncoder().encode(checklists)
+            try data.write(to: file)
+        } catch {
+            print("Error: failed to save checklists")
+        }
+    }
+    
+    // Add a new checklist
+    func addChecklist(name: String) {
+        let newChecklist = Checklist(name: name, tasks: [])
+        checklists.append(newChecklist)
+        saveChecklists()
+    }
+       
+    // Rename option for user custom checklist
+    func renameChecklist(id: UUID, newName: String) {
+        if let index = checklists.firstIndex(where: { $0.id == id }) {
+            checklists[index].name = newName
+            saveChecklists()
+        }
+    }
+       
+    // Get tasks for a specific checklist
+    func getTasks(for checklistId: UUID) -> [TaskItem] {
+        if let checklist = checklists.first(where: { $0.id == checklistId }) {
+            return checklist.tasks
+        }
+        return []
+    }
+       
+    // Update tasks for a specific checklist
+    func updateTasks(for checklistId: UUID, tasks: [TaskItem]) {
+        if let index = checklists.firstIndex(where: { $0.id == checklistId }) {
+            checklists[index].tasks = tasks
+            saveChecklists()
+        }
+    }
+       
+    // Remove a checklist
+    func removeChecklist(id: UUID) {
+        checklists.removeAll { $0.id == id }
+        saveChecklists()
+    }
+
+
+  //updates a new task to the specified checklist
+    func addTask(to checklistId: UUID, title: String){
+        if let index = checklists.firstIndex(where: {$0.id == checklistId}){
+            let newTask = TaskItem(title: title)
+            checklists[index].tasks.append(newTask)
+            saveChecklists()
+        }
+    }
+    
+    //original addTask for default checklist
+    func addTask(title: String) {
+            let newTask = TaskItem(title: title)
+            taskList.tasks.append(newTask)
+            saveTasks()
+        }
+
 
   //marks task as completed once the user selects
     func markTastCompleted(task: TaskItem){
