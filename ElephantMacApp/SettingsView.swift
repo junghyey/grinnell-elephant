@@ -25,10 +25,10 @@ struct SettingsView: View {
     @AppStorage("timerMode") var timerMode: String = "pomodoro" //set default to pomodoro
     
     //Default time settings for Pomodoro and Stopwatch widget integration
-    @AppStorage("workDuration") private var selectedWorkTime: Double = 25
-    @AppStorage("shortBreakTime") private var shortBreakTime: Double = 5
-    @AppStorage("longBreakTime") private var longBreakTime: Double = 15
-    @AppStorage("reminderTime") private var selectedReminderTime: Double = 30
+    @AppStorage("workDuration") var selectedWorkTime: Double = 25
+    @AppStorage("shortBreakTime") var shortBreakTime: Double = 5
+    @AppStorage("longBreakTime") var longBreakTime: Double = 15
+    @AppStorage("reminderTime") var selectedReminderTime: Double = 30
     
     var body: some View {
         ScrollView {

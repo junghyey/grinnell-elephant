@@ -10,9 +10,10 @@ struct PomodoroView: View{
     @EnvironmentObject var themeManager: ThemeManager
     
     // pomodoro break time variables
-    @State private var selectedWorkTime: Int = 1 //default for pomodoro
-    @State private var shortBreakTime: Int = 2 //default for pomodoro
-    @State private var longBreakTime: Int = 15 //default for pomodoro
+    @AppStorage("workDuration") private var selectedWorkTime = 25
+    @AppStorage("shortBreakTime") private var shortBreakTime = 5
+    @AppStorage("longBreakTime") private var longBreakTime = 15
+
     
     // whether timer is running
     @State private var isRunning: Bool = false
@@ -115,16 +116,10 @@ struct PomodoroView: View{
                     action: {
                         // only do something if it's not already running
                         if !isRunning {
-                            isRunning = true
                             if !isPaused {
-                                if isBreak {
-//                                    isBreak = false
-                                    startNewCycle()
-                                } else {
-//                                    isBreak = true
-                                    startNewCycle()
-                                }
+                                startNewCycle()
                             }
+                            isRunning = true
                         }
                     },
                     color: themeManager.curTheme.main_color_2)
@@ -137,7 +132,7 @@ struct PomodoroView: View{
                         breakCount = 0
                         isBreak = false
                         remainingTime = Double(selectedWorkTime*60)
-                        timerString = formatTime(secs: 0)
+                        timerString = formatTime(secs: selectedWorkTime * 60)
                     },
                     color: themeManager.curTheme.main_color_2)
                 ElephantButton(
@@ -152,12 +147,13 @@ struct PomodoroView: View{
                     color: themeManager.curTheme.main_color_2)
                 // strings for clarity and testing purpose
             }
-            ElephantText(displayText: "break count: \(breakCount)")
-            ElephantText(displayText: "is break?: \(isBreak)")
+            // testing!
+//            ElephantText(displayText: "break count: \(breakCount)")
+//            ElephantText(displayText: "is break?: \(isBreak)")
         }
-        .frame(width: 500, height: 500)
+        .environmentObject(themeManager)
         .padding(10)
-        .accessibilityIdentifier("shopMainPageView")
+        .accessibilityIdentifier("pomodoroView")
         .background(themeManager.curTheme.background)
     }
 }
