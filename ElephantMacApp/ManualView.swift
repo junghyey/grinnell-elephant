@@ -1,18 +1,12 @@
 /*
- File Name: ManualView.swift
+ ## File Name: ManualView.swift
  Used  Online Swift Playground (SwiftFiddle) for formatting the code.
-  
-  File Description: This file defines the manual and onboarding views for the Elephant app. The manual contains link to description of each funtionality
+ 
+ ## File Description: This file defines the manual and onboarding views for the Elephant app. The manual contains link to description of each funtionality
  
  ## Components:
  - ManualTemplateView: A reusable SwiftUI template providing navigation, layout, and dynamic styling for each page in manual pages.
  - Struct for each oage
- 
- ## Features:
- - Scrollable, styled content sections with clear headings.
- - The first page contains all the link to other pages for navigation.
- - Navigation controls (Back, Next, Home buttons) for linear walkthrough.
- - Accessibility identifiers for UI testing and improved accessibility.
  
  ## References:
  https://developer.apple.com/documentation/swiftui/font
@@ -60,7 +54,7 @@ import SwiftUI
 struct ManualTemplateView<Content: View>:  View {
     @EnvironmentObject var themeManager: ThemeManager
     @Environment(\.dismiss) private var dismiss
-   
+  
     //--------------------------
     // Variable Initializiation
     //--------------------------
@@ -326,6 +320,8 @@ struct PomodoroPageView: View {
 // Page for explaining token
 // ====================================================
 struct TokensPageView: View {
+    @EnvironmentObject var token: TokenLogic
+    
     // TODO: add example when the widget is completed
     var body: some View {
         ManualTemplateView(
@@ -336,13 +332,37 @@ struct TokensPageView: View {
                         .font(.largeTitle)
                         .fontWeight(.bold)
 
+                    Text("How To")
+                        .font(.title2)
+                        .fontWeight(.bold)
                     Text("Complete wellness tasks to earn tokens. Redeem tokens to collect fun avatars and customize your experience!")
                         .font(.body)
                     Text("Every time you complete the task, you earn one token. The tokens can be used to purchase avatar in the collectible shop.")
                         .font(.body)
                     Text("Daily limit: 5 ")
                         .font(.body)
+                    
+                    Divider() //divide example and
+                    
+                    Text("Example Task & Token") //from Sam
+                        .font(.title2)
+                        .fontWeight(.bold)
+                    ChecklistView(items: [
+                        ChecklistItem(label: "Take a 10min walk", isChecked: false),
+                        ChecklistItem(label: "Dance", isChecked: false),
+                        ChecklistItem(label: "Eat a banana", isChecked: true)
+                    ])//checklistview
+                    
+                    //problem since unchdkcing and checking abck adds token
+                    // Token count
+                    
+                    Text("Tokens: \(token.exampleTokenNum)")
+                        .font(.body)
+                        .padding(.top, 5)
                 }//vstack
+                .onAppear(){
+                    token.exampleTokenNum = 0
+                }
             }//content
             ,
             backPage: AnyView(ManualView()),
@@ -378,7 +398,9 @@ struct CheckBoxView: View {
             Image(systemName: isChecked ? "checkmark.square.fill" : "square")
                 .foregroundColor(isChecked ? DefaultColors.main_color_3 : Color.secondary)
                 .onTapGesture {
-                    isChecked.toggle() // if checked toggle
+                    if(isChecked == false){ //once checked only checking possible unchecking impossible
+                        isChecked=true
+                    }
                 }//.onTapGesture
         }// var body
 
@@ -393,110 +415,128 @@ struct CheckBoxView: View {
  https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-binding-property-wrapper
  */
 
+// TODO: try out token
+//https://www.avanderlee.com/swiftui/environmentobject/
+//https://stackoverflow.com/questions/76714373/static-method-buildexpression-requires-that-myapp-conform-to-view
+//https://developer.apple.com/documentation/swiftui/view/onchange(of:perform:)
+//https://stackoverflow.com/questions/78919404/how-do-i-fix-my-onchangeofperform-to-avoid-xcode-giving-me-a-deprecation-war
 struct ChecklistView: View {
+    @EnvironmentObject var token: TokenLogic
     @State var items: [ChecklistItem] // @state will allow update
-    
     var body: some View {
+        
         VStack(alignment: .leading, spacing: 5) {
             ForEach($items) { $item in
                 HStack {
+                    
                     Text(item.label) // allow to be checked.
                     CheckBoxView(isChecked: $item.isChecked)
-                }//Hstack
-            }//ForEach
-        }//Vstack
-    }//var body
-}//ChecklistView
-
-// MARK: - ExamplesPageView
-// ====================================================
-// ExamplesPageView
-// ----------------------------------------------------
-// Page for showing sample suercases
-// ====================================================
-
-struct ExamplesPageView: View {
-    var body: some View {
-        ManualTemplateView(
-            currentPageIdentifier: "examplesPage",
-            content: {
-                
-                VStack(alignment: .leading, spacing: 24) {
-                    Text("Customize Elephant to Your Needs!")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-
-                    //example sam's story
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("Sam's Story")
-                            .font(.headline)
-                            .fontWeight(.semibold)
-
-                        Text("Sam is a software engineer that sits in front of his computer for long hours. Sam gets so immersed that they forget to eat or rest.")
-                            .font(.body)
-
-                        Text("Here is how Sam uses Elephant as Wellness Reminders")
-                            .font(.headline)
-
-                        Text("Mode: Stopwatch")
-                            .italic()
-
-                        ChecklistView(items: [
-                            ChecklistItem(label: "Take a 10min walk", isChecked: true),
-                            ChecklistItem(label: "Grab a coffee", isChecked: false),
-                            ChecklistItem(label: "Eat an apple", isChecked: true)
-                        ])//checklistview
-                    }//vstack sam
+                       
+                        
+                        .onChange(of: item.isChecked) { oldValue, newValue  in //onChange is part of view
+                            if newValue == true && oldValue == false  {
+                                token.addFakeToken()
+                            }
+                        }//Hstack
+                }//ForEach
+            }//Vstack
+        }//var body
+    }//ChecklistView
+}
+    
+    // MARK: - ExamplesPageView
+    // ====================================================
+    // ExamplesPageView
+    // ----------------------------------------------------
+    // Page for showing sample suercases
+    // ====================================================
+    
+    struct ExamplesPageView: View {
+        @EnvironmentObject var token: TokenLogic
+        var body: some View {
+            ManualTemplateView(
+                currentPageIdentifier: "examplesPage",
+                content: {
                     
-                    //Cam Story Vstack
-
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("Cam's Story")
-                            .font(.headline)
-                            .fontWeight(.semibold)
-
-                        Text("Cam is a college student that finds it hard to stay on top of class and extracurriculars. Cam wants some motivation to get the tasks done.")
-                            .font(.body)
-
-                        Text("Here is how Cam uses Elephant for Task Management")
-                            .font(.headline)
-
-                        Text("Mode: Pomodoro")
-                            .italic()
-
-                        ChecklistView(items: [
-                            ChecklistItem(label: "2 Paragraphs for Political Science Paper", isChecked: true),
-                            ChecklistItem(label: "Meet Advisor", isChecked: true),
-                            ChecklistItem(label: "Email Follow-Ups", isChecked: false)
-                        ])// checklistview
-                    }//vstack cam
-                }//vstack
-            },//conetent
-            backPage: AnyView(ManualView()),
-            homePage: AnyView(ContentView())
-        )//ManualTemplateView
-    }//body
-}//ExamplesPageView
-
-// MARK: - ExamplesPageView
-// ====================================================
-// WidgetSetupPageView
-// ----------------------------------------------------
-// Page for showing the instruction of how to set
-// up widget
-// ====================================================
-struct WidgetSetupPageView: View {
-    // TODO: add vidoe link?
-    var body: some View {
-        ManualTemplateView(
-            currentPageIdentifier: "widgetSetupPage",
-            content: {
-                VStack(alignment: .leading, spacing: 20) {
-                    Text("Add Elephant to Widget Bar")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-
-                    Text("""
+                    VStack(alignment: .leading, spacing: 24) {
+                        Text("Customize Elephant to Your Needs!")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                        
+                        //example sam's story
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("Sam's Story")
+                                .font(.title2)
+                                .fontWeight(.semibold)
+                            
+                            Text("Sam is a software engineer that sits in front of his computer for long hours. Sam gets so immersed that they forget to eat or rest.")
+                                .font(.body)
+                            
+                            Text("Here is how Sam uses Elephant as Wellness Reminders")
+                                .font(.headline)
+                            
+                            Text("Mode: Stopwatch")
+                                .italic()
+                            
+                            ChecklistView(items: [
+                                ChecklistItem(label: "Take a 10min walk", isChecked: true),
+                                ChecklistItem(label: "Grab a coffee", isChecked: false),
+                                ChecklistItem(label: "Eat an apple", isChecked: true)
+                            ])//checklistview
+                        }//vstack sam
+                        
+                        //Cam Story Vstack
+                        Divider()
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("Cam's Story")
+                                .font(.title2)
+                                .fontWeight(.semibold)
+                            
+                            Text("Cam is a college student that finds it hard to stay on top of class and extracurriculars. Cam wants some motivation to get the tasks done.")
+                                .font(.body)
+                            
+                            Text("Here is how Cam uses Elephant for Task Management")
+                                .font(.headline)
+                            
+                            Text("Mode: Pomodoro")
+                                .italic()
+                            
+                            ChecklistView(items: [
+                                ChecklistItem(label: "2 Paragraphs for Political Science Paper", isChecked: true),
+                                ChecklistItem(label: "Meet Advisor", isChecked: true),
+                                ChecklistItem(label: "Email Follow-Ups", isChecked: false)
+                            ])// checklistview
+                        }//vstack cam
+                    }//vstack
+                    .onAppear(){
+                        token.exampleTokenNum = 0 //since it would be weird if we keep token num  when come back 
+                    }
+                },//conetent
+                backPage: AnyView(ManualView()),
+                homePage: AnyView(ContentView())
+            )//ManualTemplateView
+        }//body
+    }//ExamplesPageView
+    
+    // MARK: - ExamplesPageView
+    // ====================================================
+    // WidgetSetupPageView
+    // ----------------------------------------------------
+    // Page for showing the instruction of how to set
+    // up widget
+    // ====================================================
+    struct WidgetSetupPageView: View {
+        // TODO: add vidoe link?
+        var body: some View {
+            ManualTemplateView(
+                currentPageIdentifier: "widgetSetupPage",
+                content: {
+                    VStack(alignment: .leading, spacing: 20) {
+                        Text("Add Elephant to Widget Bar")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                        
+                        Text("""
                     (1) Open Notification Center by clicking the date/time in the menu bar of the mac book (Desktop) or swiping left from the right side of the trackpad.
                     (2) Scroll to 'Edit Widgets'.
                     (3) Search for 'ElephantMacApp'.
@@ -504,14 +544,15 @@ struct WidgetSetupPageView: View {
                     """)
                         .font(.body)
                         .lineSpacing(5)
-                }//Vstack
-            }, //content
-            backPage: AnyView(ManualView()),
-            homePage: AnyView(ContentView())
-        )//ManualTemplateView
-    }// var body
-}//WidgetSetupPageView
+                    }//Vstack
+                }, //content
+                backPage: AnyView(ManualView()),
+                homePage: AnyView(ContentView())
+            )//ManualTemplateView
+        }// var body
+    }//WidgetSetupPageView
+    
+    #Preview {
+        ManualView()
+    }
 
-#Preview {
-    ManualView()
-}

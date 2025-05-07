@@ -1,16 +1,23 @@
 /*
- File Name: NotificationView.swift
+ ## File Name: NotificationView.swift
+ 
+ ## File Description: A tempalte (singleton class) for creating a notification for each time.
  Used  Online Swift Playground (SwiftFiddle) for formatting the code.
  
- File Description: This file contains the singleton class for creating a notification pop up in the mac and hahndling permission.
+ ## Creator Group: Elephant
+ 
+ ## Author: Hyeyun
  
  ## Components:
- - NotificationView class: singleton class for notificiaiotns pop up in the mac.
+ NotificationView class: singleton class for notificiaiotns pop up in the mac. (contains a function to generate
+a new notification with times)
  
- ## Features:
- - Function to generate  a new notification with times
-
- ## References:
+ ## Note:
+   For global usage (sharing data), we can do:
+   https://www.hackingwithswift.com/quick-start/swiftui/how-to-use-environmentobject-to-share-data-between-views
+   Use it like a envrionment thing we did for themeManager. (added to main)
+  (Sinc we need to track states)
+  References:
  https://developer.apple.com/documentation/usernotifications
  https://developer.apple.com/documentation/usernotifications/untimeintervalnotificationtrigger
  https://commitstudiogs.medium.com/how-to-implement-push-notifications-in-swift-d0f1a3caf49b
@@ -19,6 +26,8 @@
  https://www.avanderlee.com/xcode/xcode-mark-line-comment/
  https://www.hackingwithswift.com/read/21/2/scheduling-notifications-unusernotificationcenter-and-unnotificationrequest
  */
+
+
 
 import UserNotifications
 
