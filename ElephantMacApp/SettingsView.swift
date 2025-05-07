@@ -59,9 +59,18 @@ struct SettingsView: View {
     
     //re-usable back button, calls presentationMode to go "back" to previous
     private var backButton: some View {
-        ElephantButton(buttonText: "Back", action: {
-            presentationMode.wrappedValue.dismiss()
-        }, color: themeManager.curTheme.main_color_1)
+        NavigationLink(destination: ContentView()) {
+            Image(systemName: "house.fill")
+                .font(.title2)
+                .foregroundColor(themeManager.curTheme.main_color_3)
+                .accessibilityIdentifier("homeButton")
+                .allowsHitTesting(true)
+                //nopadding
+        }//NavigationLink
+        .buttonStyle(PlainButtonStyle())
+        .font(.system(.title3, design: .rounded).weight(.semibold))
+        .padding([.top, .leading], 10)
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
     
     //mode section Button that chooses between light and dark mode, applying the mode globally
