@@ -14,6 +14,7 @@ struct ItemView: View {
     @State var showConfirmation = false
     
     var body: some View {
+        var purchasedAvatars = UserDefaults.standard.array(forKey: "purchasedAvatars")
         ZStack{
             ScrollView{
                 VStack {
@@ -76,6 +77,8 @@ struct ItemView: View {
                     confirmButtonText: "Yes!",
                     onConfirm: {
                         showConfirmation = false
+                        purchasedAvatars!.append(item.id)
+                        UserDefaults.standard.set(purchasedAvatars, forKey: "purchasedAvatars")
                     },
                     onCancel: {
                         showConfirmation = false
@@ -90,5 +93,7 @@ struct ItemView: View {
     
 }
 #Preview {
+    let themeManager = ThemeManager()
     ItemView(item: ShopItem(id: "mammal-lion", name: "Lion", imageName: "mammal-lion", price: 10))
+        .environmentObject(themeManager)
 }

@@ -8,12 +8,19 @@ import SwiftUI
 
 struct ShopMainPageView: View {
     
-    @AppStorage("user_tokens") var userTokens: Int = 15
+    // @AppStorage("user_tokens") var userTokens: Int = 15
     @AppStorage("curPalette") var curPalette: String = "defaultElephant"
-    
     @EnvironmentObject private var themeManager: ThemeManager
     
+    // only initialize it once
+    init() {
+        if (UserDefaults.standard.array(forKey: "purchasedAvatars") == nil) {
+            UserDefaults.standard.set(["mammal-elephant"], forKey: "purchasedAvatars")
+        }
+    }
+    
     var body: some View {
+        let tokenNum: Int = UserDefaults.standard.integer(forKey: "tokenNum")
         ScrollView{
             NavigationStack{
                 VStack(alignment: .leading) {
@@ -24,6 +31,20 @@ struct ShopMainPageView: View {
                             .padding()
                             .frame(alignment: .center)
                         Spacer()
+                        Image(systemName: "dollarsign.circle.fill")
+                            .font(.title2)
+                            .foregroundColor(themeManager.curTheme.main_color_3)
+                            .padding(-10)
+                        ElephantText(displayText: "\(tokenNum)")
+                        NavigationLink(destination: MyAvatarView()) {
+                            Image(systemName: "star.circle.fill")
+                                .font(.title2)
+                                .foregroundColor(themeManager.curTheme.main_color_3)
+                                .accessibilityIdentifier("homeButton")
+                                .allowsHitTesting(true)
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        .padding()
                         // home button, taken from ManualView
                         NavigationLink(destination: ContentView()) {
                             Image(systemName: "house.fill")
@@ -35,8 +56,10 @@ struct ShopMainPageView: View {
                         .buttonStyle(PlainButtonStyle())
                         .padding()
                     }
+                    
                     PackBlock(pack: mammals, packName: "Mammal")
                     PackBlock(pack: marines, packName: "Marine")
+                    PackBlock(pack: birds, packName: "Bird")
                 }
             }.frame(alignment: .leading)
         }
@@ -94,7 +117,7 @@ struct PackBlock : View {
                 }
             }
         }
-        .padding(10)
+        .padding(20)
         .accessibilityIdentifier("shopView_scroll_\(packName)")
     }
 }
