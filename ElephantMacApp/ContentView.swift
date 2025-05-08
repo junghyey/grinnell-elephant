@@ -33,36 +33,8 @@ struct ContentView: View {
                     // structure the settings and manual page buttons
                     // put this HStack in general file to access from other pages
                     HStack{
-                        // Button to settings page
-                        NavigationLink(destination: SettingsView()) {
-                            Text("⛭")
-                                .font(.system(size: 25).weight(.bold))
-                                .frame(width: 40, height: 40, alignment: .center)
-                                .background(themeManager.curTheme.main_color_2)
-                                .clipShape(Circle())
-                                .scaleEffect(isPressed ? 0.9 : 1.0)
-                                .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
-                        }
-                        .buttonStyle(PlainButtonStyle())
-                        .frame(maxWidth: .infinity, alignment: .trailing)
-                        .background(themeManager.curTheme.main_color_1)
-                        .accessibilityIdentifier("settingsPage")
-                        
-                        // Button to manual page
-                        NavigationLink(destination: ManualView()) {
-                            Text("?")
-                                .font(.system(size: 25).weight(.bold))
-                                .frame(width: 40, height: 40, alignment: .center)
-                                .background(themeManager.curTheme.main_color_2)
-                                .clipShape(Circle())
-                                .scaleEffect(isPressed ? 0.9 : 1.0)
-                                .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
-                        }
-                        .buttonStyle(PlainButtonStyle())
-                        .frame(alignment: .trailing)
-                        .background(themeManager.curTheme.main_color_1)
-                        .accessibilityIdentifier("manualPage")
-                        
+                        ToSettingsPageButton() // Button to settings page
+                        ToManualPageButton() // Button to manual page
                     } // manual and settings page button area
                     .padding([.top, .trailing], 15)
 
