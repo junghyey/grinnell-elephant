@@ -98,31 +98,25 @@ struct ContentView: View {
                 
                     // TIMERS MODE MENU
                     NavigationLink(destination: TimerView()) {
-                        Text("Timer")
-                            .font(.system(.title2, design: .rounded).weight(.bold))
-                            .frame(width: 200, height: 60)
-                            .background(themeManager.curTheme.main_color_2)
-                            .clipShape(RoundedRectangle(cornerRadius: 15))
-                            .scaleEffect(isPressed ? 0.9 : 1.0)
-                            .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
+                        Picker("Mode", selection: $currentMode) {
+                            Text("Stopwatch").tag(modes.stopwatch)
+                            Text("Pomodoro").tag(modes.pomodoro)
+                        }
+                        .pickerStyle(.menu)
+                        .frame(width: 125, alignment: .center) // keeps the "mode: currentmode" padded and centered
+                        .frame(width: 200, height: 60) // size of outer frame
+                        .font(.system(.title2, design: .rounded).weight(.bold))
+                        .background(themeManager.curTheme.main_color_2)
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
+                        .scaleEffect(isPressed ? 0.9 : 1.0)
+                        .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
                     }
                     .buttonStyle(PlainButtonStyle())
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(themeManager.curTheme.main_color_1)
                     .accessibilityIdentifier("timerPage")
                     .frame(alignment: .center)
-                    
-                    Picker("Mode", selection: $currentMode) {
-                        Text("Stopwatch").tag(modes.stopwatch)
-                        Text("Pomodoro").tag(modes.pomodoro)
-                    }
-                    .pickerStyle(.menu)
-                    .frame(width: 150, alignment: .center) // keeps the "mode: currentmode" padded and centered
-                    .frame(width: 200, height: 60) // size of outer frame
-                    .font(.system(.title2, design: .rounded).weight(.bold))
-                    .background(themeManager.curTheme.main_color_2)
-                    .clipShape(RoundedRectangle(cornerRadius: 15))
-                                        
+                                                            
                     // COLLECTIBLES SHOP BUTTON
                     NavigationLink(destination: ShopMainPageView().environmentObject(themeManager)) {
                         Text("Collectibles Shop")
