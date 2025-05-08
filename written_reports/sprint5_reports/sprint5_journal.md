@@ -1,7 +1,7 @@
 # Sprint 5 Journal
 
 ## Adoption Plan
-#### Date: Apr/30/2025
+#### Date: April 30, 2025
 #### Is your product ready for adoption?
 
 #### Current State of product development
@@ -58,7 +58,7 @@ Many of our reach goals across various sprints in our final development include:
 Links to Bug Reports
   1. [Bug 1 Hyeun EnvironmentObject view error] - https://trello.com/c/dKSCkfOa
   3. [Bug 2 Gabby Checklist adding new task bug] - [[Link]](https://trello.com/c/wxcFwKiB)
-  4. [Bug 3 Title & Link] - [description]
+  4. [Bug 3 Medhashree Mode Selection] - https://trello.com/c/D6T4kXTW
   5. [Bug 4 Title & Link] - [description]
      
 ## License
