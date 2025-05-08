@@ -136,7 +136,6 @@ struct ChecklistMainPageView: View {
         }
         .padding()
         .preferredColorScheme(themeManager.Mode ? .dark : .light)
-        .foregroundColor(themeManager.textColor(for: themeManager.curTheme.background))
         .background(themeManager.curTheme.background)
         .frame(width: 500, height: 500)
         .accessibilityIdentifier("checklistsMainPage")

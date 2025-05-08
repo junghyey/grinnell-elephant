@@ -146,7 +146,6 @@ struct ManualTemplateView<Content: View>:  View {
                 .padding(.bottom, 20)
             }
             .preferredColorScheme(themeManager.Mode ? .dark : .light)
-            .foregroundColor(themeManager.textColor(for: themeManager.curTheme.background))
             .frame(width: 500, height: 500)
             .background(themeManager.curTheme.background)
         }//VStack
