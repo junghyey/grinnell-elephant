@@ -30,27 +30,22 @@ struct ChecklistMainPageView: View {
     var body: some View {
         ScrollView {
             VStack {
-                //home page button
-                NavigationLink(destination: ContentView()) {
-                    Image(systemName: "house.fill")
-                        .font(.title2)
-                        .foregroundColor(themeManager.curTheme.main_color_3)
-                        .accessibilityIdentifier("homeButton")
-                        .allowsHitTesting(true)
+                HStack {
+                    //introduction text
+                    Text("Checklists")
+                        .kerning(2)
+                        .font(.system(.largeTitle, design: .rounded).weight(.bold))
+                        .foregroundColor(themeManager.textColor(for: themeManager.curTheme.background))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 15)
+                    
+                    Spacer()
+                    ToHomePageButton() // Button to homepage
+                    ToSettingsPageButton() // Button to settings page
+                    ToManualPageButton() // Button to manual page
                 }
-                .buttonStyle(PlainButtonStyle())
-                .font(.system(.title3, design: .rounded).weight(.semibold))
-                .padding([.top, .leading], 10)
-                .frame(maxWidth: .infinity, alignment: .trailing)
-                .accessibilityIdentifier("checklistsMainPage_back")
-                
-                //introduction text
-                Text("Checklists")
-                    .kerning(2)
-                    .font(.system(.largeTitle, design: .rounded).weight(.bold))
-                    .foregroundColor(themeManager.textColor(for: themeManager.curTheme.background))
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.leading, 15)
+                .padding([.top, .trailing], 15)
+
                 
                 //displays all existing checklists
                 ForEach(storage.checklists) { checklist in

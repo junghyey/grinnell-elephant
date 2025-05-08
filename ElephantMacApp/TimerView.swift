@@ -17,25 +17,12 @@ struct TimerView: View {
         VStack{
             HStack {
                 Spacer()
-                // home button, taken from ManualView
-                Circle()
-                    .fill(themeManager.curTheme.main_color_2)
-                    .frame(width: 40, height: 40, alignment:.trailing)
-                    .overlay(
-                        NavigationLink(destination: ContentView()) {
-                            Image(systemName: "house.fill")
-                                .font(.title2)
-                                .foregroundColor(themeManager.curTheme.main_color_1)
-                                .accessibilityIdentifier("homeButton")
-                                .allowsHitTesting(true)
-                                .clipShape(Circle())
-                        }
-                        .buttonStyle(PlainButtonStyle())
-                        .frame(maxWidth: .infinity, alignment: .center)
-                        .background(Color.clear)
-                    )
-                    .padding()
+                ToHomePageButton() // Button to homepage
+                ToSettingsPageButton() // Button to settings page
+                ToManualPageButton() // Button to manual page
             }
+            .padding([.top, .trailing], 15)
+
             Spacer()
             Image(curAvatar)
                 .resizable()

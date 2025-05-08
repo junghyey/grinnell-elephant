@@ -146,3 +146,70 @@ struct ElephantText: View {
             .padding(10)
     }
 }
+
+
+// Button to settings page
+// Parameters: none
+
+struct ToSettingsPageButton: View {
+    @EnvironmentObject var themeManager: ThemeManager
+    @State private var isPressed = false
+    
+    var body: some View {
+        NavigationLink(destination: SettingsView()) {
+            Text("⛭")
+                .font(.system(size: 25).weight(.bold))
+                .frame(width: 40, height: 40)
+                .background(themeManager.curTheme.main_color_2)
+                .clipShape(Circle())
+                .scaleEffect(isPressed ? 0.9 : 1.0)
+                .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
+        }
+        .buttonStyle(PlainButtonStyle())
+        .accessibilityIdentifier("settingsPage")
+    }
+}
+
+// Button to manual page
+// Parameters: none
+
+struct ToManualPageButton: View {
+    @EnvironmentObject var themeManager: ThemeManager
+    @State private var isPressed = false
+    
+    var body: some View {
+        NavigationLink(destination: ManualView()) {
+            Text("?")
+                .font(.system(size: 25).weight(.bold))
+                .frame(width: 40, height: 40)
+                .background(themeManager.curTheme.main_color_2)
+                .clipShape(Circle())
+                .scaleEffect(isPressed ? 0.9 : 1.0)
+                .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
+        }
+        .buttonStyle(PlainButtonStyle())
+        .accessibilityIdentifier("manualPage")
+    }
+}
+
+// Button to homepage
+// Parameters: none
+
+struct ToHomePageButton: View {
+    @EnvironmentObject var themeManager: ThemeManager
+    @State private var isPressed = false
+    
+    var body: some View {
+        NavigationLink(destination: ContentView()) {
+            Image(systemName: "house.fill")
+                .font(.title2)
+                .frame(width: 40, height: 40)
+                .background(themeManager.curTheme.main_color_2)
+                .clipShape(Circle())
+                .scaleEffect(isPressed ? 0.9 : 1.0)
+                .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
+        }
+        .buttonStyle(PlainButtonStyle())
+        .accessibilityIdentifier("homeButton")
+    }
+}
