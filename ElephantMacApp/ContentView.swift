@@ -20,15 +20,13 @@ import SwiftUI
 struct ContentView: View {
     @State private var isPressed = false
     @EnvironmentObject var themeManager: ThemeManager // theme manager
-    // @AppStorage("mode") private var Mode: Bool = false //global mode setting
+    @AppStorage("timerMode") var timerMode: String = "stopwatch"
 
     // timer mode options
     enum modes: String, CaseIterable, Identifiable {
         case stopwatch, pomodoro
         var id: Self { self }
     }
-
-    @State private var currentMode: modes = .stopwatch // preset for timer mode
 
     var body: some View {
         NavigationStack{
@@ -98,9 +96,9 @@ struct ContentView: View {
                 
                     // TIMERS MODE MENU
                     NavigationLink(destination: TimerView()) {
-                        Picker("Mode", selection: $currentMode) {
-                            Text("Stopwatch").tag(modes.stopwatch)
-                            Text("Pomodoro").tag(modes.pomodoro)
+                        Picker("Mode", selection: $timerMode) {
+                            Text("Stopwatch").tag("stopwatch")
+                            Text("Pomodoro").tag("pomodoro")
                         }
                         .pickerStyle(.menu)
                         .frame(width: 125, alignment: .center) // keeps the "mode: currentmode" padded and centered
