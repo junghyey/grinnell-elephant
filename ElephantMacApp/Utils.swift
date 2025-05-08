@@ -149,6 +149,8 @@ struct ElephantText: View {
 
 
 // Button to settings page
+// Parameters: none
+
 struct ToSettingsPageButton: View {
     @EnvironmentObject var themeManager: ThemeManager
     @State private var isPressed = false
@@ -157,20 +159,20 @@ struct ToSettingsPageButton: View {
         NavigationLink(destination: SettingsView()) {
             Text("⛭")
                 .font(.system(size: 25).weight(.bold))
-                .frame(width: 40, height: 40, alignment: .center)
+                .frame(width: 40, height: 40)
                 .background(themeManager.curTheme.main_color_2)
                 .clipShape(Circle())
                 .scaleEffect(isPressed ? 0.9 : 1.0)
                 .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
         }
         .buttonStyle(PlainButtonStyle())
-        .frame(maxWidth: .infinity, alignment: .trailing)
-        .background(themeManager.curTheme.main_color_1)
         .accessibilityIdentifier("settingsPage")
     }
 }
 
 // Button to manual page
+// Parameters: none
+
 struct ToManualPageButton: View {
     @EnvironmentObject var themeManager: ThemeManager
     @State private var isPressed = false
@@ -179,41 +181,35 @@ struct ToManualPageButton: View {
         NavigationLink(destination: ManualView()) {
             Text("?")
                 .font(.system(size: 25).weight(.bold))
-                .frame(width: 40, height: 40, alignment: .center)
+                .frame(width: 40, height: 40)
                 .background(themeManager.curTheme.main_color_2)
                 .clipShape(Circle())
                 .scaleEffect(isPressed ? 0.9 : 1.0)
                 .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
         }
         .buttonStyle(PlainButtonStyle())
-        .frame(alignment: .trailing)
-        .background(themeManager.curTheme.main_color_1)
         .accessibilityIdentifier("manualPage")
     }
 }
+
+// Button to homepage
+// Parameters: none
 
 struct ToHomePageButton: View {
     @EnvironmentObject var themeManager: ThemeManager
     @State private var isPressed = false
     
     var body: some View {
-        Circle()
-            .fill(themeManager.curTheme.main_color_2)
-            .frame(width: 40, height: 40, alignment: .trailing)
-            .overlay(
-                NavigationLink(destination: ContentView()) {
-                    Image(systemName: "house.fill")
-                        .font(.title2)
-                        .foregroundColor(themeManager.curTheme.main_color_1)
-                        .accessibilityIdentifier("homeButton")
-                        .allowsHitTesting(true)
-                        .clipShape(Circle())
-                    //nopadding
-                }//NavigationLink
-                    .buttonStyle(PlainButtonStyle()) // get rid of the white box behind
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .background(Color.clear)
-            ) // button
+        NavigationLink(destination: ContentView()) {
+            Image(systemName: "house.fill")
+                .font(.title2)
+                .frame(width: 40, height: 40)
+                .background(themeManager.curTheme.main_color_2)
+                .clipShape(Circle())
+                .scaleEffect(isPressed ? 0.9 : 1.0)
+                .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
+        }
+        .buttonStyle(PlainButtonStyle())
+        .accessibilityIdentifier("homeButton")
     }
 }
-

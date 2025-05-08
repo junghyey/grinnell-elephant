@@ -33,6 +33,7 @@ struct ContentView: View {
                     // structure the settings and manual page buttons
                     // put this HStack in general file to access from other pages
                     HStack{
+                        Spacer()
                         ToSettingsPageButton() // Button to settings page
                         ToManualPageButton() // Button to manual page
                     } // manual and settings page button area
