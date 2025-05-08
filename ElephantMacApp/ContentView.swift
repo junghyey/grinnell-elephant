@@ -22,12 +22,6 @@ struct ContentView: View {
     @EnvironmentObject var themeManager: ThemeManager // theme manager
     @AppStorage("timerMode") var timerMode: String = "stopwatch"
 
-    // timer mode options
-    enum modes: String, CaseIterable, Identifiable {
-        case stopwatch, pomodoro
-        var id: Self { self }
-    }
-
     var body: some View {
         NavigationStack{
             ZStack{
