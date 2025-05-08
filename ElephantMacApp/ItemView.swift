@@ -29,10 +29,21 @@ struct ItemView: View {
                         .buttonStyle(PlainButtonStyle())
                         .padding(10)
                         .accessibilityIdentifier("itemButton_back_\(item.imageName)")
+                        Spacer()
                         Text("\(item.name)")
                             .font(.title)
                             .fontWeight(.bold)
                             .padding()
+                        Spacer()
+                        NavigationLink(destination: ContentView()) {
+                            Image(systemName: "house.fill")
+                                .font(.title2)
+                                .foregroundColor(themeManager.curTheme.main_color_3)
+                                .accessibilityIdentifier("homeButton")
+                                .allowsHitTesting(true)
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        .padding()
                     }
                     ZStack{
                         Circle()

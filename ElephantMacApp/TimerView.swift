@@ -10,7 +10,6 @@ import SwiftUI
 
 struct TimerView: View {
     @EnvironmentObject private var themeManager: ThemeManager
-    // @Environment(\.presentationMode) var presentationMode
     @AppStorage("curAvatar") private var curAvatar = "mammal-elephant"
     @AppStorage("timerMode") private var timerMode = "pomodoro"
 
@@ -40,6 +39,7 @@ struct TimerView: View {
             } else {
                 StopwatchView()
             }
+            ElephantText(displayText: "Current mode: \(timerMode)")
         }
         .environmentObject(themeManager)
         .background(themeManager.curTheme.background)
