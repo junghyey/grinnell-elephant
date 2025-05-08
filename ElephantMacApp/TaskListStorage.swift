@@ -28,12 +28,13 @@ class TaskListStorage: ObservableObject{
     @Published var checklists: [Checklist] = [] {
         didSet {
             saveChecklists()
+            //SharedDataManager.shared.saveChecklists(checklists)
         }
     }
     
     init(){
         loadTasks() //loads tasks for user view
-        loadChecklists()
+        loadChecklists() //loads all currently existing checklists
         
         // created default checklist if none currently exists
         if checklists.isEmpty {
@@ -49,7 +50,7 @@ class TaskListStorage: ObservableObject{
         return direct.appendingPathComponent(tasksFilename) //returns direct path to file
     }
     
-    private func getListsFile() -> URL? { //retrieves the TaskLists.json file and creates a direct path to append new tasks
+    private func getListsFile() -> URL? { //retrieves the Checklists.json file and creates a direct path to append new checklists
         guard let direct = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else{
             return nil
         }
@@ -70,7 +71,7 @@ class TaskListStorage: ObservableObject{
     
     //saves new tasks to the taskList encoding through the defined path
     func saveTasks(){
-        guard let file = getListsFile() else {return} //exits if the file is not accesed
+        guard let file = getTasksFile() else {return} //exits if the file is not accesed
         
         do{
             let data = try JSONEncoder().encode(taskList)
@@ -104,6 +105,7 @@ class TaskListStorage: ObservableObject{
         } catch {
             print("Error: failed to save checklists")
         }
+        
     }
     
     // Add a new checklist
@@ -133,7 +135,7 @@ class TaskListStorage: ObservableObject{
     func updateTasks(for checklistId: UUID, tasks: [TaskItem]) {
         if let index = checklists.firstIndex(where: { $0.id == checklistId }) {
             checklists[index].tasks = tasks
-            saveChecklists()
+            saveTasks()
         }
     }
        
@@ -169,9 +171,18 @@ class TaskListStorage: ObservableObject{
         }
     }
 
-  //removes task from checklist once it's been completed
+  //removes task from default checklist
     func removeTask(task: TaskItem){
             taskList.tasks.removeAll{ $0.id == task.id }
             saveTasks()
+    }
+    
+    //removes a task from a specific checklist
+    func removeTask(from checklistId: UUID, task: TaskItem){
+        if let index = checklists.firstIndex(where: { $0.id == checklistId}){
+            checklists[index].tasks.removeAll { $0.id == task.id }
+            saveTasks()
+            saveChecklists()
+        }
     }
 }
