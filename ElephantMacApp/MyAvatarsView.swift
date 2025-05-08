@@ -31,16 +31,23 @@ struct MyAvatarView: View {
                             .foregroundColor(themeManager.curTheme.main_color_3)
                             .padding(-10)
                         ElephantText(displayText: "\(tokenNum)")
-                        // home button, taken from ManualView
-                        NavigationLink(destination: ContentView()) {
-                            Image(systemName: "house.fill")
-                                .font(.title2)
-                                .foregroundColor(themeManager.curTheme.main_color_3)
-                                .accessibilityIdentifier("homeButton")
-                                .allowsHitTesting(true)
-                        }
-                        .buttonStyle(PlainButtonStyle())
-                        .padding()
+                        Circle()
+                            .fill(themeManager.curTheme.main_color_2)
+                            .frame(width: 40, height: 40, alignment:.trailing)
+                            .overlay(
+                                NavigationLink(destination: ContentView()) {
+                                    Image(systemName: "house.fill")
+                                        .font(.title2)
+                                        .foregroundColor(themeManager.curTheme.main_color_1)
+                                        .accessibilityIdentifier("homeButton")
+                                        .allowsHitTesting(true)
+                                        .clipShape(Circle())
+                                }
+                                .buttonStyle(PlainButtonStyle())
+                                .frame(maxWidth: .infinity, alignment: .center)
+                                .background(Color.clear)
+                            )
+                            .padding()
                     }
                     DisplayAllItems(action: { avatar in
                         selectedAvatar = avatar

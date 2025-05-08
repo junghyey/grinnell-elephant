@@ -21,47 +21,56 @@ struct ShopMainPageView: View {
     
     var body: some View {
         let tokenNum: Int = UserDefaults.standard.integer(forKey: "tokenNum")
-        ScrollView{
-            NavigationStack{
-                VStack(alignment: .leading) {
-                    HStack{
-                        Text("Shop")
-                            .font(.title)
-                            .fontWeight(.bold)
+        VStack {
+            ScrollView{
+                NavigationStack{
+                    VStack(alignment: .leading) {
+                        HStack{
+                            Text("Shop")
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .padding()
+                                .frame(alignment: .center)
+                            Spacer()
+                            Image(systemName: "dollarsign.circle.fill")
+                                .font(.title2)
+                                .foregroundColor(themeManager.curTheme.main_color_3)
+                                .padding(-10)
+                            ElephantText(displayText: "\(tokenNum)")
+                            NavigationLink(destination: MyAvatarView()) {
+                                Image(systemName: "star.circle.fill")
+                                    .font(.title2)
+                                    .foregroundColor(themeManager.curTheme.main_color_3)
+                                    .accessibilityIdentifier("homeButton")
+                                    .allowsHitTesting(true)
+                            }
+                            .buttonStyle(PlainButtonStyle())
                             .padding()
-                            .frame(alignment: .center)
-                        Spacer()
-                        Image(systemName: "dollarsign.circle.fill")
-                            .font(.title2)
-                            .foregroundColor(themeManager.curTheme.main_color_3)
-                            .padding(-10)
-                        ElephantText(displayText: "\(tokenNum)")
-                        NavigationLink(destination: MyAvatarView()) {
-                            Image(systemName: "star.circle.fill")
-                                .font(.title2)
-                                .foregroundColor(themeManager.curTheme.main_color_3)
-                                .accessibilityIdentifier("homeButton")
-                                .allowsHitTesting(true)
+                            Circle()
+                                .fill(themeManager.curTheme.main_color_2)
+                                .frame(width: 40, height: 40, alignment:.trailing)
+                                .overlay(
+                                    NavigationLink(destination: ContentView()) {
+                                        Image(systemName: "house.fill")
+                                            .font(.title2)
+                                            .foregroundColor(themeManager.curTheme.main_color_1)
+                                            .accessibilityIdentifier("homeButton")
+                                            .allowsHitTesting(true)
+                                            .clipShape(Circle())
+                                    }
+                                        .buttonStyle(PlainButtonStyle())
+                                        .frame(maxWidth: .infinity, alignment: .center)
+                                        .background(Color.clear)
+                                )
+                                .padding()
                         }
-                        .buttonStyle(PlainButtonStyle())
-                        .padding()
-                        // home button, taken from ManualView
-                        NavigationLink(destination: ContentView()) {
-                            Image(systemName: "house.fill")
-                                .font(.title2)
-                                .foregroundColor(themeManager.curTheme.main_color_3)
-                                .accessibilityIdentifier("homeButton")
-                                .allowsHitTesting(true)
-                        }
-                        .buttonStyle(PlainButtonStyle())
-                        .padding()
+                        
+                        PackBlock(pack: mammals, packName: "Mammal")
+                        PackBlock(pack: marines, packName: "Marine")
+                        PackBlock(pack: birds, packName: "Bird")
                     }
-                    
-                    PackBlock(pack: mammals, packName: "Mammal")
-                    PackBlock(pack: marines, packName: "Marine")
-                    PackBlock(pack: birds, packName: "Bird")
-                }
-            }.frame(alignment: .leading)
+                }.frame(alignment: .leading)
+            }
         }
         .preferredColorScheme(themeManager.Mode ? .dark : .light)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
