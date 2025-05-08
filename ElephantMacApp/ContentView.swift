@@ -112,7 +112,6 @@ struct ContentView: View {
                         .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
                     }
                     .buttonStyle(PlainButtonStyle())
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(themeManager.curTheme.main_color_1)
                     .accessibilityIdentifier("timerPage")
                     .frame(alignment: .center)
