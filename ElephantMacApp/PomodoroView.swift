@@ -150,11 +150,15 @@ struct PomodoroView: View{
             // testing!
 //            ElephantText(displayText: "break count: \(breakCount)")
 //            ElephantText(displayText: "is break?: \(isBreak)")
+            if isBreak {
+                ElephantText(displayText: "Break Time!")
+            }
         }
         .environmentObject(themeManager)
         .padding(10)
         .accessibilityIdentifier("pomodoroView")
         .background(themeManager.curTheme.background)
+        .preferredColorScheme(themeManager.Mode ? .dark : .light)
     }
 }
 
