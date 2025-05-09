@@ -57,7 +57,6 @@ struct SettingsView: View {
         }
         .padding()
         .preferredColorScheme(themeManager.Mode ? .dark : .light) //based on user selection
-        .foregroundColor(themeManager.textColor(for: themeManager.curTheme.background))
         .background(themeManager.curTheme.background) //based on user selection
         .frame(width: 500, height: 500) //frames scroll view
     }
@@ -121,7 +120,8 @@ struct SettingsView: View {
     // Displays Pomodoro time settings and sliders
     private var pomodoroTimeSection: some View {
         timeSection(title: "Pomodoro", sliders: [
-            ("Work Duration", $selectedWorkTime, 20, 60, 5),
+//            ("Work Duration", $selectedWorkTime, 20, 60, 5),
+            ("Work Duration", $selectedWorkTime, 0.1, 60, 0.1),
             ("Short Break Duration", $shortBreakTime, 5, 30, 5),
             ("Long Break Duration", $longBreakTime, 15, 30, 5)
         ])
