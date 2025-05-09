@@ -38,7 +38,7 @@ struct MyAvatarView: View {
                                 NavigationLink(destination: ContentView()) {
                                     Image(systemName: "house.fill")
                                         .font(.title2)
-                                        .foregroundColor(themeManager.curTheme.main_color_1)
+                                        .foregroundColor(themeManager.curTheme.background)
                                         .accessibilityIdentifier("homeButton")
                                         .allowsHitTesting(true)
                                         .clipShape(Circle())
@@ -57,7 +57,7 @@ struct MyAvatarView: View {
                 .padding()
             }
             .frame(width: 500, height: 500)
-            .background(themeManager.curTheme.main_color_1)
+            .background(themeManager.curTheme.background)
             .preferredColorScheme(themeManager.Mode ? .dark : .light)
             
             if(showConfirmation) {

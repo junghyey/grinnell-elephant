@@ -62,7 +62,7 @@ struct ShopMainPageView: View {
         }
         .preferredColorScheme(themeManager.Mode ? .dark : .light)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(themeManager.curTheme.main_color_1)
+        .background(themeManager.curTheme.background)
         .accessibilityIdentifier("shopMainPageView")
     }
 }

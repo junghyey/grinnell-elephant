@@ -77,7 +77,7 @@ struct ContentView: View {
                         .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
                     }
                     .buttonStyle(PlainButtonStyle())
-                    .background(themeManager.curTheme.main_color_1)
+                    .background(themeManager.curTheme.background)
                     .accessibilityIdentifier("timerPage")
                     .frame(alignment: .center)
                                                             
@@ -93,7 +93,7 @@ struct ContentView: View {
                     }  // NavigationLink - set up and adjustments
                     .buttonStyle(PlainButtonStyle())
                     .frame(maxWidth: .infinity, alignment: .center)
-                    .background(themeManager.curTheme.main_color_1)
+                    .background(themeManager.curTheme.background)
                     .accessibilityIdentifier("shopPage")
                     
                     // CHECKLISTS SHOP BUTTON
@@ -108,18 +108,18 @@ struct ContentView: View {
                     }  // NavigationLink - set up and adjustments
                     .buttonStyle(PlainButtonStyle())
                     .frame(maxWidth: .infinity, alignment: .center)
-                    .background(themeManager.curTheme.main_color_1)
+                    .background(themeManager.curTheme.background)
                     .padding(.bottom, 25)
                     .accessibilityIdentifier("checklistsPageLink")
                     
                 } // VStack - structures whole page
-                .background(themeManager.curTheme.main_color_1)
+                .background(themeManager.curTheme.background)
             } // ZStack
         } // NavigationStack
         .environmentObject(themeManager) // set this on NavStack to stay clean
         .frame(width: 500, height: 500)
         .preferredColorScheme(themeManager.Mode ? .dark : .light)
-        .foregroundColor(themeManager.textColor(for: themeManager.curTheme.main_color_1))
+        .foregroundColor(themeManager.textColor(for: themeManager.curTheme.background))
     } // main body
 } // ContentView Struct
 
