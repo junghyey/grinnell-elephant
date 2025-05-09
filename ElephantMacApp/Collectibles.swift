@@ -32,6 +32,22 @@ let birds = [
     ShopItem(id: "bird-owl", name: "Owl", imageName: "bird-owl", price: 5),
 ]
 
+let monsters = [
+    ShopItem(id: "monster-fourarms", name: "Four arms", imageName: "monster-fourarms", price: 5),
+    ShopItem(id: "monster-mad", name: "Mad", imageName: "monster-mad", price: 5),
+    ShopItem(id: "monster-scaring", name: "Intimidating", imageName: "monster-scaring", price: 5),
+    ShopItem(id: "monster-alien", name: "Alien", imageName: "monster-alien", price: 5),
+    ShopItem(id: "monster-sneeze", name: "Sneezing", imageName: "monster-sneeze", price: 5),
+    ShopItem(id: "monster-tree", name: "Tree", imageName: "monster-tree", price: 5),
+    ShopItem(id: "monster-teeth", name: "Teeth", imageName: "monster-teeth", price: 5),
+]
+
+let unicorns = [
+    ShopItem(id: "unicorn-throwup", name: "Rainbow", imageName: "unicorn-throwup", price: 5),
+    ShopItem(id: "unicorn-sunglass", name: "Sunglasses", imageName: "unicorn-sunglass", price: 5),
+    ShopItem(id: "unicorn-flustered", name: "Flustered", imageName: "unicorn-flustered", price: 5),
+]
+
 let allCollectibles = [
     ShopItem(id: "mammal-lion", name: "Lion", imageName: "mammal-lion", price: 5),
     ShopItem(id: "mammal-sheep", name: "Sheep", imageName: "mammal-sheep", price: 5),
@@ -51,4 +67,4 @@ let allCollectibles = [
     ShopItem(id: "bird-owl", name: "Owl", imageName: "bird-owl", price: 5),
 ]
 
-let packs = [mammals, marines, birds]
+let packs = [mammals, marines, birds, monsters, unicorns]

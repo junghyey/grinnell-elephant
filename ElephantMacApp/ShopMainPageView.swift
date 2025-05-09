@@ -56,6 +56,8 @@ struct ShopMainPageView: View {
                         PackBlock(pack: mammals, packName: "Mammal")
                         PackBlock(pack: marines, packName: "Marine")
                         PackBlock(pack: birds, packName: "Bird")
+                        PackBlock(pack: monsters, packName: "Monster")
+                        PackBlock(pack: unicorns, packName: "Unicorn")
                     }
                 }.frame(alignment: .leading)
             }
@@ -70,7 +72,7 @@ struct ShopMainPageView: View {
 #Preview {
     // theme manager
     let themeManager = ThemeManager()
-    themeManager.setTheme(named: "blackWhite")
+    // themeManager.setTheme(named: "blackWhite")
     // themeManager.setTheme(named: "defaultElephant")
     return ShopMainPageView()
         .environmentObject(themeManager)
@@ -94,6 +96,7 @@ struct ShopItemBlock : View {
 struct PackBlock : View {
     let pack: Array<ShopItem>
     let packName: String
+    @EnvironmentObject private var themeManager: ThemeManager
     
     var body: some View {
         Text("\(packName) Pack")
@@ -104,7 +107,7 @@ struct PackBlock : View {
         ScrollView(.horizontal){
             ZStack{
                 RoundedRectangle(cornerRadius: 20)
-                    .foregroundStyle(Color(red: 0.996, green: 0.996, blue: 0.89))
+                    .foregroundStyle(themeManager.curTheme.main_color_1)
                     .frame(width: CGFloat(pack.count)*130, height: 140)
                     
                 HStack{
