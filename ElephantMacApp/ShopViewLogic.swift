@@ -13,8 +13,8 @@ class ShopViewLogic : ObservableObject {
 }
 
 struct ShopItem : Identifiable {
+    // id is the image name
     let id: String
     let name: String
-    let imageName: String
     let price: Int
 }

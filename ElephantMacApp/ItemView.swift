@@ -12,9 +12,13 @@ struct ItemView: View {
     
     let item: ShopItem
     @State var showConfirmation = false
+    @State var showNotEnoughTokens = false
+    @State var showUserAlreadyHave = false
+    @State var showPurchaseConfirmation = false
     
     var body: some View {
-        var purchasedAvatars = UserDefaults.standard.array(forKey: "purchasedAvatars")
+        var purchasedAvatars = UserDefaults.standard.stringArray(forKey: "purchasedAvatars")
+        var tokenNum: Int = UserDefaults.standard.integer(forKey: "tokenNum")
         ZStack{
             ScrollView{
                 VStack {
@@ -28,13 +32,15 @@ struct ItemView: View {
                         }
                         .buttonStyle(PlainButtonStyle())
                         .padding(10)
-                        .accessibilityIdentifier("itemButton_back_\(item.imageName)")
+                        .accessibilityIdentifier("itemButton_back_\(item.id)")
                         Spacer()
                         Text("\(item.name)")
                             .font(.title)
                             .fontWeight(.bold)
                             .padding()
                         Spacer()
+                        TokenDisplay()
+                        ToMyAvatarsButton()
                         ToHomePageButton() // Button to homepage
                         ToSettingsPageButton() // Button to settings page
                         ToManualPageButton() // Button to manual page
@@ -43,7 +49,7 @@ struct ItemView: View {
                         Circle()
                             .foregroundStyle(themeManager.curTheme.background)
                             .frame(width: 300)
-                        Image(item.imageName)
+                        Image(item.id)
                             .resizable()
                             .scaledToFit()
                             .frame(width: 280, height: 280)
@@ -51,9 +57,17 @@ struct ItemView: View {
                     Text("Price: \(item.price) tokens")
                         .font(.headline)
                         .padding(10)
-                    // make this a button that displays a window for buy when on click, instead of a navlink
                     Button(action: {
-                        showConfirmation = true
+                        // if enough tokens show confirmation, otherwise show not enough tokens
+                        if (purchasedAvatars!.contains(item.id)) {
+                            showUserAlreadyHave = true
+                        } else {
+                            if (tokenNum >= item.price) {
+                                showConfirmation = true
+                            } else {
+                                showNotEnoughTokens = true
+                            }
+                        }                        
                     }){
                         RoundedRectangle(cornerRadius: 15)
                             .foregroundStyle(themeManager.curTheme.main_color_2)
@@ -61,16 +75,13 @@ struct ItemView: View {
                             .overlay{
                                 Text("Buy")
                             }
-                        // to add: once user click on buy, show number of tokens they have and ask if they want to buy (options: buy or return)
-                        // if return: return to this page
-                        // if buy, ask them if they want to change avatar in widget
-                        // if change, do a little animation with ribbons and change the buy button to a return to store page button
                     }
                     .buttonStyle(PlainButtonStyle())
                     .shadow(color: .black.opacity(0.2), radius: 4, x: 0, y: 2)
-                    .accessibilityIdentifier("itemButton_price_\(item.imageName)")
+                    .accessibilityIdentifier("itemButton_price_\(item.id)")
                 }
             }
+            .padding(10)
             .frame(width: 500, height: 500)
             .background(themeManager.curTheme.background)
             .preferredColorScheme(themeManager.Mode ? .dark : .light)
@@ -82,16 +93,54 @@ struct ItemView: View {
                     confirmButtonText: "Yes!",
                     onConfirm: {
                         showConfirmation = false
+                        // update purchased avatars
                         purchasedAvatars!.append(item.id)
                         UserDefaults.standard.set(purchasedAvatars, forKey: "purchasedAvatars")
+                        // update token
+                        tokenNum -= item.price
+                        UserDefaults.standard.set(tokenNum, forKey: "tokenNum")
+                        showPurchaseConfirmation = true
                     },
                     onCancel: {
                         showConfirmation = false
                     })
                 .zIndex(1)
             }
+            
+            if (showNotEnoughTokens) {
+                ElephantPopup(
+                    title: "Not enough tokens : (",
+                    message: "Complete wellness tasks to earn tokens!",
+                    onConfirm: {
+                        showNotEnoughTokens = false
+                    }
+                )
+                .zIndex(1)
+            }
+            
+            if (showUserAlreadyHave) {
+                ElephantPopup(
+                    title: "Avatar already purchased",
+                    message: "We see how much you love this item!",
+                    onConfirm: {
+                        showUserAlreadyHave = false
+                    }
+                )
+                .zIndex(1)
+            }
+            
+            if (showPurchaseConfirmation) {
+                ElephantPopup(
+                    title: "Avatar successfully purchased",
+                    message: "Go ahead and give your timer a new look!",
+                    onConfirm: {
+                        showPurchaseConfirmation = false
+                    }
+                )
+                .zIndex(1)
+            }
         }
-        .accessibilityIdentifier("itemView_\(item.imageName)")
+        .accessibilityIdentifier("itemView_\(item.id)")
         .preferredColorScheme(themeManager.Mode ? .dark : .light)
         .foregroundColor(themeManager.textColor(for: themeManager.curTheme.background))
     }
@@ -99,6 +148,6 @@ struct ItemView: View {
 }
 #Preview {
     let themeManager = ThemeManager()
-    ItemView(item: ShopItem(id: "mammal-lion", name: "Lion", imageName: "mammal-lion", price: 10))
+    ItemView(item: ShopItem(id: "mammal-lion", name: "Lion", price: 10))
         .environmentObject(themeManager)
 }
