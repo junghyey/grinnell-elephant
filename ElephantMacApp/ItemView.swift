@@ -39,8 +39,7 @@ struct ItemView: View {
                         .accessibilityIdentifier("itemButton_back_\(item.id)")
                         Spacer()
                         Text("\(item.name)")
-                            .font(.title)
-                            .fontWeight(.bold)
+                            .font(.system(size: 28, weight: .bold, design: .rounded))
                             .padding()
                         Spacer()
                         TokenDisplay()
@@ -59,7 +58,7 @@ struct ItemView: View {
                             .frame(width: 280, height: 280)
                     }
                     Text("Price: \(item.price) tokens")
-                        .font(.headline)
+                        .font(.system(size: 16, weight: .bold, design: .rounded))
                         .padding(10)
                     Button(action: {
                         // if enough tokens show confirmation, otherwise show not enough tokens

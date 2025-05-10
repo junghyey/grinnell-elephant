@@ -30,8 +30,7 @@ struct ShopMainPageView: View {
                     VStack(alignment: .leading) {
                         HStack{
                             Text("Shop")
-                                .font(.title)
-                                .fontWeight(.bold)
+                                .font(.system(size: 28, weight: .bold, design: .rounded))
                                 .padding()
                                 .frame(alignment: .center)
                             Spacer()
@@ -51,7 +50,9 @@ struct ShopMainPageView: View {
                         PackBlock(pack: unicorns, packName: "Unicorn")
                         PackBlock(pack: magic, packName: "Magic")
                     }
-                }.frame(alignment: .leading)
+                }
+                .frame(alignment: .leading)
+                .padding(.bottom, 15)
             }
         }
         .preferredColorScheme(themeManager.Mode ? .dark : .light)
@@ -92,8 +93,9 @@ struct PackBlock : View {
     
     var body: some View {
         Text("\(packName) Pack")
-            .font(.headline)
-            .padding(.leading, 10)
+            // .font(.headline)
+            .padding(.leading, 20)
+            .font(.system(size: 18, weight: .bold, design: .rounded))
             .frame(maxWidth: .infinity, alignment: .leading)
         
         ScrollView(.horizontal){
@@ -109,7 +111,8 @@ struct PackBlock : View {
                 }
             }
         }
-        .padding(20)
+        .padding(.leading, 20)
+        .padding(.vertical, 10)
         .accessibilityIdentifier("shopView_scroll_\(packName)")
     }
 }

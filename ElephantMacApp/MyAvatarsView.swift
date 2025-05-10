@@ -19,10 +19,10 @@ struct MyAvatarView: View {
                 ScrollView{
                     HStack {
                         Text("My Avatars")
-                            .font(.title)
                             .fontWeight(.bold)
                             .padding()
                             .frame(alignment: .center)
+                            .font(.system(size: 28, design: .rounded).weight(.bold))
                         Spacer()
                         TokenDisplay()
                         ToHomePageButton() // Button to homepage
@@ -55,7 +55,7 @@ struct MyAvatarView: View {
                 .zIndex(1)
             }
         }
-        .accessibilityIdentifier("")
+        .accessibilityIdentifier("myAvatarsPage")
         .preferredColorScheme(themeManager.Mode ? .dark : .light)
         .foregroundColor(themeManager.textColor(for: themeManager.curTheme.background))
     }
@@ -63,19 +63,30 @@ struct MyAvatarView: View {
 }
 
 struct DisplayItemBlock : View {
+    @EnvironmentObject var themeManager: ThemeManager
     let item: ShopItem
     let action: ((String)->Void)
     
     var body: some View {
-        Button(action: {
-            action(item.id)
-        }) {
-            Image("\(item.id)")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 170, height: 170)
-                .cornerRadius(10)
-        }.accessibilityIdentifier("myAvatarButton_\(item.id)")
+        VStack {
+            Button(action: {
+                action(item.id)
+            }) {
+                    Image("\(item.id)")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 170, height: 170)
+            }
+            .accessibilityIdentifier("myAvatarButton_\(item.id)")
+            .cornerRadius(10)
+            .padding(5)
+            .background(themeManager.curTheme.main_color_2)
+            .cornerRadius(10)
+            Text("\(item.name)")
+                // .font(.system(size: 16, weight: .light))
+                .frame(width: 100, height: 20)
+                .font(.system(size: 16, design: .rounded).weight(.bold))
+        }
     }
 }
 
@@ -92,9 +103,7 @@ struct DisplayAllItems: View {
                 LazyVGrid(columns: columns) {
                     ForEach(allDisplayingAvatars) { avatar in
                         DisplayItemBlock(item: avatar, action: action)
-                            .padding(10)
-                            .background(themeManager.curTheme.main_color_2)
-                            .cornerRadius(6)
+                            .padding(5)
                     }
                 }
             }
