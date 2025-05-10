@@ -52,7 +52,46 @@ struct ElephantConfirmationDialogue: View {
             }
         }
         .padding()
-        .frame(width: 300, height: 200, alignment: .center)
+        .frame(width: 350, height: 200, alignment: .center)
+        .cornerRadius(20)
+        .background(themeManager.curTheme.background)
+        .clipShape(RoundedRectangle(cornerRadius: 20))
+        .overlay(
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(themeManager.curTheme.shadow_2, lineWidth: 5)
+        )
+        .shadow(color: .black.opacity(0.3), radius: 20)
+    }
+}
+
+// confirmation but with only one button, does nothing on click
+struct ElephantPopup: View {
+    @EnvironmentObject var themeManager: ThemeManager
+    
+    let title: String
+    let message: String
+    let onConfirm: ()->Void
+    
+    var body: some View {
+        VStack{
+            Image("mammal-elephant")
+                .resizable()
+                .frame(width: 50, height: 50, alignment: .center)
+            Text(title)
+                .font(.title2)
+                .fontWeight(.bold)
+            Text(message)
+                .font(.title3)
+            HStack{
+                ElephantButton(
+                    buttonText: "Confirm",
+                    action: onConfirm,
+                    color: themeManager.curTheme.background
+                )
+            }
+        }
+        .padding()
+        .frame(width: 350, height: 200, alignment: .center)
         .cornerRadius(20)
         .background(themeManager.curTheme.background)
         .clipShape(RoundedRectangle(cornerRadius: 20))
@@ -166,7 +205,7 @@ struct ToSettingsPageButton: View {
                 .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
         }
         .buttonStyle(PlainButtonStyle())
-        .accessibilityIdentifier("settingsPage")
+        .accessibilityIdentifier("settingsPageButton")
     }
 }
 
@@ -188,7 +227,7 @@ struct ToManualPageButton: View {
                 .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
         }
         .buttonStyle(PlainButtonStyle())
-        .accessibilityIdentifier("manualPage")
+        .accessibilityIdentifier("manualPageButton")
     }
 }
 
@@ -211,5 +250,39 @@ struct ToHomePageButton: View {
         }
         .buttonStyle(PlainButtonStyle())
         .accessibilityIdentifier("homeButton")
+    }
+}
+
+struct ToMyAvatarsButton: View {
+    @EnvironmentObject var themeManager: ThemeManager
+    @State private var isPressed = false
+    
+    var body: some View {
+        NavigationLink(destination: MyAvatarView()) {
+            Image(systemName: "star.circle.fill")
+                .font(.title2)
+                .frame(width: 40, height: 40)
+                .background(themeManager.curTheme.main_color_2)
+                .clipShape(Circle())
+                .scaleEffect(isPressed ? 0.9 : 1.0)
+                .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
+        }
+        .buttonStyle(PlainButtonStyle())
+        .accessibilityIdentifier("toMyAvatarsButton")
+    }
+}
+
+struct TokenDisplay: View {
+    @EnvironmentObject var themeManager: ThemeManager
+    
+    var body: some View {
+        let tokenNum: Int = UserDefaults.standard.integer(forKey: "tokenNum")
+        Image(systemName: "dollarsign.circle.fill")
+            .font(.title2)
+            .frame(width: 40, height: 40)
+            .foregroundColor(themeManager.curTheme.main_color_2)
+//            .clipShape(Circle())
+            .padding(-20)
+        ElephantText(displayText: "\(tokenNum)")
     }
 }

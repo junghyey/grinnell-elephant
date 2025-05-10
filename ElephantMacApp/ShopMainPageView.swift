@@ -8,7 +8,6 @@ import SwiftUI
 
 struct ShopMainPageView: View {
     
-    // @AppStorage("user_tokens") var userTokens: Int = 15
     @AppStorage("curPalette") var curPalette: String = "defaultElephant"
     @EnvironmentObject private var themeManager: ThemeManager
     
@@ -20,7 +19,6 @@ struct ShopMainPageView: View {
     }
     
     var body: some View {
-        let tokenNum: Int = UserDefaults.standard.integer(forKey: "tokenNum")
         VStack {
             ScrollView{
                 NavigationStack{
@@ -32,20 +30,8 @@ struct ShopMainPageView: View {
                                 .padding()
                                 .frame(alignment: .center)
                             Spacer()
-                            Image(systemName: "dollarsign.circle.fill")
-                                .font(.title2)
-                                .foregroundColor(themeManager.curTheme.main_color_3)
-                                .padding(-10)
-                            ElephantText(displayText: "\(tokenNum)")
-                            NavigationLink(destination: MyAvatarView()) {
-                                Image(systemName: "star.circle.fill")
-                                    .font(.title2)
-                                    .foregroundColor(themeManager.curTheme.main_color_3)
-                                    .accessibilityIdentifier("homeButton")
-                                    .allowsHitTesting(true)
-                            }
-                            .buttonStyle(PlainButtonStyle())
-                            .padding()
+                            TokenDisplay()
+                            ToMyAvatarsButton()
 
                             ToHomePageButton() // Button to homepage
                             ToSettingsPageButton() // Button to settings page
@@ -58,6 +44,7 @@ struct ShopMainPageView: View {
                         PackBlock(pack: birds, packName: "Bird")
                         PackBlock(pack: monsters, packName: "Monster")
                         PackBlock(pack: unicorns, packName: "Unicorn")
+                        PackBlock(pack: magic, packName: "Magic")
                     }
                 }.frame(alignment: .leading)
             }
@@ -84,12 +71,12 @@ struct ShopItemBlock : View {
     var body: some View {
         NavigationLink(destination: ItemView(item: item))
         {
-            Image("\(item.imageName)")
+            Image("\(item.id)")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 100, height: 100)
                 .cornerRadius(10)
-        }.accessibilityIdentifier("shopButton_\(item.imageName)")
+        }.accessibilityIdentifier("shopButton_\(item.id)")
     }
 }
 

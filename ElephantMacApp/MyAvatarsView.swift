@@ -13,8 +13,6 @@ struct MyAvatarView: View {
     @State private var selectedAvatar: String? = nil
     
     var body: some View {
-        let tokenNum: Int = UserDefaults.standard.integer(forKey: "tokenNum")
-
         ZStack{
             
             VStack {
@@ -26,28 +24,10 @@ struct MyAvatarView: View {
                             .padding()
                             .frame(alignment: .center)
                         Spacer()
-                        Image(systemName: "dollarsign.circle.fill")
-                            .font(.title2)
-                            .foregroundColor(themeManager.curTheme.main_color_3)
-                            .padding(-10)
-                        ElephantText(displayText: "\(tokenNum)")
-                        Circle()
-                            .fill(themeManager.curTheme.main_color_2)
-                            .frame(width: 40, height: 40, alignment:.trailing)
-                            .overlay(
-                                NavigationLink(destination: ContentView()) {
-                                    Image(systemName: "house.fill")
-                                        .font(.title2)
-                                        .foregroundColor(themeManager.curTheme.background)
-                                        .accessibilityIdentifier("homeButton")
-                                        .allowsHitTesting(true)
-                                        .clipShape(Circle())
-                                }
-                                .buttonStyle(PlainButtonStyle())
-                                .frame(maxWidth: .infinity, alignment: .center)
-                                .background(Color.clear)
-                            )
-                            .padding()
+                        TokenDisplay()
+                        ToHomePageButton() // Button to homepage
+                        ToSettingsPageButton() // Button to settings page
+                        ToManualPageButton() // Button to manual page
                     }
                     DisplayAllItems(action: { avatar in
                         selectedAvatar = avatar
@@ -90,12 +70,12 @@ struct DisplayItemBlock : View {
         Button(action: {
             action(item.id)
         }) {
-            Image("\(item.imageName)")
+            Image("\(item.id)")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 170, height: 170)
                 .cornerRadius(10)
-        }.accessibilityIdentifier("myAvatarButton_\(item.imageName)")
+        }.accessibilityIdentifier("myAvatarButton_\(item.id)")
     }
 }
 
