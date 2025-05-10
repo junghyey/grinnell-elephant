@@ -4,6 +4,11 @@
 //
 //  Created by 陸卉媫 on 3/14/25.
 //
+//## File Description: This file defines the shop main view. The view lists all available collectibles based on which pack the collectible belongs to.
+//
+//## Components:
+//- ShopMainPageView: Accessible through clicking on the button on the content view page.
+
 import SwiftUI
 
 struct ShopMainPageView: View {

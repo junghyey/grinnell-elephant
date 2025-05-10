@@ -4,6 +4,10 @@
 //
 //  Created by 陸卉媫 on 4/14/25.
 //
+//## File Description: This file defines the item view. The view contains name and image of the chosen collectible, and a purchase button that will react differently depending on whether user has purchased the item and remaining tokens.
+//
+//## Components:
+//- ItemView: A reusable SwiftUI template that generates a item purchase page when clicked. It is accessible through clicking on the item listings on the main shop page.
 
 import SwiftUI
 
