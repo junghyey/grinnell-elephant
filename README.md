@@ -68,16 +68,16 @@ The written_reports folder will contain all the reports for milestone submission
 ### Testing and CI
 - Adding a new test to the code base:
   1. Navigate to ElephantTests directory
-  2. Create a new test file (Navigate to File > New> Target select either  “UI Testing Bundle” or “Unit Testing Bundle”)
-  3. Implement test sub cases using XCTestCase:
+  2. Create a new test file (Navigate to File > New> Target, select either  “UI Testing Bundle” or “Unit Testing Bundle”)
+  3. Implement test subcases using XCTestCase:
      - File > New > File from the macOS menu bar and select either “UI Test Case Class” or “Unit Test Case Class”
   4. Follow the guideline in here: https://medium.com/tauk-blog/using-xctest-and-xctestcase-for-ios-tests-28828c829b3
-  * This write up is referenced from: https://medium.com/tauk-blog/using-xctest-and-xctestcase-for-ios-tests-28828c829b3
+  * This write-up is referenced from: https://medium.com/tauk-blog/using-xctest-and-xctestcase-for-ios-tests-28828c829b3
      
 - Determining which tests will be executed in a CI build: 
-  - Widget Testing: All the funcionality works in the widget (checklist, timer, pomodore..etc..)
-  - UI testing: Validate UI flows for user experience (ex: basic interactions)
-  - Collectible Testing: Check Collectible system works (purchasing, setting images..etc..)
+  - Widget Testing: All the functionality works in the widget (checklist, timer, pomodoro, etc.)
+  - UI testing: Validate UI flows for user experience (ex, basic interactions)
+  - Collectible Testing: Check the Collectible system works (purchasing, setting images, etc)
   - Unit Tests: Verify individual components
     
 - Determining which development actions trigger a CI build:
@@ -89,7 +89,7 @@ The written_reports folder will contain all the reports for milestone submission
 
 ### How to Build
 - Download and launch XCode
-- Clone git repository
+- Clone the git repository
 - Once it loads:
     - Navigate to "Product"
     - Navigate to "Build" or click "⌘B"
@@ -100,7 +100,7 @@ The written_reports folder will contain all the reports for milestone submission
 
 ### Pulling From Main
 
-***Currently we are experiencing issues with Xcode if we pull from main. These are temporary solutions***
+***Currently, we are experiencing issues with Xcode if we pull from main. These are temporary solutions***
 
 #### 1. Code Signing Issues (Elephant)
 
@@ -129,13 +129,13 @@ This setup allows Xcode to generate valid provisioning profiles automatically.
 
 Currently MacWidget folder is not properly being pulled from Main.
 
-1. Create new file (File > new > target)
+1. Create a new file (File > New > Target)
 2. Go to macOS and search for "widget extension"
 3. Click and create it as:
    - Product Name: MacWidget
    - Team (your team in part 2)
-   - Emdbed in Application: ElephantMacApp 
-4. Then copy and paste the codes from the github for MacWidgetBundle, AppIntent, MacWidget
+   - Embedded in Application: ElephantMacApp 
+4. Then copy and paste the codes from the GitHub for MacWidgetBundle, AppIntent, and MacWidget
 
 # Issue Tracking Tool
 Include a link to your issue tracking tool: [Elephant Dev Board🐘💻](https://trello.com/b/4KAD6ca1/elephant-dev-board-%F0%9F%90%98%F0%9F%92%BB)
