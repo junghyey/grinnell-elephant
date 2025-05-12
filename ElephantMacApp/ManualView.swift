@@ -177,6 +177,7 @@ struct ManualView:View{
                        "Are you ready to incorporate wellness tasks into your work routine with us? Let’s get started!"
                                                 )
                         Text("Balance you work and wellness routine through Elephant")
+                        Text("For the notification, go to System Settings>Notifications and allow notification for Elephant.")
                         NavigationLink(destination: StopwatchPageView()) {
                             
                                                Text("Stopwatch Mode")
