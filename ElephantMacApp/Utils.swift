@@ -52,7 +52,46 @@ struct ElephantConfirmationDialogue: View {
             }
         }
         .padding()
-        .frame(width: 300, height: 200, alignment: .center)
+        .frame(width: 350, height: 200, alignment: .center)
+        .cornerRadius(20)
+        .background(themeManager.curTheme.background)
+        .clipShape(RoundedRectangle(cornerRadius: 20))
+        .overlay(
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(themeManager.curTheme.shadow_2, lineWidth: 5)
+        )
+        .shadow(color: .black.opacity(0.3), radius: 20)
+    }
+}
+
+// confirmation but with only one button, does nothing on click
+struct ElephantPopup: View {
+    @EnvironmentObject var themeManager: ThemeManager
+    
+    let title: String
+    let message: String
+    let onConfirm: ()->Void
+    
+    var body: some View {
+        VStack{
+            Image("mammal-elephant")
+                .resizable()
+                .frame(width: 50, height: 50, alignment: .center)
+            Text(title)
+                .font(.title2)
+                .fontWeight(.bold)
+            Text(message)
+                .font(.title3)
+            HStack{
+                ElephantButton(
+                    buttonText: "Confirm",
+                    action: onConfirm,
+                    color: themeManager.curTheme.background
+                )
+            }
+        }
+        .padding()
+        .frame(width: 350, height: 200, alignment: .center)
         .cornerRadius(20)
         .background(themeManager.curTheme.background)
         .clipShape(RoundedRectangle(cornerRadius: 20))
@@ -144,5 +183,106 @@ struct ElephantText: View {
         Text("\(displayText)")
             .font(.headline)
             .padding(10)
+    }
+}
+
+
+// Button to settings page
+// Parameters: none
+
+struct ToSettingsPageButton: View {
+    @EnvironmentObject var themeManager: ThemeManager
+    @State private var isPressed = false
+    
+    var body: some View {
+        NavigationLink(destination: SettingsView()) {
+            Text("⛭")
+                .font(.system(size: 25).weight(.bold))
+                .frame(width: 40, height: 40)
+                .background(themeManager.curTheme.main_color_2)
+                .clipShape(Circle())
+                .scaleEffect(isPressed ? 0.9 : 1.0)
+                .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
+        }
+        .buttonStyle(PlainButtonStyle())
+        .accessibilityIdentifier("settingsPageButton")
+    }
+}
+
+// Button to manual page
+// Parameters: none
+
+struct ToManualPageButton: View {
+    @EnvironmentObject var themeManager: ThemeManager
+    @State private var isPressed = false
+    
+    var body: some View {
+        NavigationLink(destination: ManualView()) {
+            Text("?")
+                .font(.system(size: 25).weight(.bold))
+                .frame(width: 40, height: 40)
+                .background(themeManager.curTheme.main_color_2)
+                .clipShape(Circle())
+                .scaleEffect(isPressed ? 0.9 : 1.0)
+                .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
+        }
+        .buttonStyle(PlainButtonStyle())
+        .accessibilityIdentifier("manualPageButton")
+    }
+}
+
+// Button to homepage
+// Parameters: none
+
+struct ToHomePageButton: View {
+    @EnvironmentObject var themeManager: ThemeManager
+    @State private var isPressed = false
+    
+    var body: some View {
+        NavigationLink(destination: ContentView()) {
+            Image(systemName: "house.fill")
+                .font(.title2)
+                .frame(width: 40, height: 40)
+                .background(themeManager.curTheme.main_color_2)
+                .clipShape(Circle())
+                .scaleEffect(isPressed ? 0.9 : 1.0)
+                .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
+        }
+        .buttonStyle(PlainButtonStyle())
+        .accessibilityIdentifier("homeButton")
+    }
+}
+
+struct ToMyAvatarsButton: View {
+    @EnvironmentObject var themeManager: ThemeManager
+    @State private var isPressed = false
+    
+    var body: some View {
+        NavigationLink(destination: MyAvatarView()) {
+            Image(systemName: "star.circle.fill")
+                .font(.title2)
+                .frame(width: 40, height: 40)
+                .background(themeManager.curTheme.main_color_2)
+                .clipShape(Circle())
+                .scaleEffect(isPressed ? 0.9 : 1.0)
+                .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
+        }
+        .buttonStyle(PlainButtonStyle())
+        .accessibilityIdentifier("toMyAvatarsButton")
+    }
+}
+
+struct TokenDisplay: View {
+    @EnvironmentObject var themeManager: ThemeManager
+    
+    var body: some View {
+        let tokenNum: Int = UserDefaults.standard.integer(forKey: "tokenNum")
+        Image(systemName: "dollarsign.circle.fill")
+            .font(.title2)
+            .frame(width: 40, height: 40)
+            .foregroundColor(themeManager.curTheme.main_color_2)
+//            .clipShape(Circle())
+            .padding(-20)
+        ElephantText(displayText: "\(tokenNum)")
     }
 }

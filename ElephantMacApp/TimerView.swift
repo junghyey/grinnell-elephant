@@ -10,7 +10,6 @@ import SwiftUI
 
 struct TimerView: View {
     @EnvironmentObject private var themeManager: ThemeManager
-    // @Environment(\.presentationMode) var presentationMode
     @AppStorage("curAvatar") private var curAvatar = "mammal-elephant"
     @AppStorage("timerMode") private var timerMode = "pomodoro"
 
@@ -18,17 +17,12 @@ struct TimerView: View {
         VStack{
             HStack {
                 Spacer()
-                // home button, taken from ManualView
-                NavigationLink(destination: ContentView()) {
-                    Image(systemName: "house.fill")
-                        .font(.title2)
-                        .foregroundColor(themeManager.curTheme.main_color_3)
-                        .accessibilityIdentifier("homeButton")
-                        .allowsHitTesting(true)
-                }
-                .buttonStyle(PlainButtonStyle())
-                .padding()
+                ToHomePageButton() // Button to homepage
+                ToSettingsPageButton() // Button to settings page
+                ToManualPageButton() // Button to manual page
             }
+            .padding([.top, .trailing], 15)
+
             Spacer()
             Image(curAvatar)
                 .resizable()
@@ -40,6 +34,7 @@ struct TimerView: View {
             } else {
                 StopwatchView()
             }
+            ElephantText(displayText: "Current mode: \(timerMode)")
         }
         .environmentObject(themeManager)
         .background(themeManager.curTheme.background)

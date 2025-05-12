@@ -3,11 +3,11 @@
 ## Part 2: Software Architecture
 
 **Use of External Storage**
-- We decided to have an external storage to reduce the size of the client end, which will be used to (1) track records that are only important to developers such as purchase records, and (2) store images that clients can download through connecting to the internet.
-   - Alternatively, we can store everything locally, which will minimize need for external storage. However, as the developers, we might still need to track user data in some way, such as purchase records, which means external storage may still be needed.
+- We decided to have an external storage to reduce the size of the client end, which will be used to (1) track records that are only important to developers, such as purchase records, and (2) store images that clients can download by connecting to the internet.
+   - Alternatively, we can store everything locally, which will minimize the need for external storage. However, as developers, we might still need to track user data in some way, such as purchase records, which means external storage may still be needed.
 
 **Use of Two Different Interfaces**
-- We decided to have two interfaces, the app and the widget interface as we believe it is redundant and unecessary to have the widget hold all functionalities. Having an app component separated from the widget component also allows us to separate the main function (widget tool) from other functions (adjust settings, view achievements and purchases, etc).
+- We decided to have two interfaces, the app and the widget interface, as we believe it is redundant and unnecessary to have the widget hold all functionalities. Having an app component separated from the widget component also allows us to separate the main function (widget tool) from other functions (adjust settings, view achievements and purchases, etc).
 
 ## Part 5: Project Risks and Management
 
@@ -39,13 +39,13 @@
 ### 5.2 Epics and Subtasks
 
 #### Epic 1: Initial Structure
-- **Description**: Establish core UI structure & themes so that we have smooth navigation and better user experience.
+- **Description**: Establish core UI structure & themes so that we have smooth navigation and a better user experience.
 - **Dependencies**: None.
 - **Effort Estimate**: 3 weeks
 - **Subtasks**:
   - Implement main navigation for home, settings, and checklist views.
   - Develop app theme, text, and customizable lists manager within settings
-  - Develop user manual within settings
+  - Develop a user manual within the settings
   - Conduct unit testing for UI elements.
 
 #### Epic 2: WidgetKit Integration
@@ -61,40 +61,40 @@
 #### Epic 3: Collectible Database
 - **Description**: Set up a database to manage collectible art graphics.
 - **Dependencies**: Epic1 & Epic5
-- **Effort Estimate**: 5 weeks including the timeline of the initial UI development
+- **Effort Estimate**: 5 weeks, including the timeline of the initial UI development
 - **Subtasks**:
-  - Create database schema on SQL (probably store this into the Firebase, since it is bing)
-  - Populate initial collectible art, biome categorizing will progress throughout the collection
+  - Create database schema on SQL (probably store this in the Firebase, since it is being)
+  - Populate initial collectible art, and biome categorizing will progress throughout the collection
   - Integrate with app and widget appearance.
-  - Ensure collectibles sync socrreclty with widget and the main app.
+  - Ensure collectibles sync correctly with the widget and the main app.
   - Develop backend  for displaying collectibles in the app.
 
 #### Epic 4: Accessibility Features
 - **Description**: Add accessibility options like various light themes and customizable text size and font type.
 - **Dependencies**: Epic 1
-- **Effort Estimate**: 3 weeks including the timeline of the initial UI development
+- **Effort Estimate**: 3 weeks, including the timeline of the initial UI development
 - **Subtasks**:
   - Implement light/dark modes.
   - Introduce dynamic text resizing.
   - Test and refine features with feedback.
     
 #### Epic 5: Storing User Data
-- **Description**: Set up a database to collect and store user data and pipeline for storing data
+- **Description**: Set up a database to collect and store user data and a pipeline for storing data
 - **Dependencies**:  Epic 1 
 - **Effort Estimate**: 2 weeks to create a secure database with updates throughout app development.
 - **Subtasks**:
   - Learn PostgreSQL 
-  - Create database & pipeline using PostgreSQL.
-  - Integrate Firebase or Supabase for real-time updates or server.
+  - Create a database & pipeline using PostgreSQL.
+  - Integrate Firebase or Supabase for real-time updates or server-side.
   - Encryption for sensitive information such as medication.
   - Perform security testing and check compliance with data protection policies.
 
 #### Epic 6: Token System
-- **Description**: Implement the token collection system to incentivi
+- **Description**: Implement the token collection system to incentivize
 - **Dependencies**:  Epic 3 
 - **Effort Estimate**: 3 weeks
 - **Subtasks**:
-   - Define logic for earning & spending tokens (ex: daily limit)
+   - Define logic for earning & spending tokens (example: daily limit)
    - Implement UI for displaying token count
 
 ---
@@ -113,7 +113,7 @@
 ### 5.4 Documentation Plan
 
 Planned Documentation Deliverables:
-1. **User Manual**: To assist end-users in navigating the app and widgets. Appears to first time users upon download and can be accessed later in Setting
+1. **User Manual**: To assist end-users in navigating the app and widgets. Appears to first-time users upon download and can be accessed later in Settings
 2. **Developer Guide**: Covers system architecture, setup, and contributions for developers.
 3. **Help Menu/Settings**: Embedded help within the app, including user guide examples, FAQs, and troubleshooting.
 4. **Repo**: Centralized knowledge base for the project, hosted on the repository.
@@ -137,7 +137,7 @@ Planned Documentation Deliverables:
 
 5. **Token System**
    - Develop and document the token system, explaining its purpose, technical implementation, and interaction within the app environment.
-   - Highlight any future enhancements or scalability considerations in documentation.
+   - Highlight any future enhancements or scalability considerations in the documentation.
 
 6. **Milestone Establishment**
    - Break down each feature or page into milestones, ensuring a clear progression from initial design to final implementation.
@@ -159,7 +159,7 @@ Planned Documentation Deliverables:
 For this app, we'll be utilizing XCTest
 
 #### Justification
-Our program is developed using Swift on XCode thus we would need a compatible test library. In our case, XCTest will efficiently complete tests due to its direct integration with XCode.  
+Our program is developed using Swift on XCode thus we would need a compatible test library. In our case, XCTest will efficiently complete tests due to its direct integration with Xcode.  
 
 #### Continuous Integration (CI) Service
 Our team will utilize GitHub Actions as the CI service that is linked to our project repository
@@ -171,7 +171,7 @@ GitHub Actions is a developer-friendly and efficient service that would allow se
 
 ### Part 7: CI
 
-Successful results (can be viewed in Actions). Following are (some) screen shots of showing our test worked.
+Successful results (can be viewed in Actions). The following are (some) screenshots showing our test worked.
 
 <img src="https://github.com/user-attachments/assets/422e11a7-114e-4568-b37e-622f07527919"  height= "300" />
 

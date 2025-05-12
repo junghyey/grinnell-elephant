@@ -51,56 +51,58 @@ struct StopwatchView: View {
     }
     
     var body: some View {
-        VStack{
-            // show timer string and update
-            Text(timerString)
-                .font(Font.system(.largeTitle, design: .monospaced))
-                .onReceive(timer) { _ in
-                                if isRunning {
-                                    updateTimer()
-                                }
-                            }
-            HStack{
-                ElephantButton(
-                    buttonText: "Start",
-                    action: {
-                        // only does something if the timer is not already running
-                        if (isRunning != true) {
-                            startTime = Date().addingTimeInterval( -elapsedTime)
-                            isRunning = true
+        ScrollView{
+            VStack{
+                // show timer string and update
+                Text(timerString)
+                    .font(Font.system(.largeTitle, design: .monospaced))
+                    .onReceive(timer) { _ in
+                        if isRunning {
+                            updateTimer()
                         }
-                    },
-                    // color: themeManager.curTheme.main_color_2
-                    color: DefaultColors.main_color_2
-                )
-                ElephantButton(
-                    buttonText: "Reset",
-                    action: {
-                        isRunning = false
-                        elapsedTime = 0.0
-                        timerString = formatTime(secs: 0)
-                    },
-                    // color: themeManager.curTheme.main_color_2
-                    color: DefaultColors.main_color_2
-                )
-                ElephantButton(
-                    buttonText: "Pause",
-                    action: {
-                        let now = Date()
-                        // store how long the timer has ran so we can resume later
-                        elapsedTime += now.timeIntervalSince(startTime)
-                        isRunning = false
-                    },
-                    // color: themeManager.curTheme.main_color_2
-                    color: DefaultColors.main_color_2
-                )
+                    }
+                HStack{
+                    ElephantButton(
+                        buttonText: "Start",
+                        action: {
+                            // only does something if the timer is not already running
+                            if (isRunning != true) {
+                                startTime = Date().addingTimeInterval( -elapsedTime)
+                                isRunning = true
+                            }
+                        },
+                        color: themeManager.curTheme.main_color_2
+                        // color: DefaultColors.main_color_2
+                    )
+                    ElephantButton(
+                        buttonText: "Reset",
+                        action: {
+                            isRunning = false
+                            elapsedTime = 0.0
+                            timerString = formatTime(secs: 0)
+                        },
+                        color: themeManager.curTheme.main_color_2
+                        // color: DefaultColors.main_color_2
+                    )
+                    ElephantButton(
+                        buttonText: "Pause",
+                        action: {
+                            let now = Date()
+                            // store how long the timer has ran so we can resume later
+                            elapsedTime += now.timeIntervalSince(startTime)
+                            isRunning = false
+                        },
+                        color: themeManager.curTheme.main_color_2
+                        // color: DefaultColors.main_color_2
+                    )
+                }
             }
         }
+        .environmentObject(themeManager)
         .padding(10)
-         //.background(DefaultColors.main_color_1)
-        .background(themeManager.curTheme.main_color_1)
-        .preferredColorScheme(themeManager.Mode ? .dark : .light)
         .accessibilityIdentifier("stopwatchView")
+        .preferredColorScheme(themeManager.Mode ? .dark : .light)
+        .background(themeManager.curTheme.background)
     }
 }
 

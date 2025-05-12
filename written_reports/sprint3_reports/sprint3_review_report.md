@@ -1,6 +1,6 @@
 # Sprint 3 Review
 
-This sprint, we focsed on the development
+This sprint, we focused on the development
 
 ### How has your product improved or progressed from a customer perspective? Describe high-level features that a non-technical user could recognize and appreciate.
 
@@ -8,8 +8,8 @@ This sprint, we focsed on the development
 
 ### What progress have you made that is not visible to a common user?
 
-The way we store the data as in json file task checklist is not visible to a common user.
-Aside from that we focused on adding more features and app rather than backend. So, there aren't evident changes that might not be visitble to a common user. In the next sprint, we are planning on adding.
+The way we store the data, as in json file task checklist, is not visible to a common user.
+Aside from that, we focused on adding more features and the app rather than the backend. So, there aren't evident changes that might not be visible to a common user. In the next sprint, we are planning on adding.
 
 
 ### How to activate each feature:
@@ -22,9 +22,9 @@ The step is similar to the testing protocol.
 
 1. Download Xcode
 2. Git clone this package
-3. Click play button (like play button)
-4. The app will pop up in the dock station of the mac
-5. The app will pop up and the home page will show.
+3. Click the play button (like the play button)
+4. The app will pop up in the dock station of the Mac
+5. The app will pop up, and the home page will show.
 
 ### Features/View 
 
@@ -67,8 +67,8 @@ The step is similar to the testing protocol.
 <img width="547" alt="Screenshot 2025-04-09 at 10 37 35 AM" src="https://github.com/user-attachments/assets/9ee96821-f11e-4b44-bf86-9aafbed164bd" />
 
 1. The main page of the shop can be navigated to from the 'Collectible Shop' button on the home page and has the identifier `shopMainPageView`
-2. On the shop main page, each horizontal scroll bar represent a pack (with the identifier `shopView_scroll_packName`), and the name of the pack is shown in the caption above the horizontal scroll views
-3. All item buttons in the shop has the identifier `shopButton_itemName`
+2. On the shop main page, each horizontal scroll bar represents a pack (with the identifier `shopView_scroll_packName`), and the name of the pack is shown in the caption above the horizontal scroll views
+3. All item buttons in the shop have the identifier `shopButton_itemName`
 4. All item buttons navigate to a corresponding item view, with the identifier `itemView_itemName`
 
 ### Navigating
@@ -148,7 +148,7 @@ The step is similar to the testing protocol.
 
 ## Back Button on each page
 
-1. Basically tap nextButton(->) in each page. (The manualFirstPage does not have backButton)
+1. Basically tap nextButton(->) in each page. (The manualFirstPage does not have a backButton)
 
  ## Example Flow
 1. While you are on manualFourthPage, tap the backButton (identifier: back button)
@@ -166,11 +166,3 @@ Repeat for each of the 4 pages:
 2. Use the nextButton button to go to the desired page.
 3. Tap the homeButton
 4. Make sure the app goes to the homePage.
-   
-
-
-
-
-
-
-

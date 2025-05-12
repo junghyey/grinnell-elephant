@@ -88,17 +88,8 @@ struct ManualTemplateView<Content: View>:  View {
             VStack(spacing: 0) {
                 HStack {// Header stack with home button
                     Spacer()//expands leftward
-                    if let homePage = homePage {
-                        NavigationLink(destination: homePage) {
-                            Image(systemName: "house.fill")
-                                .font(.title2)
-                                .foregroundColor(themeManager.curTheme.main_color_3)
-                                .accessibilityIdentifier("homeButton")
-                                .allowsHitTesting(true)
-                                //nopadding
-                        }//NavigationLink
-                        .buttonStyle(PlainButtonStyle()) // get rid of the white box behind
-                    }//homepage
+                    ToHomePageButton()
+                    ToSettingsPageButton()
                 }//HStack
                 
                 .padding()
@@ -155,7 +146,6 @@ struct ManualTemplateView<Content: View>:  View {
                 .padding(.bottom, 20)
             }
             .preferredColorScheme(themeManager.Mode ? .dark : .light)
-            .foregroundColor(themeManager.textColor(for: themeManager.curTheme.background))
             .frame(width: 500, height: 500)
             .background(themeManager.curTheme.background)
         }//VStack

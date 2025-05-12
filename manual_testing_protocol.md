@@ -4,13 +4,13 @@
 
 ## Overview
 This document shows the procedures for manually testing the Elephant app. The tests are performed by humans and verify that the UI works as expected. This protocol may replace the automated testing 
-by testing UI transitions and functions that are not easily and readily testable via XCUI Tes,t and limited support for SwiftUI navigation behavior.
+by testing UI transitions and functions that are not easily and readily testable via XCUI Test, and limited support for SwiftUI navigation behavior.
 
 ---
 ## "ContentView" Manual Testing
 
 ### Goal
-- All the buttons need to navigate to the correct page or adjust the widget as necessary as development progresses.
+- All the buttons need to navigate to the correct page or adjust the widget as necessary, as development progresses.
 
 ### Requirements
 - Application is installed on macOS
@@ -56,20 +56,20 @@ by testing UI transitions and functions that are not easily and readily testable
 - Make sure and back button and all items on the store listing are clickable
 
 ### Requirements
-- Application is installed in macOS
+- Application is installed on macOS
 - Includes the most recent version of the Elephant app
 
 ### Steps
 
 ### Back Button Testing
 - Open the main app, which defaults to the home page view
-- Click button named "Collectibles Shop"
+- Click the button named "Collectibles Shop"
 - Verify you are on the collectiblePage
 - Click the back button and verify you are on the homePage
 
 ### Collectibles Shop (inside)
-- While you are in the homePage:
-- Click the "Collectibles Shop" button at the bottom of home page
+- While you are on the homePage:
+- Click the "Collectibles Shop" button at the bottom of the homePage
 - From the first listing on the first row, we click on each shop listing and check if they bring us to a new page with the corresponding item listing, from left to right, top to bottom
    - For instance, for the button "shopButton_mammal-elephant", we expect to arrive at a page with an elephant
      
@@ -82,14 +82,14 @@ by testing UI transitions and functions that are not easily and readily testable
 - Make sure and back button and the purchase button on the item page are clickable
 
 ### Requirements
-- Application is installed in macOS
+- Application is installed on macOS
 - Includes the most recent version of the Elephant app
 
 ### Identifiers
 <img width="555" alt="Screenshot 2025-04-09 at 10 43 39 AM" src="https://github.com/user-attachments/assets/6f9a3145-0572-4233-98f8-89cc737ff88d" />
 
-- The page is accessible through corresponding listing button in MainShopView, with identifiers "shopButton_item.imageName" and an image with the corresponding animal
-- All buttons on this page has an identifier "itemButton_item.imageName_function"
+- The page is accessible through the corresponding listing button in MainShopView, with identifiers "shopButton_item.imageName" and an image with the corresponding animal
+- All buttons on this page have an identifier "itemButton_item.imageName_function"
      - Back button: identifier "itemButton_item.imageName_back"
      - Purchase button: identifier "itemButton_item.imageName_purchase"
 
@@ -97,7 +97,7 @@ by testing UI transitions and functions that are not easily and readily testable
 <img width="558" alt="Screenshot 2025-04-09 at 10 44 08 AM" src="https://github.com/user-attachments/assets/42d8c202-90a5-4b53-a53e-5e5f68531e70" />
 
 - Open the main app, which defaults to the home page view
-- Click the "Collectibles Shop" button at the bottom of home page
+- Click the "Collectibles Shop" button at the bottom of the homePage
 - Click on the item listing that you want to test the item page for on the main shop page
 - Verify you are on the correct listing item view
 - Click the back button and verify you are on the main shop page
@@ -109,7 +109,7 @@ by testing UI transitions and functions that are not easily and readily testable
 
 <img width="553" alt="Screenshot 2025-04-09 at 10 43 55 AM" src="https://github.com/user-attachments/assets/e54dbe17-4c10-4836-963f-30168b650f3b" />
 
-- Check that both `Cancel` and `Confirm` buttons on the confirmation dialogue is clickable
+- Check that both `Cancel` and `Confirm` buttons on the confirmation dialogue are clickable
 
 ## "ManualView" Manual Testing
 
@@ -117,7 +117,7 @@ by testing UI transitions and functions that are not easily and readily testable
 - Make sure every page is presented correctly (all four pages) and the buttons next, back, home buttons navigate to the correct page.
 
 ### Requirements
-- Application is installed in macOS
+- Application is installed on macOS
 - Includes the most recent version of ManualView.swift
 
 
@@ -154,7 +154,7 @@ by testing UI transitions and functions that are not easily and readily testable
    
   <img width="500" alt="image" src="https://github.com/user-attachments/assets/daec1fbf-4056-46af-9040-cc7f01f49762" />
 
-6. Button in each page:
+6. Button on each page:
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/e9738837-5d1f-4c66-9c64-64944d4adda3" />
 
@@ -202,7 +202,7 @@ Repeat for each of the 4 pages:
 4. Make sure the app goes to the homePage.
    
 #### Expected:
-- The home button exists and each home button's manual page correctly guides to home page.
+- The home button exists and each home button's manual page correctly guides to homePage.
 
 
 ## SettingsView Manual Testing
@@ -225,7 +225,7 @@ This tests the settingsPage.
 #### Steps:
 1. Launch the Elephant app (we see the Home Page)
 2. Tap the **SettingsPage Button** (identifier: Gear Icon in the top-right corner)
-3. Make sure you end up in the settingsPage.
+3. Make sure you end up on the settingsPage.
 4. Tap a button that pushes to a new view (e.g., Mode or Themes)
 5. Verify the new view appears (e.g., change in background color or content)
 6. Tap the **Back Button** in the navigation bar
@@ -282,7 +282,7 @@ This tests the settingsPage.
 
 
 ---
-#### Identifiers : pomodoroTimeSetting, stopwatchTimeSetting
+#### Identifiers: pomodoroTimeSetting, stopwatchTimeSetting
 <img width="300" alt="image" src="https://github.com/user-attachments/assets/01f5c153-fb2e-44f5-82fe-88bc800f586e" />
 
 

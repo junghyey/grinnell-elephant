@@ -22,7 +22,7 @@ In this sprint, our main focus is the development of the MVP.
 | **Project Manager (Hyeyun)**    | Oversees sprint progress and reports, manages deadlines/Trello board, organizes meetings, and ensures team coordination. |
 | **Lead Developer (Candice)** | Oversees overall implementation, handles technical setup, coding standards, and supports development in Swift and Xcode. |
 | **Lead Designer (Mae)** | Responsible for design-related tasks (e.g., character design, coloring, paper prototyping) and brainstorming app ideas. |
-| **Documentation & Reporting Lead (Gabby)** | Reviews and updates sprint reports, maintains documentation, and ensures clear communication of progress (grammar, wording..etc..).  |
+| **Documentation & Reporting Lead (Gabby)** | Reviews and updates sprint reports, maintains documentation, and ensures clear communication of progress (grammar, wording, etc).  |
 
 ### Issue Tracker: How can your instructor view the results of your sprint planning using your issue tracker?
 [Elephant🐘💻 Trello](https://trello.com/b/4KAD6ca1/elephant-dev-board-%F0%9F%90%98%F0%9F%92%BB)

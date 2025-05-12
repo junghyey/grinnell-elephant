@@ -8,41 +8,50 @@ import SwiftUI
 
 struct ShopMainPageView: View {
     
-    @AppStorage("user_tokens") var userTokens: Int = 15
     @AppStorage("curPalette") var curPalette: String = "defaultElephant"
-    
     @EnvironmentObject private var themeManager: ThemeManager
     
+    // only initialize it once
+    init() {
+        if (UserDefaults.standard.array(forKey: "purchasedAvatars") == nil) {
+            UserDefaults.standard.set(["mammal-elephant"], forKey: "purchasedAvatars")
+        }
+    }
+    
     var body: some View {
-        ScrollView{
-            NavigationStack{
-                VStack(alignment: .leading) {
-                    HStack{
-                        Text("Shop")
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .padding()
-                            .frame(alignment: .center)
-                        Spacer()
-                        // home button, taken from ManualView
-                        NavigationLink(destination: ContentView()) {
-                            Image(systemName: "house.fill")
-                                .font(.title2)
-                                .foregroundColor(themeManager.curTheme.main_color_3)
-                                .accessibilityIdentifier("homeButton")
-                                .allowsHitTesting(true)
+        VStack {
+            ScrollView{
+                NavigationStack{
+                    VStack(alignment: .leading) {
+                        HStack{
+                            Text("Shop")
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .padding()
+                                .frame(alignment: .center)
+                            Spacer()
+                            TokenDisplay()
+                            ToMyAvatarsButton()
+
+                            ToHomePageButton() // Button to homepage
+                            ToSettingsPageButton() // Button to settings page
+                            ToManualPageButton() // Button to manual page
                         }
-                        .buttonStyle(PlainButtonStyle())
-                        .padding()
+                        .padding([.top, .trailing], 15)
+                        
+                        PackBlock(pack: mammals, packName: "Mammal")
+                        PackBlock(pack: marines, packName: "Marine")
+                        PackBlock(pack: birds, packName: "Bird")
+                        PackBlock(pack: monsters, packName: "Monster")
+                        PackBlock(pack: unicorns, packName: "Unicorn")
+                        PackBlock(pack: magic, packName: "Magic")
                     }
-                    PackBlock(pack: mammals, packName: "Mammal")
-                    PackBlock(pack: marines, packName: "Marine")
-                }
-            }.frame(alignment: .leading)
+                }.frame(alignment: .leading)
+            }
         }
         .preferredColorScheme(themeManager.Mode ? .dark : .light)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(themeManager.curTheme.main_color_1)
+        .background(themeManager.curTheme.background)
         .accessibilityIdentifier("shopMainPageView")
     }
 }
@@ -50,7 +59,7 @@ struct ShopMainPageView: View {
 #Preview {
     // theme manager
     let themeManager = ThemeManager()
-    themeManager.setTheme(named: "blackWhite")
+    // themeManager.setTheme(named: "blackWhite")
     // themeManager.setTheme(named: "defaultElephant")
     return ShopMainPageView()
         .environmentObject(themeManager)
@@ -62,18 +71,19 @@ struct ShopItemBlock : View {
     var body: some View {
         NavigationLink(destination: ItemView(item: item))
         {
-            Image("\(item.imageName)")
+            Image("\(item.id)")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 100, height: 100)
                 .cornerRadius(10)
-        }.accessibilityIdentifier("shopButton_\(item.imageName)")
+        }.accessibilityIdentifier("shopButton_\(item.id)")
     }
 }
 
 struct PackBlock : View {
     let pack: Array<ShopItem>
     let packName: String
+    @EnvironmentObject private var themeManager: ThemeManager
     
     var body: some View {
         Text("\(packName) Pack")
@@ -84,7 +94,7 @@ struct PackBlock : View {
         ScrollView(.horizontal){
             ZStack{
                 RoundedRectangle(cornerRadius: 20)
-                    .foregroundStyle(Color(red: 0.996, green: 0.996, blue: 0.89))
+                    .foregroundStyle(themeManager.curTheme.main_color_1)
                     .frame(width: CGFloat(pack.count)*130, height: 140)
                     
                 HStack{
@@ -94,7 +104,7 @@ struct PackBlock : View {
                 }
             }
         }
-        .padding(10)
+        .padding(20)
         .accessibilityIdentifier("shopView_scroll_\(packName)")
     }
 }
