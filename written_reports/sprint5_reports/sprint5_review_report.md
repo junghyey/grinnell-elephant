@@ -38,6 +38,6 @@ Users can spend the tokens they earned by completing tasks (wellness or producti
 Users are able to customize their checklists to their schedule and habits they might want to set. There will be a default option to provide a starting point. 
 
 ### Final Demo PowerPoint
-The final demo presentation is located in this (sprint5_reports) folder and can be found under the name CSC-324 Final Demo.pptx.
+The final demo presentation is located in this (sprint5_reports) folder and can be found under the name _CSC_324_Final_Demo.pptx_.
 
 For the final demo codes & apps, go to ... _link to label coming soon_
