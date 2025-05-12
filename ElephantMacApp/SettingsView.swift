@@ -35,10 +35,8 @@ struct SettingsView: View {
                 HStack {
                     Spacer()
                     ToHomePageButton() // Button to homepage
-                    ToSettingsPageButton() // Button to settings page
                     ToManualPageButton() // Button to manual page
                 }
-                .padding([.top, .trailing], 15)
 
                 modeSection // Mode selection
                 
@@ -60,23 +58,6 @@ struct SettingsView: View {
         .background(themeManager.curTheme.background) //based on user selection
         .frame(width: 500, height: 500) //frames scroll view
     }
-    
-    
-//    //re-usable back button, calls presentationMode to go "back" to previous
-//    private var backButton: some View {
-//        NavigationLink(destination: ContentView()) {
-//            Image(systemName: "house.fill")
-//                .font(.title2)
-//                .foregroundColor(themeManager.curTheme.main_color_3)
-//                .accessibilityIdentifier("homeButton")
-//                .allowsHitTesting(true)
-//                //nopadding
-//        }//NavigationLink
-//        .buttonStyle(PlainButtonStyle())
-//        .font(.system(.title3, design: .rounded).weight(.semibold))
-//        .padding([.top, .leading], 10)
-//        .frame(maxWidth: .infinity, alignment: .leading)
-//    }
     
     //mode section Button that chooses between light and dark mode, applying the mode globally
     private var modeSection: some View {
