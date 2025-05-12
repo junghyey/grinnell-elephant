@@ -424,7 +424,7 @@ struct CheckBoxView: View {
 //https://developer.apple.com/documentation/swiftui/view/onchange(of:perform:)
 //https://stackoverflow.com/questions/78919404/how-do-i-fix-my-onchangeofperform-to-avoid-xcode-giving-me-a-deprecation-war
 struct ChecklistView: View {
-    @EnvironmentObject var token: TokenLogic
+    @EnvironmentObject var token: TokenLogic //need this whever you use it in some view
     @State var items: [ChecklistItem] // @state will allow update
     var body: some View {
         
