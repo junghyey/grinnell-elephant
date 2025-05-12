@@ -1,11 +1,11 @@
 # Sprint 4 Review
 
-This sprint we focused on adding widget features and getting feedbacks from stakeholders for better user experiences.
+This sprint, we focused on adding widget features and getting feedback from stakeholders for better user experiences.
 
 ### How has your product improved or progressed from a customer perspective? Describe high-level features that a non-technical user could recognize and appreciate.
 
 We have most of the front-end (UI) development done. So, users can start adding the widget function to their mac widget. Moreover, there are working theme changes, checklists addition funcionality, and manual to read. 
-Therefore, the parts that user experiences like theme/color of the app, manual, widget are now working. 
+Therefore, the parts that the user experiences, like the theme/color of the app, the manual, widget, are now working. 
 
 ### What progress have you made that is not visible to a common user?
 
@@ -14,8 +14,8 @@ We added and refiend documentation to each file's codes so that teammates can un
 
 ### What features were part of the demo
 - Settings page</br>
-  - Now we can change themes and add new task</br>
-  - Go to settings (gear shape) > try clicking any buttons under the teme.
+  - Now we can change themes and add new tasks </br>
+  - Go to settings (gear shape) > try clicking any buttons under the theme.
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/da93f2f3-5e12-4291-a69f-05612feee05f" />
   - Custom checklist </br>
   - Go to settings (gear shape) > Click custom checklist > write a task > click add/enter > save
@@ -26,7 +26,7 @@ We added and refiend documentation to each file's codes so that teammates can un
   - Click date & time on the mac > edit widgets > add ElephantMacApp
 <img width="700 " alt="image" src="https://github.com/user-attachments/assets/f973df5a-c809-4888-8178-54755ccf13db" />
 
-- Power point presentation
-  - The slide show is added in the folder. (CSC_324_Demo_2.pptx)
+- PowerPoint presentation
+  - The slide show is added to the folder. (CSC_324_Demo_2.pptx)
   - For the Demo2 codes & apps got to https://github.com/junghyey/grinnell-elephant/releases/tag/sprint-4-second-release 
  

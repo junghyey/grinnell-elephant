@@ -13,17 +13,17 @@ Our current task breakdown is as follows:
 - Candice: Stopwatch, Learn Firebase SQL Storage
 - Other tasks: meet with stakeholders
 
-Once we reach a good place in development and feedback, we will refer to our issue tracker, where we have assigned tasks to each team member. Once the basic widget is ready for connection, we will connect the widget to the app then work on the widget UI. 
+Once we reach a good place in development and feedback, we will refer to our issue tracker, where we have assigned tasks to each team member. Once the basic widget is ready for connection, we will connect the widget to the app, then work on the widget UI. 
 
 ### Assignment: What will each team member do this sprint?
-In this sprint, our main focus is the development of the widget and fixing existing functions. We are all planning to work on the different implementations and have divided up the tasks in our backlog, assigning various tasks for each team member. We currently work with these roles but **this table does not mean each person is entitled to their role nor that they should be the only one doing the task.** We should all collaborate to work on every task but this table shows who should lead each task since there are lots of tasks and assignments can be confusing.
+In this sprint, our main focus is on the development of the widget and fixing existing functions. We are all planning to work on the different implementations and have divided up the tasks in our backlog, assigning various tasks for each team member. We currently work with these roles, but **this table does not mean each person is entitled to their role, nor that they should be the only one doing the task.** We should all collaborate to work on every task, but this table shows who should lead each task since there are lots of tasks and assignments that can be confusing.
 
 | Role                         | Responsibilities |
 |------------------------------|-----------------|
 | **Project Manager (Hyeyun)**    | Oversees sprint progress and reports, manages deadlines/Trello board, organizes meetings, and ensures team coordination. |
 | **Lead Developer (Candice)** | Oversees overall implementation, handles technical setup, coding standards, and supports development in Swift and Xcode. |
 | **Lead Designer (Mae)** | Responsible for design-related tasks (e.g., character design, coloring, paper prototyping) and brainstorming app ideas. |
-| **Documentation & Reporting Lead (Gabby)** | Reviews and updates sprint reports, maintains documentation, and ensures clear communication of progress (grammar, wording..etc..).  |
+| **Documentation & Reporting Lead (Gabby)** | Reviews and updates sprint reports, maintains documentation, and ensures clear communication of progress (grammar, wording, etc).  |
 
 ### Issue Tracker: How can your instructor view the results of your sprint planning using your issue tracker?
 [Elephant🐘💻 Trello](https://trello.com/b/4KAD6ca1/elephant-dev-board-%F0%9F%90%98%F0%9F%92%BB)

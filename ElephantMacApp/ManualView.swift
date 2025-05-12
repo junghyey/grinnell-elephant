@@ -49,12 +49,12 @@ import SwiftUI
  - `backPage`: Navigate back button to go back to page (optional)
  - `nextPage`: Navigate forward button to go front (optional)
  - `homePage`: Navigate home button to go to main page of the app.
-
+ 
  */
 struct ManualTemplateView<Content: View>:  View {
     @EnvironmentObject var themeManager: ThemeManager
     @Environment(\.dismiss) private var dismiss
-  
+    
     //--------------------------
     // Variable Initializiation
     //--------------------------
@@ -64,7 +64,7 @@ struct ManualTemplateView<Content: View>:  View {
     var nextPage: AnyView?
     var homePage: AnyView?
     
- 
+    
     init(
         currentPageIdentifier: String,
         content: () -> Content,
@@ -81,75 +81,75 @@ struct ManualTemplateView<Content: View>:  View {
     }//init
     
     var body: some View {
-            
+        
         //--------------------
         // Main Layout Start
         //--------------------
-            VStack(spacing: 0) {
-                HStack {// Header stack with home button
-                    Spacer()//expands leftward
-                    ToHomePageButton()
-                    ToSettingsPageButton()
-                }//HStack
-                
+        VStack(spacing: 0) {
+            HStack {// Header stack with home button
+                Spacer()//expands leftward
+                ToHomePageButton()
+                ToSettingsPageButton()
+            }//HStack
+            
+            .padding()
+            
+            //-------------------
+            // Content Area Start
+            //-------------------
+            ScrollView {
+                VStack(alignment: .leading, spacing: 24) {// Content stack inside scroll
+                    content
+                    Spacer(minLength: 80) // space above the nav buttons
+                }//VStack
                 .padding()
-
-                //-------------------
-                // Content Area Start
-                //-------------------
-                ScrollView {
-                    VStack(alignment: .leading, spacing: 24) {// Content stack inside scroll
-                        content
-                        Spacer(minLength: 80) // space above the nav buttons
-                    }//VStack
-                    .padding()
-                    .background(
-                        Color.clear
-                            .accessibilityElement(children: .combine)
-                            .accessibilityIdentifier(currentPageIdentifier)
-                            .shadow(color: themeManager.curTheme.shadow_1.opacity(0.2), radius: 8, x: 0, y: 4)
-                    )
-                    .id(currentPageIdentifier)
-                }//ScrollView
-
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                //--------------------
-                // Button Stack Starts
-                //--------------------
-                // Footer stack with navigation buttons
-                HStack {
-                    if let backPage = backPage {
-                        NavigationLink(destination: backPage) {
-                            Image(systemName: "arrow.left.circle.fill")
-                                .font(.title)
-                                .foregroundColor(themeManager.curTheme.main_color_2)
-                                .accessibilityIdentifier("backButton")
-                                .allowsHitTesting(true)
-                        }//NavigationLink
-                        .buttonStyle(PlainButtonStyle()) // get rid of the white box behind
-                    }// if backPage
-                    
-                    Spacer()//expands leftward
-                    
-                    if let nextPage = nextPage {
-                        NavigationLink(destination: nextPage) {
-                            Image(systemName: "arrow.right.circle.fill")
-                                .font(.title)
-                                .foregroundColor(themeManager.curTheme.main_color_2)
-                                .accessibilityIdentifier("nextButton")
-                                .allowsHitTesting(true)
-                        }//NavigationLink
-                        .buttonStyle(PlainButtonStyle()) // get rid of the white box behind
-                    }//nextPage
-                }//HStack
-                .padding(.horizontal)
-                .padding(.bottom, 20)
-            }
-            .preferredColorScheme(themeManager.Mode ? .dark : .light)
-            .frame(width: 500, height: 500)
-            .background(themeManager.curTheme.background)
-        }//VStack
-   
+                .background(
+                    Color.clear
+                        .accessibilityElement(children: .combine)
+                        .accessibilityIdentifier(currentPageIdentifier)
+                        .shadow(color: themeManager.curTheme.shadow_1.opacity(0.2), radius: 8, x: 0, y: 4)
+                )
+                .id(currentPageIdentifier)
+            }//ScrollView
+            
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            //--------------------
+            // Button Stack Starts
+            //--------------------
+            // Footer stack with navigation buttons
+            HStack {
+                if let backPage = backPage {
+                    NavigationLink(destination: backPage) {
+                        Image(systemName: "arrow.left.circle.fill")
+                            .font(.title)
+                            .foregroundColor(themeManager.curTheme.main_color_2)
+                            .accessibilityIdentifier("backButton")
+                            .allowsHitTesting(true)
+                    }//NavigationLink
+                    .buttonStyle(PlainButtonStyle()) // get rid of the white box behind
+                }// if backPage
+                
+                Spacer()//expands leftward
+                
+                if let nextPage = nextPage {
+                    NavigationLink(destination: nextPage) {
+                        Image(systemName: "arrow.right.circle.fill")
+                            .font(.title)
+                            .foregroundColor(themeManager.curTheme.main_color_2)
+                            .accessibilityIdentifier("nextButton")
+                            .allowsHitTesting(true)
+                    }//NavigationLink
+                    .buttonStyle(PlainButtonStyle()) // get rid of the white box behind
+                }//nextPage
+            }//HStack
+            .padding(.horizontal)
+            .padding(.bottom, 20)
+        }
+        .preferredColorScheme(themeManager.Mode ? .dark : .light)
+        .frame(width: 500, height: 500)
+        .background(themeManager.curTheme.background)
+    }//VStack
+    
 }// var body
 
 
@@ -165,85 +165,79 @@ struct ManualTemplateView<Content: View>:  View {
 
 struct ManualView:View{
     var body: some View {
-            ManualTemplateView(
-                currentPageIdentifier: "manualFirstPage",
-                content: {
-                    
-                    VStack(alignment: .leading, spacing: 20) {
-                        Text("Welcome to Elephant!")
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
-                        Text(
-                       "Are you ready to incorporate wellness tasks into your work routine with us? Let’s get started!"
-                                                )
-                        Text("Balance you work and wellness routine through Elephant")
-                        NavigationLink(destination: StopwatchPageView()) {
-                            
-                                               Text("Stopwatch Mode")
-                                                   .font(.title2)
-                                                   .fontWeight(.semibold)
-                                                   .frame(maxWidth: .infinity, alignment: .leading)
-                                                   .padding()
-                                                   .background(DefaultColors.main_color_1)
-                                                   .cornerRadius(10)
-                                                   
-                                           }// NavigationLink stopwatch
-                        .buttonStyle(PlainButtonStyle())
-
-                                           NavigationLink(destination: PomodoroPageView()) {
-                                               Text("Pomodoro Mode")
-                                                   .font(.title2)
-                                                   .fontWeight(.semibold)
-                                                   .frame(maxWidth: .infinity, alignment: .leading)
-                                                   .padding()
-                                                   .background(DefaultColors.main_color_1)
-                                                   .cornerRadius(10)
-                                                 
-                                           }//NavigationLink pomodoro
-                                           .buttonStyle(PlainButtonStyle())
-
-                                           NavigationLink(destination: TokensPageView()) {
-                                               Text("Earn Tokens")
-                                                   .font(.title2)
-                                                   .fontWeight(.semibold)
-                                                   .frame(maxWidth: .infinity, alignment: .leading)
-                                                   .padding()
-                                                   .background(DefaultColors.main_color_1)
-                                                   .cornerRadius(10)
-                                                   
-                                           }//NavigationLink tokenspageview
-                                           .buttonStyle(PlainButtonStyle())
-
-                                           NavigationLink(destination: ExamplesPageView()) {
-                                               Text("Example User Cases")
-                                                   .font(.title2)
-                                                   .fontWeight(.semibold)
-                                                   .frame(maxWidth: .infinity, alignment: .leading)
-                                                   .padding()
-                                                   .background(DefaultColors.main_color_1)
-                                                   .cornerRadius(10)
-                                                   
-                                           }//NavigationLink examplespage
-                                           .buttonStyle(PlainButtonStyle())
-
-                                           NavigationLink(destination: WidgetSetupPageView()) {
-                                               Text("Set Up Widget")
-                                                   .font(.title2)
-                                                   .fontWeight(.semibold)
-                                                   .frame(maxWidth: .infinity, alignment: .leading)
-                                                   .padding()
-                                                   .background(DefaultColors.main_color_1)
-                                                   .cornerRadius(10)
-                                                   
-                                           }//NavigationLink widgetsetup
-                                           .buttonStyle(PlainButtonStyle())
-                                       }//vstack
-                }//content
-                ,
-                homePage: AnyView(ContentView())
+        ManualTemplateView(
+            currentPageIdentifier: "manualFirstPage",
+            content: {
                 
-            )//ManualTemplateView
-            .frame(maxWidth: .infinity, alignment: .leading)
+                VStack(alignment: .leading, spacing: 20) {
+                    Text("Welcome to Elephant!")
+                        .font(.system(.largeTitle, design: .rounded).weight(.bold))
+                    Text(
+                        "Are you ready to incorporate wellness tasks into your work routine with us? Let’s get started!"
+                    )
+                    Text("Balance you work and wellness routine through Elephant")
+                    Text("For the notification, go to System Settings>Notifications and allow notification for Elephant.")
+                    NavigationLink(destination: StopwatchPageView()) {
+                        
+                        Text("Stopwatch Mode")
+                            .font(.system(.title2, design: .rounded).weight(.semibold))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding()
+                            .background(DefaultColors.main_color_1)
+                            .cornerRadius(10)
+                    }// NavigationLink stopwatch
+                    .buttonStyle(PlainButtonStyle())
+                    
+                    NavigationLink(destination: PomodoroPageView()) {
+                        Text("Pomodoro Mode")
+                            .font(.system(.title2, design: .rounded).weight(.semibold))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding()
+                            .background(DefaultColors.main_color_1)
+                            .cornerRadius(10)
+                        
+                    }//NavigationLink pomodoro
+                    .buttonStyle(PlainButtonStyle())
+                    
+                    NavigationLink(destination: TokensPageView()) {
+                        Text("Earn Tokens")
+                            .font(.system(.title2, design: .rounded).weight(.semibold))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding()
+                            .background(DefaultColors.main_color_1)
+                            .cornerRadius(10)
+                        
+                    }//NavigationLink tokenspageview
+                    .buttonStyle(PlainButtonStyle())
+                    
+                    NavigationLink(destination: ExamplesPageView()) {
+                        Text("Example User Cases")
+                            .font(.system(.title2, design: .rounded).weight(.semibold))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding()
+                            .background(DefaultColors.main_color_1)
+                            .cornerRadius(10)
+                        
+                    }//NavigationLink examplespage
+                    .buttonStyle(PlainButtonStyle())
+                    
+                    NavigationLink(destination: WidgetSetupPageView()) {
+                        Text("Set Up Widget")
+                            .font(.system(.title2, design: .rounded).weight(.semibold))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding()
+                            .background(DefaultColors.main_color_1)
+                            .cornerRadius(10)
+                        
+                    }//NavigationLink widgetsetup
+                    .buttonStyle(PlainButtonStyle())
+                }//vstack
+            }//content
+            ,
+            homePage: AnyView(ContentView())
+            
+        )//ManualTemplateView
+        .frame(maxWidth: .infinity, alignment: .leading)
     }//body
 }//ManualView
 
@@ -261,9 +255,8 @@ struct StopwatchPageView: View {
             content: {
                 VStack(alignment: .leading, spacing: 20) {
                     Text("Stopwatch Mode")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-
+                        .font(.system(.largeTitle, design: .rounded).weight(.bold))
+                    
                     Text("Turn on the stopwatch when you start working. Receive wellness reminders at custom intervals, and turn it off when you're done.")
                         .font(.body)
                     
@@ -292,9 +285,8 @@ struct PomodoroPageView: View {
             content: {
                 VStack(alignment: .leading, spacing: 20) {
                     Text("Pomodoro Mode")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-
+                        .font(.system(.largeTitle, design: .rounded).weight(.bold))
+                    
                     Text("Work in focused intervals with short breaks in between. After four work sessions, enjoy a longer break to recharge!")
                         .font(.body)
                     //probably insert something for settings on how to use
@@ -322,12 +314,10 @@ struct TokensPageView: View {
             content: {
                 VStack(alignment: .leading, spacing: 20) {
                     Text("Earn Tokens")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-
+                        .font(.system(.largeTitle, design: .rounded).weight(.bold))
+                    
                     Text("How To")
-                        .font(.title2)
-                        .fontWeight(.bold)
+                        .font(.system(.title2, design: .rounded).weight(.bold))
                     Text("Complete wellness tasks to earn tokens. Redeem tokens to collect fun avatars and customize your experience!")
                         .font(.body)
                     Text("Every time you complete the task, you earn one token. The tokens can be used to purchase avatar in the collectible shop.")
@@ -338,8 +328,7 @@ struct TokensPageView: View {
                     Divider() //divide example and
                     
                     Text("Example Task & Token") //from Sam
-                        .font(.title2)
-                        .fontWeight(.bold)
+                        .font(.system(.title2, design: .rounded).weight(.bold))
                     ChecklistView(items: [
                         ChecklistItem(label: "Take a 10min walk", isChecked: false),
                         ChecklistItem(label: "Dance", isChecked: false),
@@ -367,7 +356,7 @@ struct TokensPageView: View {
 
 
 /*
-Each item inside the checklist
+ Each item inside the checklist
  */
 struct ChecklistItem: Identifiable {
     let id = UUID()
@@ -385,18 +374,18 @@ struct ChecklistItem: Identifiable {
 struct CheckBoxView: View {
     @EnvironmentObject var themeManager: ThemeManager
     @Binding var isChecked: Bool  // <-- binding to allow toggling
-
+    
     // Action after the checkmark
     var body: some View {
-            Image(systemName: isChecked ? "checkmark.square.fill" : "square")
-                .foregroundColor(isChecked ? DefaultColors.main_color_3 : Color.secondary)
-                .onTapGesture {
-                    if(isChecked == false){ //once checked only checking possible unchecking impossible
-                        isChecked=true
-                    }
-                }//.onTapGesture
-        }// var body
-
+        Image(systemName: isChecked ? "checkmark.square.fill" : "square")
+            .foregroundColor(isChecked ? DefaultColors.main_color_3 : Color.secondary)
+            .onTapGesture {
+                if(isChecked == false){ //once checked only checking possible unchecking impossible
+                    isChecked=true
+                }
+            }//.onTapGesture
+    }// var body
+    
 }//CheckBoxView
 
 /*
@@ -414,7 +403,7 @@ struct CheckBoxView: View {
 //https://developer.apple.com/documentation/swiftui/view/onchange(of:perform:)
 //https://stackoverflow.com/questions/78919404/how-do-i-fix-my-onchangeofperform-to-avoid-xcode-giving-me-a-deprecation-war
 struct ChecklistView: View {
-    @EnvironmentObject var token: TokenLogic
+    @EnvironmentObject var token: TokenLogic //need this whever you use it in some view
     @State var items: [ChecklistItem] // @state will allow update
     var body: some View {
         
@@ -424,8 +413,8 @@ struct ChecklistView: View {
                     
                     Text(item.label) // allow to be checked.
                     CheckBoxView(isChecked: $item.isChecked)
-                       
-                        
+                    
+                    
                         .onChange(of: item.isChecked) { oldValue, newValue  in //onChange is part of view
                             if newValue == true && oldValue == false  {
                                 token.addFakeToken()
@@ -436,116 +425,112 @@ struct ChecklistView: View {
         }//var body
     }//ChecklistView
 }
-    
-    // MARK: - ExamplesPageView
-    // ====================================================
-    // ExamplesPageView
-    // ----------------------------------------------------
-    // Page for showing sample suercases
-    // ====================================================
-    
-    struct ExamplesPageView: View {
-        @EnvironmentObject var token: TokenLogic
-        var body: some View {
-            ManualTemplateView(
-                currentPageIdentifier: "examplesPage",
-                content: {
+
+// MARK: - ExamplesPageView
+// ====================================================
+// ExamplesPageView
+// ----------------------------------------------------
+// Page for showing sample suercases
+// ====================================================
+
+struct ExamplesPageView: View {
+    @EnvironmentObject var token: TokenLogic
+    var body: some View {
+        ManualTemplateView(
+            currentPageIdentifier: "examplesPage",
+            content: {
+                
+                VStack(alignment: .leading, spacing: 24) {
+                    Text("Customize Elephant to Your Needs!")
+                        .font(.system(.largeTitle, design: .rounded).weight(.bold))
                     
-                    VStack(alignment: .leading, spacing: 24) {
-                        Text("Customize Elephant to Your Needs!")
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
+                    //example sam's story
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Sam's Story")
+                            .font(.system(.title2, design: .rounded).weight(.semibold))
                         
-                        //example sam's story
-                        VStack(alignment: .leading, spacing: 8) {
-                            Text("Sam's Story")
-                                .font(.title2)
-                                .fontWeight(.semibold)
-                            
-                            Text("Sam is a software engineer that sits in front of his computer for long hours. Sam gets so immersed that they forget to eat or rest.")
-                                .font(.body)
-                            
-                            Text("Here is how Sam uses Elephant as Wellness Reminders")
-                                .font(.headline)
-                            
-                            Text("Mode: Stopwatch")
-                                .italic()
-                            
-                            ChecklistView(items: [
-                                ChecklistItem(label: "Take a 10min walk", isChecked: true),
-                                ChecklistItem(label: "Grab a coffee", isChecked: false),
-                                ChecklistItem(label: "Eat an apple", isChecked: true)
-                            ])//checklistview
-                        }//vstack sam
+                        Text("Sam is a software engineer that sits in front of his computer for long hours. Sam gets so immersed that they forget to eat or rest.")
+                            .font(.body)
                         
-                        //Cam Story Vstack
-                        Divider()
-                        VStack(alignment: .leading, spacing: 8) {
-                            Text("Cam's Story")
-                                .font(.title2)
-                                .fontWeight(.semibold)
-                            
-                            Text("Cam is a college student that finds it hard to stay on top of class and extracurriculars. Cam wants some motivation to get the tasks done.")
-                                .font(.body)
-                            
-                            Text("Here is how Cam uses Elephant for Task Management")
-                                .font(.headline)
-                            
-                            Text("Mode: Pomodoro")
-                                .italic()
-                            
-                            ChecklistView(items: [
-                                ChecklistItem(label: "2 Paragraphs for Political Science Paper", isChecked: true),
-                                ChecklistItem(label: "Meet Advisor", isChecked: true),
-                                ChecklistItem(label: "Email Follow-Ups", isChecked: false)
-                            ])// checklistview
-                        }//vstack cam
-                    }//vstack
-                    .onAppear(){
-                        token.exampleTokenNum = 0 //since it would be weird if we keep token num  when come back 
-                    }
-                },//conetent
-                backPage: AnyView(ManualView()),
-                homePage: AnyView(ContentView())
-            )//ManualTemplateView
-        }//body
-    }//ExamplesPageView
-    
-    // MARK: - ExamplesPageView
-    // ====================================================
-    // WidgetSetupPageView
-    // ----------------------------------------------------
-    // Page for showing the instruction of how to set
-    // up widget
-    // ====================================================
-    struct WidgetSetupPageView: View {
-        // TODO: add vidoe link?
-        var body: some View {
-            ManualTemplateView(
-                currentPageIdentifier: "widgetSetupPage",
-                content: {
-                    VStack(alignment: .leading, spacing: 20) {
-                        Text("Add Elephant to Widget Bar")
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
+                        Text("Here is how Sam uses Elephant as Wellness Reminders")
+                            .font(.headline)
                         
-                        Text("""
+                        Text("Mode: Stopwatch")
+                            .italic()
+                        
+                        ChecklistView(items: [
+                            ChecklistItem(label: "Take a 10min walk", isChecked: true),
+                            ChecklistItem(label: "Grab a coffee", isChecked: false),
+                            ChecklistItem(label: "Eat an apple", isChecked: true)
+                        ])//checklistview
+                    }//vstack sam
+                    
+                    //Cam Story Vstack
+                    Divider()
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Cam's Story")
+                            .font(.system(.title2, design: .rounded).weight(.semibold))
+                        
+                        Text("Cam is a college student that finds it hard to stay on top of class and extracurriculars. Cam wants some motivation to get the tasks done.")
+                            .font(.body)
+                        
+                        Text("Here is how Cam uses Elephant for Task Management")
+                            .font(.headline)
+                        
+                        Text("Mode: Pomodoro")
+                            .italic()
+                        
+                        ChecklistView(items: [
+                            ChecklistItem(label: "2 Paragraphs for Political Science Paper", isChecked: true),
+                            ChecklistItem(label: "Meet Advisor", isChecked: true),
+                            ChecklistItem(label: "Email Follow-Ups", isChecked: false)
+                        ])// checklistview
+                    }//vstack cam
+                }//vstack
+                .onAppear(){
+                    token.exampleTokenNum = 0 //since it would be weird if we keep token num  when come back
+                }
+            },//conetent
+            backPage: AnyView(ManualView()),
+            homePage: AnyView(ContentView())
+        )//ManualTemplateView
+    }//body
+}//ExamplesPageView
+
+// MARK: - ExamplesPageView
+// ====================================================
+// WidgetSetupPageView
+// ----------------------------------------------------
+// Page for showing the instruction of how to set
+// up widget
+// ====================================================
+struct WidgetSetupPageView: View {
+    // TODO: add vidoe link?
+    var body: some View {
+        ManualTemplateView(
+            currentPageIdentifier: "widgetSetupPage",
+            content: {
+                VStack(alignment: .leading, spacing: 20) {
+                    Text("Add Elephant to Widget Bar")
+                        .font(.system(.largeTitle, design: .rounded).weight(.bold))
+                    
+                    Text("""
                     (1) Open Notification Center by clicking the date/time in the menu bar of the mac book (Desktop) or swiping left from the right side of the trackpad.
                     (2) Scroll to 'Edit Widgets'.
                     (3) Search for 'ElephantMacApp'.
                     (4) Add and enjoy quick access to your wellness reminders!
                     """)
-                        .font(.body)
-                        .lineSpacing(5)
-                    }//Vstack
-                }, //content
-                backPage: AnyView(ManualView()),
-                homePage: AnyView(ContentView())
-            )//ManualTemplateView
-        }// var body
-    }//WidgetSetupPageView
-    
-    #Preview {
-        ManualView()
-    }
+                    .font(.body)
+                    .lineSpacing(5)
+                }//Vstack
+            }, //content
+            backPage: AnyView(ManualView()),
+            homePage: AnyView(ContentView())
+        )//ManualTemplateView
+    }// var body
+}//WidgetSetupPageView
+
+#Preview {
+    ManualView()
+}
 
