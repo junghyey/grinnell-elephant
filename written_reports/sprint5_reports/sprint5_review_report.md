@@ -20,10 +20,24 @@ Edited version of the homepage.
 
 Mode selection and respective pages.
 
+<img width="250" alt="notification" src="https://github.com/user-attachments/assets/39c8ab02-e4a2-4829-8dc6-8e377b88db42" />
 
 Notification of completion.
 
-### Final Demo PowerPoint
-The slide show will be added to the sprint5_reports folder.
+<img width="250" alt="shop_purchase" src="https://github.com/user-attachments/assets/646d735d-8b36-44f6-b791-fb926ab76db2" />
+<img width="250" alt="avatar_page" src="https://github.com/user-attachments/assets/4459c416-3112-44bd-8f74-5ee4ada90201" />
+<img width="250" alt="avatar_change" src="https://github.com/user-attachments/assets/661fc6b5-e668-459f-a2c6-b2af37a26287" />
 
-For the final demo codes & apps, go to ... _link coming soon_
+Users can spend the tokens they earned by completing tasks (wellness or productivity). The tokens are used to purchase avatars, which are then used to customize the timer page.
+
+<img width="250" alt="checklist_main" src="https://github.com/user-attachments/assets/139556c5-2d07-48f5-93c8-7ae2cc3622af" />
+<img width="250" alt="checklist_add" src="https://github.com/user-attachments/assets/f0312116-c7eb-42af-af61-e85787603eab" />
+<img width="250" alt="checklist_check" src="https://github.com/user-attachments/assets/8fc21139-9ea9-49ac-b511-c9adbc88abcc" />
+<img width="250" alt="checklist_new" src="https://github.com/user-attachments/assets/a189f65b-3a83-4890-8f28-083aa32680c8" />
+
+Users are able to customize their checklists to their schedule and habits they might want to set. There will be a default option to provide a starting point. 
+
+### Final Demo PowerPoint
+The final demo presentation is located in this (sprint5_reports) folder and can be found under the name CSC-324 Final Demo.pptx.
+
+For the final demo codes & apps, go to ... _link to label coming soon_
