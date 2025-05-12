@@ -37,7 +37,6 @@ struct SettingsView: View {
                     ToHomePageButton() // Button to homepage
                     ToManualPageButton() // Button to manual page
                 }
-                .padding([.top, .trailing], 15)
 
                 modeSection // Mode selection
                 
