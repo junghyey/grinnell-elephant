@@ -59,6 +59,12 @@ struct PomodoroView: View{
                 remainingTime = Double(selectedWorkTime*60)
             } else {
                 isBreak = true
+                //add notification as such
+                NotificationView.shared.scheduleNotification(
+                    notifyTime: 1,
+                    title: "Time for a Break!",
+                    body: "Try wellness tasks!"
+                )
                 if breakCount % 4 != 3 {
                     timerString = formatTime(secs: shortBreakTime*60)
                     remainingTime = Double(shortBreakTime*60)
@@ -152,6 +158,7 @@ struct PomodoroView: View{
 //            ElephantText(displayText: "is break?: \(isBreak)")
             if isBreak {
                 ElephantText(displayText: "Break Time!")
+                    
             }
         }
         .environmentObject(themeManager)

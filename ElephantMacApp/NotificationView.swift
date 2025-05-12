@@ -86,10 +86,8 @@ class NotificationView{
          * Next, schedule a notification (ex: like pomodor ends or not)
          * NotificationView.shared.scheduleNotification( notifyTime: 30, title: "Break Time", body: "Take a break")
          */
-        func scheduleNotification(notifyTime minutes: TimeInterval, title: String, body: String){
-            //convert minute to second
-            let seconds = minutes * 60
-            
+        func scheduleNotification(notifyTime seconds: TimeInterval, title: String, body: String){
+
             // get the content
             let content   = UNMutableNotificationContent()
             content.title = title

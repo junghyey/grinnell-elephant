@@ -177,6 +177,7 @@ struct ManualView:View{
                        "Are you ready to incorporate wellness tasks into your work routine with us? Let’s get started!"
                                                 )
                         Text("Balance you work and wellness routine through Elephant")
+                        Text("For the notification, go to System Settings>Notifications and allow notification for Elephant.")
                         NavigationLink(destination: StopwatchPageView()) {
                             
                                                Text("Stopwatch Mode")
@@ -414,7 +415,7 @@ struct CheckBoxView: View {
 //https://developer.apple.com/documentation/swiftui/view/onchange(of:perform:)
 //https://stackoverflow.com/questions/78919404/how-do-i-fix-my-onchangeofperform-to-avoid-xcode-giving-me-a-deprecation-war
 struct ChecklistView: View {
-    @EnvironmentObject var token: TokenLogic
+    @EnvironmentObject var token: TokenLogic //need this whever you use it in some view
     @State var items: [ChecklistItem] // @state will allow update
     var body: some View {
         
