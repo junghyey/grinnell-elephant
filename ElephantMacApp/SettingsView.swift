@@ -35,7 +35,6 @@ struct SettingsView: View {
                 HStack {
                     Spacer()
                     ToHomePageButton() // Button to homepage
-                    ToSettingsPageButton() // Button to settings page
                     ToManualPageButton() // Button to manual page
                 }
                 .padding([.top, .trailing], 15)
