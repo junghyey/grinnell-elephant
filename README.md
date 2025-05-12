@@ -47,9 +47,11 @@ Root
   |       |-- sprint4_plan_report.md         # this is where we have sprint4 planning report
   |       |-- sprint4_review_report.md
   |   |-- sprint5_reports/
+  |       |-- CSC_324_Final_Demo.pptx
   |       |-- blog_post.md
   |       |-- sprint5_journal.md
   |       |-- sprint5_plan_report.md         # this is where we have sprint5 planning report
+  |       |-- sprint5_review_report.md
   |-- ElephantMacApp
   |-- MacWidget
   |-- ElephantMacAppUITests
