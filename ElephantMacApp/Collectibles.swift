@@ -4,6 +4,11 @@
 //
 //  Created by 陸卉媫 on 4/14/25.
 //
+//## File Description: This file contains all information about collectible packs.
+//
+//## Components:
+// - collectible packs
+// - allCollectibles: a list of all collectibles
 
 import SwiftUI
 

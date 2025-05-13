@@ -4,6 +4,10 @@
 //
 //  Created by 陸卉媫 on 4/14/25.
 //
+//## File Description: This file defines the item view. The view contains name and image of the chosen collectible, and a purchase button that will react differently depending on whether user has purchased the item and remaining tokens.
+//
+//## Components:
+//- ItemView: A reusable SwiftUI template that generates a item purchase page when clicked. It is accessible through clicking on the item listings on the main shop page.
 
 import SwiftUI
 
@@ -35,8 +39,7 @@ struct ItemView: View {
                         .accessibilityIdentifier("itemButton_back_\(item.id)")
                         Spacer()
                         Text("\(item.name)")
-                            .font(.title)
-                            .fontWeight(.bold)
+                            .font(.system(size: 28, weight: .bold, design: .rounded))
                             .padding()
                         Spacer()
                         TokenDisplay()
@@ -55,7 +58,7 @@ struct ItemView: View {
                             .frame(width: 280, height: 280)
                     }
                     Text("Price: \(item.price) tokens")
-                        .font(.headline)
+                        .font(.system(size: 16, weight: .bold, design: .rounded))
                         .padding(10)
                     Button(action: {
                         // if enough tokens show confirmation, otherwise show not enough tokens

@@ -35,8 +35,10 @@ struct ElephantConfirmationDialogue: View {
             Text(title)
                 .font(.title2)
                 .fontWeight(.bold)
+                .fontDesign(.rounded)
             Text(message)
                 .font(.title3)
+                .fontDesign(.rounded)
             // defaulted to having cancel and confirm options, can be adjusted to have optional parameters if more functionality is needed
             HStack{
                 ElephantButton(
@@ -79,6 +81,7 @@ struct ElephantPopup: View {
                 .frame(width: 50, height: 50, alignment: .center)
             Text(title)
                 .font(.title2)
+                .fontDesign(.rounded)
                 .fontWeight(.bold)
             Text(message)
                 .font(.title3)
@@ -138,6 +141,7 @@ struct ElephantButton: View {
         Button (action: action) {
             Text("\(buttonText)")
                 .fontWeight(.bold)
+                .font(.system(size: 16, weight: .bold, design: .rounded))
                 .padding()
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
@@ -165,7 +169,7 @@ struct ElephantTitle: View {
     
     var body: some View {
         Text("\(displayText)")
-            .font(.title)
+            .font(.system(size: 28, weight: .bold, design: .rounded))
             .fontWeight(.bold)
             .padding()
             .frame(alignment: .center)
@@ -181,6 +185,7 @@ struct ElephantText: View {
     
     var body: some View {
         Text("\(displayText)")
+            .font(.system(size: 16, weight: .bold, design: .rounded))
             .font(.headline)
             .padding(10)
     }
