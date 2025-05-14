@@ -54,6 +54,9 @@ Given our current state of development, we have been working to produce an MVP t
 
 Many of our reach goals across various sprints in our final development include: dynamic text resizing and font changes within settings, incorporating sets of widget avatars in our database (consistent manual updating), and learning how to store various users' sensitive data (such as their custom checklists) for retrieval upon user request (deleted task lists), for instance, and eventually transition the entire app over to Kotlin for Android users. The eventually reachable goals, at least for the macOS laptop version, include the dynamic text changes as well as incorporating more customizable themes (eventually allowing for users to set their color palettes based on input) would be a stretch goal but at this time we're prioritizing the basic functionality of the app and widget so we have yet to implement these accessibility and customizable changes to the app's aesthetic layout. Another is storing checklist data and widget avatar sets not only on a local server, but also learning how to store these for individual users hosted by Firebase and using PostgreSQL for our storage. If we had more time, our team could've integrated more of these features into the MVP, but we were hindered by access to necessary funding for artist commissions as well as payment for these storage databases that require subscriptions for use. Our largest reach goal is eventually programming Elephant: A Wellness Trunk again in Kotlin so that it would be open for Windows and Android users, reimagining the widget integration portion of the app for these devices to be contained all within Elephant itself. This reach goal is our most 'out-of-scope' from the current project since we'd have to learn the language and reconfigure all of the changes to be available for Android users, and with the same financial constraints.
 
+#### Carry Out Plan
+Following the plan we outlined earlier this sprint, we focused on working on fuctional and core features. We worked on checklist feature. It is successfully working, but the widget integration is not working due to apple limitation of the widget (refresh time fixed). We have working timer for both pomodoro and stop watch. Notification system is also working. While we did not reach the full deployment state, we made signficant progress toward an MVP for class demonstration. We also talked with ResLife with potential collaboration. For the stock images, we used temporary free images and we have plan for commissioning artwork funded by Catalyst program. We found out the limitation of the widget that the refreshing number is set per day. Therefore, we decided to move stopwatch and pomodoro funtionalities (time sensitive ones) to the home page. We made the UI's more consistent across the app.
+
 ## Bug Logging
 Links to Bug Reports
   1. Hyeun - EnvironmentObject view error - https://trello.com/c/dKSCkfOa
@@ -62,10 +65,11 @@ Links to Bug Reports
   5. Candice - Array persistent storage - https://trello.com/c/1z73OmtY
      
 ## License
-Software license for the product, and include the license (or a link to it
+Software license for the product, and include the license. We chose MIT license.
 
 ## Wrap-up work
 Team Elephant worked hard to make this repository presentable to future audiences. 
 
+
 ## Final Presentation
-Demo Reproduction Steps:
+Demo Reproduction Steps: git clone the final release and (on the mac) open in the xcode. Then follow the guideline in readme "Pulling From Main" part. Then, build the project using "How to Build" section part.
