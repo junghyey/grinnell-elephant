@@ -8,6 +8,12 @@ import SwiftUI
 
 struct PomodoroView: View{
     @EnvironmentObject var themeManager: ThemeManager
+    @EnvironmentObject var storage: TaskListStorage //for checklist access
+    @EnvironmentObject var tokenLogic: TokenLogic //to modify tokens
+    
+    //checklist variables
+    @State private var selectedChecklist: Checklist? = nil
+    @State private var showingChecklist = false
     
     // pomodoro break time variables
     @AppStorage("workDuration") private var selectedWorkTime = 25
@@ -109,6 +115,7 @@ struct PomodoroView: View{
                                     updateTimer()
                                 }
                             }
+                .foregroundColor(themeManager.Mode ? themeManager.textColor(for: themeManager.curTheme.background) : themeManager.textColor(for: themeManager.curTheme.main_color_1))
             HStack{
                 // start button:
                 // if timer is already running, do nothing
@@ -158,14 +165,83 @@ struct PomodoroView: View{
 //            ElephantText(displayText: "is break?: \(isBreak)")
             if isBreak {
                 ElephantText(displayText: "Break Time!")
-                    
+                    .foregroundColor(themeManager.Mode ? themeManager.textColor(for: themeManager.curTheme.background) : themeManager.textColor(for: themeManager.curTheme.main_color_1))
             }
+            
+            //currently selected checklist display
+            VStack(spacing: 15){
+                Divider()
+                    .padding(.vertical, 10)
+                
+                Text("Checklist: ")
+                    .font(.system(.title2, design: .rounded).weight(.bold))
+                    .foregroundColor(themeManager.Mode ? themeManager.textColor(for: themeManager.curTheme.background) : themeManager.textColor(for: themeManager.curTheme.background))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading, 15)
+                
+                if storage.checklists.isEmpty  {
+                    Text("No checklists available..")
+                        .foregroundColor(themeManager.Mode ? themeManager.textColor(for: themeManager.curTheme.background).opacity(0.7) : themeManager.textColor(for: themeManager.curTheme.main_color_1).opacity(0.7))
+                        .padding()
+                } else {
+                    ScrollView(.horizontal, showsIndicators: true){
+                        HStack(spacing: 10){
+                            ForEach(storage.checklists){ checklist in
+                                checklistButton(for: checklist)
+                            }
+                        }
+                        .padding(.horizontal)
+                    }
+                }
+
+            }
+            .padding(.top, 20)
         }
         .environmentObject(themeManager)
         .padding(10)
         .accessibilityIdentifier("pomodoroView")
         .background(themeManager.curTheme.background)
         .preferredColorScheme(themeManager.Mode ? .dark : .light)
+        //displays currently selected checklist button
+        .sheet(item: $selectedChecklist) { checklist in
+            NavigationView {
+                    CheckListView(
+                        checklistId: checklist.id,
+                        checklistName: checklist.name,
+                        initialTasks: checklist.tasks
+                    )
+                    .environmentObject(storage)
+                    .environmentObject(themeManager)
+                    .environmentObject(tokenLogic)
+            }
+            .frame(width: 500, height: 500)
+        }
+    }
+    
+    //checklist button from ChecklistMainPageView
+    private func checklistButton(for checklist: Checklist) -> some View {
+            
+        Button(action: {
+            selectedChecklist = checklist
+        }) {
+            VStack {
+                Text(checklist.name) //displays checklist name
+                    .font(.system(.title3, design: .rounded).weight(.medium))
+                    .foregroundColor(themeManager.textColor(for: themeManager.curTheme.main_color_1))
+                
+                Spacer()
+                
+                Text("\(checklist.tasks.filter { $0.isCompleted }.count)/\(checklist.tasks.count)") //displays number of completed tasks/total tasks
+                    .font(.system(.subheadline, design: .rounded))
+                    .foregroundColor(themeManager.textColor(for: themeManager.curTheme.main_color_1).opacity(0.7))
+            }
+            .padding()
+            .background(
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(themeManager.curTheme.main_color_1))
+            .fixedSize()
+        }
+        .buttonStyle(PlainButtonStyle())
     }
 }
 
@@ -173,4 +249,6 @@ struct PomodoroView: View{
     let themeManager = ThemeManager()
     PomodoroView()
         .environmentObject(themeManager)
+        .environmentObject(TaskListStorage())
+        .environmentObject(TokenLogic())
 }

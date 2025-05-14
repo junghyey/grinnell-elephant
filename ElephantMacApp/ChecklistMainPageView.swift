@@ -157,9 +157,7 @@ struct ChecklistMainPageView: View {
                 .padding()
                 .background(
                     RoundedRectangle(cornerRadius: 10)
-                        .fill(themeManager.curTheme.main_color_1)
-                )
-            
+                        .fill(themeManager.curTheme.main_color_1))
             
             // Edit button for checklist renaming
             ElephantButton(
