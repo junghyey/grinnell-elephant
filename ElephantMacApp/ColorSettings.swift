@@ -6,6 +6,8 @@
 //
 
 // resources: https://medium.com/@katramesh91/effortless-theming-in-swiftui-mastering-multiple-themes-and-best-practices-061113be6d3d
+// grinnell theme: https://coolors.co/779ab8-9c3b2a-d8d5d0-92b848-73440a-c1b1a1-fa9a18
+// thinking about using some variations of this palette: https://coolors.co/cfdbd5-e8eddf-f5cb5c-242423-333533
 
 import SwiftUI
 
@@ -13,6 +15,10 @@ import SwiftUI
 protocol ThemeProtocol {
     var main_color_1: Color {get}
     var main_color_2: Color {get}
+    //    var background_1: Color {get}
+    //    var background_2: Color {get} // contrast background_1
+    // var text_1: Color {get} // contrast background_1
+    // var text_2: Color {get} // contrast background_2
     var main_color_3: Color {get}
     var background: Color {get}
     var shadow_1: Color {get}
@@ -128,6 +134,25 @@ struct DefaultElephant: ThemeProtocol {
 //            return Color(red: 40/255, green: 40/255, blue: 40/255)
 //        }
 //    }
+}
+
+// palette: https://coolors.co/779ab8-9c3b2a-d8d5d0-92b848-73440a-c1b1a1-fa9a18
+struct Grinnell: ThemeProtocol {
+    
+    var main_color_1: Color {return Color(hex: "#779AB8")}
+    var main_color_2: Color {return Color(hex: "#9C3B2A")}
+    // var background_1: Color {return Color(hex: "#D8D5D0")}
+    // var background_2: Color {return Color(hex: "#92B848")} // contrast background_1
+    // var text_1: Color {return Color(hex: "#73440A")} // contrast background_1
+    // var text_2: Color {return Color(hex: "#C1B1A1")} // contrast background_2
+    // var shadow: Color {return Color(hex: "#FA9A18")} // contrast-ish background_2
+    
+    // to delete
+    var main_color_3: Color {return Color(red: 76/255, green: 149/255, blue: 108/255)}
+    var background: Color {return Color(red: 254/255, green: 254/255, blue: 227/255)}
+    var shadow_1: Color {return Color(red: 254/255, green: 254/255, blue: 227/255)}
+    var shadow_2: Color {return Color(red: 44/255, green: 110/255, blue: 73/255)}
+
 }
 
 struct BlackWhite: ThemeProtocol {

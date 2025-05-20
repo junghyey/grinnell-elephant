@@ -43,7 +43,7 @@ struct ElephantConfirmationDialogue: View {
             HStack{
                 ElephantButton(
                     buttonText: "Cancel",
-                    action: onConfirm,
+                    action: onCancel,
                     color: themeManager.curTheme.background
                 )
                 ElephantButton(

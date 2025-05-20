@@ -288,7 +288,8 @@ struct CheckListView: View {
     private func taskRow(for task: TaskItem) -> some View {
         HStack { //display for completed or newly created task list
             Image(systemName: task.isCompleted ? "checkmark.square.fill" : "square")
-                .foregroundColor(task.isCompleted ? themeManager.curTheme.main_color_2 : themeManager.curTheme.main_color_3)
+//                .foregroundColor(task.isCompleted ? themeManager.curTheme.main_color_2 : themeManager.curTheme.main_color_3)
+                .foregroundColor(themeManager.curTheme.main_color_2)
                 .onTapGesture { //sets task as completed on user selection
                     if let index = localTasks.firstIndex(where: { $0.id == task.id }) {
                         localTasks[index].isCompleted.toggle()

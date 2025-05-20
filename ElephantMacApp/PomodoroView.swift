@@ -217,6 +217,13 @@ struct PomodoroView: View{
             }
             .frame(width: 500, height: 500)
         }
+        .onAppear() {
+            if selectedWorkTime < 10 {
+                timerString = "00:0\(selectedWorkTime):00"
+            } else {
+                timerString = "00:\(selectedWorkTime):00"
+            }
+        }
     }
     
     //checklist button from ChecklistMainPageView
