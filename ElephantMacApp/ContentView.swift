@@ -20,6 +20,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var isPressed = false
     @EnvironmentObject var themeManager: ThemeManager // theme manager
+    @AppStorage("curAvatar") private var curAvatar = "mammal-elephant"
     @AppStorage("timerMode") var timerMode: String = "stopwatch"
 
     var body: some View {
@@ -52,7 +53,7 @@ struct ContentView: View {
                     Text("♡🐘♡")
                         .font(.system(.headline, design: .rounded).weight(.semibold))
                     // App logo placeholder
-                    Image("realistic_elephant")
+                    Image(curAvatar)
                         .resizable()
                         .scaledToFit()
                     // Title area and button separator
