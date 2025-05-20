@@ -58,7 +58,7 @@ struct StopwatchView: View {
     }
     
     var body: some View {
-        ScrollView{
+        VStack{
             VStack{
                 // show timer string and update
                 Text(timerString)
@@ -81,7 +81,6 @@ struct StopwatchView: View {
                             }
                         },
                         color: themeManager.curTheme.main_color_2
-                        // color: DefaultColors.main_color_2
                     )
                     ElephantButton(
                         buttonText: "Reset",
@@ -91,7 +90,6 @@ struct StopwatchView: View {
                             timerString = formatTime(secs: 0)
                         },
                         color: themeManager.curTheme.main_color_2
-                        // color: DefaultColors.main_color_2
                     )
                     ElephantButton(
                         buttonText: "Pause",
@@ -102,39 +100,38 @@ struct StopwatchView: View {
                             isRunning = false
                         },
                         color: themeManager.curTheme.main_color_2
-                        // color: DefaultColors.main_color_2
                     )
                 }
             }
             
-            //currently selected checklist display
-            VStack(spacing: 15){
-                Divider()
-                    .padding(.vertical, 10)
-                //Checklist title text
-                Text("Checklist: ")
-                    .font(.system(.title2, design: .rounded).weight(.bold))
-                    .foregroundColor(themeManager.Mode ? themeManager.textColor(for: themeManager.curTheme.background) : themeManager.textColor(for: themeManager.curTheme.main_color_1))
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.leading, 15)
-                
-                if storage.checklists.isEmpty  {
-                    Text("No checklists available..")
-                        .foregroundColor(themeManager.Mode ? themeManager.textColor(for: themeManager.curTheme.background).opacity(0.7) : themeManager.textColor(for: themeManager.curTheme.main_color_1).opacity(0.7))
-                        .padding()
-                } else {
-                    ScrollView(.horizontal, showsIndicators: true){
-                        HStack(spacing: 10){
-                            ForEach(storage.checklists){ checklist in
-                                checklistButton(for: checklist)
-                            }
-                        }
-                        .padding(.horizontal)
-                    }
-                }
-
-            }
-            .padding(.top, 20)
+//            //currently selected checklist display
+//            VStack(spacing: 15){
+////                Divider()
+////                    .padding(.vertical, 10)
+//                //Checklist title text
+//                Text("Checklist: ")
+//                    .font(.system(.title2, design: .rounded).weight(.bold))
+//                    .foregroundColor(themeManager.Mode ? themeManager.textColor(for: themeManager.curTheme.background) : themeManager.textColor(for: themeManager.curTheme.main_color_1))
+//                    .frame(maxWidth: .infinity, alignment: .leading)
+//                    .padding(.leading, 15)
+//                
+//                if storage.checklists.isEmpty  {
+//                    Text("No checklists available..")
+//                        .foregroundColor(themeManager.Mode ? themeManager.textColor(for: themeManager.curTheme.background).opacity(0.7) : themeManager.textColor(for: themeManager.curTheme.main_color_1).opacity(0.7))
+//                        .padding()
+//                } else {
+//                    ScrollView(.horizontal, showsIndicators: true){
+//                        HStack(spacing: 10){
+//                            ForEach(storage.checklists){ checklist in
+//                                checklistButton(for: checklist)
+//                            }
+//                        }
+//                        .padding(.horizontal)
+//                    }
+//                }
+//
+//            }
+//            .padding(.top, 20)
         }
         .environmentObject(themeManager)
         .padding(10)
@@ -158,30 +155,30 @@ struct StopwatchView: View {
     }
     
     //checklist button from ChecklistMainPageView
-    private func checklistButton(for checklist: Checklist) -> some View {
-            
-        Button(action: {
-            selectedChecklist = checklist
-        }) {
-            VStack {
-                Text(checklist.name) //displays checklist name
-                    .font(.system(.title3, design: .rounded).weight(.medium))
-                    .foregroundColor(themeManager.textColor(for: themeManager.curTheme.main_color_1))
-                
-                Spacer()
-                
-                Text("\(checklist.tasks.filter { $0.isCompleted }.count)/\(checklist.tasks.count)") //displays number of completed tasks/total tasks
-                    .font(.system(.subheadline, design: .rounded))
-                    .foregroundColor(themeManager.textColor(for: themeManager.curTheme.main_color_1).opacity(0.7))
-            }
-            .padding()
-            .background(
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(themeManager.curTheme.main_color_1))
-            .fixedSize()
-        }
-        .buttonStyle(PlainButtonStyle())
-    }
+//    private func checklistButton(for checklist: Checklist) -> some View {
+//            
+//        Button(action: {
+//            selectedChecklist = checklist
+//        }) {
+//            VStack {
+//                Text(checklist.name) //displays checklist name
+//                    .font(.system(.title3, design: .rounded).weight(.medium))
+//                    .foregroundColor(themeManager.textColor(for: themeManager.curTheme.main_color_1))
+//                
+//                Spacer()
+//                
+//                Text("\(checklist.tasks.filter { $0.isCompleted }.count)/\(checklist.tasks.count)") //displays number of completed tasks/total tasks
+//                    .font(.system(.subheadline, design: .rounded))
+//                    .foregroundColor(themeManager.textColor(for: themeManager.curTheme.main_color_1).opacity(0.7))
+//            }
+//            .padding()
+//            .background(
+//                RoundedRectangle(cornerRadius: 10)
+//                    .fill(themeManager.curTheme.main_color_1))
+//            .fixedSize()
+//        }
+//        .buttonStyle(PlainButtonStyle())
+//    }
 }
 
 //struct StopwatchWidgetView: View {

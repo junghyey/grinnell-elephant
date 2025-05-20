@@ -192,6 +192,7 @@ struct CheckListView: View {
     @EnvironmentObject var themeManager: ThemeManager //for theme and modal changes
     
     let checklistId: UUID //initializes checklist id
+    let onCancel: () -> Void // added to support inline checklist view
     @State private var checklistName: String //checklist name string
     @State private var isEditing: Bool = false //boolean that checks if we're editing the checklist
     @State private var changedName: String = "" //changed checklist name
@@ -202,10 +203,11 @@ struct CheckListView: View {
     @State private var hasChanged: Bool = false //boolean to determine if the checklist has been changed (add/delete tasks)
     
     // Pass initial tasks through init to avoid fetching during view creation
-    init(checklistId: UUID, checklistName: String, initialTasks: [TaskItem]) {
+    init(checklistId: UUID, checklistName: String, initialTasks: [TaskItem], onCancel: @escaping () -> Void = {}) {
         self.checklistId = checklistId
         self._checklistName = State(initialValue: checklistName)
         self._localTasks = State(initialValue: initialTasks)
+        self.onCancel = onCancel
     }
     
     var body: some View {

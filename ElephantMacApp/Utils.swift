@@ -141,8 +141,8 @@ struct ElephantButton: View {
         Button (action: action) {
             Text("\(buttonText)")
                 .fontWeight(.bold)
-                .font(.system(size: 16, weight: .bold, design: .rounded))
-                .padding()
+                .font(.system(size: 14, weight: .bold, design: .rounded))
+                .padding(15)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(color ?? themeManager.curTheme.main_color_2, lineWidth: 2)

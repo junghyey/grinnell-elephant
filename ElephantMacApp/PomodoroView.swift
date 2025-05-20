@@ -107,7 +107,7 @@ struct PomodoroView: View{
     }
     
     var body: some View{
-        ScrollView{
+        VStack{
             Text(timerString)
                 .font(Font.system(.largeTitle, design: .monospaced))
                 .onReceive(timer) { _ in
@@ -116,6 +116,7 @@ struct PomodoroView: View{
                                 }
                             }
                 .foregroundColor(themeManager.Mode ? themeManager.textColor(for: themeManager.curTheme.background) : themeManager.textColor(for: themeManager.curTheme.main_color_1))
+                .padding(.top, -8)
             HStack{
                 // start button:
                 // if timer is already running, do nothing
@@ -168,34 +169,34 @@ struct PomodoroView: View{
                     .foregroundColor(themeManager.Mode ? themeManager.textColor(for: themeManager.curTheme.background) : themeManager.textColor(for: themeManager.curTheme.main_color_1))
             }
             
-            //currently selected checklist display
-            VStack(spacing: 15){
-                Divider()
-                    .padding(.vertical, 10)
-                
-                Text("Checklist: ")
-                    .font(.system(.title2, design: .rounded).weight(.bold))
-                    .foregroundColor(themeManager.Mode ? themeManager.textColor(for: themeManager.curTheme.background) : themeManager.textColor(for: themeManager.curTheme.background))
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.leading, 15)
-                
-                if storage.checklists.isEmpty  {
-                    Text("No checklists available..")
-                        .foregroundColor(themeManager.Mode ? themeManager.textColor(for: themeManager.curTheme.background).opacity(0.7) : themeManager.textColor(for: themeManager.curTheme.main_color_1).opacity(0.7))
-                        .padding()
-                } else {
-                    ScrollView(.horizontal, showsIndicators: true){
-                        HStack(spacing: 10){
-                            ForEach(storage.checklists){ checklist in
-                                checklistButton(for: checklist)
-                            }
-                        }
-                        .padding(.horizontal)
-                    }
-                }
-
-            }
-            .padding(.top, 20)
+//            //currently selected checklist display
+//            VStack(spacing: 15){
+//                Divider()
+//                    .padding(.vertical, 10)
+//                
+//                Text("Checklist: ")
+//                    .font(.system(.title2, design: .rounded).weight(.bold))
+//                    .foregroundColor(themeManager.Mode ? themeManager.textColor(for: themeManager.curTheme.background) : themeManager.textColor(for: themeManager.curTheme.background))
+//                    .frame(maxWidth: .infinity, alignment: .leading)
+//                    .padding(.leading, 15)
+//                
+//                if storage.checklists.isEmpty  {
+//                    Text("No checklists available..")
+//                        .foregroundColor(themeManager.Mode ? themeManager.textColor(for: themeManager.curTheme.background).opacity(0.7) : themeManager.textColor(for: themeManager.curTheme.main_color_1).opacity(0.7))
+//                        .padding()
+//                } else {
+//                    ScrollView(.horizontal, showsIndicators: true){
+//                        HStack(spacing: 10){
+//                            ForEach(storage.checklists){ checklist in
+//                                checklistButton(for: checklist)
+//                            }
+//                        }
+//                        .padding(.horizontal)
+//                    }
+//                }
+//
+//            }
+//            .padding(.top, 20)
         }
         .environmentObject(themeManager)
         .padding(10)

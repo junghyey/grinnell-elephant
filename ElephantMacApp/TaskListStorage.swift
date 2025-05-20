@@ -19,6 +19,10 @@ class TaskListStorage: ObservableObject{
     private let tasksFilename = "TaskLists.json"
     private let checklistsFilename = "Checklists.json"
     
+    @Published var curChecklistId: UUID? = nil
+    var curChecklist: Checklist? {
+        checklists.first(where: { $0.id == curChecklistId })
+    }
     @Published var taskList = TaskList(tasks: []){ //saves current task list
         didSet{
             saveTasks()//updates tasks
@@ -38,7 +42,9 @@ class TaskListStorage: ObservableObject{
         
         // created default checklist if none currently exists
         if checklists.isEmpty {
-            checklists.append(Checklist(name: "Checklist #1", tasks: []))
+            let firstChecklist = Checklist(name: "Checklist #1", tasks: [])
+            checklists.append(firstChecklist)
+            curChecklistId = firstChecklist.id
             saveChecklists()
         }
     }
