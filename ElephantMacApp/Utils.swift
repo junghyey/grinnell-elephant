@@ -279,9 +279,10 @@ struct ToMyAvatarsButton: View {
 
 struct TokenDisplay: View {
     @EnvironmentObject var themeManager: ThemeManager
+    @EnvironmentObject var tokenLogic: TokenLogic
     
     var body: some View {
-        let tokenNum: Int = UserDefaults.standard.integer(forKey: "tokenNum")
+        let tokenNum = tokenLogic.tokenNum
         Image(systemName: "dollarsign.circle.fill")
             .font(.title2)
             .frame(width: 40, height: 40)

@@ -15,6 +15,7 @@ struct ShopMainPageView: View {
     
     @AppStorage("curPalette") var curPalette: String = "defaultElephant"
     @EnvironmentObject private var themeManager: ThemeManager
+    @EnvironmentObject var tokenLogic: TokenLogic
     
     // only initialize it once
     init() {

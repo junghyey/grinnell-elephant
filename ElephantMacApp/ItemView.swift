@@ -13,6 +13,7 @@ import SwiftUI
 
 struct ItemView: View {
     @EnvironmentObject var themeManager: ThemeManager
+    @EnvironmentObject var tokenLogic: TokenLogic
     
     let item: ShopItem
     @State var showConfirmation = false
@@ -22,7 +23,8 @@ struct ItemView: View {
     
     var body: some View {
         var purchasedAvatars = UserDefaults.standard.stringArray(forKey: "purchasedAvatars")
-        var tokenNum: Int = UserDefaults.standard.integer(forKey: "tokenNum")
+        let tokenNum = tokenLogic.tokenNum
+
         ZStack{
             ScrollView{
                 VStack {
@@ -51,15 +53,16 @@ struct ItemView: View {
                     ZStack{
                         Circle()
                             .foregroundStyle(themeManager.curTheme.background)
-                            .frame(width: 300)
+                            .frame(width: 280)
                         Image(item.id)
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 280, height: 280)
+                            .frame(width: 250, height: 250)
                     }
-                    Text("Price: \(item.price) tokens")
+                    ElephantText(displayText: "Price: \(item.price) tokens")
                         .font(.system(size: 16, weight: .bold, design: .rounded))
-                        .padding(10)
+                        .padding(.bottom, 10)
+
                     Button(action: {
                         // if enough tokens show confirmation, otherwise show not enough tokens
                         if (purchasedAvatars!.contains(item.id)) {
@@ -77,9 +80,15 @@ struct ItemView: View {
                             .frame(width: 150, height: 50)
                             .overlay{
                                 Text("Buy")
+                                    .fontWeight(.bold)
+                                    .font(.system(size: 14, weight: .bold, design: .rounded))
+                                    .padding(15)
                             }
                     }
                     .buttonStyle(PlainButtonStyle())
+                    .cornerRadius(20)
+                    .foregroundColor(themeManager.textColor(for: themeManager.curTheme.main_color_2))
+                    .buttonBorderShape(.capsule)
                     .shadow(color: .black.opacity(0.2), radius: 4, x: 0, y: 2)
                     .accessibilityIdentifier("itemButton_price_\(item.id)")
                 }
@@ -100,8 +109,7 @@ struct ItemView: View {
                         purchasedAvatars!.append(item.id)
                         UserDefaults.standard.set(purchasedAvatars, forKey: "purchasedAvatars")
                         // update token
-                        tokenNum -= item.price
-                        UserDefaults.standard.set(tokenNum, forKey: "tokenNum")
+                        tokenLogic.subtractToken(cost: item.price)
                         showPurchaseConfirmation = true
                     },
                     onCancel: {
@@ -153,4 +161,5 @@ struct ItemView: View {
     let themeManager = ThemeManager()
     ItemView(item: ShopItem(id: "mammal-lion", name: "Lion", price: 10))
         .environmentObject(themeManager)
+        .environmentObject(TokenLogic())
 }
