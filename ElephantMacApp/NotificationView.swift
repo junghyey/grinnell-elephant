@@ -108,3 +108,10 @@ class NotificationView{
         
     } //end of class
 
+var NotificationMusicDict = [
+    "Arabian Nightfall": "arabian_nightfall.mp3",
+    "Baroque Coffee House": "baroque_coffee_house.mp3",
+    "Cartoon Bank Heist": "cartoon_bank_heist.mp3",
+    "Rooster": "rooster.wav",
+    "Sour Tennessee Red": "sour_tennessee_red.mp3",
+]

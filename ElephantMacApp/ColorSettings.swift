@@ -29,6 +29,12 @@ protocol ThemeProtocol {
 //    var secondaryTextColor: Color {get}
 }
 
+let allThemes = [
+    "Elephant": "default",
+    "Benny": "benny",
+    "Black and White": "blackWhite"
+]
+
 class ThemeManager: ObservableObject {
     //sets the curThemeKey to default theme
     @AppStorage("curTheme") var curThemeKey: String = "defaultElephant" {

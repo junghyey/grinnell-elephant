@@ -12,6 +12,8 @@
 /*https://medium.com/@amitaswal87/understanding-geometryreader-in-swiftui-a-detailed-guide-2bd3031e5712*/
 //
 
+// source for searchable dropdown menu: https://medium.com/@wesleymatlock/creating-advanced-dropdown-menus-in-swiftui-74fd20cf9bab
+
 import SwiftUI
 
 struct SettingsView: View {
@@ -27,6 +29,14 @@ struct SettingsView: View {
     @AppStorage("shortBreakTime") var shortBreakTime: Double = 5
     @AppStorage("longBreakTime") var longBreakTime: Double = 15
     @AppStorage("reminderTime") var selectedReminderTime: Double = 30
+    
+    // notification music
+    @AppStorage("selectedNotificationMusic") var selectedNotificationMusic = "Select an Option"
+    @AppStorage("selectedNotificationMusicPath") var selectedNotificationMusicPath = "Select an Option"
+    
+    // theme
+    @AppStorage("selectedTheme") var selectedTheme = "default"
+    @AppStorage("curTheme") var curTheme = "default"
     
     var body: some View {
         ScrollView {
@@ -44,9 +54,24 @@ struct SettingsView: View {
                     ToManualPageButton() // Button to manual page
                 }
 
-                modeSection // Mode selection
+                // modeSection // Mode selection
                 
-                themeSection // Theme selection
+                // themeSection // Theme selection
+                sectionTitle(text: "Themes")
+                SearchableDropdownMenu(
+                    selectedOption: $selectedTheme,
+                    options: allThemes.keys.sorted(),
+                    onSelect: {selected in
+                        curTheme = allThemes[selected] ?? "default"
+                    })
+                
+                sectionTitle(text: "Notification Music")
+                SearchableDropdownMenu(
+                    selectedOption: $selectedNotificationMusic,
+                    options: NotificationMusicDict.keys.sorted(),
+                    onSelect: {selected in
+                        selectedNotificationMusicPath = NotificationMusicDict[selected] ?? "rooster.wav"
+                    })
                 
                 //checklistSection // Checklist button
                 
@@ -107,8 +132,8 @@ struct SettingsView: View {
     // Displays Pomodoro time settings and sliders
     private var pomodoroTimeSection: some View {
         timeSection(title: "Pomodoro", sliders: [
-//            ("Work Duration", $selectedWorkTime, 20, 60, 5),
-            ("Work Duration", $selectedWorkTime, 0.1, 60, 0.1),
+            ("Work Duration", $selectedWorkTime, 20, 60, 5),
+//            ("Work Duration", $selectedWorkTime, 0.1, 60, 0.1),
             ("Short Break Duration", $shortBreakTime, 5, 30, 5),
             ("Long Break Duration", $longBreakTime, 15, 30, 5)
         ])
@@ -198,6 +223,66 @@ struct customSlider: View {
     }
 }
 
+struct SearchableDropdownMenu: View {
+
+    @EnvironmentObject var themeManager: ThemeManager
+    @Binding var selectedOption: String
+    @State private var isExpanded = false
+    @State private var searchText = ""
+    
+    let options: [String]
+    var onSelect: ((String) -> Void)? = nil
+
+  var filteredOptions: [String] {
+    if searchText.isEmpty {
+      return options
+    } else {
+      return options.filter { $0.lowercased().contains(searchText.lowercased()) }
+    }
+  }
+
+  var body: some View {
+    ZStack {
+        Button(action: { isExpanded.toggle() }) {
+            HStack {
+              Text(selectedOption)
+              Spacer()
+              Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
+            }
+            .padding()
+            .background(
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(themeManager.curTheme.main_color_1)
+            )
+            .foregroundColor(themeManager.textColor(for: themeManager.curTheme.main_color_2))
+        }.buttonStyle(PlainButtonStyle())
+
+      if isExpanded {
+        VStack {
+          TextField("Search...", text: $searchText)
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            .padding(3)
+
+          ForEach(filteredOptions, id: \.self) { option in
+              Text(option)
+                  .padding(.bottom, 5)
+                  .onTapGesture {
+                      selectedOption = option
+                      onSelect?(option)
+                      isExpanded = false
+                  }
+            }
+        }
+        .background(themeManager.curTheme.main_color_1)
+        .cornerRadius(8)
+        .shadow(radius: 5)
+      }
+    }
+    .padding(.horizontal)
+  }
+}
+
+
 //SettingsView preview
 #Preview {
     let themeManager = ThemeManager()
@@ -206,3 +291,4 @@ struct customSlider: View {
         .environmentObject(TaskListStorage())
         .environmentObject(TokenLogic())
 }
+
