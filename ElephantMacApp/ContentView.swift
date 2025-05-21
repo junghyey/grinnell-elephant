@@ -125,6 +125,9 @@ struct ContentView: View {
         // .preferredColorScheme(themeManager.Mode ? .dark : .light)
 //        .foregroundColor(themeManager.textColor(for: themeManager.curTheme.background))
         .foregroundColor(themeManager.curTheme.text_1)
+        .onAppear {
+            NotificationView.shared.requestNotificationPermission()
+        }
     } // main body
 } // ContentView Struct
 

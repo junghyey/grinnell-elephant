@@ -79,6 +79,11 @@ struct PomodoroView: View{
             remainingTime -= 1
             if remainingTime == 0 {
                 playSound(file: selectedNotificationMusicPath)
+                if isBreak {
+                    NotificationView.shared.scheduleNotification(notifyTime: 1, title: "Work time!", body: "Time to get back to work and be productive!")
+                } else {
+                    NotificationView.shared.scheduleNotification(notifyTime: 1, title: "Break time!", body: "Take a break and pick a wellness task!")
+                }
             }
             timerString = formatTime(secs: Int(remainingTime))
         } else {
@@ -91,11 +96,11 @@ struct PomodoroView: View{
             } else {
                 isBreak = true
                 //add notification as such
-                NotificationView.shared.scheduleNotification(
-                    notifyTime: 1,
-                    title: "Time for a Break!",
-                    body: "Try wellness tasks!"
-                )
+//                NotificationView.shared.scheduleNotification(
+//                    notifyTime: 1,
+//                    title: "Time for a Break!",
+//                    body: "Try wellness tasks!"
+//                )
                 if breakCount % 4 != 3 {
                     timerString = formatTime(secs: shortBreakTime*60)
                     remainingTime = Double(shortBreakTime*60)

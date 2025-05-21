@@ -191,7 +191,7 @@ struct Benny: ThemeProtocol {
     var background_1: Color {return Color(hex: "F3A3B5")}
     var background_2: Color {return Color(hex: "F0CC34")}
     var text_1: Color {return Color.black}
-    var text_2: Color {return Color(hex: "19171A")}
+    var text_2: Color {return Color(hex: "B8D2F0")}
     
     
 //    var primaryTextColor: Color { return Color(hex: "19171A")} //dark gray color
