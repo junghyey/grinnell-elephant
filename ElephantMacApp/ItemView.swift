@@ -34,7 +34,7 @@ struct ItemView: View {
                                 .foregroundStyle(themeManager.curTheme.main_color_2)
                                 .frame(width: 50, height: 30)
                                 .overlay(
-                                    Text("Back").foregroundColor(themeManager.curTheme.background))
+                                    Text("Back").foregroundColor(themeManager.curTheme.background_1))
                         }
                         .buttonStyle(PlainButtonStyle())
                         .padding(10)
@@ -51,7 +51,7 @@ struct ItemView: View {
                         .font(.system(size: 28, weight: .bold, design: .rounded))
                     ZStack{
                         Circle()
-                            .foregroundStyle(themeManager.curTheme.background)
+                            .foregroundStyle(themeManager.curTheme.background_1)
                             .frame(width: 250)
                         Image(item.id)
                             .resizable()
@@ -86,7 +86,8 @@ struct ItemView: View {
                     }
                     .buttonStyle(PlainButtonStyle())
                     .cornerRadius(20)
-                    .foregroundColor(themeManager.textColor(for: themeManager.curTheme.main_color_2))
+//                    .foregroundColor(themeManager.textColor(for: themeManager.curTheme.main_color_2))
+                    .foregroundColor(themeManager.curTheme.text_2)
                     .buttonBorderShape(.capsule)
                     .shadow(color: .black.opacity(0.2), radius: 4, x: 0, y: 2)
                     .accessibilityIdentifier("itemButton_price_\(item.id)")
@@ -94,8 +95,8 @@ struct ItemView: View {
             }
             .padding(10)
             .frame(width: 400, height: 500)
-            .background(themeManager.curTheme.background)
-            .preferredColorScheme(themeManager.Mode ? .dark : .light)
+            .background(themeManager.curTheme.background_1)
+            // .preferredColorScheme(themeManager.Mode ? .dark : .light)
             
             if(showConfirmation) {
                 ElephantConfirmationDialogue(
@@ -151,8 +152,9 @@ struct ItemView: View {
             }
         }
         .accessibilityIdentifier("itemView_\(item.id)")
-        .preferredColorScheme(themeManager.Mode ? .dark : .light)
-        .foregroundColor(themeManager.textColor(for: themeManager.curTheme.background))
+        // .preferredColorScheme(themeManager.Mode ? .dark : .light)
+//        .foregroundColor(themeManager.textColor(for: themeManager.curTheme.background))
+        .foregroundColor(themeManager.curTheme.text_1)
     }
     
 }

@@ -31,8 +31,8 @@ struct SettingsView: View {
     @AppStorage("reminderTime") var selectedReminderTime: Double = 30
     
     // notification music
-    @AppStorage("selectedNotificationMusic") var selectedNotificationMusic = "Select an Option"
-    @AppStorage("selectedNotificationMusicPath") var selectedNotificationMusicPath = "Select an Option"
+    @AppStorage("selectedNotificationMusic") var selectedNotificationMusic: String = "Select an Option"
+    @AppStorage("selectedNotificationMusicPath") var selectedNotificationMusicPath: String = "Select an Option"
     
     // theme
     @AppStorage("selectedTheme") var selectedTheme = "default"
@@ -86,7 +86,7 @@ struct SettingsView: View {
         }
         .padding()
         .preferredColorScheme(themeManager.Mode ? .dark : .light) //based on user selection
-        .background(themeManager.curTheme.background) //based on user selection
+        .background(themeManager.curTheme.background_1) //based on user selection
         .frame(width: 400, height: 500) //frames scroll view
     }
     
@@ -132,8 +132,8 @@ struct SettingsView: View {
     // Displays Pomodoro time settings and sliders
     private var pomodoroTimeSection: some View {
         timeSection(title: "Pomodoro", sliders: [
-            ("Work Duration", $selectedWorkTime, 20, 60, 5),
-//            ("Work Duration", $selectedWorkTime, 0.1, 60, 0.1),
+            // ("Work Duration", $selectedWorkTime, 20, 60, 5),
+            ("Work Duration", $selectedWorkTime, 0.1, 60, 0.1),
             ("Short Break Duration", $shortBreakTime, 5, 30, 5),
             ("Long Break Duration", $longBreakTime, 15, 30, 5)
         ])
@@ -198,7 +198,7 @@ struct customSlider: View {
                 .background(
                     GeometryReader { geo in
                         Capsule()
-                            .fill(themeManager.curTheme.shadow_2)
+                            .fill(themeManager.curTheme.main_color_3)
                             .frame(height: 4)
                             .position(x: geo.size.width / 2, y: geo.size.height / 2)
                     }
@@ -254,7 +254,8 @@ struct SearchableDropdownMenu: View {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(themeManager.curTheme.main_color_1)
             )
-            .foregroundColor(themeManager.textColor(for: themeManager.curTheme.main_color_2))
+//            .foregroundColor(themeManager.textColor(for: themeManager.curTheme.main_color_2))
+            .foregroundColor(themeManager.curTheme.text_1)
         }.buttonStyle(PlainButtonStyle())
 
       if isExpanded {

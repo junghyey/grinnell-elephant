@@ -5,6 +5,7 @@
 //  Created by Pruneda Turcios, Gabriela, modified by Candice Lu
 
 import SwiftUI
+import AVFoundation
 
 struct PomodoroView: View{
     @EnvironmentObject var themeManager: ThemeManager
@@ -20,6 +21,7 @@ struct PomodoroView: View{
     @AppStorage("shortBreakTime") private var shortBreakTime = 5
     @AppStorage("longBreakTime") private var longBreakTime = 15
 
+    @AppStorage("selectedNotificationMusicPath") var selectedNotificationMusicPath = "rooster.wav"
     
     // whether timer is running
     @State private var isRunning: Bool = false
@@ -31,6 +33,8 @@ struct PomodoroView: View{
     @State private var elapsedTime: Double = 0.0
     // how many seconds is remaining
     @State private var remainingTime: Double = 0.0
+//    // whether timer just ended or not
+//    @State private var timerEnded: Bool = false
     // string to display on timer
     @State private var timerString: String = "00:00:00"
     // timer that updates everysecond and triggers re-render
@@ -39,6 +43,24 @@ struct PomodoroView: View{
     // track breaks
     @State private var breakCount: Int = 0
     @State private var isBreak: Bool = false
+    
+    // audio player
+    @State private var player: AVAudioPlayer?
+    
+    public func playSound(file: String) {
+        let fileComponents = file.split(separator: ".")
+        let name = String(fileComponents[0])
+        let ext = String(fileComponents[1])
+        if let file = Bundle.main.url(forResource: name, withExtension: ext) {
+            do {
+                player = try AVAudioPlayer(contentsOf: file)
+                player?.prepareToPlay()
+                player?.play()
+            } catch {
+                print("Unable to play music: \(error)")
+            }
+        }
+    }
     
     // use user defaults to ensure generalizability to widget
     let timerValues = UserDefaults(suiteName: "group.elephant.widget")
@@ -55,6 +77,9 @@ struct PomodoroView: View{
     func updateTimer() {
         if remainingTime > 0 {
             remainingTime -= 1
+            if remainingTime == 0 {
+                playSound(file: selectedNotificationMusicPath)
+            }
             timerString = formatTime(secs: Int(remainingTime))
         } else {
             // if timer ends, start new session
@@ -108,6 +133,10 @@ struct PomodoroView: View{
     
     var body: some View{
         VStack{
+//            for sound testing
+//            Button("Test Sound") {
+//                playSound(file: "rooster.wav")
+//            }
             Text(timerString)
                 .font(Font.system(.largeTitle, design: .monospaced))
                 .onReceive(timer) { _ in
@@ -115,7 +144,8 @@ struct PomodoroView: View{
                                     updateTimer()
                                 }
                             }
-                .foregroundColor(themeManager.Mode ? themeManager.textColor(for: themeManager.curTheme.background) : themeManager.textColor(for: themeManager.curTheme.main_color_1))
+//                .foregroundColor(themeManager.Mode ? themeManager.textColor(for: themeManager.curTheme.background) : themeManager.textColor(for: themeManager.curTheme.main_color_1))
+                .foregroundColor(themeManager.curTheme.text_1)
                 .padding(.top, -8)
                 .padding(.bottom, -3)
             HStack{
@@ -167,7 +197,8 @@ struct PomodoroView: View{
 //            ElephantText(displayText: "is break?: \(isBreak)")
             if isBreak {
                 ElephantText(displayText: "Break Time!")
-                    .foregroundColor(themeManager.Mode ? themeManager.textColor(for: themeManager.curTheme.background) : themeManager.textColor(for: themeManager.curTheme.main_color_1))
+//                    .foregroundColor(themeManager.Mode ? themeManager.textColor(for: themeManager.curTheme.background) : themeManager.textColor(for: themeManager.curTheme.main_color_1))
+                    .foregroundColor(themeManager.curTheme.text_1)
             }
             
 //            //currently selected checklist display
@@ -202,7 +233,7 @@ struct PomodoroView: View{
         .environmentObject(themeManager)
         .padding(10)
         .accessibilityIdentifier("pomodoroView")
-        .background(themeManager.curTheme.background)
+        .background(themeManager.curTheme.background_1)
         .preferredColorScheme(themeManager.Mode ? .dark : .light)
         //displays currently selected checklist button
         .sheet(item: $selectedChecklist) { checklist in
@@ -216,7 +247,7 @@ struct PomodoroView: View{
                     .environmentObject(themeManager)
                     .environmentObject(tokenLogic)
             }
-            .frame(width: 500, height: 500)
+            .frame(width: 400, height: 500)
         }
         .onAppear() {
             if selectedWorkTime < 10 {
@@ -236,13 +267,15 @@ struct PomodoroView: View{
             VStack {
                 Text(checklist.name) //displays checklist name
                     .font(.system(.title3, design: .rounded).weight(.medium))
-                    .foregroundColor(themeManager.textColor(for: themeManager.curTheme.main_color_1))
+//                    .foregroundColor(themeManager.textColor(for: themeManager.curTheme.main_color_1))
+                    .foregroundColor(themeManager.curTheme.main_color_1)
                 
                 Spacer()
                 
                 Text("\(checklist.tasks.filter { $0.isCompleted }.count)/\(checklist.tasks.count)") //displays number of completed tasks/total tasks
                     .font(.system(.subheadline, design: .rounded))
-                    .foregroundColor(themeManager.textColor(for: themeManager.curTheme.main_color_1).opacity(0.7))
+//                    .foregroundColor(themeManager.textColor(for: themeManager.curTheme.main_color_1).opacity(0.7))
+                foregroundColor(themeManager.curTheme.text_1)
             }
             .padding()
             .background(

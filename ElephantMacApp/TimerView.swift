@@ -63,7 +63,8 @@ struct TimerView: View {
                 VStack(spacing: 15){
                     if storage.checklists.isEmpty  {
                         Text("No checklists available..")
-                            .foregroundColor(themeManager.Mode ? themeManager.textColor(for: themeManager.curTheme.background).opacity(0.7) : themeManager.textColor(for: themeManager.curTheme.main_color_1).opacity(0.7))
+//                            .foregroundColor(themeManager.Mode ? themeManager.textColor(for: themeManager.curTheme.background).opacity(0.7) : themeManager.textColor(for: themeManager.curTheme.main_color_1).opacity(0.7))
+                            .foregroundColor(themeManager.curTheme.text_1)
                             .padding()
                     } else {
                         if let checklist = storage.curChecklist {                            
@@ -83,7 +84,7 @@ struct TimerView: View {
                                         .foregroundColor(
                                             task.isCompleted
                                             ? themeManager.curTheme.main_color_2
-                                            : themeManager.curTheme.main_color_3
+                                            : themeManager.curTheme.main_color_2
                                         )
                                         .onTapGesture {
                                             // Make a mutable copy of tasks
@@ -104,7 +105,7 @@ struct TimerView: View {
                                             .foregroundColor(
                                                 task.isCompleted
                                                 ? themeManager.curTheme.main_color_2
-                                                : themeManager.curTheme.main_color_3
+                                                : themeManager.curTheme.main_color_2
                                             )
                                     }
                                 }
@@ -118,7 +119,8 @@ struct TimerView: View {
                                             addNewTask()
                                         }
                                         .textFieldStyle(PlainTextFieldStyle())
-                                        .foregroundColor(themeManager.textColor(for: themeManager.curTheme.main_color_1))
+//                                        .foregroundColor(themeManager.textColor(for: themeManager.curTheme.main_color_1))
+                                        .foregroundColor(themeManager.curTheme.main_color_1)
                                 }
                             }
                             .padding(.horizontal, 40)
@@ -129,7 +131,7 @@ struct TimerView: View {
             .padding(.bottom, 20)
         }
         .environmentObject(themeManager)
-        .background(themeManager.curTheme.background)
+        .background(themeManager.curTheme.background_1)
         .accessibilityIdentifier("timerView")
         .frame(alignment: .center)
         .frame(width: 400, height: 500)
@@ -139,7 +141,7 @@ struct TimerView: View {
             }
         }
     }
-    }
+}
     
 //    private func checklistButton(for checklist: Checklist) -> some View {
 //            

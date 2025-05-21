@@ -78,7 +78,8 @@ struct ContentView: View {
                         .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
                     }
                     .buttonStyle(PlainButtonStyle())
-                    .background(themeManager.curTheme.background)
+                    .background(themeManager.curTheme.background_1)
+                    .foregroundColor(themeManager.curTheme.text_2)
                     .accessibilityIdentifier("timerPage")
                     .frame(alignment: .center)
                                                             
@@ -94,7 +95,8 @@ struct ContentView: View {
                     }  // NavigationLink - set up and adjustments
                     .buttonStyle(PlainButtonStyle())
                     .frame(maxWidth: .infinity, alignment: .center)
-                    .background(themeManager.curTheme.background)
+                    .background(themeManager.curTheme.background_1)
+                    .foregroundColor(themeManager.curTheme.text_2)
                     .accessibilityIdentifier("shopPage")
                     
                     // CHECKLISTS SHOP BUTTON
@@ -109,18 +111,20 @@ struct ContentView: View {
                     }  // NavigationLink - set up and adjustments
                     .buttonStyle(PlainButtonStyle())
                     .frame(maxWidth: .infinity, alignment: .center)
-                    .background(themeManager.curTheme.background)
+                    .background(themeManager.curTheme.background_1)
+                    .foregroundColor(themeManager.curTheme.text_2)
                     .padding(.bottom, 25)
                     .accessibilityIdentifier("checklistsPageLink")
                     
                 } // VStack - structures whole page
-                .background(themeManager.curTheme.background)
+                .background(themeManager.curTheme.background_1)
             } // ZStack
         } // NavigationStack
         .environmentObject(themeManager) // set this on NavStack to stay clean
         .frame(width: 400, height: 500)
-        .preferredColorScheme(themeManager.Mode ? .dark : .light)
-        .foregroundColor(themeManager.textColor(for: themeManager.curTheme.background))
+        // .preferredColorScheme(themeManager.Mode ? .dark : .light)
+//        .foregroundColor(themeManager.textColor(for: themeManager.curTheme.background))
+        .foregroundColor(themeManager.curTheme.text_1)
     } // main body
 } // ContentView Struct
 

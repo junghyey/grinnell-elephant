@@ -37,7 +37,7 @@ struct MyAvatarView: View {
                 .padding()
             }
             .frame(width: 400, height: 500)
-            .background(themeManager.curTheme.background)
+            .background(themeManager.curTheme.background_1)
             .preferredColorScheme(themeManager.Mode ? .dark : .light)
             
             if(showConfirmation) {
@@ -57,7 +57,8 @@ struct MyAvatarView: View {
         }
         .accessibilityIdentifier("myAvatarsPage")
         .preferredColorScheme(themeManager.Mode ? .dark : .light)
-        .foregroundColor(themeManager.textColor(for: themeManager.curTheme.background))
+//        .foregroundColor(themeManager.textColor(for: themeManager.curTheme.background_1))
+        .foregroundColor(themeManager.curTheme.text_1)
     }
     
 }
