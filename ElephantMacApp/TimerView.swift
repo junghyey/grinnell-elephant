@@ -126,6 +126,7 @@ struct TimerView: View {
                     }
                 }
             }
+            .padding(.bottom, 20)
         }
         .environmentObject(themeManager)
         .background(themeManager.curTheme.background)

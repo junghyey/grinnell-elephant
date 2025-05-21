@@ -39,21 +39,20 @@ struct ItemView: View {
                         .buttonStyle(PlainButtonStyle())
                         .padding(10)
                         .accessibilityIdentifier("itemButton_back_\(item.id)")
-                        Spacer()
-                        Text("\(item.name)")
-                            .font(.system(size: 28, weight: .bold, design: .rounded))
-                            .padding()
+                        
                         Spacer()
                         TokenDisplay()
                         ToMyAvatarsButton()
                         ToHomePageButton() // Button to homepage
                         ToSettingsPageButton() // Button to settings page
-                        ToManualPageButton() // Button to manual page
+                        // ToManualPageButton() // Button to manual page
                     }
+                    Text("\(item.name)")
+                        .font(.system(size: 28, weight: .bold, design: .rounded))
                     ZStack{
                         Circle()
                             .foregroundStyle(themeManager.curTheme.background)
-                            .frame(width: 280)
+                            .frame(width: 250)
                         Image(item.id)
                             .resizable()
                             .scaledToFit()
