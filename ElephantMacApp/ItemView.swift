@@ -94,7 +94,7 @@ struct ItemView: View {
                 }
             }
             .padding(10)
-            .frame(width: 500, height: 500)
+            .frame(width: 400, height: 500)
             .background(themeManager.curTheme.background)
             .preferredColorScheme(themeManager.Mode ? .dark : .light)
             
@@ -161,5 +161,6 @@ struct ItemView: View {
     let themeManager = ThemeManager()
     ItemView(item: ShopItem(id: "mammal-lion", name: "Lion", price: 10))
         .environmentObject(themeManager)
+        .environmentObject(TaskListStorage())
         .environmentObject(TokenLogic())
 }

@@ -80,7 +80,7 @@ struct ChecklistMainPageView: View {
                 .environmentObject(themeManager)
                 .environmentObject(tokenLogic)
             }
-            .frame(width: 500, height: 500)
+            .frame(width: 400, height: 500)
         }//prompt for user entering new checklist name
         .alert("Create New Checklist", isPresented: $showingNewList) {
             TextField("Checklist Name", text: $newListName)
@@ -137,7 +137,7 @@ struct ChecklistMainPageView: View {
         .padding()
         .preferredColorScheme(themeManager.Mode ? .dark : .light)
         .background(themeManager.curTheme.background)
-        .frame(width: 500, height: 500)
+        .frame(width: 400, height: 500)
         .accessibilityIdentifier("checklistsMainPage")
     }
     //initial view of new checklist buttons

@@ -36,8 +36,11 @@ struct TimerView: View {
     var body: some View {
         VStack{
             HStack {
-                ElephantText(displayText: "Current mode: \(timerMode)")
-                    .padding(.leading, 10)
+                Text("Current mode: \(timerMode)")
+                    .padding(.leading, 20)
+                    .font(.subheadline)
+                    .font(.system(size: 10, design: .rounded))
+                    .foregroundStyle(themeManager.curTheme.main_color_2)
                 Spacer()
                 ToHomePageButton() // Button to homepage
                 ToSettingsPageButton() // Button to settings page
@@ -65,11 +68,11 @@ struct TimerView: View {
                     } else {
                         if let checklist = storage.curChecklist {                            
                             VStack(alignment: .leading, spacing: 10) {
-                                Text("\(checklist.name)")
-                                    .font(.system(.title2, design: .rounded).weight(.bold))
-                                    .foregroundColor(themeManager.Mode ? themeManager.textColor(for: themeManager.curTheme.background) : themeManager.textColor(for: themeManager.curTheme.main_color_1))
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                    .padding(.leading, 15)
+//                                Text("\(checklist.name)")
+//                                    .font(.system(.title2, design: .rounded).weight(.bold))
+//                                    .foregroundColor(themeManager.Mode ? themeManager.textColor(for: themeManager.curTheme.background) : themeManager.textColor(for: themeManager.curTheme.main_color_1))
+//                                    .frame(maxWidth: .infinity, alignment: .leading)
+//                                    .padding(.leading, 15)
                                 ForEach(checklist.tasks.indices, id: \.self) { index in
                                     let task = checklist.tasks[index]
                                     
@@ -128,7 +131,7 @@ struct TimerView: View {
         .background(themeManager.curTheme.background)
         .accessibilityIdentifier("timerView")
         .frame(alignment: .center)
-        .frame(width: 500, height: 500)
+        .frame(width: 400, height: 500)
         .onAppear{
             if storage.curChecklistId == nil, let firstChecklist = storage.checklists.first {
                 storage.curChecklistId = firstChecklist.id

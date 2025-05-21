@@ -40,11 +40,16 @@ class TaskListStorage: ObservableObject{
         loadTasks() //loads tasks for user view
         loadChecklists() //loads all currently existing checklists
         
-        // created default checklist if none currently exists
+        // created default grinnell wellness checklist if none currently exists
         if checklists.isEmpty {
-            let firstChecklist = Checklist(name: "Checklist #1", tasks: [])
+            let firstChecklist = Checklist(name: "Fun activities at Grinnell!", tasks: [])
             checklists.append(firstChecklist)
             curChecklistId = firstChecklist.id
+            addTask(to: curChecklistId!, title: "Get a drink and snacks at DSA suite (JRC 3rd)")
+            addTask(to: curChecklistId!, title: "Get coffee at Saints rest")
+            addTask(to: curChecklistId!, title: "Get ice cream at Dari Barn")
+            addTask(to: curChecklistId!, title: "Chill at the hammocks")
+            addTask(to: curChecklistId!, title: "Play a game (pool/foosball/ping pong) at game room")
             saveChecklists()
         }
     }

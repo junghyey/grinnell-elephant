@@ -118,12 +118,16 @@ struct ContentView: View {
             } // ZStack
         } // NavigationStack
         .environmentObject(themeManager) // set this on NavStack to stay clean
-        .frame(width: 500, height: 500)
+        .frame(width: 400, height: 500)
         .preferredColorScheme(themeManager.Mode ? .dark : .light)
         .foregroundColor(themeManager.textColor(for: themeManager.curTheme.background))
     } // main body
 } // ContentView Struct
 
 #Preview {
+    let themeManager = ThemeManager()
     ContentView()
+        .environmentObject(themeManager)
+        .environmentObject(TaskListStorage())
+        .environmentObject(TokenLogic())
 }

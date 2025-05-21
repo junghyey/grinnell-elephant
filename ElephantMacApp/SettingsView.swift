@@ -30,9 +30,15 @@ struct SettingsView: View {
     
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 20) {
+            VStack(alignment: .leading) {
                 
                 HStack {
+                    Text("Settings")
+                        .fontWeight(.bold)
+                        .padding(.horizontal)
+                        .padding(.bottom, -5)
+                        .frame(alignment: .center)
+                        .font(.system(size: 28, design: .rounded).weight(.bold))
                     Spacer()
                     ToHomePageButton() // Button to homepage
                     ToManualPageButton() // Button to manual page
@@ -44,19 +50,19 @@ struct SettingsView: View {
                 
                 //checklistSection // Checklist button
                 
-                sectionTitle(text: "Time Settings", centered: true)
+                // sectionTitle(text: "Timer Settings", centered: true)
                 // Pomodoro time settings
                 pomodoroTimeSection
                 // Stopwatch time settings
                 stopwatchTimeSection
                 
-                Spacer()
+                //Spacer()
             }
         }
         .padding()
         .preferredColorScheme(themeManager.Mode ? .dark : .light) //based on user selection
         .background(themeManager.curTheme.background) //based on user selection
-        .frame(width: 500, height: 500) //frames scroll view
+        .frame(width: 400, height: 500) //frames scroll view
     }
     
     //mode section Button that chooses between light and dark mode, applying the mode globally
@@ -126,7 +132,7 @@ struct SettingsView: View {
     }
     //displays time section for both pomodoro and stopwatch settings
     func timeSection(title: String, sliders: [(String, Binding<Double>, Double, Double, Double)]) -> some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading) {
             sectionTitle(text: title)
             ForEach(0..<sliders.count, id: \.self) { index in
                 let time_set = sliders[index]
@@ -161,7 +167,7 @@ struct customSlider: View {
     let interval: Double
     
     var body: some View {
-        VStack(spacing: 8) { //builds slider for various settings
+        VStack { //builds slider for various settings
             Slider(value: $selectedTime, in: minTime...maxTime, step: interval)
                 .accentColor(.clear)
                 .background(
@@ -172,7 +178,6 @@ struct customSlider: View {
                             .position(x: geo.size.width / 2, y: geo.size.height / 2)
                     }
                 )
-                .padding(.vertical, 8)
             
             HStack {
                 Text("\(Int(minTime)) min") //displays lowest interval in the range
@@ -185,7 +190,7 @@ struct customSlider: View {
                     .fontDesign(.rounded)
                     .foregroundColor(themeManager.curTheme.main_color_3)
             }
-            .padding(.horizontal)
+            .padding(.horizontal, 20)
         }
         .padding()
         .preferredColorScheme(themeManager.Mode ? .dark : .light) //based on user selection
@@ -195,6 +200,9 @@ struct customSlider: View {
 
 //SettingsView preview
 #Preview {
+    let themeManager = ThemeManager()
     SettingsView()
+        .environmentObject(themeManager)
         .environmentObject(TaskListStorage())
+        .environmentObject(TokenLogic())
 }

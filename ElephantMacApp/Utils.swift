@@ -142,7 +142,7 @@ struct ElephantButton: View {
             Text("\(buttonText)")
                 .fontWeight(.bold)
                 .font(.system(size: 14, weight: .bold, design: .rounded))
-                .padding(15)
+                .padding(13)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(color ?? themeManager.curTheme.main_color_2, lineWidth: 2)

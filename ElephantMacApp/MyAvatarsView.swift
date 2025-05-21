@@ -36,7 +36,7 @@ struct MyAvatarView: View {
                 }
                 .padding()
             }
-            .frame(width: 500, height: 500)
+            .frame(width: 400, height: 500)
             .background(themeManager.curTheme.background)
             .preferredColorScheme(themeManager.Mode ? .dark : .light)
             
@@ -75,7 +75,7 @@ struct DisplayItemBlock : View {
                     Image("\(item.id)")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 170, height: 170)
+                        .frame(width: 140, height: 140)
             }
             .accessibilityIdentifier("myAvatarButton_\(item.id)")
             .cornerRadius(10)
@@ -115,4 +115,6 @@ struct DisplayAllItems: View {
     let themeManager = ThemeManager()
     MyAvatarView()
         .environmentObject(themeManager)
+        .environmentObject(TaskListStorage())
+        .environmentObject(TokenLogic())
 }

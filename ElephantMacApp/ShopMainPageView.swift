@@ -70,6 +70,8 @@ struct ShopMainPageView: View {
     // themeManager.setTheme(named: "defaultElephant")
     return ShopMainPageView()
         .environmentObject(themeManager)
+        .environmentObject(TaskListStorage())
+        .environmentObject(TokenLogic())
 }
 
 struct ShopItemBlock : View {
