@@ -114,4 +114,5 @@ var NotificationMusicDict = [
     "Cartoon Bank Heist": "cartoon_bank_heist.mp3",
     "Rooster": "rooster.wav",
     "Sour Tennessee Red": "sour_tennessee_red.mp3",
+    "None": ""
 ]

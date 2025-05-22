@@ -48,16 +48,18 @@ struct PomodoroView: View{
     @State private var player: AVAudioPlayer?
     
     public func playSound(file: String) {
-        let fileComponents = file.split(separator: ".")
-        let name = String(fileComponents[0])
-        let ext = String(fileComponents[1])
-        if let file = Bundle.main.url(forResource: name, withExtension: ext) {
-            do {
-                player = try AVAudioPlayer(contentsOf: file)
-                player?.prepareToPlay()
-                player?.play()
-            } catch {
-                print("Unable to play music: \(error)")
+        if file != "" {
+            let fileComponents = file.split(separator: ".")
+            let name = String(fileComponents[0])
+            let ext = String(fileComponents[1])
+            if let file = Bundle.main.url(forResource: name, withExtension: ext) {
+                do {
+                    player = try AVAudioPlayer(contentsOf: file)
+                    player?.prepareToPlay()
+                    player?.play()
+                } catch {
+                    print("Unable to play music: \(error)")
+                }
             }
         }
     }
