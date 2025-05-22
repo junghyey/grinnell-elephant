@@ -22,6 +22,10 @@ struct TimerView: View {
     @State private var selectedTasks: [TaskItem] = []
     @State private var newTask: String = ""
     
+    // token limit
+    @AppStorage("todaysLimit") var todaysLimit: Int = 5
+    @AppStorage("lastLimitUpdate") var lastLimitUpdate: Double = Date.now.timeIntervalSince1970
+    
     private func addNewTask() {
         let trimmed = newTask.trimmingCharacters(in: .whitespaces)
         guard !trimmed.isEmpty else { return }
@@ -36,11 +40,18 @@ struct TimerView: View {
     var body: some View {
         VStack{
             HStack {
-                Text("Current mode: \(timerMode)")
-                    .padding(.leading, 20)
-                    .font(.subheadline)
-                    .font(.system(size: 10, design: .rounded))
-                    .foregroundStyle(themeManager.curTheme.main_color_2)
+                VStack {
+                    Text("Current mode: \(timerMode)")
+                        .padding(.leading, 20)
+                        .font(.subheadline)
+                        .font(.system(size: 10, design: .rounded))
+                        .foregroundStyle(themeManager.curTheme.main_color_2)
+                    Text("Today's Token Limit: \(todaysLimit)")
+                        .padding(.leading, 20)
+                        .font(.subheadline)
+                        .font(.system(size: 10, design: .rounded))
+                        .foregroundStyle(themeManager.curTheme.main_color_2)
+                }
                 Spacer()
                 ToHomePageButton() // Button to homepage
                 ToSettingsPageButton() // Button to settings page
@@ -98,6 +109,10 @@ struct TimerView: View {
                                             if updatedTasks[index].isCompleted {
                                                 tokenLogic.addToken()
                                             }
+                                            // subtract token if user unchecked
+                                            if !updatedTasks[index].isCompleted {
+                                                tokenLogic.subtractToken()
+                                            }
                                         }
                                         Text(task.title)
                                         // Strikethrough if completed
@@ -139,6 +154,7 @@ struct TimerView: View {
             if storage.curChecklistId == nil, let firstChecklist = storage.checklists.first {
                 storage.curChecklistId = firstChecklist.id
             }
+            tokenLogic.updateDailyLimit()
         }
     }
 }

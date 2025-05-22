@@ -303,6 +303,10 @@ struct CheckListView: View {
                         if localTasks[index].isCompleted{ //only adds token if completed a task 
                             tokenLogic.addToken() //adds token when a task item is marked as completed
                         }
+                        // if unchecked, subtract token
+                        if !localTasks[index].isCompleted {
+                            tokenLogic.subtractToken()
+                        }
                         hasChanged = true
                     }
                     //toggleTask(task)

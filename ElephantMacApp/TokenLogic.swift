@@ -37,8 +37,14 @@ class TokenLogic: ObservableObject{ // observable object for : class that update
     }// var tokenNum
     @Published var exampleTokenNum: Int = 0 //this is only being used in manual!!
     
+    // daily limit
+    @AppStorage("todaysLimit") var todaysLimit: Int = 0
+    @AppStorage("lastLimitUpdate") var lastLimitUpdate: Double = 0.0
+    
     init(){
         self.tokenNum = PersistStore.storedTokenNum
+//        self.lastLimitUpdate = Date.now.timeIntervalSince1970
+//        self.todaysLimit = 5
     }
     // MARK: -  addToken
     // ====================================================
@@ -46,9 +52,14 @@ class TokenLogic: ObservableObject{ // observable object for : class that update
     // ----------------------------------------------------
     // example usage: when user check off the checkslit
     // ====================================================
-    
     func addToken(){
-        tokenNum+=1
+        updateDailyLimit()
+        @AppStorage("todaysLimit") var todaysLimit: Int = 0
+        
+        if todaysLimit > 0 {
+            tokenNum += 1
+            todaysLimit -= 1
+        }
     }//addToken
     
     // MARK: -  subtractToken
@@ -58,9 +69,19 @@ class TokenLogic: ObservableObject{ // observable object for : class that update
     // example usage: when user reedems in the collectible shop
     // ====================================================
     
-    func subtractToken(cost: Int){
-        tokenNum-=cost
+    func subtractToken(){
+        updateDailyLimit()
+        @AppStorage("todaysLimit") var todaysLimit: Int = 0
+        tokenNum-=1
+        // add back to limit only if limit < 5
+        if todaysLimit < 5 {
+            todaysLimit += 1
+        }
     }//subtractToken
+    
+    func buySubtractToken(cost: Int) {
+        tokenNum -= cost
+    }
     
     
     // MARK: -  addFakeToken
@@ -86,4 +107,14 @@ class TokenLogic: ObservableObject{ // observable object for : class that update
     func subtractFackToken(){
         exampleTokenNum-=1
     }//addToken
+    
+    func updateDailyLimit() {
+        let today = Date.now
+        let lastUpdateDate = NSDate(timeIntervalSince1970: lastLimitUpdate)
+        // if not same day, update daily limit
+        if !Calendar.current.isDate(today, inSameDayAs: lastUpdateDate as Date) {
+            lastLimitUpdate = today.timeIntervalSince1970
+            todaysLimit = 5
+        }
+    }
 }//TokenLogic

@@ -109,7 +109,7 @@ struct ItemView: View {
                         purchasedAvatars!.append(item.id)
                         UserDefaults.standard.set(purchasedAvatars, forKey: "purchasedAvatars")
                         // update token
-                        tokenLogic.subtractToken(cost: item.price)
+                        tokenLogic.buySubtractToken(cost: item.price)
                         showPurchaseConfirmation = true
                     },
                     onCancel: {
