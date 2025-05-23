@@ -33,6 +33,7 @@ struct ShopMainPageView: View {
                             Text("Shop")
                                 .font(.system(size: 28, weight: .bold, design: .rounded))
                                 .padding()
+                                .padding(.leading, 5)
                                 .frame(alignment: .center)
                             Spacer()
                             TokenDisplay()
@@ -98,6 +99,7 @@ struct PackBlock : View {
         Text("\(packName) Pack")
             // .font(.headline)
             .padding(.leading, 20)
+            .padding(.bottom, -8)
             .font(.system(size: 18, weight: .bold, design: .rounded))
             .frame(maxWidth: .infinity, alignment: .leading)
         
@@ -105,13 +107,14 @@ struct PackBlock : View {
             ZStack{
                 RoundedRectangle(cornerRadius: 20)
                     .foregroundStyle(themeManager.curTheme.main_color_1)
-                    .frame(width: CGFloat(pack.count)*130, height: 140)
+                    .frame(width: CGFloat(pack.count)*130, height: 130)
                     
                 HStack{
                     ForEach(pack) { item in
                         ShopItemBlock(item:item)
                     }
                 }
+                .padding(.leading, -5)
             }
         }
         .padding(.leading, 20)

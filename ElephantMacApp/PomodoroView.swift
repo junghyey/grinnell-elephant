@@ -148,7 +148,8 @@ struct PomodoroView: View{
 //                .foregroundColor(themeManager.Mode ? themeManager.textColor(for: themeManager.curTheme.background) : themeManager.textColor(for: themeManager.curTheme.main_color_1))
                 .foregroundColor(themeManager.curTheme.text_1)
                 .padding(.top, -8)
-                .padding(.bottom, -3)
+                .padding(.bottom, -1)
+
             HStack{
                 // start button:
                 // if timer is already running, do nothing
