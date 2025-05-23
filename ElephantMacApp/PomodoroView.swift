@@ -168,7 +168,7 @@ struct PomodoroView: View{
                             isRunning = true
                         }
                     },
-                    color: themeManager.curTheme.main_color_2)
+                    color: themeManager.curTheme.main_color_1)
                 ElephantButton(
                     buttonText: "Reset",
                     // resets remaining time to selected work time
@@ -180,7 +180,7 @@ struct PomodoroView: View{
                         remainingTime = Double(selectedWorkTime*60)
                         timerString = formatTime(secs: selectedWorkTime * 60)
                     },
-                    color: themeManager.curTheme.main_color_2)
+                    color: themeManager.curTheme.main_color_1)
                 ElephantButton(
                     buttonText: "Pause",
                     action: {
@@ -190,7 +190,7 @@ struct PomodoroView: View{
                         isRunning = false
                         isPaused = true
                     },
-                    color: themeManager.curTheme.main_color_2)
+                    color: themeManager.curTheme.main_color_1)
                 // strings for clarity and testing purpose
             }
             // testing!

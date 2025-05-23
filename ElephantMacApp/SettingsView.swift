@@ -265,7 +265,7 @@ struct SearchableDropdownMenu: View {
             .padding(3)
 
           ForEach(filteredOptions, id: \.self) { option in
-              Text(option)
+              Text("\(option)")
                   .padding(.bottom, 5)
                   .onTapGesture {
                       selectedOption = option

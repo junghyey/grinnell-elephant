@@ -35,6 +35,7 @@ let allThemes = [
     "Benny": "benny",
     "Black and White": "blackWhite",
     "Grinnell": "grinnell",
+    "Matcha": "matcha",
 ]
 
 class ThemeManager: ObservableObject {
@@ -61,6 +62,8 @@ class ThemeManager: ObservableObject {
                     return Benny()
                 case "grinnell":
                     return Grinnell()
+                case "matcha":
+                    return Matcha()
                 default:
                     return DefaultElephant()
             }
@@ -137,6 +140,29 @@ struct DefaultElephant: ThemeProtocol {
 //    var primaryTextColor: Color { return Color(red: 50/255, green: 50/255, blue: 50/255)}
 //    var secondaryTextColor: Color { return Color(red: 90/255, green: 90/255, blue: 90/255)}
 //    
+//    //dynamic text re-coloring based on mode
+//    func textColor(for background: Color, isDarkMode: Bool) -> Color {
+//        if isDarkMode{ //since the mode is in dark mode, we make changes with lighter text
+//            return Color(red: 240/255, green: 240/255, blue: 240/255)
+//        }else{//since the mode must be in light mode, we make changes to darken the text
+//            return Color(red: 40/255, green: 40/255, blue: 40/255)
+//        }
+//    }
+}
+
+// https://coolors.co/7db3c2-f8bb11-bcbfb6-e8eddf-333533
+struct Matcha: ThemeProtocol {
+    var main_color_1: Color {return Color(hex: "95AC62")}
+    var main_color_2: Color {return Color(hex: "67732E")}
+    var main_color_3: Color {return Color(hex: "BCBFB6")}
+    var background_1: Color {return Color(hex: "FFF9EE")}
+    var background_2: Color {return Color(hex: "E8EDDF")}
+    var text_1: Color {return Color(hex: "333533")} // contrast background_1
+    var text_2: Color {return Color.white} // contrast main_color_2
+    
+//    var primaryTextColor: Color { return Color(red: 50/255, green: 50/255, blue: 50/255)}
+//    var secondaryTextColor: Color { return Color(red: 90/255, green: 90/255, blue: 90/255)}
+//
 //    //dynamic text re-coloring based on mode
 //    func textColor(for background: Color, isDarkMode: Bool) -> Color {
 //        if isDarkMode{ //since the mode is in dark mode, we make changes with lighter text
