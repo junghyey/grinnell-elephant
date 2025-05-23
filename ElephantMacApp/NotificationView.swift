@@ -30,7 +30,7 @@ a new notification with times)
 
 
 import UserNotifications
-
+import SwiftUI
 
 //single ton class (Only one instance)
 class NotificationView{
@@ -87,12 +87,34 @@ class NotificationView{
          * NotificationView.shared.scheduleNotification( notifyTime: 30, title: "Break Time", body: "Take a break")
          */
         func scheduleNotification(notifyTime seconds: TimeInterval, title: String, body: String){
+            
+            @AppStorage("curAvatar") var curAvatar = "mammal-elephant"
 
             // get the content
             let content   = UNMutableNotificationContent()
             content.title = title
             content.body  = body
             content.sound = UNNotificationSound.default
+            
+            // attach curavatar to the notification
+            if let image = NSImage(named: curAvatar),
+                   let tiffData = image.tiffRepresentation,
+                   let bitmap = NSBitmapImageRep(data: tiffData),
+                   let pngData = bitmap.representation(using: .png, properties: [:]) {
+
+                    // Create a temporary file URL
+                    let tempDir = FileManager.default.temporaryDirectory
+                    let tempURL = tempDir.appendingPathComponent("notification_icon.png")
+
+                    do {
+                        try pngData.write(to: tempURL)
+                        let attachment = try UNNotificationAttachment(identifier: "assetImage", url: tempURL, options: nil)
+                        content.attachments = [attachment]
+                    } catch {
+                        print("Failed to write asset image to disk: \(error)")
+                    }
+                }
+
             
             // triger (when to show)
             let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: false)
