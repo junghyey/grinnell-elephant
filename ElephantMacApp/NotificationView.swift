@@ -116,3 +116,34 @@ var NotificationMusicDict = [
     "Sour Tennessee Red": "sour_tennessee_red.mp3",
     "None": ""
 ]
+
+var WorkNotifications = [
+    "Time to get back to work and be productive!",
+    "Refreshed? Let’s make progress now!",
+    "One step closer to your goal. Let’s go!",
+    "Back to it — you've got this!",
+    "You're making great progress! Keep it up!",
+    "Let’s crush the next task!",
+    "Your wellness buddy says: time to focus!",
+    "Welcome back! Let’s do a little more.",
+    "Your mind is rested. Let’s use that energy!",
+    "Ready for your next level? Let’s go!",
+    "Break’s done — time to power up!",
+    "Let’s earn another token!",
+    "Focus mode: ON. Let's win today!"
+]
+
+var BreakNotifications = [
+    "Take a break and pick a wellness task!",
+    "Take a breath, take a stretch.",
+    "Step away and rest your mind for a few minutes.",
+    "Great work! Take a well-deserved break.",
+    "Break time! You've earned this one.",
+    "Victory! Time to reward yourself with rest.",
+    "Your wellness buddy says: unplug for a bit!",
+    "Hydration check: drink some water while you break!",
+    "The elephant says: nap, stretch, or dance!",
+    "Break now, conquer later.",
+    "Let your eyes rest. You've been working hard.",
+    "Short break, big impact.",
+]

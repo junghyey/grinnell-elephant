@@ -19,6 +19,8 @@ class TaskListStorage: ObservableObject{
     private let tasksFilename = "TaskLists.json"
     private let checklistsFilename = "Checklists.json"
     
+    @AppStorage("lastTasklistUpdate") var lastTasklistUpdate: Double = 0.0
+    
     @Published var curChecklistId: UUID? = nil
     var curChecklist: Checklist? {
         checklists.first(where: { $0.id == curChecklistId })
@@ -33,6 +35,22 @@ class TaskListStorage: ObservableObject{
         didSet {
             saveChecklists()
             //SharedDataManager.shared.saveChecklists(checklists)
+        }
+    }
+    
+    func updateTaskList() {
+        let today = Date.now
+        let lastUpdateDate = NSDate(timeIntervalSince1970: lastTasklistUpdate)
+        // if not same day, delete all tasks that are completed
+        if !Calendar.current.isDate(today, inSameDayAs: lastUpdateDate as Date) {
+            lastTasklistUpdate = today.timeIntervalSince1970
+            for checklist in checklists {
+                for task in checklist.tasks {
+                    if task.isCompleted {
+                        removeTask(from: checklist.id, task: task)
+                    }
+                }
+            }
         }
     }
     

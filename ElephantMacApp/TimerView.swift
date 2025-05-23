@@ -16,15 +16,17 @@ struct TimerView: View {
     @EnvironmentObject var storage: TaskListStorage //for checklist access
     @EnvironmentObject var tokenLogic: TokenLogic //to modify tokens
     
-    //checklist variables
+    // checklist variables
     @State private var selectedChecklist: Checklist? = nil
     @State private var showingChecklist = false
     @State private var selectedTasks: [TaskItem] = []
     @State private var newTask: String = ""
     
-    // token limit
+    // token limit variables
     @AppStorage("todaysLimit") var todaysLimit: Int = 5
     @AppStorage("lastLimitUpdate") var lastLimitUpdate: Double = Date.now.timeIntervalSince1970
+    
+    @FocusState private var focusedTaskID: UUID?
     
     private func addNewTask() {
         let trimmed = newTask.trimmingCharacters(in: .whitespaces)
@@ -39,26 +41,7 @@ struct TimerView: View {
 
     var body: some View {
         VStack{
-            HStack {
-                VStack {
-                    Text("Current mode: \(timerMode)")
-                        .padding(.leading, 20)
-                        .font(.subheadline)
-                        .font(.system(size: 10, design: .rounded))
-                        .foregroundStyle(themeManager.curTheme.main_color_2)
-                    Text("Today's Token Limit: \(todaysLimit)")
-                        .padding(.leading, 20)
-                        .font(.subheadline)
-                        .font(.system(size: 10, design: .rounded))
-                        .foregroundStyle(themeManager.curTheme.main_color_2)
-                }
-                Spacer()
-                ToHomePageButton() // Button to homepage
-                ToSettingsPageButton() // Button to settings page
-                ToManualPageButton() // Button to manual page
-            }
-            .padding([.top, .trailing], 15)
-
+            headerSection
             Image(curAvatar)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -80,11 +63,6 @@ struct TimerView: View {
                     } else {
                         if let checklist = storage.curChecklist {                            
                             VStack(alignment: .leading, spacing: 10) {
-//                                Text("\(checklist.name)")
-//                                    .font(.system(.title2, design: .rounded).weight(.bold))
-//                                    .foregroundColor(themeManager.Mode ? themeManager.textColor(for: themeManager.curTheme.background) : themeManager.textColor(for: themeManager.curTheme.main_color_1))
-//                                    .frame(maxWidth: .infinity, alignment: .leading)
-//                                    .padding(.leading, 15)
                                 ForEach(checklist.tasks.indices, id: \.self) { index in
                                     let task = checklist.tasks[index]
                                     
@@ -92,11 +70,7 @@ struct TimerView: View {
                                         Image(systemName: task.isCompleted
                                               ? "checkmark.square.fill"
                                               : "square")
-                                        .foregroundColor(
-                                            task.isCompleted
-                                            ? themeManager.curTheme.main_color_2
-                                            : themeManager.curTheme.main_color_2
-                                        )
+                                        .foregroundColor(themeManager.curTheme.main_color_2)
                                         .onTapGesture {
                                             // Make a mutable copy of tasks
                                             var updatedTasks = checklist.tasks
@@ -114,14 +88,23 @@ struct TimerView: View {
                                                 tokenLogic.subtractToken()
                                             }
                                         }
-                                        Text(task.title)
-                                        // Strikethrough if completed
-                                            .strikethrough(task.isCompleted)
-                                            .foregroundColor(
-                                                task.isCompleted
-                                                ? themeManager.curTheme.main_color_2
-                                                : themeManager.curTheme.main_color_2
+//                                        Text(task.title)
+//                                            .strikethrough(task.isCompleted)
+//                                            .foregroundColor(
+//                                                task.isCompleted
+//                                                ? themeManager.curTheme.main_color_2
+//                                                : themeManager.curTheme.main_color_2
+//                                            )
+                                        EditableTextView(
+                                            task: Binding(
+                                                get: { checklist.tasks[index] },
+                                                set: {
+                                                    var updatedTasks = checklist.tasks
+                                                    updatedTasks[index] = $0
+                                                    storage.updateTasks(for: checklist.id, tasks: updatedTasks)
+                                                }
                                             )
+                                        )
                                     }
                                 }
                                 //additional new task row
@@ -155,7 +138,32 @@ struct TimerView: View {
                 storage.curChecklistId = firstChecklist.id
             }
             tokenLogic.updateDailyLimit()
+            storage.updateTaskList()
+        }.onTapGesture {
+            focusedTaskID = nil
         }
+    }
+    
+    var headerSection: some View {
+        HStack {
+            VStack {
+                Text("Current mode: \(timerMode)")
+                    .padding(.leading, 20)
+                    .font(.subheadline)
+                    .font(.system(size: 10, design: .rounded))
+                    .foregroundStyle(themeManager.curTheme.main_color_2)
+                Text("Today's Token Limit: \(todaysLimit)")
+                    .padding(.leading, 20)
+                    .font(.subheadline)
+                    .font(.system(size: 10, design: .rounded))
+                    .foregroundStyle(themeManager.curTheme.main_color_2)
+            }
+            Spacer()
+            ToHomePageButton() // Button to homepage
+            ToSettingsPageButton() // Button to settings page
+            ToManualPageButton() // Button to manual page
+        }
+        .padding([.top, .trailing], 15)
     }
 }
     

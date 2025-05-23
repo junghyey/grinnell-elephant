@@ -20,6 +20,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var isPressed = false
     @EnvironmentObject var themeManager: ThemeManager // theme manager
+    @EnvironmentObject var storage: TaskListStorage // tasklist storage
     @EnvironmentObject var tokenLogic: TokenLogic //to modify tokens
     @AppStorage("curAvatar") private var curAvatar = "mammal-elephant"
     @AppStorage("timerMode") var timerMode: String = "stopwatch"
@@ -128,7 +129,8 @@ struct ContentView: View {
         .foregroundColor(themeManager.curTheme.text_1)
         .onAppear {
             NotificationView.shared.requestNotificationPermission()
-             tokenLogic.updateDailyLimit()
+            tokenLogic.updateDailyLimit()
+            storage.updateTaskList()
         }
     } // main body
 } // ContentView Struct

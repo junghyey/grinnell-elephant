@@ -43,8 +43,6 @@ class TokenLogic: ObservableObject{ // observable object for : class that update
     
     init(){
         self.tokenNum = PersistStore.storedTokenNum
-//        self.lastLimitUpdate = Date.now.timeIntervalSince1970
-//        self.todaysLimit = 5
     }
     // MARK: -  addToken
     // ====================================================
@@ -64,9 +62,9 @@ class TokenLogic: ObservableObject{ // observable object for : class that update
     
     // MARK: -  subtractToken
     // ====================================================
-    // subtract token by the amount of cost
+    // subtract token by one and adjusts daily limit
     // ----------------------------------------------------
-    // example usage: when user reedems in the collectible shop
+    // example usage: when user unchecks checklist item
     // ====================================================
     
     func subtractToken(){
@@ -79,6 +77,13 @@ class TokenLogic: ObservableObject{ // observable object for : class that update
         }
     }//subtractToken
     
+    
+    // MARK: -  buySubtractToken
+    // ====================================================
+    // subtract token by the amount of cost, does not affect daily limit
+    // ----------------------------------------------------
+    // example usage: when user reedems in the collectible shop
+    // ====================================================
     func buySubtractToken(cost: Int) {
         tokenNum -= cost
     }
